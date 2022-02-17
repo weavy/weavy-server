@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ lang }}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{{ t (is_room ? 'New message in {0}' : 'New message from {0}') (html.title conversation) }}</title>
+    <style type="text/css">
+    {{~ include '_styles' ~}}
+    </style>
+</head>
+<body>
+    <center>
+        <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top" id="bodyCell">
+                    {{~ # email container ~}}
+                    <table border="0" cellpadding="0" cellspacing="0" width="600" id="emailBody">
+                        {{~ include '_header' ~}}
+
+                        {{~ # standard module ~}}
+                        <tr>
+                            <td align="center" valign="top">
+                                {{~ # centering table ~}}
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td align="center" valign="top">
+                                            {{~ # flexible container ~}}
+                                            <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                                                <tr>
+                                                    <td align="center" valign="top" width="600" class="flexibleContainerCell">
+                                                        {{~ # content table ~}}
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tr>
+                                                                <td valign="top" class="textContent">
+                                                                    {{-
+                                                                    if is_room
+                                                                        t messages.size 'You have a new message in {1}.' 'You have some new messages in {1}.' (html.link conversation)
+                                                                    else
+                                                                        t messages.size 'You have a new message from {1}.' 'You have some new messages from {1}.' (html.link conversation)
+                                                                    end
+                                                                    -}}
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        {{~ # notification module ~}}
+                        <tr>
+                            <td align="center" valign="top">
+                                {{~ # centering table ~}}
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tr>
+                                        <td align="center" valign="top">
+                                            {{~ # flexible container ~}}
+                                            <table border="0" cellpadding="0" cellspacing="0" width="600" class="flexibleContainer">
+                                                <tr>
+                                                    <td valign="top" width="600" class="flexibleContainerCell">
+                                                        {{~ # content table ~}}
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout:fixed;">
+                                                            {{for message in messages}} 
+                                                                <tr>
+                                                                    <td valign="top" class="imageContent" width="52" style="padding-top:4px;">
+                                                                        <img src="{{html.avatar_url message 32 }}" width="32" height="32" style="border-radius:32px;" />
+                                                                    </td>
+                                                                    <td valign="top" class="textContent">
+                                                                        {{ html.snippet message }}<br />
+                                                                        <small>{{date.to_local message.created_at | date.to_string '%x %R' }}</small>
+                                                                    </td>
+                                                                </tr>
+                                                            {{end}}
+
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

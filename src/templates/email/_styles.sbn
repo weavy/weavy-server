@@ -1,0 +1,52 @@
+{{~ # reset ~}}
+body, #bodyTable, #bodyCell{height:100%!important;margin:0;padding:0;width:100%!important;}
+table{border-collapse:collapse;}
+img,a img{border:0;outline:none;text-decoration:none;}
+h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+p{margin:1em 0;}
+{{~ # client specific styles ~}}
+.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} {{ # force Hotmail/Outlook.com to display emails at full width }}
+.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{line-height:100%;} {{ # force Hotmail/Outlook.com to display line heights normally }}
+table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;} {{ # remove spacing between tables in Outlook 2007 and up }}
+#outlook a{padding:0;} {{ # force Outlook 2007 and up to provide a "view in browser" message }}
+img{-ms-interpolation-mode:bicubic;} {{ # force IE to smoothly render resized images }}
+body,table,td,p,a,li,blockquote{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;} {{ # prevent Windows- and Webkit-based mobile platforms from changing declared text sizes }}
+{{~ # framework styles ~}}
+.flexibleContainerCell{padding-top:20px;padding-right:20px;padding-left:20px;}
+.flexibleImage{height:auto;}
+.bottomShim{padding-bottom:20px;}
+.imageContent,.imageContentLast{padding-bottom:20px;}
+.nestedContainerCell{padding-top:20px; padding-right:20px; padding-left:20px;}
+{{~ # email styles ~}}
+body,#bodyTable{background-color:{{ color "gray-50" }};}
+#bodyCell{padding-top:40px;padding-bottom:40px;}
+#emailBody{background-color:#FFFFFF;border:1px solid {{ color "gray-200" }};border-collapse:separate;border-radius:4px;}
+#headerImage{height:auto;max-width:600px!important;}
+h1,h2,h3,h4,h5,h6{color:{{ color "gray-800" }};font-family:Arial,sans-serif;font-size:20px;line-height:125%;text-align:left;}
+small {color:{{ color "gray" }};font-family:Arial,sans-serif;font-size:14px;line-height:150%;}
+.headerContent{text-align:center;vertical-align:middle;}
+.textContent,.textContentLast{color:{{ color "gray-800" }};font-family:Arial,sans-serif;font-size:16px;line-height:150%;text-align:left;padding-bottom:20px;}
+.textContent a,.textContentLast a{color:{{ color "primary-600" }};text-decoration:underline;}
+.nestedContainer{background-color:{{ color "gray-100" }};border:1px solid {{ color "gray-200" }};border-collapse:separate;border-radius:4px;}
+.emailButton{background-color:{{ color "primary" }};border-collapse:separate;border-radius:4px;}
+.buttonContent{color:{{ color.dark_text_on "primary" ? color "gray-800" : "#FFFFFF" }};font-family:Arial,sans-serif;font-size:18px;font-weight:bold;line-height:100%;text-align:center;padding:15px;}
+.buttonContent a{color:{{ color.dark_text_on "primary" ? color "gray-800" : "#FFFFFF" }};display:block;text-decoration:none;}
+#emailFooter{background-color:{{ color "gray-50" }};border:0;}
+.footerContent{color:{{ color "gray" }};font-family:Arial,sans-serif;font-size:14px;line-height:150%;text-align:center;}
+.footerContent a{color:{{ color "primary-600" }};text-decoration:underline;}
+{{~ # mobile styles ~}}
+@@media only screen and (max-width: 480px){
+    {{~ # Client specific styles ~}}
+    body{width:100%!important;min-width:100%!important;} {{ # force iOS Mail to render the email at full width }}
+    {{~ # framework styles ~}}
+    table[id="emailBody"],table[id="emailFooter"],table[class="flexibleContainer"]{width:100%!important;} {{ # CSS selectors are written in attribute selector format to prevent Yahoo Mail from rendering media query styles on desktop }}
+    img[class="flexibleImage"]{height:auto!important;width:100%!important;} {{ # makes any image classed with 'flexibleImage' fluid when the query activates, make sure you add an inline max-width to those images to prevent them from blowing out }}
+    {{~ # email styles ~}}
+    body,#bodyTable,#emailFooter{background-color:#FFFFFF;}
+    #emailBody{border:0;}
+    td[id="bodyCell"]{padding-top:10px!important;padding-right:10px!important;padding-left:10px!important;}
+    table[class="emailButton"]{width:100% !important;} {{ # make buttons in the email span the full width of their container, allowing for left- or right-handed ease of use }}
+    td[class="buttonContent"]{padding:0!important;}
+    td[class="buttonContent"] a{padding:15px!important;}
+    td[class="textContentLast"],td[class="imageContentLast"]{padding-top:20px!important;}
+}

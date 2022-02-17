@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <Description>ASP.NET Core MVC application for hosting Weavy server/backend services.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
+    <TargetFramework>net6.0-windows</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Weavy.Core" Version="10.0.0-beta2" />
+    <PackageReference Include="Weavy.Admin" Version="10.0.0-beta2" />    
+    <PackageReference Include="Weavy.Dropin" Version="10.0.0-beta2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="blobs\**" />
+    <Content Remove="blobs\**" />
+    <EmbeddedResource Remove="blobs\**" />
+    <None Remove="blobs\**" />
+
+    <Compile Remove="cache\**" />
+    <Content Remove="cache\**" />
+    <EmbeddedResource Remove="cache\**" />
+    <None Remove="cache\**" />
+
+    <Compile Remove="index\**" />
+    <Content Remove="index\**" />
+    <EmbeddedResource Remove="index\**" />
+    <None Remove="index\**" />
+
+    <Compile Remove="logs\**" />
+    <Content Remove="logs\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <None Remove="logs\**" />
+
+    <Compile Remove="mail\**" />
+    <Content Remove="mail\**" />
+    <EmbeddedResource Remove="mail\**" />
+    <None Remove="mail\**" />
+
+    <Compile Remove="temp\**" />
+    <Content Remove="temp\**" />
+    <EmbeddedResource Remove="temp\**" />
+    <None Remove="temp\**" />
+
+    <Content Include="templates\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.1" />
+  </ItemGroup>
+
+</Project>
