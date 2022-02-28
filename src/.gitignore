@@ -4,4 +4,6 @@ index/
 logs/
 mail/
 temp/
+appsettings.json
+appsettings.*.json
 license.json
