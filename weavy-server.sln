@@ -1,11 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.0.32002.185
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weavy", "src\Weavy.csproj", "{5DA47057-1414-46DF-890F-D50B350D9086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weavy", "src/Weavy.csproj", "{15E45F73-74E8-4E89-A309-9B2C905962DD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{B48F39A6-4E91-48D7-9F76-13A19F1381F0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{D443315B-D5F5-4E66-9501-2FA939C86570}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
@@ -16,15 +15,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5DA47057-1414-46DF-890F-D50B350D9086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DA47057-1414-46DF-890F-D50B350D9086}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DA47057-1414-46DF-890F-D50B350D9086}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DA47057-1414-46DF-890F-D50B350D9086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E45F73-74E8-4E89-A309-9B2C905962DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E45F73-74E8-4E89-A309-9B2C905962DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E45F73-74E8-4E89-A309-9B2C905962DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E45F73-74E8-4E89-A309-9B2C905962DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {97AC6274-F1D9-43A7-A549-F56A11C20937}
+		SolutionGuid = {2EC678DE-071D-4C2D-9CA1-BDE00B87C1FC}
 	EndGlobalSection
 EndGlobal

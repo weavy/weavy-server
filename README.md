@@ -32,4 +32,5 @@ The following is required to build and run the application.
 ## Build and run
 
 Open the `weavy-server.sln` file with Visual Studio. Then select "Debug > Start Without Debugging" from the menu (or press `Ctrl+F5`) to build and run the application.
+
 If the application does not start, or if you get an error on startup, the console should contain an error message describing the problem.
