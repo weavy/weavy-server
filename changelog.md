@@ -1,3 +1,7 @@
+# Weavy 10.0.2 (2022-04-06)
+
+* Fixed stylesheet loading error in dropin-js when using CORS. 
+
 # Weavy 10.0.1 (2022-03-18)
 
 New major release of Weavy where the backend has been ported from .NET Framework to .NET Core. 
