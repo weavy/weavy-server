@@ -1,3 +1,7 @@
+# Weavy 10.0.3 (2022-04-08)
+
+* Fixed stylesheet loading in dropin-js when using style-nodes in Firefox and Safari. 
+
 # Weavy 10.0.2 (2022-04-06)
 
 * Fixed stylesheet loading error in dropin-js when using CORS. 
