@@ -1,3 +1,7 @@
+# Weavy 10.0.4 (2022-04-27)
+
+* Added support for OpenID Connect Discovery when JWT issuer does not contain scheme/protocol, e.g. accounts.google.com.
+
 # Weavy 10.0.3 (2022-04-08)
 
 * Fixed stylesheet loading in dropin-js when using style-nodes in Firefox and Safari. 
