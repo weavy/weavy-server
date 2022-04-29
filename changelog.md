@@ -1,3 +1,7 @@
+# Weavy 10.0.5 (2022-04-29)
+
+* Fixed some issues with CORS configuration.
+
 # Weavy 10.0.4 (2022-04-27)
 
 * Added support for OpenID Connect Discovery when JWT issuer does not contain scheme/protocol, e.g. accounts.google.com.
