@@ -1,3 +1,7 @@
+# Weavy 10.0.6 (2022-04-29)
+
+* Improved SystemJS compatibility for dropin-js.
+
 # Weavy 10.0.5 (2022-04-29)
 
 * Fixed some issues with CORS configuration.
