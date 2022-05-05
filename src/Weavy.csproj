@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Core" Version="10.0.6" />
-    <PackageReference Include="Weavy.Admin" Version="10.0.6" />
-    <PackageReference Include="Weavy.Dropin" Version="10.0.6" />
+    <PackageReference Include="Weavy.Core" Version="10.1.0" />
+    <PackageReference Include="Weavy.Admin" Version="10.1.0" />
+    <PackageReference Include="Weavy.Dropin" Version="10.1.0" />
   </ItemGroup>
 
   <ItemGroup>

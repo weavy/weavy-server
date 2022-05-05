@@ -1,3 +1,9 @@
+# Weavy 10.1.0 (2022-05-05)
+
+* Enabled config for allowed origins for postal in Weavy.Dropin.
+* Improved error handling for stylesheet loading in dropin-js.
+* Improved error handling for JWT tokens in dropin-js.
+
 # Weavy 10.0.6 (2022-04-29)
 
 * Improved SystemJS compatibility for dropin-js.
