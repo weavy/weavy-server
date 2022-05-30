@@ -1,3 +1,7 @@
+# Weavy 10.1.1 (2022-05-30)
+
+* Fixed errors when removing an app in dropin-js.
+
 # Weavy 10.1.0 (2022-05-05)
 
 * Enabled config for allowed origins for postal in Weavy.Dropin.
