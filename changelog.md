@@ -1,3 +1,7 @@
+# Weavy 11.0.1 (2022-06-13)
+
+* Added database compatibility level check for SQL Azure.
+
 # Weavy 11.0.0 (2022-06-13)
 
 * Added Weavy REST API.
