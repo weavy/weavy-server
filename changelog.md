@@ -1,3 +1,8 @@
+# Weavy 11.0.0 (2022-06-13)
+
+* Added Weavy REST API.
+* Added Weavy UI-kit for React.
+
 # Weavy 10.1.1 (2022-05-30)
 
 * Fixed errors when removing an app in dropin-js.

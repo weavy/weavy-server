@@ -9,6 +9,7 @@ try {
     var builder = WebApplication.CreateBuilder(args);
     builder.AddWeavy(opts => opts
         .AddAdmin()
+        .AddApi()
         .AddDropin()
     );
     var app = builder.Build();
