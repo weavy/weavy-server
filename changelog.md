@@ -1,3 +1,11 @@
+# Weavy 11.1.0 (2022-06-21)
+
+* Removed the need for reboot stylesheet in uikit-react.
+* Updated documentation.
+* Changed name of url parameter for WeavyClient() in uikit-react.
+* Fixed some styling in uikit-react and Weavy.Dropin.
+* Fixed a bug in uikit-react when switching between conversations and the wrong page of messages was displayed
+
 # Weavy 11.0.1 (2022-06-13)
 
 * Added database compatibility level check for SQL Azure.
@@ -6,6 +14,7 @@
 
 * Added Weavy REST API.
 * Added Weavy UI-kit for React.
+* Moved CSS stylesheets to @weavy/themes package.
 
 # Weavy 10.1.1 (2022-05-30)
 
