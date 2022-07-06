@@ -1,3 +1,9 @@
+# Weavy 11.2.0 (2022-07-06)
+
+* Moved uikit-react options from MessengerProvider to WeavyProvider.
+* Fixed uikit-react cloud file picker overlay incorrect position.
+* Overlay scrollbars for uikit-react.
+
 # Weavy 11.1.0 (2022-06-21)
 
 * Removed the need for reboot stylesheet in uikit-react.
