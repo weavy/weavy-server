@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "11.2.0"
+    "version": "12.0.0"
   },
   "paths": {
     "/api/apps/{id}": {
@@ -3470,6 +3470,9 @@
             "type": "string",
             "nullable": true
           },
+          "preview_format": {
+            "$ref": "#/components/schemas/PreviewFormat"
+          },
           "preview_url": {
             "type": "string",
             "nullable": true
@@ -3770,6 +3773,19 @@
         "enum": [
           "away",
           "active"
+        ],
+        "type": "string"
+      },
+      "PreviewFormat": {
+        "enum": [
+          "none",
+          "audio",
+          "embed",
+          "html",
+          "image",
+          "pdf",
+          "text",
+          "video"
         ],
         "type": "string"
       },

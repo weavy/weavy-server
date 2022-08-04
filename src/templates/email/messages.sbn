@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{{ t (is_room ? 'New message in {0}' : 'New message from {0}') (html.title conversation) }}</title>
+    <title>{{ t (is_room ? 'New message in {0}' : 'New message from {0}') (html.display_name conversation) }}</title>
     <style type="text/css">
     {{~ include '_styles' ~}}
     </style>

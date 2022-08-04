@@ -1,3 +1,9 @@
+# Weavy 12.0.0 (2022-08-04)
+
+* Added Files app to Drop-in UI with support for uploading and previewing multiple file types.
+* Removed the need to add a default stylesheet in Drop-in UI (default styles are now built-in).
+* Added syntax highlighting to code snippets in chat messages.
+
 # Weavy 11.2.0 (2022-07-06)
 
 * Moved uikit-react options from MessengerProvider to WeavyProvider.
