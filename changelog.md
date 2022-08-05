@@ -1,3 +1,7 @@
+# Weavy 12.0.1 (2022-08-05)
+
+* Fixed invalid relative path in @weavy/themes.
+
 # Weavy 12.0.0 (2022-08-04)
 
 * Added Files app to Drop-in UI with support for uploading and previewing multiple file types.
