@@ -1,3 +1,8 @@
+# Weavy 12.1.0 (2022-08-16)
+
+* Published missing Weavy.Api nuget package.
+* Removed @weavy/themes dependency.
+
 # Weavy 12.0.1 (2022-08-05)
 
 * Fixed invalid relative path in @weavy/themes.
