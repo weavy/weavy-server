@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="12.1.0" />
-    <PackageReference Include="Weavy.Core" Version="12.1.0" />
-    <PackageReference Include="Weavy.Admin" Version="12.1.0" />
-    <PackageReference Include="Weavy.Dropin" Version="12.1.0" />
+    <PackageReference Include="Weavy.Api" Version="13.0.0" />
+    <PackageReference Include="Weavy.Core" Version="13.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="13.0.0" />
+    <PackageReference Include="Weavy.Dropin" Version="13.0.0" />
   </ItemGroup>
 
   <ItemGroup>

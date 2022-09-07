@@ -1,3 +1,39 @@
+# Weavy 13.0.0 (2022-09-07)
+
+The authentication mechanism has changed in Weavy v13. 
+In previous versions, authentication was handled using identity providers and self signed JSON Web Tokens (JWT). 
+This has been replaced by server generated access tokens. 
+
+We also present a fully featured file preview in uikit-react. 
+You are now able to preview images, videos, pdf, office, google drive, markdown, code and more.
+
+## Breaking changes
+
+All authentication implementations made for earlier versions needs to be updated in order to incorporate the new authentication mechanisms. 
+
+Refer to these articles for more information: 
+
+* [Drop-in UI authentication](https://weavy.com/docs/frontend/drop-in/authentication)
+* [React UI kit authentication](https://weavy.com/docs/frontend/uikit-react/authentication)
+* [Web API authentication](https://www.weavy.com/docs/backend/api/authentication)
+
+## Changelog
+
+* New authentication mechanism using server generated access tokens instead of self signed JWTs.
+* Added complete file preview in uikit-react.
+* Improved file preview with syntax highlighting for supported file types.
+* Improved file preview with Markdown rendering for .md files.
+* Changed property app.id to app.uid in dropin-js.
+* Removed quick app select syntax in dropin-js. Apps can now only be selected using options instead of passing a string.
+
+## Upgrade instructions
+
+* Delete the /index folder containing the fulltext index (it will be re-created on startup).
+* Backup and update your database schema by following the instructions when Weavy starts up.
+
+> When upgrading to v13 the `iss` and `sub` claims on your existing users will be concatenated and used as `uid`. 
+> For example, a user with `iss=myissuer` and `sub=6783` will get `uid=myissuer|6783` after the upgrade. 
+
 # Weavy 12.1.0 (2022-08-16)
 
 * Published missing Weavy.Api nuget package.
