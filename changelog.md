@@ -1,3 +1,27 @@
+# Weavy 14.0.0 (2022-11-02)
+
+* Added Posts app (activity feed) with embeds, polls, comments and reactions to drop-in UI.
+* Added sidebar with comments and versions to the Files app.
+* Added grid view with thumbnails to Files app.
+* Added webhooks.
+* Added API endpoint for updating users.
+* Added CSS custom properties for easier styling.
+* Fixed issue with missing glyphs when previewing some files with East Asian encoding.
+* Fixed issue with `tz` (timezone) option not being applied in the drop-in UI.
+* Optimized fulltext index.
+* Updated visual style with full support for dark mode.
+
+## Breaking changes
+
+* New event names for hooks.
+* New subscription mechanism and event names for realtime events (websockets).
+* Removed dynamic loading using `stylesheet` option in dropin-js.
+
+## Upgrade instructions
+
+* Delete the /index folder containing the fulltext index (it will be re-created on startup).
+* Backup and update your database schema by following the instructions when Weavy starts up.
+
 # Weavy 13.0.0 (2022-09-07)
 
 The authentication mechanism has changed in Weavy v13. 
