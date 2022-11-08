@@ -1,3 +1,9 @@
+# Weavy 14.0.1 (2022-11-08)
+
+* Fixed incorrect origin for filebrowser when placed in frames in dropin-js.
+* Fixed error with MutationObserver in uikit-react.
+* Improved loading performance in uikit-react.
+
 # Weavy 14.0.0 (2022-11-02)
 
 * Added Posts app (activity feed) with embeds, polls, comments and reactions to drop-in UI.
