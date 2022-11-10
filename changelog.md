@@ -1,3 +1,8 @@
+# Weavy 14.0.2 (2022-11-10)
+
+* Fixed incorrect origin for filebrowser when placed in frames in dropin-js and uikit-react.
+* Fixed incorrect layout for preview toolbar in uikit-react.
+
 # Weavy 14.0.1 (2022-11-08)
 
 * Fixed incorrect origin for filebrowser when placed in frames in dropin-js.
