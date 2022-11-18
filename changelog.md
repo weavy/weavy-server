@@ -1,3 +1,8 @@
+# Weavy 14.0.3 (2022-11-18)
+
+* Fixed autocomplete error in Safari causing Messenger and Chat to fail in drop-in UI.
+* Fixed incorrect result when searching users and ordering by name.
+
 # Weavy 14.0.2 (2022-11-10)
 
 * Fixed incorrect origin for filebrowser when placed in frames in dropin-js and uikit-react.
