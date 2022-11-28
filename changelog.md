@@ -1,3 +1,7 @@
+# Weavy 14.0.4 (2022-11-28)
+
+* Fixed CORS policy exception for static files when AllowedOrigins property was not set.
+
 # Weavy 14.0.3 (2022-11-18)
 
 * Fixed autocomplete error in Safari causing Messenger and Chat to fail in drop-in UI.
