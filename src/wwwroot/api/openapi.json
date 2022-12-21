@@ -5,292 +5,6 @@
     "version": "14.0.4"
   },
   "paths": {
-    "/api/apps/{id}/members/{userid}": {
-      "put": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Add a single app member.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "App id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "Id of user to add.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Remove a single app member.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "App id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "userid",
-            "in": "path",
-            "description": "Id of user to remove.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/apps/{id}/members": {
-      "post": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Add multiple app members.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "App id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Ids of users to add.",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "List app members.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "App id",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Top",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Count",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MemberOutPagedListOut"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Remove multiple app members.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "App id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Ids of users to remove.",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/apps": {
       "post": {
         "tags": [
@@ -369,6 +83,42 @@
             }
           },
           {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Top",
             "in": "query",
             "schema": {
@@ -397,34 +147,6 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "responses": {
@@ -441,30 +163,52 @@
         }
       }
     },
-    "/api/apps/{id}": {
-      "delete": {
+    "/api/apps/init": {
+      "post": {
         "tags": [
           "Apps"
         ],
-        "summary": "Delete an app.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of app.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+        "summary": "Initialize an app (get existing or create new) and ensures specified user is member.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppInitIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppInitIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppInitIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppInitIn"
+              }
             }
           }
-        ],
+        },
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
           }
         }
-      },
+      }
+    },
+    "/api/apps/{id}": {
       "get": {
         "tags": [
           "Apps"
@@ -480,6 +224,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -489,26 +241,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AppOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -592,6 +324,29 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Delete an app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of app.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
       }
     },
     "/api/apps/{uid}": {
@@ -609,6 +364,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -625,37 +388,24 @@
         }
       }
     },
-    "/api/apps/init": {
+    "/api/apps/{id}/subscribe": {
       "post": {
         "tags": [
           "Apps"
         ],
-        "summary": "Creates app and ensures specified user is member.",
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
-              }
+        "summary": "Subscribe to notifications for activity in an app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the app.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -666,6 +416,424 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/unsubscribe": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Unsubscribe to notifications for activity in an app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/trash": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Move an app to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the app to trash.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/restore": {
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Restore an app from the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the app to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/members": {
+      "get": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "List app members.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Suspended",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Add multiple app members.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Ids of users to add.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Remove multiple app members.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Ids of users to remove.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "format": "int32"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/members/{userid}": {
+      "put": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Add a single app member.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "Id of user to add.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Remove a single app member.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userid",
+            "in": "path",
+            "description": "Id of user to remove.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           }
         }
       }
@@ -727,17 +895,14 @@
         "tags": [
           "Blobs"
         ],
-        "summary": "Upload blobs.",
+        "summary": "Uploads a blob using multipart/form-data.\r\nAfter upload the blob can be used as reference when creating attachments and/or files.",
         "responses": {
           "200": {
             "description": "Success",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BlobOut"
-                  }
+                  "$ref": "#/components/schemas/BlobOut"
                 }
               }
             }
@@ -760,40 +925,28 @@
         "tags": [
           "Blobs"
         ],
-        "summary": "Create external blob(s).",
+        "summary": "Creates a cloud blob, i.e. a blob that links to an external blob provider.\r\nAfter creation the blob can be used as reference when creating attachments and/or files.",
         "requestBody": {
           "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BlobIn"
-                }
+                "$ref": "#/components/schemas/BlobIn"
               }
             },
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BlobIn"
-                }
+                "$ref": "#/components/schemas/BlobIn"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BlobIn"
-                }
+                "$ref": "#/components/schemas/BlobIn"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/BlobIn"
-                }
+                "$ref": "#/components/schemas/BlobIn"
               }
             }
           }
@@ -804,10 +957,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BlobOut"
-                  }
+                  "$ref": "#/components/schemas/BlobOut"
                 }
               }
             }
@@ -831,6 +981,726 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/comments": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Creates a new comment in the specified Comments app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "List comments in the specified Comments app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/comments": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Creates a new comment on the specified file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "List comments on the specified file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/comments": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Creates a new comment on the specified post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "List comments on the specified post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/comments/{id}": {
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Gets a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the comment.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Updates a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the comment.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Delete a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the comment.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/comments/{id}/trash": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Move a comment to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the comment to trash.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/comments/{id}/restore": {
+      "post": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Restore a comment from the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the comment to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/comments/typing": {
+      "put": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Indicate that the authenticated user is commenting on a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/comments/typing": {
+      "put": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "Indicate that the authenticated user is commenting on a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -906,10 +1776,53 @@
         "summary": "List conversations.",
         "parameters": [
           {
+            "name": "Unread",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "Contextual",
             "in": "query",
             "schema": {
               "type": "boolean"
+            }
+          },
+          {
+            "name": "Type",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -941,34 +1854,6 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "responses": {
@@ -977,7 +1862,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOutPagedListOut"
+                  "$ref": "#/components/schemas/ConversationOutPagedListOut"
                 }
               }
             }
@@ -1001,6 +1886,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -1009,27 +1902,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/ConversationOut"
                 }
               }
             }
@@ -1057,7 +1930,7 @@
         }
       }
     },
-    "/api/conversations/{id}/read": {
+    "/api/conversations/{id}/mark": {
       "put": {
         "tags": [
           "Conversations"
@@ -1090,7 +1963,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOut"
+                  "$ref": "#/components/schemas/ConversationOut"
                 }
               }
             }
@@ -1130,7 +2003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOut"
+                  "$ref": "#/components/schemas/ConversationOut"
                 }
               }
             }
@@ -1172,7 +2045,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOut"
+                  "$ref": "#/components/schemas/ConversationOut"
                 }
               }
             }
@@ -1212,7 +2085,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AppOut"
+                  "$ref": "#/components/schemas/ConversationOut"
                 }
               }
             }
@@ -1226,31 +2099,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/conversations/{id}/typing": {
-      "put": {
-        "tags": [
-          "Conversations"
-        ],
-        "summary": "Indicate that the authenticated user is typing a message.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of conversation.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
           }
         }
       }
@@ -1346,6 +2194,34 @@
         "summary": "List directories.",
         "parameters": [
           {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Top",
             "in": "query",
             "schema": {
@@ -1370,34 +2246,6 @@
           },
           {
             "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
             "in": "query",
             "schema": {
               "type": "boolean"
@@ -1436,6 +2284,49 @@
             }
           },
           {
+            "name": "DirectoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Suspended",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Top",
             "in": "query",
             "schema": {
@@ -1460,34 +2351,6 @@
           },
           {
             "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
             "in": "query",
             "schema": {
               "type": "boolean"
@@ -1625,6 +2488,191 @@
         }
       }
     },
+    "/api/apps/{id}/files": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Creates a new file in the specified Files app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List files in the specified Files app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/files/{id}": {
       "get": {
         "tags": [
@@ -1635,7 +2683,342 @@
           {
             "name": "id",
             "in": "path",
-            "description": "",
+            "description": "File id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "`true` to return file even if trashed.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Update a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of file.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileUp"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileUp"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileUp"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/FileUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Delete a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the file.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/files/{id}/versions/{version}": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Get specific version of a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "Version number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Delete specific version of a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "Version number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/files/{id}/versions": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Get versions for the specified file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/FileOut"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/subscribe": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Subscribe to notifications for activity on a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the file.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/unsubscribe": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Unsubscribe to notifications for activity on a file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the file.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/trash": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Move a file to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the file to trash.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -1664,12 +3047,366 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
           "default": {
             "description": "Error",
             "content": {
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/restore": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Restore a file from the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the file to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/files/{id}/versions/{version}/restore": {
+      "post": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "Restore a previous version of a file to be the current version.\r\nThis will create a new version with the contents of the previous version, but preserves all existing versions of the file.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "File id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "Version number.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/comments/{id}/attachments": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List files attached to the specified comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Comment id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messages/{id}/attachments": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List files attached to the specified message.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Message id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/attachments": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List files attached to the specified post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOutPagedListOut"
                 }
               }
             }
@@ -1747,30 +3484,6 @@
         "tags": [
           "Meetings"
         ],
-        "requestBody": {
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ZoomEvent"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ZoomEvent"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ZoomEvent"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ZoomEvent"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success"
@@ -1783,7 +3496,7 @@
         "tags": [
           "Messages"
         ],
-        "summary": "Creates a new message in the specified conversation.",
+        "summary": "Creates a new message in the specified Conversation (Chat, ChatRoom or PrivateChat).",
         "parameters": [
           {
             "name": "id",
@@ -1838,16 +3551,44 @@
         "tags": [
           "Messages"
         ],
-        "summary": "List messages in the specified conversation.",
+        "summary": "List messages in the specified Conversation (Chat, ChatRoom or PrivateChat).",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "App id.",
+            "description": "Conversation id.",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -1879,34 +3620,6 @@
             "schema": {
               "type": "boolean"
             }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
           }
         ],
         "responses": {
@@ -1924,29 +3637,6 @@
       }
     },
     "/api/messages/{id}": {
-      "delete": {
-        "tags": [
-          "Messages"
-        ],
-        "summary": "Delete a message.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of the message.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        }
-      },
       "get": {
         "tags": [
           "Messages"
@@ -1962,6 +3652,14 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -1971,26 +3669,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MessageOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
                 }
               }
             }
@@ -2074,121 +3752,42 @@
             }
           }
         }
-      }
-    },
-    "/api/notifications/{id}": {
-      "get": {
-        "tags": [
-          "Notifications"
-        ],
-        "summary": "Get notification.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/NotificationOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/reactions/{id}": {
-      "get": {
-        "tags": [
-          "Reactions"
-        ],
-        "summary": "Get reaction.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Message id.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReactionOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
       },
       "delete": {
         "tags": [
-          "Reactions"
+          "Messages"
         ],
-        "summary": "Delete a reaction.",
+        "summary": "Delete a message.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Message id.",
+            "description": "Id of the message.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/messages/{id}/trash": {
+      "post": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Move a message to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the message to trash.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2198,7 +3797,14 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found",
@@ -2233,17 +3839,74 @@
         }
       }
     },
-    "/api/messages/{id}/reactions": {
-      "get": {
+    "/api/messages/{id}/restore": {
+      "post": {
         "tags": [
-          "Reactions"
+          "Messages"
         ],
-        "summary": "List reactions for a message.",
+        "summary": "Restore a message from the trash.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Id of message",
+            "description": "Id of the message to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/messages/typing": {
+      "put": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "Indicate that the authenticated user is typing a message.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Conversation id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/notifications/{id}": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Get notification.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2251,18 +3914,204 @@
             }
           },
           {
-            "name": "Content",
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Delete a notification.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Notification id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/notifications/{id}/mark": {
+      "put": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Mark notification as read.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Notification id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Mark notification as unread.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Notification id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/notifications/mark": {
+      "put": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "Mark (all) notifications as read.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Optional id of last seen notification. When specified, this and previous notifications are marked as read, otherwise all notifications (uncluding yet unseen) are marked as read.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/notifications": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "summary": "List notifications.",
+        "parameters": [
+          {
+            "name": "Action",
             "in": "query",
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "CreatedById",
+            "name": "Unread",
             "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -2294,6 +4143,212 @@
             "schema": {
               "type": "boolean"
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/options/{id}": {
+      "get": {
+        "tags": [
+          "Options"
+        ],
+        "summary": "Gets a poll option.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the option.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PollOptionOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/options/{id}/vote": {
+      "post": {
+        "tags": [
+          "Options"
+        ],
+        "summary": "Vote for a poll option.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the option.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PollOptionOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/options/{id}/voters": {
+      "get": {
+        "tags": [
+          "Options"
+        ],
+        "summary": "List users that voted for the specified option.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Option id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserOut"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/posts": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Creates a new post in the specified Posts app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "List posts in the specified Posts app.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           },
           {
             "name": "Q",
@@ -2310,6 +4365,13 @@
             }
           },
           {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "OrderBy",
             "in": "query",
             "schema": {
@@ -2317,7 +4379,30 @@
             }
           },
           {
-            "name": "Trashed",
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
             "in": "query",
             "schema": {
               "type": "boolean"
@@ -2330,23 +4415,349 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReactionOutPagedListOut"
+                  "$ref": "#/components/schemas/MessageOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Gets a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
                 }
               }
             }
           }
         }
       },
-      "post": {
+      "patch": {
         "tags": [
-          "Reactions"
+          "Posts"
         ],
-        "summary": "Create reaction for a message.",
+        "summary": "Updates a post.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "",
+            "description": "Id of the post.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Delete a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/subscribe": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Subscribe to notifications for activity on a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/unsubscribe": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Unsubscribe to notifications for activity on a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/trash": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Move a post to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post to trash.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/restore": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Restore a post from the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the post to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/posts/typing": {
+      "put": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Indicate that the authenticated user is writing a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/comments/{id}/reactions": {
+      "post": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Create reaction for a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Comment id.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2399,7 +4810,215 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reactions to a message for the authenticated user.",
+        "summary": "Delete reaction to a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Comment id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "List reactions for a comment.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Comment id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Content",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactionOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/messages/{id}/reactions": {
+      "post": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Create reaction for a message.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Message id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Delete reaction to a message.",
         "parameters": [
           {
             "name": "id",
@@ -2447,19 +5066,322 @@
             }
           }
         }
-      }
-    },
-    "/api/users/{id}": {
+      },
       "get": {
         "tags": [
-          "Users"
+          "Reactions"
         ],
-        "summary": "Get a user.",
+        "summary": "List reactions for a message.",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Id of user.",
+            "description": "Message id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Content",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactionOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts/{id}/reactions": {
+      "post": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Create reaction for a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReactionIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Delete reaction to a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "List reactions for a post.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Post id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Content",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReactionOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/reactions/{id}": {
+      "get": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Get reaction.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Reaction id.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2473,7 +5395,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserOut"
+                  "$ref": "#/components/schemas/ReactionOut"
                 }
               }
             }
@@ -2494,6 +5416,377 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Reactions"
+        ],
+        "summary": "Delete a reaction.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Reaction id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/apps/{id}/stars": {
+      "post": {
+        "tags": [
+          "Stars"
+        ],
+        "summary": "Add a star to an app on behalf of the authenticated user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Stars"
+        ],
+        "summary": "Remove a star from an app on behalf of the authenticated user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "App id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stars": {
+      "get": {
+        "tags": [
+          "Stars"
+        ],
+        "summary": "List items starred by the authenticated user.",
+        "parameters": [
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntityOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Create a user.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List users.",
+        "parameters": [
+          {
+            "name": "DirectoryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Suspended",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Top",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "Count",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "CountOnly",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOutPagedListOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of user.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
                 }
               }
             }
@@ -2594,6 +5887,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -2603,6 +5904,169 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/user": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get the authenticated user.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{id}/trash": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Move a user to the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the user to trash.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/{id}/restore": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Restore a user from the trash.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of the user to restore.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/users/autocomplete": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "List users based on autocomplete search.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The search phrase to use.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Max number of items to return.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Optional app id. When set, the result contains a property indicating wheter the user is a member of the specified app or not.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AutocompleteUserOutPagedListOut"
                 }
               }
             }
@@ -2688,292 +6152,6 @@
         }
       }
     },
-    "/api/users": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Create a user.",
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserIn"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserIn"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserIn"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UserIn"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOut"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "List users.",
-        "parameters": [
-          {
-            "name": "Top",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Skip",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Count",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOutPagedListOut"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/users/{ids}": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Get multiple users.",
-        "parameters": [
-          {
-            "name": "ids",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Ids of users to get.",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/UserOut"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/users/autocomplete": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "List users based on autocomplete search.",
-        "parameters": [
-          {
-            "name": "q",
-            "in": "query",
-            "description": "The search phrase to use.",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "top",
-            "in": "query",
-            "description": "Max number of items to return.",
-            "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 5
-            }
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "description": "Optional app id. When set, the result contains a property indicating wheter the user is a member of the specified app or not.",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AutocompleteUserOutPagedListOut"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/user": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Get the authenticated user.",
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOut"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/webhooks": {
       "get": {
         "tags": [
@@ -2982,6 +6160,34 @@
         "summary": "List webhooks.",
         "parameters": [
           {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Top",
             "in": "query",
             "schema": {
@@ -3006,34 +6212,6 @@
           },
           {
             "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
             "in": "query",
             "schema": {
               "type": "boolean"
@@ -3190,22 +6368,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookIn"
+                "$ref": "#/components/schemas/WebhookUp"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookIn"
+                "$ref": "#/components/schemas/WebhookUp"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookIn"
+                "$ref": "#/components/schemas/WebhookUp"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/WebhookIn"
+                "$ref": "#/components/schemas/WebhookUp"
               }
             }
           }
@@ -3288,6 +6466,41 @@
             }
           },
           {
+            "name": "Action",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Tag",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Trashed",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "OrderBy",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "Top",
             "in": "query",
             "schema": {
@@ -3312,34 +6525,6 @@
           },
           {
             "name": "CountOnly",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "Q",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Tag",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "OrderBy",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "Trashed",
             "in": "query",
             "schema": {
               "type": "boolean"
@@ -3371,18 +6556,12 @@
         "type": "object",
         "properties": {
           "uid": {
+            "minLength": 1,
             "type": "string"
           },
           "type": {
+            "minLength": 1,
             "type": "string"
-          },
-          "tracked_properties": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "boolean",
-              "nullable": true
-            },
-            "nullable": true
           },
           "name": {
             "maxLength": 256,
@@ -3394,6 +6573,14 @@
             "maxLength": 512,
             "minLength": 0,
             "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           },
           "tags": {
@@ -3451,15 +6638,27 @@
             "type": "string",
             "nullable": true
           },
+          "archive_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "tags": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "nullable": true
-          },
-          "avatar_url": {
-            "type": "string",
             "nullable": true
           },
           "created_at": {
@@ -3475,12 +6674,22 @@
           "created_by": {
             "$ref": "#/components/schemas/UserOut"
           },
-          "member_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modified_by": {
+            "$ref": "#/components/schemas/UserOut"
+          },
+          "member_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "members": {
@@ -3488,6 +6697,18 @@
             "items": {
               "$ref": "#/components/schemas/MemberOut"
             },
+            "nullable": true
+          },
+          "is_starred": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_subscribed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_trashed": {
+            "type": "boolean",
             "nullable": true
           }
         },
@@ -3527,14 +6748,6 @@
       "AppUp": {
         "type": "object",
         "properties": {
-          "tracked_properties": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "boolean",
-              "nullable": true
-            },
-            "nullable": true
-          },
           "uid": {
             "maxLength": 256,
             "minLength": 0,
@@ -3551,6 +6764,14 @@
             "maxLength": 512,
             "minLength": 0,
             "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           },
           "tags": {
@@ -3633,7 +6854,10 @@
         "properties": {
           "metadata": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true,
             "readOnly": true
           },
@@ -3870,15 +7094,27 @@
             "type": "string",
             "nullable": true
           },
+          "archive_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatar_url": {
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "tags": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "nullable": true
-          },
-          "avatar_url": {
-            "type": "string",
             "nullable": true
           },
           "created_at": {
@@ -3894,12 +7130,22 @@
           "created_by": {
             "$ref": "#/components/schemas/UserOut"
           },
-          "member_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modified_by": {
+            "$ref": "#/components/schemas/UserOut"
+          },
+          "member_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "members": {
@@ -3909,12 +7155,9 @@
             },
             "nullable": true
           },
-          "is_pinned": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "is_unread": {
-            "type": "boolean",
+          "user_id": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "last_message_id": {
@@ -3924,6 +7167,57 @@
           },
           "last_message": {
             "$ref": "#/components/schemas/MessageOut"
+          },
+          "is_pinned": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_unread": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_starred": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_subscribed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_trashed": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConversationOutPagedListOut": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConversationOut"
+            },
+            "nullable": true
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "end": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
           }
         },
         "additionalProperties": false
@@ -4088,6 +7382,7 @@
             "readOnly": true
           },
           "original_url": {
+            "minLength": 1,
             "type": "string",
             "readOnly": true
           },
@@ -4101,6 +7396,7 @@
             "$ref": "#/components/schemas/EmbedType"
           },
           "version": {
+            "minLength": 1,
             "type": "string"
           },
           "title": {
@@ -4170,6 +7466,7 @@
         "type": "object",
         "properties": {
           "url": {
+            "minLength": 1,
             "type": "string"
           }
         },
@@ -4278,6 +7575,37 @@
         },
         "additionalProperties": false
       },
+      "EntityOutPagedListOut": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EntityOut"
+            },
+            "nullable": true
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "end": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
       "EntityType": {
         "enum": [
           "app",
@@ -4287,12 +7615,54 @@
         ],
         "type": "string"
       },
+      "FileIn": {
+        "required": [
+          "blob_id"
+        ],
+        "type": "object",
+        "properties": {
+          "blob_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "replace": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
       "FileOut": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "version": {
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "name": {
@@ -4320,6 +7690,21 @@
           "size": {
             "type": "integer",
             "format": "int64",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           },
           "provider": {
@@ -4366,12 +7751,22 @@
           "created_by": {
             "$ref": "#/components/schemas/UserOut"
           },
-          "comment_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modified_by": {
+            "$ref": "#/components/schemas/UserOut"
+          },
+          "comment_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "comments": {
@@ -4380,6 +7775,80 @@
               "$ref": "#/components/schemas/MessageOut"
             },
             "nullable": true
+          },
+          "is_subscribed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_trashed": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileOutPagedListOut": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileOut"
+            },
+            "nullable": true
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "end": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FileUp": {
+        "type": "object",
+        "properties": {
+          "blob_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "backup": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -4391,6 +7860,7 @@
         "type": "object",
         "properties": {
           "provider": {
+            "minLength": 1,
             "type": "string"
           }
         },
@@ -4528,12 +7998,20 @@
           "options": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/PollOptionIn"
             },
             "nullable": true
           },
           "text": {
             "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           }
         },
@@ -4563,12 +8041,13 @@
             "type": "string",
             "nullable": true
           },
-          "attachment_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "plain": {
+            "type": "string",
+            "nullable": true
+          },
+          "attachment_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "attachments": {
@@ -4578,12 +8057,9 @@
             },
             "nullable": true
           },
-          "comment_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "comment_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "comments": {
@@ -4609,12 +8085,9 @@
           "meeting": {
             "$ref": "#/components/schemas/MeetingOut"
           },
-          "option_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "option_count": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           },
           "options": {
@@ -4633,7 +8106,10 @@
           },
           "metadata": {
             "type": "object",
-            "additionalProperties": { },
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           },
           "created_at": {
@@ -4648,6 +8124,27 @@
           },
           "created_by": {
             "$ref": "#/components/schemas/UserOut"
+          },
+          "modified_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_by_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "modified_by": {
+            "$ref": "#/components/schemas/UserOut"
+          },
+          "is_subscribed": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "is_trashed": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4715,12 +8212,20 @@
           "options": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/PollOptionUp"
             },
             "nullable": true
           },
           "text": {
             "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           }
         },
@@ -4734,11 +8239,16 @@
             "format": "int32",
             "readOnly": true
           },
+          "action": {
+            "type": "string",
+            "nullable": true
+          },
           "actor_id": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
-          "user": {
+          "actor": {
             "$ref": "#/components/schemas/UserOut"
           },
           "template": {
@@ -4756,8 +8266,13 @@
             "type": "string",
             "nullable": true
           },
-          "is_unread": {
-            "type": "boolean"
+          "html": {
+            "type": "string",
+            "nullable": true
+          },
+          "plain": {
+            "type": "string",
+            "nullable": true
           },
           "link": {
             "$ref": "#/components/schemas/EntityOut"
@@ -4766,17 +8281,78 @@
             "type": "string",
             "nullable": true
           },
+          "user_id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserOut"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
+          },
+          "is_unread": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NotificationOutPagedListOut": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NotificationOut"
+            },
+            "nullable": true
+          },
+          "start": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "end": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "count": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PollOptionIn": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "text": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
       },
       "PollOptionOut": {
-        "required": [
-          "text"
-        ],
         "type": "object",
         "properties": {
           "id": {
@@ -4786,14 +8362,17 @@
           },
           "text": {
             "type": "string",
-            "format": "multiline"
+            "nullable": true,
+            "readOnly": true
           },
-          "voter_ids": {
-            "type": "array",
-            "items": {
-              "type": "integer",
-              "format": "int32"
-            },
+          "vote_count": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          },
+          "has_voted": {
+            "type": "boolean",
             "nullable": true,
             "readOnly": true
           },
@@ -4804,6 +8383,24 @@
             },
             "nullable": true,
             "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PollOptionUp": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -4869,6 +8466,7 @@
         "type": "object",
         "properties": {
           "content": {
+            "minLength": 1,
             "type": "string"
           }
         },
@@ -5031,6 +8629,14 @@
             "type": "string",
             "nullable": true
           },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "tags": {
             "type": "array",
             "items": {
@@ -5115,6 +8721,14 @@
           },
           "directory": {
             "type": "string",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
             "nullable": true
           },
           "tags": {
@@ -5202,6 +8816,14 @@
             "type": "string",
             "nullable": true
           },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "tags": {
             "type": "array",
             "items": {
@@ -5209,7 +8831,15 @@
             },
             "nullable": true
           },
+          "presence": {
+            "$ref": "#/components/schemas/PresenceStatus"
+          },
           "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "modified_at": {
             "type": "string",
             "format": "date-time",
             "nullable": true
@@ -5225,9 +8855,6 @@
           "is_trashed": {
             "type": "boolean",
             "nullable": true
-          },
-          "presence": {
-            "$ref": "#/components/schemas/PresenceStatus"
           }
         },
         "additionalProperties": false
@@ -5334,6 +8961,14 @@
             "type": "string",
             "nullable": true
           },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "nullable": true
+          },
           "tags": {
             "type": "array",
             "items": {
@@ -5393,7 +9028,6 @@
             "readOnly": true
           },
           "triggers": {
-            "uniqueItems": true,
             "type": "array",
             "items": {
               "type": "string"
@@ -5439,66 +9073,33 @@
         },
         "additionalProperties": false
       },
-      "ZoomEvent": {
+      "WebhookUp": {
+        "required": [
+          "payload_url",
+          "triggers"
+        ],
         "type": "object",
         "properties": {
-          "event": {
+          "payload_url": {
+            "maxLength": 2048,
+            "minLength": 0,
+            "type": "string",
+            "format": "uri"
+          },
+          "secret": {
+            "maxLength": 256,
+            "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "payload": {
-            "$ref": "#/components/schemas/ZoomEventPayload"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ZoomEventPayload": {
-        "type": "object",
-        "properties": {
-          "account_id": {
-            "type": "string",
-            "nullable": true
+          "triggers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
-          "object": {
-            "$ref": "#/components/schemas/ZoomEventPayloadObject"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ZoomEventPayloadObject": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "uuid": {
-            "type": "string",
-            "nullable": true
-          },
-          "host_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "topic": {
-            "type": "string",
-            "nullable": true
-          },
-          "start_time": {
-            "type": "string",
-            "nullable": true
-          },
-          "timezone": {
-            "type": "string",
-            "nullable": true
-          },
-          "duration": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "share_url": {
-            "type": "string",
-            "nullable": true
+          "is_enabled": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

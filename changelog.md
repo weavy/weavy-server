@@ -1,3 +1,9 @@
+# Weavy 15.0.0 (2022-12-21)
+
+* Added Posts app (activity feed) with embeds, polls, comments and reactions to React UI-kit.
+* Added Files app to React UI-kit with support for uploading and previewing multiple file types.
+* Added many new API endpoints for managing comments, files, posts, users etc. 
+
 # Weavy 14.0.4 (2022-11-28)
 
 * Fixed CORS policy exception for static files when AllowedOrigins property was not set.

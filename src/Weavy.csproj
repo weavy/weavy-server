@@ -4,19 +4,19 @@
     <Description>ASP.NET Core MVC application for hosting Weavy server/backend services.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="14.0.4" />
-    <PackageReference Include="Weavy.Core" Version="14.0.4" />
-    <PackageReference Include="Weavy.Admin" Version="14.0.4" />
-    <PackageReference Include="Weavy.Dropin" Version="14.0.4" />
+    <PackageReference Include="Weavy.Api" Version="15.0.0" />
+    <PackageReference Include="Weavy.Core" Version="15.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="15.0.0" />
+    <PackageReference Include="Weavy.Dropin" Version="15.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +44,8 @@
     <Content Remove="mail\**" />
     <EmbeddedResource Remove="mail\**" />
     <None Remove="mail\**" />
+
+    <None Include="po\**" CopyToOutputDirectory="PreserveNewest" />
 
     <Compile Remove="temp\**" />
     <Content Remove="temp\**" />
