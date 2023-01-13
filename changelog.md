@@ -1,3 +1,7 @@
+# Weavy 15.0.1 (2023-01-13)
+
+* Fixed a problem with license registration being skipped when running Weavy in development environment.
+
 # Weavy 15.0.0 (2022-12-21)
 
 * Added Posts app (activity feed) with embeds, polls, comments and reactions to React UI-kit.
