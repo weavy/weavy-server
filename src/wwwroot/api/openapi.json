@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "16.0.1"
+    "version": "16.0.2"
   },
   "paths": {
     "/api/apps": {
@@ -10,7 +10,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Create an app.",
+        "summary": "Creates a new app",
+        "description": "$ curl {WEAVY_SERVER}/api/apps\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -67,13 +68,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create app"
         }
       },
       "get": {
         "tags": [
           "Apps"
         ],
-        "summary": "List apps.",
+        "summary": "Get a list of apps",
+        "description": "$ curl {WEAVY_SERVER}/api/apps?top=10\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "contextual",
@@ -160,6 +165,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List apps"
         }
       }
     },
@@ -168,7 +176,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Initialize an app (get existing or create new) and ensure user is member (if specified).",
+        "summary": "Initialize an app (get existing or create new) and ensure user is member (if specified)",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/init\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -205,6 +214,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Initialize app"
         }
       }
     },
@@ -213,12 +225,13 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Get app.",
+        "summary": "Get an app by id",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Id of app.",
+            "description": "The id of app",
             "required": true,
             "schema": {
               "type": "integer",
@@ -228,7 +241,7 @@
           {
             "name": "trashed",
             "in": "query",
-            "description": "",
+            "description": "`true` to return app if trashed",
             "schema": {
               "type": "boolean"
             }
@@ -245,13 +258,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get app"
         }
       },
       "patch": {
         "tags": [
           "Apps"
         ],
-        "summary": "Update an app.",
+        "summary": "Update an app",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/apps/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\"",
         "parameters": [
           {
             "name": "id",
@@ -323,13 +340,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update app"
         }
       },
       "delete": {
         "tags": [
           "Apps"
         ],
-        "summary": "Delete an app.",
+        "summary": "Delete an app",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -346,6 +367,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete app"
         }
       }
     },
@@ -354,7 +378,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Get app by uid.",
+        "summary": "Get an app by uid",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/chat-1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "uid",
@@ -385,6 +410,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get app by uid"
         }
       }
     },
@@ -393,7 +421,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Subscribe to notifications for activity in an app.",
+        "summary": "Subscribe to notifications for activity in an app",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -417,6 +446,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Subscribe to notifications"
         }
       }
     },
@@ -425,7 +457,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Unsubscribe to notifications for activity in an app.",
+        "summary": "Unsubscribe to notifications for activity in an app",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -448,6 +481,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Unsubscribe to notifications"
         }
       }
     },
@@ -456,7 +492,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Move an app to the trash.",
+        "summary": "Move an app to the trash",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/trash\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -510,6 +547,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash app"
         }
       }
     },
@@ -518,7 +558,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Restore an app from the trash.",
+        "summary": "Restore an app from the trash",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -542,6 +583,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore app"
         }
       }
     },
@@ -550,7 +594,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "List app members.",
+        "summary": "List the members of an app",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -639,13 +684,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List app members"
         }
       },
       "post": {
         "tags": [
           "Apps"
         ],
-        "summary": "Add multiple app members.",
+        "summary": "Add multiple app members",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4, 14]\"",
         "parameters": [
           {
             "name": "id",
@@ -703,13 +752,17 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Add members to app"
         }
       },
       "delete": {
         "tags": [
           "Apps"
         ],
-        "summary": "Remove multiple app members.",
+        "summary": "Remove multiple app members",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4]\"",
         "parameters": [
           {
             "name": "id",
@@ -767,6 +820,9 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Remove members from app"
         }
       }
     },
@@ -775,7 +831,8 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Add a single app member.",
+        "summary": "Add a single app member",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -802,13 +859,17 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Add member to app"
         }
       },
       "delete": {
         "tags": [
           "Apps"
         ],
-        "summary": "Remove a single app member.",
+        "summary": "Remove a single app member",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -835,6 +896,9 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Remove member from app"
         }
       }
     },
@@ -843,7 +907,8 @@
         "tags": [
           "Blobs"
         ],
-        "summary": "Get blob metadata.",
+        "summary": "Get the metadata of a blob",
+        "description": "$ curl {WEAVY_SERVER}/api/blobs/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -887,6 +952,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get blob metadata"
         }
       }
     },
@@ -917,6 +985,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Upload a blob"
         }
       }
     },
@@ -982,6 +1053,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create a cloud blob"
         }
       }
     },
@@ -991,6 +1065,7 @@
           "Comments"
         ],
         "summary": "Creates a new comment in the specified Comments app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/comments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment' }\"",
         "parameters": [
           {
             "name": "id",
@@ -1039,6 +1114,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create app comment"
         }
       },
       "get": {
@@ -1046,6 +1124,7 @@
           "Comments"
         ],
         "summary": "List comments in the specified Comments app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/comments?top=20\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1127,6 +1206,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List app comments"
         }
       }
     },
@@ -1136,6 +1218,7 @@
           "Comments"
         ],
         "summary": "Creates a new comment on the specified file.",
+        "description": "$ curl {WEAVY_SERVER}/api/files/1/comments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment on a file' }\"",
         "parameters": [
           {
             "name": "id",
@@ -1184,6 +1267,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create file comment"
         }
       },
       "get": {
@@ -1191,6 +1277,7 @@
           "Comments"
         ],
         "summary": "List comments on the specified file.",
+        "description": "$ curl {WEAVY_SERVER}/api/files/1/comments?top=20\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1272,6 +1359,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List file comments"
         }
       }
     },
@@ -1281,6 +1371,7 @@
           "Comments"
         ],
         "summary": "Creates a new comment on the specified post.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1/comments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment on a post' }\"",
         "parameters": [
           {
             "name": "id",
@@ -1329,6 +1420,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create post comment"
         }
       },
       "get": {
@@ -1336,6 +1430,7 @@
           "Comments"
         ],
         "summary": "List comments on the specified post.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1/comments?top=20\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1417,6 +1512,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List post comments"
         }
       }
     },
@@ -1425,7 +1523,8 @@
         "tags": [
           "Comments"
         ],
-        "summary": "Gets a comment.",
+        "summary": "Gets a comment by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1457,6 +1556,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get comment"
         }
       },
       "patch": {
@@ -1464,6 +1566,7 @@
           "Comments"
         ],
         "summary": "Updates a comment.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'text': 'Update comment text' }\"",
         "parameters": [
           {
             "name": "id",
@@ -1535,6 +1638,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update comment"
         }
       },
       "delete": {
@@ -1542,6 +1648,7 @@
           "Comments"
         ],
         "summary": "Delete a comment.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1558,6 +1665,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete comment"
         }
       }
     },
@@ -1567,6 +1677,7 @@
           "Comments"
         ],
         "summary": "Move a comment to the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/comments/1/trash\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1620,6 +1731,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash comment"
         }
       }
     },
@@ -1629,6 +1743,7 @@
           "Comments"
         ],
         "summary": "Restore a comment from the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/comments/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1652,6 +1767,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore comment"
         }
       }
     },
@@ -1661,6 +1779,7 @@
           "Comments"
         ],
         "summary": "Indicate that the authenticated user is commenting on a file.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/files/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1677,6 +1796,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Indicate typing (file)"
         }
       }
     },
@@ -1686,6 +1808,7 @@
           "Comments"
         ],
         "summary": "Indicate that the authenticated user is commenting on a post.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/posts/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -1702,6 +1825,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Indicate typing (post)"
         }
       }
     },
@@ -1710,7 +1836,8 @@
         "tags": [
           "Conversations"
         ],
-        "summary": "Create a chat room or private chat.",
+        "summary": "Create a chat room or private chat. If member count is more than one, a chat room is created.\r\nIf name is omitted, the name of the chat will be the participant(s) names.",
+        "description": "$ curl {WEAVY_SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My chat room', 'members': [1, 4, 14] }\"\r\n            \r\n$ curl {WEAVY_SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My private chat', 'members': [ 4 ] }\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -1767,13 +1894,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create chat"
         }
       },
       "get": {
         "tags": [
           "Conversations"
         ],
-        "summary": "List conversations.",
+        "summary": "List the conversations for the authenticated user.",
+        "description": "$ curl {WEAVY_SERVER}/api/conversations?top=20\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "unread",
@@ -1867,6 +1998,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List conversations"
         }
       }
     },
@@ -1876,6 +2010,7 @@
           "Conversations"
         ],
         "summary": "Get a conversation.",
+        "description": "$ curl {WEAVY_SERVER}/api/conversations/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -1907,6 +2042,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get conversation"
         }
       }
     },
@@ -1916,6 +2054,7 @@
           "Conversations"
         ],
         "summary": "Get number of unread conversations for the authenticated user (grouped by conversation type).",
+        "description": "$ curl {WEAVY_SERVER}/api/conversations/badge\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "responses": {
           "200": {
             "description": "Success",
@@ -1927,6 +2066,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get unread conversations"
         }
       }
     },
@@ -1935,7 +2077,8 @@
         "tags": [
           "Conversations"
         ],
-        "summary": "Mark conversation as read.",
+        "summary": "Mark a conversation as read.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -1978,13 +2121,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Mark as read"
         }
       },
       "delete": {
         "tags": [
           "Conversations"
         ],
-        "summary": "Mark conversation as unread.",
+        "summary": "Mark a conversation as unread.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -2018,6 +2165,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Mark as unread"
         }
       }
     },
@@ -2026,7 +2176,8 @@
         "tags": [
           "Conversations"
         ],
-        "summary": "Pin conversation.",
+        "summary": "Pin a conversation.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/pin\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -2060,13 +2211,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Pin conversation"
         }
       },
       "delete": {
         "tags": [
           "Conversations"
         ],
-        "summary": "Unpin conversation.",
+        "summary": "Unpin a conversation.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -2100,6 +2255,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Unpin conversation"
         }
       }
     },
@@ -2108,7 +2266,8 @@
         "tags": [
           "Directories"
         ],
-        "summary": "Get directory.",
+        "summary": "Get a directory by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2152,6 +2311,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get directory"
         }
       }
     },
@@ -2160,7 +2322,8 @@
         "tags": [
           "Directories"
         ],
-        "summary": "Get directory by name.",
+        "summary": "Get a directory by name.",
+        "description": "$ curl {WEAVY_SERVER}/api/directories/directory-1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "name",
@@ -2183,6 +2346,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get directory by name"
         }
       }
     },
@@ -2192,6 +2358,7 @@
           "Directories"
         ],
         "summary": "List directories.",
+        "description": "$ curl {WEAVY_SERVER}/api/directories?top=10&q=acme\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "q",
@@ -2263,6 +2430,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List directories"
         }
       }
     },
@@ -2271,7 +2441,8 @@
         "tags": [
           "Directories"
         ],
-        "summary": "List directory members.",
+        "summary": "List the members of a directory.",
+        "description": "$ curl {WEAVY_SERVER}/api/directories/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2368,6 +2539,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List directory members"
         }
       }
     },
@@ -2376,7 +2550,8 @@
         "tags": [
           "Embeds"
         ],
-        "summary": "Get an embed.",
+        "summary": "Get an embed by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/embeds/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2420,6 +2595,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get embed"
         }
       }
     },
@@ -2429,6 +2607,7 @@
           "Embeds"
         ],
         "summary": "Create an embed for the given url.",
+        "description": "$ curl {WEAVY_SERVER}/api/embeds\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'url': 'https://weavy.com' }\"",
         "requestBody": {
           "description": "Contains the URL to retrieve embedding information for.",
           "content": {
@@ -2485,6 +2664,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create embed"
         }
       }
     },
@@ -2494,6 +2676,7 @@
           "Files"
         ],
         "summary": "Creates a new file in the specified Files app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/files\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'blob_id': 1 }\"",
         "parameters": [
           {
             "name": "id",
@@ -2582,6 +2765,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create a file (files app)"
         }
       },
       "get": {
@@ -2589,6 +2775,7 @@
           "Files"
         ],
         "summary": "List files in the specified Files app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/files?top=30\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2670,6 +2857,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List files (files app)"
         }
       }
     },
@@ -2679,6 +2869,7 @@
           "Files"
         ],
         "summary": "Get file metadata.",
+        "description": "$ curl {WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2710,6 +2901,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get file metadata"
         }
       },
       "patch": {
@@ -2717,6 +2911,7 @@
           "Files"
         ],
         "summary": "Update a file.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'Updated file name' }\"",
         "parameters": [
           {
             "name": "id",
@@ -2788,6 +2983,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update file"
         }
       },
       "delete": {
@@ -2795,6 +2993,7 @@
           "Files"
         ],
         "summary": "Delete a file.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2811,6 +3010,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete file"
         }
       }
     },
@@ -2820,6 +3022,7 @@
           "Files"
         ],
         "summary": "Get specific version of a file.",
+        "description": "$ curl {WEAVY_SERVER}/api/files/1/versions/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2853,6 +3056,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get file version"
         }
       },
       "delete": {
@@ -2860,6 +3066,7 @@
           "Files"
         ],
         "summary": "Delete specific version of a file.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/files/1/versions/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2886,6 +3093,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete file version"
         }
       }
     },
@@ -2895,6 +3105,7 @@
           "Files"
         ],
         "summary": "Get versions for the specified file.",
+        "description": "$ curl {WEAVY_SERVER}/api/files/1/versions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2941,6 +3152,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get file versions"
         }
       }
     },
@@ -2950,6 +3164,7 @@
           "Files"
         ],
         "summary": "Subscribe to notifications for activity on a file.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/files/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -2973,6 +3188,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Subscribe to file"
         }
       }
     },
@@ -2982,6 +3200,7 @@
           "Files"
         ],
         "summary": "Unsubscribe to notifications for activity on a file.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/files/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3005,6 +3224,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Unsubscribe to file"
         }
       }
     },
@@ -3014,6 +3236,7 @@
           "Files"
         ],
         "summary": "Move a file to the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/files/1/trash\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3067,6 +3290,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash file"
         }
       }
     },
@@ -3076,6 +3302,7 @@
           "Files"
         ],
         "summary": "Restore a file from the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/files/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3099,6 +3326,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore file"
         }
       }
     },
@@ -3108,6 +3338,7 @@
           "Files"
         ],
         "summary": "Restore a previous version of a file to be the current version.\r\nThis will create a new version with the contents of the previous version, but preserves all existing versions of the file.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/files/1/versions/2/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3141,6 +3372,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore file version"
         }
       }
     },
@@ -3150,6 +3384,7 @@
           "Files"
         ],
         "summary": "List files attached to the specified comment.",
+        "description": "$ curl {WEAVY_SERVER}/api/comments/1/attachments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3231,6 +3466,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List files (comment)"
         }
       }
     },
@@ -3240,6 +3478,7 @@
           "Files"
         ],
         "summary": "List files attached to the specified message.",
+        "description": "$ curl {WEAVY_SERVER}/api/messages/1/attachments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3321,6 +3560,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List files (message)"
         }
       }
     },
@@ -3330,6 +3572,7 @@
           "Files"
         ],
         "summary": "List files attached to the specified post.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1/attachments\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3411,6 +3654,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List files (post)"
         }
       }
     },
@@ -3419,7 +3665,8 @@
         "tags": [
           "Meetings"
         ],
-        "summary": "Create meeting.",
+        "summary": "Create a meeting. The provider can either be 'zoom' or 'teams'.",
+        "description": "$ curl {WEAVY_SERVER}/api/meetings\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'provider': 'zoom' }\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -3476,6 +3723,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create meeting"
         }
       }
     },
@@ -3497,6 +3747,7 @@
           "Messages"
         ],
         "summary": "Creates a new message in the specified Conversation (Chat, ChatRoom or PrivateChat).",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/messages\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a message' }\"",
         "parameters": [
           {
             "name": "id",
@@ -3545,6 +3796,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create message"
         }
       },
       "get": {
@@ -3552,6 +3806,7 @@
           "Messages"
         ],
         "summary": "List messages in the specified Conversation (Chat, ChatRoom or PrivateChat).",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/messages?top=50\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3633,6 +3888,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List messages"
         }
       }
     },
@@ -3641,7 +3899,8 @@
         "tags": [
           "Messages"
         ],
-        "summary": "Gets a message.",
+        "summary": "Gets a message by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3672,7 +3931,20 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
           }
+        },
+        "x-title": {
+          "title": "Get message"
         }
       },
       "patch": {
@@ -3680,6 +3952,7 @@
           "Messages"
         ],
         "summary": "Updates a message.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is an updated message' }\"",
         "parameters": [
           {
             "name": "id",
@@ -3718,8 +3991,15 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "No Content"
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOut"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not Found",
@@ -3730,27 +4010,10 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
           }
+        },
+        "x-title": {
+          "title": "Update message"
         }
       },
       "delete": {
@@ -3758,6 +4021,7 @@
           "Messages"
         ],
         "summary": "Delete a message.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3774,6 +4038,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete message"
         }
       }
     },
@@ -3783,6 +4050,7 @@
           "Messages"
         ],
         "summary": "Move a message to the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/messages/1/trash\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3836,6 +4104,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash message"
         }
       }
     },
@@ -3845,6 +4116,7 @@
           "Messages"
         ],
         "summary": "Restore a message from the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/messages/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3868,6 +4140,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore message"
         }
       }
     },
@@ -3877,6 +4152,7 @@
           "Messages"
         ],
         "summary": "Indicate that the authenticated user is typing a message.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/messages/typing\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -3893,6 +4169,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Indicate typing message"
         }
       }
     },
@@ -3901,7 +4180,8 @@
         "tags": [
           "Notifications"
         ],
-        "summary": "Get notification.",
+        "summary": "Get a notification by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/notifications/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3933,6 +4213,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get notification"
         }
       },
       "delete": {
@@ -3940,6 +4223,7 @@
           "Notifications"
         ],
         "summary": "Delete a notification.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/notifications/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3956,6 +4240,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete notification"
         }
       }
     },
@@ -3964,7 +4251,8 @@
         "tags": [
           "Notifications"
         ],
-        "summary": "Mark notification as read.",
+        "summary": "Mark a notification as read.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -3998,13 +4286,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Mark as read"
         }
       },
       "delete": {
         "tags": [
           "Notifications"
         ],
-        "summary": "Mark notification as unread.",
+        "summary": "Mark a notification as unread.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4038,6 +4330,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Mark as unread"
         }
       }
     },
@@ -4047,6 +4342,7 @@
           "Notifications"
         ],
         "summary": "Mark (all) notifications as read.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/notifications/mark\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n            \r\n$ curl -X PUT {WEAVY_SERVER}/api/notifications/mark?id=3\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -4062,6 +4358,9 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Mark (all) as read"
         }
       }
     },
@@ -4071,6 +4370,7 @@
           "Notifications"
         ],
         "summary": "List notifications.",
+        "description": "$ curl {WEAVY_SERVER}/api/notifications?top=10&unread=true\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "action",
@@ -4156,6 +4456,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List notifications"
         }
       }
     },
@@ -4165,6 +4468,7 @@
           "Options"
         ],
         "summary": "Gets a poll option.",
+        "description": "$ curl {WEAVY_SERVER}/api/options/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4208,6 +4512,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get poll option"
         }
       }
     },
@@ -4217,6 +4524,7 @@
           "Options"
         ],
         "summary": "Vote for a poll option.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/options/1/vote\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4240,6 +4548,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Vote"
         }
       }
     },
@@ -4249,6 +4560,7 @@
           "Options"
         ],
         "summary": "List users that voted for the specified option.",
+        "description": "$ curl {WEAVY_SERVER}/api/options/1/voters\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4275,6 +4587,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get voters"
         }
       }
     },
@@ -4284,6 +4599,7 @@
           "Posts"
         ],
         "summary": "Creates a new post in the specified Posts app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/posts\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a post' }\"",
         "parameters": [
           {
             "name": "id",
@@ -4332,6 +4648,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create post"
         }
       },
       "get": {
@@ -4339,6 +4658,7 @@
           "Posts"
         ],
         "summary": "List posts in the specified Posts app.",
+        "description": "$ curl {WEAVY_SERVER}/api/apps/1/posts?top=50\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4420,6 +4740,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List posts"
         }
       }
     },
@@ -4428,7 +4751,8 @@
         "tags": [
           "Posts"
         ],
-        "summary": "Gets a post.",
+        "summary": "Gets a post by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4460,6 +4784,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get post"
         }
       },
       "patch": {
@@ -4467,6 +4794,7 @@
           "Posts"
         ],
         "summary": "Updates a post.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is an updated post' }\"",
         "parameters": [
           {
             "name": "id",
@@ -4538,6 +4866,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update post"
         }
       },
       "delete": {
@@ -4545,6 +4876,7 @@
           "Posts"
         ],
         "summary": "Delete a post.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4561,6 +4893,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete post"
         }
       }
     },
@@ -4570,6 +4905,7 @@
           "Posts"
         ],
         "summary": "Subscribe to notifications for activity on a post.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -4593,6 +4929,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Subscribe to post"
         }
       }
     },
@@ -4602,6 +4941,7 @@
           "Posts"
         ],
         "summary": "Unsubscribe to notifications for activity on a post.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -4625,6 +4965,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Unsubscribe to post"
         }
       }
     },
@@ -4634,6 +4977,7 @@
           "Posts"
         ],
         "summary": "Move a post to the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/trash\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4687,6 +5031,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash post"
         }
       }
     },
@@ -4696,6 +5043,7 @@
           "Posts"
         ],
         "summary": "Restore a post from the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4719,6 +5067,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore post"
         }
       }
     },
@@ -4728,6 +5079,7 @@
           "Posts"
         ],
         "summary": "Indicate that the authenticated user is writing a post.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/posts/typing\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -4744,6 +5096,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Indicate typing post"
         }
       }
     },
@@ -4753,6 +5108,7 @@
           "Reactions"
         ],
         "summary": "Create reaction for a comment.",
+        "description": "$ curl {WEAVY_SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\"",
         "parameters": [
           {
             "name": "id",
@@ -4804,13 +5160,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create reaction (comment)"
         }
       },
       "delete": {
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction to a comment.",
+        "summary": "Delete authenticated user's reaction to a comment.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -4857,6 +5217,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Delete reaction (comment)"
         }
       },
       "get": {
@@ -4864,6 +5227,7 @@
           "Reactions"
         ],
         "summary": "List reactions for a comment.",
+        "description": "$ curl {WEAVY_SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -4952,6 +5316,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List reactions (comment)"
         }
       }
     },
@@ -4961,6 +5328,7 @@
           "Reactions"
         ],
         "summary": "Create reaction for a message.",
+        "description": "$ curl {WEAVY_SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\"",
         "parameters": [
           {
             "name": "id",
@@ -5012,13 +5380,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create reaction (message)"
         }
       },
       "delete": {
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction to a message.",
+        "summary": "Delete authenticated user's reaction to a message.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -5065,6 +5437,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Delete reaction (message)"
         }
       },
       "get": {
@@ -5072,6 +5447,7 @@
           "Reactions"
         ],
         "summary": "List reactions for a message.",
+        "description": "$ curl {WEAVY_SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -5160,6 +5536,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List reactions (message)"
         }
       }
     },
@@ -5169,6 +5548,7 @@
           "Reactions"
         ],
         "summary": "Create reaction for a post.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\"",
         "parameters": [
           {
             "name": "id",
@@ -5220,13 +5600,17 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create reaction (post)"
         }
       },
       "delete": {
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction to a post.",
+        "summary": "Delete authenticated user's reaction to a post.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -5273,6 +5657,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Delete reaction (post)"
         }
       },
       "get": {
@@ -5280,6 +5667,7 @@
           "Reactions"
         ],
         "summary": "List reactions for a post.",
+        "description": "$ curl {WEAVY_SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -5368,6 +5756,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List reactions (post)"
         }
       }
     },
@@ -5376,7 +5767,8 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Get reaction.",
+        "summary": "Get a reaction by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/reactions/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -5420,6 +5812,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get reaction"
         }
       },
       "delete": {
@@ -5427,6 +5822,7 @@
           "Reactions"
         ],
         "summary": "Delete a reaction.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/reactions/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -5473,6 +5869,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Delete reaction"
         }
       }
     },
@@ -5482,6 +5881,7 @@
           "Stars"
         ],
         "summary": "Add a star to an app on behalf of the authenticated user.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -5508,6 +5908,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Add star"
         }
       },
       "delete": {
@@ -5515,6 +5918,7 @@
           "Stars"
         ],
         "summary": "Remove a star from an app on behalf of the authenticated user.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "id",
@@ -5541,6 +5945,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Remove star"
         }
       }
     },
@@ -5550,6 +5957,7 @@
           "Stars"
         ],
         "summary": "List items starred by the authenticated user.",
+        "description": "$ curl {WEAVY_SERVER}/api/stars\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "parameters": [
           {
             "name": "top",
@@ -5593,6 +6001,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List starred items"
         }
       }
     },
@@ -5602,6 +6013,7 @@
           "Users"
         ],
         "summary": "Create a user.",
+        "description": "$ curl {WEAVY_SERVER}/api/users\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'uid': 'user-1', 'name': 'John Doe', 'directory': 'acme' }\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -5658,6 +6070,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Create user"
         }
       },
       "get": {
@@ -5665,6 +6080,7 @@
           "Users"
         ],
         "summary": "List users.",
+        "description": "$ curl {WEAVY_SERVER}/api/users?top=20\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "directory_id",
@@ -5751,6 +6167,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List users"
         }
       }
     },
@@ -5759,7 +6178,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Get a user.",
+        "summary": "Get a user by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/users/1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -5791,6 +6211,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get user"
         }
       },
       "patch": {
@@ -5798,6 +6221,7 @@
           "Users"
         ],
         "summary": "Update a user.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/users/1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'Updated name' }\"",
         "parameters": [
           {
             "name": "id",
@@ -5869,6 +6293,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update user"
         }
       }
     },
@@ -5877,7 +6304,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Get a user.",
+        "summary": "Get a user by uid.",
+        "description": "$ curl {WEAVY_SERVER}/api/users/user-1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "uid",
@@ -5908,6 +6336,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get user (uid)"
         }
       },
       "put": {
@@ -5915,6 +6346,7 @@
           "Users"
         ],
         "summary": "Create or update user with specified uid.",
+        "description": "$ curl -X PUT {WEAVY_SERVER}/api/users/user-1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'John Doe', 'email': 'john@acme.com' }\"",
         "parameters": [
           {
             "name": "uid",
@@ -5962,6 +6394,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Sync user"
         }
       }
     },
@@ -5971,6 +6406,7 @@
           "Users"
         ],
         "summary": "Get the authenticated user.",
+        "description": "$ curl {WEAVY_SERVER}/api/user\r\n-H \"Authorization: Bearer {ACCESS_TOKEN}\"",
         "responses": {
           "200": {
             "description": "Success",
@@ -5982,6 +6418,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get authenticated user"
         }
       }
     },
@@ -5991,6 +6430,7 @@
           "Users"
         ],
         "summary": "Move a user to the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/users/1/trash\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -6044,6 +6484,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Trash user"
         }
       }
     },
@@ -6053,6 +6496,7 @@
           "Users"
         ],
         "summary": "Restore a user from the trash.",
+        "description": "$ curl -X POST {WEAVY_SERVER}/api/users/1/restore\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -6076,6 +6520,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Restore user"
         }
       }
     },
@@ -6085,6 +6532,7 @@
           "Users"
         ],
         "summary": "List users based on autocomplete search.",
+        "description": "$ curl {WEAVY_SERVER}/api/users/autocomplete?q=john\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "q",
@@ -6125,6 +6573,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List user (autocomplete)"
         }
       }
     },
@@ -6134,6 +6585,7 @@
           "Users"
         ],
         "summary": "Issue an access token for the specified user. Creates the user if it does not exists.",
+        "description": "$ curl {WEAVY_SERVER}/api/users/user-1/tokens\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'expires_in': 7200 }\"",
         "parameters": [
           {
             "name": "uid",
@@ -6181,6 +6633,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get access token"
         }
       },
       "delete": {
@@ -6188,6 +6643,7 @@
           "Users"
         ],
         "summary": "Revoke all access tokens for the specified user.",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/users/user-1/tokens\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "uid",
@@ -6203,6 +6659,9 @@
           "200": {
             "description": "Success"
           }
+        },
+        "x-title": {
+          "title": "Revoke access token"
         }
       }
     },
@@ -6212,6 +6671,7 @@
           "Webhooks"
         ],
         "summary": "List webhooks.",
+        "description": "$ curl {WEAVY_SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "q",
@@ -6283,6 +6743,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List webhooks"
         }
       },
       "post": {
@@ -6290,6 +6753,7 @@
           "Webhooks"
         ],
         "summary": "Registers a webhook.",
+        "description": "$ curl {WEAVY_SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'payload_url': 'http://mywebsite.com/api/webhooks', 'triggers': ['notifications']}\"",
         "requestBody": {
           "description": "",
           "content": {
@@ -6346,6 +6810,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Register webhook"
         }
       }
     },
@@ -6354,7 +6821,8 @@
         "tags": [
           "Webhooks"
         ],
-        "summary": "Get a webhook.",
+        "summary": "Get a webhook by id.",
+        "description": "$ curl {WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -6398,6 +6866,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Get webhook"
         }
       },
       "patch": {
@@ -6405,6 +6876,7 @@
           "Webhooks"
         ],
         "summary": "Update a webhook registration.",
+        "description": "$ curl -X PATCH {WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'triggers': ['notifications', 'comments'] }\"",
         "parameters": [
           {
             "name": "id",
@@ -6476,6 +6948,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "Update webhook"
         }
       },
       "delete": {
@@ -6483,6 +6958,7 @@
           "Webhooks"
         ],
         "summary": "Delete a webhook",
+        "description": "$ curl -X DELETE {WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -6499,6 +6975,9 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-title": {
+          "title": "Delete webhook"
         }
       }
     },
@@ -6508,6 +6987,7 @@
           "Webhooks"
         ],
         "summary": "List webhook deliveries.",
+        "description": "$ curl {WEAVY_SERVER}/api/webhooks/1/deliveries?top=20\r\n-H \"Authorization: Bearer {WEAVY_APIKEY}\"",
         "parameters": [
           {
             "name": "id",
@@ -6596,6 +7076,9 @@
               }
             }
           }
+        },
+        "x-title": {
+          "title": "List webhook deliveries"
         }
       }
     }
@@ -9730,5 +10213,71 @@
         "additionalProperties": false
       }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "Apps",
+      "description": "The Apps API enables you to manage apps."
+    },
+    {
+      "name": "Blobs",
+      "description": "The Blobs API enables the creation and listing of blobs."
+    },
+    {
+      "name": "Comments",
+      "description": "The Comments API supports managing comments."
+    },
+    {
+      "name": "Conversations",
+      "description": "The Conversations API has methods for creating, and managing converations."
+    },
+    {
+      "name": "Directories",
+      "description": "Api for directories."
+    },
+    {
+      "name": "Embeds",
+      "description": "The Embeds API converts URLs into embedded videos, images and rich article previews."
+    },
+    {
+      "name": "Files",
+      "description": "The Files API has methods for managing files."
+    },
+    {
+      "name": "Meetings",
+      "description": "The Meetings API enabled you to create meetings (which can later be attached to messages)."
+    },
+    {
+      "name": "Messages",
+      "description": "The Messages API supports managing chat messages."
+    },
+    {
+      "name": "Notifications",
+      "description": "The Notifications API has methods for managing notifications."
+    },
+    {
+      "name": "Options",
+      "description": "The Options API supports managing poll options."
+    },
+    {
+      "name": "Posts",
+      "description": "The Comments API supports managing posts."
+    },
+    {
+      "name": "Reactions",
+      "description": "The Reactions API enables you to create, list and delete reactions."
+    },
+    {
+      "name": "Stars",
+      "description": "The Stars API enables bookmarking things for reference and/or follow-up."
+    },
+    {
+      "name": "Users",
+      "description": "The Users API has methods for managing users."
+    },
+    {
+      "name": "Webhooks",
+      "description": "The Webhooks API enable you to register and manage webhooks.\r\nYou can also use the API to list webhook deliveries for a webhook."
+    }
+  ]
 }

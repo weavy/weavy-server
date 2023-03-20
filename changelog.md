@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v16.0.2 
+
+<time>2023-03-20</time>
+
+* Fixed issues with styling in uikit-js.
+* Fixed issues with fonts in uikit-js.
+
 ## v16.0.1 
 
 <time>2023-03-13</time>
