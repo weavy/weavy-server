@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "16.0.2"
+    "version": "17.0.0"
   },
   "paths": {
     "/api/apps": {
@@ -10,7 +10,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Creates a new app",
+        "summary": "Creates a new app.",
         "description": "$ curl {WEAVY_SERVER}/api/apps\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }\"",
         "requestBody": {
           "description": "",
@@ -77,7 +77,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Get a list of apps",
+        "summary": "Get a list of apps.",
         "description": "$ curl {WEAVY_SERVER}/api/apps?top=10\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -176,7 +176,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Initialize an app (get existing or create new) and ensure user is member (if specified)",
+        "summary": "Initialize an app (get existing or create new) and ensure user is member (if specified).",
         "description": "$ curl {WEAVY_SERVER}/api/apps/init\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\"",
         "requestBody": {
           "description": "",
@@ -225,7 +225,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Get an app by id",
+        "summary": "Get an app by id.",
         "description": "$ curl {WEAVY_SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -267,7 +267,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Update an app",
+        "summary": "Update an app.",
         "description": "$ curl -X PATCH {WEAVY_SERVER}/api/apps/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\"",
         "parameters": [
           {
@@ -349,7 +349,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Delete an app",
+        "summary": "Delete an app.",
         "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -378,7 +378,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Get an app by uid",
+        "summary": "Get an app by uid.",
         "description": "$ curl {WEAVY_SERVER}/api/apps/chat-1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -421,7 +421,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Subscribe to notifications for activity in an app",
+        "summary": "Subscribe to notifications for activity in an app.",
         "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -457,7 +457,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Unsubscribe to notifications for activity in an app",
+        "summary": "Unsubscribe to notifications for activity in an app.",
         "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -492,7 +492,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Move an app to the trash",
+        "summary": "Move an app to the trash.",
         "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/trash\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -558,7 +558,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Restore an app from the trash",
+        "summary": "Restore an app from the trash.",
         "description": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/restore\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -594,7 +594,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "List the members of an app",
+        "summary": "List the members of an app.",
         "description": "$ curl {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -693,7 +693,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Add multiple app members",
+        "summary": "Add multiple app members.",
         "description": "$ curl {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4, 14]\"",
         "parameters": [
           {
@@ -761,7 +761,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Remove multiple app members",
+        "summary": "Remove multiple app members.",
         "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4]\"",
         "parameters": [
           {
@@ -831,7 +831,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Add a single app member",
+        "summary": "Add a single app member.",
         "description": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -868,7 +868,7 @@
         "tags": [
           "Apps"
         ],
-        "summary": "Remove a single app member",
+        "summary": "Remove a single app member.",
         "description": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {
@@ -907,7 +907,7 @@
         "tags": [
           "Blobs"
         ],
-        "summary": "Get the metadata of a blob",
+        "summary": "Get the metadata of a blob.",
         "description": "$ curl {WEAVY_SERVER}/api/blobs/1\r\n-H \"Authorization: Bearer {ACCESS_TOKEN | WEAVY_APIKEY}\"",
         "parameters": [
           {

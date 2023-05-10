@@ -1,5 +1,38 @@
 # Changelog for Weavy
 
+## v17.0.0 
+
+<time>2023-05-10</time>
+
+* Added support for HTML creation of apps in uikit-js via *custom elements*. 
+* Changed syntax for configuration and app creation in uikit-js.
+* Changed uikit-js module support from UMD to ESM, CJS and browser.
+* Removed open/close functionality on apps in uikit-js.
+* Removed support for deeplinks, navigation-flow and plugins in uikit-js.
+* Fixed issue where searching for users across directories returned no result.
+
+###### Breaking changes
+
+* Dropped support for UMD/AMD module import in uikit-js in favor for modern ESM/CJS modules and browser bundle. Consider using a javascript transpiler for legacy module support.
+* uikit-js browser bundle is renamed to `weavy.js`.
+* New syntax for configuration and app creation in uikit-js.
+
+###### Upgrade instructions for uikit-js
+
+**See *Getting started* in Weavy docs for detailed instructions.**
+
+* Change any CDN `<script>` links to end with `weavy.js` instead of `weavy-dropin.js`.
+* Change any module import to `import { Weavy, Messenger, Chat, Posts, Files } from "@weavy/dropin-js";`.
+* Change Weavy instantiation and options from `new Weavy({ url: value, tokenFactory: fn() })` to `Weavy.url = value; Weavy.tokenFactory = fn()`.
+* Change contextual app creation from `weavy.app({ uid: value, container: element })` to `element.append(new Posts({ uid: value }))`. Available app classes are `new Posts()`, `new Chat()` and `new Files()`.
+* Change non-contextual app creation from `weavy.app({ type: "messenger", container: element })` to `element.append(new Messenger())`.
+* Any open/close app handling needs to be replaced with handling in your own UI.
+* *Delayed app opening* is replaced with *delayed app loading* using the `{ load: false }` option together with the `app.load()` method.
+
+###### Upgrade instructions for self-hosting
+
+* Delete the /index folder containing the fulltext index (it will be re-created on startup).
+
 ## v16.0.2 
 
 <time>2023-03-20</time>
@@ -113,13 +146,7 @@
 ###### Breaking changes
 
 The authentication mechanism has changed in Weavy v13. In previous versions, authentication was handled using identity providers and self signed JSON Web Tokens (JWT). 
-This has been replaced by server generated access tokens. All authentication implementations made for earlier versions needs to be updated in order to incorporate the new authentication mechanisms. 
-
-Refer to these articles for more information: 
-
-* [Drop-in UI authentication](https://weavy.com/docs/frontend/drop-in/authentication)
-* [React UI kit authentication](https://weavy.com/docs/frontend/uikit-react/authentication)
-* [Web API authentication](https://www.weavy.com/docs/backend/api/authentication)
+This has been replaced with api keys and access tokens. All authentication implementations made for earlier versions needs to be updated in order to incorporate the new authentication mechanisms.
 
 ###### Upgrade instructions (self-hosting)
 

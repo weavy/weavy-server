@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
 using Serilog;
+using Weavy.Core.Builder;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger();
 Log.Information("Starting up");

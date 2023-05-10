@@ -14,7 +14,6 @@ The following is required to build and run the application.
 
 * Install the tools above. 
 * Open SQL Server Management Studio and create a new database (we suggest you call it `weavy`).
-* Go to https://www.weavy.com and sign up (for free) to get a license key.
 * Create a file named `appsettings.json` in the `src` folder. Add settings for database connection string and license as described below:
 
 ```
