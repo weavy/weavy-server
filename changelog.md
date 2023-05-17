@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v17.0.2 
+
+<time>2023-05-17</time>
+
+* Fixed some issues for HTML styling of apps in uikit-js via *custom elements*. 
+
 ## v17.0.1 
 
 <time>2023-05-16</time>
