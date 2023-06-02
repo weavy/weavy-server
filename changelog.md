@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v17.0.3 
+
+<time>2023-06-02</time>
+
+* Fixed some issues with HTML attributes in uikit-js using *custom elements*.
+* Fixed some issues when configuring uikit-js.
+* Fixed some issues with the Message API page in weavy-js-dotnet example app.
+
 ## v17.0.2 
 
 <time>2023-05-17</time>
