@@ -1,5 +1,15 @@
 # Changelog for Weavy
 
+## v17.1.0
+
+<time>2023-06-22</time>
+
+* Exposed proper initialize and build promises in uikit-js.
+* Exposed console logging options in uikit-js.
+* Fixed missing version warning in logs when using uikit-js.
+* Updated editor dependencies in uikit-js.
+* Removed unused static methods in uikit-js.
+
 ## v17.0.4
 
 <time>2023-06-09</time>
