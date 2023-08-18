@@ -1,5 +1,16 @@
 # Changelog for Weavy
 
+## v17.2.0
+
+<time>2023-08-18</time>
+
+* Fixed bug where name wasn't saved when creating chat room.
+* Fixed some issues with pdfjs.
+* Fixed some issues with chat in uikit-react.
+* Fixed an issue when creating web components in uikit-js.
+* Updated dependencies in uikit-js and uikit-react.
+* Updated dependencies in ACME projects.
+
 ## v17.1.0
 
 <time>2023-06-22</time>
