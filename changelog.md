@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v17.2.1
+
+<time>2023-08-30</time>
+
+* Added option for automatic database migrations.
+
 ## v17.2.0
 
 <time>2023-08-18</time>

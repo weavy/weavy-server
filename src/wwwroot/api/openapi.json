@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "17.2.0"
+    "version": "17.2.1"
   },
   "paths": {
     "/api/apps": {
