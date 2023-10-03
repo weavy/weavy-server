@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v18.0.0
+
+<time>2023-10-03</time>
+
+* Added API endpoints for listing comments, files, messages and posts.
+* Added API endpoints for creating, updating and deleting user directories.
+* Fixed occasional NullReferenceException in DateUtils.TimeZone.
+* Weavy Pro is required for attachments.
+
 ## v17.2.1
 
 <time>2023-08-30</time>

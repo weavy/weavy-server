@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "17.2.1"
+    "version": "18.0.0"
   },
   "paths": {
     "/api/apps": {
@@ -983,7 +983,7 @@
           "Blobs"
         ],
         "summary": "Upload a blob",
-        "description": "Uploads a blob using `multipart/form-data`.\r\nAfter upload the blob can be used as reference when creating attachments and/or files.",
+        "description": "Uploads a blob using `multipart/form-data`.",
         "responses": {
           "200": {
             "description": "Success",
@@ -1815,6 +1815,98 @@
         }
       }
     },
+    "/api/comments": {
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "summary": "List comments",
+        "description": "List comments.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "A query used to find matching items.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "List items with the specified tag.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "Indicates whether trashed items should be listed (default is `false`). Specify `null` to return both trashed and non-trashed items.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Specifies the sort order and direction for the listing, e.g. \"`name`\" or \"`name+desc`\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Maximum number of items to return in the listing. Should be a value between `0` and `100`. Default is `25`.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The number of items to skip. Used together with `top` to return a specific range of items (for pagination).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "`false` to skip counting the total number of matching items; default is `true`.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "count_only",
+            "in": "query",
+            "description": "`true` to only return the *number* of matching items; when this is specified the response will only contain the `count` property.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommentOutPagedListOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      }
+    },
     "/api/files/{id}/comments/typing": {
       "put": {
         "tags": [
@@ -2314,98 +2406,64 @@
         }
       }
     },
-    "/api/directories/{id}": {
-      "get": {
-        "tags": [
-          "Directories"
-        ],
-        "summary": "Get directory",
-        "description": "Get a directory by id.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of directory.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DirectoryOut"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
-        }
-      }
-    },
-    "/api/directories/{name}": {
-      "get": {
-        "tags": [
-          "Directories"
-        ],
-        "summary": "Get directory by name",
-        "description": "Get a directory by name.",
-        "parameters": [
-          {
-            "name": "name",
-            "in": "path",
-            "description": "Name of directory.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DirectoryOut"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/directories/directory-1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
-        }
-      }
-    },
     "/api/directories": {
+      "post": {
+        "tags": [
+          "Directories"
+        ],
+        "summary": "Create directory",
+        "description": "Creates a user directory.",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectoryOut"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/directories\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'name': 'acme' }\""
+        }
+      },
       "get": {
         "tags": [
           "Directories"
@@ -2494,6 +2552,206 @@
         },
         "x-weavy": {
           "example": "curl https://{WEAVY-SERVER}/api/directories?top=10&q=acme\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      }
+    },
+    "/api/directories/{id}": {
+      "get": {
+        "tags": [
+          "Directories"
+        ],
+        "summary": "Get directory",
+        "description": "Get a directory by id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id of directory.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectoryOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      },
+      "patch": {
+        "tags": [
+          "Directories"
+        ],
+        "summary": "Update directory",
+        "description": "Update (rename) a directory.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryUp"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryUp"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryUp"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectoryUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'New name' }\""
+        }
+      },
+      "delete": {
+        "tags": [
+          "Directories"
+        ],
+        "summary": "Delete directory",
+        "description": "Delete a directory.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Directory id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-weavy": {
+          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\""
+        }
+      }
+    },
+    "/api/directories/{name}": {
+      "get": {
+        "tags": [
+          "Directories"
+        ],
+        "summary": "Get directory by name",
+        "description": "Get a directory by name.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of directory.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectoryOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/directories/acme\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -2737,7 +2995,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "Create a file (files app)",
+        "summary": "Create file",
         "description": "Creates a new file in the specified Files app.",
         "parameters": [
           {
@@ -2836,7 +3094,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "List files (files app)",
+        "summary": "List app files",
         "description": "List files in the specified Files app.",
         "parameters": [
           {
@@ -3448,12 +3706,104 @@
         }
       }
     },
+    "/api/files": {
+      "get": {
+        "tags": [
+          "Files"
+        ],
+        "summary": "List files",
+        "description": "List files.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "A query used to find matching items.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "List items with the specified tag.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "Indicates whether trashed items should be listed (default is `false`). Specify `null` to return both trashed and non-trashed items.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Specifies the sort order and direction for the listing, e.g. \"`name`\" or \"`name+desc`\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Maximum number of items to return in the listing. Should be a value between `0` and `100`. Default is `25`.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The number of items to skip. Used together with `top` to return a specific range of items (for pagination).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "`false` to skip counting the total number of matching items; default is `true`.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "count_only",
+            "in": "query",
+            "description": "`true` to only return the *number* of matching items; when this is specified the response will only contain the `count` property.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileOutPagedListOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/files\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      }
+    },
     "/api/comments/{id}/attachments": {
       "get": {
         "tags": [
           "Files"
         ],
-        "summary": "List files (comment)",
+        "summary": "List comment attachments",
         "description": "List files attached to the specified comment.",
         "parameters": [
           {
@@ -3555,7 +3905,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "List files (message)",
+        "summary": "List message attachments",
         "description": "List files attached to the specified message.",
         "parameters": [
           {
@@ -3657,7 +4007,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "List files (post)",
+        "summary": "List post attachments",
         "description": "List files attached to the specified post.",
         "parameters": [
           {
@@ -3887,7 +4237,7 @@
         "tags": [
           "Messages"
         ],
-        "summary": "List messages",
+        "summary": "List conversation messages",
         "description": "List messages in the specified conversation app (chat, chat room or private chat).",
         "parameters": [
           {
@@ -4236,13 +4586,105 @@
         }
       }
     },
+    "/api/messages": {
+      "get": {
+        "tags": [
+          "Messages"
+        ],
+        "summary": "List messages",
+        "description": "List messages.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "A query used to find matching items.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "List items with the specified tag.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "Indicates whether trashed items should be listed (default is `false`). Specify `null` to return both trashed and non-trashed items.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Specifies the sort order and direction for the listing, e.g. \"`name`\" or \"`name+desc`\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Maximum number of items to return in the listing. Should be a value between `0` and `100`. Default is `25`.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The number of items to skip. Used together with `top` to return a specific range of items (for pagination).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "`false` to skip counting the total number of matching items; default is `true`.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "count_only",
+            "in": "query",
+            "description": "`true` to only return the *number* of matching items; when this is specified the response will only contain the `count` property.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MessageOutPagedListOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/messages\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      }
+    },
     "/api/apps/{id}/messages/typing": {
       "put": {
         "tags": [
           "Messages"
         ],
         "summary": "Indicate typing",
-        "description": "Indicate that the authenticated user is typing a message.",
+        "description": "Indicate that the authenticated user is typing a message in a conversation.",
         "parameters": [
           {
             "name": "id",
@@ -4757,7 +5199,7 @@
         "tags": [
           "Posts"
         ],
-        "summary": "List posts",
+        "summary": "List app posts",
         "description": "List posts in the specified posts app.",
         "parameters": [
           {
@@ -5181,6 +5623,98 @@
         }
       }
     },
+    "/api/posts": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "List posts",
+        "description": "List posts.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "A query used to find matching items.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "List items with the specified tag.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "trashed",
+            "in": "query",
+            "description": "Indicates whether trashed items should be listed (default is `false`). Specify `null` to return both trashed and non-trashed items.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Specifies the sort order and direction for the listing, e.g. \"`name`\" or \"`name+desc`\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "top",
+            "in": "query",
+            "description": "Maximum number of items to return in the listing. Should be a value between `0` and `100`. Default is `25`.",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "skip",
+            "in": "query",
+            "description": "The number of items to skip. Used together with `top` to return a specific range of items (for pagination).",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "`false` to skip counting the total number of matching items; default is `true`.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "count_only",
+            "in": "query",
+            "description": "`true` to only return the *number* of matching items; when this is specified the response will only contain the `count` property.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostOutPagedListOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/posts\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      }
+    },
     "/api/apps/{id}/posts/typing": {
       "put": {
         "tags": [
@@ -5215,7 +5749,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Create reaction (comment)",
+        "summary": "React to comment",
         "description": "Create reaction for a comment.",
         "parameters": [
           {
@@ -5277,7 +5811,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction (comment)",
+        "summary": "Unreact to comment",
         "description": "Delete authenticated user's reaction to a comment.",
         "parameters": [
           {
@@ -5334,7 +5868,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "List reactions (comment)",
+        "summary": "List comment reactions",
         "description": "List reactions for a comment.",
         "parameters": [
           {
@@ -5444,7 +5978,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Create reaction (message)",
+        "summary": "React to message",
         "description": "Create reaction for a message.",
         "parameters": [
           {
@@ -5506,7 +6040,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction (message)",
+        "summary": "Unreact to message",
         "description": "Delete authenticated user's reaction to a message.",
         "parameters": [
           {
@@ -5563,7 +6097,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "List reactions (message)",
+        "summary": "List message reactions",
         "description": "List reactions for a message.",
         "parameters": [
           {
@@ -5673,7 +6207,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Create reaction (post)",
+        "summary": "React to post",
         "description": "Create reaction for a post.",
         "parameters": [
           {
@@ -5735,7 +6269,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "Delete reaction (post)",
+        "summary": "Unreact to post",
         "description": "Delete authenticated user's reaction to a post.",
         "parameters": [
           {
@@ -5792,7 +6326,7 @@
         "tags": [
           "Reactions"
         ],
-        "summary": "List reactions (post)",
+        "summary": "List post reactions",
         "description": "List reactions for a post.",
         "parameters": [
           {
@@ -6979,7 +7513,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'payload_url': 'http://mywebsite.com/api/webhooks', 'triggers': ['notifications']}\""
+          "example": "curl https://{WEAVY-SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'payload_url': 'https://www.example.com/webhooks/incoming', 'triggers': ['notifications']}\""
         }
       }
     },
@@ -8450,6 +8984,22 @@
         "additionalProperties": false,
         "description": "A wrapper around a Weavy.Core.Collections.PagedList`1 for better JSON serialization."
       },
+      "DirectoryIn": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "Unique directory name."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for creating user directory."
+      },
       "DirectoryOut": {
         "type": "object",
         "properties": {
@@ -8509,6 +9059,32 @@
         },
         "additionalProperties": false,
         "description": "A wrapper around a Weavy.Core.Collections.PagedList`1 for better JSON serialization."
+      },
+      "DirectoryUp": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "tracked_properties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "boolean",
+              "nullable": true
+            },
+            "description": "",
+            "nullable": true,
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "Unique directory name."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Model for updating user directory."
       },
       "Embed": {
         "required": [
@@ -10931,7 +11507,7 @@
     },
     {
       "name": "Blobs",
-      "description": "The Blobs API enables the creation and listing of blobs."
+      "description": "The Blobs API enables the uploading of blobs. Blobs are used as references when creating files and attachments and files."
     },
     {
       "name": "Comments",
@@ -10943,7 +11519,7 @@
     },
     {
       "name": "Directories",
-      "description": "Api for directories."
+      "description": "Api for user directories."
     },
     {
       "name": "Embeds",

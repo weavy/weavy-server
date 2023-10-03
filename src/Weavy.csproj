@@ -8,15 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="17.2.1" />
-    <PackageReference Include="Weavy.Core" Version="17.2.1" />
-    <PackageReference Include="Weavy.Admin" Version="17.2.1" />
-    <PackageReference Include="Weavy.Dropin" Version="17.2.1" />
+    <PackageReference Include="Weavy.Api" Version="18.0.0" />
+    <PackageReference Include="Weavy.Core" Version="18.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="18.0.0" />
+    <PackageReference Include="Weavy.Dropin" Version="18.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,8 +51,6 @@
     <Content Remove="temp\**" />
     <EmbeddedResource Remove="temp\**" />
     <None Remove="temp\**" />
-
-    <Content Include="templates\**\*" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   
