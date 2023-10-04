@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v18.0.1
+
+<time>2023-10-04</time>
+
+* Fixed some performance issues in uikit-react when scrolling and having many items.
+
 ## v18.0.0
 
 <time>2023-10-03</time>
