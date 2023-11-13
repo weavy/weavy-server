@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v18.0.2
+
+<time>2023-11-14</time>
+
+* Fixed an issue with frame registration in uikit-js.
+* Fixed an issue with refreshed tokens affecting performance in uikit-react.
+
 ## v18.0.1
 
 <time>2023-10-04</time>
