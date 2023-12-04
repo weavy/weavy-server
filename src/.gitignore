@@ -2,7 +2,6 @@ blobs/
 cache/
 index/
 logs/
-mail/
 temp/
 appsettings.json
 appsettings.*.json

@@ -12,6 +12,9 @@ Thumbs.db
 .idea/
 .vs/
 
+# settings
+*.env
+
 # build output
 bin/
 obj/

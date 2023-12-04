@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "18.0.2"
+    "version": "19.0.0"
   },
   "paths": {
     "/api/apps": {
@@ -1971,7 +1971,7 @@
           "Conversations"
         ],
         "summary": "Create chat",
-        "description": "Create a chat room or private chat. If member count is more than one, a chat room is created.\r\nIf name is omitted, the name of the chat will be the participant(s) names.",
+        "description": "Create a private chat or chat room.\r\nIf only one member is specified, a private chat is created (if there already is a chat between the creator and member, that instance is returned instead of creating a new chat).\r\nIf member count is more than one, a chat room is created (if name is omitted, the name of the chat will be the participant(s) names).",
         "requestBody": {
           "description": "",
           "content": {
@@ -2214,6 +2214,52 @@
         },
         "x-weavy": {
           "example": "curl https://{WEAVY-SERVER}/api/conversations/badge\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+        }
+      }
+    },
+    "/api/conversations/{id}/delivered": {
+      "put": {
+        "tags": [
+          "Conversations"
+        ],
+        "summary": "Set as delivered",
+        "description": "Updates the conversation delivery status for the authenticated user.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Conversation (app) id.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationOut"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/delivered\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -7236,13 +7282,32 @@
             }
           },
           {
+            "name": "skip",
+            "in": "query",
+            "description": "Gets or sets the number of items to skip before returning, defaults to `0`.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
             "name": "top",
             "in": "query",
-            "description": "Max number of items to returnm defaults to `5`.",
+            "description": "Max number of items to return, defaults to `5`.",
             "schema": {
               "type": "integer",
               "format": "int32",
               "default": 5
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Count the total number of search results, defaults to `false`.",
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           },
           {
@@ -7955,19 +8020,8 @@
           "modified_by": {
             "$ref": "#/components/schemas/UserOut"
           },
-          "member_count": {
-            "type": "integer",
-            "description": "Gets the number of members.",
-            "format": "int32",
-            "nullable": true
-          },
           "members": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MemberOut"
-            },
-            "description": "Gets the app members.",
-            "nullable": true
+            "$ref": "#/components/schemas/MemberOutPagedListOut"
           },
           "is_starred": {
             "type": "boolean",
@@ -8001,14 +8055,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -8118,14 +8172,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -8567,14 +8621,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -8796,25 +8850,8 @@
           "modified_by": {
             "$ref": "#/components/schemas/UserOut"
           },
-          "member_count": {
-            "type": "integer",
-            "description": "Gets the number of members.",
-            "format": "int32",
-            "nullable": true
-          },
           "members": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MemberOut"
-            },
-            "description": "Gets the app members.",
-            "nullable": true
-          },
-          "user_id": {
-            "type": "integer",
-            "description": "Id of the other (not the authenticated) user in a private chat.",
-            "format": "int32",
-            "nullable": true
+            "$ref": "#/components/schemas/MemberOutPagedListOut"
           },
           "last_message_id": {
             "type": "integer",
@@ -8824,16 +8861,6 @@
           },
           "last_message": {
             "$ref": "#/components/schemas/MessageOut"
-          },
-          "is_pinned": {
-            "type": "boolean",
-            "description": "If the authenticated user has pinned this converation.",
-            "nullable": true
-          },
-          "is_unread": {
-            "type": "boolean",
-            "description": "If the authenticated user has any unread messages in the converation.",
-            "nullable": true
           },
           "is_starred": {
             "type": "boolean",
@@ -8848,6 +8875,16 @@
           "is_trashed": {
             "type": "boolean",
             "description": "",
+            "nullable": true
+          },
+          "is_pinned": {
+            "type": "boolean",
+            "description": "If the authenticated user has pinned this converation.",
+            "nullable": true
+          },
+          "is_unread": {
+            "type": "boolean",
+            "description": "If the authenticated user has any unread messages in the converation.",
             "nullable": true
           }
         },
@@ -8867,14 +8904,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -8961,14 +8998,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -9037,14 +9074,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -9365,14 +9402,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -9626,14 +9663,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -9827,14 +9864,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10064,14 +10101,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10258,14 +10295,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10591,14 +10628,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10740,18 +10777,11 @@
       "ProfileUp": {
         "type": "object",
         "properties": {
-          "username": {
-            "maxLength": 32,
-            "minLength": 0,
-            "type": "string",
-            "description": "Username. Must be unique if/when specified.",
-            "nullable": true
-          },
           "email": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
-            "description": "Email address. Must be unique if/when specified.",
+            "description": "Email address.",
             "format": "email",
             "nullable": true
           },
@@ -10804,7 +10834,7 @@
           },
           "picture": {
             "type": "string",
-            "description": "The user's profile picture. Can be a public URL, a base-64 encoded image or a blob id.",
+            "description": "The user's profile picture. Can be a public URL, a base64 encoded data URI or a blob id.",
             "nullable": true
           },
           "directory": {
@@ -10912,14 +10942,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10978,18 +11008,11 @@
             "type": "string",
             "description": "A unique user identifier (*cannot contain whitespace and must contain at least one non-digit*)."
           },
-          "username": {
-            "maxLength": 32,
-            "minLength": 0,
-            "type": "string",
-            "description": "Username. Must be unique if/when specified.",
-            "nullable": true
-          },
           "email": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
-            "description": "Email address. Must be unique if/when specified.",
+            "description": "Email address.",
             "format": "email",
             "nullable": true
           },
@@ -11042,7 +11065,7 @@
           },
           "picture": {
             "type": "string",
-            "description": "The user's profile picture. Can be a public URL, a base-64 encoded image or a blob id.",
+            "description": "The user's profile picture. Can be a public URL, a base64 encoded data URI or a blob id.",
             "nullable": true
           },
           "directory": {
@@ -11090,11 +11113,6 @@
             "nullable": true
           },
           "display_name": {
-            "type": "string",
-            "description": "",
-            "nullable": true
-          },
-          "username": {
             "type": "string",
             "description": "",
             "nullable": true
@@ -11194,11 +11212,6 @@
             "format": "date-time",
             "nullable": true
           },
-          "is_admin": {
-            "type": "boolean",
-            "description": "",
-            "nullable": true
-          },
           "is_suspended": {
             "type": "boolean",
             "description": "Gets or sets a value indicating whether the user account is suspended.",
@@ -11226,14 +11239,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -11259,18 +11272,11 @@
             "description": "A string that uniquely identifies the user (cannot contain whitespace and must contain at least one non-digit).",
             "nullable": true
           },
-          "username": {
-            "maxLength": 32,
-            "minLength": 0,
-            "type": "string",
-            "description": "Username. Must be unique if/when specified.",
-            "nullable": true
-          },
           "email": {
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
-            "description": "Email address. Must be unique if/when specified.",
+            "description": "Email address.",
             "format": "email",
             "nullable": true
           },
@@ -11323,7 +11329,7 @@
           },
           "picture": {
             "type": "string",
-            "description": "The user's profile picture. Can be a public URL, a base-64 encoded image or a blob id.",
+            "description": "The user's profile picture. Can be a public URL, a base64 encoded data URI or a blob id.",
             "nullable": true
           },
           "directory": {
@@ -11439,14 +11445,14 @@
           },
           "start": {
             "type": "integer",
-            "description": "Gets the number of the first item on this page.",
+            "description": "Gets the number of the first item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "end": {
             "type": "integer",
-            "description": "Gets the number of the last item on this page.",
+            "description": "Gets the number of the last item on this page (if the data is paged).",
             "format": "int32",
             "nullable": true,
             "readOnly": true

@@ -1,5 +1,23 @@
 # Changelog for Weavy
 
+## v19.0.0
+
+<time>2023-12-04</time>
+
+* Introducing UIKit Web 🎉.
+* Updated emoji to Unicode 15.0.
+* Our UIKits have been updated to display user initials instead of user.svg for users without profile pictures.
+* Web API no longer returns a default avatar image for users. Only users with a custom profile picture will have the `avatar_url` property. 
+* Web API property `app.member_count` was replaced with `app.members.count`.
+* Web API propery `app.members` was replaced with `app.members.data`.
+* Web API property `user.email` is no longer required to be unique.
+* Web API property `user.username` was removed.
+* Web API property `user.is_admin` was removed.
+* Readby status and typing indicator was removed from contextual chat to optimize multi-user performance.
+* Fixed issue where Web API property `message.plain` was HTML encoded on the server causing it to be double encoded when rendered in the ui. 
+  For those building their own ui, you should validate that you escape/encode all text properly beforing rendering it to html.
+* Deprecated: UIKit JS aka dropin-js has been deprecated and will be removed in future releases. We recommend moving to UIKit web (uikit-web) instead.
+
 ## v18.0.2
 
 <time>2023-11-14</time>
@@ -149,8 +167,8 @@
 
 <time>2022-12-21</time>
 
-* Added Posts app (activity feed) with embeds, polls, comments and reactions to React UI-kit.
-* Added Files app to React UI-kit with support for uploading and previewing multiple file types.
+* Added Posts app (activity feed) with embeds, polls, comments and reactions to UIKit React.
+* Added Files app to UIKit React with support for uploading and previewing multiple file types.
 * Added many new API endpoints for managing comments, files, posts, users etc. 
 
 ## v14.0.4 
@@ -281,7 +299,7 @@ For example, a user with `iss=myissuer` and `sub=6783` will get `uid=myissuer|67
 <time>2022-06-13</time>
 
 * Added Weavy REST API.
-* Added Weavy UI-kit for React.
+* Added UIKit for React.
 * Moved CSS stylesheets to @weavy/themes package.
 
 ## v10.1.1 
