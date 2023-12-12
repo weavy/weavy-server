@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v19.0.1
+
+<time>2023-12-12</time>
+
+* Added missing translations in uikit-web.
+* Updated theme colors in uikit-web.
+* Fixed bug with not beeing able to upload in the files app using the Free subscription.
+* Fixed dark theme not being applied in uikit-web when using Safari and Firefox.
+
 ## v19.0.0
 
 <time>2023-12-04</time>
