@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v19.0.2
+
+<time>2023-12-15</time>
+
+* Fixed a bug with components not rendering when placed in some HTML nodes in uikit-web.
+* Added `HTTPS` configuration for Weavy UIKit Web + Node.js sample project (weavy-web-node).
+
 ## v19.0.1
 
 <time>2023-12-12</time>
