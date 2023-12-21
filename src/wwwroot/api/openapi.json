@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "19.0.2"
+    "version": "19.0.3"
   },
   "paths": {
     "/api/apps": {
@@ -2284,7 +2284,7 @@
           {
             "name": "message_id",
             "in": "query",
-            "description": "Id of last read message.",
+            "description": "Optional id of last seen message, when not specified the entire conversation is marked as read.",
             "schema": {
               "type": "integer",
               "format": "int32"

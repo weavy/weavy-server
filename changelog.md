@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v19.0.3
+
+<time>2023-12-21</time>
+
+* Fixed some issues with type declarations in uikit-web.
+* Fixed some issues with events for Messenger in uikit-web.
+* Fixed a bug with the _Mark as read_ endpoint for Conversations in the Web API.
+* Fixed a bug with upload progress in uikit-web.
+
 ## v19.0.2
 
 <time>2023-12-15</time>
