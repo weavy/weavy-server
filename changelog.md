@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v19.0.5
+
+<time>2024-01-02</time>
+
+* Minimum requirements for uikit-react now includes react v16 and optionally react-scripts v5.
+
 ## v19.0.4
 
 <time>2024-01-02</time>
