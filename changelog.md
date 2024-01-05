@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v19.0.6
+
+<time>2024-01-05</time>
+
+* uikit-react compatibility now includes ES5, Webpack 4 and react-scripts v4.
+
 ## v19.0.5
 
 <time>2024-01-02</time>
