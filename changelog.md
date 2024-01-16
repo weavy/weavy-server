@@ -1,10 +1,21 @@
 # Changelog for Weavy
 
+## v19.1.0
+
+<time>2024-01-16</time>
+
+* Fixed issue with searching for unread conversations.
+* Fixed error where Webhook delivery listing did not include all deliveries.
+* Fixed an issue with the data not being updated properly in uikit-web when focusing the window or getting online.
+* Fixed some styling issues with avatars.
+* Fixed some issues with events in uikit-web. The incorrect Messenger events `reaction_added`, `reaction_removed` and `app_updated` was removed while `app_created` and `member_added` was added.
+
 ## v19.0.6
 
 <time>2024-01-05</time>
 
 * uikit-react compatibility now includes ES5, Webpack 4 and react-scripts v4.
+* Fixed avatar alignment in uikit-web.
 
 ## v19.0.5
 

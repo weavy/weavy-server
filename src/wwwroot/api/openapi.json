@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "19.0.6"
+    "version": "19.1.0"
   },
   "paths": {
     "/api/apps": {
@@ -1971,7 +1971,7 @@
           "Conversations"
         ],
         "summary": "Create chat",
-        "description": "Create a private chat or chat room.\r\nIf only one member is specified, a private chat is created (if there already is a chat between the creator and member, that instance is returned instead of creating a new chat).\r\nIf member count is more than one, a chat room is created (if name is omitted, the name of the chat will be the participant(s) names).",
+        "description": "Creates a non-contextual chat app (private chat or chat room).\r\n\r\nIf name is omitted and only one member is specified, a private chat is created.\r\nIf there is already a chat between the creator and specified member, that instance is returned instead of creating a new chat.\r\n\r\nIf name is specified, or member count is more than one, a chat room is created (when name is omitted, the name of the chat will be the participant(s) names).",
         "requestBody": {
           "description": "",
           "content": {
@@ -2030,7 +2030,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My chat room', 'members': [1, 4, 14] }\"\r\n            \r\ncurl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My private chat', 'members': [ 4 ] }\""
+          "example": "curl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'members': [ 4 ] }\"\r\n\r\ncurl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My chat room', 'members': [1, 4, 14] }\""
         }
       },
       "get": {
@@ -2038,7 +2038,7 @@
           "Conversations"
         ],
         "summary": "List conversations",
-        "description": "List the conversations for the authenticated user.",
+        "description": "List all chat apps where the authenticated user is member.",
         "parameters": [
           {
             "name": "unread",
@@ -2155,12 +2155,12 @@
           "Conversations"
         ],
         "summary": "Get conversation",
-        "description": "Get a conversation.",
+        "description": "Get conversation (chat app).",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "Conversation (app) id.",
+            "description": "App id of the chat to return.",
             "required": true,
             "schema": {
               "type": "integer",
@@ -11521,7 +11521,7 @@
     },
     {
       "name": "Conversations",
-      "description": "The Conversations API has methods for creating, and managing conversations."
+      "description": "The Conversations API has methods for creating, and managing conversations (chat apps)."
     },
     {
       "name": "Directories",
