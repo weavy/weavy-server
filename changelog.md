@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v19.1.1
+
+<time>2024-01-17</time>
+
+* Fixes ANCM In-Process Start Failure on Azure.
+
 ## v19.1.0
 
 <time>2024-01-16</time>
