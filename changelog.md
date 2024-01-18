@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v19.1.2
+
+<time>2024-01-18</time>
+
+* Fixed some issues with cache when switching conversations in Messenger in uikit-web.
+
 ## v19.1.1
 
 <time>2024-01-17</time>
