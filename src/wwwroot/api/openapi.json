@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Weavy API",
-    "version": "19.1.2"
+    "version": "20.0.0"
   },
   "paths": {
     "/api/apps": {
@@ -11,7 +11,7 @@
           "Apps"
         ],
         "summary": "Create app",
-        "description": "Creates a contextual app with the specified `uid`.",
+        "description": "Create app with specified `type` and `uid`.",
         "requestBody": {
           "description": "",
           "content": {
@@ -70,7 +70,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'type': 'chat', 'uid': 'acme-chat', 'access': 'write' }\""
         }
       },
       "get": {
@@ -78,7 +78,7 @@
           "Apps"
         ],
         "summary": "List apps",
-        "description": "Get a list of apps.",
+        "description": "Returns a list of apps.",
         "parameters": [
           {
             "name": "contextual",
@@ -181,34 +181,45 @@
         }
       }
     },
-    "/api/apps/init": {
-      "post": {
+    "/api/apps/{uid}": {
+      "put": {
         "tags": [
           "Apps"
         ],
-        "summary": "Initialize app",
-        "description": "Initialize an app (get existing or create new) and ensure user is member (if specified).",
+        "summary": "Upsert app",
+        "description": "Update and return app with specified `uid`. If the app does not exist it is created.",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "Unique app identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "",
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
+                "$ref": "#/components/schemas/AppUpsert"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
+                "$ref": "#/components/schemas/AppUpsert"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
+                "$ref": "#/components/schemas/AppUpsert"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AppInitIn"
+                "$ref": "#/components/schemas/AppUpsert"
               }
             }
           }
@@ -223,178 +234,35 @@
                 }
               }
             }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/init\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\""
+          "example": "curl -X PUT https://{WEAVY-SERVER}/api/apps/acme-chat\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'type': 'chat', 'access': 'write' }\""
         }
       }
     },
-    "/api/apps/{id}": {
+    "/api/apps/{app}": {
       "get": {
         "tags": [
           "Apps"
         ],
         "summary": "Get app",
-        "description": "Get an app by id.",
+        "description": "Returns data for the specified app.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "trashed",
-            "in": "query",
-            "description": "`true` to return app even if trashed, otherwise `false`.",
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AppOut"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
-        }
-      },
-      "patch": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Update app",
-        "description": "Update an app.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of app.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppUp"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppUp"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppUp"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/AppUp"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/apps/2\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'app': { 'uid': 'chat-project-x', 'type': 'chat', 'name': 'Chat for Project X' }, 'user': { 'uid': 'user-1' } }\""
-        }
-      },
-      "delete": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Delete app",
-        "description": "Permanently deletes an app and all it's content.",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "Id of app.",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          }
-        },
-        "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
-        }
-      }
-    },
-    "/api/apps/{uid}": {
-      "get": {
-        "tags": [
-          "Apps"
-        ],
-        "summary": "Get app by uid",
-        "description": "Get an app by it's unique identifier (`uid`).",
-        "parameters": [
-          {
-            "name": "uid",
-            "in": "path",
-            "description": "Unique identifier of the app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
               "type": "string"
@@ -422,11 +290,95 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/chat-1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/acme-chat\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+        }
+      },
+      "patch": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Update app",
+        "description": "Update an existing app.",
+        "parameters": [
+          {
+            "name": "app",
+            "in": "path",
+            "description": "App identifier (`id` or `uid`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppUp"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppUp"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppUp"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppUp"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/apps/acme-chat\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'description': 'Chat for ACME project' }\""
+        }
+      },
+      "delete": {
+        "tags": [
+          "Apps"
+        ],
+        "summary": "Delete app",
+        "description": "Permanently deletes an app and all it's content.",
+        "parameters": [
+          {
+            "name": "app",
+            "in": "path",
+            "description": "App identifier (`id` or `uid`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "x-weavy": {
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/apps/acme-chat\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
-    "/api/apps/{id}/subscribe": {
+    "/api/apps/{app}/subscribe": {
       "post": {
         "tags": [
           "Apps"
@@ -435,13 +387,12 @@
         "description": "Subscribe to notifications for activity in an app.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -458,11 +409,11 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/apps/acme-chat/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
-    "/api/apps/{id}/unsubscribe": {
+    "/api/apps/{app}/unsubscribe": {
       "post": {
         "tags": [
           "Apps"
@@ -471,12 +422,12 @@
         "description": "Unsubscribe to notifications for activity in an app.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -493,11 +444,11 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/apps/acme-chat/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
-    "/api/apps/{id}/trash": {
+    "/api/apps/{app}/trash": {
       "post": {
         "tags": [
           "Apps"
@@ -506,13 +457,12 @@
         "description": "Move an app to the trash.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app to trash.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -526,44 +476,14 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/apps/acme-chat/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
-    "/api/apps/{id}/restore": {
+    "/api/apps/{app}/restore": {
       "post": {
         "tags": [
           "Apps"
@@ -572,13 +492,12 @@
         "description": "Restore an app from the trash.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app to restore.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -595,26 +514,25 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/apps/acme-chat/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
-    "/api/apps/{id}/members": {
+    "/api/apps/{app}/members": {
       "get": {
         "tags": [
           "Apps"
         ],
         "summary": "List app members",
-        "description": "List the members of an app.",
+        "description": "List members of the specified app.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -705,36 +623,34 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/acme-chat/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       },
       "post": {
         "tags": [
           "Apps"
         ],
-        "summary": "Add members to app",
-        "description": "Add multiple app members.",
+        "summary": "Add members",
+        "description": "Add multiple members to an app. Can also be used to update `access` of existing members.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
         "requestBody": {
-          "description": "Ids of users to add.",
+          "description": "Members to add.",
           "content": {
             "application/json-patch+json": {
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/MemberIn"
                 }
               }
             },
@@ -742,8 +658,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/MemberIn"
                 }
               }
             },
@@ -751,8 +666,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/MemberIn"
                 }
               }
             },
@@ -760,20 +674,19 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "$ref": "#/components/schemas/MemberIn"
                 }
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "No Content"
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4, 14]\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/acme-chat/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"[ { 'uid': 'acme-user' }, { 'uid': 'daffy-duck', 'access': 'read' } ]\""
         }
       },
       "delete": {
@@ -784,25 +697,23 @@
         "description": "Remove multiple app members.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
         "requestBody": {
-          "description": "Ids of users to remove.",
+          "description": "User identifiers (`id` or `uid`) of members to remove.",
           "content": {
             "application/json-patch+json": {
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "type": "string"
                 }
               }
             },
@@ -810,8 +721,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "type": "string"
                 }
               }
             },
@@ -819,8 +729,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "type": "string"
                 }
               }
             },
@@ -828,96 +737,116 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "integer",
-                  "format": "int32"
+                  "type": "string"
                 }
               }
             }
           }
         },
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "No Content"
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"[1, 4]\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/apps/acme-chat/members\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"['bugs-bunny', 'daffy-duck']\""
         }
       }
     },
-    "/api/apps/{id}/members/{userid}": {
+    "/api/apps/{app}/members/{user}": {
       "put": {
         "tags": [
           "Apps"
         ],
-        "summary": "Add member to app",
-        "description": "Add a single app member.",
+        "summary": "Add member",
+        "description": "Add (or update) an app member.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "Id of app.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "userid",
+            "name": "user",
             "in": "path",
-            "description": "Id of user to add.",
+            "description": "User identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberOptions"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberOptions"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberOptions"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MemberOptions"
+              }
+            }
+          }
+        },
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "No Content"
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/apps/acme-chat/members/acme-user\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'access': 'read' }\""
         }
       },
       "delete": {
         "tags": [
           "Apps"
         ],
-        "summary": "Remove member from app",
-        "description": "Remove a single app member.",
+        "summary": "Remove member",
+        "description": "Remove an app member.",
         "parameters": [
           {
-            "name": "id",
+            "name": "app",
             "in": "path",
-            "description": "App id.",
+            "description": "App identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
-            "name": "userid",
+            "name": "user",
             "in": "path",
-            "description": "Id of user to remove.",
+            "description": "User identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success"
+          "204": {
+            "description": "No Content"
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/members/2\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/apps/acme-chat/members/bugs-bunny\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -1134,7 +1063,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is a comment' }\""
         }
       },
       "get": {
@@ -1295,7 +1224,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/files/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment on a file' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/files/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is a comment on a file' }\""
         }
       },
       "get": {
@@ -1456,7 +1385,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/posts/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a comment on a post' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/posts/1/comments\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is a comment on a post' }\""
         }
       },
       "get": {
@@ -1682,7 +1611,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'text': 'Update comment text' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{'text': 'Update comment text' }\""
         }
       },
       "delete": {
@@ -1709,7 +1638,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/comments/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -1775,7 +1704,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/comments/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/comments/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -1811,7 +1740,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/comments/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/comments/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -1932,7 +1861,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/files/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/files/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -1961,7 +1890,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/posts/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/posts/1/comments/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -2030,7 +1959,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'members': [ 4 ] }\"\r\n\r\ncurl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'My chat room', 'members': [1, 4, 14] }\""
+          "example": "curl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n--json \"{ 'members': [ 4 ] }\"\r\n\r\ncurl https://{WEAVY-SERVER}/api/conversations\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n--json \"{ 'name': 'My chat room', 'members': [1, 4, 14] }\""
         }
       },
       "get": {
@@ -2259,7 +2188,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/delivered\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/conversations/1/delivered\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -2314,7 +2243,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "delete": {
@@ -2358,7 +2287,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -2404,7 +2333,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/conversations/1/pin\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/conversations/1/pin\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "delete": {
@@ -2448,7 +2377,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/conversations/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -2735,7 +2664,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'New name' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'name': 'New name' }\""
         }
       },
       "delete": {
@@ -2762,7 +2691,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/directories/1\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
@@ -3032,7 +2961,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/embeds\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'url': 'https://weavy.com' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/embeds\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'url': 'https://weavy.com' }\""
         }
       }
     },
@@ -3133,7 +3062,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/files\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'blob_id': 1 }\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/1/files\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'blob_id': 1 }\""
         }
       },
       "get": {
@@ -3359,7 +3288,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'Updated file name' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'name': 'filename.txt' }\""
         }
       },
       "delete": {
@@ -3386,7 +3315,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/files/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3469,7 +3398,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/files/1/versions/2\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/files/1/versions/2\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3564,7 +3493,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/files/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/files/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3600,7 +3529,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/files/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/files/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3666,7 +3595,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/files/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/files/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3702,7 +3631,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/files/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/files/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -3748,7 +3677,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/files/1/versions/2/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/files/1/versions/2/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4215,7 +4144,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/meetings\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'provider': 'zoom' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/meetings\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'provider': 'zoom' }\""
         }
       }
     },
@@ -4276,7 +4205,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/messages\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a message' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/1/messages\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is a message' }\""
         }
       },
       "get": {
@@ -4499,7 +4428,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is an updated message' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is an updated message' }\""
         }
       },
       "delete": {
@@ -4526,7 +4455,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/messages/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4592,7 +4521,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/messages/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/messages/1/trash\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4628,7 +4557,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/messages/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/messages/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4749,7 +4678,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/messages/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/apps/1/messages/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -4820,7 +4749,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/notifications/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/notifications/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4866,7 +4795,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       },
       "delete": {
@@ -4910,7 +4839,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/notifications/1/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -4938,7 +4867,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/notifications/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n            \r\n$ curl -X PUT {WEAVY_SERVER}/api/notifications/mark?id=3\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/notifications/mark\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n            \r\ncurl -X PUT https://{WEAVY_SERVER}/api/notifications/mark?id=3\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -5138,7 +5067,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/options/1/vote\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/options/1/vote\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -5238,7 +5167,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/apps/1/posts\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is a post' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/apps/1/posts\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is a post' }\""
         }
       },
       "get": {
@@ -5464,7 +5393,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'text': 'This is an updated post' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\"\r\n--json \"{ 'text': 'This is an updated post' }\""
         }
       },
       "delete": {
@@ -5491,7 +5420,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/posts/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -5527,7 +5456,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/posts/1/subscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -5563,7 +5492,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/posts/1/unsubscribe\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -5629,7 +5558,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/trash\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/posts/1/trash\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
@@ -5665,7 +5594,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/posts/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/posts/1/restore\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -5786,7 +5715,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/apps/1/posts/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/apps/1/posts/typing\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -5850,7 +5779,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n--json \"{ 'content': '😍' }\""
         }
       },
       "delete": {
@@ -5907,7 +5836,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/comments/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "get": {
@@ -6079,7 +6008,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n--json \"{ 'content': '😍' }\""
         }
       },
       "delete": {
@@ -6136,7 +6065,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/messages/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "get": {
@@ -6308,7 +6237,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'content': '😍' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\"\r\n--json \"{ 'content': '😍' }\""
         }
       },
       "delete": {
@@ -6365,7 +6294,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/posts/1/reactions\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "get": {
@@ -6586,7 +6515,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/reactions/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/reactions/1\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
@@ -6625,7 +6554,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       },
       "delete": {
@@ -6662,7 +6591,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/apps/1/stars\r\n-H \"Authorization: Bearer {ACCESS-TOKEN}\""
         }
       }
     },
@@ -6791,7 +6720,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/users\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'uid': 'user-1', 'name': 'John Doe', 'directory': 'acme' }\""
+          "example": "curl https://{WEAVY-SERVER}/api/users\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'uid': 'bugs-bunny', 'name': 'Bugs Bunny', 'directory': 'acme' }\""
         }
       },
       "get": {
@@ -6898,26 +6827,25 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/users?top=20\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl https://{WEAVY-SERVER}/api/users?top=20\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
         }
       }
     },
-    "/api/users/{id}": {
+    "/api/users/{user}": {
       "get": {
         "tags": [
           "Users"
         ],
         "summary": "Get user",
-        "description": "Get a user by id.",
+        "description": "Get user with specified identifier.",
         "parameters": [
           {
-            "name": "id",
+            "name": "user",
             "in": "path",
-            "description": "Id of user.",
+            "description": "User identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           },
           {
@@ -6942,7 +6870,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/users/1\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl https://{WEAVY-SERVER}/api/users/bugs-bunny\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       },
       "patch": {
@@ -6953,13 +6881,12 @@
         "description": "Update a user.",
         "parameters": [
           {
-            "name": "id",
+            "name": "user",
             "in": "path",
-            "description": "",
+            "description": "User identifier (`id` or `uid`).",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -6989,72 +6916,6 @@
           }
         },
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/users/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'Updated name' }\""
-        }
-      }
-    },
-    "/api/users/{uid}": {
-      "get": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Get user (uid)",
-        "description": "Get a user by uid.",
-        "parameters": [
-          {
-            "name": "uid",
-            "in": "path",
-            "description": "Unique user identifier.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "trashed",
-            "in": "query",
-            "description": "`true` to return user even if trashed.",
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
           "200": {
             "description": "Success",
             "content": {
@@ -7067,75 +6928,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/users/user-1\r\n-H \"Authorization: Bearer {API-KEY}\""
-        }
-      },
-      "put": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Sync user",
-        "description": "Create or update user with specified uid.",
-        "parameters": [
-          {
-            "name": "uid",
-            "in": "path",
-            "description": "Unique user identifier.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUp"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUp"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUp"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProfileUp"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOut"
-                }
-              }
-            }
-          },
-          "201": {
-            "description": "Created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UserOut"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "$ curl -X PUT {WEAVY_SERVER}/api/users/user-1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'name': 'John Doe', 'email': 'john@acme.com' }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/users/bugs-bunny\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'name': 'Bugs Bunny' }\""
         }
       }
     },
@@ -7163,7 +6956,77 @@
         }
       }
     },
-    "/api/users/{id}/trash": {
+    "/api/users/{uid}": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Upsert user",
+        "description": "Update and return user with specified `uid`. If the user does not exists it is created.",
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "path",
+            "description": "Unique user identifier.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpsert"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpsert"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpsert"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserUpsert"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl -X PUT https://{WEAVY_SERVER}/api/users/bugs-bunny\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'name': 'Bugs Bunny', 'email': 'bugs@acme.corp\""
+        }
+      }
+    },
+    "/api/users/{user}/trash": {
       "post": {
         "tags": [
           "Users"
@@ -7172,13 +7035,12 @@
         "description": "Move a user to the trash.",
         "parameters": [
           {
-            "name": "id",
+            "name": "user",
             "in": "path",
-            "description": "Id of the user to trash.",
+            "description": "User identifier (`id` or `uid`) of the user to trash.",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -7192,44 +7054,14 @@
                 }
               }
             }
-          },
-          "404": {
-            "description": "Not Found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/users/1/trash\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/users/bugs-bunny/trash\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
-    "/api/users/{id}/restore": {
+    "/api/users/{user}/restore": {
       "post": {
         "tags": [
           "Users"
@@ -7238,13 +7070,12 @@
         "description": "Restore a user from the trash.",
         "parameters": [
           {
-            "name": "id",
+            "name": "user",
             "in": "path",
-            "description": "Id of the user to restore.",
+            "description": "User identifier (`id` or `uid`) of the user to restore.",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -7261,7 +7092,93 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X POST {WEAVY_SERVER}/api/users/1/restore\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl -X POST https://{WEAVY_SERVER}/api/users/bugs-bunny/restore\r\n-H \"Authorization: Bearer {API-KEY}\""
+        }
+      }
+    },
+    "/api/users/{user}/tokens": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Issue access token",
+        "description": "If a user with the with the specified `uid` does not exists, this endpoint first creates the user and then issues an `access_token`.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "description": "User identifier (`id` or `uid`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Optional token creation options.",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenIn"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenIn"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenIn"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenIn"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenOut"
+                }
+              }
+            }
+          }
+        },
+        "x-weavy": {
+          "example": "curl https://{WEAVY-SERVER}/api/users/bugs-bunny/tokens\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'expires_in': 7200 }\""
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Revoke access token",
+        "description": "Revoke all access tokens for the specified user.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "description": "User identifier (`id` or `uid`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "x-weavy": {
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/users/bugs-bunny/tokens\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
@@ -7313,7 +7230,7 @@
           {
             "name": "id",
             "in": "query",
-            "description": "Optional app id. When set, the result contains a property indicating wheter the listed users are member of the specified app or not.",
+            "description": "Optional app id. When set, the result contains a property indicating whether the listed users are member of the specified app or not.",
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -7334,92 +7251,6 @@
         },
         "x-weavy": {
           "example": "curl https://{WEAVY-SERVER}/api/users/autocomplete?q=john\r\n-H \"Authorization: Bearer {ACCESS-TOKEN | API-KEY}\""
-        }
-      }
-    },
-    "/api/users/{uid}/tokens": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Get access token",
-        "description": "Issues an access token for a user. If a user with the with the specified `uid` does not exists, this endpoint first creates the user and then issues an `access_token`.",
-        "parameters": [
-          {
-            "name": "uid",
-            "in": "path",
-            "description": "Unique user identifier.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "Optional token creation options.",
-          "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TokenIn"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TokenIn"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TokenIn"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TokenIn"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TokenOut"
-                }
-              }
-            }
-          }
-        },
-        "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/users/user-1/tokens\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'expires_in': 7200 }\""
-        }
-      },
-      "delete": {
-        "tags": [
-          "Users"
-        ],
-        "summary": "Revoke access token",
-        "description": "Revoke all access tokens for the specified user.",
-        "parameters": [
-          {
-            "name": "uid",
-            "in": "path",
-            "description": "Unique user identifier.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        },
-        "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/users/user-1/tokens\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
@@ -7578,7 +7409,7 @@
           }
         },
         "x-weavy": {
-          "example": "curl https://{WEAVY-SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{'payload_url': 'https://www.example.com/webhooks/incoming', 'triggers': ['notifications']}\""
+          "example": "curl https://{WEAVY-SERVER}/api/webhooks\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{'payload_url': 'https://www.example.com/webhooks/incoming', 'triggers': ['notifications']}\""
         }
       }
     },
@@ -7716,7 +7547,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X PATCH {WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n-H \"Content-Type: application/json\"\r\n-d \"{ 'triggers': ['notifications', 'comments'] }\""
+          "example": "curl -X PATCH https://{WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {API-KEY}\"\r\n--json \"{ 'triggers': ['notifications', 'comments'] }\""
         }
       },
       "delete": {
@@ -7743,7 +7574,7 @@
           }
         },
         "x-weavy": {
-          "example": "$ curl -X DELETE {WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {API-KEY}\""
+          "example": "curl -X DELETE https://{WEAVY_SERVER}/api/webhooks/1\r\n-H \"Authorization: Bearer {API-KEY}\""
         }
       }
     },
@@ -7860,6 +7691,25 @@
   },
   "components": {
     "schemas": {
+      "Access": {
+        "enum": [
+          "none",
+          "read",
+          "write",
+          "admin"
+        ],
+        "type": "string",
+        "description": "Access levels for users/members."
+      },
+      "AppAccess": {
+        "enum": [
+          "none",
+          "read",
+          "write"
+        ],
+        "type": "string",
+        "description": "Access level for non-members. Defaults to `none`. \r\n* `none` = non-members cannot access the app\r\n* `read` = non-members can see the app and it's content but can cannot contribute\r\n* `write` = non-members have access to the app and are allowed to create content"
+      },
       "AppIn": {
         "required": [
           "type",
@@ -7868,14 +7718,23 @@
         "type": "object",
         "properties": {
           "uid": {
-            "minLength": 1,
+            "maxLength": 256,
+            "minLength": 0,
             "type": "string",
             "description": "A string that uniquely identifies the app, for instance a product id or URL (*cannot contain whitespace and must contain at least one non-digit*)."
           },
           "type": {
             "minLength": 1,
             "type": "string",
-            "description": "Type of app to create (`chat`, `files` or `posts`)."
+            "description": "Type of app (`chat`, `files` or `posts` etc.)."
+          },
+          "access": {
+            "$ref": "#/components/schemas/AppAccess"
+          },
+          "directory": {
+            "type": "string",
+            "description": "Id or name of a user directory. Used in combination with `access` to control who can access the app.",
+            "nullable": true
           },
           "name": {
             "maxLength": 256,
@@ -7912,22 +7771,6 @@
         "additionalProperties": false,
         "description": ""
       },
-      "AppInitIn": {
-        "required": [
-          "app"
-        ],
-        "type": "object",
-        "properties": {
-          "app": {
-            "$ref": "#/components/schemas/AppIn"
-          },
-          "user": {
-            "$ref": "#/components/schemas/MemberIn"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Model for initializing apps."
-      },
       "AppOut": {
         "type": "object",
         "properties": {
@@ -7946,6 +7789,15 @@
           "uid": {
             "type": "string",
             "description": "Gets the unique identifier for the app in the host system.",
+            "nullable": true
+          },
+          "access": {
+            "$ref": "#/components/schemas/Access"
+          },
+          "directory_id": {
+            "type": "integer",
+            "description": "Gets the unique identifier for the app in the host system.",
+            "format": "int32",
             "nullable": true
           },
           "display_name": {
@@ -8085,7 +7937,15 @@
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
-            "description": "A string that uniquely identifies the app, for instance a product id or URL (cannot contain whitespace and must contain at least one non-digit).",
+            "description": "A string that uniquely identifies the app, for instance a product id or URL (*cannot contain whitespace and must contain at least one non-digit*).",
+            "nullable": true
+          },
+          "access": {
+            "$ref": "#/components/schemas/AppAccess"
+          },
+          "directory": {
+            "type": "string",
+            "description": "Id or name of a user directory. Used in combination with `access` to control who can access the app.",
             "nullable": true
           },
           "name": {
@@ -8122,6 +7982,64 @@
         },
         "additionalProperties": false,
         "description": "Model for updating apps."
+      },
+      "AppUpsert": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Type of app (`chat`, `files` or `posts` etc.)."
+          },
+          "uid": {
+            "type": "string",
+            "nullable": true
+          },
+          "access": {
+            "$ref": "#/components/schemas/AppAccess"
+          },
+          "directory": {
+            "type": "string",
+            "description": "Id or name of a user directory. Used in combination with `access` to control who can access the app.",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "Display name for the app.",
+            "nullable": true
+          },
+          "description": {
+            "maxLength": 512,
+            "minLength": 0,
+            "type": "string",
+            "description": "App description.",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": "Additional properties to associate with the app, e.g. `{ \"color\": \"blue\", \"size\": \"XL\" }`.",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of tags to associate with the app.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
       },
       "AutocompleteUserOut": {
         "type": "object",
@@ -8778,6 +8696,15 @@
             "description": "Gets the unique identifier for the app in the host system.",
             "nullable": true
           },
+          "access": {
+            "$ref": "#/components/schemas/Access"
+          },
+          "directory_id": {
+            "type": "integer",
+            "description": "Gets the unique identifier for the app in the host system.",
+            "format": "int32",
+            "nullable": true
+          },
           "display_name": {
             "type": "string",
             "description": "Gets the display name.",
@@ -9051,11 +8978,8 @@
             "description": "",
             "nullable": true
           },
-          "member_count": {
-            "type": "integer",
-            "description": "",
-            "format": "int64",
-            "nullable": true
+          "members": {
+            "$ref": "#/components/schemas/UserOutPagedListOut"
           }
         },
         "additionalProperties": false,
@@ -9786,17 +9710,41 @@
         "additionalProperties": false,
         "description": ""
       },
-      "MemberIn": {
-        "required": [
-          "uid"
+      "MemberAccess": {
+        "enum": [
+          "none",
+          "read",
+          "write"
         ],
+        "type": "string",
+        "description": "Optional access level for member. Defaults to `write` when not specified.\r\n* `none` = cannot access the app\r\n* `read` = can see the app and it's content but can cannot contribute\r\n* `write` = access to the app and is allowed to create content"
+      },
+      "MemberIn": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "integer",
+            "description": "User id of member.",
+            "format": "int32",
+            "nullable": true
+          },
           "uid": {
-            "maxLength": 256,
-            "minLength": 0,
             "type": "string",
-            "description": "Unique user identifier (*cannot contain whitespace and must contain at least one non-digit*)."
+            "description": "User identifier of member.",
+            "nullable": true
+          },
+          "access": {
+            "$ref": "#/components/schemas/MemberAccess"
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
+      },
+      "MemberOptions": {
+        "type": "object",
+        "properties": {
+          "access": {
+            "$ref": "#/components/schemas/MemberAccess"
           }
         },
         "additionalProperties": false,
@@ -9815,6 +9763,9 @@
             "type": "string",
             "description": "",
             "nullable": true
+          },
+          "access": {
+            "$ref": "#/components/schemas/Access"
           },
           "display_name": {
             "type": "string",
@@ -10768,104 +10719,10 @@
           "extensions": {
             "type": "object",
             "additionalProperties": { },
-            "nullable": true,
-            "readOnly": true
+            "nullable": true
           }
         },
         "additionalProperties": false
-      },
-      "ProfileUp": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "maxLength": 256,
-            "minLength": 0,
-            "type": "string",
-            "description": "Email address.",
-            "format": "email",
-            "nullable": true
-          },
-          "given_name": {
-            "maxLength": 64,
-            "minLength": 0,
-            "type": "string",
-            "description": "Given/First name(s) of user. In some cultures, people can have multiple given names; all can be present, with the names being separated by space characters.",
-            "nullable": true
-          },
-          "middle_name": {
-            "maxLength": 64,
-            "minLength": 0,
-            "type": "string",
-            "description": "Middle name(s) of the user. In some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters.",
-            "nullable": true
-          },
-          "name": {
-            "maxLength": 256,
-            "minLength": 0,
-            "type": "string",
-            "description": "The full name in displayable form including all name parts, possibly including titles and suffixes.",
-            "nullable": true
-          },
-          "family_name": {
-            "maxLength": 64,
-            "minLength": 0,
-            "type": "string",
-            "description": "Family/Last name(s) of user. In some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters.",
-            "nullable": true
-          },
-          "nickname": {
-            "maxLength": 32,
-            "minLength": 0,
-            "type": "string",
-            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.ProfileUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
-            "nullable": true
-          },
-          "phone_number": {
-            "maxLength": 32,
-            "minLength": 0,
-            "type": "string",
-            "description": "The user's preferred phone number.",
-            "nullable": true
-          },
-          "comment": {
-            "type": "string",
-            "description": "Comment or other application-specific information about the user.",
-            "nullable": true
-          },
-          "picture": {
-            "type": "string",
-            "description": "The user's profile picture. Can be a public URL, a base64 encoded data URI or a blob id.",
-            "nullable": true
-          },
-          "directory": {
-            "type": "string",
-            "description": "Id or name of user directory.",
-            "nullable": true
-          },
-          "metadata": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string",
-              "nullable": true
-            },
-            "description": "Additional metadata properties, e.g. `{ \"color\": \"blue\", \"size\": \"XL\" }`.",
-            "nullable": true
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of tags to associate with the user.",
-            "nullable": true
-          },
-          "is_suspended": {
-            "type": "boolean",
-            "description": "`true` to mark the user account as suspended, otherwise `false`."
-          }
-        },
-        "additionalProperties": false,
-        "description": "Base model used when inserting/updating users."
       },
       "ReactionIn": {
         "required": [
@@ -11048,7 +10905,7 @@
             "maxLength": 32,
             "minLength": 0,
             "type": "string",
-            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.ProfileUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
+            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.UserUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
             "nullable": true
           },
           "phone_number": {
@@ -11269,7 +11126,7 @@
             "maxLength": 256,
             "minLength": 0,
             "type": "string",
-            "description": "A string that uniquely identifies the user (cannot contain whitespace and must contain at least one non-digit).",
+            "description": "Unique user identifier (*cannot contain whitespace and must contain at least one non-digit*).",
             "nullable": true
           },
           "email": {
@@ -11312,7 +11169,7 @@
             "maxLength": 32,
             "minLength": 0,
             "type": "string",
-            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.ProfileUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
+            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.UserUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
             "nullable": true
           },
           "phone_number": {
@@ -11360,7 +11217,104 @@
           }
         },
         "additionalProperties": false,
-        "description": "User update model."
+        "description": "Base model used when inserting/updating users."
+      },
+      "UserUpsert": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "Email address.",
+            "format": "email",
+            "nullable": true
+          },
+          "given_name": {
+            "maxLength": 64,
+            "minLength": 0,
+            "type": "string",
+            "description": "Given/First name(s) of user. In some cultures, people can have multiple given names; all can be present, with the names being separated by space characters.",
+            "nullable": true
+          },
+          "middle_name": {
+            "maxLength": 64,
+            "minLength": 0,
+            "type": "string",
+            "description": "Middle name(s) of the user. In some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters.",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 256,
+            "minLength": 0,
+            "type": "string",
+            "description": "The full name in displayable form including all name parts, possibly including titles and suffixes.",
+            "nullable": true
+          },
+          "family_name": {
+            "maxLength": 64,
+            "minLength": 0,
+            "type": "string",
+            "description": "Family/Last name(s) of user. In some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters.",
+            "nullable": true
+          },
+          "nickname": {
+            "maxLength": 32,
+            "minLength": 0,
+            "type": "string",
+            "description": "The nickname, a casual name that may or may not be the same as the Weavy.Core.DTO.UserUp.GivenName. For instance, a person with given name \"Michael\" might have the nickname \"Mike\".",
+            "nullable": true
+          },
+          "phone_number": {
+            "maxLength": 32,
+            "minLength": 0,
+            "type": "string",
+            "description": "The user's preferred phone number.",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "description": "Comment or other application-specific information about the user.",
+            "nullable": true
+          },
+          "picture": {
+            "type": "string",
+            "description": "The user's profile picture. Can be a public URL, a base64 encoded data URI or a blob id.",
+            "nullable": true
+          },
+          "directory": {
+            "type": "string",
+            "description": "Id or name of user directory.",
+            "nullable": true
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": "Additional metadata properties, e.g. `{ \"color\": \"blue\", \"size\": \"XL\" }`.",
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "A list of tags to associate with the user.",
+            "nullable": true
+          },
+          "is_suspended": {
+            "type": "boolean",
+            "description": "`true` to mark the user account as suspended, otherwise `false`."
+          }
+        },
+        "additionalProperties": false,
+        "description": ""
       },
       "WebhookIn": {
         "required": [

@@ -8,9 +8,8 @@ Log.Information("Starting up");
 try {
     var builder = WebApplication.CreateBuilder(args);
     builder.AddWeavy(opts => opts
-        .AddAdmin()
         .AddApi()
-        .AddDropin()
+        .AddAdmin()
     );
     var app = builder.Build();
     app.UseWeavy();

@@ -1,4 +1,0 @@
-<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" transform="rotate(-90)">
-    <circle cx="12" cy="12" r="10" stroke-linecap="butt" stroke-width="2" fill="none" stroke="#eee" />
-    <circle cx="12" cy="12" r="10" stroke-dasharray="100" stroke-dashoffset="100" stroke-linecap="butt" stroke-width="2" fill="none" stroke="currentColor" pathLength="100" />
-</svg>

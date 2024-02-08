@@ -1,5 +1,37 @@
 # Changelog for Weavy
 
+## v20.0.0
+
+<time>2024-02-08</time>
+
+* Added simpler *and* more powerful permission system for better access control. You can now create apps that are open, read-only or closed for a group of users, while at the same time controlling individual user access by adding them as members. 
+* Added `Weavy.tokenUrl` property in uikit-web. This enables you to configure authentication with an URL instead of a full async `tokenFactory`. The endpoint should provide a JSON response with an `access_token`.
+* Added token validation in uikit-web.
+* Added version check when connecting uikit-web.
+* Enabled autocorrect in editor.
+* Fixed an issue with event subscription when initializing Weavy in uikit-web.
+* Fixed an issue with layout when using text-align in uikit-web.
+* Fixed some issues when switching Messenger conversations in uikit-web.
+* Updated most API endpoints for Apps and Users to accept both `id` or `uid` identifiers.
+* Updated Weavy backend to .NET 8.
+* Improved destruction and clean-up in uikit-web.
+* Removed the requirement to first initialize apps through the Web API when using building blocks. Building blocks can now automatically initialize the corresponding app.
+* Deprecated the `api/apps/init` endpoint. We recommend using "Upsert app" in combination with "Add member(s)" instead.
+ 
+###### Breaking changes
+
+* Removed the deprecated UIKit JS. **Do not** upgrade your environment until you have updated your application to use UIKit Web instead.
+* UIKit Web `src` path is now named `lib`.
+* UIKit React has been updated to utilize our web components. This enables all features and fixes from uikit-web in uikit-react. See https://www.weavy.com/docs/frameworks/react for detailed instructions and configuration options.
+* API endpoints for managing app member(s) have been updated to support the new permission system. Review the API docs and update your code accordingly.
+ 
+###### Upgrade instructions for uikit-react
+
+* Remove the imported stylesheet `@weavy/uikit-react/dist/css/weavy.css` as the components now have built in styles. Refer to UIKit Web documentation for available styling options.
+* Change `new WeavyClient({ ...options })` to use `new Weavy({ ...options })` or use the `useWeavy({ ...options })` hook.
+* Remove `<WeavyProvider>`. May optionally be replaced with `<WyContext ...options />` in conjunction with removing `WeavyClient`.
+* Change the names of imported block components to `<WyChat />`, `<WyFiles />`, `<WyMessenger />` and `<WyPosts />`.
+
 ## v19.1.2
 
 <time>2024-01-18</time>
