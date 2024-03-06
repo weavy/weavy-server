@@ -1,22 +1,17 @@
 using System;
 using Microsoft.AspNetCore.Builder;
 using Serilog;
+using Weavy.Core;
 using Weavy.Core.Builder;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger();
-Log.Information("Starting up");
 try {
-    var builder = WebApplication.CreateBuilder(args);
-    builder.AddWeavy(opts => opts
-        .AddApi()
-        .AddAdmin()
-    );
+    var builder = WebApplication.CreateBuilder(args).AddWeavy(opts => opts.AddApi().AddAdmin());
     var app = builder.Build();
     app.UseWeavy();
-    app.Run();
+    app.RunWeavy();
 } catch (Exception ex) {
-    Log.Fatal(ex, "Unhandled exception");
+    Log.Fatal(ex, "Unhandled exception during startup");
 } finally {
-    Log.Information("Shutdown complete");
     Log.CloseAndFlush();
 }

@@ -1,5 +1,28 @@
 # Changelog for Weavy
 
+## v21.0.0
+
+<time>2024-03-06</time>
+
+* Added Comments building block.
+* Added Messenger building block.
+* Added support for ChatGPT AI bots.
+* Added possibility for polls in chat messages.
+* Added support for dynamic module loading in uikit-web.
+* Added integration with Atlassian Confluence.
+* Fixed ResizeObserver loop for Messenger.
+* Fixed messages from self not being displayed in conversations.
+* Improved default size for Messenger and conversations.
+* Improved token handling in uikit-web.
+* Improved destruction in uikit-web.
+* Improved network state in uikit-web.
+* Changed locales configuration in uikit-web.
+
+###### Breaking changes
+
+* Added constraint on directory name. It cannot contain whitespace and must contain at least one non-digit.
+* Locales configuration has changed. The `localizedTemplates` property has been merged into the `locales` property. The `en` and `sv-SE` locales are enabled by default. The `localesUrl` has been removed. See Weavy docs for details.
+
 ## v20.0.0
 
 <time>2024-02-08</time>
