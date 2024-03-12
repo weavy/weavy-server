@@ -1,5 +1,15 @@
 # Changelog for Weavy
 
+## v21.1.0
+
+<time>2024-03-12</time>
+
+* Fixed a problem with installation of lit-modal-portal in uikit-web.
+* Fixed font-sizing and UI scaling in uikit-web.
+* Fixed listing of mentions according to access in uikit-web.
+* Added `--wy-font-size` and `--wy-rem` CSS variables for scaling the text and the UI in uikit-web.
+* Deprecated `--wy-font-size-base` CSS variable in favor for `--wy-font-size`.
+
 ## v21.0.0
 
 <time>2024-03-06</time>
