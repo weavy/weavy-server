@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v21.1.2
+
+<time>2024-03-15</time>
+
+* Fixed some issues with dist files in uikit-react package.
+
 ## v21.1.1
 
 <time>2024-03-12</time>
