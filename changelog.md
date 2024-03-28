@@ -1,5 +1,21 @@
 # Changelog for Weavy
 
+## v22.0.0
+
+<time>2024-03-28</time>
+
+* Added support for Google Gemini chat bots.
+* Added Bot Chat mode in Messenger with only a single bot user using `<wy-messenger bot="mybotname">`.
+* Fixed some issues with scrolling.
+* Fixed `Esc` key in search input fields.
+* Fixed various UI bugs.
+
+###### Breaking changes
+
+* The Conversations API was modified to work exclusively with non-contextual chat apps (previously it was also used for contextual chat apps). 
+* API endpoint to indicate typing moved from /api/apps/:id/messages/typing to /api/conversations/:id/typing.
+* The default value for the `contextual` property when searching for apps was changed from `null` to `true`.
+
 ## v21.1.2
 
 <time>2024-03-15</time>
@@ -28,7 +44,7 @@
 
 * Added Comments building block.
 * Added Messenger building block.
-* Added support for ChatGPT AI bots.
+* Added support for OpenAI chat bots.
 * Added possibility for polls in chat messages.
 * Added support for dynamic module loading in uikit-web.
 * Added integration with Atlassian Confluence.
