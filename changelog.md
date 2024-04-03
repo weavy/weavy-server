@@ -1,5 +1,18 @@
 # Changelog for Weavy
 
+## v22.1.0
+
+<time>2024-04-03</time>
+
+* Added possibility to filter conversations by name in Web API.
+* Messenger bot chat conversations is now filtered by botname, which enables multiple bot chats.
+* Fixed TypeError in uikit-web.
+* Fixed some responsive layout issues in Messenger.
+* Fixed text color in image grid.
+* Fixed some issues with the UI for bot chat.
+* Fixed an issue when setting modalParent in uikit-web.
+* Upgraded SignalR to v8.
+
 ## v22.0.0
 
 <time>2024-03-28</time>
