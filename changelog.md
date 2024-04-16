@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v22.2.0
+
+<time>2024-04-16</time>
+
+* Fixed an issue with pending uploads in the editor.
+* Fixed an issue with pending link embeds in the editor.
+* Fixed some issues with types in uikit-web.
+* Added `submodals` property on block components in uikit-web to enable compatibility with external modals, backdrops and focus-traps.
+
 ## v22.1.0
 
 <time>2024-04-03</time>

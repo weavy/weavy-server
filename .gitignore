@@ -11,6 +11,7 @@ Thumbs.db
 *.userprefs
 .idea/
 .vs/
+.vscode/
 
 # environment variables
 .env
