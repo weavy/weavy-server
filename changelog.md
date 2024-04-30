@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v22.2.1
+
+<time>2024-04-30</time>
+
+* Fixed an issue where uikit-web sometimes believed the environment was unreachable.
+
 ## v22.2.0
 
 <time>2024-04-16</time>
