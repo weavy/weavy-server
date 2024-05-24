@@ -1,5 +1,54 @@
 # Changelog for Weavy
 
+## v23.0.0
+
+<time>2024-05-24</time>
+
+* Added support for claude.ai chat bots
+* Added support for kapa.ai chat bots
+* Added properties for disabling features in uikit-web, e.g. `noReactions` to disable reactions.
+* Added compatibility with React Server Components in uikit-react.
+* Added endpoint for listing all votes on a poll.
+* Added CSS variable `--wy-padding` for spacing inside elements.
+* Added CSS variable `--wy-gap` for spacing between elements.
+* Added CSS variable `--wy-border` for border widths.
+* Added CSS variables for fine-tuned customization on many components
+* Added CSS Shadow Parts for some components to support external styling.
+* Added possibility to set group avatar in Messenger chat rooms.
+* Added bot filtering in user search.
+* Fixed some issues when closing previews and modals.
+* Optimized Web API for performance and consistency. 
+* Deprecated `features` property on apps in favor of feature-disabling properties.
+* Deprecated `zoomAuthenticationUrl` in favor of environment configured Zoom settings.
+
+###### Breaking changes
+
+* Changed all non-normal font weights to `bolder` for better custom font compatibility.
+* Changed design of input fields with buttons to be visually separate instead of being combined for simpler styling. The previous design can be achieved through customization.
+* Changed `--wy-border-radius` to affect all rounded components.
+* Changed `--wy-font-size` to follow `--wy-size` when defined.
+* Changed response code for trash/restore/delete endpoints from `200 OK` to `204 No Content`. 
+* Changed HTTP method of upsert members endpoint (`api/apps/{app:idf}/members`) from `POST` to `PUT`.
+* Removed `--wy-font-size-base`.
+* Removed `--wy-border-radius-lg`.
+* Removed `--wy-border-radius-xl`.
+* Removed backgrounds from block components to allow external backgrounds to be visible. 
+* Removed `parent` property from JSON responses for messages and posts.
+* Removed `created_by`, `created_by_id`, `modified_by` and `modified_by_id` properties from JSON responses for apps and users.
+* Removed `/api/users/autocomplete` endpoint. You can now use `/api/users` or `/api/apps/:app/members` which has been extended to offer the same functionality as the old autocomplete endpoint.
+* Removed `/api/options/:id/voters` endpoint. Voter data is now available directly on `/api/options/:id/`.
+* Renamed `--wy-rem` to `--wy-size`.
+* Renamed `--wy-btn-*` to `--wy-button-*`.* 
+* Renamed `modified_at` to `updated_at` in JSON responses. 
+* Renamed `option.voters` to `option.votes` in JSON responses for comments, posts and messages.
+* Renamed `count` properties in JSON responses, e.g. `comment_count` was changed to `comments.count`.
+* Renamed `top` to `take` for setting page size in API queries. 
+* Replaced `created_by_id` with `created_by.id` in JSON responses. 
+* Replaced `modified_by_id` with `updated_by.id` in JSON responses. 
+* Replaced `app_id` with `app.id` in JSON responses for comments, files, posts and messages. 
+* Replaced `embed_id` with `embed.id` in JSON summary responses for comments, posts and messages. 
+* Replaced `meeting_id` with `meeting.id` in JSON summary responses for comments, posts and messages. 
+
 ## v22.2.1
 
 <time>2024-04-30</time>
