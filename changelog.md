@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v23.1.0
+
+<time>2024-05-31</time>
+
+* Improved typing indicator in conversations.
+* Fixed an issue in uikit-web where it was not possible to create conversations in Safari.
+* Fixed an issue where Messenger was scrolling the document when closing a conversation.
+* Updated pdfjs to v4.3.136.
+ 
 ## v23.0.0
 
 <time>2024-05-24</time>
