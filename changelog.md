@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v23.1.1
+
+<time>2024-06-12</time>
+
+* Fixed an issue with dynamic imports in weavy.js.
+* Fixed incorrect position of presence indicator in Messenger.
+
 ## v23.1.0
 
 <time>2024-05-31</time>
