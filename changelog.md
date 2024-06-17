@@ -1,5 +1,16 @@
 # Changelog for Weavy
 
+## v23.2.0
+
+<time>2024-06-17</time>
+
+* Added support for defining height on all blocks.
+* Added wy-conversation-new part in css.
+* Fixed an authentication issue that prevented Microsoft Office from opening documents via WebDAV.
+* Fixed an issue where it was not possible to add more members to an app.
+* Fixed an issue with truncating text in the title in Messenger.
+* Fixed an issue with empty states not showing correctly.
+
 ## v23.1.1
 
 <time>2024-06-12</time>
