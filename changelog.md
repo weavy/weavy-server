@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v23.2.1
+
+<time>2024-06-19</time>
+
+* Fixed some issues with the typing indicator in Messenger.
+
 ## v23.2.0
 
 <time>2024-06-17</time>
