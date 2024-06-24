@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v23.3.0
+
+<time>2024-06-24</time>
+
+* Improved logging.
+
+
 ## v23.2.1
 
 <time>2024-06-19</time>
