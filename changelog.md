@@ -1,5 +1,15 @@
 # Changelog for Weavy
 
+## v23.4.0
+
+<time>2024-06-27</time>
+
+* Fixed an issue with mention suggestion list not being visible in the message editor.
+* Fixed some issues with dropdowns not being visible or being positioned correctly.
+* Fixed an issue with realtime comments not showing in wy-comments.
+* Fixed an issue with Weavy context not being configured properly in acme-web sample project.
+* Fixed some issues with layout in acme-web sample project.
+
 ## v23.3.0
 
 <time>2024-06-24</time>
