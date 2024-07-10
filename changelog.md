@@ -1,5 +1,26 @@
 # Changelog for Weavy
 
+## v24.0.0
+
+<time>2024-07-10</time>
+
+* Added `<wy-notifications>` component to view and manage notifications.
+* Added `<wy-notification-toasts>` component to show notification toasts and native browser notifications.
+* Added `wy:notifications` event to listen to realtime notifications. Enable notification events by setting the `notificationEvents` property on the Weavy context.
+* Added `wy:link` event to handle navigation when interacting with notifications.
+* Added `name` property to all contextual blocks, which will set the display name for the app. The name is widely used in notification texts and falls back to the `uid` when not set.
+* Added Google Meet integration.
+* Added Microsoft Teams integration.
+* Fixed an issue when removing attributes on wy-context.
+* Fixed an issue with the user presence indicator not being updated.
+* Fixed some issues with realtime subscribe/unsubscribe.
+* Fixed some issues with exports and compatibility the uikit-react package.
+* Changed modals to use the Popover API. This removes the need for the `submodals` property on blocks and the `modalParent` property on the Weavy context.
+
+###### Breaking Changes
+
+* Removed realtime events `wy:*` on all blocks in uikit-web. Use the `wy:notifications` event for realtime updates instead.
+
 ## v23.4.0
 
 <time>2024-06-27</time>

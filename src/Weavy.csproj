@@ -8,13 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="23.4.0" />
-    <PackageReference Include="Weavy.Core" Version="23.4.0" />
-    <PackageReference Include="Weavy.Admin" Version="23.4.0" />
+    <PackageReference Include="Weavy.Api" Version="24.0.0" />
+    <PackageReference Include="Weavy.Core" Version="24.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="24.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.6" />
   </ItemGroup>
 
   <ItemGroup>
