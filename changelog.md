@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v24.0.1
+
+<time>2024-07-12</time>
+
+* Fixed incorrect positioning of modals in uikit-web.
+* Fixed incorrect height on "New messages" badge in uikit-web.
+* Fixed an issue with z-index stacking order in uikit-web.
+
 ## v24.0.0
 
 <time>2024-07-10</time>
