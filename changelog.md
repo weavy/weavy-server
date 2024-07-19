@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v24.0.2
+
+<time>2024-07-18</time>
+
+* Fixed some performance issues when searching for users.
+
 ## v24.0.1
 
 <time>2024-07-12</time>
