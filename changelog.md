@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v24.0.3
+
+<time>2024-08-15</time>
+
+* Fixed some issues with component initialization, affecting realtime mainly in Messenger.
+* Fixed some issues with the "New messages" label in Messenger.
+
 ## v24.0.2
 
 <time>2024-07-18</time>
