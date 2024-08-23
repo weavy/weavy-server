@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v24.0.4
+
+<time>2024-08-23</time>
+
+* Fixed an issue where realtime connection wasn't started sometimes.
+* Fixed some slow running database queries that could cause request timeouts under certain conditions.
+* Fixed the --wy-font-family CSS variable.
+* Fixed an issue where infinite scrolling wasn't working properly after using notifications.
+
 ## v24.0.3
 
 <time>2024-08-15</time>
