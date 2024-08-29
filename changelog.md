@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v24.1.0
+
+<time>2024-08-29</time>
+
+* SSR hydration compatibility for uikit-web and uikit-react.
+* Fixed an issue in uikit-web where conversations wasn't scrolled to bottom when invisible.
+
 ## v24.0.4
 
 <time>2024-08-23</time>
