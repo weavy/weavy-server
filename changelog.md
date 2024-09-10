@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v24.2.0
+
+<time>2024-09-10</time>
+
+* Added export of ConversationTypes and AppTypes in uikit-react.
+* Fixed an issue where the pdf viewer was only loading when cached.
+
 ## v24.1.0
 
 <time>2024-08-29</time>
