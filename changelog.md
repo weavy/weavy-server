@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v24.3.0
+
+<time>2024-09-16</time>
+
+* Added export of WyNotificationsEventType and WyLinkEventType in uikit-react.
+* Added export of WeavyContext context definition in uikit-web to be used with Context Community Protocol by the W3C's Web Components Community Group.
+* Added WeavyContext in uikit-react to be used with React Context API.
+* Added useWeavyContext hook in uikit-react for using Context Community Protocol with uikit-web context definitions.
+
 ## v24.2.0
 
 <time>2024-09-10</time>
