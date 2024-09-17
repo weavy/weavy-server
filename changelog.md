@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v24.3.1
+
+<time>2024-09-17</time>
+
+* Fixed some styling issues with input height.
+
 ## v24.3.0
 
 <time>2024-09-16</time>
