@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v24.4.0
+
+<time>2024-09-19</time>
+
+* Added `weavy.fetch()` for working with data in the Web API using uikit-web.
+* Deprecated `weavy.get()` and `weavy.post()` which are replaced by `weavy.fetch()`.
+ 
 ## v24.3.1
 
 <time>2024-09-17</time>
@@ -10,16 +17,16 @@
 
 <time>2024-09-16</time>
 
-* Added export of WyNotificationsEventType and WyLinkEventType in uikit-react.
-* Added export of WeavyContext context definition in uikit-web to be used with Context Community Protocol by the W3C's Web Components Community Group.
-* Added WeavyContext in uikit-react to be used with React Context API.
-* Added useWeavyContext hook in uikit-react for using Context Community Protocol with uikit-web context definitions.
+* Added export of `WyNotificationsEventType` and `WyLinkEventType` in uikit-react.
+* Added export of `WeavyContext` context definition in uikit-web to be used with Context Community Protocol by the W3C's Web Components Community Group.
+* Added `WeavyContext` in uikit-react to be used with React Context API.
+* Added `useWeavyContext()` hook in uikit-react for using Context Community Protocol with uikit-web context definitions.
 
 ## v24.2.0
 
 <time>2024-09-10</time>
 
-* Added export of ConversationTypes and AppTypes in uikit-react.
+* Added export of `ConversationTypes` and `AppTypes`` in uikit-react.
 * Fixed an issue where the pdf viewer was only loading when cached.
 
 ## v24.1.0
@@ -35,7 +42,7 @@
 
 * Fixed an issue where realtime connection wasn't started sometimes.
 * Fixed some slow running database queries that could cause request timeouts under certain conditions.
-* Fixed the --wy-font-family CSS variable.
+* Fixed the ``--wy-font-family`` CSS variable.
 * Fixed an issue where infinite scrolling wasn't working properly after using notifications.
 
 ## v24.0.3
