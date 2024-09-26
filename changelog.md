@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v24.4.1
+
+<time>2024-09-26</time>
+
+* Fix for incorrect conversation height in Messenger when using Webkit/Chrome.
+
 ## v24.4.0
 
 <time>2024-09-19</time>
