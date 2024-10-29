@@ -1,5 +1,21 @@
 # Changelog for Weavy
 
+## v25.0.0
+
+<time>2024-10-29</time>
+
+* Fixed popover backwards compatibility for legacy browsers in Windows 8.
+* Fixed problem with specifying long url as profile picture.
+* Fixed an issue with realtime registration when enabling notification events.
+* Added feature config for individual meeting providers.
+* Added export forwarding of all uikit-web types under the `WeavyTypes` namespace in uikit-react.
+
+###### Breaking Changes
+
+* Removed the `noMeetings` attribute in uikit-web in favor of `noZoomMeetings`, `noMicrosoftTeams` and `noGoogleMeet`.
+* Moved all exports of sub components to the `WeavyComponents` namespace in uikit-web and uikit-react. Use `import { WeavyComponents } from "@weavy/uikit-web";` to reach the sub components.
+* Removed the deprecated and unused `zoomAuthenticationUrl`. See docs for Zoom configuration.
+
 ## v24.4.1
 
 <time>2024-09-26</time>
