@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v25.1.0
+
+<time>2024-11-12</time>
+
+* Added possibility to have multiple `useWeavy()` hooks with unified config in uikit-react.
+* Improved cache busting in uikit-web.
+
 ## v25.0.0
 
 <time>2024-10-29</time>
