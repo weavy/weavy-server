@@ -1,5 +1,21 @@
 # Changelog for Weavy
 
+## v25.2.0
+
+<time>2024-12-10</time>
+
+* Added support for passing `null` values in options when configuring Weavy in uikit-web.
+* Additional types exported in uikit-web.
+* Added dependency list parameter in `useWeavy()` hook in uikit-react.
+* Added autoscaling on resize for PDF Viewer.
+* Fixed in-app notifications displaying incorrect data during app load in uikit-web.
+* Fixed opened notification links were not being cleared when reusing app components in uikit-web.
+* Fixed Shift-Enter new line in wrong place for the editor in uikit-web.
+* Fixed some styling issues with overlays.
+* Adjusted layout for notifications in uikit-web.
+* Improved handling of empty and unchanged tokens for the `tokenFactory` in uikit-web.
+* Confluence components are now deprecated.
+
 ## v25.1.0
 
 <time>2024-11-12</time>
