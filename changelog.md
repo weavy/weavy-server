@@ -1,5 +1,43 @@
 # Changelog for Weavy
 
+## v26.0.0
+
+<time>2025-02-03</time>
+
+* Updated backend code and runtime to .NET 9.0.
+* All contextual weavy components now support switching to empty `uid` in uikit-web.
+* Added React 19 support using both React components and Web Components in uikit-react.
+* Event names in uikit-web are now named using kebab-case for better compatibility with frameworks supporting web components.
+* Added `--wy-font-monospace` CSS variable for code blocks font family.
+* Added `--wy-transition-reveal-duration` CSS variable for delayed revealing transitions.
+* Added `wy-preview-open` and `wy-preview-close` events in uikit-web.
+* Added `wy-notification` event on the `<wy-notification-toasts>` component with details from incoming notifications. The event can prevent default notifications from showing. Default notifications can also be hidden using the `appearance="none"` property on the component.
+* Improved code highlighting in the editor in uikit-web.
+* Improved read receipts for Messenger in uikit-web.
+* Notification toasts are now only showed when the corresponding Weavy component isn't visible.
+* Fixed some graphic issues with dropdowns in uikit-web.
+* Fixed not being able to remove failed uploads in wy-files in uikit-web.
+* Fixed some issues with comments in wy-files.
+* Fixed some issues with loading states in weavy components.
+* Fixed an issue with keyboard navigation in preview.
+* Fixed some issues when changing user in uikit-web.
+* Multiple UI improvements, performance improvements and fixes in the uikit-web.
+
+###### Breaking Changes
+
+* Removed the Conversations API (`/api/conversations`). All relevant actions have been merged into the Apps API (`/api/apps`). 
+  One important thing to note is that the *Create app* endpoint requires the app `type` to be specified, whereas the *Create conversation* endpoint could automatically infer the `type`.
+* Removed the `contextual` parameter from the `/api/apps` endpoint. To find apps of a specific type you can specify the `type` parameter.
+* Changed the `wy:link` event name to `wy-link`. The event detail now includes `event.detail.source` data for simplified routing. Previous link `event.detail` data is available in `event.detail.link`.
+* Changed the `wy:notifications` event name to `wy-notifications`.
+* Changed the `AppTypes` map to `AppTypeGuids` map and `AppTypeStrings` map which now contain all available app types.
+* Renamed the `ConversationTypes` map to `MessengerTypes` and `MessengerBotTypes` in uikit-web.
+* Renamed the `conversation_marked` event  to `app_marked`.
+* Renamed the `version` property on files to `rev`.
+* Removed the deprecated `/api/apps/init` endpoint.
+* Removed the header in the UI for the Notifications component.
+* Removed the deprecated Confluence components.
+
 ## v25.2.0
 
 <time>2024-12-10</time>
@@ -87,7 +125,7 @@
 
 * Fixed an issue where realtime connection wasn't started sometimes.
 * Fixed some slow running database queries that could cause request timeouts under certain conditions.
-* Fixed the ``--wy-font-family`` CSS variable.
+* Fixed the `--wy-font-family` CSS variable.
 * Fixed an issue where infinite scrolling wasn't working properly after using notifications.
 
 ## v24.0.3

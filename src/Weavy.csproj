@@ -4,44 +4,26 @@
     <Description>ASP.NET Core MVC application for hosting Weavy server/backend services.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <DefaultItemExcludesInProjectFolder>$(DefaultItemExcludesInProjectFolder);blobs\**;cache\**;index\**;logs\**;temp\**;</DefaultItemExcludesInProjectFolder>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="25.2.0" />
-    <PackageReference Include="Weavy.Core" Version="25.2.0" />
-    <PackageReference Include="Weavy.Admin" Version="25.2.0" />
+    <PackageReference Include="Weavy.Api" Version="26.0.0" />
+    <PackageReference Include="Weavy.Core" Version="26.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="26.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.7" />
+    <PackageReference Include="Markdig" Version="0.40.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="blobs\**" />
-    <Content Remove="blobs\**" />
-    <EmbeddedResource Remove="blobs\**" />
-    <None Remove="blobs\**" />
-
-    <Compile Remove="cache\**" />
-    <Content Remove="cache\**" />
-    <EmbeddedResource Remove="cache\**" />
-    <None Remove="cache\**" />
-
-    <Compile Remove="index\**" />
-    <Content Remove="index\**" />
-    <EmbeddedResource Remove="index\**" />
-    <None Remove="index\**" />
-
-    <Compile Remove="logs\**" />
-    <Content Remove="logs\**" />
-    <EmbeddedResource Remove="logs\**" />
-    <None Remove="logs\**" />
-
-    <Compile Remove="temp\**" />
-    <Content Remove="temp\**" />
-    <EmbeddedResource Remove="temp\**" />
-    <None Remove="temp\**" />
-  </ItemGroup>
-
+  <!-- Copy doc files to output for openapi.json, see https://github.com/dotnet/sdk/issues/9498 -->
+  <Target Name="CopyReferenceFiles" BeforeTargets="Build">
+    <ItemGroup>
+      <XmlReferenceFiles Condition="Exists('$(OutputPath)%(Filename).dll')" Include="%(Reference.RelativeDir)%(Reference.Filename).xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(XmlReferenceFiles)" DestinationFolder="$(OutputPath)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)') AND $([System.String]::Copy('%(Filename)').StartsWith('Weavy'))" />
+  </Target>
 </Project>
