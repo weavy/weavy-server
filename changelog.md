@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v26.0.1
+
+<time>2025-02-06</time>
+
+* Updated weavy-server hosting package to include uikit-web dist files.
+
 ## v26.0.0
 
 <time>2025-02-03</time>
