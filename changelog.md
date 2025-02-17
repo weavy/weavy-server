@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v26.0.2
+
+<time>2025-02-17</time>
+
+* Fixed an issue with the `wy-link` event not triggering sometimes for notification toasts in uikit-web.
+
 ## v26.0.1
 
 <time>2025-02-06</time>

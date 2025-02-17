@@ -6582,7 +6582,7 @@ const Gt = class Gt {
     I(this, ln, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Zo = new WeakMap(), Xo = new WeakMap(), Ei = new WeakMap(), ln = new WeakMap(), c(Gt, "WeavyClient"), Gt.version = "26.0.1", Gt.sourceName = "@weavy/uikit-web", Gt.defaults = {
+Zo = new WeakMap(), Xo = new WeakMap(), Ei = new WeakMap(), ln = new WeakMap(), c(Gt, "WeavyClient"), Gt.version = "26.0.2", Gt.sourceName = "@weavy/uikit-web", Gt.defaults = {
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,
   gcTime: 1e3 * 60 * 60 * 24,
@@ -20054,15 +20054,21 @@ let ws = (Aa = class extends zt(j) {
     });
     return this.dispatchEvent(i);
   }
-  async dispatchLink(t) {
-    return await aw(this, this.weavy, this.notification);
-  }
   dispatchMark(t, i) {
     if (t.stopPropagation(), i === !!this.notification.is_unread) {
       const s = new CustomEvent("mark", {
         detail: { notificationId: this.notificationId, markAsRead: i }
       });
       return this.dispatchEvent(s);
+    }
+    return !0;
+  }
+  dispatchHide() {
+    if (this.standalone) {
+      const t = new CustomEvent("hide", {
+        bubbles: !0
+      });
+      return this.dispatchEvent(t);
     }
     return !0;
   }
@@ -20074,6 +20080,9 @@ let ws = (Aa = class extends zt(j) {
       return this.dispatchEvent(t);
     }
     return !0;
+  }
+  async handleClick(t) {
+    this.dispatchSelect(t), this.dispatchMark(t, !0), this.dispatchHide(), await aw(this, this.weavy, this.notification), this.dispatchClose();
   }
   render() {
     var u, y;
@@ -20106,7 +20115,7 @@ let ws = (Aa = class extends zt(j) {
       "wy-active": !this.standalone && this.selected
     })}
         tabindex="0"
-        @click=${(m) => this.dispatchSelect(m) && this.dispatchMark(m, !0) && this.dispatchClose() && this.dispatchLink(m)}
+        @click=${(m) => this.handleClick(m)}
         @keydown=${xe}
         @keyup=${je}
       >
@@ -20409,6 +20418,9 @@ let Vi = (Ta = class extends j {
   constructor() {
     super(...arguments), this.exportParts = new Q(this), this.toastRef = rt(), this.show = !1, this.duration = Vi.defaultDuration;
   }
+  hide() {
+    this.show = !1;
+  }
   async close(t = !1) {
     this.show = !1, await new Promise((i) => requestAnimationFrame(i)), this.toastRef.value && await Od(this.toastRef.value, !1), this.dispatchEvent(new CustomEvent("closed", { detail: { silent: t } })), this.dispatchEvent(new CustomEvent("release-focus", { bubbles: !0, composed: !0 }));
   }
@@ -20420,6 +20432,9 @@ let Vi = (Ta = class extends j {
       <div
         ${X(this.toastRef)}
         class="wy-toast wy-fade ${this.show ? "wy-show" : ""}"
+        @hide=${(t) => {
+      t.stopPropagation(), this.hide();
+    }}
         @close=${() => this.close()}
         @keyup=${qh}
       >
