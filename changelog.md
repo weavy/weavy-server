@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v26.0.3
+
+<time>2025-02-20</time>
+
+* Fixed missing `selectConversation()` in Messenger.
+* Deprecated `selectConversation()` and `clearConversation()` in Messenger. Use `conversationId` instead.
+* Deprecated `conversationBelongsToMessenger()` in Messenger. Use `MessengerTypes` Map for app comparison instead.
+
 ## v26.0.2
 
 <time>2025-02-17</time>

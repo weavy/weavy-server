@@ -7120,7 +7120,7 @@ const Mn = class Mn {
     w(this, dg, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-T$ = new WeakMap(), R$ = new WeakMap(), wc = new WeakMap(), dg = new WeakMap(), Mn.version = "26.0.2", Mn.sourceName = "@weavy/uikit-web", Mn.defaults = {
+T$ = new WeakMap(), R$ = new WeakMap(), wc = new WeakMap(), dg = new WeakMap(), Mn.version = "26.0.3", Mn.sourceName = "@weavy/uikit-web", Mn.defaults = {
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,
   gcTime: 1e3 * 60 * 60 * 24,
@@ -20190,25 +20190,32 @@ let up = class extends Ot {
   /**
    * Checks if a conversation belongs to Messenger.
    *
+   * @deprecated
    * @param conversation {AppRef | AppType | number} - The conversation or id to check if it belongs to Messenger.
    * @returns Promise<Boolean>
    */
   async conversationBelongsToMessenger(i) {
-    return this.weavy ? !!await fie(this.weavy, i, this.appTypes, this.bot) : !1;
+    return console.warn("conversationBelongsToMessenger() is deprecated. Compare app to to .appTypes instead."), this.weavy ? !!await fie(this.weavy, i, this.appTypes, this.bot) : !1;
+  }
+  /**
+   * Set the active conversation.
+   *
+   * @deprecated
+   * @param id {number} - The id of the conversation to select.
+   */
+  async selectConversation(i) {
+    return console.warn("selectConversation() is deprecated. Set .conversationId instead."), this.conversationId = i, !0;
   }
   /**
    * Deselects any active conversation.
+   * @deprecated
    */
   clearConversation() {
-    this.conversationId = null;
+    console.warn("clearConversation() is deprecated. Set .conversationId to null instead."), this.conversationId = null;
   }
   async willUpdate(i) {
     var t, n;
-    if (super.willUpdate(i), (i.has("weavy") || i.has("bot") || i.has("user")) && this.weavy && this.user && this.persistState.observe(["conversationId"], this.bot || "messenger", `u${(t = this.user) == null ? void 0 : t.id}`), i.has("link") && (n = this.link) != null && n.app)
-      if (await this.conversationBelongsToMessenger(this.link.app))
-        this.conversationId = this.link.app.id;
-      else
-        throw new Error("Not a conversation");
+    super.willUpdate(i), (i.has("weavy") || i.has("bot") || i.has("user")) && this.weavy && this.user && this.persistState.observe(["conversationId"], this.bot || "messenger", `u${(t = this.user) == null ? void 0 : t.id}`), i.has("link") && ((n = this.link) != null && n.app) && (this.conversationId = this.link.app.id);
   }
   update(i) {
     super.update(i), (i.has("conversationId") || i.has("weavy")) && this.weavy && (this.conversationId ? this.conversationQuery.trackQuery(uie(this.weavy, this.conversationId, this.appTypes)) : this.conversationQuery.untrackQuery());
@@ -20267,7 +20274,7 @@ p_([
   C({ type: String })
 ], up.prototype, "bot", 1);
 p_([
-  Oe()
+  C({ type: Number })
 ], up.prototype, "conversationId", 2);
 up = p_([
   he(xle),
