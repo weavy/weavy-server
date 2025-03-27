@@ -21,6 +21,7 @@ const a = {
           for (; c.stack[0] === n._string && !e.eol(); )
             e.peek() === c.stringType ? (e.next(), c.stack.shift()) : e.peek() === "\\" ? (e.next(), e.next()) : e.match(/^.[^\\\"\']*/);
           return c.lhs ? "property" : "string";
+        // Token style
         case n.comment:
           for (; c.stack[0] === n.comment && !e.eol(); )
             c.commentType === i.slash && e.match("*/") || c.commentType === i.parenthesis && e.match("*)") ? (c.stack.shift(), c.commentType = null) : e.match(/^.[^\*]*/);

@@ -27,7 +27,7 @@ function k(r, n) {
   if (l.test(e))
     return r.eatWhile(l), "operator";
   r.eatWhile(/[\w\$_]/);
-  var t = r.current();
+  var t = r.current().toLowerCase();
   return d.propertyIsEnumerable(t) ? "keyword" : p.propertyIsEnumerable(t) ? "atom" : "variable";
 }
 i(k, "tokenBase");

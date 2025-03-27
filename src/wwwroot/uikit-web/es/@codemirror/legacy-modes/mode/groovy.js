@@ -80,7 +80,7 @@ function T() {
 r(T, "tokenBaseUntilBrace");
 function B(e, n) {
   var t = e.match(/^(\.|[\w\$_]+)/);
-  return t ? t[0] == "." ? null : "variable" : (n.tokenize.pop(), n.tokenize[n.tokenize.length - 1](e, n));
+  return (!t || !e.match(t[0] == "." ? /^[\w$_]/ : /^\./)) && n.tokenize.pop(), t ? t[0] == "." ? null : "variable" : n.tokenize[n.tokenize.length - 1](e, n);
 }
 r(B, "tokenVariableDeref");
 function w(e, n) {
@@ -111,7 +111,7 @@ function f(e) {
   return (n == ")" || n == "]" || n == "}") && (e.indented = e.context.indented), e.context = e.context.prev;
 }
 r(f, "popContext");
-const I = {
+const C = {
   name: "groovy",
   startState: /* @__PURE__ */ r(function(e) {
     return {
@@ -154,5 +154,5 @@ const I = {
   }
 };
 export {
-  I as groovy
+  C as groovy
 };

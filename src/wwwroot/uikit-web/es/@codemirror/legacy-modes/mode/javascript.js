@@ -218,7 +218,7 @@ function ar(g) {
     }
   }
   i(Dr, "parseJS");
-  var f = { state: null, column: null, marked: null, cc: null };
+  var f = { state: null, marked: null, cc: null };
   function s() {
     for (var r = arguments.length - 1; r >= 0; r--) f.cc.push(arguments[r]);
   }

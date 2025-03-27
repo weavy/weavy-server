@@ -93,8 +93,7 @@ function l(t) {
   };
 }
 i(l, "mlLike");
-const m = l({
-  name: "ocaml",
+const v = l({
   extraWords: {
     and: "keyword",
     assert: "keyword",
@@ -150,8 +149,7 @@ const m = l({
     // Modules
     List: "builtin"
   }
-}), v = l({
-  name: "fsharp",
+}), x = l({
   extraWords: {
     abstract: "keyword",
     assert: "keyword",
@@ -239,8 +237,7 @@ const m = l({
     failwith: "builtin"
   },
   slashComments: !0
-}), x = l({
-  name: "sml",
+}), g = l({
   extraWords: {
     abstype: "keyword",
     and: "keyword",
@@ -275,7 +272,7 @@ const m = l({
   slashComments: !0
 });
 export {
-  v as fSharp,
-  m as oCaml,
-  x as sml
+  x as fSharp,
+  v as oCaml,
+  g as sml
 };

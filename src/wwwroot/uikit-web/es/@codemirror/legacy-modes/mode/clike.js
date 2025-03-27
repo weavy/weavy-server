@@ -27,11 +27,11 @@ function R(e) {
 }
 r(R, "isTopScope");
 function y(e) {
-  var n = e.statementIndentUnit, t = e.dontAlignCalls, c = e.keywords || {}, u = e.types || {}, p = e.builtin || {}, w = e.blockKeywords || {}, x = e.defKeywords || {}, v = e.atoms || {}, k = e.hooks || {}, re = e.multiLineStrings, ie = e.indentStatements !== !1, oe = e.indentSwitch !== !1, j = e.namespaceSeparator, ae = e.isPunctuationChar || /[\[\]{}\(\),;\:\.]/, le = e.numberStart || /[\d\.]/, ce = e.number || /^(?:0x[a-f\d]+|0b[01]+|(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)(u|ll?|l|f)?/i, B = e.isOperatorChar || /[+\-*&%=<>!?|\/]/, U = e.isIdentifierChar || /[\w\$_\xa1-\uffff]/, K = e.isReservedIdentifier || !1, h, P;
+  var n = e.statementIndentUnit, t = e.dontAlignCalls, c = e.keywords || {}, u = e.types || {}, p = e.builtin || {}, w = e.blockKeywords || {}, x = e.defKeywords || {}, v = e.atoms || {}, m = e.hooks || {}, re = e.multiLineStrings, ie = e.indentStatements !== !1, oe = e.indentSwitch !== !1, j = e.namespaceSeparator, ae = e.isPunctuationChar || /[\[\]{}\(\),;\:\.]/, le = e.numberStart || /[\d\.]/, ce = e.number || /^(?:0x[a-f\d]+|0b[01]+|(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)(u|ll?|l|f)?/i, B = e.isOperatorChar || /[+\-*&%=<>!?|\/]/, U = e.isIdentifierChar || /[\w\$_\xa1-\uffff]/, K = e.isReservedIdentifier || !1, h, P;
   function A(o, l) {
     var s = o.next();
-    if (k[s]) {
-      var a = k[s](o, l);
+    if (m[s]) {
+      var a = m[s](o, l);
       if (a !== !1) return a;
     }
     if (s == '"' || s == "'")
@@ -56,7 +56,7 @@ function y(e) {
     if (o.eatWhile(U), j) for (; o.match(j); )
       o.eatWhile(U);
     var f = o.current();
-    return m(c, f) ? (m(w, f) && (h = "newstatement"), m(x, f) && (P = !0), "keyword") : m(u, f) ? "type" : m(p, f) || K && K(f) ? (m(w, f) && (h = "newstatement"), "builtin") : m(v, f) ? "atom" : "variable";
+    return k(c, f) ? (k(w, f) && (h = "newstatement"), k(x, f) && (P = !0), "keyword") : k(u, f) ? "type" : k(p, f) || K && K(f) ? (k(w, f) && (h = "newstatement"), "builtin") : k(v, f) ? "atom" : "variable";
   }
   r(A, "tokenBase");
   function se(o) {
@@ -113,8 +113,8 @@ function y(e) {
         for (; s.type == "statement"; ) s = S(l);
         for (s.type == "}" && (s = S(l)); s.type == "statement"; ) s = S(l);
       } else h == s.type ? S(l) : ie && ((s.type == "}" || s.type == "top") && h != ";" || s.type == "statement" && h == "newstatement") && L(l, o.column(), "statement", o.current());
-      if (a == "variable" && (l.prevToken == "def" || e.typeFirstDefinitions && W(o, l, o.start) && R(l.context) && o.match(/^\s*\(/, !1)) && (a = "def"), k.token) {
-        var f = k.token(o, l, a);
+      if (a == "variable" && (l.prevToken == "def" || e.typeFirstDefinitions && W(o, l, o.start) && R(l.context) && o.match(/^\s*\(/, !1)) && (a = "def"), m.token) {
+        var f = m.token(o, l, a);
         f !== void 0 && (a = f);
       }
       return a == "def" && e.styleDefs === !1 && (a = "variable"), l.startOfLine = !1, l.prevToken = P ? "def" : a || h, q(o, l), a;
@@ -126,8 +126,8 @@ function y(e) {
       if (a.type == "statement" && f == "}" && (a = a.prev), e.dontIndentStatements)
         for (; a.type == "statement" && e.dontIndentStatements.test(a.info); )
           a = a.prev;
-      if (k.indent) {
-        var V = k.indent(o, a, l, s.unit);
+      if (m.indent) {
+        var V = m.indent(o, a, l, s.unit);
         if (typeof V == "number") return V;
       }
       var ue = a.prev && a.prev.info == "switch";
@@ -151,17 +151,17 @@ function i(e) {
   return n;
 }
 r(i, "words");
-function m(e, n) {
+function k(e, n) {
   return typeof e == "function" ? e(n) : e.propertyIsEnumerable(n);
 }
-r(m, "contains");
+r(k, "contains");
 var I = "auto if break case register continue return default do sizeof static else struct switch extern typedef union for goto while enum const volatile inline restrict asm fortran", Q = "alignas alignof and and_eq audit axiom bitand bitor catch class compl concept constexpr const_cast decltype delete dynamic_cast explicit export final friend import module mutable namespace new noexcept not not_eq operator or or_eq override private protected public reinterpret_cast requires static_assert static_cast template this thread_local throw try typeid typename using virtual xor xor_eq", Z = "bycopy byref in inout oneway out self super atomic nonatomic retain copy readwrite readonly strong weak assign typeof nullable nonnull null_resettable _cmd @interface @implementation @end @protocol @encode @property @synthesize @dynamic @class @public @package @private @protected @required @optional @try @catch @finally @import @selector @encode @defs @synchronized @autoreleasepool @compatibility_alias @available", X = "FOUNDATION_EXPORT FOUNDATION_EXTERN NS_INLINE NS_FORMAT_FUNCTION  NS_RETURNS_RETAINEDNS_ERROR_ENUM NS_RETURNS_NOT_RETAINED NS_RETURNS_INNER_POINTER NS_DESIGNATED_INITIALIZER NS_ENUM NS_OPTIONS NS_REQUIRES_NIL_TERMINATION NS_ASSUME_NONNULL_BEGIN NS_ASSUME_NONNULL_END NS_SWIFT_NAME NS_REFINED_FOR_SWIFT", de = i("int long char short double float unsigned signed void bool"), pe = i("SEL instancetype id Class Protocol BOOL");
 function N(e) {
-  return m(de, e) || /.+_t$/.test(e);
+  return k(de, e) || /.+_t$/.test(e);
 }
 r(N, "cTypes");
 function Y(e) {
-  return N(e) || m(pe, e);
+  return N(e) || k(pe, e);
 }
 r(Y, "objCTypes");
 var D = "case do else for if switch while struct enum union", M = "struct enum union";
@@ -390,7 +390,6 @@ const Te = y({
     /* package java.lang */
     "Boolean Byte Character CharSequence Class ClassLoader Cloneable Comparable Compiler Double Exception Float Integer Long Math Number Object Package Pair Process Runtime Runnable SecurityManager Short StackTraceElement StrictMath String StringBuffer System Thread ThreadGroup ThreadLocal Throwable Triple Void Annotation Any BooleanArray ByteArray Char CharArray DeprecationLevel DoubleArray Enum FloatArray Function Int IntArray Lazy LazyThreadSafetyMode LongArray Nothing ShortArray Unit"
   ),
-  intendSwitch: !1,
   indentStatements: !1,
   multiLineStrings: !0,
   number: /^(?:0x[a-f\d_]+|0b[01_]+|(?:[\d_]+(\.\d+)?|\.\d+)(?:e[-+]?[\d_]+)?)(u|ll?|l|f)?/i,
@@ -565,10 +564,10 @@ function te(e) {
   return (e.interpolationStack || (e.interpolationStack = [])).pop();
 }
 r(te, "popInterpolationStack");
-function ke(e) {
+function me(e) {
   return e.interpolationStack ? e.interpolationStack.length : 0;
 }
-r(ke, "sizeInterpolationStack");
+r(me, "sizeInterpolationStack");
 function O(e, n, t, c) {
   var u = !1;
   if (n.eat(e))
@@ -577,23 +576,23 @@ function O(e, n, t, c) {
   function p(w, x) {
     for (var v = !1; !w.eol(); ) {
       if (!c && !v && w.peek() == "$")
-        return ye(x), x.tokenize = me, "string";
-      var k = w.next();
-      if (k == e && !v && (!u || w.match(e + e))) {
+        return ye(x), x.tokenize = ke, "string";
+      var m = w.next();
+      if (m == e && !v && (!u || w.match(e + e))) {
         x.tokenize = null;
         break;
       }
-      v = !c && !v && k == "\\";
+      v = !c && !v && m == "\\";
     }
     return "string";
   }
   return r(p, "tokenStringHelper"), t.tokenize = p, p(n, t);
 }
 r(O, "tokenDartString");
-function me(e, n) {
+function ke(e, n) {
   return e.eat("$"), e.eat("{") ? n.tokenize = null : n.tokenize = ge, null;
 }
-r(me, "tokenInterpolation");
+r(ke, "tokenInterpolation");
 function ge(e, n) {
   return e.eatWhile(/[\w_]/), n.tokenize = te(n), "variable";
 }
@@ -604,6 +603,8 @@ const Ce = y({
   blockKeywords: i("try catch finally do else for if switch while"),
   builtin: i("void bool num int double dynamic var String Null Never"),
   atoms: i("true false null"),
+  // clike numbers without the suffixes, and with '_' separators.
+  number: /^(?:0x[a-f\d_]+|(?:[\d_]+\.?[\d_]*|\.[\d_]+)(?:e[-+]?[\d_]+)?)/i,
   hooks: {
     "@": /* @__PURE__ */ r(function(e) {
       return e.eatWhile(/[\w\$_\.]/), "meta";
@@ -620,7 +621,7 @@ const Ce = y({
       return t == "'" || t == '"' ? O(e.next(), e, n, !0) : !1;
     }, "r"),
     "}": /* @__PURE__ */ r(function(e, n) {
-      return ke(n) > 0 ? (n.tokenize = te(n), null) : !1;
+      return me(n) > 0 ? (n.tokenize = te(n), null) : !1;
     }, "}"),
     "/": /* @__PURE__ */ r(function(e, n) {
       return e.eat("*") ? (n.tokenize = T(1), n.tokenize(e, n)) : !1;

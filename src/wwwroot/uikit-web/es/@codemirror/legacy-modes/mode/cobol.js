@@ -14,7 +14,6 @@ var U = C("TRUE FALSE ZEROES ZEROS ZERO SPACES SPACE LOW-VALUE LOW-VALUES "), P 
   hex: /[0-9a-f]/i,
   sign: /[+-]/,
   exponent: /e/i,
-  keyword_char: /[^\s\(\[\;\)\]]/,
   symbol: /[\w*+\-]/
 };
 function l(E, T) {

@@ -144,7 +144,7 @@ function U(e) {
   r.importedtypes = { name: e, next: r.importedtypes };
 }
 i(U, "registerimport");
-var f = { state: null, column: null, marked: null, cc: null };
+var f = { state: null, marked: null, cc: null };
 function m() {
   for (var e = arguments.length - 1; e >= 0; e--) f.cc.push(arguments[e]);
 }

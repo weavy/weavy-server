@@ -1,12 +1,12 @@
 ﻿var I = Object.defineProperty;
-var r = (e, n) => I(e, "name", { value: n, configurable: !0 });
-var y = function() {
-  function e(w) {
-    return { type: w, style: "keyword" };
+var i = (e, n) => I(e, "name", { value: n, configurable: !0 });
+var h = function() {
+  function e(z) {
+    return { type: z, style: "keyword" };
   }
-  r(e, "kw");
-  for (var n = e("operator"), t = { type: "atom", style: "atom" }, i = { type: "punctuation", style: null }, u = { type: "axis_specifier", style: "qualifier" }, l = {
-    ",": i
+  i(e, "kw");
+  for (var n = e("operator"), t = { type: "atom", style: "atom" }, r = { type: "punctuation", style: null }, a = { type: "axis_specifier", style: "qualifier" }, c = {
+    ",": r
   }, x = [
     "after",
     "all",
@@ -177,9 +177,9 @@ var y = function() {
     "word",
     "words",
     "xquery"
-  ], o = 0, a = x.length; o < a; o++)
-    l[x[o]] = e(x[o]);
-  for (var h = [
+  ], o = 0, l = x.length; o < l; o++)
+    c[x[o]] = e(x[o]);
+  for (var d = [
     "xs:anyAtomicType",
     "xs:anySimpleType",
     "xs:anyType",
@@ -236,11 +236,11 @@ var y = function() {
     "xs:untyped",
     "xs:untypedAtomic",
     "xs:yearMonthDuration"
-  ], o = 0, a = h.length; o < a; o++)
-    l[h[o]] = t;
-  for (var p = ["eq", "ne", "lt", "le", "gt", "ge", ":=", "=", ">", ">=", "<", "<=", ".", "|", "?", "and", "or", "div", "idiv", "mod", "*", "/", "+", "-"], o = 0, a = p.length; o < a; o++)
-    l[p[o]] = n;
-  for (var b = [
+  ], o = 0, l = d.length; o < l; o++)
+    c[d[o]] = t;
+  for (var p = ["eq", "ne", "lt", "le", "gt", "ge", ":=", "=", ">", ">=", "<", "<=", ".", "|", "?", "and", "or", "div", "idiv", "mod", "*", "/", "+", "-"], o = 0, l = p.length; o < l; o++)
+    c[p[o]] = n;
+  for (var m = [
     "self::",
     "attribute::",
     "child::",
@@ -253,98 +253,98 @@ var y = function() {
     "preceding::",
     "following-sibling::",
     "preceding-sibling::"
-  ], o = 0, a = b.length; o < a; o++)
-    l[b[o]] = u;
-  return l;
+  ], o = 0, l = m.length; o < l; o++)
+    c[m[o]] = a;
+  return c;
 }();
 function g(e, n, t) {
   return n.tokenize = t, t(e, n);
 }
-r(g, "chain");
+i(g, "chain");
 function s(e, n) {
-  var t = e.next(), i = !1, u = B(e);
+  var t = e.next(), r = !1, a = B(e);
   if (t == "<") {
     if (e.match("!--", !0))
-      return g(e, n, E);
+      return g(e, n, A);
     if (e.match("![CDATA", !1))
-      return n.tokenize = A, "tag";
+      return n.tokenize = D, "tag";
     if (e.match("?", !1))
-      return g(e, n, D);
-    var l = e.eat("/");
+      return g(e, n, _);
+    var c = e.eat("/");
     e.eatSpace();
     for (var x = "", o; o = e.eat(/[^\s\u00a0=<>\"\'\/?]/); ) x += o;
-    return g(e, n, N(x, l));
+    return g(e, n, E(x, c));
   } else {
     if (t == "{")
       return f(n, { type: "codeblock" }), null;
     if (t == "}")
-      return c(n), null;
-    if (z(n))
-      return t == ">" ? "tag" : t == "/" && e.eat(">") ? (c(n), "tag") : "variable";
+      return u(n), null;
+    if (w(n))
+      return t == ">" ? "tag" : t == "/" && e.eat(">") ? (u(n), "tag") : "variable";
     if (/\d/.test(t))
       return e.match(/^\d*(?:\.\d*)?(?:E[+\-]?\d+)?/), "atom";
     if (t === "(" && e.eat(":"))
       return f(n, { type: "comment" }), g(e, n, T);
-    if (!u && (t === '"' || t === "'"))
-      return g(e, n, m(t));
+    if (!a && (t === '"' || t === "'"))
+      return b(e, n, t);
     if (t === "$")
-      return g(e, n, S);
+      return g(e, n, N);
     if (t === ":" && e.eat("="))
       return "keyword";
     if (t === "(")
       return f(n, { type: "paren" }), null;
     if (t === ")")
-      return c(n), null;
+      return u(n), null;
     if (t === "[")
       return f(n, { type: "bracket" }), null;
     if (t === "]")
-      return c(n), null;
-    var a = y.propertyIsEnumerable(t) && y[t];
-    if (u && t === '"') for (; e.next() !== '"'; )
+      return u(n), null;
+    var l = h.propertyIsEnumerable(t) && h[t];
+    if (a && t === '"') for (; e.next() !== '"'; )
       ;
-    if (u && t === "'") for (; e.next() !== "'"; )
+    if (a && t === "'") for (; e.next() !== "'"; )
       ;
-    a || e.eatWhile(/[\w\$_-]/);
-    var h = e.eat(":");
-    !e.eat(":") && h && e.eatWhile(/[\w\$_-]/), e.match(/^[ \t]*\(/, !1) && (i = !0);
+    l || e.eatWhile(/[\w\$_-]/);
+    var d = e.eat(":");
+    !e.eat(":") && d && e.eatWhile(/[\w\$_-]/), e.match(/^[ \t]*\(/, !1) && (r = !0);
     var p = e.current();
-    return a = y.propertyIsEnumerable(p) && y[p], i && !a && (a = { type: "function_call", style: "def" }), _(n) ? (c(n), "variable") : ((p == "element" || p == "attribute" || a.type == "axis_specifier") && f(n, { type: "xmlconstructor" }), a ? a.style : "variable");
+    return l = h.propertyIsEnumerable(p) && h[p], r && !l && (l = { type: "function_call", style: "def" }), C(n) ? (u(n), "variable") : ((p == "element" || p == "attribute" || l.type == "axis_specifier") && f(n, { type: "xmlconstructor" }), l ? l.style : "variable");
   }
 }
-r(s, "tokenBase");
+i(s, "tokenBase");
 function T(e, n) {
-  for (var t = !1, i = !1, u = 0, l; l = e.next(); ) {
-    if (l == ")" && t)
-      if (u > 0)
-        u--;
+  for (var t = !1, r = !1, a = 0, c; c = e.next(); ) {
+    if (c == ")" && t)
+      if (a > 0)
+        a--;
       else {
-        c(n);
+        u(n);
         break;
       }
-    else l == ":" && i && u++;
-    t = l == ":", i = l == "(";
+    else c == ":" && r && a++;
+    t = c == ":", r = c == "(";
   }
   return "comment";
 }
-r(T, "tokenComment");
-function m(e, n) {
-  return function(t, i) {
-    var u;
-    if (C(i) && t.current() == e)
-      return c(i), n && (i.tokenize = n), "string";
-    if (f(i, { type: "string", name: e, tokenize: m(e, n) }), t.match("{", !1) && d(i))
-      return i.tokenize = s, "string";
-    for (; u = t.next(); )
-      if (u == e) {
-        c(i), n && (i.tokenize = n);
+i(T, "tokenComment");
+function S(e, n) {
+  return function(t, r) {
+    for (var a; a = t.next(); )
+      if (a == e) {
+        u(r), n && (r.tokenize = n);
         break;
-      } else if (t.match("{", !1) && d(i))
-        return i.tokenize = s, "string";
+      } else if (t.match("{", !1) && y(r))
+        return f(r, { type: "codeblock" }), r.tokenize = s, "string";
     return "string";
   };
 }
-r(m, "tokenString");
-function S(e, n) {
+i(S, "tokenString");
+function b(e, n, t, r) {
+  let a = S(t, r);
+  return f(n, { type: "string", name: t, tokenize: a }), g(e, n, a);
+}
+i(b, "startString");
+function N(e, n) {
   var t = /[\w\$_-]/;
   if (e.eat('"')) {
     for (; e.next() !== '"'; )
@@ -354,86 +354,82 @@ function S(e, n) {
     e.eatWhile(t), e.match(":=", !1) || e.eat(":");
   return e.eatWhile(t), n.tokenize = s, "variable";
 }
-r(S, "tokenVariable");
-function N(e, n) {
-  return function(t, i) {
+i(N, "tokenVariable");
+function E(e, n) {
+  return function(t, r) {
     if (t.eatSpace(), n && t.eat(">"))
-      return c(i), i.tokenize = s, "tag";
-    if (t.eat("/") || f(i, { type: "tag", name: e, tokenize: s }), t.eat(">"))
-      i.tokenize = s;
+      return u(r), r.tokenize = s, "tag";
+    if (t.eat("/") || f(r, { type: "tag", name: e, tokenize: s }), t.eat(">"))
+      r.tokenize = s;
     else
-      return i.tokenize = v, "tag";
+      return r.tokenize = k, "tag";
     return "tag";
   };
 }
-r(N, "tokenTag");
-function v(e, n) {
+i(E, "tokenTag");
+function k(e, n) {
   var t = e.next();
-  return t == "/" && e.eat(">") ? (d(n) && c(n), z(n) && c(n), "tag") : t == ">" ? (d(n) && c(n), "tag") : t == "=" ? null : t == '"' || t == "'" ? g(e, n, m(t, v)) : (d(n) || f(n, { type: "attribute", tokenize: v }), e.eat(/[a-zA-Z_:]/), e.eatWhile(/[-a-zA-Z0-9_:.]/), e.eatSpace(), (e.match(">", !1) || e.match("/", !1)) && (c(n), n.tokenize = s), "attribute");
+  return t == "/" && e.eat(">") ? (y(n) && u(n), w(n) && u(n), "tag") : t == ">" ? (y(n) && u(n), "tag") : t == "=" ? null : t == '"' || t == "'" ? b(e, n, t, k) : (y(n) || f(n, { type: "attribute", tokenize: k }), e.eat(/[a-zA-Z_:]/), e.eatWhile(/[-a-zA-Z0-9_:.]/), e.eatSpace(), (e.match(">", !1) || e.match("/", !1)) && (u(n), n.tokenize = s), "attribute");
 }
-r(v, "tokenAttribute");
-function E(e, n) {
+i(k, "tokenAttribute");
+function A(e, n) {
   for (var t; t = e.next(); )
     if (t == "-" && e.match("->", !0))
       return n.tokenize = s, "comment";
 }
-r(E, "tokenXMLComment");
-function A(e, n) {
+i(A, "tokenXMLComment");
+function D(e, n) {
   for (var t; t = e.next(); )
     if (t == "]" && e.match("]", !0))
       return n.tokenize = s, "comment";
 }
-r(A, "tokenCDATA");
-function D(e, n) {
+i(D, "tokenCDATA");
+function _(e, n) {
   for (var t; t = e.next(); )
     if (t == "?" && e.match(">", !0))
       return n.tokenize = s, "processingInstruction";
 }
-r(D, "tokenPreProcessing");
-function z(e) {
-  return k(e, "tag");
+i(_, "tokenPreProcessing");
+function w(e) {
+  return v(e, "tag");
 }
-r(z, "isInXmlBlock");
-function d(e) {
-  return k(e, "attribute");
+i(w, "isInXmlBlock");
+function y(e) {
+  return v(e, "attribute");
 }
-r(d, "isInXmlAttributeBlock");
-function _(e) {
-  return k(e, "xmlconstructor");
-}
-r(_, "isInXmlConstructor");
+i(y, "isInXmlAttributeBlock");
 function C(e) {
-  return k(e, "string");
+  return v(e, "xmlconstructor");
 }
-r(C, "isInString");
+i(C, "isInXmlConstructor");
 function B(e) {
   return e.current() === '"' ? e.match(/^[^\"]+\"\:/, !1) : e.current() === "'" ? e.match(/^[^\"]+\'\:/, !1) : !1;
 }
-r(B, "isEQNameAhead");
-function k(e, n) {
+i(B, "isEQNameAhead");
+function v(e, n) {
   return e.stack.length && e.stack[e.stack.length - 1].type == n;
 }
-r(k, "isIn");
+i(v, "isIn");
 function f(e, n) {
   e.stack.push(n);
 }
-r(f, "pushStateStack");
-function c(e) {
+i(f, "pushStateStack");
+function u(e) {
   e.stack.pop();
   var n = e.stack.length && e.stack[e.stack.length - 1].tokenize;
   e.tokenize = n || s;
 }
-r(c, "popStateStack");
-const O = {
+i(u, "popStateStack");
+const q = {
   name: "xquery",
-  startState: /* @__PURE__ */ r(function() {
+  startState: /* @__PURE__ */ i(function() {
     return {
       tokenize: s,
       cc: [],
       stack: []
     };
   }, "startState"),
-  token: /* @__PURE__ */ r(function(e, n) {
+  token: /* @__PURE__ */ i(function(e, n) {
     if (e.eatSpace()) return null;
     var t = n.tokenize(e, n);
     return t;
@@ -443,5 +439,5 @@ const O = {
   }
 };
 export {
-  O as xQuery
+  q as xQuery
 };

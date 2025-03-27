@@ -1,5 +1,24 @@
 # Changelog for Weavy
 
+## v27.0.0
+
+* Added Bots API for managing chat bots
+* Added `<wy-copilot>` component for contextual conversations with chat bots.
+* Added method to remove a user's copy of a private chat.
+* Added `features` property to uikit components.
+* Added feature option to enable typing indicators and read receipts on the `<wy-chat>` component.
+* Added `reactions` property to configure reactions on individual components or on the `<wy-context>`.
+
+###### Breaking Changes
+
+* Bots are no longer managed via the Users API. You should use the dedicated Bots API instead.
+* Changed how features are toggled ui the kit. Features are now opt-in using a single `features` property with a space separated list of features. It defaults to a predefined set of features when not configured. This replaces the previous opt-out properties. 
+* The `<wy-comments>` component now defaults to having the meetings feature disabled. Enable it by configuring the `features` property.
+* Custom reactions are now configured by setting the `reactions` property to a space separated string of unicode emojis.
+* Removed unused `is_suspended` property from users.
+* Removed the redundant `display_name` property from users and apps. Use the `name` property instead.
+* Replaced `directory_id` with `directory.id` in JSON responses. 
+
 ## v26.0.3
 
 <time>2025-02-20</time>

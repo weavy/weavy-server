@@ -6,7 +6,6 @@ function o(e) {
 }
 s(o, "words");
 const i = {
-  name: "ttcn",
   keywords: o("activate address alive all alt altstep and and4b any break case component const continue control deactivate display do else encode enumerated except exception execute extends extension external for from function goto group if import in infinity inout interleave label language length log match message mixed mod modifies module modulepar mtc noblock not not4b nowait of on optional or or4b out override param pattern port procedure record recursive rem repeat return runs select self sender set signature system template testcase to type union value valueof var variant while with xor xor4b"),
   builtin: o("bit2hex bit2int bit2oct bit2str char2int char2oct encvalue decomp decvalue float2int float2str hex2bit hex2int hex2oct hex2str int2bit int2char int2float int2hex int2oct int2str int2unichar isbound ischosen ispresent isvalue lengthof log2str oct2bit oct2char oct2hex oct2int oct2str regexp replace rnd sizeof str2bit str2float str2hex str2int str2oct substr unichar2int unichar2char enum2int"),
   types: o("anytype bitstring boolean char charstring default float hexstring integer objid octetstring universal verdicttype timer"),
@@ -20,8 +19,7 @@ const i = {
   booleanConsts: o("true false"),
   otherConsts: o("null NULL omit"),
   visibilityModifiers: o("private public friend"),
-  templateMatch: o("complement ifpresent subset superset permutation"),
-  multiLineStrings: !0
+  templateMatch: o("complement ifpresent subset superset permutation")
 };
 var b = [];
 function f(e) {
@@ -32,11 +30,11 @@ f(i.keywords);
 f(i.builtin);
 f(i.timerOps);
 f(i.portOps);
-var g = i.keywords || {}, x = i.builtin || {}, k = i.timerOps || {}, O = i.portOps || {}, w = i.configOps || {}, E = i.verdictOps || {}, C = i.sutOps || {}, I = i.functionOps || {}, L = i.verdictConsts || {}, z = i.booleanConsts || {}, S = i.otherConsts || {}, M = i.types || {}, W = i.visibilityModifiers || {}, T = i.templateMatch || {}, N = i.multiLineStrings, P = i.indentStatements !== !1, m = /[+\-*&@=<>!\/]/, l;
-function $(e, t) {
+var x = i.keywords || {}, g = i.builtin || {}, k = i.timerOps || {}, O = i.portOps || {}, w = i.configOps || {}, E = i.verdictOps || {}, C = i.sutOps || {}, I = i.functionOps || {}, z = i.verdictConsts || {}, L = i.booleanConsts || {}, M = i.otherConsts || {}, S = i.types || {}, W = i.visibilityModifiers || {}, T = i.templateMatch || {}, N = i.indentStatements !== !1, m = /[+\-*&@=<>!\/]/, l;
+function P(e, t) {
   var n = e.next();
   if (n == '"' || n == "'")
-    return t.tokenize = B(n), t.tokenize(e, t);
+    return t.tokenize = $(n), t.tokenize(e, t);
   if (/[\[\]{}\(\),;\\:\?\.]/.test(n))
     return l = n, "punctuation";
   if (n == "#")
@@ -55,23 +53,23 @@ function $(e, t) {
     return n == "@" && (e.match("try") || e.match("catch") || e.match("lazy")) ? "keyword" : (e.eatWhile(m), "operator");
   e.eatWhile(/[\w\$_\xa1-\uffff]/);
   var r = e.current();
-  return g.propertyIsEnumerable(r) ? "keyword" : x.propertyIsEnumerable(r) ? "builtin" : k.propertyIsEnumerable(r) || w.propertyIsEnumerable(r) || E.propertyIsEnumerable(r) || O.propertyIsEnumerable(r) || C.propertyIsEnumerable(r) || I.propertyIsEnumerable(r) ? "def" : L.propertyIsEnumerable(r) || z.propertyIsEnumerable(r) || S.propertyIsEnumerable(r) ? "string" : M.propertyIsEnumerable(r) ? "typeName.standard" : W.propertyIsEnumerable(r) ? "modifier" : T.propertyIsEnumerable(r) ? "atom" : "variable";
+  return x.propertyIsEnumerable(r) ? "keyword" : g.propertyIsEnumerable(r) ? "builtin" : k.propertyIsEnumerable(r) || w.propertyIsEnumerable(r) || E.propertyIsEnumerable(r) || O.propertyIsEnumerable(r) || C.propertyIsEnumerable(r) || I.propertyIsEnumerable(r) ? "def" : z.propertyIsEnumerable(r) || L.propertyIsEnumerable(r) || M.propertyIsEnumerable(r) ? "string" : S.propertyIsEnumerable(r) ? "typeName.standard" : W.propertyIsEnumerable(r) ? "modifier" : T.propertyIsEnumerable(r) ? "atom" : "variable";
 }
-s($, "tokenBase");
-function B(e) {
+s(P, "tokenBase");
+function $(e) {
   return function(t, n) {
-    for (var r = !1, c, d = !1; (c = t.next()) != null; ) {
-      if (c == e && !r) {
-        var u = t.peek();
-        u && (u = u.toLowerCase(), (u == "b" || u == "h" || u == "o") && t.next()), d = !0;
+    for (var r = !1, u, d = !1; (u = t.next()) != null; ) {
+      if (u == e && !r) {
+        var c = t.peek();
+        c && (c = c.toLowerCase(), (c == "b" || c == "h" || c == "o") && t.next()), d = !0;
         break;
       }
-      r = !r && c == "\\";
+      r = !r && u == "\\";
     }
-    return (d || !(r || N)) && (n.tokenize = null), "string";
+    return d && (n.tokenize = null), "string";
   };
 }
-s(B, "tokenString");
+s($, "tokenString");
 function h(e, t) {
   for (var n = !1, r; r = e.next(); ) {
     if (r == "/" && n) {
@@ -83,8 +81,8 @@ function h(e, t) {
   return "comment";
 }
 s(h, "tokenComment");
-function y(e, t, n, r, c) {
-  this.indented = e, this.column = t, this.type = n, this.align = r, this.prev = c;
+function y(e, t, n, r, u) {
+  this.indented = e, this.column = t, this.type = n, this.align = r, this.prev = u;
 }
 s(y, "Context");
 function p(e, t, n) {
@@ -97,7 +95,7 @@ function a(e) {
   return (t == ")" || t == "]" || t == "}") && (e.indented = e.context.indented), e.context = e.context.prev;
 }
 s(a, "popContext");
-const U = {
+const D = {
   name: "ttcn",
   startState: /* @__PURE__ */ s(function() {
     return {
@@ -111,7 +109,7 @@ const U = {
     var n = t.context;
     if (e.sol() && (n.align == null && (n.align = !1), t.indented = e.indentation(), t.startOfLine = !0), e.eatSpace()) return null;
     l = null;
-    var r = (t.tokenize || $)(e, t);
+    var r = (t.tokenize || P)(e, t);
     if (r == "comment") return r;
     if (n.align == null && (n.align = !0), (l == ";" || l == ":" || l == ",") && n.type == "statement")
       a(t);
@@ -121,7 +119,7 @@ const U = {
     else if (l == "}") {
       for (; n.type == "statement"; ) n = a(t);
       for (n.type == "}" && (n = a(t)); n.type == "statement"; ) n = a(t);
-    } else l == n.type ? a(t) : P && ((n.type == "}" || n.type == "top") && l != ";" || n.type == "statement" && l == "newstatement") && p(t, e.column(), "statement");
+    } else l == n.type ? a(t) : N && ((n.type == "}" || n.type == "top") && l != ";" || n.type == "statement" && l == "newstatement") && p(t, e.column(), "statement");
     return t.startOfLine = !1, r;
   }, "token"),
   languageData: {
@@ -131,5 +129,5 @@ const U = {
   }
 };
 export {
-  U as ttcn
+  D as ttcn
 };

@@ -92,9 +92,9 @@ const L = {
     };
   }, "startState"),
   token: /* @__PURE__ */ o(function(e, n) {
-    if (e.sol() && (n.ctx.flags & 3 || (n.ctx.flags |= c), n.ctx.flags & a && p(n), n.indent = e.indentation()), e.eatSpace()) return null;
+    if (e.sol() && ((n.ctx.flags & 3) == 0 && (n.ctx.flags |= c), n.ctx.flags & a && p(n), n.indent = e.indentation()), e.eatSpace()) return null;
     var r = n.tokenize(e, n);
-    return r != "comment" && !(n.ctx.flags & c) && b(n, x), (t == ";" || t == "{" || t == "}") && n.ctx.type == "block" && p(n), t == "{" ? f(n, "}", e) : t == "(" ? (f(n, ")", e), n.afterIdent && (n.ctx.argList = !0)) : t == "[" ? f(n, "]", e) : t == "block" ? f(n, "block", e) : t == n.ctx.type ? p(n) : n.ctx.type == "block" && r != "comment" && b(n, a), n.afterIdent = r == "variable" || r == "keyword", r;
+    return r != "comment" && (n.ctx.flags & c) == 0 && b(n, x), (t == ";" || t == "{" || t == "}") && n.ctx.type == "block" && p(n), t == "{" ? f(n, "}", e) : t == "(" ? (f(n, ")", e), n.afterIdent && (n.ctx.argList = !0)) : t == "[" ? f(n, "]", e) : t == "block" ? f(n, "block", e) : t == n.ctx.type ? p(n) : n.ctx.type == "block" && r != "comment" && b(n, a), n.afterIdent = r == "variable" || r == "keyword", r;
   }, "token"),
   indent: /* @__PURE__ */ o(function(e, n, r) {
     if (e.tokenize != d) return 0;

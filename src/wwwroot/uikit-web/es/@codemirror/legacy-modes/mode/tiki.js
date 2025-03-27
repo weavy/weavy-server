@@ -28,6 +28,7 @@ function c(e, n) {
   i(t, "chain");
   var r = e.sol(), k = e.next();
   switch (k) {
+    //switch is generally much faster than if, so it is used here
     case "{":
       return e.eat("/"), e.eatSpace(), e.eatWhile(/[^\s\u00a0=\"\'\/?(}]/), n.tokenize = p, "tag";
     case "_":
@@ -74,7 +75,9 @@ function c(e, n) {
       case "!":
         return e.match("!!!!!") || e.match("!!!!") || e.match("!!!") || e.match("!!"), t(l("header string"));
       case "*":
+      //unordered list line item, or <li /> at start of line
       case "#":
+      //ordered list line item, or <li /> at start of line
       case "+":
         return t(l("tw-listitem bracket"));
     }

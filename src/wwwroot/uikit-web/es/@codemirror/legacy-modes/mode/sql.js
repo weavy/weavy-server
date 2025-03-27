@@ -199,8 +199,6 @@ const D = l({
   // SQLite is weakly typed, ref: http://sqlite.org/datatype3.html. This is just a list of some common types.
   dateSQL: e("date time timestamp datetime"),
   support: e("decimallessFloat zerolessFloat"),
-  identifierQuote: '"',
-  //ref: http://sqlite.org/lang_keywords.html
   hooks: {
     // bind-parameters ref:http://sqlite.org/lang_expr.html#varparam
     "@": d,

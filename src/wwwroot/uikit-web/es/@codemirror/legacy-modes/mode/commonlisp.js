@@ -19,7 +19,7 @@ function c(e, n) {
   if (t == "\\" && (t = e.next()), t == '"') return (n.tokenize = s)(e, n);
   if (t == "(")
     return l = "open", "bracket";
-  if (t == ")" || t == "]")
+  if (t == ")")
     return l = "close", "bracket";
   if (t == ";")
     return e.skipToEnd(), l = "ws", "comment";
