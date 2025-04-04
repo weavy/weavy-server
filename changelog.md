@@ -1,6 +1,16 @@
 # Changelog for Weavy
 
+## v27.1.0
+
+<time>2025-04-05</time>
+
+* Fixed an issue with app name property not being registered from UIKit.
+* Made the `wy-app` event available generally in all contextual Weavy components.
+* Improved some event types.
+
 ## v27.0.0
+
+<time>2025-03-27</time>
 
 * Added Bots API for managing chat bots
 * Added `<wy-copilot>` component for contextual conversations with chat bots.
