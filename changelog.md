@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v27.1.1
+
+<time>2025-04-15</time>
+
+* Fixed an issue with layout for the comments panel in previews.
+* Fixed an issue with deleting webhooks.
+* Fixed an issue with `app.name`not being properly updated when changing `uid`.
+* Fixed an issue with not being able to set `conversationId` in `wy-messenger`.
+
 ## v27.1.0
 
 <time>2025-04-05</time>
