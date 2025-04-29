@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v27.1.3
+
+<time>2025-04-29</time>
+
+* Fixed an issue with polls not being updated when voting in UIKit.
+* Fixed an issue with media previews playing in background in UIKit.
+
 ## v27.1.2
 
 <time>2025-04-29</time>
