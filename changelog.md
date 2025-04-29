@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v27.1.2
+
+<time>2025-04-29</time>
+
+* Fixed an issue when changing `uid` in the `wy-posts` component.
+* Fixed some issues with async handling in UIKit.
+* Improved loading performance in `wy-chat`, `wy-comments`, `wy-messenger` and `wy-posts`.
+
 ## v27.1.1
 
 <time>2025-04-15</time>
