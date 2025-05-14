@@ -1,5 +1,30 @@
 # Changelog for Weavy
 
+## v28.0.0
+
+<time>2025-05-14</time>
+
+* Added AI agents with file search capabilities.
+* Added `data` property to provide contextual data for agents in all Weavy components in UI kit.
+* Added support for app id in `uid` property for contextual Weavy components in UI kit.
+* Added `uikit-react` dist files to the backend.
+* Added `placeholder` property to `<wy-comments>`, `<wy-chat>`, `<wy-copilot>`, `<wy-messenger>` and `<wy-posts>`.
+* Renamed Bots API to Agents API, i.e. `/api/bots` is now `/api/agents`.
+* Renamed `bot` property to `agent` when listing users in the Users API.
+* Renamed `is_bot` property to `is_agent` when returning users in the Users API.
+* Renamed `bot` property to `agent` for `<wy-messenger>` and `<wy-copilot>` in UI kit.
+* Renamed `bot` property to `agent` in the `wy-link` event in UI kit.
+* Renamed `bot` property to `agent` in the `wy-message` event in UI kit.
+* Renamed `MessengerBotTypes` map to `MessengerAgentTypes` in UI kit.
+* Renamed `bot_chat` app type to `agent_type` in UI kit.
+* Fixed an issue with editor autocomplete in UI kit.
+* Fixed an issue with conversation naming in UI kit.
+* Fixed incorrect filenames for UMD files in `uikit-react`.
+
+###### Breaking Changes
+
+* The Bots API is now renamed to the Agents API. All names that previously used `bot` in the name now use `agent` in the name instead. This affects all API:s.
+
 ## v27.1.3
 
 <time>2025-04-29</time>

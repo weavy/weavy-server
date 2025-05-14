@@ -5583,18 +5583,26 @@ function y0(r, e, t) {
   return t - i.left > 5;
 }
 c(y0, "isSuspiciousChromeCaretResult");
-function b0(r, e) {
-  let t = r.lineBlockAt(e);
-  if (Array.isArray(t.type)) {
-    for (let i of t.type)
-      if (i.to > e || i.to == e && (i.to == t.to || i.type == et.Text))
-        return i;
+function b0(r, e, t) {
+  let i = r.lineBlockAt(e);
+  if (Array.isArray(i.type)) {
+    let n;
+    for (let s of i.type) {
+      if (s.from > e)
+        break;
+      if (!(s.to < e)) {
+        if (s.from < e && s.to > e)
+          return s;
+        (!n || s.type == et.Text && (n.type != s.type || (t < 0 ? s.from < e : s.to > e))) && (n = s);
+      }
+    }
+    return n || i;
   }
-  return t;
+  return i;
 }
 c(b0, "blockAt");
 function S0(r, e, t, i) {
-  let n = b0(r, e.head), s = !i || n.type != et.Text || !(r.lineWrapping || n.widgetLineBreaks) ? null : r.coordsAtPos(e.assoc < 0 && e.head > n.from ? e.head - 1 : e.head);
+  let n = b0(r, e.head, e.assoc || -1), s = !i || n.type != et.Text || !(r.lineWrapping || n.widgetLineBreaks) ? null : r.coordsAtPos(e.assoc < 0 && e.head > n.from ? e.head - 1 : e.head);
   if (s) {
     let o = r.dom.getBoundingClientRect(), l = r.textDirectionAt(n.from), a = r.posAtCoords({
       x: t == (l == ee.LTR) ? o.right - 1 : o.left + 1,
@@ -6354,7 +6362,7 @@ function UO(r, e) {
     let n = i(r, e);
     n && t.push(n);
   }
-  return t ? r.update({ effects: t, annotations: VO.of(!0) }) : null;
+  return t.length ? r.update({ effects: t, annotations: VO.of(!0) }) : null;
 }
 c(UO, "focusChangeTransaction");
 function WO(r) {
@@ -6996,7 +7004,7 @@ const gf = class gf {
     let i = this.stateDeco;
     this.stateDeco = this.state.facet(tn).filter((f) => typeof f != "function");
     let n = e.changedRanges, s = tt.extendWithRanges(n, q0(i, this.stateDeco, e ? e.changes : Te.empty(this.state.doc.length))), o = this.heightMap.height, l = this.scrolledToBottom ? null : this.scrollAnchorAt(this.scrollTop);
-    lu(), this.heightMap = this.heightMap.applyChanges(this.stateDeco, e.startState.doc, this.heightOracle.setDoc(this.state.doc), s), (this.heightMap.height != o || Wi) && (e.flags |= 2), l ? (this.scrollAnchorPos = e.changes.mapPos(l.from, -1), this.scrollAnchorHeight = l.top) : (this.scrollAnchorPos = -1, this.scrollAnchorHeight = this.heightMap.height);
+    lu(), this.heightMap = this.heightMap.applyChanges(this.stateDeco, e.startState.doc, this.heightOracle.setDoc(this.state.doc), s), (this.heightMap.height != o || Wi) && (e.flags |= 2), l ? (this.scrollAnchorPos = e.changes.mapPos(l.from, -1), this.scrollAnchorHeight = l.top) : (this.scrollAnchorPos = -1, this.scrollAnchorHeight = o);
     let a = s.length ? this.mapViewport(this.viewport, e.changes) : this.viewport;
     (t && (t.range.head < a.from || t.range.head > a.to) || !this.viewportIsAppropriate(a)) && (a = this.getViewport(0, t));
     let h = a.from != this.viewport.from || a.to != this.viewport.to;
@@ -7993,7 +8001,7 @@ const Cr = class Cr {
   one change has been made in the current composition.
   */
   get composing() {
-    return this.inputState.composing > 0;
+    return !!this.inputState && this.inputState.composing > 0;
   }
   /**
   Indicates whether the user is currently in composing state. Note
@@ -8002,7 +8010,7 @@ const Cr = class Cr {
   composition there.
   */
   get compositionStarted() {
-    return this.inputState.composing >= 0;
+    return !!this.inputState && this.inputState.composing >= 0;
   }
   /**
   The document or shadow root that the view lives in.
@@ -8686,31 +8694,31 @@ const Cr = class Cr {
   }
 };
 c(Cr, "EditorView");
-let C = Cr;
-C.styleModule = cr;
-C.inputHandler = SO;
-C.clipboardInputFilter = th;
-C.clipboardOutputFilter = ih;
-C.scrollHandler = xO;
-C.focusChangeEffect = QO;
-C.perLineTextDirection = wO;
-C.exceptionSink = bO;
-C.updateListener = Rl;
-C.editable = ht;
-C.mouseSelectionStyle = yO;
-C.dragMovesSelection = gO;
-C.clickAddsSelectionRange = mO;
-C.decorations = tn;
-C.outerDecorations = RO;
-C.atomicRanges = nh;
-C.bidiIsolatedRanges = $O;
-C.scrollMargins = vO;
-C.darkTheme = Xl;
-C.cspNonce = /* @__PURE__ */ M.define({ combine: /* @__PURE__ */ c((r) => r.length ? r[0] : "", "combine") });
-C.contentAttributes = rh;
-C.editorAttributes = kO;
-C.lineWrapping = /* @__PURE__ */ C.contentAttributes.of({ class: "cm-lineWrapping" });
-C.announce = /* @__PURE__ */ I.define();
+let _ = Cr;
+_.styleModule = cr;
+_.inputHandler = SO;
+_.clipboardInputFilter = th;
+_.clipboardOutputFilter = ih;
+_.scrollHandler = xO;
+_.focusChangeEffect = QO;
+_.perLineTextDirection = wO;
+_.exceptionSink = bO;
+_.updateListener = Rl;
+_.editable = ht;
+_.mouseSelectionStyle = yO;
+_.dragMovesSelection = gO;
+_.clickAddsSelectionRange = mO;
+_.decorations = tn;
+_.outerDecorations = RO;
+_.atomicRanges = nh;
+_.bidiIsolatedRanges = $O;
+_.scrollMargins = vO;
+_.darkTheme = Xl;
+_.cspNonce = /* @__PURE__ */ M.define({ combine: /* @__PURE__ */ c((r) => r.length ? r[0] : "", "combine") });
+_.contentAttributes = rh;
+_.editorAttributes = kO;
+_.lineWrapping = /* @__PURE__ */ _.contentAttributes.of({ class: "cm-lineWrapping" });
+_.announce = /* @__PURE__ */ I.define();
 const J0 = 4096, uu = {}, eo = class eo {
   constructor(e, t, i, n, s, o) {
     this.from = e, this.to = t, this.dir = i, this.isolates = n, this.fresh = s, this.order = o;
@@ -8764,7 +8772,7 @@ function Mn(r, e, t) {
   return e.altKey && (r = "Alt-" + r), e.ctrlKey && (r = "Ctrl-" + r), e.metaKey && (r = "Meta-" + r), t !== !1 && e.shiftKey && (r = "Shift-" + r), r;
 }
 c(Mn, "modifiers");
-const iy = /* @__PURE__ */ hi.default(/* @__PURE__ */ C.domEventHandlers({
+const iy = /* @__PURE__ */ hi.default(/* @__PURE__ */ _.domEventHandlers({
   keydown(r, e) {
     return oy(ry(e.state), r, e, "editor");
   }
@@ -9005,7 +9013,7 @@ const wf = class wf extends vt {
   }
   toDOM(e) {
     let t = document.createElement("span");
-    return t.className = "cm-placeholder", t.style.pointerEvents = "none", t.appendChild(typeof this.content == "string" ? document.createTextNode(this.content) : typeof this.content == "function" ? this.content(e) : this.content.cloneNode(!0)), typeof this.content == "string" ? t.setAttribute("aria-label", "placeholder " + this.content) : t.setAttribute("aria-hidden", "true"), t;
+    return t.className = "cm-placeholder", t.style.pointerEvents = "none", t.appendChild(typeof this.content == "string" ? document.createTextNode(this.content) : typeof this.content == "function" ? this.content(e) : this.content.cloneNode(!0)), t.setAttribute("aria-hidden", "true"), t;
   }
   coordsAt(e) {
     let t = e.firstChild ? Ui(e.firstChild) : [];
@@ -9021,14 +9029,18 @@ const wf = class wf extends vt {
 c(wf, "Placeholder");
 let zl = wf;
 function fy(r) {
-  return je.fromClass(class {
-    constructor(e) {
-      this.view = e, this.placeholder = r ? j.set([j.widget({ widget: new zl(r), side: 1 }).range(0)]) : j.none;
+  let e = je.fromClass(class {
+    constructor(t) {
+      this.view = t, this.placeholder = r ? j.set([j.widget({ widget: new zl(r), side: 1 }).range(0)]) : j.none;
     }
     get decorations() {
       return this.view.state.doc.length ? j.none : this.placeholder;
     }
-  }, { decorations: /* @__PURE__ */ c((e) => e.decorations, "decorations") });
+  }, { decorations: /* @__PURE__ */ c((t) => t.decorations, "decorations") });
+  return typeof r == "string" ? [
+    e,
+    _.contentAttributes.of({ "aria-placeholder": r })
+  ] : e;
 }
 c(fy, "placeholder");
 const rr = "-10000px", xf = class xf {
@@ -9230,7 +9242,7 @@ function gu(r, e) {
   (isNaN(t) || Math.abs(e - t) > 1) && (r.style.left = e + "px");
 }
 c(gu, "setLeftStyle");
-const uy = /* @__PURE__ */ C.baseTheme({
+const uy = /* @__PURE__ */ _.baseTheme({
   ".cm-tooltip": {
     zIndex: 500,
     boxSizing: "border-box"
@@ -9366,18 +9378,18 @@ const Rf = class Rf {
   }
 };
 c(Rf, "NodeProp");
-let _ = Rf;
-_.closedBy = new _({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
-_.openedBy = new _({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
-_.group = new _({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
-_.isolate = new _({ deserialize: /* @__PURE__ */ c((r) => {
+let C = Rf;
+C.closedBy = new C({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
+C.openedBy = new C({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
+C.group = new C({ deserialize: /* @__PURE__ */ c((r) => r.split(" "), "deserialize") });
+C.isolate = new C({ deserialize: /* @__PURE__ */ c((r) => {
   if (r && r != "rtl" && r != "ltr" && r != "auto")
     throw new RangeError("Invalid value for isolate: " + r);
   return r || "auto";
 }, "deserialize") });
-_.contextHash = new _({ perNode: !0 });
-_.lookAhead = new _({ perNode: !0 });
-_.mounted = new _({ perNode: !0 });
+C.contextHash = new C({ perNode: !0 });
+C.lookAhead = new C({ perNode: !0 });
+C.mounted = new C({ perNode: !0 });
 const $f = class $f {
   constructor(e, t, i) {
     this.tree = e, this.overlay = t, this.parser = i;
@@ -9386,7 +9398,7 @@ const $f = class $f {
   @internal
   */
   static get(e) {
-    return e && e.props && e.props[_.mounted.id];
+    return e && e.props && e.props[C.mounted.id];
   }
 };
 c($f, "MountedTree");
@@ -9453,7 +9465,7 @@ const py = /* @__PURE__ */ Object.create(null), to = class to {
     if (typeof e == "string") {
       if (this.name == e)
         return !0;
-      let t = this.prop(_.group);
+      let t = this.prop(C.group);
       return t ? t.indexOf(e) > -1 : !1;
     }
     return this.id == e;
@@ -9472,7 +9484,7 @@ const py = /* @__PURE__ */ Object.create(null), to = class to {
       for (let n of i.split(" "))
         t[n] = e[i];
     return (i) => {
-      for (let n = i.prop(_.group), s = -1; s < (n ? n.length : 0); s++) {
+      for (let n = i.prop(C.group), s = -1; s < (n ? n.length : 0); s++) {
         let o = t[s < 0 ? i.name : n[s]];
         if (o)
           return o;
@@ -10503,7 +10515,7 @@ function gy(r) {
       if (U >= 0 && (E = Z[U]) instanceof V) {
         if (!U && E.type == R && E.length == D)
           return E;
-        (G = E.prop(_.lookAhead)) && (F = Y[U] + E.length + G);
+        (G = E.prop(C.lookAhead)) && (F = Y[U] + E.length + G);
       }
       return m(R, Z, Y, D, F, A);
     };
@@ -10518,11 +10530,11 @@ function gy(r) {
   c(p, "makeRepeatLeaf");
   function m(R, A, Z, Y, D, F, U) {
     if (F) {
-      let E = [_.contextHash, F];
+      let E = [C.contextHash, F];
       U = U ? [E].concat(U) : [E];
     }
     if (D > 25) {
-      let E = [_.lookAhead, D];
+      let E = [C.lookAhead, D];
       U = U ? [E].concat(U) : [E];
     }
     return new V(R, A, Z, Y, U);
@@ -10809,7 +10821,7 @@ const Ef = class Ef {
 };
 c(Ef, "ActiveOverlay");
 let ea = Ef;
-const ta = new _({ perNode: !0 }), Vf = class Vf {
+const ta = new C({ perNode: !0 }), Vf = class Vf {
   constructor(e, t, i, n, s) {
     this.nest = t, this.input = i, this.fragments = n, this.ranges = s, this.inner = [], this.innerDone = 0, this.baseTree = null, this.stoppedAt = null, this.baseParse = e;
   }
@@ -10830,7 +10842,7 @@ const ta = new _({ perNode: !0 }), Vf = class Vf {
     if (t) {
       this.innerDone++;
       let i = Object.assign(/* @__PURE__ */ Object.create(null), e.target.props);
-      i[_.mounted.id] = new si(t, e.overlay, e.parser), e.target.props = i;
+      i[C.mounted.id] = new si(t, e.overlay, e.parser), e.target.props = i;
     }
     return null;
   }
@@ -10990,7 +11002,7 @@ let Sy = (Ai = class {
     if (this.inner) {
       this.inner.cursor.moveTo(e, 1);
       for (let s = this.inner.cursor.node; s; s = s.parent) {
-        let o = (i = s.tree) === null || i === void 0 ? void 0 : i.prop(_.mounted);
+        let o = (i = s.tree) === null || i === void 0 ? void 0 : i.prop(C.mounted);
         if (o && o.parser == t)
           for (let l = this.fragI; l < this.fragments.length; l++) {
             let a = this.fragments[l];
@@ -11169,7 +11181,7 @@ function Ki(r) {
   return FO.add(e);
 }
 c(Ki, "styleTags");
-const FO = new _();
+const FO = new C();
 var Zi;
 let ys = (Zi = class {
   constructor(e, t, i, n) {
@@ -11247,7 +11259,7 @@ const Wf = class Wf {
     let h = n, f = vy(e) || ys.empty, u = Ry(s, f.tags);
     if (u && (h && (h += " "), h += u, f.mode == 1 && (n += (n ? " " : "") + u)), this.startSpan(Math.max(t, l), h), f.opaque)
       return;
-    let d = e.tree && e.tree.prop(_.mounted);
+    let d = e.tree && e.tree.prop(C.mounted);
     if (d && d.overlay) {
       let O = e.node.enter(d.overlay[0].from + l, 1), p = this.highlighters.filter((y) => !y.scope || y.scope(d.tree.type)), m = e.firstChild();
       for (let y = 0, b = l; ; y++) {
@@ -11685,14 +11697,14 @@ KO([
   { tag: g.punctuation, class: "tok-punctuation" }
 ]);
 var Lo;
-const Qt = /* @__PURE__ */ new _();
+const Qt = /* @__PURE__ */ new C();
 function yo(r) {
   return M.define({
     combine: r ? (e) => e.concat(r) : void 0
   });
 }
 c(yo, "defineLanguageFacet");
-const hh = /* @__PURE__ */ new _(), Xf = class Xf {
+const hh = /* @__PURE__ */ new C(), Xf = class Xf {
   /**
   Construct a language object. If you need to invoke this
   directly, first define a data facet with
@@ -11744,7 +11756,7 @@ const hh = /* @__PURE__ */ new _(), Xf = class Xf {
         i.push({ from: o, to: o + s.length });
         return;
       }
-      let l = s.prop(_.mounted);
+      let l = s.prop(C.mounted);
       if (l) {
         if (l.tree.prop(Qt) == this.data) {
           if (l.overlay)
@@ -12096,7 +12108,7 @@ const Ty = /* @__PURE__ */ je.fromClass((Li = class {
   enables: /* @__PURE__ */ c((r) => [
     pe.state,
     Ty,
-    C.contentAttributes.compute([r], (e) => {
+    _.contentAttributes.compute([r], (e) => {
       let t = e.facet(r);
       return t && t.name ? { "data-language": t.name } : {};
     })
@@ -12284,7 +12296,7 @@ const jf = class jf {
 };
 c(jf, "IndentContext");
 let Di = jf;
-const Ji = /* @__PURE__ */ new _();
+const Ji = /* @__PURE__ */ new C();
 function Zy(r, e, t) {
   let i = e.resolveStack(t), n = e.resolveInner(t, -1).resolve(t, 0).enterUnfinishedNodesBefore(t);
   if (n != i.node) {
@@ -12315,7 +12327,7 @@ function My(r) {
   if (e)
     return e;
   let t = r.firstChild, i;
-  if (t && (i = t.type.prop(_.closedBy))) {
+  if (t && (i = t.type.prop(C.closedBy))) {
     let n = r.lastChild, s = n && i.indexOf(n.name) > -1;
     return (o) => ip(o, !0, 1, void 0, s && !Ly(o) ? n.from : void 0);
   }
@@ -12429,7 +12441,7 @@ function Gn({ except: r, units: e = 1 } = {}) {
   };
 }
 c(Gn, "continuedIndent");
-const Wy = /* @__PURE__ */ M.define(), yn = /* @__PURE__ */ new _();
+const Wy = /* @__PURE__ */ M.define(), yn = /* @__PURE__ */ new C();
 function rp(r) {
   let e = r.firstChild, t = r.lastChild;
   return e && e.to < t.from ? { from: e.to, to: t.type.isError ? r.to : t.from } : null;
@@ -12485,7 +12497,7 @@ function _o(r) {
 c(_o, "getHighlighters");
 function Xy(r, e) {
   let t = [Yy], i;
-  return r instanceof Ss && (r.module && t.push(C.styleModule.of(r.module)), i = r.themeType), e != null && e.fallback ? t.push(np.of(r)) : i ? t.push(la.computeN([C.darkTheme], (n) => n.facet(C.darkTheme) == (i == "dark") ? [r] : [])) : t.push(la.of(r)), t;
+  return r instanceof Ss && (r.module && t.push(_.styleModule.of(r.module)), i = r.themeType), e != null && e.fallback ? t.push(np.of(r)) : i ? t.push(la.computeN([_.darkTheme], (n) => n.facet(_.darkTheme) == (i == "dark") ? [r] : [])) : t.push(la.of(r)), t;
 }
 c(Xy, "syntaxHighlighting");
 const qf = class qf {
@@ -12511,9 +12523,9 @@ c(qf, "TreeHighlighter");
 let aa = qf;
 const Yy = /* @__PURE__ */ hi.high(/* @__PURE__ */ je.fromClass(aa, {
   decorations: /* @__PURE__ */ c((r) => r.decorations, "decorations")
-})), Iy = 1e4, jy = "()[]{}", sp = /* @__PURE__ */ new _();
+})), Iy = 1e4, jy = "()[]{}", sp = /* @__PURE__ */ new C();
 function ha(r, e, t) {
-  let i = r.prop(e < 0 ? _.openedBy : _.closedBy);
+  let i = r.prop(e < 0 ? C.openedBy : C.closedBy);
   if (i)
     return i;
   if (r.name.length == 1) {
@@ -12760,7 +12772,7 @@ const Au = /* @__PURE__ */ new WeakMap(), ho = class ho extends pe {
         return new Gy(n, o, l, a);
       }
     }();
-    super(t, s, [], e.name), this.topNode = Ky(t, this), n = this, this.streamParser = i, this.stateAfter = new _({ perNode: !0 }), this.tokenTable = e.tokenTable ? new ws(i.tokenTable) : Fy;
+    super(t, s, [], e.name), this.topNode = Ky(t, this), n = this, this.streamParser = i, this.stateAfter = new C({ perNode: !0 }), this.tokenTable = e.tokenTable ? new ws(i.tokenTable) : Fy;
   }
   /**
   Define a stream language.
@@ -13725,7 +13737,7 @@ const dh = /* @__PURE__ */ I.define({
   },
   provide: /* @__PURE__ */ c((r) => [
     DO.from(r, (e) => e.tooltip),
-    C.contentAttributes.from(r, (e) => e.attrs)
+    _.contentAttributes.from(r, (e) => e.attrs)
   ], "provide")
 });
 function Oh(r, e) {
@@ -13865,7 +13877,7 @@ const pb = 50, mb = 1e3, gb = /* @__PURE__ */ je.fromClass(class {
       this.composing == 3 && setTimeout(() => this.view.dispatch({ effects: Ps.of(!1) }), 20), this.composing = 0;
     }
   }
-}), yb = typeof navigator == "object" && /* @__PURE__ */ /Win/.test(navigator.platform), bb = /* @__PURE__ */ hi.highest(/* @__PURE__ */ C.domEventHandlers({
+}), yb = typeof navigator == "object" && /* @__PURE__ */ /Win/.test(navigator.platform), bb = /* @__PURE__ */ hi.highest(/* @__PURE__ */ _.domEventHandlers({
   keydown(r, e) {
     let t = e.state.field(ce, !1);
     if (!t || !t.open || t.open.disabled || t.open.selected < 0 || r.key.length > 1 || r.ctrlKey && !(yb && r.altKey) || r.metaKey)
@@ -13873,7 +13885,7 @@ const pb = 50, mb = 1e3, gb = /* @__PURE__ */ je.fromClass(class {
     let i = t.open.options[t.open.selected], n = t.active.find((o) => o.source == i.source), s = i.completion.commitCharacters || n.result.commitCharacters;
     return s && s.indexOf(r.key) > -1 && Oh(e, i), !1;
   }
-})), pp = /* @__PURE__ */ C.baseTheme({
+})), pp = /* @__PURE__ */ _.baseTheme({
   ".cm-tooltip.cm-tooltip-autocomplete": {
     "& > ul": {
       fontFamily: "monospace",
@@ -14105,7 +14117,7 @@ const bn = /* @__PURE__ */ I.define({
     }
     return r && e.docChanged && (r = r.map(e.changes)), r && e.selection && !r.selectionInsideField(e.selection) && (r = null), r;
   },
-  provide: /* @__PURE__ */ c((r) => C.decorations.from(r, (e) => e ? e.deco : j.none), "provide")
+  provide: /* @__PURE__ */ c((r) => _.decorations.from(r, (e) => e ? e.deco : j.none), "provide")
 });
 function ph(r, e) {
   return $.create(r.filter((t) => t.field == e).map((t) => $.range(t.from, t.to)));
@@ -14153,7 +14165,7 @@ function me(r, e) {
   return Object.assign(Object.assign({}, e), { apply: xb(r) });
 }
 c(me, "snippetCompletion");
-const Tb = /* @__PURE__ */ C.domEventHandlers({
+const Tb = /* @__PURE__ */ _.domEventHandlers({
   mousedown(r, e) {
     let t = e.state.field(hn, !1), i;
     if (!t || (i = e.posAtCoords({ x: r.clientX, y: r.clientY })) == null)
@@ -14204,10 +14216,10 @@ const Oo = class Oo {
     return new Oo(e, t, i, o, s, [], []);
   }
   constructor(e, t, i, n, s, o, l) {
-    this.type = e, this.value = t, this.from = i, this.hash = n, this.end = s, this.children = o, this.positions = l, this.hashProp = [[_.contextHash, n]];
+    this.type = e, this.value = t, this.from = i, this.hash = n, this.end = s, this.children = o, this.positions = l, this.hashProp = [[C.contextHash, n]];
   }
   addChild(e, t) {
-    e.prop(_.contextHash) != this.hash && (e = new V(e.type, e.children, e.positions, e.length, this.hashProp)), this.children.push(e), this.positions.push(t);
+    e.prop(C.contextHash) != this.hash && (e = new V(e.type, e.children, e.positions, e.length, this.hashProp)), this.children.push(e), this.positions.push(t);
   }
   toTree(e, t = this.end) {
     let i = this.children.length - 1;
@@ -14961,7 +14973,7 @@ const po = class po extends Ii {
         d.push(te.define({
           id: x,
           name: m,
-          props: P && [[_.group, P]]
+          props: P && [[C.group, P]]
         })), Q && (O || (O = {}), Array.isArray(Q) || Q instanceof Me ? O[m] = Q : Object.assign(O, Q));
       }
       i = new Xi(d), O && (i = i.extend(Ki(O)));
@@ -15065,7 +15077,7 @@ for (let r = 1, e; e = k[r]; r++)
   Tp[r] = te.define({
     id: r,
     name: e,
-    props: r >= k.Escape ? [] : [[_.group, r in yp ? ["Block", "BlockContext"] : ["Block", "LeafBlock"]]],
+    props: r >= k.Escape ? [] : [[C.group, r in yp ? ["Block", "BlockContext"] : ["Block", "LeafBlock"]]],
     top: e == "Document"
   });
 const Ni = [], sc = class sc {
@@ -15533,7 +15545,7 @@ let Ub = (Ci = class {
   }
   matches(e) {
     let t = this.cursor.tree;
-    return t && t.prop(_.contextHash) == e;
+    return t && t.prop(C.contextHash) == e;
   }
   takeNodes(e) {
     let t = this.cursor, i = this.fragment.offset, n = this.fragmentEnd - (this.fragment.openEnd ? 1 : 0), s = e.absoluteLineStart, o = s, l = e.block.children.length, a = o, h = l;
@@ -16594,7 +16606,7 @@ const yc = class yc {
             return null;
           let l = o + s.length;
           if (l <= this.safeTo) {
-            let a = s.prop(_.lookAhead);
+            let a = s.prop(C.lookAhead);
             if (!a || l + a < this.fragment.to)
               return s;
           }
@@ -16781,7 +16793,7 @@ const Sc = class Sc {
       let h = e.curContext && e.curContext.tracker.strict, f = h ? e.curContext.hash : 0;
       for (let u = this.fragments.nodeAt(n); u; ) {
         let d = this.parser.nodeSet.types[u.type.id] == u.type ? s.getGoto(e.state, u.type.id) : -1;
-        if (d > -1 && u.length && (!h || (u.prop(_.contextHash) || 0) == f))
+        if (d > -1 && u.length && (!h || (u.prop(C.contextHash) || 0) == f))
           return e.useNode(u, d), we && console.log(o + this.stackID(e) + ` (via reuse of ${s.getName(u.type.id)})`), !0;
         if (!(u instanceof V) || u.children.length == 0 || u.positions[0] > 0)
           break;
@@ -16915,7 +16927,7 @@ const Dr = class Dr extends Ii {
     if (c(s, "setProp"), e.nodeProps)
       for (let l of e.nodeProps) {
         let a = l[0];
-        typeof a == "string" && (a = _[a]);
+        typeof a == "string" && (a = C[a]);
         for (let h = 1; h < l.length; ) {
           let f = l[h++];
           if (f >= 0)
@@ -18891,7 +18903,7 @@ function gd(r, e, t = r.length) {
   return "";
 }
 c(gd, "elementName$1");
-const GS = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent), dm = /* @__PURE__ */ C.inputHandler.of((r, e, t, i, n) => {
+const GS = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent), dm = /* @__PURE__ */ _.inputHandler.of((r, e, t, i, n) => {
   if ((GS ? r.composing : r.compositionStarted) || r.state.readOnly || e != t || i != ">" && i != "/" || !Ce.isActiveAt(r.state, e, -1))
     return !1;
   let s = n(), { state: o } = s, l = o.changeByRange((a) => {
@@ -19619,7 +19631,7 @@ function xm(r = {}) {
   ]);
 }
 c(xm, "html");
-const Qd = /* @__PURE__ */ new Set(/* @__PURE__ */ "area base br col command embed frame hr img input keygen link meta param source track wbr menuitem".split(" ")), Pm = /* @__PURE__ */ C.inputHandler.of((r, e, t, i, n) => {
+const Qd = /* @__PURE__ */ new Set(/* @__PURE__ */ "area base br col command embed frame hr img input keygen link meta param source track wbr menuitem".split(" ")), Pm = /* @__PURE__ */ _.inputHandler.of((r, e, t, i, n) => {
   if (r.composing || r.state.readOnly || e != t || i != ">" && i != "/" || !Pr.isActiveAt(r.state, e, -1))
     return !1;
   let s = n(), { state: o } = s, l = o.changeByRange((a) => {
@@ -19658,7 +19670,7 @@ const Qd = /* @__PURE__ */ new Set(/* @__PURE__ */ "area base br col command emb
   htmlCompletionSourceWith: Sm,
   htmlLanguage: Pr,
   htmlPlain: $h
-}, Symbol.toStringTag, { value: "Module" })), km = /* @__PURE__ */ yo({ commentTokens: { block: { open: "<!--", close: "-->" } } }), Rm = /* @__PURE__ */ new _(), $m = /* @__PURE__ */ Xb.configure({
+}, Symbol.toStringTag, { value: "Module" })), km = /* @__PURE__ */ yo({ commentTokens: { block: { open: "<!--", close: "-->" } } }), Rm = /* @__PURE__ */ new C(), $m = /* @__PURE__ */ Xb.configure({
   props: [
     /* @__PURE__ */ yn.add((r) => !r.is("Block") || r.is("Document") || Da(r) != null || nQ(r) ? void 0 : (e, t) => ({ from: t.doc.lineAt(e.from).to, to: e.to })),
     /* @__PURE__ */ Rm.add(Da),
@@ -21562,7 +21574,7 @@ const gQ = je.fromClass(
   },
   {
     decorations: /* @__PURE__ */ c((r) => r.mentions, "decorations"),
-    provide: /* @__PURE__ */ c((r) => C.atomicRanges.of((e) => {
+    provide: /* @__PURE__ */ c((r) => _.atomicRanges.of((e) => {
       var t;
       return ((t = e.plugin(r)) == null ? void 0 : t.mentions) || j.none;
     }), "provide")
@@ -21728,7 +21740,7 @@ function $Q(r = {}) {
   return [
     Wm,
     Um.of(r),
-    C.domEventHandlers({
+    _.domEventHandlers({
       beforeinput(e, t) {
         let i = e.inputType == "historyUndo" ? Xm : e.inputType == "historyRedo" ? Na : null;
         return i ? (e.preventDefault(), i(t)) : !1;
@@ -21940,7 +21952,7 @@ function WQ(r, e, t) {
 }
 c(WQ, "interestingNode");
 function Qo(r, e, t) {
-  let i = J(r).resolveInner(e.head), n = t ? _.closedBy : _.openedBy;
+  let i = J(r).resolveInner(e.head), n = t ? C.closedBy : C.openedBy;
   for (let a = e.head; ; ) {
     let h = t ? i.childAfter(a) : i.childBefore(a);
     if (!h)
@@ -21965,7 +21977,7 @@ const Nm = /* @__PURE__ */ c((r) => zm(r, !1), "cursorLineUp"), Gm = /* @__PURE_
 function Hm(r) {
   let e = r.scrollDOM.clientHeight < r.scrollDOM.scrollHeight - 2, t = 0, i = 0, n;
   if (e) {
-    for (let s of r.state.facet(C.scrollMargins)) {
+    for (let s of r.state.facet(_.scrollMargins)) {
       let o = s(r);
       o != null && o.top && (t = Math.max(o == null ? void 0 : o.top, t)), o != null && o.bottom && (i = Math.max(o == null ? void 0 : o.bottom, i));
     }
@@ -21987,7 +21999,7 @@ function Fm(r, e) {
   let s;
   if (t.selfScroll) {
     let o = r.coordsAtPos(i.selection.main.head), l = r.scrollDOM.getBoundingClientRect(), a = l.top + t.marginTop, h = l.bottom - t.marginBottom;
-    o && o.top > a && o.bottom < h && (s = C.scrollIntoView(n.main.head, { y: "start", yMargin: o.top - a }));
+    o && o.top > a && o.bottom < h && (s = _.scrollIntoView(n.main.head, { y: "start", yMargin: o.top - a }));
   }
   return r.dispatch(st(i, n), { effects: s }), !0;
 }
@@ -22080,13 +22092,13 @@ function Sn(r, e) {
   return n.changes.empty ? !1 : (r.dispatch(i.update(n, {
     scrollIntoView: !0,
     userEvent: t,
-    effects: t == "delete.selection" ? C.announce.of(i.phrase("Selection deleted")) : void 0
+    effects: t == "delete.selection" ? _.announce.of(i.phrase("Selection deleted")) : void 0
   })), !0);
 }
 c(Sn, "deleteBy");
 function In(r, e, t) {
-  if (r instanceof C)
-    for (let i of r.state.facet(C.atomicRanges).map((n) => n(r)))
+  if (r instanceof _)
+    for (let i of r.state.facet(_.atomicRanges).map((n) => n(r)))
       i.between(e, e, (n, s) => {
         n < e && s > e && (e = t ? s : n);
       });
@@ -22216,7 +22228,7 @@ function Qw(r, e) {
   if (/\(\)|\[\]|\{\}/.test(r.sliceDoc(e - 1, e + 1)))
     return { from: e, to: e };
   let t = J(r).resolveInner(e), i = t.childBefore(e), n = t.childAfter(e), s;
-  return i && n && i.to <= e && n.from >= e && (s = i.type.prop(_.closedBy)) && s.indexOf(n.name) > -1 && r.doc.lineAt(i.to).from == r.doc.lineAt(n.from).from && !/\S/.test(r.sliceDoc(i.to, n.from)) ? { from: i.to, to: n.from } : null;
+  return i && n && i.to <= e && n.from >= e && (s = i.type.prop(C.closedBy)) && s.indexOf(n.name) > -1 && r.doc.lineAt(i.to).from == r.doc.lineAt(n.from).from && !/\S/.test(r.sliceDoc(i.to, n.from)) ? { from: i.to, to: n.from } : null;
 }
 c(Qw, "isBetweenBrackets");
 const Ld = /* @__PURE__ */ ug(!1), ww = /* @__PURE__ */ ug(!0);
@@ -22370,7 +22382,7 @@ const xw = /* @__PURE__ */ c(({ state: r, dispatch: e }) => {
   Compartment: Br,
   CompletionContext: Bi,
   EditorState: K,
-  EditorView: C,
+  EditorView: _,
   ViewUpdate: rn,
   autocompletion: Ab,
   defaultKeymap: Tw,
@@ -22483,7 +22495,7 @@ c(Cw, "indentFunction");
 export {
   Ls as ContextTracker,
   $ as EditorSelection,
-  C as EditorView,
+  _ as EditorView,
   Qe as ExternalTokenizer,
   B as IterMode,
   sn as LRLanguage,
