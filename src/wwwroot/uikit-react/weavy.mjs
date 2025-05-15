@@ -24460,7 +24460,7 @@ function sE(n, t, e = en.Unknown, i, s) {
         n.fetch(`/api/apps/${t}`)
       ) : r.push(
         // Get, update or create app using app uid
-        n.fetch(`/api/apps/${t}`, { method: "PUT", body: JSON.stringify({ uid: t, type: e, members: i, ...s }) })
+        n.fetch(`/api/apps/${t}`, { method: "PUT", body: JSON.stringify({ type: e, members: i, ...s }) })
       );
       const a = (await Promise.allSettled(r)).findLast(
         (l) => {
@@ -29123,7 +29123,7 @@ const wm = (Ye = class {
     _(this, mm, !0), console.info(this.weavyId, "was destroyed");
   }
 }, h(Ye, "he"), Ye);
-O1 = /* @__PURE__ */ new WeakMap(), b1 = /* @__PURE__ */ new WeakMap(), or = /* @__PURE__ */ new WeakMap(), mm = /* @__PURE__ */ new WeakMap(), u(wm, "WeavyClient"), wm.version = "28.0.0", wm.sourceName = "@weavy/uikit-web", wm.defaults = {
+O1 = /* @__PURE__ */ new WeakMap(), b1 = /* @__PURE__ */ new WeakMap(), or = /* @__PURE__ */ new WeakMap(), mm = /* @__PURE__ */ new WeakMap(), u(wm, "WeavyClient"), wm.version = "28.0.1", wm.sourceName = "@weavy/uikit-web", wm.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,

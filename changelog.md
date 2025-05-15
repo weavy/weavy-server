@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v28.0.1
+
+<time>2025-05-15</time>
+
+* Fixed an issue with initializing apps in UI kit.
+
 ## v28.0.0
 
 <time>2025-05-14</time>

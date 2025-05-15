@@ -2075,7 +2075,7 @@ function lte(t, e, i = qa.Unknown, n, r) {
         t.fetch(`/api/apps/${e}`)
       ) : s.push(
         // Get, update or create app using app uid
-        t.fetch(`/api/apps/${e}`, { method: "PUT", body: JSON.stringify({ uid: e, type: i, members: n, ...r }) })
+        t.fetch(`/api/apps/${e}`, { method: "PUT", body: JSON.stringify({ type: i, members: n, ...r }) })
       );
       const a = (await Promise.allSettled(s)).findLast(
         (l) => {
@@ -7437,7 +7437,7 @@ const fr = class fr {
     y(this, Rg, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-k1 = new WeakMap(), _1 = new WeakMap(), _c = new WeakMap(), Rg = new WeakMap(), fr.version = "28.0.0", fr.sourceName = "@weavy/uikit-web", fr.defaults = {
+k1 = new WeakMap(), _1 = new WeakMap(), _c = new WeakMap(), Rg = new WeakMap(), fr.version = "28.0.1", fr.sourceName = "@weavy/uikit-web", fr.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,
