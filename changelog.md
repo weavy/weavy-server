@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v28.0.2
+
+<time>2025-05-21</time>
+
+* Fixed an issue when browser storage is unavailable in UI kit.
+
 ## v28.0.1
 
 <time>2025-05-15</time>
