@@ -1,5 +1,30 @@
 # Changelog for Weavy
 
+## v29.0.0
+
+<time>2025-06-11</time>
+
+* Added option for agents to interface with external services via web functions.
+* Allow agents to search multiple file apps for knowledge.
+* Fixed issue that prevented the `tags` property from being updated through the Web API.
+* Added annotation file list for messages in UI kit.
+* Added support for displaying agent comments in UI kit.
+* Added `createConversation()` method on Messenger in UI kit.
+* Added a `wy-conversation-new-button` CSS part in Messenger for styling the new conversation button.
+* Added a `conversation-new` slot in the Messenger to replace the new conversation button.
+* Added an `actions` slot on Messenger for inserting custom buttons.
+* Added `reset()` method on the Weavy instance in UI kit to reset and refetch data.
+* Removed the conversation list header for the Messenger.
+* Removed the `.name` property on Messenger in UI kit.
+* Removed the generic `agentUser` data property in UI kit.
+* Fixed an issue with searching in the conversation list in Messenger.
+* Fixed an issue with the editor being read-only in UI kit.
+* Fixed some issues when changing user in UI kit.
+
+###### Breaking Changes
+
+* The header in UI of the Messenger is now removed. This means you have to specify a header of your own in your app if you like.
+
 ## v28.0.2
 
 <time>2025-05-21</time>

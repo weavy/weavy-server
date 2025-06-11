@@ -1188,7 +1188,6 @@ const ms = {
   sed073ac6112070e7: "Skriv en kommentar...",
   sef49aec68fd1dc66: "Namn",
   sefc8e08d71b8530f: "Agenter",
-  sf001ba58cf846564: "Meddelanden",
   sf59f359396914fa2: "Ta bort alla",
   sf60480d4fe3a8e08: h`${0} skriver${1}`,
   sf863f06a8efefe1e: "Skapa ett inlägg...",
