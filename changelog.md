@@ -1,5 +1,16 @@
 # Changelog for Weavy
 
+## v29.1.0
+
+<time>2025-06-19</time>
+
+* Read receipts and typing indicators is now fully available to all chats with `access=none` and less than 10 members.
+* Added support for object data in the context data property array in UI kit.
+* Added support for displaying annotations in posts and comments in UI kit.
+* Fixed some issues where context data wasn't working in posts and comments.
+* Fixed some issues which caused a broken state when removing a conversation in UI kit.
+* Fixed some issues with unread chat messages in UI kit.
+
 ## v29.0.0
 
 <time>2025-06-11</time>
