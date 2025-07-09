@@ -1,5 +1,18 @@
 # Changelog for Weavy
 
+## v29.2.0
+
+<time>2025-07-09</time>
+
+* Added option to enable `web_search` for agents, allowing them to answer questions with up-to-date information beyond their knowledge cutoff.
+* Added option to set `max_tokens` for agents, allowing you to specify the maximum number of output tokens an agent can generate.
+* Added api endpoints for managing agent functions, allowing agents to interface with external API endpoints.
+* Added api endpoint `PUT /api/agents/{agent}` for upserting agents.
+* Added `annotation` setting on components in UI kit. Set `annotations="none"` to disable annotation display.
+* Added `contextualData` string property on contextual components in UI kit.
+* Deprecated `data` property on contextual components in UI kit. Use `contextualData`instead.
+* Fixed an issue when changing `agent` in `wy-copilot` in UI kit.
+
 ## v29.1.0
 
 <time>2025-06-19</time>
