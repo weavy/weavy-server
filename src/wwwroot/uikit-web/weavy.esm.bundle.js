@@ -7497,7 +7497,7 @@ const pr = class pr {
     y(this, Xg, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-x1 = new WeakMap(), k1 = new WeakMap(), _c = new WeakMap(), Xg = new WeakMap(), pr.version = "29.2.0", pr.sourceName = "@weavy/uikit-web", pr.defaults = {
+x1 = new WeakMap(), k1 = new WeakMap(), _c = new WeakMap(), Xg = new WeakMap(), pr.version = "29.2.1", pr.sourceName = "@weavy/uikit-web", pr.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,

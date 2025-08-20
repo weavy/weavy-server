@@ -29229,7 +29229,7 @@ const Om = (He = class {
     I(this, bm, !0), console.info(this.weavyId, "was destroyed");
   }
 }, h(He, "he"), He);
-v1 = /* @__PURE__ */ new WeakMap(), b1 = /* @__PURE__ */ new WeakMap(), cr = /* @__PURE__ */ new WeakMap(), bm = /* @__PURE__ */ new WeakMap(), u(Om, "WeavyClient"), Om.version = "29.2.0", Om.sourceName = "@weavy/uikit-web", Om.defaults = {
+v1 = /* @__PURE__ */ new WeakMap(), b1 = /* @__PURE__ */ new WeakMap(), cr = /* @__PURE__ */ new WeakMap(), bm = /* @__PURE__ */ new WeakMap(), u(Om, "WeavyClient"), Om.version = "29.2.1", Om.sourceName = "@weavy/uikit-web", Om.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   disableEnvironmentImports: !1,

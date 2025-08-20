@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v29.2.1
+
+<time>2025-08-20</time>
+
+* Fixed an issue where files larger than the configured maximum size could be uploaded.
+
+
 ## v29.2.0
 
 <time>2025-07-09</time>
