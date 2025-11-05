@@ -1,9 +1,9 @@
 ﻿var me = Object.defineProperty;
 var i = (g, G) => me(g, "name", { value: G, configurable: !0 });
 function ar(g) {
-  var G = g.statementIndent, or = g.jsonld, wr = g.json || or, p = g.typescript, H = g.wordCharacters || /[\w$\xa1-\uffff]/, hr = function() {
-    function r(v) {
-      return { type: v, style: "keyword" };
+  var G = g.statementIndent, or = g.jsonld, wr = g.json || or, b = g.typescript, H = g.wordCharacters || /[\w$\xa1-\uffff]/, hr = function() {
+    function r(y) {
+      return { type: y, style: "keyword" };
     }
     i(r, "kw");
     var e = r("keyword a"), t = r("keyword b"), u = r("keyword c"), a = r("keyword d"), d = r("operator"), k = { type: "atom", style: "atom" };
@@ -147,30 +147,30 @@ function ar(g) {
     e.fatArrowAt && (e.fatArrowAt = null);
     var t = r.string.indexOf("=>", r.start);
     if (!(t < 0)) {
-      if (p) {
+      if (b) {
         var u = /:\s*(?:\w+(?:<[^>]*>|\[\])?|\{[^}]*\})\s*$/.exec(r.string.slice(r.start, t));
         u && (t = u.index);
       }
       for (var a = 0, d = !1, k = t - 1; k >= 0; --k) {
-        var v = r.string.charAt(k), T = Fr.indexOf(v);
+        var y = r.string.charAt(k), T = Fr.indexOf(y);
         if (T >= 0 && T < 3) {
           if (!a) {
             ++k;
             break;
           }
           if (--a == 0) {
-            v == "(" && (d = !0);
+            y == "(" && (d = !0);
             break;
           }
         } else if (T >= 3 && T < 6)
           ++a;
-        else if (H.test(v))
+        else if (H.test(y))
           d = !0;
-        else if (/["'\/`]/.test(v))
+        else if (/["'\/`]/.test(y))
           for (; ; --k) {
             if (k == 0) return;
             var U = r.string.charAt(k - 1);
-            if (U == v && r.string.charAt(k - 2) != "\\") {
+            if (U == y && r.string.charAt(k - 2) != "\\") {
               k--;
               break;
             }
@@ -209,7 +209,7 @@ function ar(g) {
   function Dr(r, e, t, u, a) {
     var d = r.cc;
     for (f.state = r, f.stream = a, f.marked = null, f.cc = d, f.style = e, r.lexical.hasOwnProperty("align") || (r.lexical.align = !0); ; ) {
-      var k = d.length ? d.pop() : wr ? b : h;
+      var k = d.length ? d.pop() : wr ? p : h;
       if (k(t, u)) {
         for (; d.length && d[d.length - 1].lex; )
           d.pop()();
@@ -236,7 +236,7 @@ function ar(g) {
     var e = f.state;
     if (f.marked = "def", e.context) {
       if (e.lexical.info == "var" && e.context && e.context.block) {
-        var t = yr(r, e.context);
+        var t = vr(r, e.context);
         if (t != null) {
           e.context = t;
           return;
@@ -249,15 +249,15 @@ function ar(g) {
     g.globalVars && !lr(r, e.globalVars) && (e.globalVars = new R(r, e.globalVars));
   }
   i(N, "register");
-  function yr(r, e) {
+  function vr(r, e) {
     if (e)
       if (e.block) {
-        var t = yr(r, e.prev);
+        var t = vr(r, e.prev);
         return t ? t == e.prev ? e : new Q(t, e.vars, !0) : null;
       } else return lr(r, e.vars) ? e : new Q(e.prev, new R(r, e.vars), !1);
     else return null;
   }
-  i(yr, "registerVarScoped");
+  i(vr, "registerVarScoped");
   function Z(r) {
     return r == "public" || r == "private" || r == "protected" || r == "abstract" || r == "readonly";
   }
@@ -307,7 +307,7 @@ function ar(g) {
   }
   i(c, "expect");
   function h(r, e) {
-    return r == "var" ? n(l("vardef", e), pr, c(";"), o) : r == "keyword a" ? n(l("form"), cr, h, o) : r == "keyword b" ? n(l("form"), h, o) : r == "keyword d" ? f.stream.match(/^\s*$/, !1) ? n() : n(l("stat"), B, c(";"), o) : r == "debugger" ? n(c(";")) : r == "{" ? n(l("}"), C, nr, o, V) : r == ";" ? n() : r == "if" ? (f.state.lexical.info == "else" && f.state.cc[f.state.cc.length - 1] == o && f.state.cc.pop()(), n(l("form"), cr, h, o, zr)) : r == "function" ? n(S) : r == "for" ? n(l("form"), C, _r, h, V, o) : r == "class" || p && e == "interface" ? (f.marked = "keyword", n(l("form", r == "class" ? r : e), Er, o)) : r == "variable" ? p && e == "declare" ? (f.marked = "keyword", n(h)) : p && (e == "module" || e == "enum" || e == "type") && f.stream.match(/^\s*\w/, !1) ? (f.marked = "keyword", e == "enum" ? n(Or) : e == "type" ? n(Sr, c("operator"), m, c(";")) : n(l("form"), A, c("{"), l("}"), nr, o, o)) : p && e == "namespace" ? (f.marked = "keyword", n(l("form"), b, h, o)) : p && e == "abstract" ? (f.marked = "keyword", n(h)) : n(l("stat"), Ur) : r == "switch" ? n(
+    return r == "var" ? n(l("vardef", e), br, c(";"), o) : r == "keyword a" ? n(l("form"), cr, h, o) : r == "keyword b" ? n(l("form"), h, o) : r == "keyword d" ? f.stream.match(/^\s*$/, !1) ? n() : n(l("stat"), B, c(";"), o) : r == "debugger" ? n(c(";")) : r == "{" ? n(l("}"), C, nr, o, V) : r == ";" ? n() : r == "if" ? (f.state.lexical.info == "else" && f.state.cc[f.state.cc.length - 1] == o && f.state.cc.pop()(), n(l("form"), cr, h, o, _r)) : r == "function" ? n(S) : r == "for" ? n(l("form"), C, jr, h, V, o) : r == "class" || b && e == "interface" ? (f.marked = "keyword", n(l("form", r == "class" ? r : e), Er, o)) : r == "variable" ? b && e == "declare" ? (f.marked = "keyword", n(h)) : b && (e == "module" || e == "enum" || e == "type") && f.stream.match(/^\s*\w/, !1) ? (f.marked = "keyword", e == "enum" ? n(Or) : e == "type" ? n(Sr, c("operator"), m, c(";")) : n(l("form"), A, c("{"), l("}"), nr, o, o)) : b && e == "namespace" ? (f.marked = "keyword", n(l("form"), p, h, o)) : b && e == "abstract" ? (f.marked = "keyword", n(h)) : n(l("stat"), Ur) : r == "switch" ? n(
       l("form"),
       cr,
       c("{"),
@@ -317,37 +317,37 @@ function ar(g) {
       o,
       o,
       V
-    ) : r == "case" ? n(b, c(":")) : r == "default" ? n(c(":")) : r == "catch" ? n(l("form"), I, Pr, h, o, V) : r == "export" ? n(l("stat"), ue, o) : r == "import" ? n(l("stat"), ae, o) : r == "async" ? n(h) : e == "@" ? n(b, h) : s(l("stat"), b, c(";"), o);
+    ) : r == "case" ? n(p, c(":")) : r == "default" ? n(c(":")) : r == "catch" ? n(l("form"), I, Pr, h, o, V) : r == "export" ? n(l("stat"), ue, o) : r == "import" ? n(l("stat"), ae, o) : r == "async" ? n(h) : e == "@" ? n(p, h) : s(l("stat"), p, c(";"), o);
   }
   i(h, "statement");
   function Pr(r) {
     if (r == "(") return n(q, c(")"));
   }
   i(Pr, "maybeCatchBinding");
-  function b(r, e) {
-    return vr(r, e, !1);
+  function p(r, e) {
+    return yr(r, e, !1);
   }
-  i(b, "expression");
-  function y(r, e) {
-    return vr(r, e, !0);
+  i(p, "expression");
+  function v(r, e) {
+    return yr(r, e, !0);
   }
-  i(y, "expressionNoComma");
+  i(v, "expressionNoComma");
   function cr(r) {
     return r != "(" ? s() : n(l(")"), B, c(")"), o);
   }
   i(cr, "parenExpr");
-  function vr(r, e, t) {
+  function yr(r, e, t) {
     if (f.state.fatArrowAt == f.stream.start) {
       var u = t ? Vr : Tr;
       if (r == "(") return n(I, l(")"), x(q, ")"), o, c("=>"), u, V);
       if (r == "variable") return s(I, A, c("=>"), u, V);
     }
     var a = t ? F : $;
-    return Jr.hasOwnProperty(r) ? n(a) : r == "function" ? n(S, a) : r == "class" || p && e == "interface" ? (f.marked = "keyword", n(l("form"), fe, o)) : r == "keyword c" || r == "async" ? n(t ? y : b) : r == "(" ? n(l(")"), B, c(")"), o, a) : r == "operator" || r == "spread" ? n(t ? y : b) : r == "[" ? n(l("]"), se, o, a) : r == "{" ? W(er, "}", null, a) : r == "quasi" ? s(rr, a) : r == "new" ? n(Rr(t)) : n();
+    return Jr.hasOwnProperty(r) ? n(a) : r == "function" ? n(S, a) : r == "class" || b && e == "interface" ? (f.marked = "keyword", n(l("form"), fe, o)) : r == "keyword c" || r == "async" ? n(t ? v : p) : r == "(" ? n(l(")"), B, c(")"), o, a) : r == "operator" || r == "spread" ? n(t ? v : p) : r == "[" ? n(l("]"), se, o, a) : r == "{" ? W(er, "}", null, a) : r == "quasi" ? s(rr, a) : r == "new" ? n(Rr(t)) : n();
   }
-  i(vr, "expressionInner");
+  i(yr, "expressionInner");
   function B(r) {
-    return r.match(/[;\}\)\],]/) ? s() : s(b);
+    return r.match(/[;\}\)\],]/) ? s() : s(p);
   }
   i(B, "maybeexpression");
   function $(r, e) {
@@ -355,17 +355,17 @@ function ar(g) {
   }
   i($, "maybeoperatorComma");
   function F(r, e, t) {
-    var u = t == !1 ? $ : F, a = t == !1 ? b : y;
+    var u = t == !1 ? $ : F, a = t == !1 ? p : v;
     if (r == "=>") return n(I, t ? Vr : Tr, V);
     if (r == "operator")
-      return /\+\+|--/.test(e) || p && e == "!" ? n(u) : p && e == "<" && f.stream.match(/^([^<>]|<[^<>]*>)*>\s*\(/, !1) ? n(l(">"), x(m, ">"), o, u) : e == "?" ? n(b, c(":"), a) : n(a);
+      return /\+\+|--/.test(e) || b && e == "!" ? n(u) : b && e == "<" && f.stream.match(/^([^<>]|<[^<>]*>)*>\s*\(/, !1) ? n(l(">"), x(m, ">"), o, u) : e == "?" ? n(p, c(":"), a) : n(a);
     if (r == "quasi")
       return s(rr, u);
     if (r != ";") {
-      if (r == "(") return W(y, ")", "call", u);
+      if (r == "(") return W(v, ")", "call", u);
       if (r == ".") return n(Gr, u);
       if (r == "[") return n(l("]"), B, c("]"), o, u);
-      if (p && e == "as")
+      if (b && e == "as")
         return f.marked = "keyword", n(m, u);
       if (r == "regexp")
         return f.state.lastType = f.marked = "operator", f.stream.backUp(f.stream.pos - f.stream.start - 1), n(a);
@@ -382,16 +382,16 @@ function ar(g) {
   }
   i(Qr, "continueQuasi");
   function Tr(r) {
-    return sr(f.stream, f.state), s(r == "{" ? h : b);
+    return sr(f.stream, f.state), s(r == "{" ? h : p);
   }
   i(Tr, "arrowBody");
   function Vr(r) {
-    return sr(f.stream, f.state), s(r == "{" ? h : y);
+    return sr(f.stream, f.state), s(r == "{" ? h : v);
   }
   i(Vr, "arrowBodyNoComma");
   function Rr(r) {
     return function(e) {
-      return e == "." ? n(r ? Kr : Wr) : e == "variable" && p ? n(re, r ? F : $) : s(r ? y : b);
+      return e == "." ? n(r ? Kr : Wr) : e == "variable" && b ? n(re, r ? F : $) : s(r ? v : p);
     };
   }
   i(Rr, "maybeTarget");
@@ -420,18 +420,18 @@ function ar(g) {
     if (r == "variable" || f.style == "keyword") {
       if (f.marked = "property", e == "get" || e == "set") return n(Hr);
       var t;
-      return p && f.state.fatArrowAt == f.stream.start && (t = f.stream.match(/^\s*:\s*/, !1)) && (f.state.fatArrowAt = f.stream.pos + t[0].length), n(O);
+      return b && f.state.fatArrowAt == f.stream.start && (t = f.stream.match(/^\s*:\s*/, !1)) && (f.state.fatArrowAt = f.stream.pos + t[0].length), n(O);
     } else {
       if (r == "number" || r == "string")
         return f.marked = or ? "property" : f.style + " property", n(O);
       if (r == "jsonld-keyword")
         return n(O);
-      if (p && Z(e))
+      if (b && Z(e))
         return f.marked = "keyword", n(er);
       if (r == "[")
-        return n(b, J, c("]"), O);
+        return n(p, J, c("]"), O);
       if (r == "spread")
-        return n(y, O);
+        return n(v, O);
       if (e == "*")
         return f.marked = "keyword", n(er);
       if (r == ":")
@@ -444,7 +444,7 @@ function ar(g) {
   }
   i(Hr, "getterSetter");
   function O(r) {
-    if (r == ":") return n(y);
+    if (r == ":") return n(v);
     if (r == "(") return s(S);
   }
   i(O, "afterprop");
@@ -452,8 +452,8 @@ function ar(g) {
     function u(a, d) {
       if (t ? t.indexOf(a) > -1 : a == ",") {
         var k = f.state.lexical;
-        return k.info == "call" && (k.pos = (k.pos || 0) + 1), n(function(v, T) {
-          return v == e || T == e ? s() : s(r);
+        return k.info == "call" && (k.pos = (k.pos || 0) + 1), n(function(y, T) {
+          return y == e || T == e ? s() : s(r);
         }, u);
       }
       return a == e || d == e ? n() : t && t.indexOf(";") > -1 ? s(r) : n(c(e));
@@ -474,19 +474,19 @@ function ar(g) {
   }
   i(nr, "block");
   function J(r, e) {
-    if (p) {
+    if (b) {
       if (r == ":") return n(m);
       if (e == "?") return n(J);
     }
   }
   i(J, "maybetype");
   function Xr(r, e) {
-    if (p && (r == ":" || e == "in")) return n(m);
+    if (b && (r == ":" || e == "in")) return n(m);
   }
   i(Xr, "maybetypeOrIn");
   function Ar(r) {
-    if (p && r == ":")
-      return f.stream.match(/^\s*\w+\s+is\b/, !1) ? n(b, Yr, m) : n(m);
+    if (b && r == ":")
+      return f.stream.match(/^\s*\w+\s+is\b/, !1) ? n(p, Yr, m) : n(m);
   }
   i(Ar, "mayberettype");
   function Yr(r, e) {
@@ -496,16 +496,16 @@ function ar(g) {
   i(Yr, "isKW");
   function m(r, e) {
     if (e == "keyof" || e == "typeof" || e == "infer" || e == "readonly")
-      return f.marked = "keyword", n(e == "typeof" ? y : m);
+      return f.marked = "keyword", n(e == "typeof" ? v : m);
     if (r == "variable" || e == "void")
-      return f.marked = "type", n(j);
+      return f.marked = "type", n(z);
     if (e == "|" || e == "&") return n(m);
-    if (r == "string" || r == "number" || r == "atom") return n(j);
-    if (r == "[") return n(l("]"), x(m, "]", ","), o, j);
-    if (r == "{") return n(l("}"), dr, o, j);
-    if (r == "(") return n(x(kr, ")"), Zr, j);
+    if (r == "string" || r == "number" || r == "atom") return n(z);
+    if (r == "[") return n(l("]"), x(m, "]", ","), o, z);
+    if (r == "{") return n(l("}"), dr, o, z);
+    if (r == "(") return n(x(kr, ")"), Zr, z);
     if (r == "<") return n(x(m, ">"), m);
-    if (r == "quasi") return s(mr, j);
+    if (r == "quasi") return s(mr, z);
   }
   i(m, "typeexpr");
   function Zr(r) {
@@ -544,17 +544,17 @@ function ar(g) {
     return r == "variable" && f.stream.match(/^\s*[?:]/, !1) || e == "?" ? n(kr) : r == ":" ? n(m) : r == "spread" ? n(kr) : s(m);
   }
   i(kr, "typearg");
-  function j(r, e) {
-    if (e == "<") return n(l(">"), x(m, ">"), o, j);
+  function z(r, e) {
+    if (e == "<") return n(l(">"), x(m, ">"), o, z);
     if (e == "|" || r == "." || e == "&") return n(m);
-    if (r == "[") return n(m, c("]"), j);
+    if (r == "[") return n(m, c("]"), z);
     if (e == "extends" || e == "implements")
       return f.marked = "keyword", n(m);
     if (e == "?") return n(m, c(":"), m);
   }
-  i(j, "afterType");
+  i(z, "afterType");
   function re(r, e) {
-    if (e == "<") return n(l(">"), x(m, ">"), o, j);
+    if (e == "<") return n(l(">"), x(m, ">"), o, z);
   }
   i(re, "maybeTypeArgs");
   function tr() {
@@ -565,51 +565,51 @@ function ar(g) {
     if (e == "=") return n(m);
   }
   i(ee, "maybeTypeDefault");
-  function pr(r, e) {
-    return e == "enum" ? (f.marked = "keyword", n(Or)) : s(A, J, _, te);
+  function br(r, e) {
+    return e == "enum" ? (f.marked = "keyword", n(Or)) : s(A, J, j, te);
   }
-  i(pr, "vardef");
+  i(br, "vardef");
   function A(r, e) {
-    if (p && Z(e))
+    if (b && Z(e))
       return f.marked = "keyword", n(A);
     if (r == "variable")
       return N(e), n();
     if (r == "spread") return n(A);
     if (r == "[") return W(ne, "]");
-    if (r == "{") return W(jr, "}");
+    if (r == "{") return W(zr, "}");
   }
   i(A, "pattern");
-  function jr(r, e) {
-    return r == "variable" && !f.stream.match(/^\s*:/, !1) ? (N(e), n(_)) : (r == "variable" && (f.marked = "property"), r == "spread" ? n(A) : r == "}" ? s() : r == "[" ? n(b, c("]"), c(":"), jr) : n(c(":"), A, _));
+  function zr(r, e) {
+    return r == "variable" && !f.stream.match(/^\s*:/, !1) ? (N(e), n(j)) : (r == "variable" && (f.marked = "property"), r == "spread" ? n(A) : r == "}" ? s() : r == "[" ? n(p, c("]"), c(":"), zr) : n(c(":"), A, j));
   }
-  i(jr, "proppattern");
+  i(zr, "proppattern");
   function ne() {
-    return s(A, _);
+    return s(A, j);
   }
   i(ne, "eltpattern");
-  function _(r, e) {
-    if (e == "=") return n(y);
+  function j(r, e) {
+    if (e == "=") return n(v);
   }
-  i(_, "maybeAssign");
+  i(j, "maybeAssign");
   function te(r) {
-    if (r == ",") return n(pr);
+    if (r == ",") return n(br);
   }
   i(te, "vardefCont");
-  function zr(r, e) {
+  function _r(r, e) {
     if (r == "keyword b" && e == "else") return n(l("form", "else"), h, o);
   }
-  i(zr, "maybeelse");
-  function _r(r, e) {
-    if (e == "await") return n(_r);
+  i(_r, "maybeelse");
+  function jr(r, e) {
+    if (e == "await") return n(jr);
     if (r == "(") return n(l(")"), ie, o);
   }
-  i(_r, "forspec");
+  i(jr, "forspec");
   function ie(r) {
-    return r == "var" ? n(pr, M) : r == "variable" ? n(M) : s(M);
+    return r == "var" ? n(br, M) : r == "variable" ? n(M) : s(M);
   }
   i(ie, "forspec1");
   function M(r, e) {
-    return r == ")" ? n() : r == ";" ? n(M) : e == "in" || e == "of" ? (f.marked = "keyword", n(b, M)) : s(b, M);
+    return r == ")" ? n() : r == ";" ? n(M) : e == "in" || e == "of" ? (f.marked = "keyword", n(p, M)) : s(p, M);
   }
   i(M, "forspec2");
   function S(r, e) {
@@ -618,7 +618,7 @@ function ar(g) {
     if (r == "variable")
       return N(e), n(S);
     if (r == "(") return n(I, l(")"), x(q, ")"), o, Ar, h, V);
-    if (p && e == "<") return n(l(">"), x(tr, ">"), o, S);
+    if (b && e == "<") return n(l(">"), x(tr, ">"), o, S);
   }
   i(S, "functiondef");
   function D(r, e) {
@@ -627,7 +627,7 @@ function ar(g) {
     if (r == "variable")
       return N(e), n(D);
     if (r == "(") return n(I, l(")"), x(q, ")"), o, Ar, V);
-    if (p && e == "<") return n(l(">"), x(tr, ">"), o, D);
+    if (b && e == "<") return n(l(">"), x(tr, ">"), o, D);
   }
   i(D, "functiondecl");
   function Sr(r, e) {
@@ -638,7 +638,7 @@ function ar(g) {
   }
   i(Sr, "typename");
   function q(r, e) {
-    return e == "@" && n(b, q), r == "spread" ? n(q) : p && Z(e) ? (f.marked = "keyword", n(q)) : p && r == "this" ? n(J, _) : s(A, J, _);
+    return e == "@" && n(p, q), r == "spread" ? n(q) : b && Z(e) ? (f.marked = "keyword", n(q)) : b && r == "this" ? n(J, j) : s(A, J, j);
   }
   i(q, "funarg");
   function fe(r, e) {
@@ -652,47 +652,47 @@ function ar(g) {
   i(Er, "className");
   function ir(r, e) {
     if (e == "<") return n(l(">"), x(tr, ">"), o, ir);
-    if (e == "extends" || e == "implements" || p && r == ",")
-      return e == "implements" && (f.marked = "keyword"), n(p ? m : b, ir);
-    if (r == "{") return n(l("}"), z, o);
+    if (e == "extends" || e == "implements" || b && r == ",")
+      return e == "implements" && (f.marked = "keyword"), n(b ? m : p, ir);
+    if (r == "{") return n(l("}"), _, o);
   }
   i(ir, "classNameAfter");
-  function z(r, e) {
-    if (r == "async" || r == "variable" && (e == "static" || e == "get" || e == "set" || p && Z(e)) && f.stream.match(/^\s+#?[\w$\xa1-\uffff]/, !1))
-      return f.marked = "keyword", n(z);
+  function _(r, e) {
+    if (r == "async" || r == "variable" && (e == "static" || e == "get" || e == "set" || b && Z(e)) && f.stream.match(/^\s+#?[\w$\xa1-\uffff]/, !1))
+      return f.marked = "keyword", n(_);
     if (r == "variable" || f.style == "keyword")
-      return f.marked = "property", n(fr, z);
-    if (r == "number" || r == "string") return n(fr, z);
+      return f.marked = "property", n(fr, _);
+    if (r == "number" || r == "string") return n(fr, _);
     if (r == "[")
-      return n(b, J, c("]"), fr, z);
+      return n(p, J, c("]"), fr, _);
     if (e == "*")
-      return f.marked = "keyword", n(z);
-    if (p && r == "(") return s(D, z);
-    if (r == ";" || r == ",") return n(z);
+      return f.marked = "keyword", n(_);
+    if (b && r == "(") return s(D, _);
+    if (r == ";" || r == ",") return n(_);
     if (r == "}") return n();
-    if (e == "@") return n(b, z);
+    if (e == "@") return n(p, _);
   }
-  i(z, "classBody");
+  i(_, "classBody");
   function fr(r, e) {
     if (e == "!" || e == "?") return n(fr);
-    if (r == ":") return n(m, _);
-    if (e == "=") return n(y);
+    if (r == ":") return n(m, j);
+    if (e == "=") return n(v);
     var t = f.state.lexical.prev, u = t && t.info == "interface";
     return s(u ? D : S);
   }
   i(fr, "classfield");
   function ue(r, e) {
-    return e == "*" ? (f.marked = "keyword", n(br, c(";"))) : e == "default" ? (f.marked = "keyword", n(b, c(";"))) : r == "{" ? n(x(Ir, "}"), br, c(";")) : s(h);
+    return e == "*" ? (f.marked = "keyword", n(pr, c(";"))) : e == "default" ? (f.marked = "keyword", n(p, c(";"))) : r == "{" ? n(x(Ir, "}"), pr, c(";")) : s(h);
   }
   i(ue, "afterExport");
   function Ir(r, e) {
     if (e == "as")
       return f.marked = "keyword", n(c("variable"));
-    if (r == "variable") return s(y, Ir);
+    if (r == "variable") return s(v, Ir);
   }
   i(Ir, "exportField");
   function ae(r) {
-    return r == "string" ? n() : r == "(" ? s(b) : r == "." ? s($) : s(ur, $r, br);
+    return r == "string" ? n() : r == "(" ? s(p) : r == "." ? s($) : s(ur, $r, pr);
   }
   i(ae, "afterImport");
   function ur(r, e) {
@@ -708,13 +708,13 @@ function ar(g) {
       return f.marked = "keyword", n(ur);
   }
   i(oe, "maybeAs");
-  function br(r, e) {
+  function pr(r, e) {
     if (e == "from")
-      return f.marked = "keyword", n(b);
+      return f.marked = "keyword", n(p);
   }
-  i(br, "maybeFrom");
+  i(pr, "maybeFrom");
   function se(r) {
-    return r == "]" ? n() : s(x(y, "]"));
+    return r == "]" ? n() : s(x(v, "]"));
   }
   i(se, "arrayLiteral");
   function Or() {
@@ -722,7 +722,7 @@ function ar(g) {
   }
   i(Or, "enumdef");
   function le() {
-    return s(A, _);
+    return s(A, j);
   }
   i(le, "enummember");
   function ce(r, e) {
@@ -756,9 +756,9 @@ function ar(g) {
       if (r.tokenize != E) return 0;
       var u = e && e.charAt(0), a = r.lexical, d;
       if (!/^\s*else\b/.test(e)) for (var k = r.cc.length - 1; k >= 0; --k) {
-        var v = r.cc[k];
-        if (v == o) a = a.prev;
-        else if (v != zr && v != V) break;
+        var y = r.cc[k];
+        if (y == o) a = a.prev;
+        else if (y != _r && y != V) break;
       }
       for (; (a.type == "stat" || a.type == "form") && (u == "}" || (d = r.cc[r.cc.length - 1]) && (d == $ || d == F) && !/^[,\.=+\-*:?[\(]/.test(e)); )
         a = a.prev;
@@ -775,10 +775,11 @@ function ar(g) {
   };
 }
 i(ar, "mkJavaScript");
-const pe = ar({ name: "javascript" }), be = ar({ name: "json", json: !0 }), we = ar({ name: "json", jsonld: !0 }), he = ar({ name: "typescript", typescript: !0 });
+const be = ar({ name: "javascript" });
+ar({ name: "json", json: !0 });
+const pe = ar({ name: "json", jsonld: !0 });
+ar({ name: "typescript", typescript: !0 });
 export {
-  pe as javascript,
-  be as json,
-  we as jsonld,
-  he as typescript
+  be as javascript,
+  pe as jsonld
 };

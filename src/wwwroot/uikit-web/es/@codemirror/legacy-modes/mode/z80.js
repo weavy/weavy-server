@@ -1,5 +1,5 @@
-﻿var s = Object.defineProperty;
-var t = (l, n) => s(l, "name", { value: n, configurable: !0 });
+﻿var b = Object.defineProperty;
+var t = (l, n) => b(l, "name", { value: n, configurable: !0 });
 function u(l) {
   var n, c;
   l ? (n = /^(exx?|(ld|cp)([di]r?)?|[lp]ea|pop|push|ad[cd]|cpl|daa|dec|inc|neg|sbc|sub|and|bit|[cs]cf|x?or|res|set|r[lr]c?a?|r[lr]d|s[lr]a|srl|djnz|nop|[de]i|halt|im|in([di]mr?|ir?|irx|2r?)|ot(dmr?|[id]rx|imr?)|out(0?|[di]r?|[di]2r?)|tst(io)?|slp)(\.([sl]?i)?[sl])?\b/i, c = /^(((call|j[pr]|rst|ret[in]?)(\.([sl]?i)?[sl])?)|(rs|st)mix)\b/i) : (n = /^(exx?|(ld|cp|in)([di]r?)?|pop|push|ad[cd]|cpl|daa|dec|inc|neg|sbc|sub|and|bit|[cs]cf|x?or|res|set|r[lr]c?a?|r[lr]d|s[lr]a|srl|djnz|nop|rst|[de]i|halt|im|ot[di]r|out[di]?)\b/i, c = /^(call|j[pr]|ret[in]?|b_?(call|jump))\b/i);
@@ -57,8 +57,8 @@ function u(l) {
   };
 }
 t(u, "mkZ80");
-const x = u(!1), p = u(!0);
+const x = u(!1);
+u(!0);
 export {
-  p as ez80,
   x as z80
 };

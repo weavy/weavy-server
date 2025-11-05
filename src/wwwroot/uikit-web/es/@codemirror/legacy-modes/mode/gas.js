@@ -1,5 +1,5 @@
-﻿var g = Object.defineProperty;
-var b = (r, u) => g(r, "name", { value: u, configurable: !0 });
+﻿var k = Object.defineProperty;
+var b = (r, u) => k(r, "name", { value: u, configurable: !0 });
 function p(r) {
   var u = [], c = "", s = {
     ".abort": "builtin",
@@ -181,8 +181,8 @@ function p(r) {
   };
 }
 b(p, "mkGas");
-const x = p("x86"), w = p("arm");
+const x = p("x86");
+p("arm");
 export {
-  x as gas,
-  w as gasArm
+  x as gas
 };

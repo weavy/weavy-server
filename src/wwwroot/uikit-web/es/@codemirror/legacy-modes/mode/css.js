@@ -1,41 +1,41 @@
-﻿var ae = Object.defineProperty;
-var a = (i, l) => ae(i, "name", { value: l, configurable: !0 });
+﻿var te = Object.defineProperty;
+var a = (i, l) => te(i, "name", { value: l, configurable: !0 });
 function v(i) {
   i = { ...se, ...i };
-  var l = i.inline, f = i.tokenHooks, k = i.documentTypes || {}, J = i.mediaTypes || {}, Q = i.mediaFeatures || {}, R = i.mediaValueKeywords || {}, F = i.propertyKeywords || {}, N = i.nonStandardPropertyKeywords || {}, ee = i.fontProperties || {}, re = i.counterDescriptors || {}, V = i.colorKeywords || {}, W = i.valueKeywords || {}, b = i.allowNested, oe = i.lineComment, ie = i.supportsAtComponent === !0, $ = i.highlightNonStandardPropertyKeywords !== !1, y, n;
-  function d(e, o) {
+  var l = i.inline, f = i.tokenHooks, k = i.documentTypes || {}, M = i.mediaTypes || {}, G = i.mediaFeatures || {}, J = i.mediaValueKeywords || {}, S = i.propertyKeywords || {}, A = i.nonStandardPropertyKeywords || {}, Q = i.fontProperties || {}, R = i.counterDescriptors || {}, O = i.colorKeywords || {}, F = i.valueKeywords || {}, b = i.allowNested, ee = i.lineComment, re = i.supportsAtComponent === !0, N = i.highlightNonStandardPropertyKeywords !== !1, y, n;
+  function c(e, o) {
     return y = o, e;
   }
-  a(d, "ret");
-  function te(e, o) {
+  a(c, "ret");
+  function oe(e, o) {
     var r = e.next();
     if (f[r]) {
       var t = f[r](e, o);
       if (t !== !1) return t;
     }
     if (r == "@")
-      return e.eatWhile(/[\w\\\-]/), d("def", e.current());
+      return e.eatWhile(/[\w\\\-]/), c("def", e.current());
     if (r == "=" || (r == "~" || r == "|") && e.eat("="))
-      return d(null, "compare");
+      return c(null, "compare");
     if (r == '"' || r == "'")
-      return o.tokenize = D(r), o.tokenize(e, o);
+      return o.tokenize = V(r), o.tokenize(e, o);
     if (r == "#")
-      return e.eatWhile(/[\w\\\-]/), d("atom", "hash");
+      return e.eatWhile(/[\w\\\-]/), c("atom", "hash");
     if (r == "!")
-      return e.match(/^\s*\w*/), d("keyword", "important");
+      return e.match(/^\s*\w*/), c("keyword", "important");
     if (/\d/.test(r) || r == "." && e.eat(/\d/))
-      return e.eatWhile(/[\w.%]/), d("number", "unit");
+      return e.eatWhile(/[\w.%]/), c("number", "unit");
     if (r === "-") {
       if (/[\d.]/.test(e.peek()))
-        return e.eatWhile(/[\w.%]/), d("number", "unit");
+        return e.eatWhile(/[\w.%]/), c("number", "unit");
       if (e.match(/^-[\w\\\-]*/))
-        return e.eatWhile(/[\w\\\-]/), e.match(/^\s*:/, !1) ? d("def", "variable-definition") : d("variableName", "variable");
+        return e.eatWhile(/[\w\\\-]/), e.match(/^\s*:/, !1) ? c("def", "variable-definition") : c("variableName", "variable");
       if (e.match(/^\w+-/))
-        return d("meta", "meta");
-    } else return /[,+>*\/]/.test(r) ? d(null, "select-op") : r == "." && e.match(/^-?[_a-z][_a-z0-9-]*/i) ? d("qualifier", "qualifier") : /[:;{}\[\]\(\)]/.test(r) ? d(null, r) : e.match(/^[\w-.]+(?=\()/) ? (/^(url(-prefix)?|domain|regexp)$/i.test(e.current()) && (o.tokenize = ne), d("variableName.function", "variable")) : /[\w\\\-]/.test(r) ? (e.eatWhile(/[\w\\\-]/), d("property", "word")) : d(null, null);
+        return c("meta", "meta");
+    } else return /[,+>*\/]/.test(r) ? c(null, "select-op") : r == "." && e.match(/^-?[_a-z][_a-z0-9-]*/i) ? c("qualifier", "qualifier") : /[:;{}\[\]\(\)]/.test(r) ? c(null, r) : e.match(/^[\w-.]+(?=\()/) ? (/^(url(-prefix)?|domain|regexp)$/i.test(e.current()) && (o.tokenize = ie), c("variableName.function", "variable")) : /[\w\\\-]/.test(r) ? (e.eatWhile(/[\w\\\-]/), c("property", "word")) : c(null, null);
   }
-  a(te, "tokenBase");
-  function D(e) {
+  a(oe, "tokenBase");
+  function V(e) {
     return function(o, r) {
       for (var t = !1, u; (u = o.next()) != null; ) {
         if (u == e && !t) {
@@ -44,22 +44,22 @@ function v(i) {
         }
         t = !t && u == "\\";
       }
-      return (u == e || !t && e != ")") && (r.tokenize = null), d("string", "string");
+      return (u == e || !t && e != ")") && (r.tokenize = null), c("string", "string");
     };
   }
-  a(D, "tokenString");
-  function ne(e, o) {
-    return e.next(), e.match(/^\s*[\"\')]/, !1) ? o.tokenize = null : o.tokenize = D(")"), d(null, "(");
+  a(V, "tokenString");
+  function ie(e, o) {
+    return e.next(), e.match(/^\s*[\"\')]/, !1) ? o.tokenize = null : o.tokenize = V(")"), c(null, "(");
   }
-  a(ne, "tokenParenthesized");
-  function L(e, o, r) {
+  a(ie, "tokenParenthesized");
+  function W(e, o, r) {
     this.type = e, this.indent = o, this.prev = r;
   }
-  a(L, "Context");
-  function c(e, o, r, t) {
-    return e.context = new L(r, o.indentation() + (t === !1 ? 0 : o.indentUnit), e.context), r;
+  a(W, "Context");
+  function d(e, o, r, t) {
+    return e.context = new W(r, o.indentation() + (t === !1 ? 0 : o.indentUnit), e.context), r;
   }
-  a(c, "pushContext");
+  a(d, "pushContext");
   function p(e) {
     return e.context.prev && (e.context = e.context.prev), e.context.type;
   }
@@ -74,29 +74,29 @@ function v(i) {
     return w(e, o, r);
   }
   a(g, "popAndPass");
-  function H(e) {
+  function $(e) {
     var o = e.current().toLowerCase();
-    W.hasOwnProperty(o) ? n = "atom" : V.hasOwnProperty(o) ? n = "keyword" : n = "variable";
+    F.hasOwnProperty(o) ? n = "atom" : O.hasOwnProperty(o) ? n = "keyword" : n = "variable";
   }
-  a(H, "wordAsValue");
+  a($, "wordAsValue");
   var s = {};
   return s.top = function(e, o, r) {
     if (e == "{")
-      return c(r, o, "block");
+      return d(r, o, "block");
     if (e == "}" && r.context.prev)
       return p(r);
-    if (ie && /@component/i.test(e))
-      return c(r, o, "atComponentBlock");
+    if (re && /@component/i.test(e))
+      return d(r, o, "atComponentBlock");
     if (/^@(-moz-)?document$/i.test(e))
-      return c(r, o, "documentTypes");
+      return d(r, o, "documentTypes");
     if (/^@(media|supports|(-moz-)?document|import)$/i.test(e))
-      return c(r, o, "atBlock");
+      return d(r, o, "atBlock");
     if (/^@(font-face|counter-style)/i.test(e))
       return r.stateArg = e, "restricted_atBlock_before";
     if (/^@(-(moz|ms|o|webkit)-)?keyframes$/i.test(e))
       return "keyframes";
     if (e && e.charAt(0) == "@")
-      return c(r, o, "at");
+      return d(r, o, "at");
     if (e == "hash")
       n = "builtin";
     else if (e == "word")
@@ -105,60 +105,60 @@ function v(i) {
       if (e == "variable-definition")
         return "maybeprop";
       if (e == "interpolation")
-        return c(r, o, "interpolation");
+        return d(r, o, "interpolation");
       if (e == ":")
         return "pseudo";
       if (b && e == "(")
-        return c(r, o, "parens");
+        return d(r, o, "parens");
     }
     return r.context.type;
   }, s.block = function(e, o, r) {
     if (e == "word") {
       var t = o.current().toLowerCase();
-      return F.hasOwnProperty(t) ? (n = "property", "maybeprop") : N.hasOwnProperty(t) ? (n = $ ? "string.special" : "property", "maybeprop") : b ? (n = o.match(/^\s*:(?:\s|$)/, !1) ? "property" : "tag", "block") : (n = "error", "maybeprop");
+      return S.hasOwnProperty(t) ? (n = "property", "maybeprop") : A.hasOwnProperty(t) ? (n = N ? "string.special" : "property", "maybeprop") : b ? (n = o.match(/^\s*:(?:\s|$)/, !1) ? "property" : "tag", "block") : (n = "error", "maybeprop");
     } else return e == "meta" ? "block" : !b && (e == "hash" || e == "qualifier") ? (n = "error", "block") : s.top(e, o, r);
   }, s.maybeprop = function(e, o, r) {
-    return e == ":" ? c(r, o, "prop") : w(e, o, r);
+    return e == ":" ? d(r, o, "prop") : w(e, o, r);
   }, s.prop = function(e, o, r) {
     if (e == ";") return p(r);
-    if (e == "{" && b) return c(r, o, "propBlock");
+    if (e == "{" && b) return d(r, o, "propBlock");
     if (e == "}" || e == "{") return g(e, o, r);
-    if (e == "(") return c(r, o, "parens");
+    if (e == "(") return d(r, o, "parens");
     if (e == "hash" && !/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(o.current()))
       n = "error";
     else if (e == "word")
-      H(o);
+      $(o);
     else if (e == "interpolation")
-      return c(r, o, "interpolation");
+      return d(r, o, "interpolation");
     return "prop";
   }, s.propBlock = function(e, o, r) {
     return e == "}" ? p(r) : e == "word" ? (n = "property", "maybeprop") : r.context.type;
   }, s.parens = function(e, o, r) {
-    return e == "{" || e == "}" ? g(e, o, r) : e == ")" ? p(r) : e == "(" ? c(r, o, "parens") : e == "interpolation" ? c(r, o, "interpolation") : (e == "word" && H(o), "parens");
+    return e == "{" || e == "}" ? g(e, o, r) : e == ")" ? p(r) : e == "(" ? d(r, o, "parens") : e == "interpolation" ? d(r, o, "interpolation") : (e == "word" && $(o), "parens");
   }, s.pseudo = function(e, o, r) {
     return e == "meta" ? "pseudo" : e == "word" ? (n = "variableName.constant", r.context.type) : w(e, o, r);
   }, s.documentTypes = function(e, o, r) {
     return e == "word" && k.hasOwnProperty(o.current()) ? (n = "tag", r.context.type) : s.atBlock(e, o, r);
   }, s.atBlock = function(e, o, r) {
-    if (e == "(") return c(r, o, "atBlock_parens");
+    if (e == "(") return d(r, o, "atBlock_parens");
     if (e == "}" || e == ";") return g(e, o, r);
-    if (e == "{") return p(r) && c(r, o, b ? "block" : "top");
-    if (e == "interpolation") return c(r, o, "interpolation");
+    if (e == "{") return p(r) && d(r, o, b ? "block" : "top");
+    if (e == "interpolation") return d(r, o, "interpolation");
     if (e == "word") {
       var t = o.current().toLowerCase();
-      t == "only" || t == "not" || t == "and" || t == "or" ? n = "keyword" : J.hasOwnProperty(t) ? n = "attribute" : Q.hasOwnProperty(t) ? n = "property" : R.hasOwnProperty(t) ? n = "keyword" : F.hasOwnProperty(t) ? n = "property" : N.hasOwnProperty(t) ? n = $ ? "string.special" : "property" : W.hasOwnProperty(t) ? n = "atom" : V.hasOwnProperty(t) ? n = "keyword" : n = "error";
+      t == "only" || t == "not" || t == "and" || t == "or" ? n = "keyword" : M.hasOwnProperty(t) ? n = "attribute" : G.hasOwnProperty(t) ? n = "property" : J.hasOwnProperty(t) ? n = "keyword" : S.hasOwnProperty(t) ? n = "property" : A.hasOwnProperty(t) ? n = N ? "string.special" : "property" : F.hasOwnProperty(t) ? n = "atom" : O.hasOwnProperty(t) ? n = "keyword" : n = "error";
     }
     return r.context.type;
   }, s.atComponentBlock = function(e, o, r) {
-    return e == "}" ? g(e, o, r) : e == "{" ? p(r) && c(r, o, b ? "block" : "top", !1) : (e == "word" && (n = "error"), r.context.type);
+    return e == "}" ? g(e, o, r) : e == "{" ? p(r) && d(r, o, b ? "block" : "top", !1) : (e == "word" && (n = "error"), r.context.type);
   }, s.atBlock_parens = function(e, o, r) {
     return e == ")" ? p(r) : e == "{" || e == "}" ? g(e, o, r, 2) : s.atBlock(e, o, r);
   }, s.restricted_atBlock_before = function(e, o, r) {
-    return e == "{" ? c(r, o, "restricted_atBlock") : e == "word" && r.stateArg == "@counter-style" ? (n = "variable", "restricted_atBlock_before") : w(e, o, r);
+    return e == "{" ? d(r, o, "restricted_atBlock") : e == "word" && r.stateArg == "@counter-style" ? (n = "variable", "restricted_atBlock_before") : w(e, o, r);
   }, s.restricted_atBlock = function(e, o, r) {
-    return e == "}" ? (r.stateArg = null, p(r)) : e == "word" ? (r.stateArg == "@font-face" && !ee.hasOwnProperty(o.current().toLowerCase()) || r.stateArg == "@counter-style" && !re.hasOwnProperty(o.current().toLowerCase()) ? n = "error" : n = "property", "maybeprop") : "restricted_atBlock";
+    return e == "}" ? (r.stateArg = null, p(r)) : e == "word" ? (r.stateArg == "@font-face" && !Q.hasOwnProperty(o.current().toLowerCase()) || r.stateArg == "@counter-style" && !R.hasOwnProperty(o.current().toLowerCase()) ? n = "error" : n = "property", "maybeprop") : "restricted_atBlock";
   }, s.keyframes = function(e, o, r) {
-    return e == "word" ? (n = "variable", "keyframes") : e == "{" ? c(r, o, "top") : w(e, o, r);
+    return e == "word" ? (n = "variable", "keyframes") : e == "{" ? d(r, o, "top") : w(e, o, r);
   }, s.at = function(e, o, r) {
     return e == ";" ? p(r) : e == "{" || e == "}" ? g(e, o, r) : (e == "word" ? n = "tag" : e == "hash" && (n = "builtin"), "at");
   }, s.interpolation = function(e, o, r) {
@@ -170,12 +170,12 @@ function v(i) {
         tokenize: null,
         state: l ? "block" : "top",
         stateArg: null,
-        context: new L(l ? "block" : "top", 0, null)
+        context: new W(l ? "block" : "top", 0, null)
       };
     }, "startState"),
     token: /* @__PURE__ */ a(function(e, o) {
       if (!o.tokenize && e.eatSpace()) return null;
-      var r = (o.tokenize || te)(e, o);
+      var r = (o.tokenize || oe)(e, o);
       return r && typeof r == "object" && (y = r[1], r = r[0]), n = r, y != "comment" && (o.state = s[o.state](y, e, o)), n;
     }, "token"),
     indent: /* @__PURE__ */ a(function(e, o, r) {
@@ -184,8 +184,8 @@ function v(i) {
     }, "indent"),
     languageData: {
       indentOnInput: /^\s*\}$/,
-      commentTokens: { line: oe, block: { open: "/*", close: "*/" } },
-      autocomplete: G
+      commentTokens: { line: ee, block: { open: "/*", close: "*/" } },
+      autocomplete: le
     }
   };
 }
@@ -196,12 +196,12 @@ function m(i) {
   return l;
 }
 a(m, "keySet");
-var C = [
+var D = [
   "domain",
   "regexp",
   "url",
   "url-prefix"
-], X = m(C), Y = [
+], L = m(D), H = [
   "all",
   "aural",
   "braille",
@@ -212,7 +212,7 @@ var C = [
   "tty",
   "tv",
   "embossed"
-], x = m(Y), E = [
+], x = m(H), X = [
   "width",
   "min-width",
   "max-width",
@@ -256,7 +256,7 @@ var C = [
   "prefers-color-scheme",
   "dynamic-range",
   "video-dynamic-range"
-], z = m(E), Z = [
+], z = m(X), Y = [
   "landscape",
   "portrait",
   "none",
@@ -270,7 +270,7 @@ var C = [
   "light",
   "standard",
   "high"
-], S = m(Z), T = [
+], T = m(Y), C = [
   "align-content",
   "align-items",
   "align-self",
@@ -716,7 +716,7 @@ var C = [
   "glyph-orientation-vertical",
   "text-anchor",
   "writing-mode"
-], K = m(T), U = [
+], K = m(C), E = [
   "accent-color",
   "aspect-ratio",
   "border-block",
@@ -773,7 +773,7 @@ var C = [
   "searchfield-results-decoration",
   "shape-inside",
   "zoom"
-], P = m(U), I = [
+], P = m(E), ne = [
   "font-display",
   "font-family",
   "src",
@@ -783,7 +783,7 @@ var C = [
   "font-stretch",
   "font-weight",
   "font-style"
-], _ = m(I), le = [
+], _ = m(ne), ae = [
   "additive-symbols",
   "fallback",
   "negative",
@@ -794,7 +794,7 @@ var C = [
   "suffix",
   "symbols",
   "system"
-], M = m(le), A = [
+], Z = m(ae), U = [
   "aliceblue",
   "antiquewhite",
   "aqua",
@@ -943,7 +943,7 @@ var C = [
   "whitesmoke",
   "yellow",
   "yellowgreen"
-], j = m(A), O = [
+], j = m(U), I = [
   "above",
   "absolute",
   "activeborder",
@@ -1463,22 +1463,16 @@ var C = [
   "xor",
   "xx-large",
   "xx-small"
-], q = m(O), G = C.concat(Y).concat(E).concat(Z).concat(T).concat(U).concat(A).concat(O);
-const de = {
-  properties: T,
-  colors: A,
-  fonts: I,
-  values: O,
-  all: G
-}, se = {
-  documentTypes: X,
+], q = m(I), le = D.concat(H).concat(X).concat(Y).concat(C).concat(E).concat(U).concat(I);
+const se = {
+  documentTypes: L,
   mediaTypes: x,
   mediaFeatures: z,
-  mediaValueKeywords: S,
+  mediaValueKeywords: T,
   propertyKeywords: K,
   nonStandardPropertyKeywords: P,
   fontProperties: _,
-  counterDescriptors: M,
+  counterDescriptors: Z,
   colorKeywords: j,
   valueKeywords: q,
   tokenHooks: {
@@ -1486,7 +1480,8 @@ const de = {
       return i.eat("*") ? (l.tokenize = h, h(i, l)) : !1;
     }, "/")
   }
-}, ue = v({ name: "css" });
+};
+v({ name: "css" });
 function h(i, l) {
   for (var f = !1, k; (k = i.next()) != null; ) {
     if (f && k == "/") {
@@ -1498,11 +1493,11 @@ function h(i, l) {
   return ["comment", "comment"];
 }
 a(h, "tokenCComment");
-const pe = v({
+v({
   name: "scss",
   mediaTypes: x,
   mediaFeatures: z,
-  mediaValueKeywords: S,
+  mediaValueKeywords: T,
   propertyKeywords: K,
   nonStandardPropertyKeywords: P,
   colorKeywords: j,
@@ -1524,11 +1519,12 @@ const pe = v({
       return i.eat("{") ? [null, "interpolation"] : !1;
     }, "#")
   }
-}), me = v({
+});
+v({
   name: "less",
   mediaTypes: x,
   mediaFeatures: z,
-  mediaValueKeywords: S,
+  mediaValueKeywords: T,
   propertyKeywords: K,
   nonStandardPropertyKeywords: P,
   colorKeywords: j,
@@ -1547,15 +1543,16 @@ const pe = v({
       return ["atom", "atom"];
     }, "&")
   }
-}), fe = v({
+});
+const ce = v({
   name: "gss",
-  documentTypes: X,
+  documentTypes: L,
   mediaTypes: x,
   mediaFeatures: z,
   propertyKeywords: K,
   nonStandardPropertyKeywords: P,
   fontProperties: _,
-  counterDescriptors: M,
+  counterDescriptors: Z,
   colorKeywords: j,
   valueKeywords: q,
   supportsAtComponent: !0,
@@ -1566,10 +1563,6 @@ const pe = v({
   }
 });
 export {
-  ue as css,
-  fe as gss,
-  de as keywords,
-  me as less,
-  v as mkCSS,
-  pe as sCSS
+  ce as gss,
+  v as mkCSS
 };

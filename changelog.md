@@ -1,11 +1,20 @@
 # Changelog for Weavy
 
+## v29.3.0
+
+<time>2025-11-05</time>
+
+* Added `enterToSend` attribute setting for all Weavy components. Set to "never", "modifier", "auto" or "always".
+* Added cleanup function that removes notifications older than 90 days.
+* Added detection for missing client-side configuration. May be adjusted using the added `configurationTimeout` setting.
+* Changed the `useWeavyContext()` context hook in UI Kit for React to accept arrow functions instead of React refs to comply with React guidelines. If you are using React refs with this hook, you should change the usage to `useWeavyContext(() => myRef.current)` to avoid linting errors.
+* Optimized API requests for conversation features in UI kit.
+
 ## v29.2.1
 
 <time>2025-08-20</time>
 
 * Fixed an issue where files larger than the configured maximum size could be uploaded.
-
 
 ## v29.2.0
 

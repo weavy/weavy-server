@@ -6,7 +6,7 @@ function y(v) {
     return new RegExp("^((" + e.join(")|(") + "))\\b", "i");
   }
   o(i, "wordRegexp");
-  var g = new RegExp("^[\\+\\-\\*/&\\\\\\^<>=]"), m = new RegExp("^((<>)|(<=)|(>=))"), w = new RegExp("^[\\.,]"), k = new RegExp("^[\\(\\)]"), x = new RegExp("^[A-Za-z][_A-Za-z0-9]*"), C = ["class", "sub", "select", "while", "if", "function", "property", "with", "for"], I = ["else", "elseif", "case"], S = ["next", "loop", "wend"], O = i(["and", "or", "not", "xor", "is", "mod", "eqv", "imp"]), D = [
+  var g = new RegExp("^[\\+\\-\\*/&\\\\\\^<>=]"), m = new RegExp("^((<>)|(<=)|(>=))"), w = new RegExp("^[\\.,]"), k = new RegExp("^[\\(\\)]"), x = new RegExp("^[A-Za-z][_A-Za-z0-9]*"), C = ["class", "sub", "select", "while", "if", "function", "property", "with", "for"], I = ["else", "elseif", "case"], O = ["next", "loop", "wend"], S = i(["and", "or", "not", "xor", "is", "mod", "eqv", "imp"]), D = [
     "dim",
     "redim",
     "then",
@@ -259,7 +259,7 @@ function y(v) {
     "urlencode"
   ], l = j.concat(T);
   c = c.concat(L), v.isASP && (c = c.concat(F), l = l.concat(W, B));
-  var z = i(D), A = i(R), K = i(E), N = i(c), M = i(l), P = '"', q = i(C), s = i(I), f = i(S), p = i(["end"]), V = i(["do"]), Y = i(["on error resume next", "exit"]), _ = i(["rem"]);
+  var z = i(D), A = i(R), K = i(E), N = i(c), M = i(l), q = '"', P = i(C), s = i(I), f = i(O), p = i(["end"]), V = i(["do"]), Y = i(["on error resume next", "exit"]), _ = i(["rem"]);
   function h(e, n) {
     n.currentIndent++;
   }
@@ -282,7 +282,7 @@ function y(v) {
       if (e.match(/^&H[0-9a-f]+/i) || e.match(/^&O[0-7]+/i) ? a = !0 : e.match(/^[1-9]\d*F?/) ? (e.eat(/J/i), a = !0) : e.match(/^0(?![\dx])/i) && (a = !0), a)
         return e.eat(/L/i), "number";
     }
-    return e.match(P) ? (n.tokenize = H(e.current()), n.tokenize(e, n)) : e.match(m) || e.match(g) || e.match(O) ? "operator" : e.match(w) ? null : e.match(k) ? "bracket" : e.match(Y) ? (n.doInCurrentLine = !0, "keyword") : e.match(V) ? (h(e, n), n.doInCurrentLine = !0, "keyword") : e.match(q) ? (n.doInCurrentLine ? n.doInCurrentLine = !1 : h(e, n), "keyword") : e.match(s) ? "keyword" : e.match(p) ? (b(e, n), b(e, n), "keyword") : e.match(f) ? (n.doInCurrentLine ? n.doInCurrentLine = !1 : b(e, n), "keyword") : e.match(z) ? "keyword" : e.match(A) ? "atom" : e.match(M) ? "variableName.special" : e.match(K) || e.match(N) ? "builtin" : e.match(x) ? "variable" : (e.next(), u);
+    return e.match(q) ? (n.tokenize = H(e.current()), n.tokenize(e, n)) : e.match(m) || e.match(g) || e.match(S) ? "operator" : e.match(w) ? null : e.match(k) ? "bracket" : e.match(Y) ? (n.doInCurrentLine = !0, "keyword") : e.match(V) ? (h(e, n), n.doInCurrentLine = !0, "keyword") : e.match(P) ? (n.doInCurrentLine ? n.doInCurrentLine = !1 : h(e, n), "keyword") : e.match(s) ? "keyword" : e.match(p) ? (b(e, n), b(e, n), "keyword") : e.match(f) ? (n.doInCurrentLine ? n.doInCurrentLine = !1 : b(e, n), "keyword") : e.match(z) ? "keyword" : e.match(A) ? "atom" : e.match(M) ? "variableName.special" : e.match(K) || e.match(N) ? "builtin" : e.match(x) ? "variable" : (e.next(), u);
   }
   o(d, "tokenBase");
   function H(e) {
@@ -325,8 +325,8 @@ function y(v) {
   };
 }
 o(y, "mkVBScript");
-const Z = y({}), Q = y({ isASP: !0 });
+const Z = y({});
+y({ isASP: !0 });
 export {
-  Z as vbScript,
-  Q as vbScriptASP
+  Z as vbScript
 };

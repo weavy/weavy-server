@@ -1,12 +1,12 @@
 ﻿var fe = Object.defineProperty;
 var r = (e, n) => fe(e, "name", { value: n, configurable: !0 });
-function F(e, n, t, c, u, p) {
-  this.indented = e, this.column = n, this.type = t, this.info = c, this.align = u, this.prev = p;
+function F(e, n, t, c, s, p) {
+  this.indented = e, this.column = n, this.type = t, this.info = c, this.align = s, this.prev = p;
 }
 r(F, "Context");
 function L(e, n, t, c) {
-  var u = e.indented;
-  return e.context && e.context.type == "statement" && t != "statement" && (u = e.context.indented), e.context = new F(u, n, t, c, null, e.context);
+  var s = e.indented;
+  return e.context && e.context.type == "statement" && t != "statement" && (s = e.context.indented), e.context = new F(s, n, t, c, null, e.context);
 }
 r(L, "pushContext");
 function S(e) {
@@ -27,28 +27,28 @@ function R(e) {
 }
 r(R, "isTopScope");
 function y(e) {
-  var n = e.statementIndentUnit, t = e.dontAlignCalls, c = e.keywords || {}, u = e.types || {}, p = e.builtin || {}, w = e.blockKeywords || {}, x = e.defKeywords || {}, v = e.atoms || {}, m = e.hooks || {}, re = e.multiLineStrings, ie = e.indentStatements !== !1, oe = e.indentSwitch !== !1, j = e.namespaceSeparator, ae = e.isPunctuationChar || /[\[\]{}\(\),;\:\.]/, le = e.numberStart || /[\d\.]/, ce = e.number || /^(?:0x[a-f\d]+|0b[01]+|(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)(u|ll?|l|f)?/i, B = e.isOperatorChar || /[+\-*&%=<>!?|\/]/, U = e.isIdentifierChar || /[\w\$_\xa1-\uffff]/, K = e.isReservedIdentifier || !1, h, P;
+  var n = e.statementIndentUnit, t = e.dontAlignCalls, c = e.keywords || {}, s = e.types || {}, p = e.builtin || {}, w = e.blockKeywords || {}, x = e.defKeywords || {}, v = e.atoms || {}, m = e.hooks || {}, re = e.multiLineStrings, ie = e.indentStatements !== !1, oe = e.indentSwitch !== !1, j = e.namespaceSeparator, ae = e.isPunctuationChar || /[\[\]{}\(\),;\:\.]/, le = e.numberStart || /[\d\.]/, ce = e.number || /^(?:0x[a-f\d]+|0b[01]+|(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?)(u|ll?|l|f)?/i, B = e.isOperatorChar || /[+\-*&%=<>!?|\/]/, U = e.isIdentifierChar || /[\w\$_\xa1-\uffff]/, K = e.isReservedIdentifier || !1, h, P;
   function A(o, l) {
-    var s = o.next();
-    if (m[s]) {
-      var a = m[s](o, l);
+    var u = o.next();
+    if (m[u]) {
+      var a = m[u](o, l);
       if (a !== !1) return a;
     }
-    if (s == '"' || s == "'")
-      return l.tokenize = se(s), l.tokenize(o, l);
-    if (le.test(s)) {
+    if (u == '"' || u == "'")
+      return l.tokenize = ue(u), l.tokenize(o, l);
+    if (le.test(u)) {
       if (o.backUp(1), o.match(ce)) return "number";
       o.next();
     }
-    if (ae.test(s))
-      return h = s, null;
-    if (s == "/") {
+    if (ae.test(u))
+      return h = u, null;
+    if (u == "/") {
       if (o.eat("*"))
         return l.tokenize = $, $(o, l);
       if (o.eat("/"))
         return o.skipToEnd(), "comment";
     }
-    if (B.test(s)) {
+    if (B.test(u)) {
       for (; !o.match(/^\/[\/*]/, !1) && o.eat(B); )
         ;
       return "operator";
@@ -56,11 +56,11 @@ function y(e) {
     if (o.eatWhile(U), j) for (; o.match(j); )
       o.eatWhile(U);
     var f = o.current();
-    return k(c, f) ? (k(w, f) && (h = "newstatement"), k(x, f) && (P = !0), "keyword") : k(u, f) ? "type" : k(p, f) || K && K(f) ? (k(w, f) && (h = "newstatement"), "builtin") : k(v, f) ? "atom" : "variable";
+    return k(c, f) ? (k(w, f) && (h = "newstatement"), k(x, f) && (P = !0), "keyword") : k(s, f) ? "type" : k(p, f) || K && K(f) ? (k(w, f) && (h = "newstatement"), "builtin") : k(v, f) ? "atom" : "variable";
   }
   r(A, "tokenBase");
-  function se(o) {
-    return function(l, s) {
+  function ue(o) {
+    return function(l, u) {
       for (var a = !1, f, _ = !1; (f = l.next()) != null; ) {
         if (f == o && !a) {
           _ = !0;
@@ -68,17 +68,17 @@ function y(e) {
         }
         a = !a && f == "\\";
       }
-      return (_ || !(a || re)) && (s.tokenize = null), "string";
+      return (_ || !(a || re)) && (u.tokenize = null), "string";
     };
   }
-  r(se, "tokenString");
+  r(ue, "tokenString");
   function $(o, l) {
-    for (var s = !1, a; a = o.next(); ) {
-      if (a == "/" && s) {
+    for (var u = !1, a; a = o.next(); ) {
+      if (a == "/" && u) {
         l.tokenize = null;
         break;
       }
-      s = a == "*";
+      u = a == "*";
     }
     return "comment";
   }
@@ -98,28 +98,28 @@ function y(e) {
       };
     }, "startState"),
     token: /* @__PURE__ */ r(function(o, l) {
-      var s = l.context;
-      if (o.sol() && (s.align == null && (s.align = !1), l.indented = o.indentation(), l.startOfLine = !0), o.eatSpace())
+      var u = l.context;
+      if (o.sol() && (u.align == null && (u.align = !1), l.indented = o.indentation(), l.startOfLine = !0), o.eatSpace())
         return q(o, l), null;
       h = P = null;
       var a = (l.tokenize || A)(o, l);
       if (a == "comment" || a == "meta") return a;
-      if (s.align == null && (s.align = !0), h == ";" || h == ":" || h == "," && o.match(/^\s*(?:\/\/.*)?$/, !1))
+      if (u.align == null && (u.align = !0), h == ";" || h == ":" || h == "," && o.match(/^\s*(?:\/\/.*)?$/, !1))
         for (; l.context.type == "statement"; ) S(l);
       else if (h == "{") L(l, o.column(), "}");
       else if (h == "[") L(l, o.column(), "]");
       else if (h == "(") L(l, o.column(), ")");
       else if (h == "}") {
-        for (; s.type == "statement"; ) s = S(l);
-        for (s.type == "}" && (s = S(l)); s.type == "statement"; ) s = S(l);
-      } else h == s.type ? S(l) : ie && ((s.type == "}" || s.type == "top") && h != ";" || s.type == "statement" && h == "newstatement") && L(l, o.column(), "statement", o.current());
+        for (; u.type == "statement"; ) u = S(l);
+        for (u.type == "}" && (u = S(l)); u.type == "statement"; ) u = S(l);
+      } else h == u.type ? S(l) : ie && ((u.type == "}" || u.type == "top") && h != ";" || u.type == "statement" && h == "newstatement") && L(l, o.column(), "statement", o.current());
       if (a == "variable" && (l.prevToken == "def" || e.typeFirstDefinitions && W(o, l, o.start) && R(l.context) && o.match(/^\s*\(/, !1)) && (a = "def"), m.token) {
         var f = m.token(o, l, a);
         f !== void 0 && (a = f);
       }
       return a == "def" && e.styleDefs === !1 && (a = "variable"), l.startOfLine = !1, l.prevToken = P ? "def" : a || h, q(o, l), a;
     }, "token"),
-    indent: /* @__PURE__ */ r(function(o, l, s) {
+    indent: /* @__PURE__ */ r(function(o, l, u) {
       if (o.tokenize != A && o.tokenize != null || o.typeAtEndOfLine && R(o.context))
         return null;
       var a = o.context, f = l && l.charAt(0), _ = f == a.type;
@@ -127,20 +127,20 @@ function y(e) {
         for (; a.type == "statement" && e.dontIndentStatements.test(a.info); )
           a = a.prev;
       if (m.indent) {
-        var V = m.indent(o, a, l, s.unit);
+        var V = m.indent(o, a, l, u.unit);
         if (typeof V == "number") return V;
       }
-      var ue = a.prev && a.prev.info == "switch";
+      var se = a.prev && a.prev.info == "switch";
       if (e.allmanIndentation && /[{(]/.test(f)) {
         for (; a.type != "top" && a.type != "}"; ) a = a.prev;
         return a.indented;
       }
-      return a.type == "statement" ? a.indented + (f == "{" ? 0 : n || s.unit) : a.align && (!t || a.type != ")") ? a.column + (_ ? 0 : 1) : a.type == ")" && !_ ? a.indented + (n || s.unit) : a.indented + (_ ? 0 : s.unit) + (!_ && ue && !/^(?:case|default)\b/.test(l) ? s.unit : 0);
+      return a.type == "statement" ? a.indented + (f == "{" ? 0 : n || u.unit) : a.align && (!t || a.type != ")") ? a.column + (_ ? 0 : 1) : a.type == ")" && !_ ? a.indented + (n || u.unit) : a.indented + (_ ? 0 : u.unit) + (!_ && se && !/^(?:case|default)\b/.test(l) ? u.unit : 0);
     }, "indent"),
     languageData: {
       indentOnInput: oe ? /^\s*(?:case .*?:|default:|\{\}?|\})$/ : /^\s*[{}]$/,
       commentTokens: { line: "//", block: { open: "/*", close: "*/" } },
-      autocomplete: Object.keys(c).concat(Object.keys(u)).concat(Object.keys(p)).concat(Object.keys(v)),
+      autocomplete: Object.keys(c).concat(Object.keys(s)).concat(Object.keys(p)).concat(Object.keys(v)),
       ...e.languageData
     }
   };
@@ -221,7 +221,7 @@ function H(e, n) {
   return c ? n.tokenize = null : e.skipToEnd(), "string";
 }
 r(H, "tokenRawString");
-const we = y({
+y({
   name: "c",
   keywords: i(I),
   types: N,
@@ -234,7 +234,8 @@ const we = y({
     "#": b,
     "*": C
   }
-}), ve = y({
+});
+y({
   name: "cpp",
   keywords: i(I + " " + Q),
   types: N,
@@ -268,7 +269,8 @@ const we = y({
     }, "token")
   },
   namespaceSeparator: "::"
-}), _e = y({
+});
+y({
   name: "java",
   keywords: i("abstract assert break case catch class const continue default do else enum extends final finally for goto if implements import instanceof interface native new package private protected public return static strictfp super switch synchronized this throw throws transient try volatile while @interface"),
   types: i("var byte short int long float double boolean char void Boolean Byte Character Double Float Integer Long Number Object Short String StringBuffer StringBuilder Void"),
@@ -285,7 +287,8 @@ const we = y({
       return e.match(/""$/) ? (n.tokenize = ee, n.tokenize(e, n)) : !1;
     }, '"')
   }
-}), xe = y({
+});
+const we = y({
   name: "csharp",
   keywords: i("abstract as async await base break case catch checked class const continue default delegate do else enum event explicit extern finally fixed for foreach goto if implicit in init interface internal is lock namespace new operator out override params private protected public readonly record ref required return sealed sizeof stackalloc static struct switch this throw try typeof unchecked unsafe using virtual void volatile while add alias ascending descending dynamic from get global group into join let orderby partial remove select set value var yield"),
   types: i("Action Boolean Byte Char DateTime DateTimeOffset Decimal Double Func Guid Int16 Int32 Int64 Object SByte Single String Task TimeSpan UInt16 UInt32 UInt64 bool byte char decimal double short int long object sbyte float string ushort uint ulong"),
@@ -325,7 +328,7 @@ function T(e) {
   };
 }
 r(T, "tokenNestedComment");
-const Se = y({
+const ve = y({
   name: "scala",
   keywords: i(
     /* scala */
@@ -365,7 +368,7 @@ const Se = y({
 });
 function he(e) {
   return function(n, t) {
-    for (var c = !1, u, p = !1; !n.eol(); ) {
+    for (var c = !1, s, p = !1; !n.eol(); ) {
       if (!e && !c && n.match('"')) {
         p = !0;
         break;
@@ -374,13 +377,13 @@ function he(e) {
         p = !0;
         break;
       }
-      u = n.next(), !c && u == "$" && n.match("{") && n.skipTo("}"), c = !c && u == "\\" && !e;
+      s = n.next(), !c && s == "$" && n.match("{") && n.skipTo("}"), c = !c && s == "\\" && !e;
     }
     return (p || !e) && (t.tokenize = null), "string";
   };
 }
 r(he, "tokenKotlinString");
-const Te = y({
+const _e = y({
   name: "kotlin",
   keywords: i(
     /*keywords*/
@@ -410,10 +413,10 @@ const Te = y({
       return e.eat("*") ? (n.tokenize = T(1), n.tokenize(e, n)) : !1;
     }, "/"),
     indent: /* @__PURE__ */ r(function(e, n, t, c) {
-      var u = t && t.charAt(0);
+      var s = t && t.charAt(0);
       if ((e.prevToken == "}" || e.prevToken == ")") && t == "")
         return e.indented;
-      if (e.prevToken == "operator" && t != "}" && e.context.type != "}" || e.prevToken == "variable" && u == "." || (e.prevToken == "}" || e.prevToken == ")") && u == ".")
+      if (e.prevToken == "operator" && t != "}" && e.context.type != "}" || e.prevToken == "variable" && s == "." || (e.prevToken == "}" || e.prevToken == ")") && s == ".")
         return c * 2 + n.indented;
       if (n.align && n.type == "}")
         return n.indented + (e.context.type == (t || "").charAt(0) ? 0 : c);
@@ -422,7 +425,8 @@ const Te = y({
   languageData: {
     closeBrackets: { brackets: ["(", "[", "{", "'", '"', '"""'] }
   }
-}), Ie = y({
+});
+y({
   name: "shader",
   keywords: i("sampler1D sampler2D sampler3D samplerCube sampler1DShadow sampler2DShadow const attribute uniform varying break continue discard return for while do if else struct in out inout"),
   types: i("float int bool void vec2 vec3 vec4 ivec2 ivec3 ivec4 bvec2 bvec3 bvec4 mat2 mat3 mat4"),
@@ -431,14 +435,16 @@ const Te = y({
   atoms: i("true false gl_FragColor gl_SecondaryColor gl_Normal gl_Vertex gl_MultiTexCoord0 gl_MultiTexCoord1 gl_MultiTexCoord2 gl_MultiTexCoord3 gl_MultiTexCoord4 gl_MultiTexCoord5 gl_MultiTexCoord6 gl_MultiTexCoord7 gl_FogCoord gl_PointCoord gl_Position gl_PointSize gl_ClipVertex gl_FrontColor gl_BackColor gl_FrontSecondaryColor gl_BackSecondaryColor gl_TexCoord gl_FogFragCoord gl_FragCoord gl_FrontFacing gl_FragData gl_FragDepth gl_ModelViewMatrix gl_ProjectionMatrix gl_ModelViewProjectionMatrix gl_TextureMatrix gl_NormalMatrix gl_ModelViewMatrixInverse gl_ProjectionMatrixInverse gl_ModelViewProjectionMatrixInverse gl_TextureMatrixTranspose gl_ModelViewMatrixInverseTranspose gl_ProjectionMatrixInverseTranspose gl_ModelViewProjectionMatrixInverseTranspose gl_TextureMatrixInverseTranspose gl_NormalScale gl_DepthRange gl_ClipPlane gl_Point gl_FrontMaterial gl_BackMaterial gl_LightSource gl_LightModel gl_FrontLightModelProduct gl_BackLightModelProduct gl_TextureColor gl_EyePlaneS gl_EyePlaneT gl_EyePlaneR gl_EyePlaneQ gl_FogParameters gl_MaxLights gl_MaxClipPlanes gl_MaxTextureUnits gl_MaxTextureCoords gl_MaxVertexAttribs gl_MaxVertexUniformComponents gl_MaxVaryingFloats gl_MaxVertexTextureImageUnits gl_MaxTextureImageUnits gl_MaxFragmentUniformComponents gl_MaxCombineTextureImageUnits gl_MaxDrawBuffers"),
   indentSwitch: !1,
   hooks: { "#": b }
-}), Ne = y({
+});
+y({
   name: "nesc",
   keywords: i(I + " as atomic async call command component components configuration event generic implementation includes interface module new norace nx_struct nx_union post provides signal task uses abstract extends"),
   types: N,
   blockKeywords: i(D),
   atoms: i("null true false"),
   hooks: { "#": b }
-}), De = y({
+});
+const xe = y({
   name: "objectivec",
   keywords: i(I + " " + Z),
   types: Y,
@@ -453,7 +459,7 @@ const Te = y({
     "#": b,
     "*": C
   }
-}), Le = y({
+}), Se = y({
   name: "objectivecpp",
   keywords: i(I + " " + Z + " " + Q),
   types: Y,
@@ -487,7 +493,7 @@ const Te = y({
     }, "token")
   },
   namespaceSeparator: "::"
-}), ze = y({
+}), Te = y({
   name: "squirrel",
   keywords: i("base break clone continue const default delete enum extends function in class foreach local resume return this throw typeof yield constructor instanceof static"),
   types: N,
@@ -500,7 +506,7 @@ const Te = y({
 var z = null;
 function ne(e) {
   return function(n, t) {
-    for (var c = !1, u, p = !1; !n.eol(); ) {
+    for (var c = !1, s, p = !1; !n.eol(); ) {
       if (!c && n.match('"') && (e == "single" || n.match('""'))) {
         p = !0;
         break;
@@ -509,13 +515,13 @@ function ne(e) {
         z = ne(e), p = !0;
         break;
       }
-      u = n.next(), c = e == "single" && !c && u == "\\";
+      s = n.next(), c = e == "single" && !c && s == "\\";
     }
     return p && (t.tokenize = null), "string";
   };
 }
 r(ne, "tokenCeylonString");
-const Me = y({
+y({
   name: "ceylon",
   keywords: i("abstracts alias assembly assert assign break case catch class continue dynamic else exists extends finally for function given if import in interface is let module new nonempty object of out outer package return satisfies super switch then this throw try value void while"),
   types: /* @__PURE__ */ r(function(e) {
@@ -569,16 +575,16 @@ function me(e) {
 }
 r(me, "sizeInterpolationStack");
 function O(e, n, t, c) {
-  var u = !1;
+  var s = !1;
   if (n.eat(e))
-    if (n.eat(e)) u = !0;
+    if (n.eat(e)) s = !0;
     else return "string";
   function p(w, x) {
     for (var v = !1; !w.eol(); ) {
       if (!c && !v && w.peek() == "$")
         return ye(x), x.tokenize = ke, "string";
       var m = w.next();
-      if (m == e && !v && (!u || w.match(e + e))) {
+      if (m == e && !v && (!s || w.match(e + e))) {
         x.tokenize = null;
         break;
       }
@@ -597,7 +603,7 @@ function ge(e, n) {
   return e.eatWhile(/[\w_]/), n.tokenize = te(n), "variable";
 }
 r(ge, "tokenInterpolationIdentifier");
-const Ce = y({
+const Ie = y({
   name: "dart",
   keywords: i("this super static final const abstract class extends external factory implements mixin get native set typedef with enum throw rethrow assert break case continue default in return new deferred async await covariant try catch finally do else for if switch while import library export part of show hide is as extension on yield late required sealed base interface when inline"),
   blockKeywords: i("try catch finally do else for if switch while"),
@@ -636,18 +642,12 @@ const Ce = y({
   }
 });
 export {
-  we as c,
-  Me as ceylon,
   y as clike,
-  ve as cpp,
-  xe as csharp,
-  Ce as dart,
-  _e as java,
-  Te as kotlin,
-  Ne as nesC,
-  De as objectiveC,
-  Le as objectiveCpp,
-  Se as scala,
-  Ie as shader,
-  ze as squirrel
+  we as csharp,
+  Ie as dart,
+  _e as kotlin,
+  xe as objectiveC,
+  Se as objectiveCpp,
+  ve as scala,
+  Te as squirrel
 };

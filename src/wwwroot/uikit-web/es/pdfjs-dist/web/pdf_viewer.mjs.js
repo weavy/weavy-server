@@ -1,12 +1,12 @@
-﻿var Zs = Object.defineProperty;
-var Qs = (a) => {
+﻿var Ks = Object.defineProperty;
+var Xs = (a) => {
   throw TypeError(a);
 };
-var wa = (a, e, t) => e in a ? Zs(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t;
-var h = (a, e) => Zs(a, "name", { value: e, configurable: !0 });
-var rn = (a, e, t) => wa(a, typeof e != "symbol" ? e + "" : e, t), an = (a, e, t) => e.has(a) || Qs("Cannot " + t);
-var o = (a, e, t) => (an(a, e, "read from private field"), t ? t.call(a) : e.get(a)), b = (a, e, t) => e.has(a) ? Qs("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), f = (a, e, t, i) => (an(a, e, "write to private field"), i ? i.call(a, t) : e.set(a, t), t), c = (a, e, t) => (an(a, e, "access private method"), t);
-var Js = (a, e, t, i) => ({
+var wa = (a, e, t) => e in a ? Ks(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t;
+var h = (a, e) => Ks(a, "name", { value: e, configurable: !0 });
+var Zs = (a, e, t) => wa(a, typeof e != "symbol" ? e + "" : e, t), sn = (a, e, t) => e.has(a) || Xs("Cannot " + t);
+var o = (a, e, t) => (sn(a, e, "read from private field"), t ? t.call(a) : e.get(a)), m = (a, e, t) => e.has(a) ? Xs("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), f = (a, e, t, i) => (sn(a, e, "write to private field"), i ? i.call(a, t) : e.set(a, t), t), u = (a, e, t) => (sn(a, e, "access private method"), t);
+var Qs = (a, e, t, i) => ({
   set _(n) {
     f(a, e, n, t);
   },
@@ -14,130 +14,130 @@ var Js = (a, e, t, i) => ({
     return o(a, e, i);
   }
 });
-var Gt = {};
-Gt.d = (a, e) => {
+var Wt = {};
+Wt.d = (a, e) => {
   for (var t in e)
-    Gt.o(e, t) && !Gt.o(a, t) && Object.defineProperty(a, t, { enumerable: !0, get: e[t] });
+    Wt.o(e, t) && !Wt.o(a, t) && Object.defineProperty(a, t, { enumerable: !0, get: e[t] });
 };
-Gt.o = (a, e) => Object.prototype.hasOwnProperty.call(a, e);
-var H = globalThis.pdfjsViewer = {};
-Gt.d(H, {
+Wt.o = (a, e) => Object.prototype.hasOwnProperty.call(a, e);
+var V = globalThis.pdfjsViewer = {};
+Wt.d(V, {
   AnnotationLayerBuilder: /* @__PURE__ */ h(() => (
     /* reexport */
-    Gi
+    Wi
   ), "AnnotationLayerBuilder"),
   DownloadManager: /* @__PURE__ */ h(() => (
     /* reexport */
-    In
+    Sn
   ), "DownloadManager"),
   EventBus: /* @__PURE__ */ h(() => (
     /* reexport */
-    Ki
+    zi
   ), "EventBus"),
   FindState: /* @__PURE__ */ h(() => (
     /* reexport */
-    xe
+    Pe
   ), "FindState"),
   GenericL10n: /* @__PURE__ */ h(() => (
     /* reexport */
-    Dt
+    kt
   ), "GenericL10n"),
   LinkTarget: /* @__PURE__ */ h(() => (
     /* reexport */
-    ze
+    We
   ), "LinkTarget"),
   PDFFindController: /* @__PURE__ */ h(() => (
     /* reexport */
-    mn
+    pn
   ), "PDFFindController"),
   PDFHistory: /* @__PURE__ */ h(() => (
     /* reexport */
-    Vn
+    jn
   ), "PDFHistory"),
   PDFLinkService: /* @__PURE__ */ h(() => (
     /* reexport */
-    Wi
+    Ui
   ), "PDFLinkService"),
   PDFPageView: /* @__PURE__ */ h(() => (
     /* reexport */
-    qi
+    Ji
   ), "PDFPageView"),
   PDFScriptingManager: /* @__PURE__ */ h(() => (
     /* reexport */
-    ls
+    as
   ), "PDFScriptingManager"),
   PDFSinglePageViewer: /* @__PURE__ */ h(() => (
     /* reexport */
-    ps
+    fs
   ), "PDFSinglePageViewer"),
   PDFViewer: /* @__PURE__ */ h(() => (
     /* reexport */
-    en
+    Yi
   ), "PDFViewer"),
   ProgressBar: /* @__PURE__ */ h(() => (
     /* reexport */
-    pn
+    fn
   ), "ProgressBar"),
   RenderingStates: /* @__PURE__ */ h(() => (
     /* reexport */
-    U
+    H
   ), "RenderingStates"),
   ScrollMode: /* @__PURE__ */ h(() => (
     /* reexport */
-    O
+    D
   ), "ScrollMode"),
   SimpleLinkService: /* @__PURE__ */ h(() => (
     /* reexport */
-    Qt
+    Xt
   ), "SimpleLinkService"),
   SpreadMode: /* @__PURE__ */ h(() => (
     /* reexport */
-    Z
+    G
   ), "SpreadMode"),
   StructTreeLayerBuilder: /* @__PURE__ */ h(() => (
     /* reexport */
-    Qi
+    Xi
   ), "StructTreeLayerBuilder"),
   TextLayerBuilder: /* @__PURE__ */ h(() => (
     /* reexport */
-    Ji
+    Zi
   ), "TextLayerBuilder"),
   XfaLayerBuilder: /* @__PURE__ */ h(() => (
     /* reexport */
-    Yi
+    Qi
   ), "XfaLayerBuilder"),
   parseQueryString: /* @__PURE__ */ h(() => (
     /* reexport */
-    sn
+    tn
   ), "parseQueryString")
 });
-const _a = "auto", Rr = 1, Ys = 1.1, ya = 0.1, va = 10, on = 0, Pa = 1.25, qs = 40, er = 5, U = {
+const _a = "auto", Tr = 1, Js = 1.1, va = 0.1, ya = 10, rn = 0, Pa = 1.25, Ys = 40, qs = 5, H = {
   INITIAL: 0,
   RUNNING: 1,
   PAUSED: 2,
   FINISHED: 3
-}, pt = {
+}, ft = {
   UNKNOWN: 0,
   NORMAL: 1,
   CHANGING: 2,
   FULLSCREEN: 3
-}, ce = {
+}, ue = {
   DISABLE: 0,
   ENABLE: 1,
   ENABLE_PERMISSIONS: 2
-}, O = {
+}, D = {
   UNKNOWN: -1,
   VERTICAL: 0,
   HORIZONTAL: 1,
   WRAPPED: 2,
   PAGE: 3
-}, Z = {
+}, G = {
   UNKNOWN: -1,
   NONE: 0,
   ODD: 1,
   EVEN: 2
 };
-function Nr(a, e, t = !1) {
+function Rr(a, e, t = !1) {
   let i = a.offsetParent;
   if (!i) {
     console.error("offsetParent is not set -- cannot scroll");
@@ -149,15 +149,15 @@ function Nr(a, e, t = !1) {
       return;
   e && (e.top !== void 0 && (n += e.top), e.left !== void 0 && (s += e.left, i.scrollLeft = s)), i.scrollTop = n;
 }
-h(Nr, "scrollIntoView");
+h(Rr, "scrollIntoView");
 function xa(a, e, t = void 0) {
   const i = /* @__PURE__ */ h(function(r) {
     s || (s = window.requestAnimationFrame(/* @__PURE__ */ h(function() {
       s = null;
-      const d = a.scrollLeft, u = n.lastX;
-      d !== u && (n.right = d > u), n.lastX = d;
-      const g = a.scrollTop, E = n.lastY;
-      g !== E && (n.down = g > E), n.lastY = g, e(n);
+      const d = a.scrollLeft, c = n.lastX;
+      d !== c && (n.right = d > c), n.lastX = d;
+      const p = a.scrollTop, E = n.lastY;
+      p !== E && (n.down = p > E), n.lastY = p, e(n);
     }, "viewAreaElementScrolled")));
   }, "debounceScroll"), n = {
     right: !0,
@@ -170,24 +170,24 @@ function xa(a, e, t = void 0) {
   return a.addEventListener("scroll", i, {
     useCapture: !0,
     signal: t
-  }), t == null || t.addEventListener("abort", () => window.cancelAnimationFrame(s), {
+  }), t?.addEventListener("abort", () => window.cancelAnimationFrame(s), {
     once: !0
   }), n;
 }
 h(xa, "watchScroll");
-function sn(a) {
+function tn(a) {
   const e = /* @__PURE__ */ new Map();
   for (const [t, i] of new URLSearchParams(a))
     e.set(t.toLowerCase(), i);
   return e;
 }
-h(sn, "parseQueryString");
-const tr = /[\x00-\x1F]/g;
-function Kt(a, e = !1) {
-  return tr.test(a) ? e ? a.replaceAll(tr, (t) => t === "\0" ? "" : " ") : a.replaceAll("\0", "") : a;
+h(tn, "parseQueryString");
+const er = /[\x00-\x1F]/g;
+function zt(a, e = !1) {
+  return er.test(a) ? e ? a.replaceAll(er, (t) => t === "\0" ? "" : " ") : a.replaceAll("\0", "") : a;
 }
-h(Kt, "removeNullCharacters");
-function Zt(a, e, t = 0) {
+h(zt, "removeNullCharacters");
+function Kt(a, e, t = 0) {
   let i = t, n = a.length - 1;
   if (n < 0 || !e(a[n]))
     return a.length;
@@ -199,8 +199,8 @@ function Zt(a, e, t = 0) {
   }
   return i;
 }
-h(Zt, "binarySearchFirstItem");
-function ir(a) {
+h(Kt, "binarySearchFirstItem");
+function tr(a) {
   if (Math.floor(a) === a)
     return [a, 1];
   const e = 1 / a, t = 8;
@@ -211,19 +211,19 @@ function ir(a) {
   const i = a > 1 ? e : a;
   let n = 0, s = 1, r = 1, l = 1;
   for (; ; ) {
-    const u = n + r, g = s + l;
-    if (g > t)
+    const c = n + r, p = s + l;
+    if (p > t)
       break;
-    i <= u / g ? (r = u, l = g) : (n = u, s = g);
+    i <= c / p ? (r = c, l = p) : (n = c, s = p);
   }
   let d;
   return i - n / s < r / l - i ? d = i === a ? [n, s] : [s, n] : d = i === a ? [r, l] : [l, r], d;
 }
-h(ir, "approximateFraction");
-function Li(a, e) {
+h(tr, "approximateFraction");
+function Ai(a, e) {
   return a - a % e;
 }
-h(Li, "floorToDivide");
+h(Ai, "floorToDivide");
 function Sa(a, e, t) {
   if (a < 2)
     return a;
@@ -242,45 +242,45 @@ function Aa({
   rtl: n = !1
 }) {
   const s = a.scrollTop, r = s + a.clientHeight, l = a.scrollLeft, d = l + a.clientWidth;
-  function u(M) {
-    const v = M.div;
-    return v.offsetTop + v.clientTop + v.clientHeight > s;
+  function c(M) {
+    const x = M.div;
+    return x.offsetTop + x.clientTop + x.clientHeight > s;
   }
-  h(u, "isElementBottomAfterViewTop");
-  function g(M) {
-    const v = M.div, C = v.offsetLeft + v.clientLeft, F = C + v.clientWidth;
-    return n ? C < d : F > l;
+  h(c, "isElementBottomAfterViewTop");
+  function p(M) {
+    const x = M.div, P = x.offsetLeft + x.clientLeft, k = P + x.clientWidth;
+    return n ? P < d : k > l;
   }
-  h(g, "isElementNextAfterViewHorizontally");
-  const E = [], w = /* @__PURE__ */ new Set(), L = e.length;
-  let I = Zt(e, i ? g : u);
-  I > 0 && I < L && !i && (I = Sa(I, e, s));
-  let P = i ? d : -1;
-  for (let M = I; M < L; M++) {
-    const v = e[M], C = v.div, F = C.offsetLeft + C.clientLeft, B = C.offsetTop + C.clientTop, W = C.clientWidth, V = C.clientHeight, p = F + W, _ = B + V;
-    if (P === -1)
-      _ >= r && (P = _);
-    else if ((i ? F : B) > P)
+  h(p, "isElementNextAfterViewHorizontally");
+  const E = [], w = /* @__PURE__ */ new Set(), A = e.length;
+  let C = Kt(e, i ? p : c);
+  C > 0 && C < A && !i && (C = Sa(C, e, s));
+  let I = i ? d : -1;
+  for (let M = C; M < A; M++) {
+    const x = e[M], P = x.div, k = P.offsetLeft + P.clientLeft, F = P.offsetTop + P.clientTop, B = P.clientWidth, j = P.clientHeight, b = k + B, _ = F + j;
+    if (I === -1)
+      _ >= r && (I = _);
+    else if ((i ? k : F) > I)
       break;
-    if (_ <= s || B >= r || p <= l || F >= d)
+    if (_ <= s || F >= r || b <= l || k >= d)
       continue;
-    const x = Math.max(0, s - B) + Math.max(0, _ - r), j = Math.max(0, l - F) + Math.max(0, p - d), D = (V - x) / V, k = (W - j) / W, z = D * k * 100 | 0;
+    const v = Math.max(0, s - F) + Math.max(0, _ - r), O = Math.max(0, l - k) + Math.max(0, b - d), Z = (j - v) / j, K = (B - O) / B, nn = Z * K * 100 | 0;
     E.push({
-      id: v.id,
-      x: F,
-      y: B,
-      view: v,
-      percent: z,
-      widthPercent: k * 100 | 0
-    }), w.add(v.id);
+      id: x.id,
+      x: k,
+      y: F,
+      view: x,
+      percent: nn,
+      widthPercent: K * 100 | 0
+    }), w.add(x.id);
   }
-  const S = E[0], T = E.at(-1);
-  return t && E.sort(function(M, v) {
-    const C = M.percent - v.percent;
-    return Math.abs(C) > 1e-3 ? -C : M.id - v.id;
+  const L = E[0], N = E.at(-1);
+  return t && E.sort(function(M, x) {
+    const P = M.percent - x.percent;
+    return Math.abs(P) > 1e-3 ? -P : M.id - x.id;
   }), {
-    first: S,
-    last: T,
+    first: L,
+    last: N,
     views: E,
     ids: w
   };
@@ -291,17 +291,17 @@ function Cr(a) {
 }
 h(Cr, "isValidRotation");
 function Ia(a) {
-  return Number.isInteger(a) && Object.values(O).includes(a) && a !== O.UNKNOWN;
+  return Number.isInteger(a) && Object.values(D).includes(a) && a !== D.UNKNOWN;
 }
 h(Ia, "isValidScrollMode");
 function La(a) {
-  return Number.isInteger(a) && Object.values(Z).includes(a) && a !== Z.UNKNOWN;
+  return Number.isInteger(a) && Object.values(G).includes(a) && a !== G.UNKNOWN;
 }
 h(La, "isValidSpreadMode");
-function nr(a) {
+function ir(a) {
   return a.width <= a.height;
 }
-h(nr, "isPortraitOrientation");
+h(ir, "isPortraitOrientation");
 new Promise(function(a) {
   window.requestAnimationFrame(a);
 });
@@ -310,63 +310,63 @@ function Ra(a, e, t) {
   return Math.min(Math.max(a, e), t);
 }
 h(Ra, "clamp");
-var Ie, Xe, Le, mt, Ze;
-const bs = class bs {
+var Ae, Ke, Ie, pt, Xe;
+const gs = class gs {
   constructor(e) {
-    b(this, Ie, null);
-    b(this, Xe, null);
-    b(this, Le, 0);
-    b(this, mt, null);
-    b(this, Ze, !0);
-    f(this, Ie, e.classList), f(this, mt, e.style);
+    m(this, Ae, null);
+    m(this, Ke, null);
+    m(this, Ie, 0);
+    m(this, pt, null);
+    m(this, Xe, !0);
+    f(this, Ae, e.classList), f(this, pt, e.style);
   }
   get percent() {
-    return o(this, Le);
+    return o(this, Ie);
   }
   set percent(e) {
-    if (f(this, Le, Ra(e, 0, 100)), isNaN(e)) {
-      o(this, Ie).add("indeterminate");
+    if (f(this, Ie, Ra(e, 0, 100)), isNaN(e)) {
+      o(this, Ae).add("indeterminate");
       return;
     }
-    o(this, Ie).remove("indeterminate"), o(this, mt).setProperty("--progressBar-percent", `${o(this, Le)}%`);
+    o(this, Ae).remove("indeterminate"), o(this, pt).setProperty("--progressBar-percent", `${o(this, Ie)}%`);
   }
   setWidth(e) {
     if (!e)
       return;
     const i = e.parentNode.offsetWidth - e.offsetWidth;
-    i > 0 && o(this, mt).setProperty("--progressBar-end-offset", `${i}px`);
+    i > 0 && o(this, pt).setProperty("--progressBar-end-offset", `${i}px`);
   }
   setDisableAutoFetch(e = 5e3) {
-    o(this, Le) === 100 || isNaN(o(this, Le)) || (o(this, Xe) && clearTimeout(o(this, Xe)), this.show(), f(this, Xe, setTimeout(() => {
-      f(this, Xe, null), this.hide();
+    o(this, Ie) === 100 || isNaN(o(this, Ie)) || (o(this, Ke) && clearTimeout(o(this, Ke)), this.show(), f(this, Ke, setTimeout(() => {
+      f(this, Ke, null), this.hide();
     }, e)));
   }
   hide() {
-    o(this, Ze) && (f(this, Ze, !1), o(this, Ie).add("hidden"));
+    o(this, Xe) && (f(this, Xe, !1), o(this, Ae).add("hidden"));
   }
   show() {
-    o(this, Ze) || (f(this, Ze, !0), o(this, Ie).remove("hidden"));
+    o(this, Xe) || (f(this, Xe, !0), o(this, Ae).remove("hidden"));
   }
 };
-Ie = new WeakMap(), Xe = new WeakMap(), Le = new WeakMap(), mt = new WeakMap(), Ze = new WeakMap(), h(bs, "ProgressBar");
-let pn = bs;
-function Na(a) {
-  let e = O.VERTICAL, t = Z.NONE;
+Ae = new WeakMap(), Ke = new WeakMap(), Ie = new WeakMap(), pt = new WeakMap(), Xe = new WeakMap(), h(gs, "ProgressBar");
+let fn = gs;
+function Ca(a) {
+  let e = D.VERTICAL, t = G.NONE;
   switch (a) {
     case "SinglePage":
-      e = O.PAGE;
+      e = D.PAGE;
       break;
     case "OneColumn":
       break;
     case "TwoPageLeft":
-      e = O.PAGE;
+      e = D.PAGE;
     case "TwoColumnLeft":
-      t = Z.ODD;
+      t = G.ODD;
       break;
     case "TwoPageRight":
-      e = O.PAGE;
+      e = D.PAGE;
     case "TwoColumnRight":
-      t = Z.EVEN;
+      t = G.EVEN;
       break;
   }
   return {
@@ -374,11 +374,11 @@ function Na(a) {
     spreadMode: t
   };
 }
-h(Na, "apiPageLayoutToViewerModes");
-const Ti = function() {
+h(Ca, "apiPageLayoutToViewerModes");
+const Ii = function() {
   const a = document.createElement("div");
   return a.style.width = "round(down, calc(1.6666666666666665 * 792px), 1px)", a.style.width === "calc(1320px)" ? Math.fround : (e) => e;
-}(), se = {
+}(), ne = {
   SPACE: 0,
   ALPHA_LETTER: 1,
   PUNCT: 2,
@@ -388,10 +388,10 @@ const Ti = function() {
   HALFWIDTH_KATAKANA_LETTER: 6,
   THAI_LETTER: 7
 };
-function Ca(a) {
+function Na(a) {
   return a < 11904;
 }
-h(Ca, "isAlphabeticalScript");
+h(Na, "isAlphabeticalScript");
 function Ma(a) {
   return (a & 65408) === 0;
 }
@@ -428,21 +428,21 @@ function Ha(a) {
   return (a & 65408) === 3584;
 }
 h(Ha, "isThai");
-function Ri(a) {
-  return Ca(a) ? Ma(a) ? Da(a) ? se.SPACE : ka(a) || Oa(a) || a === 95 ? se.ALPHA_LETTER : se.PUNCT : Ha(a) ? se.THAI_LETTER : a === 160 ? se.SPACE : se.ALPHA_LETTER : ja(a) ? se.HAN_LETTER : Fa(a) ? se.KATAKANA_LETTER : Va(a) ? se.HIRAGANA_LETTER : Ba(a) ? se.HALFWIDTH_KATAKANA_LETTER : se.ALPHA_LETTER;
+function Li(a) {
+  return Na(a) ? Ma(a) ? Da(a) ? ne.SPACE : ka(a) || Oa(a) || a === 95 ? ne.ALPHA_LETTER : ne.PUNCT : Ha(a) ? ne.THAI_LETTER : a === 160 ? ne.SPACE : ne.ALPHA_LETTER : ja(a) ? ne.HAN_LETTER : Fa(a) ? ne.KATAKANA_LETTER : Va(a) ? ne.HIRAGANA_LETTER : Ba(a) ? ne.HALFWIDTH_KATAKANA_LETTER : ne.ALPHA_LETTER;
 }
-h(Ri, "getCharacterType");
-let sr;
+h(Li, "getCharacterType");
+let nr;
 function Ua() {
-  return sr || (sr = " ¨ª¯²-µ¸-º¼-¾Ĳ-ĳĿ-ŀŉſǄ-ǌǱ-ǳʰ-ʸ˘-˝ˠ-ˤʹͺ;΄-΅·ϐ-ϖϰ-ϲϴ-ϵϹևٵ-ٸक़-य़ড়-ঢ়য়ਲ਼ਸ਼ਖ਼-ਜ਼ਫ਼ଡ଼-ଢ଼ำຳໜ-ໝ༌གྷཌྷདྷབྷཛྷཀྵჼᴬ-ᴮᴰ-ᴺᴼ-ᵍᵏ-ᵪᵸᶛ-ᶿẚ-ẛάέήίόύώΆ᾽-῁ΈΉ῍-῏ΐΊ῝-῟ΰΎ῭-`ΌΏ´-῾ - ‑‗․-… ″-‴‶-‷‼‾⁇-⁉⁗ ⁰-ⁱ⁴-₎ₐ-ₜ₨℀-℃℅-ℇ℉-ℓℕ-№ℙ-ℝ℠-™ℤΩℨK-ℭℯ-ℱℳ-ℹ℻-⅀ⅅ-ⅉ⅐-ⅿ↉∬-∭∯-∰〈-〉①-⓪⨌⩴-⩶⫝̸ⱼ-ⱽⵯ⺟⻳⼀-⿕　〶〸-〺゛-゜ゟヿㄱ-ㆎ㆒-㆟㈀-㈞㈠-㉇㉐-㉾㊀-㏿ꚜ-ꚝꝰꟲ-ꟴꟸ-ꟹꭜ-ꭟꭩ豈-嗀塚晴凞-羽蘒諸逸-都飯-舘並-龎ﬀ-ﬆﬓ-ﬗיִײַ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-﷼︐-︙︰-﹄﹇-﹒﹔-﹦﹨-﹫ﹰ-ﹲﹴﹶ-ﻼ！-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ￠-￦"), sr;
+  return nr ||= " ¨ª¯²-µ¸-º¼-¾Ĳ-ĳĿ-ŀŉſǄ-ǌǱ-ǳʰ-ʸ˘-˝ˠ-ˤʹͺ;΄-΅·ϐ-ϖϰ-ϲϴ-ϵϹևٵ-ٸक़-य़ড়-ঢ়য়ਲ਼ਸ਼ਖ਼-ਜ਼ਫ਼ଡ଼-ଢ଼ำຳໜ-ໝ༌གྷཌྷདྷབྷཛྷཀྵჼᴬ-ᴮᴰ-ᴺᴼ-ᵍᵏ-ᵪᵸᶛ-ᶿẚ-ẛάέήίόύώΆ᾽-῁ΈΉ῍-῏ΐΊ῝-῟ΰΎ῭-`ΌΏ´-῾ - ‑‗․-… ″-‴‶-‷‼‾⁇-⁉⁗ ⁰-ⁱ⁴-₎ₐ-ₜ₨℀-℃℅-ℇ℉-ℓℕ-№ℙ-ℝ℠-™ℤΩℨK-ℭℯ-ℱℳ-ℹ℻-⅀ⅅ-ⅉ⅐-ⅿ↉∬-∭∯-∰〈-〉①-⓪⨌⩴-⩶⫝̸ⱼ-ⱽⵯ⺟⻳⼀-⿕　〶〸-〺゛-゜ゟヿㄱ-ㆎ㆒-㆟㈀-㈞㈠-㉇㉐-㉾㊀-㏿ꚜ-ꚝꝰꟲ-ꟴꟸ-ꟹꭜ-ꭟꭩ豈-嗀塚晴凞-羽蘒諸逸-都飯-舘並-龎ﬀ-ﬆﬓ-ﬗיִײַ-זּטּ-לּמּנּ-סּףּ-פּצּ-ﮱﯓ-ﴽﵐ-ﶏﶒ-ﷇﷰ-﷼︐-︙︰-﹄﹇-﹒﹔-﹦﹨-﹫ﹰ-ﹲﹴﹶ-ﻼ！-ﾾￂ-ￇￊ-ￏￒ-ￗￚ-ￜ￠-￦", nr;
 }
 h(Ua, "getNormalizeWithNFKC");
-const xe = {
+const Pe = {
   FOUND: 0,
   NOT_FOUND: 1,
   WRAPPED: 2,
   PENDING: 3
-}, $a = 250, Wa = -50, za = -400, rr = {
+}, $a = 250, Wa = -50, za = -400, sr = {
   "‐": "-",
   "‘": "'",
   "’": "'",
@@ -455,117 +455,116 @@ const xe = {
   "¼": "1/4",
   "½": "1/2",
   "¾": "3/4"
-}, ar = /* @__PURE__ */ new Set([12441, 12442, 2381, 2509, 2637, 2765, 2893, 3021, 3149, 3277, 3387, 3388, 3405, 3530, 3642, 3770, 3972, 4153, 4154, 5908, 5940, 6098, 6752, 6980, 7082, 7083, 7154, 7155, 11647, 43014, 43052, 43204, 43347, 43456, 43766, 44013, 3158, 3953, 3954, 3962, 3963, 3964, 3965, 3968, 3956]);
-let or;
-const Ga = new RegExp("\\p{M}+", "gu"), Ka = new RegExp("([.*+?^${}()|[\\]\\\\])|(\\p{P})|(\\s+)|(\\p{M})|(\\p{L})", "gu"), Xa = new RegExp("([^\\p{M}])\\p{M}*$", "u"), Za = new RegExp("^\\p{M}*([^\\p{M}])", "u"), Qa = /[\uAC00-\uD7AF\uFA6C\uFACF-\uFAD1\uFAD5-\uFAD7]+/g, lr = /* @__PURE__ */ new Map(), Ja = "[\\u1100-\\u1112\\ud7a4-\\ud7af\\ud84a\\ud84c\\ud850\\ud854\\ud857\\ud85f]", hr = /* @__PURE__ */ new Map();
-let ln = null, hn = null;
-function dn(a) {
+}, rr = /* @__PURE__ */ new Set([12441, 12442, 2381, 2509, 2637, 2765, 2893, 3021, 3149, 3277, 3387, 3388, 3405, 3530, 3642, 3770, 3972, 4153, 4154, 5908, 5940, 6098, 6752, 6980, 7082, 7083, 7154, 7155, 11647, 43014, 43052, 43204, 43347, 43456, 43766, 44013, 3158, 3953, 3954, 3962, 3963, 3964, 3965, 3968, 3956]);
+let ar;
+const Ga = new RegExp("\\p{M}+", "gu"), Ka = new RegExp("([.*+?^${}()|[\\]\\\\])|(\\p{P})|(\\s+)|(\\p{M})|(\\p{L})", "gu"), Xa = new RegExp("([^\\p{M}])\\p{M}*$", "u"), Za = new RegExp("^\\p{M}*([^\\p{M}])", "u"), Qa = /[\uAC00-\uD7AF\uFA6C\uFACF-\uFAD1\uFAD5-\uFAD7]+/g, or = /* @__PURE__ */ new Map(), Ja = "[\\u1100-\\u1112\\ud7a4-\\ud7af\\ud84a\\ud84c\\ud850\\ud854\\ud857\\ud85f]", lr = /* @__PURE__ */ new Map();
+let an = null, on = null;
+function ln(a) {
   const e = [];
   let t;
   for (; (t = Qa.exec(a)) !== null; ) {
     let {
-      index: P
+      index: I
     } = t;
-    for (const S of t[0]) {
-      let T = lr.get(S);
-      T || (T = S.normalize("NFD").length, lr.set(S, T)), e.push([T, P++]);
+    for (const L of t[0]) {
+      let N = or.get(L);
+      N || (N = L.normalize("NFD").length, or.set(L, N)), e.push([N, I++]);
     }
   }
   let i;
-  if (e.length === 0 && ln)
-    i = ln;
-  else if (e.length > 0 && hn)
-    i = hn;
+  if (e.length === 0 && an)
+    i = an;
+  else if (e.length > 0 && on)
+    i = on;
   else {
-    const P = Object.keys(rr).join(""), S = Ua(), C = `([${P}])|([${S}])|((?:゙|゚)\\n)|(\\p{M}+(?:-\\n)?)|(\\p{Ll}-\\n\\p{Lu})|(\\S-\\n)|((?:\\p{Ideographic}|[぀-ヿ])\\n)|(\\n)`;
-    e.length === 0 ? i = ln = new RegExp(C + "|(\\u0000)", "gum") : i = hn = new RegExp(C + `|(${Ja})`, "gum");
+    const I = Object.keys(sr).join(""), L = Ua(), P = `([${I}])|([${L}])|((?:゙|゚)\\n)|(\\p{M}+(?:-\\n)?)|(\\p{Ll}-\\n\\p{Lu})|(\\S-\\n)|((?:\\p{Ideographic}|[぀-ヿ])\\n)|(\\n)`;
+    e.length === 0 ? i = an = new RegExp(P + "|(\\u0000)", "gum") : i = on = new RegExp(P + `|(${Ja})`, "gum");
   }
   const n = [];
   for (; (t = Ga.exec(a)) !== null; )
     n.push([t[0].length, t.index]);
   let s = a.normalize("NFD");
   const r = [0, 0];
-  let l = 0, d = 0, u = 0, g = 0, E = 0, w = !1;
-  s = s.replace(i, (P, S, T, M, v, C, F, B, W, V, p) => {
-    var _, x, j;
-    if (p -= g, S) {
-      const D = rr[S], k = D.length;
-      for (let z = 1; z < k; z++)
-        r.push(p - u + z, u - z);
-      return u -= k - 1, D;
+  let l = 0, d = 0, c = 0, p = 0, E = 0, w = !1;
+  s = s.replace(i, (I, L, N, M, x, P, k, F, B, j, b) => {
+    if (b -= p, L) {
+      const _ = sr[L], v = _.length;
+      for (let O = 1; O < v; O++)
+        r.push(b - c + O, c - O);
+      return c -= v - 1, _;
     }
-    if (T) {
-      let D = hr.get(T);
-      D || (D = T.normalize("NFKC"), hr.set(T, D));
-      const k = D.length;
-      for (let z = 1; z < k; z++)
-        r.push(p - u + z, u - z);
-      return u -= k - 1, D;
+    if (N) {
+      let _ = lr.get(N);
+      _ || (_ = N.normalize("NFKC"), lr.set(N, _));
+      const v = _.length;
+      for (let O = 1; O < v; O++)
+        r.push(b - c + O, c - O);
+      return c -= v - 1, _;
     }
     if (M)
-      return w = !0, p + E === ((_ = n[l]) == null ? void 0 : _[1]) ? ++l : (r.push(p - 1 - u + 1, u - 1), u -= 1, g += 1), r.push(p - u + 1, u), g += 1, E += 1, M.charAt(0);
-    if (v) {
-      const D = v.endsWith(`
-`), k = D ? v.length - 2 : v.length;
+      return w = !0, b + E === n[l]?.[1] ? ++l : (r.push(b - 1 - c + 1, c - 1), c -= 1, p += 1), r.push(b - c + 1, c), p += 1, E += 1, M.charAt(0);
+    if (x) {
+      const _ = x.endsWith(`
+`), v = _ ? x.length - 2 : x.length;
       w = !0;
-      let z = k;
-      p + E === ((x = n[l]) == null ? void 0 : x[1]) && (z -= n[l][0], ++l);
-      for (let ut = 1; ut <= z; ut++)
-        r.push(p - 1 - u + ut, u - ut);
-      return u -= z, g += z, D ? (p += k - 1, r.push(p - u + 1, 1 + u), u += 1, g += 1, E += 1, v.slice(0, k)) : v;
+      let O = v;
+      b + E === n[l]?.[1] && (O -= n[l][0], ++l);
+      for (let Z = 1; Z <= O; Z++)
+        r.push(b - 1 - c + Z, c - Z);
+      return c -= O, p += O, _ ? (b += v - 1, r.push(b - c + 1, 1 + c), c += 1, p += 1, E += 1, x.slice(0, v)) : x;
     }
-    if (C)
-      return g += 1, E += 1, C.replace(`
+    if (P)
+      return p += 1, E += 1, P.replace(`
 `, "");
+    if (k) {
+      const _ = k.length - 2;
+      return r.push(b - c + _, 1 + c), c += 1, p += 1, E += 1, k.slice(0, -2);
+    }
     if (F) {
-      const D = F.length - 2;
-      return r.push(p - u + D, 1 + u), u += 1, g += 1, E += 1, F.slice(0, -2);
+      const _ = F.length - 1;
+      return r.push(b - c + _, c), p += 1, E += 1, F.slice(0, -1);
     }
-    if (B) {
-      const D = B.length - 1;
-      return r.push(p - u + D, u), g += 1, E += 1, B.slice(0, -1);
-    }
-    if (W)
-      return r.push(p - u + 1, u - 1), u -= 1, g += 1, E += 1, " ";
-    if (p + E === ((j = e[d]) == null ? void 0 : j[1])) {
-      const D = e[d][0] - 1;
+    if (B)
+      return r.push(b - c + 1, c - 1), c -= 1, p += 1, E += 1, " ";
+    if (b + E === e[d]?.[1]) {
+      const _ = e[d][0] - 1;
       ++d;
-      for (let k = 1; k <= D; k++)
-        r.push(p - (u - k), u - k);
-      u -= D, g += D;
+      for (let v = 1; v <= _; v++)
+        r.push(b - (c - v), c - v);
+      c -= _, p += _;
     }
-    return V;
-  }), r.push(s.length, u);
-  const L = new Uint32Array(r.length >> 1), I = new Int32Array(r.length >> 1);
-  for (let P = 0, S = r.length; P < S; P += 2)
-    L[P >> 1] = r[P], I[P >> 1] = r[P + 1];
-  return [s, [L, I], w];
+    return j;
+  }), r.push(s.length, c);
+  const A = new Uint32Array(r.length >> 1), C = new Int32Array(r.length >> 1);
+  for (let I = 0, L = r.length; I < L; I += 2)
+    A[I >> 1] = r[I], C[I >> 1] = r[I + 1];
+  return [s, [A, C], w];
 }
-h(dn, "normalize");
+h(ln, "normalize");
 function Ya(a, e, t) {
   if (!a)
     return [e, t];
   const [i, n] = a, s = e, r = e + t - 1;
-  let l = Zt(i, (w) => w >= s);
+  let l = Kt(i, (w) => w >= s);
   i[l] > s && --l;
-  let d = Zt(i, (w) => w >= r, l);
+  let d = Kt(i, (w) => w >= r, l);
   i[d] > r && --d;
-  const u = s + n[l], E = r + n[d] + 1 - u;
-  return [u, E];
+  const c = s + n[l], E = r + n[d] + 1 - c;
+  return [c, E];
 }
 h(Ya, "getOriginalIndex");
-var K, bt, Qe, y, Mr, bn, En, kr, Or, wn, Dr, jr, ki, Bt, ct, Fr, _n, yn, Oi, Vr, vn, Pn, Ht;
-const Es = class Es {
+var W, gt, Ze, y, Nr, gn, mn, Mr, kr, bn, Or, Dr, Ni, Ft, dt, jr, En, wn, Mi, Fr, _n, vn, Vt;
+const ms = class ms {
   constructor({
     linkService: e,
     eventBus: t,
     updateMatchesCountOnProgress: i = !0
   }) {
-    b(this, y);
-    b(this, K, null);
-    b(this, bt, !0);
-    b(this, Qe, 0);
-    this._linkService = e, this._eventBus = t, f(this, bt, i), this.onIsPageVisible = null, c(this, y, bn).call(this), t._on("find", c(this, y, Mr).bind(this)), t._on("findbarclose", c(this, y, Vr).bind(this));
+    m(this, y);
+    m(this, W, null);
+    m(this, gt, !0);
+    m(this, Ze, 0);
+    this._linkService = e, this._eventBus = t, f(this, gt, i), this.onIsPageVisible = null, u(this, y, gn).call(this), t._on("find", u(this, y, Nr).bind(this)), t._on("findbarclose", u(this, y, Fr).bind(this));
   }
   get highlightMatches() {
     return this._highlightMatches;
@@ -580,10 +579,10 @@ const Es = class Es {
     return this._selected;
   }
   get state() {
-    return o(this, K);
+    return o(this, W);
   }
   setDocument(e) {
-    this._pdfDocument && c(this, y, bn).call(this), e && (this._pdfDocument = e, this._firstPageCapability.resolve());
+    this._pdfDocument && u(this, y, gn).call(this), e && (this._pdfDocument = e, this._firstPageCapability.resolve());
   }
   scrollMatchIntoView({
     element: e = null,
@@ -602,48 +601,48 @@ const Es = class Es {
       top: Wa,
       left: t + za
     };
-    Nr(e, s, !0);
+    Rr(e, s, !0);
   }
   match(e, t, i) {
     const n = this._hasDiacritics[i];
     let s = !1;
-    if (typeof e == "string" ? [s, e] = c(this, y, wn).call(this, e, n) : e = e.sort().reverse().map((E) => {
-      const [w, L] = c(this, y, wn).call(this, E, n);
-      return s || (s = w), `(${L})`;
+    if (typeof e == "string" ? [s, e] = u(this, y, bn).call(this, e, n) : e = e.sort().reverse().map((E) => {
+      const [w, A] = u(this, y, bn).call(this, E, n);
+      return s ||= w, `(${A})`;
     }).join("|"), !e)
       return;
     const {
       caseSensitive: r,
       entireWord: l
-    } = o(this, K), d = `g${s ? "u" : ""}${r ? "" : "i"}`;
+    } = o(this, W), d = `g${s ? "u" : ""}${r ? "" : "i"}`;
     e = new RegExp(e, d);
-    const u = [];
-    let g;
-    for (; (g = e.exec(t)) !== null; )
-      l && !c(this, y, Or).call(this, t, g.index, g[0].length) || u.push({
-        index: g.index,
-        length: g[0].length
+    const c = [];
+    let p;
+    for (; (p = e.exec(t)) !== null; )
+      l && !u(this, y, kr).call(this, t, p.index, p[0].length) || c.push({
+        index: p.index,
+        length: p[0].length
       });
-    return u;
+    return c;
   }
 };
-K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr = /* @__PURE__ */ h(function(e) {
+W = new WeakMap(), gt = new WeakMap(), Ze = new WeakMap(), y = new WeakSet(), Nr = /* @__PURE__ */ h(function(e) {
   if (!e)
     return;
   const t = this._pdfDocument, {
     type: i
   } = e;
-  (o(this, K) === null || c(this, y, kr).call(this, e)) && (this._dirtyMatch = !0), f(this, K, e), i !== "highlightallchange" && c(this, y, Ht).call(this, xe.PENDING), this._firstPageCapability.promise.then(() => {
+  (o(this, W) === null || u(this, y, Mr).call(this, e)) && (this._dirtyMatch = !0), f(this, W, e), i !== "highlightallchange" && u(this, y, Vt).call(this, Pe.PENDING), this._firstPageCapability.promise.then(() => {
     if (!this._pdfDocument || t && this._pdfDocument !== t)
       return;
-    c(this, y, jr).call(this);
+    u(this, y, Dr).call(this);
     const n = !this._highlightMatches, s = !!this._findTimeout;
-    this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), i ? this._dirtyMatch ? c(this, y, ct).call(this) : i === "again" ? (c(this, y, ct).call(this), n && o(this, K).highlightAll && c(this, y, Bt).call(this)) : i === "highlightallchange" ? (s ? c(this, y, ct).call(this) : this._highlightMatches = !0, c(this, y, Bt).call(this)) : c(this, y, ct).call(this) : this._findTimeout = setTimeout(() => {
-      c(this, y, ct).call(this), this._findTimeout = null;
+    this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), i ? this._dirtyMatch ? u(this, y, dt).call(this) : i === "again" ? (u(this, y, dt).call(this), n && o(this, W).highlightAll && u(this, y, Ft).call(this)) : i === "highlightallchange" ? (s ? u(this, y, dt).call(this) : this._highlightMatches = !0, u(this, y, Ft).call(this)) : u(this, y, dt).call(this) : this._findTimeout = setTimeout(() => {
+      u(this, y, dt).call(this), this._findTimeout = null;
     }, $a);
   });
-}, "#onFind"), bn = /* @__PURE__ */ h(function() {
-  this._highlightMatches = !1, this._scrollMatches = !1, this._pdfDocument = null, this._pageMatches = [], this._pageMatchesLength = [], f(this, Qe, 0), f(this, K, null), this._selected = {
+}, "#onFind"), gn = /* @__PURE__ */ h(function() {
+  this._highlightMatches = !1, this._scrollMatches = !1, this._pdfDocument = null, this._pageMatches = [], this._pageMatchesLength = [], f(this, Ze, 0), f(this, W, null), this._selected = {
     pageIdx: -1,
     matchIdx: -1
   }, this._offset = {
@@ -651,14 +650,13 @@ K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr
     matchIdx: null,
     wrapped: !1
   }, this._extractTextPromises = [], this._pageContents = [], this._pageDiffs = [], this._hasDiacritics = [], this._matchesCountTotal = 0, this._pagesToSearch = null, this._pendingFindMatches = /* @__PURE__ */ new Set(), this._resumePageIdx = null, this._dirtyMatch = !1, clearTimeout(this._findTimeout), this._findTimeout = null, this._firstPageCapability = Promise.withResolvers();
-}, "#reset"), En = /* @__PURE__ */ h(function() {
+}, "#reset"), mn = /* @__PURE__ */ h(function() {
   const {
     query: e
-  } = o(this, K);
-  return typeof e == "string" ? (e !== this._rawQuery && (this._rawQuery = e, [this._normalizedQuery] = dn(e)), this._normalizedQuery) : (e || []).filter((t) => !!t).map((t) => dn(t)[0]);
-}, "#query"), kr = /* @__PURE__ */ h(function(e) {
-  var r;
-  const t = e.query, i = o(this, K).query, n = typeof t;
+  } = o(this, W);
+  return typeof e == "string" ? (e !== this._rawQuery && (this._rawQuery = e, [this._normalizedQuery] = ln(e)), this._normalizedQuery) : (e || []).filter((t) => !!t).map((t) => ln(t)[0]);
+}, "#query"), Mr = /* @__PURE__ */ h(function(e) {
+  const t = e.query, i = o(this, W).query, n = typeof t;
   if (n !== typeof i)
     return !0;
   if (n === "string") {
@@ -668,48 +666,48 @@ K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr
     return !0;
   switch (e.type) {
     case "again":
-      const l = this._selected.pageIdx + 1, d = this._linkService;
-      return l >= 1 && l <= d.pagesCount && l !== d.page && !(((r = this.onIsPageVisible) == null ? void 0 : r.call(this, l)) ?? !0);
+      const r = this._selected.pageIdx + 1, l = this._linkService;
+      return r >= 1 && r <= l.pagesCount && r !== l.page && !(this.onIsPageVisible?.(r) ?? !0);
     case "highlightallchange":
       return !1;
   }
   return !0;
-}, "#shouldDirtyMatch"), Or = /* @__PURE__ */ h(function(e, t, i) {
+}, "#shouldDirtyMatch"), kr = /* @__PURE__ */ h(function(e, t, i) {
   let n = e.slice(0, t).match(Xa);
   if (n) {
     const s = e.charCodeAt(t), r = n[1].charCodeAt(0);
-    if (Ri(s) === Ri(r))
+    if (Li(s) === Li(r))
       return !1;
   }
   if (n = e.slice(t + i).match(Za), n) {
     const s = e.charCodeAt(t + i - 1), r = n[1].charCodeAt(0);
-    if (Ri(s) === Ri(r))
+    if (Li(s) === Li(r))
       return !1;
   }
   return !0;
-}, "#isEntireWord"), wn = /* @__PURE__ */ h(function(e, t) {
+}, "#isEntireWord"), bn = /* @__PURE__ */ h(function(e, t) {
   const {
     matchDiacritics: i
-  } = o(this, K);
+  } = o(this, W);
   let n = !1;
-  e = e.replaceAll(Ka, (r, l, d, u, g, E) => l ? `[ ]*\\${l}[ ]*` : d ? `[ ]*${d}[ ]*` : u ? "[ ]+" : i ? g || E : g ? ar.has(g.charCodeAt(0)) ? g : "" : t ? (n = !0, `${E}\\p{M}*`) : E);
+  e = e.replaceAll(Ka, (r, l, d, c, p, E) => l ? `[ ]*\\${l}[ ]*` : d ? `[ ]*${d}[ ]*` : c ? "[ ]+" : i ? p || E : p ? rr.has(p.charCodeAt(0)) ? p : "" : t ? (n = !0, `${E}\\p{M}*`) : E);
   const s = "[ ]*";
-  return e.endsWith(s) && (e = e.slice(0, e.length - s.length)), i && t && (or || (or = String.fromCharCode(...ar)), n = !0, e = `${e}(?=[${or}]|[^\\p{M}]|$)`), [n, e];
-}, "#convertToRegExpString"), Dr = /* @__PURE__ */ h(function(e) {
-  const t = o(this, y, En);
+  return e.endsWith(s) && (e = e.slice(0, e.length - s.length)), i && t && (ar ||= String.fromCharCode(...rr), n = !0, e = `${e}(?=[${ar}]|[^\\p{M}]|$)`), [n, e];
+}, "#convertToRegExpString"), Or = /* @__PURE__ */ h(function(e) {
+  const t = o(this, y, mn);
   if (t.length === 0)
     return;
   const i = this._pageContents[e], n = this.match(t, i, e), s = this._pageMatches[e] = [], r = this._pageMatchesLength[e] = [], l = this._pageDiffs[e];
-  n == null || n.forEach(({
-    index: u,
-    length: g
+  n?.forEach(({
+    index: c,
+    length: p
   }) => {
-    const [E, w] = Ya(l, u, g);
+    const [E, w] = Ya(l, c, p);
     w && (s.push(E), r.push(w));
-  }), o(this, K).highlightAll && c(this, y, ki).call(this, e), this._resumePageIdx === e && (this._resumePageIdx = null, c(this, y, _n).call(this));
+  }), o(this, W).highlightAll && u(this, y, Ni).call(this, e), this._resumePageIdx === e && (this._resumePageIdx = null, u(this, y, En).call(this));
   const d = s.length;
-  this._matchesCountTotal += d, o(this, bt) ? d > 0 && c(this, y, Pn).call(this) : ++Js(this, Qe)._ === this._linkService.pagesCount && c(this, y, Pn).call(this);
-}, "#calculateMatch"), jr = /* @__PURE__ */ h(function() {
+  this._matchesCountTotal += d, o(this, gt) ? d > 0 && u(this, y, vn).call(this) : ++Qs(this, Ze)._ === this._linkService.pagesCount && u(this, y, vn).call(this);
+}, "#calculateMatch"), Dr = /* @__PURE__ */ h(function() {
   if (this._extractTextPromises.length > 0)
     return;
   let e = Promise.resolve();
@@ -723,35 +721,35 @@ K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr
     } = Promise.withResolvers();
     this._extractTextPromises[i] = s, e = e.then(() => this._pdfDocument.getPage(i + 1).then((l) => l.getTextContent(t)).then((l) => {
       const d = [];
-      for (const u of l.items)
-        d.push(u.str), u.hasEOL && d.push(`
+      for (const c of l.items)
+        d.push(c.str), c.hasEOL && d.push(`
 `);
-      [this._pageContents[i], this._pageDiffs[i], this._hasDiacritics[i]] = dn(d.join("")), r();
+      [this._pageContents[i], this._pageDiffs[i], this._hasDiacritics[i]] = ln(d.join("")), r();
     }, (l) => {
       console.error(`Unable to get text content for page ${i + 1}`, l), this._pageContents[i] = "", this._pageDiffs[i] = null, this._hasDiacritics[i] = !1, r();
     }));
   }
-}, "#extractText"), ki = /* @__PURE__ */ h(function(e) {
+}, "#extractText"), Ni = /* @__PURE__ */ h(function(e) {
   this._scrollMatches && this._selected.pageIdx === e && (this._linkService.page = e + 1), this._eventBus.dispatch("updatetextlayermatches", {
     source: this,
     pageIndex: e
   });
-}, "#updatePage"), Bt = /* @__PURE__ */ h(function() {
+}, "#updatePage"), Ft = /* @__PURE__ */ h(function() {
   this._eventBus.dispatch("updatetextlayermatches", {
     source: this,
     pageIndex: -1
   });
-}, "#updateAllPages"), ct = /* @__PURE__ */ h(function() {
-  const e = o(this, K).findPrevious, t = this._linkService.page - 1, i = this._linkService.pagesCount;
+}, "#updateAllPages"), dt = /* @__PURE__ */ h(function() {
+  const e = o(this, W).findPrevious, t = this._linkService.page - 1, i = this._linkService.pagesCount;
   if (this._highlightMatches = !0, this._dirtyMatch) {
-    this._dirtyMatch = !1, this._selected.pageIdx = this._selected.matchIdx = -1, this._offset.pageIdx = t, this._offset.matchIdx = null, this._offset.wrapped = !1, this._resumePageIdx = null, this._pageMatches.length = 0, this._pageMatchesLength.length = 0, f(this, Qe, 0), this._matchesCountTotal = 0, c(this, y, Bt).call(this);
+    this._dirtyMatch = !1, this._selected.pageIdx = this._selected.matchIdx = -1, this._offset.pageIdx = t, this._offset.matchIdx = null, this._offset.wrapped = !1, this._resumePageIdx = null, this._pageMatches.length = 0, this._pageMatchesLength.length = 0, f(this, Ze, 0), this._matchesCountTotal = 0, u(this, y, Ft).call(this);
     for (let r = 0; r < i; r++)
       this._pendingFindMatches.has(r) || (this._pendingFindMatches.add(r), this._extractTextPromises[r].then(() => {
-        this._pendingFindMatches.delete(r), c(this, y, Dr).call(this, r);
+        this._pendingFindMatches.delete(r), u(this, y, Or).call(this, r);
       }));
   }
-  if (o(this, y, En).length === 0) {
-    c(this, y, Ht).call(this, xe.FOUND);
+  if (o(this, y, mn).length === 0) {
+    u(this, y, Vt).call(this, Pe.FOUND);
     return;
   }
   if (this._resumePageIdx)
@@ -760,16 +758,16 @@ K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr
   if (this._pagesToSearch = i, s.matchIdx !== null) {
     const r = this._pageMatches[s.pageIdx].length;
     if (!e && s.matchIdx + 1 < r || e && s.matchIdx > 0) {
-      s.matchIdx = e ? s.matchIdx - 1 : s.matchIdx + 1, c(this, y, Oi).call(this, !0);
+      s.matchIdx = e ? s.matchIdx - 1 : s.matchIdx + 1, u(this, y, Mi).call(this, !0);
       return;
     }
-    c(this, y, yn).call(this, e);
+    u(this, y, wn).call(this, e);
   }
-  c(this, y, _n).call(this);
-}, "#nextMatch"), Fr = /* @__PURE__ */ h(function(e) {
-  const t = this._offset, i = e.length, n = o(this, K).findPrevious;
-  return i ? (t.matchIdx = n ? i - 1 : 0, c(this, y, Oi).call(this, !0), !0) : (c(this, y, yn).call(this, n), t.wrapped && (t.matchIdx = null, this._pagesToSearch < 0) ? (c(this, y, Oi).call(this, !1), !0) : !1);
-}, "#matchesReady"), _n = /* @__PURE__ */ h(function() {
+  u(this, y, En).call(this);
+}, "#nextMatch"), jr = /* @__PURE__ */ h(function(e) {
+  const t = this._offset, i = e.length, n = o(this, W).findPrevious;
+  return i ? (t.matchIdx = n ? i - 1 : 0, u(this, y, Mi).call(this, !0), !0) : (u(this, y, wn).call(this, n), t.wrapped && (t.matchIdx = null, this._pagesToSearch < 0) ? (u(this, y, Mi).call(this, !1), !0) : !1);
+}, "#matchesReady"), En = /* @__PURE__ */ h(function() {
   this._resumePageIdx !== null && console.error("There can only be one pending page.");
   let e = null;
   do {
@@ -778,72 +776,70 @@ K = new WeakMap(), bt = new WeakMap(), Qe = new WeakMap(), y = new WeakSet(), Mr
       this._resumePageIdx = t;
       break;
     }
-  } while (!c(this, y, Fr).call(this, e));
-}, "#nextPageMatch"), yn = /* @__PURE__ */ h(function(e) {
+  } while (!u(this, y, jr).call(this, e));
+}, "#nextPageMatch"), wn = /* @__PURE__ */ h(function(e) {
   const t = this._offset, i = this._linkService.pagesCount;
   t.pageIdx = e ? t.pageIdx - 1 : t.pageIdx + 1, t.matchIdx = null, this._pagesToSearch--, (t.pageIdx >= i || t.pageIdx < 0) && (t.pageIdx = e ? i - 1 : 0, t.wrapped = !0);
-}, "#advanceOffsetPage"), Oi = /* @__PURE__ */ h(function(e = !1) {
-  let t = xe.NOT_FOUND;
+}, "#advanceOffsetPage"), Mi = /* @__PURE__ */ h(function(e = !1) {
+  let t = Pe.NOT_FOUND;
   const i = this._offset.wrapped;
   if (this._offset.wrapped = !1, e) {
     const n = this._selected.pageIdx;
-    this._selected.pageIdx = this._offset.pageIdx, this._selected.matchIdx = this._offset.matchIdx, t = i ? xe.WRAPPED : xe.FOUND, n !== -1 && n !== this._selected.pageIdx && c(this, y, ki).call(this, n);
+    this._selected.pageIdx = this._offset.pageIdx, this._selected.matchIdx = this._offset.matchIdx, t = i ? Pe.WRAPPED : Pe.FOUND, n !== -1 && n !== this._selected.pageIdx && u(this, y, Ni).call(this, n);
   }
-  c(this, y, Ht).call(this, t, o(this, K).findPrevious), this._selected.pageIdx !== -1 && (this._scrollMatches = !0, c(this, y, ki).call(this, this._selected.pageIdx));
-}, "#updateMatch"), Vr = /* @__PURE__ */ h(function(e) {
+  u(this, y, Vt).call(this, t, o(this, W).findPrevious), this._selected.pageIdx !== -1 && (this._scrollMatches = !0, u(this, y, Ni).call(this, this._selected.pageIdx));
+}, "#updateMatch"), Fr = /* @__PURE__ */ h(function(e) {
   const t = this._pdfDocument;
   this._firstPageCapability.promise.then(() => {
-    !this._pdfDocument || t && this._pdfDocument !== t || (this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), this._resumePageIdx && (this._resumePageIdx = null, this._dirtyMatch = !0), c(this, y, Ht).call(this, xe.FOUND), this._highlightMatches = !1, c(this, y, Bt).call(this));
+    !this._pdfDocument || t && this._pdfDocument !== t || (this._findTimeout && (clearTimeout(this._findTimeout), this._findTimeout = null), this._resumePageIdx && (this._resumePageIdx = null, this._dirtyMatch = !0), u(this, y, Vt).call(this, Pe.FOUND), this._highlightMatches = !1, u(this, y, Ft).call(this));
   });
-}, "#onFindBarClose"), vn = /* @__PURE__ */ h(function() {
-  var s;
+}, "#onFindBarClose"), _n = /* @__PURE__ */ h(function() {
   const {
     pageIdx: e,
     matchIdx: t
   } = this._selected;
   let i = 0, n = this._matchesCountTotal;
   if (t !== -1) {
-    for (let r = 0; r < e; r++)
-      i += ((s = this._pageMatches[r]) == null ? void 0 : s.length) || 0;
+    for (let s = 0; s < e; s++)
+      i += this._pageMatches[s]?.length || 0;
     i += t + 1;
   }
   return (i < 1 || i > n) && (i = n = 0), {
     current: i,
     total: n
   };
-}, "#requestMatchesCount"), Pn = /* @__PURE__ */ h(function() {
+}, "#requestMatchesCount"), vn = /* @__PURE__ */ h(function() {
   this._eventBus.dispatch("updatefindmatchescount", {
     source: this,
-    matchesCount: c(this, y, vn).call(this)
+    matchesCount: u(this, y, _n).call(this)
   });
-}, "#updateUIResultsCount"), Ht = /* @__PURE__ */ h(function(e, t = !1) {
-  var i, n;
-  !o(this, bt) && (o(this, Qe) !== this._linkService.pagesCount || e === xe.PENDING) || this._eventBus.dispatch("updatefindcontrolstate", {
+}, "#updateUIResultsCount"), Vt = /* @__PURE__ */ h(function(e, t = !1) {
+  !o(this, gt) && (o(this, Ze) !== this._linkService.pagesCount || e === Pe.PENDING) || this._eventBus.dispatch("updatefindcontrolstate", {
     source: this,
     state: e,
     previous: t,
-    entireWord: ((i = o(this, K)) == null ? void 0 : i.entireWord) ?? null,
-    matchesCount: c(this, y, vn).call(this),
-    rawQuery: ((n = o(this, K)) == null ? void 0 : n.query) ?? null
+    entireWord: o(this, W)?.entireWord ?? null,
+    matchesCount: u(this, y, _n).call(this),
+    rawQuery: o(this, W)?.query ?? null
   });
-}, "#updateUIState"), h(Es, "PDFFindController");
-let mn = Es;
-const qa = "noopener noreferrer nofollow", ze = {
+}, "#updateUIState"), h(ms, "PDFFindController");
+let pn = ms;
+const qa = "noopener noreferrer nofollow", We = {
   NONE: 0,
   SELF: 1,
   BLANK: 2,
   PARENT: 3,
   TOP: 4
 };
-var tn, Br;
-const Xt = class Xt {
+var qi, Vr;
+const Gt = class Gt {
+  externalLinkEnabled = !0;
   constructor({
     eventBus: e,
     externalLinkTarget: t = null,
     externalLinkRel: i = null,
     ignoreDestinationZoom: n = !1
   } = {}) {
-    rn(this, "externalLinkEnabled", !0);
     this.eventBus = e, this.externalLinkTarget = t, this.externalLinkRel = i, this._ignoreDestinationZoom = n, this.baseUrl = null, this.pdfDocument = null, this.pdfViewer = null, this.pdfHistory = null;
   }
   setDocument(e, t = null) {
@@ -920,22 +916,22 @@ const Xt = class Xt {
   addLinkAttributes(e, t, i = !1) {
     if (!t || typeof t != "string")
       throw new Error('A valid "url" parameter must provided.');
-    const n = i ? ze.BLANK : this.externalLinkTarget, s = this.externalLinkRel;
+    const n = i ? We.BLANK : this.externalLinkTarget, s = this.externalLinkRel;
     this.externalLinkEnabled ? e.href = e.title = t : (e.href = "", e.title = `Disabled: ${t}`, e.onclick = () => !1);
     let r = "";
     switch (n) {
-      case ze.NONE:
+      case We.NONE:
         break;
-      case ze.SELF:
+      case We.SELF:
         r = "_self";
         break;
-      case ze.BLANK:
+      case We.BLANK:
         r = "_blank";
         break;
-      case ze.PARENT:
+      case We.PARENT:
         r = "_parent";
         break;
-      case ze.TOP:
+      case We.TOP:
         r = "_top";
         break;
     }
@@ -961,7 +957,7 @@ const Xt = class Xt {
       return;
     let t, i;
     if (e.includes("=")) {
-      const s = sn(e);
+      const s = tn(e);
       if (s.has("search")) {
         const r = s.get("search").replaceAll('"', ""), l = s.get("phrase") === "true";
         this.eventBus.dispatch("findfromurlhash", {
@@ -996,21 +992,20 @@ const Xt = class Xt {
       i = JSON.parse(i), Array.isArray(i) || (i = i.toString());
     } catch {
     }
-    if (typeof i == "string" || c(n = Xt, tn, Br).call(n, i)) {
+    if (typeof i == "string" || u(n = Gt, qi, Vr).call(n, i)) {
       this.goToDestination(i);
       return;
     }
     console.error(`PDFLinkService.setHash: "${unescape(e)}" is not a valid destination.`);
   }
   executeNamedAction(e) {
-    var t, i;
     if (this.pdfDocument) {
       switch (e) {
         case "GoBack":
-          (t = this.pdfHistory) == null || t.back();
+          this.pdfHistory?.back();
           break;
         case "GoForward":
-          (i = this.pdfHistory) == null || i.forward();
+          this.pdfHistory?.forward();
           break;
         case "NextPage":
           this.pdfViewer.nextPage();
@@ -1038,11 +1033,11 @@ const Xt = class Xt {
     t === this.pdfDocument && (i.setOCGState(e), this.pdfViewer.optionalContentConfigPromise = Promise.resolve(i));
   }
 };
-tn = new WeakSet(), Br = /* @__PURE__ */ h(function(e) {
+qi = new WeakSet(), Vr = /* @__PURE__ */ h(function(e) {
   if (!Array.isArray(e) || e.length < 2)
     return !1;
   const [t, i, ...n] = e;
-  if (!(typeof t == "object" && Number.isInteger(t == null ? void 0 : t.num) && Number.isInteger(t == null ? void 0 : t.gen)) && !Number.isInteger(t) || !(typeof i == "object" && typeof (i == null ? void 0 : i.name) == "string"))
+  if (!(typeof t == "object" && Number.isInteger(t?.num) && Number.isInteger(t?.gen)) && !Number.isInteger(t) || !(typeof i == "object" && typeof i?.name == "string"))
     return !1;
   const s = n.length;
   let r = !0;
@@ -1073,39 +1068,39 @@ tn = new WeakSet(), Br = /* @__PURE__ */ h(function(e) {
     if (!(typeof l == "number" || r && l === null))
       return !1;
   return !0;
-}, "#isValidExplicitDest"), b(Xt, tn), h(Xt, "PDFLinkService");
-let Wi = Xt;
-const ws = class ws extends Wi {
+}, "#isValidExplicitDest"), m(Gt, qi), h(Gt, "PDFLinkService");
+let Ui = Gt;
+const bs = class bs extends Ui {
   setDocument(e, t = null) {
   }
 };
-h(ws, "SimpleLinkService");
-let Qt = ws;
+h(bs, "SimpleLinkService");
+let Xt = bs;
 const {
   AbortException: eo,
   AnnotationEditorLayer: to,
   AnnotationEditorParamsType: dl,
-  AnnotationEditorType: q,
+  AnnotationEditorType: Y,
   AnnotationEditorUIManager: io,
   AnnotationLayer: no,
-  AnnotationMode: Pe,
+  AnnotationMode: ye,
   build: ul,
   ColorPicker: cl,
   createValidAbsoluteUrl: so,
   DOMSVGFactory: fl,
   DrawLayer: ro,
-  FeatureTest: gl,
-  fetchData: dr,
-  getDocument: pl,
+  FeatureTest: pl,
+  fetchData: hr,
+  getDocument: gl,
   getFilenameFromUrl: ml,
   getPdfFilenameFromUrl: ao,
   getXfaPageViewport: bl,
   GlobalWorkerOptions: El,
   ImageKind: wl,
   InvalidPDFException: _l,
-  isDataScheme: yl,
+  isDataScheme: vl,
   isPdfFile: oo,
-  MissingPDFException: vl,
+  MissingPDFException: yl,
   noContextMenu: Pl,
   normalizeUnicode: lo,
   OPS: xl,
@@ -1114,22 +1109,22 @@ const {
   PDFDataRangeTransport: Al,
   PDFDateString: Il,
   PDFWorker: Ll,
-  PermissionFlag: Ni,
-  PixelsPerInch: be,
-  RenderingCancelledException: xn,
+  PermissionFlag: Ti,
+  PixelsPerInch: me,
+  RenderingCancelledException: yn,
   setLayerDimensions: uo,
-  shadow: zi,
-  stopEvent: Sn,
+  shadow: $i,
+  stopEvent: Pn,
   TextLayer: co,
   TouchManager: Tl,
   UnexpectedResponseException: Rl,
-  Util: Nl,
-  VerbosityLevel: Cl,
-  version: ur,
-  XfaLayer: un
+  Util: Cl,
+  VerbosityLevel: Nl,
+  version: dr,
+  XfaLayer: hn
 } = globalThis.pdfjsLib;
-var Yt, Te, qt, An;
-const _s = class _s {
+var Qt, Le, Jt, xn;
+const Es = class Es {
   constructor({
     pdfPage: e,
     linkService: t,
@@ -1139,19 +1134,19 @@ const _s = class _s {
     renderForms: r = !0,
     enableScripting: l = !1,
     hasJSActionsPromise: d = null,
-    fieldObjectsPromise: u = null,
-    annotationCanvasMap: g = null,
+    fieldObjectsPromise: c = null,
+    annotationCanvasMap: p = null,
     accessibilityManager: E = null,
     annotationEditorUIManager: w = null,
-    onAppend: L = null
+    onAppend: A = null
   }) {
-    b(this, qt);
-    b(this, Yt, null);
-    b(this, Te, null);
-    this.pdfPage = e, this.linkService = t, this.downloadManager = i, this.imageResourcesPath = s, this.renderForms = r, this.annotationStorage = n, this.enableScripting = l, this._hasJSActionsPromise = d || Promise.resolve(!1), this._fieldObjectsPromise = u || Promise.resolve(null), this._annotationCanvasMap = g, this._accessibilityManager = E, this._annotationEditorUIManager = w, f(this, Yt, L), this.annotationLayer = null, this.div = null, this._cancelled = !1, this._eventBus = t.eventBus;
+    m(this, Jt);
+    m(this, Qt, null);
+    m(this, Le, null);
+    this.pdfPage = e, this.linkService = t, this.downloadManager = i, this.imageResourcesPath = s, this.renderForms = r, this.annotationStorage = n, this.enableScripting = l, this._hasJSActionsPromise = d || Promise.resolve(!1), this._fieldObjectsPromise = c || Promise.resolve(null), this._annotationCanvasMap = p, this._accessibilityManager = E, this._annotationEditorUIManager = w, f(this, Qt, A), this.annotationLayer = null, this.div = null, this._cancelled = !1, this._eventBus = t.eventBus;
   }
   async render(e, t, i = "display") {
-    var d, u;
+    var d;
     if (this.div) {
       if (this._cancelled || !this.annotationLayer)
         return;
@@ -1168,7 +1163,7 @@ const _s = class _s {
     if (this._cancelled)
       return;
     const l = this.div = document.createElement("div");
-    if (l.className = "annotationLayer", (d = o(this, Yt)) == null || d.call(this, l), n.length === 0) {
+    if (l.className = "annotationLayer", (d = o(this, Qt)) == null || d.call(this, l), n.length === 0) {
       this.hide();
       return;
     }
@@ -1181,7 +1176,7 @@ const _s = class _s {
       viewport: e.clone({
         dontFlip: !0
       }),
-      structTreeLayer: (t == null ? void 0 : t.structTreeLayer) || null
+      structTreeLayer: t?.structTreeLayer || null
     }), await this.annotationLayer.render({
       annotations: n,
       imageResourcesPath: this.imageResourcesPath,
@@ -1192,58 +1187,56 @@ const _s = class _s {
       enableScripting: this.enableScripting,
       hasJSActions: s,
       fieldObjects: r
-    }), this.linkService.isInPresentationMode && c(this, qt, An).call(this, pt.FULLSCREEN), o(this, Te) || (f(this, Te, new AbortController()), (u = this._eventBus) == null || u._on("presentationmodechanged", (g) => {
-      c(this, qt, An).call(this, g.state);
+    }), this.linkService.isInPresentationMode && u(this, Jt, xn).call(this, ft.FULLSCREEN), o(this, Le) || (f(this, Le, new AbortController()), this._eventBus?._on("presentationmodechanged", (c) => {
+      u(this, Jt, xn).call(this, c.state);
     }, {
-      signal: o(this, Te).signal
+      signal: o(this, Le).signal
     }));
   }
   cancel() {
-    var e;
-    this._cancelled = !0, (e = o(this, Te)) == null || e.abort(), f(this, Te, null);
+    this._cancelled = !0, o(this, Le)?.abort(), f(this, Le, null);
   }
   hide() {
     this.div && (this.div.hidden = !0);
   }
   hasEditableAnnotations() {
-    var e;
-    return !!((e = this.annotationLayer) != null && e.hasEditableAnnotations());
+    return !!this.annotationLayer?.hasEditableAnnotations();
   }
 };
-Yt = new WeakMap(), Te = new WeakMap(), qt = new WeakSet(), An = /* @__PURE__ */ h(function(e) {
+Qt = new WeakMap(), Le = new WeakMap(), Jt = new WeakSet(), xn = /* @__PURE__ */ h(function(e) {
   if (!this.div)
     return;
   let t = !1;
   switch (e) {
-    case pt.FULLSCREEN:
+    case ft.FULLSCREEN:
       t = !0;
       break;
-    case pt.NORMAL:
+    case ft.NORMAL:
       break;
     default:
       return;
   }
   for (const i of this.div.childNodes)
     i.hasAttribute("data-internal-link") || (i.inert = t);
-}, "#updatePresentationModeState"), h(_s, "AnnotationLayerBuilder");
-let Gi = _s;
-function cr(a, e) {
+}, "#updatePresentationModeState"), h(Es, "AnnotationLayerBuilder");
+let Wi = Es;
+function ur(a, e) {
   const t = document.createElement("a");
   if (!t.click)
     throw new Error('DownloadManager: "a.click()" is not supported.');
   t.href = a, t.target = "_parent", "download" in t && (t.download = e), (document.body || document.documentElement).append(t), t.click(), t.remove();
 }
-h(cr, "download");
-var ms;
-const ys = class ys {
+h(ur, "download");
+var ps;
+const ws = class ws {
   constructor() {
-    b(this, ms, /* @__PURE__ */ new WeakMap());
+    m(this, ps, /* @__PURE__ */ new WeakMap());
   }
   downloadData(e, t, i) {
     const n = URL.createObjectURL(new Blob([e], {
       type: i
     }));
-    cr(n, t);
+    ur(n, t);
   }
   openOrDownloadData(e, t, i = null) {
     const s = oo(t) ? "application/pdf" : "";
@@ -1262,12 +1255,12 @@ const ys = class ys {
       }
       n = t + "#pdfjs.action=download";
     }
-    cr(n, i);
+    ur(n, i);
   }
 };
-ms = new WeakMap(), h(ys, "DownloadManager");
-let In = ys;
-const fr = {
+ps = new WeakMap(), h(ws, "DownloadManager");
+let Sn = ws;
+const cr = {
   EVENT: "event",
   TIMEOUT: "timeout"
 };
@@ -1282,35 +1275,35 @@ async function fo({
     promise: i,
     resolve: n
   } = Promise.withResolvers(), s = new AbortController();
-  function r(u) {
-    s.abort(), clearTimeout(d), n(u);
+  function r(c) {
+    s.abort(), clearTimeout(d), n(c);
   }
   h(r, "handler");
-  const l = a instanceof Ki ? "_on" : "addEventListener";
-  a[l](e, r.bind(null, fr.EVENT), {
+  const l = a instanceof zi ? "_on" : "addEventListener";
+  a[l](e, r.bind(null, cr.EVENT), {
     signal: s.signal
   });
-  const d = setTimeout(r.bind(null, fr.TIMEOUT), t);
+  const d = setTimeout(r.bind(null, cr.TIMEOUT), t);
   return i;
 }
 h(fo, "waitOnEventOrTimeout");
-var Et;
-const vs = class vs {
+var mt;
+const _s = class _s {
   constructor() {
-    b(this, Et, /* @__PURE__ */ Object.create(null));
+    m(this, mt, /* @__PURE__ */ Object.create(null));
   }
   on(e, t, i = null) {
     this._on(e, t, {
       external: !0,
-      once: i == null ? void 0 : i.once,
-      signal: i == null ? void 0 : i.signal
+      once: i?.once,
+      signal: i?.signal
     });
   }
   off(e, t, i = null) {
     this._off(e, t);
   }
   dispatch(e, t) {
-    const i = o(this, Et)[e];
+    const i = o(this, mt)[e];
     if (!i || i.length === 0)
       return;
     let n;
@@ -1320,7 +1313,7 @@ const vs = class vs {
       once: l
     } of i.slice(0)) {
       if (l && this._off(e, s), r) {
-        (n || (n = [])).push(s);
+        (n ||= []).push(s);
         continue;
       }
       s(t);
@@ -1332,42 +1325,40 @@ const vs = class vs {
     }
   }
   _on(e, t, i = null) {
-    var r;
     let n = null;
-    if ((i == null ? void 0 : i.signal) instanceof AbortSignal) {
+    if (i?.signal instanceof AbortSignal) {
       const {
-        signal: l
+        signal: r
       } = i;
-      if (l.aborted) {
+      if (r.aborted) {
         console.error("Cannot use an `aborted` signal.");
         return;
       }
-      const d = /* @__PURE__ */ h(() => this._off(e, t), "onAbort");
-      n = /* @__PURE__ */ h(() => l.removeEventListener("abort", d), "rmAbort"), l.addEventListener("abort", d);
+      const l = /* @__PURE__ */ h(() => this._off(e, t), "onAbort");
+      n = /* @__PURE__ */ h(() => r.removeEventListener("abort", l), "rmAbort"), r.addEventListener("abort", l);
     }
-    ((r = o(this, Et))[e] || (r[e] = [])).push({
+    (o(this, mt)[e] ||= []).push({
       listener: t,
-      external: (i == null ? void 0 : i.external) === !0,
-      once: (i == null ? void 0 : i.once) === !0,
+      external: i?.external === !0,
+      once: i?.once === !0,
       rmAbort: n
     });
   }
   _off(e, t, i = null) {
-    var s;
-    const n = o(this, Et)[e];
+    const n = o(this, mt)[e];
     if (n)
-      for (let r = 0, l = n.length; r < l; r++) {
-        const d = n[r];
-        if (d.listener === t) {
-          (s = d.rmAbort) == null || s.call(d), n.splice(r, 1);
+      for (let s = 0, r = n.length; s < r; s++) {
+        const l = n[s];
+        if (l.listener === t) {
+          l.rmAbort?.(), n.splice(s, 1);
           return;
         }
       }
   }
 };
-Et = new WeakMap(), h(vs, "EventBus");
-let Ki = vs;
-const Ps = class Ps {
+mt = new WeakMap(), h(_s, "EventBus");
+let zi = _s;
+const vs = class vs {
   constructor(e) {
     this.value = e;
   }
@@ -1375,9 +1366,9 @@ const Ps = class Ps {
     return this.value;
   }
 };
-h(Ps, "FluentType");
-let kt = Ps;
-const xs = class xs extends kt {
+h(vs, "FluentType");
+let Nt = vs;
+const ys = class ys extends Nt {
   constructor(e = "???") {
     super(e);
   }
@@ -1385,9 +1376,9 @@ const xs = class xs extends kt {
     return `{${this.value}}`;
   }
 };
-h(xs, "FluentNone");
-let $ = xs;
-const Ss = class Ss extends kt {
+h(ys, "FluentNone");
+let U = ys;
+const Ps = class Ps extends Nt {
   constructor(e, t = {}) {
     super(e), this.opts = t;
   }
@@ -1399,9 +1390,9 @@ const Ss = class Ss extends kt {
     }
   }
 };
-h(Ss, "FluentNumber");
-let oe = Ss;
-const As = class As extends kt {
+h(Ps, "FluentNumber");
+let ae = Ps;
+const xs = class xs extends Nt {
   constructor(e, t = {}) {
     super(e), this.opts = t;
   }
@@ -1413,13 +1404,13 @@ const As = class As extends kt {
     }
   }
 };
-h(As, "FluentDateTime");
-let dt = As;
-const gr = 100, go = "⁨", po = "⁩";
+h(xs, "FluentDateTime");
+let ht = xs;
+const fr = 100, po = "⁨", go = "⁩";
 function mo(a, e, t) {
-  if (t === e || t instanceof oe && e instanceof oe && t.value === e.value)
+  if (t === e || t instanceof ae && e instanceof ae && t.value === e.value)
     return !0;
-  if (e instanceof oe && typeof t == "string") {
+  if (e instanceof ae && typeof t == "string") {
     let i = a.memoizeIntlObject(Intl.PluralRules, e.opts).select(e.value);
     if (t === i)
       return !0;
@@ -1428,25 +1419,25 @@ function mo(a, e, t) {
 }
 h(mo, "match");
 function pr(a, e, t) {
-  return e[t] ? Ot(a, e[t].value) : (a.reportError(new RangeError("No default")), new $());
+  return e[t] ? Mt(a, e[t].value) : (a.reportError(new RangeError("No default")), new U());
 }
 h(pr, "getDefault");
-function Ln(a, e) {
+function An(a, e) {
   const t = [], i = /* @__PURE__ */ Object.create(null);
   for (const n of e)
-    n.type === "narg" ? i[n.name] = Jt(a, n.value) : t.push(Jt(a, n));
+    n.type === "narg" ? i[n.name] = Zt(a, n.value) : t.push(Zt(a, n));
   return {
     positional: t,
     named: i
   };
 }
-h(Ln, "getArguments");
-function Jt(a, e) {
+h(An, "getArguments");
+function Zt(a, e) {
   switch (e.type) {
     case "str":
       return e.value;
     case "num":
-      return new oe(e.value, {
+      return new ae(e.value, {
         minimumFractionDigits: e.precision
       });
     case "var":
@@ -1458,12 +1449,12 @@ function Jt(a, e) {
     case "func":
       return _o(a, e);
     case "select":
-      return yo(a, e);
+      return vo(a, e);
     default:
-      return new $();
+      return new U();
   }
 }
-h(Jt, "resolveExpression");
+h(Zt, "resolveExpression");
 function bo(a, {
   name: e
 }) {
@@ -1472,23 +1463,23 @@ function bo(a, {
     if (Object.prototype.hasOwnProperty.call(a.params, e))
       t = a.params[e];
     else
-      return new $(`$${e}`);
+      return new U(`$${e}`);
   else if (a.args && Object.prototype.hasOwnProperty.call(a.args, e))
     t = a.args[e];
   else
-    return a.reportError(new ReferenceError(`Unknown variable: $${e}`)), new $(`$${e}`);
-  if (t instanceof kt)
+    return a.reportError(new ReferenceError(`Unknown variable: $${e}`)), new U(`$${e}`);
+  if (t instanceof Nt)
     return t;
   switch (typeof t) {
     case "string":
       return t;
     case "number":
-      return new oe(t);
+      return new ae(t);
     case "object":
       if (t instanceof Date)
-        return new dt(t.getTime());
+        return new ht(t.getTime());
     default:
-      return a.reportError(new TypeError(`Variable type not supported: $${e}, ${typeof t}`)), new $(`$${e}`);
+      return a.reportError(new TypeError(`Variable type not supported: $${e}, ${typeof t}`)), new U(`$${e}`);
   }
 }
 h(bo, "resolveVariableReference");
@@ -1498,12 +1489,12 @@ function Eo(a, {
 }) {
   const i = a.bundle._messages.get(e);
   if (!i)
-    return a.reportError(new ReferenceError(`Unknown message: ${e}`)), new $(e);
+    return a.reportError(new ReferenceError(`Unknown message: ${e}`)), new U(e);
   if (t) {
     const n = i.attributes[t];
-    return n ? Ot(a, n) : (a.reportError(new ReferenceError(`Unknown attribute: ${t}`)), new $(`${e}.${t}`));
+    return n ? Mt(a, n) : (a.reportError(new ReferenceError(`Unknown attribute: ${t}`)), new U(`${e}.${t}`));
   }
-  return i.value ? Ot(a, i.value) : (a.reportError(new ReferenceError(`No value: ${e}`)), new $(e));
+  return i.value ? Mt(a, i.value) : (a.reportError(new ReferenceError(`No value: ${e}`)), new U(e));
 }
 h(Eo, "resolveMessageReference");
 function wo(a, {
@@ -1513,18 +1504,18 @@ function wo(a, {
 }) {
   const n = `-${e}`, s = a.bundle._terms.get(n);
   if (!s)
-    return a.reportError(new ReferenceError(`Unknown term: ${n}`)), new $(n);
+    return a.reportError(new ReferenceError(`Unknown term: ${n}`)), new U(n);
   if (t) {
     const l = s.attributes[t];
     if (l) {
-      a.params = Ln(a, i).named;
-      const d = Ot(a, l);
+      a.params = An(a, i).named;
+      const d = Mt(a, l);
       return a.params = null, d;
     }
-    return a.reportError(new ReferenceError(`Unknown attribute: ${t}`)), new $(`${n}.${t}`);
+    return a.reportError(new ReferenceError(`Unknown attribute: ${t}`)), new U(`${n}.${t}`);
   }
-  a.params = Ln(a, i).named;
-  const r = Ot(a, s.value);
+  a.params = An(a, i).named;
+  const r = Mt(a, s.value);
   return a.params = null, r;
 }
 h(wo, "resolveTermReference");
@@ -1534,36 +1525,36 @@ function _o(a, {
 }) {
   let i = a.bundle._functions[e];
   if (!i)
-    return a.reportError(new ReferenceError(`Unknown function: ${e}()`)), new $(`${e}()`);
+    return a.reportError(new ReferenceError(`Unknown function: ${e}()`)), new U(`${e}()`);
   if (typeof i != "function")
-    return a.reportError(new TypeError(`Function ${e}() is not callable`)), new $(`${e}()`);
+    return a.reportError(new TypeError(`Function ${e}() is not callable`)), new U(`${e}()`);
   try {
-    let n = Ln(a, t);
+    let n = An(a, t);
     return i(n.positional, n.named);
   } catch (n) {
-    return a.reportError(n), new $(`${e}()`);
+    return a.reportError(n), new U(`${e}()`);
   }
 }
 h(_o, "resolveFunctionReference");
-function yo(a, {
+function vo(a, {
   selector: e,
   variants: t,
   star: i
 }) {
-  let n = Jt(a, e);
-  if (n instanceof $)
+  let n = Zt(a, e);
+  if (n instanceof U)
     return pr(a, t, i);
   for (const s of t) {
-    const r = Jt(a, s.key);
+    const r = Zt(a, s.key);
     if (mo(a, n, r))
-      return Ot(a, s.value);
+      return Mt(a, s.value);
   }
   return pr(a, t, i);
 }
-h(yo, "resolveSelectExpression");
-function Hr(a, e) {
+h(vo, "resolveSelectExpression");
+function Br(a, e) {
   if (a.dirty.has(e))
-    return a.reportError(new RangeError("Cyclic reference")), new $();
+    return a.reportError(new RangeError("Cyclic reference")), new U();
   a.dirty.add(e);
   const t = [], i = a.bundle._useIsolating && e.length > 1;
   for (const n of e) {
@@ -1571,18 +1562,18 @@ function Hr(a, e) {
       t.push(a.bundle._transform(n));
       continue;
     }
-    if (a.placeables++, a.placeables > gr)
-      throw a.dirty.delete(e), new RangeError(`Too many placeables expanded: ${a.placeables}, max allowed is ${gr}`);
-    i && t.push(go), t.push(Jt(a, n).toString(a)), i && t.push(po);
+    if (a.placeables++, a.placeables > fr)
+      throw a.dirty.delete(e), new RangeError(`Too many placeables expanded: ${a.placeables}, max allowed is ${fr}`);
+    i && t.push(po), t.push(Zt(a, n).toString(a)), i && t.push(go);
   }
   return a.dirty.delete(e), t.join("");
 }
-h(Hr, "resolveComplexPattern");
-function Ot(a, e) {
-  return typeof e == "string" ? a.bundle._transform(e) : Hr(a, e);
+h(Br, "resolveComplexPattern");
+function Mt(a, e) {
+  return typeof e == "string" ? a.bundle._transform(e) : Br(a, e);
 }
-h(Ot, "resolvePattern");
-const Is = class Is {
+h(Mt, "resolvePattern");
+const Ss = class Ss {
   constructor(e, t, i) {
     this.dirty = /* @__PURE__ */ new WeakSet(), this.params = null, this.placeables = 0, this.bundle = e, this.errors = t, this.args = i;
   }
@@ -1598,64 +1589,64 @@ const Is = class Is {
     return i[n] || (i[n] = new e(this.bundle.locales, t)), i[n];
   }
 };
-h(Is, "Scope");
-let Tn = Is;
-function Xi(a, e) {
+h(Ss, "Scope");
+let In = Ss;
+function Gi(a, e) {
   const t = /* @__PURE__ */ Object.create(null);
   for (const [i, n] of Object.entries(a))
     e.includes(i) && (t[i] = n.valueOf());
   return t;
 }
-h(Xi, "values");
-const mr = ["unitDisplay", "currencyDisplay", "useGrouping", "minimumIntegerDigits", "minimumFractionDigits", "maximumFractionDigits", "minimumSignificantDigits", "maximumSignificantDigits"];
-function vo(a, e) {
+h(Gi, "values");
+const gr = ["unitDisplay", "currencyDisplay", "useGrouping", "minimumIntegerDigits", "minimumFractionDigits", "maximumFractionDigits", "minimumSignificantDigits", "maximumSignificantDigits"];
+function yo(a, e) {
   let t = a[0];
-  if (t instanceof $)
-    return new $(`NUMBER(${t.valueOf()})`);
-  if (t instanceof oe)
-    return new oe(t.valueOf(), {
+  if (t instanceof U)
+    return new U(`NUMBER(${t.valueOf()})`);
+  if (t instanceof ae)
+    return new ae(t.valueOf(), {
       ...t.opts,
-      ...Xi(e, mr)
+      ...Gi(e, gr)
     });
-  if (t instanceof dt)
-    return new oe(t.valueOf(), {
-      ...Xi(e, mr)
+  if (t instanceof ht)
+    return new ae(t.valueOf(), {
+      ...Gi(e, gr)
     });
   throw new TypeError("Invalid argument to NUMBER");
 }
-h(vo, "NUMBER");
-const br = ["dateStyle", "timeStyle", "fractionalSecondDigits", "dayPeriod", "hour12", "weekday", "era", "year", "month", "day", "hour", "minute", "second", "timeZoneName"];
+h(yo, "NUMBER");
+const mr = ["dateStyle", "timeStyle", "fractionalSecondDigits", "dayPeriod", "hour12", "weekday", "era", "year", "month", "day", "hour", "minute", "second", "timeZoneName"];
 function Po(a, e) {
   let t = a[0];
-  if (t instanceof $)
-    return new $(`DATETIME(${t.valueOf()})`);
-  if (t instanceof dt)
-    return new dt(t.valueOf(), {
+  if (t instanceof U)
+    return new U(`DATETIME(${t.valueOf()})`);
+  if (t instanceof ht)
+    return new ht(t.valueOf(), {
       ...t.opts,
-      ...Xi(e, br)
+      ...Gi(e, mr)
     });
-  if (t instanceof oe)
-    return new dt(t.valueOf(), {
-      ...Xi(e, br)
+  if (t instanceof ae)
+    return new ht(t.valueOf(), {
+      ...Gi(e, mr)
     });
   throw new TypeError("Invalid argument to DATETIME");
 }
 h(Po, "DATETIME");
-const Er = /* @__PURE__ */ new Map();
+const br = /* @__PURE__ */ new Map();
 function xo(a) {
   const e = Array.isArray(a) ? a.join(" ") : a;
-  let t = Er.get(e);
-  return t === void 0 && (t = /* @__PURE__ */ new Map(), Er.set(e, t)), t;
+  let t = br.get(e);
+  return t === void 0 && (t = /* @__PURE__ */ new Map(), br.set(e, t)), t;
 }
 h(xo, "getMemoizerForLocale");
-const Ls = class Ls {
+const As = class As {
   constructor(e, {
     functions: t,
     useIsolating: i = !0,
     transform: n = /* @__PURE__ */ h((s) => s, "transform")
   } = {}) {
     this._terms = /* @__PURE__ */ new Map(), this._messages = /* @__PURE__ */ new Map(), this.locales = Array.isArray(e) ? e : [e], this._functions = {
-      NUMBER: vo,
+      NUMBER: yo,
       DATETIME: Po,
       ...t
     }, this._useIsolating = i, this._transform = n, this._intls = xo(e);
@@ -1691,280 +1682,280 @@ const Ls = class Ls {
   formatPattern(e, t = null, i = null) {
     if (typeof e == "string")
       return this._transform(e);
-    let n = new Tn(this, i, t);
+    let n = new In(this, i, t);
     try {
-      return Hr(n, e).toString(n);
+      return Br(n, e).toString(n);
     } catch (s) {
       if (n.errors && s instanceof Error)
-        return n.errors.push(s), new $().toString(n);
+        return n.errors.push(s), new U().toString(n);
       throw s;
     }
   }
 };
-h(Ls, "FluentBundle");
-let Rn = Ls;
-const cn = /^(-?[a-zA-Z][\w-]*) *= */gm, wr = /\.([a-zA-Z][\w-]*) *= */y, So = /\*?\[/y, fn = /(-?[0-9]+(?:\.([0-9]+))?)/y, Ao = /([a-zA-Z][\w-]*)/y, _r = /([$-])?([a-zA-Z][\w-]*)(?:\.([a-zA-Z][\w-]*))?/y, Io = /^[A-Z][A-Z0-9_-]*$/, Ci = /([^{}\n\r]+)/y, Lo = /([^\\"\n\r]*)/y, yr = /\\([\\"])/y, vr = /\\u([a-fA-F0-9]{4})|\\U([a-fA-F0-9]{6})/y, To = /^\n+/, Pr = / +$/, Ro = / *\r?\n/g, No = /( *)$/, Co = /{\s*/y, xr = /\s*}/y, Mo = /\[\s*/y, ko = /\s*] */y, Oo = /\s*\(\s*/y, Do = /\s*->\s*/y, jo = /\s*:\s*/y, Fo = /\s*,?\s*/y, Vo = /\s+/y, Ts = class Ts {
+h(As, "FluentBundle");
+let Ln = As;
+const dn = /^(-?[a-zA-Z][\w-]*) *= */gm, Er = /\.([a-zA-Z][\w-]*) *= */y, So = /\*?\[/y, un = /(-?[0-9]+(?:\.([0-9]+))?)/y, Ao = /([a-zA-Z][\w-]*)/y, wr = /([$-])?([a-zA-Z][\w-]*)(?:\.([a-zA-Z][\w-]*))?/y, Io = /^[A-Z][A-Z0-9_-]*$/, Ri = /([^{}\n\r]+)/y, Lo = /([^\\"\n\r]*)/y, _r = /\\([\\"])/y, vr = /\\u([a-fA-F0-9]{4})|\\U([a-fA-F0-9]{6})/y, To = /^\n+/, yr = / +$/, Ro = / *\r?\n/g, Co = /( *)$/, No = /{\s*/y, Pr = /\s*}/y, Mo = /\[\s*/y, ko = /\s*] */y, Oo = /\s*\(\s*/y, Do = /\s*->\s*/y, jo = /\s*:\s*/y, Fo = /\s*,?\s*/y, Vo = /\s+/y, Is = class Is {
   constructor(e) {
-    this.body = [], cn.lastIndex = 0;
+    this.body = [], dn.lastIndex = 0;
     let t = 0;
     for (; ; ) {
-      let p = cn.exec(e);
-      if (p === null)
+      let b = dn.exec(e);
+      if (b === null)
         break;
-      t = cn.lastIndex;
+      t = dn.lastIndex;
       try {
-        this.body.push(d(p[1]));
+        this.body.push(d(b[1]));
       } catch (_) {
         if (_ instanceof SyntaxError)
           continue;
         throw _;
       }
     }
-    function i(p) {
-      return p.lastIndex = t, p.test(e);
+    function i(b) {
+      return b.lastIndex = t, b.test(e);
     }
     h(i, "test");
-    function n(p, _) {
-      if (e[t] === p)
+    function n(b, _) {
+      if (e[t] === b)
         return t++, !0;
       if (_)
-        throw new _(`Expected ${p}`);
+        throw new _(`Expected ${b}`);
       return !1;
     }
     h(n, "consumeChar");
-    function s(p, _) {
-      if (i(p))
-        return t = p.lastIndex, !0;
+    function s(b, _) {
+      if (i(b))
+        return t = b.lastIndex, !0;
       if (_)
-        throw new _(`Expected ${p.toString()}`);
+        throw new _(`Expected ${b.toString()}`);
       return !1;
     }
     h(s, "consumeToken");
-    function r(p) {
-      p.lastIndex = t;
-      let _ = p.exec(e);
+    function r(b) {
+      b.lastIndex = t;
+      let _ = b.exec(e);
       if (_ === null)
-        throw new SyntaxError(`Expected ${p.toString()}`);
-      return t = p.lastIndex, _;
+        throw new SyntaxError(`Expected ${b.toString()}`);
+      return t = b.lastIndex, _;
     }
     h(r, "match");
-    function l(p) {
-      return r(p)[1];
+    function l(b) {
+      return r(b)[1];
     }
     h(l, "match1");
-    function d(p) {
-      let _ = g(), x = u();
-      if (_ === null && Object.keys(x).length === 0)
+    function d(b) {
+      let _ = p(), v = c();
+      if (_ === null && Object.keys(v).length === 0)
         throw new SyntaxError("Expected message value or attributes");
       return {
-        id: p,
+        id: b,
         value: _,
-        attributes: x
+        attributes: v
       };
     }
     h(d, "parseMessage");
-    function u() {
-      let p = /* @__PURE__ */ Object.create(null);
-      for (; i(wr); ) {
-        let _ = l(wr), x = g();
-        if (x === null)
+    function c() {
+      let b = /* @__PURE__ */ Object.create(null);
+      for (; i(Er); ) {
+        let _ = l(Er), v = p();
+        if (v === null)
           throw new SyntaxError("Expected attribute value");
-        p[_] = x;
+        b[_] = v;
       }
-      return p;
+      return b;
     }
-    h(u, "parseAttributes");
-    function g() {
-      let p;
-      if (i(Ci) && (p = l(Ci)), e[t] === "{" || e[t] === "}")
-        return E(p ? [p] : [], 1 / 0);
-      let _ = B();
-      return _ ? p ? E([p, _], _.length) : (_.value = W(_.value, To), E([_], _.length)) : p ? W(p, Pr) : null;
+    h(c, "parseAttributes");
+    function p() {
+      let b;
+      if (i(Ri) && (b = l(Ri)), e[t] === "{" || e[t] === "}")
+        return E(b ? [b] : [], 1 / 0);
+      let _ = F();
+      return _ ? b ? E([b, _], _.length) : (_.value = B(_.value, To), E([_], _.length)) : b ? B(b, yr) : null;
     }
-    h(g, "parsePattern");
-    function E(p = [], _) {
+    h(p, "parsePattern");
+    function E(b = [], _) {
       for (; ; ) {
-        if (i(Ci)) {
-          p.push(l(Ci));
+        if (i(Ri)) {
+          b.push(l(Ri));
           continue;
         }
         if (e[t] === "{") {
-          p.push(w());
+          b.push(w());
           continue;
         }
         if (e[t] === "}")
           throw new SyntaxError("Unbalanced closing brace");
-        let k = B();
-        if (k) {
-          p.push(k), _ = Math.min(_, k.length);
+        let K = F();
+        if (K) {
+          b.push(K), _ = Math.min(_, K.length);
           continue;
         }
         break;
       }
-      let x = p.length - 1, j = p[x];
-      typeof j == "string" && (p[x] = W(j, Pr));
-      let D = [];
-      for (let k of p)
-        k instanceof Zi && (k = k.value.slice(0, k.value.length - _)), k && D.push(k);
-      return D;
+      let v = b.length - 1, O = b[v];
+      typeof O == "string" && (b[v] = B(O, yr));
+      let Z = [];
+      for (let K of b)
+        K instanceof Ki && (K = K.value.slice(0, K.value.length - _)), K && Z.push(K);
+      return Z;
     }
     h(E, "parsePatternElements");
     function w() {
-      s(Co, SyntaxError);
-      let p = L();
-      if (s(xr))
-        return p;
+      s(No, SyntaxError);
+      let b = A();
+      if (s(Pr))
+        return b;
       if (s(Do)) {
-        let _ = S();
-        return s(xr, SyntaxError), {
+        let _ = L();
+        return s(Pr, SyntaxError), {
           type: "select",
-          selector: p,
+          selector: b,
           ..._
         };
       }
       throw new SyntaxError("Unclosed placeable");
     }
     h(w, "parsePlaceable");
-    function L() {
+    function A() {
       if (e[t] === "{")
         return w();
-      if (i(_r)) {
-        let [, p, _, x = null] = r(_r);
-        if (p === "$")
+      if (i(wr)) {
+        let [, b, _, v = null] = r(wr);
+        if (b === "$")
           return {
             type: "var",
             name: _
           };
         if (s(Oo)) {
-          let j = I();
-          if (p === "-")
+          let O = C();
+          if (b === "-")
             return {
               type: "term",
               name: _,
-              attr: x,
-              args: j
+              attr: v,
+              args: O
             };
           if (Io.test(_))
             return {
               type: "func",
               name: _,
-              args: j
+              args: O
             };
           throw new SyntaxError("Function names must be all upper-case");
         }
-        return p === "-" ? {
+        return b === "-" ? {
           type: "term",
           name: _,
-          attr: x,
+          attr: v,
           args: []
         } : {
           type: "mesg",
           name: _,
-          attr: x
+          attr: v
         };
       }
       return M();
     }
-    h(L, "parseInlineExpression");
-    function I() {
-      let p = [];
+    h(A, "parseInlineExpression");
+    function C() {
+      let b = [];
       for (; ; ) {
         switch (e[t]) {
           case ")":
-            return t++, p;
+            return t++, b;
           case void 0:
             throw new SyntaxError("Unclosed argument list");
         }
-        p.push(P()), s(Fo);
+        b.push(I()), s(Fo);
       }
     }
-    h(I, "parseArguments");
-    function P() {
-      let p = L();
-      return p.type !== "mesg" ? p : s(jo) ? {
+    h(C, "parseArguments");
+    function I() {
+      let b = A();
+      return b.type !== "mesg" ? b : s(jo) ? {
         type: "narg",
-        name: p.name,
+        name: b.name,
         value: M()
-      } : p;
+      } : b;
     }
-    h(P, "parseArgument");
-    function S() {
-      let p = [], _ = 0, x;
+    h(I, "parseArgument");
+    function L() {
+      let b = [], _ = 0, v;
       for (; i(So); ) {
-        n("*") && (x = _);
-        let j = T(), D = g();
-        if (D === null)
+        n("*") && (v = _);
+        let O = N(), Z = p();
+        if (Z === null)
           throw new SyntaxError("Expected variant value");
-        p[_++] = {
-          key: j,
-          value: D
+        b[_++] = {
+          key: O,
+          value: Z
         };
       }
       if (_ === 0)
         return null;
-      if (x === void 0)
+      if (v === void 0)
         throw new SyntaxError("Expected default variant");
       return {
-        variants: p,
-        star: x
+        variants: b,
+        star: v
       };
     }
-    h(S, "parseVariants");
-    function T() {
+    h(L, "parseVariants");
+    function N() {
       s(Mo, SyntaxError);
-      let p;
-      return i(fn) ? p = v() : p = {
+      let b;
+      return i(un) ? b = x() : b = {
         type: "str",
         value: l(Ao)
-      }, s(ko, SyntaxError), p;
+      }, s(ko, SyntaxError), b;
     }
-    h(T, "parseVariantKey");
+    h(N, "parseVariantKey");
     function M() {
-      if (i(fn))
-        return v();
+      if (i(un))
+        return x();
       if (e[t] === '"')
-        return C();
+        return P();
       throw new SyntaxError("Invalid expression");
     }
     h(M, "parseLiteral");
-    function v() {
-      let [, p, _ = ""] = r(fn), x = _.length;
+    function x() {
+      let [, b, _ = ""] = r(un), v = _.length;
       return {
         type: "num",
-        value: parseFloat(p),
-        precision: x
+        value: parseFloat(b),
+        precision: v
       };
     }
-    h(v, "parseNumberLiteral");
-    function C() {
+    h(x, "parseNumberLiteral");
+    function P() {
       n('"', SyntaxError);
-      let p = "";
+      let b = "";
       for (; ; ) {
-        if (p += l(Lo), e[t] === "\\") {
-          p += F();
+        if (b += l(Lo), e[t] === "\\") {
+          b += k();
           continue;
         }
         if (n('"'))
           return {
             type: "str",
-            value: p
+            value: b
           };
         throw new SyntaxError("Unclosed string literal");
       }
     }
-    h(C, "parseStringLiteral");
-    function F() {
-      if (i(yr))
-        return l(yr);
+    h(P, "parseStringLiteral");
+    function k() {
+      if (i(_r))
+        return l(_r);
       if (i(vr)) {
-        let [, p, _] = r(vr), x = parseInt(p || _, 16);
-        return x <= 55295 || 57344 <= x ? String.fromCodePoint(x) : "�";
+        let [, b, _] = r(vr), v = parseInt(b || _, 16);
+        return v <= 55295 || 57344 <= v ? String.fromCodePoint(v) : "�";
       }
       throw new SyntaxError("Unknown escape sequence");
     }
-    h(F, "parseEscapeSequence");
-    function B() {
-      let p = t;
+    h(k, "parseEscapeSequence");
+    function F() {
+      let b = t;
       switch (s(Vo), e[t]) {
         case ".":
         case "[":
@@ -1973,32 +1964,32 @@ const cn = /^(-?[a-zA-Z][\w-]*) *= */gm, wr = /\.([a-zA-Z][\w-]*) *= */y, So = /
         case void 0:
           return !1;
         case "{":
-          return V(e.slice(p, t));
+          return j(e.slice(b, t));
       }
-      return e[t - 1] === " " ? V(e.slice(p, t)) : !1;
+      return e[t - 1] === " " ? j(e.slice(b, t)) : !1;
     }
-    h(B, "parseIndent");
-    function W(p, _) {
-      return p.replace(_, "");
+    h(F, "parseIndent");
+    function B(b, _) {
+      return b.replace(_, "");
     }
-    h(W, "trim");
-    function V(p) {
-      let _ = p.replace(Ro, `
-`), x = No.exec(p)[1].length;
-      return new Zi(_, x);
+    h(B, "trim");
+    function j(b) {
+      let _ = b.replace(Ro, `
+`), v = Co.exec(b)[1].length;
+      return new Ki(_, v);
     }
-    h(V, "makeIndent");
+    h(j, "makeIndent");
   }
 };
-h(Ts, "FluentResource");
-let Nn = Ts;
-const Rs = class Rs {
+h(Is, "FluentResource");
+let Tn = Is;
+const Ls = class Ls {
   constructor(e, t) {
     this.value = e, this.length = t;
   }
 };
-h(Rs, "Indent");
-let Zi = Rs;
+h(Ls, "Indent");
+let Ki = Ls;
 const Bo = /<|&#?\w+;/, Ho = {
   "http://www.w3.org/1999/xhtml": ["em", "strong", "small", "s", "cite", "q", "dfn", "abbr", "data", "time", "code", "var", "samp", "kbd", "sub", "sup", "i", "b", "u", "mark", "bdi", "bdo", "span", "br", "wbr"]
 }, Uo = {
@@ -2037,7 +2028,7 @@ function $o(a, e) {
       const i = a.ownerDocument.createElementNS("http://www.w3.org/1999/xhtml", "template");
       i.innerHTML = t, Wo(i.content, a);
     }
-  Ur(e, a);
+  Hr(e, a);
 }
 h($o, "translateElement");
 function Wo(a, e) {
@@ -2053,7 +2044,7 @@ function Wo(a, e) {
         a.replaceChild(i, t);
         continue;
       }
-      console.warn(`An element of forbidden type "${t.localName}" was found in the translation. Only safe text-level elements and elements with data-l10n-name are allowed.`), a.replaceChild(Cn(t), t);
+      console.warn(`An element of forbidden type "${t.localName}" was found in the translation. Only safe text-level elements and elements with data-l10n-name are allowed.`), a.replaceChild(Rn(t), t);
     }
   e.textContent = "", e.appendChild(a);
 }
@@ -2067,41 +2058,41 @@ function zo(a, e) {
   return !1;
 }
 h(zo, "hasAttribute");
-function Ur(a, e) {
+function Hr(a, e) {
   const t = e.hasAttribute("data-l10n-attrs") ? e.getAttribute("data-l10n-attrs").split(",").map((i) => i.trim()) : null;
   for (const i of Array.from(e.attributes))
-    Sr(i.name, e, t) && !zo(a.attributes, i.name) && e.removeAttribute(i.name);
+    xr(i.name, e, t) && !zo(a.attributes, i.name) && e.removeAttribute(i.name);
   if (a.attributes)
     for (const i of Array.from(a.attributes))
-      Sr(i.name, e, t) && e.getAttribute(i.name) !== i.value && e.setAttribute(i.name, i.value);
+      xr(i.name, e, t) && e.getAttribute(i.name) !== i.value && e.setAttribute(i.name, i.value);
 }
-h(Ur, "overlayAttributes");
+h(Hr, "overlayAttributes");
 function Go(a, e) {
   const t = e.getAttribute("data-l10n-name"), i = a.querySelector(`[data-l10n-name="${t}"]`);
   if (!i)
-    return console.warn(`An element named "${t}" wasn't found in the source.`), Cn(e);
+    return console.warn(`An element named "${t}" wasn't found in the source.`), Rn(e);
   if (i.localName !== e.localName)
-    return console.warn(`An element named "${t}" was found in the translation but its type ${e.localName} didn't match the element found in the source (${i.localName}).`), Cn(e);
+    return console.warn(`An element named "${t}" was found in the translation but its type ${e.localName} didn't match the element found in the source (${i.localName}).`), Rn(e);
   a.removeChild(i);
   const n = i.cloneNode(!1);
-  return $r(e, n);
+  return Ur(e, n);
 }
 h(Go, "getNodeForNamedElement");
 function Ko(a) {
   const e = a.ownerDocument.createElement(a.localName);
-  return $r(a, e);
+  return Ur(a, e);
 }
 h(Ko, "createSanitizedElement");
-function Cn(a) {
+function Rn(a) {
   return a.ownerDocument.createTextNode(a.textContent);
 }
-h(Cn, "createTextNodeFromTextContent");
+h(Rn, "createTextNodeFromTextContent");
 function Xo(a) {
   const e = Ho[a.namespaceURI];
   return e && e.includes(a.localName);
 }
 h(Xo, "isElementAllowed");
-function Sr(a, e, t = null) {
+function xr(a, e, t = null) {
   if (t && t.includes(a))
     return !0;
   const i = Uo[e.namespaceURI];
@@ -2121,19 +2112,19 @@ function Sr(a, e, t = null) {
   }
   return !1;
 }
-h(Sr, "isAttrNameLocalizable");
-function $r(a, e) {
-  return e.textContent = a.textContent, Ur(a, e), e;
+h(xr, "isAttrNameLocalizable");
+function Ur(a, e) {
+  return e.textContent = a.textContent, Hr(a, e), e;
 }
-h($r, "shallowPopulateUsing");
-const Ns = class Ns extends Array {
+h(Ur, "shallowPopulateUsing");
+const Ts = class Ts extends Array {
   static from(e) {
     return e instanceof this ? e : new this(e);
   }
 };
-h(Ns, "CachedIterable");
-let Mn = Ns;
-const Cs = class Cs extends Mn {
+h(Ts, "CachedIterable");
+let Cn = Ts;
+const Rs = class Rs extends Cn {
   constructor(e) {
     if (super(), Symbol.asyncIterator in Object(e))
       this.iterator = e[Symbol.asyncIterator]();
@@ -2162,9 +2153,9 @@ const Cs = class Cs extends Mn {
     return this[this.length - 1];
   }
 };
-h(Cs, "CachedAsyncIterable");
-let kn = Cs;
-const Ms = class Ms {
+h(Rs, "CachedAsyncIterable");
+let Nn = Rs;
+const Cs = class Cs {
   constructor(e = [], t) {
     this.resourceIds = e, this.generateBundles = t, this.onChange(!0);
   }
@@ -2208,11 +2199,11 @@ const Ms = class Ms {
     this.onChange();
   }
   onChange(e = !1) {
-    this.bundles = kn.from(this.generateBundles(this.resourceIds)), e && this.bundles.touchNext(2);
+    this.bundles = Nn.from(this.generateBundles(this.resourceIds)), e && this.bundles.touchNext(2);
   }
 };
-h(Ms, "Localization");
-let On = Ms;
+h(Cs, "Localization");
+let Mn = Cs;
 function Zo(a, e, t, i) {
   return t.value ? a.formatPattern(t.value, i, e) : null;
 }
@@ -2245,37 +2236,37 @@ function Jo(a, e, t, i) {
   }, d) => {
     if (i[d] !== void 0)
       return;
-    let u = e.getMessage(r);
-    if (u) {
-      if (n.length = 0, i[d] = a(e, n, u, l), n.length > 0 && typeof console < "u") {
-        const g = e.locales[0], E = n.join(", ");
-        console.warn(`[fluent][resolver] errors in ${g}/${r}: ${E}.`);
+    let c = e.getMessage(r);
+    if (c) {
+      if (n.length = 0, i[d] = a(e, n, c, l), n.length > 0 && typeof console < "u") {
+        const p = e.locales[0], E = n.join(", ");
+        console.warn(`[fluent][resolver] errors in ${p}/${r}: ${E}.`);
       }
     } else
       s.add(r);
   }), s;
 }
 h(Jo, "keysFromBundle");
-const Ge = "data-l10n-id", Vt = "data-l10n-args", Yo = `[${Ge}]`, ks = class ks extends On {
+const ze = "data-l10n-id", jt = "data-l10n-args", Yo = `[${ze}]`, Ns = class Ns extends Mn {
   constructor(e, t) {
     super(e, t), this.roots = /* @__PURE__ */ new Set(), this.pendingrAF = null, this.pendingElements = /* @__PURE__ */ new Set(), this.windowElement = null, this.mutationObserver = null, this.observerConfig = {
       attributes: !0,
       characterData: !1,
       childList: !0,
       subtree: !0,
-      attributeFilter: [Ge, Vt]
+      attributeFilter: [ze, jt]
     };
   }
   onChange(e = !1) {
     super.onChange(e), this.roots && this.translateRoots();
   }
   setAttributes(e, t, i) {
-    return e.setAttribute(Ge, t), i ? e.setAttribute(Vt, JSON.stringify(i)) : e.removeAttribute(Vt), e;
+    return e.setAttribute(ze, t), i ? e.setAttribute(jt, JSON.stringify(i)) : e.removeAttribute(jt), e;
   }
   getAttributes(e) {
     return {
-      id: e.getAttribute(Ge),
-      args: JSON.parse(e.getAttribute(Vt) || null)
+      id: e.getAttribute(ze),
+      args: JSON.parse(e.getAttribute(jt) || null)
     };
   }
   connectRoot(e) {
@@ -2317,7 +2308,7 @@ const Ge = "data-l10n-id", Vt = "data-l10n-args", Yo = `[${Ge}]`, ks = class ks 
               if (i.childElementCount)
                 for (const n of this.getTranslatables(i))
                   this.pendingElements.add(n);
-              else i.hasAttribute(Ge) && this.pendingElements.add(i);
+              else i.hasAttribute(ze) && this.pendingElements.add(i);
           break;
       }
     this.pendingElements.size > 0 && this.pendingrAF === null && (this.pendingrAF = this.windowElement.requestAnimationFrame(() => {
@@ -2341,79 +2332,78 @@ const Ge = "data-l10n-id", Vt = "data-l10n-args", Yo = `[${Ge}]`, ks = class ks 
   }
   getTranslatables(e) {
     const t = Array.from(e.querySelectorAll(Yo));
-    return typeof e.hasAttribute == "function" && e.hasAttribute(Ge) && t.push(e), t;
+    return typeof e.hasAttribute == "function" && e.hasAttribute(ze) && t.push(e), t;
   }
   getKeysForElement(e) {
     return {
-      id: e.getAttribute(Ge),
-      args: JSON.parse(e.getAttribute(Vt) || null)
+      id: e.getAttribute(ze),
+      args: JSON.parse(e.getAttribute(jt) || null)
     };
   }
 };
-h(ks, "DOMLocalization");
-let Dn = ks;
-var ei, Re, wt, J, jt, Wr, zr;
-const gt = class gt {
+h(Ns, "DOMLocalization");
+let kn = Ns;
+var Yt, Te, bt, Q, Ot, $r, Wr;
+const ct = class ct {
   constructor({
     lang: e,
     isRTL: t
   }, i = null) {
-    b(this, ei);
-    b(this, Re);
-    b(this, wt);
-    b(this, J);
+    m(this, Yt);
+    m(this, Te);
+    m(this, bt);
+    m(this, Q);
     var n, s;
-    f(this, wt, c(n = gt, jt, Wr).call(n, e)), f(this, J, i), f(this, ei, t ?? c(s = gt, jt, zr).call(s, o(this, wt)) ? "rtl" : "ltr");
+    f(this, bt, u(n = ct, Ot, $r).call(n, e)), f(this, Q, i), f(this, Yt, t ?? u(s = ct, Ot, Wr).call(s, o(this, bt)) ? "rtl" : "ltr");
   }
   _setL10n(e) {
-    f(this, J, e);
+    f(this, Q, e);
   }
   getLanguage() {
-    return o(this, wt);
+    return o(this, bt);
   }
   getDirection() {
-    return o(this, ei);
+    return o(this, Yt);
   }
   async get(e, t = null, i) {
-    var s;
-    return Array.isArray(e) ? (e = e.map((l) => ({
-      id: l
-    })), (await o(this, J).formatMessages(e)).map((l) => l.value)) : ((s = (await o(this, J).formatMessages([{
+    return Array.isArray(e) ? (e = e.map((r) => ({
+      id: r
+    })), (await o(this, Q).formatMessages(e)).map((r) => r.value)) : (await o(this, Q).formatMessages([{
       id: e,
       args: t
-    }]))[0]) == null ? void 0 : s.value) || i;
+    }]))[0]?.value || i;
   }
   async translate(e) {
-    (o(this, Re) || f(this, Re, /* @__PURE__ */ new Set())).add(e);
+    (o(this, Te) || f(this, Te, /* @__PURE__ */ new Set())).add(e);
     try {
-      o(this, J).connectRoot(e), await o(this, J).translateRoots();
+      o(this, Q).connectRoot(e), await o(this, Q).translateRoots();
     } catch {
     }
   }
   async translateOnce(e) {
     try {
-      await o(this, J).translateElements([e]);
+      await o(this, Q).translateElements([e]);
     } catch (t) {
       console.error("translateOnce:", t);
     }
   }
   async destroy() {
-    if (o(this, Re)) {
-      for (const e of o(this, Re))
-        o(this, J).disconnectRoot(e);
-      o(this, Re).clear(), f(this, Re, null);
+    if (o(this, Te)) {
+      for (const e of o(this, Te))
+        o(this, Q).disconnectRoot(e);
+      o(this, Te).clear(), f(this, Te, null);
     }
-    o(this, J).pauseObserving();
+    o(this, Q).pauseObserving();
   }
   pause() {
-    o(this, J).pauseObserving();
+    o(this, Q).pauseObserving();
   }
   resume() {
-    o(this, J).resumeObserving();
+    o(this, Q).resumeObserving();
   }
 };
-ei = new WeakMap(), Re = new WeakMap(), wt = new WeakMap(), J = new WeakMap(), jt = new WeakSet(), Wr = /* @__PURE__ */ h(function(e) {
-  return e = (e == null ? void 0 : e.toLowerCase()) || "en-us", {
+Yt = new WeakMap(), Te = new WeakMap(), bt = new WeakMap(), Q = new WeakMap(), Ot = new WeakSet(), $r = /* @__PURE__ */ h(function(e) {
+  return e = e?.toLowerCase() || "en-us", {
     en: "en-us",
     es: "es-es",
     fy: "fy-nl",
@@ -2429,50 +2419,50 @@ ei = new WeakMap(), Re = new WeakMap(), wt = new WeakMap(), J = new WeakMap(), j
     sv: "sv-se",
     zh: "zh-cn"
   }[e] || e;
-}, "#fixupLangCode"), zr = /* @__PURE__ */ h(function(e) {
+}, "#fixupLangCode"), Wr = /* @__PURE__ */ h(function(e) {
   const t = e.split("-", 1)[0];
   return ["ar", "he", "fa", "ps", "ur"].includes(t);
-}, "#isRTL"), b(gt, jt), h(gt, "L10n");
-let jn = gt;
-function Ar(a, e) {
-  const t = new Nn(e), i = new Rn(a), n = i.addResource(t);
+}, "#isRTL"), m(ct, Ot), h(ct, "L10n");
+let On = ct;
+function Sr(a, e) {
+  const t = new Tn(e), i = new Ln(a), n = i.addResource(t);
   return n.length && console.error("L10n errors", n), i;
 }
-h(Ar, "createBundle");
-var te, Gr, Kr, Xr, Zr, Fn;
-const Ae = class Ae extends jn {
+h(Sr, "createBundle");
+var ee, zr, Gr, Kr, Xr, Dn;
+const Se = class Se extends On {
   constructor(e) {
     super({
       lang: e
     });
-    const t = e ? c(Ae, te, Gr).bind(Ae, "en-us", this.getLanguage()) : c(Ae, te, Zr).bind(Ae, this.getLanguage());
-    this._setL10n(new Dn([], t));
+    const t = e ? u(Se, ee, zr).bind(Se, "en-us", this.getLanguage()) : u(Se, ee, Xr).bind(Se, this.getLanguage());
+    this._setL10n(new kn([], t));
   }
 };
-te = new WeakSet(), Gr = /* @__PURE__ */ h(async function* (e, t) {
+ee = new WeakSet(), zr = /* @__PURE__ */ h(async function* (e, t) {
   const {
     baseURL: i,
     paths: n
-  } = await c(this, te, Xr).call(this), s = [t];
+  } = await u(this, ee, Kr).call(this), s = [t];
   if (e !== t) {
     const r = t.split("-", 1)[0];
     r !== t && s.push(r), s.push(e);
   }
   for (const r of s) {
-    const l = await c(this, te, Kr).call(this, r, i, n);
-    l ? yield l : r === "en-us" && (yield c(this, te, Fn).call(this, r));
+    const l = await u(this, ee, Gr).call(this, r, i, n);
+    l ? yield l : r === "en-us" && (yield u(this, ee, Dn).call(this, r));
   }
-}, "#generateBundles"), Kr = /* @__PURE__ */ h(async function(e, t, i) {
+}, "#generateBundles"), Gr = /* @__PURE__ */ h(async function(e, t, i) {
   const n = i[e];
   if (!n)
     return null;
-  const s = new URL(n, t), r = await dr(s, "text");
-  return Ar(e, r);
-}, "#createBundle"), Xr = /* @__PURE__ */ h(async function() {
+  const s = new URL(n, t), r = await hr(s, "text");
+  return Sr(e, r);
+}, "#createBundle"), Kr = /* @__PURE__ */ h(async function() {
   try {
     const {
       href: e
-    } = document.querySelector('link[type="application/l10n"]'), t = await dr(e, "json");
+    } = document.querySelector('link[type="application/l10n"]'), t = await hr(e, "json");
     return {
       baseURL: e.replace(/[^/]*$/, "") || "./",
       paths: t
@@ -2483,10 +2473,10 @@ te = new WeakSet(), Gr = /* @__PURE__ */ h(async function* (e, t) {
     baseURL: "./",
     paths: /* @__PURE__ */ Object.create(null)
   };
-}, "#getPaths"), Zr = /* @__PURE__ */ h(async function* (e) {
-  yield c(this, te, Fn).call(this, e);
-}, "#generateBundlesFallback"), Fn = /* @__PURE__ */ h(async function(e) {
-  return Ar(e, `pdfjs-previous-button =
+}, "#getPaths"), Xr = /* @__PURE__ */ h(async function* (e) {
+  yield u(this, ee, Dn).call(this, e);
+}, "#generateBundlesFallback"), Dn = /* @__PURE__ */ h(async function(e) {
+  return Sr(e, `pdfjs-previous-button =
     .title = Previous Page
 pdfjs-previous-button-label = Previous
 pdfjs-next-button =
@@ -2823,21 +2813,21 @@ pdfjs-editor-undo-bar-undo-button-label = Undo
 pdfjs-editor-undo-bar-close-button =
     .title = Close
 pdfjs-editor-undo-bar-close-button-label = Close`);
-}, "#createBundleFallback"), b(Ae, te), h(Ae, "genericl10n_GenericL10n");
-let Dt = Ae;
+}, "#createBundleFallback"), m(Se, ee), h(Se, "genericl10n_GenericL10n");
+let kt = Se;
 const qo = 1e3, el = 50, tl = 1e3;
-function gn() {
+function cn() {
   return document.location.hash;
 }
-h(gn, "getCurrentHash");
-var Ne, R, pe, Di, ji, Ut, Fi, Bn, Qr, Jr, Hn, Yr, qr;
-const Os = class Os {
+h(cn, "getCurrentHash");
+var Re, T, pe, ki, Oi, Bt, Di, Fn, Zr, Qr, Vn, Jr, Yr;
+const Ms = class Ms {
   constructor({
     linkService: e,
     eventBus: t
   }) {
-    b(this, R);
-    b(this, Ne, null);
+    m(this, T);
+    m(this, Re, null);
     this.linkService = e, this.eventBus = t, this._initialized = !1, this._fingerprint = "", this.reset(), this.eventBus._on("pagesinit", () => {
       this._isPagesLoaded = !1, this.eventBus._on("pagesloaded", (i) => {
         this._isPagesLoaded = !!i.pagesCount;
@@ -2857,30 +2847,30 @@ const Os = class Os {
     }
     this._initialized && this.reset();
     const n = this._fingerprint !== "" && this._fingerprint !== e;
-    this._fingerprint = e, this._updateUrl = i === !0, this._initialized = !0, c(this, R, Yr).call(this);
+    this._fingerprint = e, this._updateUrl = i === !0, this._initialized = !0, u(this, T, Jr).call(this);
     const s = window.history.state;
-    if (this._popStateInProgress = !1, this._blockHashChange = 0, this._currentHash = gn(), this._numPositionUpdates = 0, this._uid = this._maxUid = 0, this._destination = null, this._position = null, !c(this, R, Ut).call(this, s, !0) || t) {
+    if (this._popStateInProgress = !1, this._blockHashChange = 0, this._currentHash = cn(), this._numPositionUpdates = 0, this._uid = this._maxUid = 0, this._destination = null, this._position = null, !u(this, T, Bt).call(this, s, !0) || t) {
       const {
         hash: l,
         page: d,
-        rotation: u
-      } = c(this, R, Bn).call(this, !0);
+        rotation: c
+      } = u(this, T, Fn).call(this, !0);
       if (!l || n || t) {
-        c(this, R, pe).call(this, null, !0);
+        u(this, T, pe).call(this, null, !0);
         return;
       }
-      c(this, R, pe).call(this, {
+      u(this, T, pe).call(this, {
         hash: l,
         page: d,
-        rotation: u
+        rotation: c
       }, !0);
       return;
     }
     const r = s.destination;
-    c(this, R, Fi).call(this, r, s.uid, !0), r.rotation !== void 0 && (this._initialRotation = r.rotation), r.dest ? (this._initialBookmark = JSON.stringify(r.dest), this._destination.page = null) : r.hash ? this._initialBookmark = r.hash : r.page && (this._initialBookmark = `page=${r.page}`);
+    u(this, T, Di).call(this, r, s.uid, !0), r.rotation !== void 0 && (this._initialRotation = r.rotation), r.dest ? (this._initialBookmark = JSON.stringify(r.dest), this._destination.page = null) : r.hash ? this._initialBookmark = r.hash : r.page && (this._initialBookmark = `page=${r.page}`);
   }
   reset() {
-    this._initialized && (c(this, R, Hn).call(this), this._initialized = !1, c(this, R, qr).call(this)), this._updateViewareaTimeout && (clearTimeout(this._updateViewareaTimeout), this._updateViewareaTimeout = null), this._initialBookmark = null, this._initialRotation = null;
+    this._initialized && (u(this, T, Vn).call(this), this._initialized = !1, u(this, T, Yr).call(this)), this._updateViewareaTimeout && (clearTimeout(this._updateViewareaTimeout), this._updateViewareaTimeout = null), this._initialBookmark = null, this._initialRotation = null;
   }
   push({
     namedDest: e = null,
@@ -2893,7 +2883,7 @@ const Os = class Os {
       console.error(`PDFHistory.push: "${e}" is not a valid namedDest parameter.`);
       return;
     } else if (Array.isArray(t)) {
-      if (!c(this, R, ji).call(this, i) && (i !== null || this._destination)) {
+      if (!u(this, T, Oi).call(this, i) && (i !== null || this._destination)) {
         console.error(`PDFHistory.push: "${i}" is not a valid pageNumber parameter.`);
         return;
       }
@@ -2910,7 +2900,7 @@ const Os = class Os {
         return;
       s = !0;
     }
-    this._popStateInProgress && !s || (c(this, R, pe).call(this, {
+    this._popStateInProgress && !s || (u(this, T, pe).call(this, {
       dest: t,
       hash: n,
       page: i,
@@ -2920,13 +2910,12 @@ const Os = class Os {
     })));
   }
   pushPage(e) {
-    var t;
     if (this._initialized) {
-      if (!c(this, R, ji).call(this, e)) {
+      if (!u(this, T, Oi).call(this, e)) {
         console.error(`PDFHistory.pushPage: "${e}" is not a valid page number.`);
         return;
       }
-      ((t = this._destination) == null ? void 0 : t.page) !== e && (this._popStateInProgress || (c(this, R, pe).call(this, {
+      this._destination?.page !== e && (this._popStateInProgress || (u(this, T, pe).call(this, {
         dest: null,
         hash: `page=${e}`,
         page: e,
@@ -2937,19 +2926,19 @@ const Os = class Os {
     }
   }
   pushCurrentPosition() {
-    !this._initialized || this._popStateInProgress || c(this, R, Di).call(this);
+    !this._initialized || this._popStateInProgress || u(this, T, ki).call(this);
   }
   back() {
     if (!this._initialized || this._popStateInProgress)
       return;
     const e = window.history.state;
-    c(this, R, Ut).call(this, e) && e.uid > 0 && window.history.back();
+    u(this, T, Bt).call(this, e) && e.uid > 0 && window.history.back();
   }
   forward() {
     if (!this._initialized || this._popStateInProgress)
       return;
     const e = window.history.state;
-    c(this, R, Ut).call(this, e) && e.uid < this._maxUid && window.history.forward();
+    u(this, T, Bt).call(this, e) && e.uid < this._maxUid && window.history.forward();
   }
   get popStateInProgress() {
     return this._initialized && (this._popStateInProgress || this._blockHashChange > 0);
@@ -2961,29 +2950,29 @@ const Os = class Os {
     return this._initialized ? this._initialRotation : null;
   }
 };
-Ne = new WeakMap(), R = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1) {
+Re = new WeakMap(), T = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1) {
   const i = t || !this._destination, n = {
     fingerprint: this._fingerprint,
     uid: i ? this._uid : this._uid + 1,
     destination: e
   };
-  c(this, R, Fi).call(this, e, n.uid);
+  u(this, T, Di).call(this, e, n.uid);
   let s;
-  if (this._updateUrl && (e != null && e.hash)) {
+  if (this._updateUrl && e?.hash) {
     const r = document.location.href.split("#", 1)[0];
     r.startsWith("file://") || (s = `${r}#${e.hash}`);
   }
   i ? window.history.replaceState(n, "", s) : window.history.pushState(n, "", s);
-}, "#pushOrReplaceState"), Di = /* @__PURE__ */ h(function(e = !1) {
+}, "#pushOrReplaceState"), ki = /* @__PURE__ */ h(function(e = !1) {
   if (!this._position)
     return;
   let t = this._position;
   if (e && (t = Object.assign(/* @__PURE__ */ Object.create(null), this._position), t.temporary = !0), !this._destination) {
-    c(this, R, pe).call(this, t);
+    u(this, T, pe).call(this, t);
     return;
   }
   if (this._destination.temporary) {
-    c(this, R, pe).call(this, t, !0);
+    u(this, T, pe).call(this, t, !0);
     return;
   }
   if (this._destination.hash === t.hash || !this._destination.page && this._numPositionUpdates <= el)
@@ -2994,10 +2983,10 @@ Ne = new WeakMap(), R = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1
       return;
     i = !0;
   }
-  c(this, R, pe).call(this, t, i);
-}, "#tryPushCurrentPosition"), ji = /* @__PURE__ */ h(function(e) {
+  u(this, T, pe).call(this, t, i);
+}, "#tryPushCurrentPosition"), Oi = /* @__PURE__ */ h(function(e) {
   return Number.isInteger(e) && e > 0 && e <= this.linkService.pagesCount;
-}, "#isValidPage"), Ut = /* @__PURE__ */ h(function(e, t = !1) {
+}, "#isValidPage"), Bt = /* @__PURE__ */ h(function(e, t = !1) {
   if (!e)
     return !1;
   if (e.fingerprint !== this._fingerprint)
@@ -3005,22 +2994,22 @@ Ne = new WeakMap(), R = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1
       if (typeof e.fingerprint != "string" || e.fingerprint.length !== this._fingerprint.length)
         return !1;
       const [i] = performance.getEntriesByType("navigation");
-      if ((i == null ? void 0 : i.type) !== "reload")
+      if (i?.type !== "reload")
         return !1;
     } else
       return !1;
   return !(!Number.isInteger(e.uid) || e.uid < 0 || e.destination === null || typeof e.destination != "object");
-}, "#isValidState"), Fi = /* @__PURE__ */ h(function(e, t, i = !1) {
-  this._updateViewareaTimeout && (clearTimeout(this._updateViewareaTimeout), this._updateViewareaTimeout = null), i && (e != null && e.temporary) && delete e.temporary, this._destination = e, this._uid = t, this._maxUid = Math.max(this._maxUid, t), this._numPositionUpdates = 0;
-}, "#updateInternalState"), Bn = /* @__PURE__ */ h(function(e = !1) {
-  const t = unescape(gn()).substring(1), i = sn(t), n = i.get("nameddest") || "";
+}, "#isValidState"), Di = /* @__PURE__ */ h(function(e, t, i = !1) {
+  this._updateViewareaTimeout && (clearTimeout(this._updateViewareaTimeout), this._updateViewareaTimeout = null), i && e?.temporary && delete e.temporary, this._destination = e, this._uid = t, this._maxUid = Math.max(this._maxUid, t), this._numPositionUpdates = 0;
+}, "#updateInternalState"), Fn = /* @__PURE__ */ h(function(e = !1) {
+  const t = unescape(cn()).substring(1), i = tn(t), n = i.get("nameddest") || "";
   let s = i.get("page") | 0;
-  return (!c(this, R, ji).call(this, s) || e && n.length > 0) && (s = null), {
+  return (!u(this, T, Oi).call(this, s) || e && n.length > 0) && (s = null), {
     hash: t,
     page: s,
     rotation: this.linkService.rotation
   };
-}, "#parseCurrentHash"), Qr = /* @__PURE__ */ h(function({
+}, "#parseCurrentHash"), Zr = /* @__PURE__ */ h(function({
   location: e
 }) {
   this._updateViewareaTimeout && (clearTimeout(this._updateViewareaTimeout), this._updateViewareaTimeout = null), this._position = {
@@ -3029,27 +3018,27 @@ Ne = new WeakMap(), R = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1
     first: e.pageNumber,
     rotation: e.rotation
   }, !this._popStateInProgress && (this._isPagesLoaded && this._destination && !this._destination.page && this._numPositionUpdates++, this._updateViewareaTimeout = setTimeout(() => {
-    this._popStateInProgress || c(this, R, Di).call(this, !0), this._updateViewareaTimeout = null;
+    this._popStateInProgress || u(this, T, ki).call(this, !0), this._updateViewareaTimeout = null;
   }, tl));
-}, "#updateViewarea"), Jr = /* @__PURE__ */ h(function({
+}, "#updateViewarea"), Qr = /* @__PURE__ */ h(function({
   state: e
 }) {
-  const t = gn(), i = this._currentHash !== t;
+  const t = cn(), i = this._currentHash !== t;
   if (this._currentHash = t, !e) {
     this._uid++;
     const {
       hash: s,
       page: r,
       rotation: l
-    } = c(this, R, Bn).call(this);
-    c(this, R, pe).call(this, {
+    } = u(this, T, Fn).call(this);
+    u(this, T, pe).call(this, {
       hash: s,
       page: r,
       rotation: l
     }, !0);
     return;
   }
-  if (!c(this, R, Ut).call(this, e))
+  if (!u(this, T, Bt).call(this, e))
     return;
   this._popStateInProgress = !0, i && (this._blockHashChange++, fo({
     target: window,
@@ -3059,32 +3048,31 @@ Ne = new WeakMap(), R = new WeakSet(), pe = /* @__PURE__ */ h(function(e, t = !1
     this._blockHashChange--;
   }));
   const n = e.destination;
-  c(this, R, Fi).call(this, n, e.uid, !0), Cr(n.rotation) && (this.linkService.rotation = n.rotation), n.dest ? this.linkService.goToDestination(n.dest) : n.hash ? this.linkService.setHash(n.hash) : n.page && (this.linkService.page = n.page), Promise.resolve().then(() => {
+  u(this, T, Di).call(this, n, e.uid, !0), Cr(n.rotation) && (this.linkService.rotation = n.rotation), n.dest ? this.linkService.goToDestination(n.dest) : n.hash ? this.linkService.setHash(n.hash) : n.page && (this.linkService.page = n.page), Promise.resolve().then(() => {
     this._popStateInProgress = !1;
   });
-}, "#popState"), Hn = /* @__PURE__ */ h(function() {
-  (!this._destination || this._destination.temporary) && c(this, R, Di).call(this);
-}, "#pageHide"), Yr = /* @__PURE__ */ h(function() {
-  if (o(this, Ne))
+}, "#popState"), Vn = /* @__PURE__ */ h(function() {
+  (!this._destination || this._destination.temporary) && u(this, T, ki).call(this);
+}, "#pageHide"), Jr = /* @__PURE__ */ h(function() {
+  if (o(this, Re))
     return;
-  f(this, Ne, new AbortController());
+  f(this, Re, new AbortController());
   const {
     signal: e
-  } = o(this, Ne);
-  this.eventBus._on("updateviewarea", c(this, R, Qr).bind(this), {
+  } = o(this, Re);
+  this.eventBus._on("updateviewarea", u(this, T, Zr).bind(this), {
     signal: e
-  }), window.addEventListener("popstate", c(this, R, Jr).bind(this), {
+  }), window.addEventListener("popstate", u(this, T, Qr).bind(this), {
     signal: e
-  }), window.addEventListener("pagehide", c(this, R, Hn).bind(this), {
+  }), window.addEventListener("pagehide", u(this, T, Vn).bind(this), {
     signal: e
   });
-}, "#bindEvents"), qr = /* @__PURE__ */ h(function() {
-  var e;
-  (e = o(this, Ne)) == null || e.abort(), f(this, Ne, null);
-}, "#unbindEvents"), h(Os, "PDFHistory");
-let Vn = Os;
+}, "#bindEvents"), Yr = /* @__PURE__ */ h(function() {
+  o(this, Re)?.abort(), f(this, Re, null);
+}, "#unbindEvents"), h(Ms, "PDFHistory");
+let jn = Ms;
 function il(a, e) {
-  return typeof a != "string" || typeof e != "string" ? !1 : a === e || sn(a).get("nameddest") === e;
+  return typeof a != "string" || typeof e != "string" ? !1 : a === e || tn(a).get("nameddest") === e;
 }
 h(il, "isDestHashesEqual");
 function nl(a, e) {
@@ -3109,16 +3097,16 @@ function nl(a, e) {
   return !0;
 }
 h(nl, "isDestArraysEqual");
-var ti, ii, ni, si, ri, _t;
-const Ds = class Ds {
+var qt, ei, ti, ii, ni, Et;
+const ks = class ks {
   constructor(e) {
-    b(this, ti, null);
-    b(this, ii, null);
-    b(this, ni, null);
-    b(this, si, null);
-    b(this, ri, null);
-    b(this, _t);
-    this.pdfPage = e.pdfPage, this.accessibilityManager = e.accessibilityManager, this.l10n = e.l10n, this.l10n || (this.l10n = new Dt()), this.annotationEditorLayer = null, this.div = null, this._cancelled = !1, f(this, _t, e.uiManager), f(this, ti, e.annotationLayer || null), f(this, ri, e.textLayer || null), f(this, ii, e.drawLayer || null), f(this, ni, e.onAppend || null), f(this, si, e.structTreeLayer || null);
+    m(this, qt, null);
+    m(this, ei, null);
+    m(this, ti, null);
+    m(this, ii, null);
+    m(this, ni, null);
+    m(this, Et);
+    this.pdfPage = e.pdfPage, this.accessibilityManager = e.accessibilityManager, this.l10n = e.l10n, this.l10n ||= new kt(), this.annotationEditorLayer = null, this.div = null, this._cancelled = !1, f(this, Et, e.uiManager), f(this, qt, e.annotationLayer || null), f(this, ni, e.textLayer || null), f(this, ei, e.drawLayer || null), f(this, ti, e.onAppend || null), f(this, ii, e.structTreeLayer || null);
   }
   async render(e, t = "display") {
     var r;
@@ -3134,17 +3122,17 @@ const Ds = class Ds {
       return;
     }
     const n = this.div = document.createElement("div");
-    n.className = "annotationEditorLayer", n.hidden = !0, n.dir = o(this, _t).direction, (r = o(this, ni)) == null || r.call(this, n), this.annotationEditorLayer = new to({
-      uiManager: o(this, _t),
+    n.className = "annotationEditorLayer", n.hidden = !0, n.dir = o(this, Et).direction, (r = o(this, ti)) == null || r.call(this, n), this.annotationEditorLayer = new to({
+      uiManager: o(this, Et),
       div: n,
-      structTreeLayer: o(this, si),
+      structTreeLayer: o(this, ii),
       accessibilityManager: this.accessibilityManager,
       pageIndex: this.pdfPage.pageNumber - 1,
       l10n: this.l10n,
       viewport: i,
-      annotationLayer: o(this, ti),
-      textLayer: o(this, ri),
-      drawLayer: o(this, ii)
+      annotationLayer: o(this, qt),
+      textLayer: o(this, ni),
+      drawLayer: o(this, ei)
     });
     const s = {
       viewport: i,
@@ -3164,325 +3152,325 @@ const Ds = class Ds {
     !this.div || this.annotationEditorLayer.isInvisible || (this.div.hidden = !1, this.annotationEditorLayer.pause(!1));
   }
 };
-ti = new WeakMap(), ii = new WeakMap(), ni = new WeakMap(), si = new WeakMap(), ri = new WeakMap(), _t = new WeakMap(), h(Ds, "AnnotationEditorLayerBuilder");
-let Un = Ds;
+qt = new WeakMap(), ei = new WeakMap(), ti = new WeakMap(), ii = new WeakMap(), ni = new WeakMap(), Et = new WeakMap(), h(ks, "AnnotationEditorLayerBuilder");
+let Bn = ks;
 {
-  var $n = /* @__PURE__ */ new Map();
+  var Hn = /* @__PURE__ */ new Map();
   const a = navigator.userAgent || "", e = navigator.platform || "", t = navigator.maxTouchPoints || 1, i = /Android/.test(a), n = /\b(iPad|iPhone|iPod)(?=;)/.test(a) || e === "MacIntel" && t > 1;
   (function() {
-    (n || i) && $n.set("maxCanvasPixels", 5242880);
+    (n || i) && Hn.set("maxCanvasPixels", 5242880);
   })(), function() {
-    i && $n.set("useSystemFonts", !1);
+    i && Hn.set("useSystemFonts", !1);
   }();
 }
-const m = {
+const g = {
   BROWSER: 1,
   VIEWER: 2,
   API: 4,
   WORKER: 8,
   EVENT_DISPATCH: 16,
   PREFERENCE: 128
-}, Wn = {
+}, Un = {
   BOOLEAN: 1,
   NUMBER: 2,
   OBJECT: 4,
   STRING: 8,
   UNDEFINED: 16
-}, fe = {
+}, ce = {
   allowedGlobalEvents: {
     value: null,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   canvasMaxAreaInBytes: {
     value: -1,
-    kind: m.BROWSER + m.API
+    kind: g.BROWSER + g.API
   },
   isInAutomation: {
     value: !1,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   localeProperties: {
     value: {
       lang: navigator.language || "en-US"
     },
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   nimbusDataStr: {
     value: "",
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsCaretBrowsingMode: {
     value: !1,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsDocumentFonts: {
     value: !0,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsIntegratedFind: {
     value: !1,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsMouseWheelZoomCtrlKey: {
     value: !0,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsMouseWheelZoomMetaKey: {
     value: !0,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   supportsPinchToZoom: {
     value: !0,
-    kind: m.BROWSER
+    kind: g.BROWSER
   },
   toolbarDensity: {
     value: 0,
-    kind: m.BROWSER + m.EVENT_DISPATCH
+    kind: g.BROWSER + g.EVENT_DISPATCH
   },
   altTextLearnMoreUrl: {
     value: "",
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   annotationEditorMode: {
     value: 0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   annotationMode: {
     value: 2,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   cursorToolOnLoad: {
     value: 0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   debuggerSrc: {
     value: "./debugger.mjs",
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   defaultZoomDelay: {
     value: 400,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   defaultZoomValue: {
     value: "",
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   disableHistory: {
     value: !1,
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   disablePageLabels: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enableAltText: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enableAltTextModelDownload: {
     value: !0,
-    kind: m.VIEWER + m.PREFERENCE + m.EVENT_DISPATCH
+    kind: g.VIEWER + g.PREFERENCE + g.EVENT_DISPATCH
   },
   enableGuessAltText: {
     value: !0,
-    kind: m.VIEWER + m.PREFERENCE + m.EVENT_DISPATCH
+    kind: g.VIEWER + g.PREFERENCE + g.EVENT_DISPATCH
   },
   enableHighlightFloatingButton: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enableNewAltTextWhenAddingImage: {
     value: !0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enablePermissions: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enablePrintAutoRotate: {
     value: !0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enableScripting: {
     value: !0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   enableUpdatedAddImage: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   externalLinkRel: {
     value: "noopener noreferrer nofollow",
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   externalLinkTarget: {
     value: 0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   highlightEditorColors: {
     value: "yellow=#FFFF98,green=#53FFBC,blue=#80EBFF,pink=#FFCBE6,red=#FF4F5F",
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   historyUpdateUrl: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   ignoreDestinationZoom: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   imageResourcesPath: {
     value: "./images/",
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   maxCanvasPixels: {
     value: 2 ** 25,
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   forcePageColors: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   pageColorsBackground: {
     value: "Canvas",
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   pageColorsForeground: {
     value: "CanvasText",
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   pdfBugEnabled: {
     value: !1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   printResolution: {
     value: 150,
-    kind: m.VIEWER
+    kind: g.VIEWER
   },
   sidebarViewOnLoad: {
     value: -1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   scrollModeOnLoad: {
     value: -1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   spreadModeOnLoad: {
     value: -1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   textLayerMode: {
     value: 1,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   viewOnLoad: {
     value: 0,
-    kind: m.VIEWER + m.PREFERENCE
+    kind: g.VIEWER + g.PREFERENCE
   },
   cMapPacked: {
     value: !0,
-    kind: m.API
+    kind: g.API
   },
   cMapUrl: {
     value: "../web/cmaps/",
-    kind: m.API
+    kind: g.API
   },
   disableAutoFetch: {
     value: !1,
-    kind: m.API + m.PREFERENCE
+    kind: g.API + g.PREFERENCE
   },
   disableFontFace: {
     value: !1,
-    kind: m.API + m.PREFERENCE
+    kind: g.API + g.PREFERENCE
   },
   disableRange: {
     value: !1,
-    kind: m.API + m.PREFERENCE
+    kind: g.API + g.PREFERENCE
   },
   disableStream: {
     value: !1,
-    kind: m.API + m.PREFERENCE
+    kind: g.API + g.PREFERENCE
   },
   docBaseUrl: {
     value: "",
-    kind: m.API
+    kind: g.API
   },
   enableHWA: {
     value: !0,
-    kind: m.API + m.VIEWER + m.PREFERENCE
+    kind: g.API + g.VIEWER + g.PREFERENCE
   },
   enableXfa: {
     value: !0,
-    kind: m.API + m.PREFERENCE
+    kind: g.API + g.PREFERENCE
   },
   fontExtraProperties: {
     value: !1,
-    kind: m.API
+    kind: g.API
   },
   isEvalSupported: {
     value: !0,
-    kind: m.API
+    kind: g.API
   },
   isOffscreenCanvasSupported: {
     value: !0,
-    kind: m.API
+    kind: g.API
   },
   maxImageSize: {
     value: -1,
-    kind: m.API
+    kind: g.API
   },
   pdfBug: {
     value: !1,
-    kind: m.API
+    kind: g.API
   },
   standardFontDataUrl: {
     value: "../web/standard_fonts/",
-    kind: m.API
+    kind: g.API
   },
   useSystemFonts: {
     value: void 0,
-    kind: m.API,
-    type: Wn.BOOLEAN + Wn.UNDEFINED
+    kind: g.API,
+    type: Un.BOOLEAN + Un.UNDEFINED
   },
   verbosity: {
     value: 1,
-    kind: m.API
+    kind: g.API
   },
   workerPort: {
     value: null,
-    kind: m.WORKER
+    kind: g.WORKER
   },
   workerSrc: {
     value: "../build/pdf.worker.mjs",
-    kind: m.WORKER
+    kind: g.WORKER
   }
 };
-fe.defaultUrl = {
+ce.defaultUrl = {
   value: "compressed.tracemonkey-pldi-09.pdf",
-  kind: m.VIEWER
-}, fe.sandboxBundleSrc = {
+  kind: g.VIEWER
+}, ce.sandboxBundleSrc = {
   value: "../build/pdf.sandbox.mjs",
-  kind: m.VIEWER
-}, fe.viewerCssTheme = {
+  kind: g.VIEWER
+}, ce.viewerCssTheme = {
   value: 0,
-  kind: m.VIEWER + m.PREFERENCE
-}, fe.enableFakeMLManager = {
+  kind: g.VIEWER + g.PREFERENCE
+}, ce.enableFakeMLManager = {
   value: !0,
-  kind: m.VIEWER
+  kind: g.VIEWER
 };
-fe.disablePreferences = {
+ce.disablePreferences = {
   value: !1,
-  kind: m.VIEWER
+  kind: g.VIEWER
 };
 var Ce;
-const re = class re {
+const se = class se {
   static get(e) {
     return o(this, Ce).get(e);
   }
   static getAll(e = null, t = !1) {
     const i = /* @__PURE__ */ Object.create(null);
-    for (const n in fe) {
-      const s = fe[n];
+    for (const n in ce) {
+      const s = ce[n];
       e && !(e & s.kind) || (i[n] = t ? s.value : o(this, Ce).get(n));
     }
     return i;
@@ -3493,16 +3481,16 @@ const re = class re {
     });
   }
   static setAll(e, t = !1) {
-    this._hasInvokedSet || (this._hasInvokedSet = !0);
+    this._hasInvokedSet ||= !0;
     let i;
     for (const n in e) {
-      const s = fe[n], r = e[n];
-      if (!s || !(typeof r == typeof s.value || Wn[(typeof r).toUpperCase()] & s.type))
+      const s = ce[n], r = e[n];
+      if (!s || !(typeof r == typeof s.value || Un[(typeof r).toUpperCase()] & s.type))
         continue;
       const {
         kind: l
       } = s;
-      t && !(l & m.BROWSER || l & m.PREFERENCE) || (this.eventBus && l & m.EVENT_DISPATCH && (i || (i = /* @__PURE__ */ new Map())).set(n, r), o(this, Ce).set(n, r));
+      t && !(l & g.BROWSER || l & g.PREFERENCE) || (this.eventBus && l & g.EVENT_DISPATCH && (i ||= /* @__PURE__ */ new Map()).set(n, r), o(this, Ce).set(n, r));
     }
     if (i)
       for (const [n, s] of i)
@@ -3512,39 +3500,38 @@ const re = class re {
         });
   }
 };
-Ce = new WeakMap(), h(re, "AppOptions"), rn(re, "eventBus"), b(re, Ce, /* @__PURE__ */ new Map()), (() => {
-  for (const e in fe)
-    o(re, Ce).set(e, fe[e].value);
-  for (const [e, t] of $n)
-    o(re, Ce).set(e, t);
-  re._hasInvokedSet = !1, re._checkDisablePreferences = () => re.get("disablePreferences") ? !0 : (re._hasInvokedSet && console.warn('The Preferences may override manually set AppOptions; please use the "disablePreferences"-option to prevent that.'), !1);
+Ce = new WeakMap(), h(se, "AppOptions"), Zs(se, "eventBus"), m(se, Ce, /* @__PURE__ */ new Map()), (() => {
+  for (const e in ce)
+    o(se, Ce).set(e, ce[e].value);
+  for (const [e, t] of Hn)
+    o(se, Ce).set(e, t);
+  se._hasInvokedSet = !1, se._checkDisablePreferences = () => se.get("disablePreferences") ? !0 : (se._hasInvokedSet && console.warn('The Preferences may override manually set AppOptions; please use the "disablePreferences"-option to prevent that.'), !1);
 })();
-let zn = re;
-var le;
-const js = class js {
+let $n = se;
+var oe;
+const Os = class Os {
   constructor(e) {
-    b(this, le, null);
+    m(this, oe, null);
     this.pageIndex = e.pageIndex;
   }
   async render(e = "display") {
-    e !== "display" || o(this, le) || this._cancelled || f(this, le, new ro({
+    e !== "display" || o(this, oe) || this._cancelled || f(this, oe, new ro({
       pageIndex: this.pageIndex
     }));
   }
   cancel() {
-    this._cancelled = !0, o(this, le) && (o(this, le).destroy(), f(this, le, null));
+    this._cancelled = !0, o(this, oe) && (o(this, oe).destroy(), f(this, oe, null));
   }
   setParent(e) {
-    var t;
-    (t = o(this, le)) == null || t.setParent(e);
+    o(this, oe)?.setParent(e);
   }
   getDrawLayer() {
-    return o(this, le);
+    return o(this, oe);
   }
 };
-le = new WeakMap(), h(js, "DrawLayerBuilder");
-let Gn = js;
-const Ir = {
+oe = new WeakMap(), h(Os, "DrawLayerBuilder");
+let Wn = Os;
+const Ar = {
   Document: null,
   DocumentFragment: null,
   Part: "group",
@@ -3586,59 +3573,56 @@ const Ir = {
   Formula: null,
   Artifact: null
 }, sl = /^H(\d+)$/;
-var yt, ae, vt, Pt, xt, Me, ge, Kn, ea, Xn;
-const Fs = class Fs {
+var wt, re, _t, vt, yt, Ne, fe, zn, qr, Gn;
+const Ds = class Ds {
   constructor(e, t) {
-    b(this, ge);
-    b(this, yt);
-    b(this, ae, null);
-    b(this, vt);
-    b(this, Pt, /* @__PURE__ */ new Map());
-    b(this, xt);
-    b(this, Me, null);
-    f(this, yt, e.getStructTree()), f(this, xt, t);
+    m(this, fe);
+    m(this, wt);
+    m(this, re, null);
+    m(this, _t);
+    m(this, vt, /* @__PURE__ */ new Map());
+    m(this, yt);
+    m(this, Ne, null);
+    f(this, wt, e.getStructTree()), f(this, yt, t);
   }
   async render() {
-    var n;
-    if (o(this, vt))
-      return o(this, vt);
+    if (o(this, _t))
+      return o(this, _t);
     const {
       promise: e,
       resolve: t,
       reject: i
     } = Promise.withResolvers();
-    f(this, vt, e);
+    f(this, _t, e);
     try {
-      f(this, ae, c(this, ge, Xn).call(this, await o(this, yt)));
-    } catch (s) {
-      i(s);
+      f(this, re, u(this, fe, Gn).call(this, await o(this, wt)));
+    } catch (n) {
+      i(n);
     }
-    return f(this, yt, null), (n = o(this, ae)) == null || n.classList.add("structTree"), t(o(this, ae)), e;
+    return f(this, wt, null), o(this, re)?.classList.add("structTree"), t(o(this, re)), e;
   }
   async getAriaAttributes(e) {
     try {
-      return await this.render(), o(this, Pt).get(e);
+      return await this.render(), o(this, vt).get(e);
     } catch {
     }
     return null;
   }
   hide() {
-    o(this, ae) && !o(this, ae).hidden && (o(this, ae).hidden = !0);
+    o(this, re) && !o(this, re).hidden && (o(this, re).hidden = !0);
   }
   show() {
-    var e;
-    (e = o(this, ae)) != null && e.hidden && (o(this, ae).hidden = !1);
+    o(this, re)?.hidden && (o(this, re).hidden = !1);
   }
   addElementsToTextLayer() {
-    var e;
-    if (o(this, Me)) {
-      for (const [t, i] of o(this, Me))
-        (e = document.getElementById(t)) == null || e.append(i);
-      o(this, Me).clear(), f(this, Me, null);
+    if (o(this, Ne)) {
+      for (const [e, t] of o(this, Ne))
+        document.getElementById(e)?.append(t);
+      o(this, Ne).clear(), f(this, Ne, null);
     }
   }
 };
-yt = new WeakMap(), ae = new WeakMap(), vt = new WeakMap(), Pt = new WeakMap(), xt = new WeakMap(), Me = new WeakMap(), ge = new WeakSet(), Kn = /* @__PURE__ */ h(function(e, t) {
+wt = new WeakMap(), re = new WeakMap(), _t = new WeakMap(), vt = new WeakMap(), yt = new WeakMap(), Ne = new WeakMap(), fe = new WeakSet(), zn = /* @__PURE__ */ h(function(e, t) {
   const {
     alt: i,
     id: n,
@@ -3646,22 +3630,22 @@ yt = new WeakMap(), ae = new WeakMap(), vt = new WeakMap(), Pt = new WeakMap(), 
   } = e;
   if (i !== void 0) {
     let r = !1;
-    const l = Kt(i);
+    const l = zt(i);
     for (const d of e.children)
       if (d.type === "annotation") {
-        let u = o(this, Pt).get(d.id);
-        u || (u = /* @__PURE__ */ new Map(), o(this, Pt).set(d.id, u)), u.set("aria-label", l), r = !0;
+        let c = o(this, vt).get(d.id);
+        c || (c = /* @__PURE__ */ new Map(), o(this, vt).set(d.id, c)), c.set("aria-label", l), r = !0;
       }
     r || t.setAttribute("aria-label", l);
   }
-  n !== void 0 && t.setAttribute("aria-owns", n), s !== void 0 && t.setAttribute("lang", Kt(s, !0));
-}, "#setAttributes"), ea = /* @__PURE__ */ h(function(e, t) {
+  n !== void 0 && t.setAttribute("aria-owns", n), s !== void 0 && t.setAttribute("lang", zt(s, !0));
+}, "#setAttributes"), qr = /* @__PURE__ */ h(function(e, t) {
   const {
     alt: i,
     bbox: n,
     children: s
-  } = e, r = s == null ? void 0 : s[0];
-  if (!o(this, xt) || !i || !n || (r == null ? void 0 : r.type) !== "content")
+  } = e, r = s?.[0];
+  if (!o(this, yt) || !i || !n || r?.type !== "content")
     return !1;
   const {
     id: l
@@ -3670,16 +3654,16 @@ yt = new WeakMap(), ae = new WeakMap(), vt = new WeakMap(), Pt = new WeakMap(), 
     return !1;
   t.setAttribute("aria-owns", l);
   const d = document.createElement("span");
-  (o(this, Me) || f(this, Me, /* @__PURE__ */ new Map())).set(l, d), d.setAttribute("role", "img"), d.setAttribute("aria-label", Kt(i));
+  (o(this, Ne) || f(this, Ne, /* @__PURE__ */ new Map())).set(l, d), d.setAttribute("role", "img"), d.setAttribute("aria-label", zt(i));
   const {
-    pageHeight: u,
-    pageX: g,
+    pageHeight: c,
+    pageX: p,
     pageY: E
-  } = o(this, xt), w = "calc(var(--scale-factor)*", {
-    style: L
+  } = o(this, yt), w = "calc(var(--scale-factor)*", {
+    style: A
   } = d;
-  return L.width = `${w}${n[2] - n[0]}px)`, L.height = `${w}${n[3] - n[1]}px)`, L.left = `${w}${n[0] - g}px)`, L.top = `${w}${u - n[3] + E}px)`, !0;
-}, "#addImageInTextLayer"), Xn = /* @__PURE__ */ h(function(e) {
+  return A.width = `${w}${n[2] - n[0]}px)`, A.height = `${w}${n[3] - n[1]}px)`, A.left = `${w}${n[0] - p}px)`, A.top = `${w}${c - n[3] + E}px)`, !0;
+}, "#addImageInTextLayer"), Gn = /* @__PURE__ */ h(function(e) {
   if (!e)
     return null;
   const t = document.createElement("span");
@@ -3687,69 +3671,69 @@ yt = new WeakMap(), ae = new WeakMap(), vt = new WeakMap(), Pt = new WeakMap(), 
     const {
       role: i
     } = e, n = i.match(sl);
-    if (n ? (t.setAttribute("role", "heading"), t.setAttribute("aria-level", n[1])) : Ir[i] && t.setAttribute("role", Ir[i]), i === "Figure" && c(this, ge, ea).call(this, e, t))
+    if (n ? (t.setAttribute("role", "heading"), t.setAttribute("aria-level", n[1])) : Ar[i] && t.setAttribute("role", Ar[i]), i === "Figure" && u(this, fe, qr).call(this, e, t))
       return t;
   }
-  if (c(this, ge, Kn).call(this, e, t), e.children)
+  if (u(this, fe, zn).call(this, e, t), e.children)
     if (e.children.length === 1 && "id" in e.children[0])
-      c(this, ge, Kn).call(this, e.children[0], t);
+      u(this, fe, zn).call(this, e.children[0], t);
     else
       for (const i of e.children)
-        t.append(c(this, ge, Xn).call(this, i));
+        t.append(u(this, fe, Gn).call(this, i));
   return t;
-}, "#walk"), h(Fs, "StructTreeLayerBuilder");
-let Qi = Fs;
-var Ee, ie, we, ke, St, Vi, ai, Qn;
-const Ke = class Ke {
+}, "#walk"), h(Ds, "StructTreeLayerBuilder");
+let Xi = Ds;
+var be, te, Ee, Me, Pt, ji, si, Xn;
+const Ge = class Ge {
   constructor() {
-    b(this, ai);
-    b(this, Ee, !1);
-    b(this, ie, null);
-    b(this, we, /* @__PURE__ */ new Map());
-    b(this, ke, /* @__PURE__ */ new Map());
+    m(this, si);
+    m(this, be, !1);
+    m(this, te, null);
+    m(this, Ee, /* @__PURE__ */ new Map());
+    m(this, Me, /* @__PURE__ */ new Map());
   }
   setTextMapping(e) {
-    f(this, ie, e);
+    f(this, te, e);
   }
   enable() {
-    if (o(this, Ee))
+    if (o(this, be))
       throw new Error("TextAccessibilityManager is already enabled.");
-    if (!o(this, ie))
+    if (!o(this, te))
       throw new Error("Text divs and strings have not been set.");
-    if (f(this, Ee, !0), f(this, ie, o(this, ie).slice()), o(this, ie).sort(c(Ke, St, Vi)), o(this, we).size > 0) {
-      const e = o(this, ie);
-      for (const [t, i] of o(this, we)) {
+    if (f(this, be, !0), f(this, te, o(this, te).slice()), o(this, te).sort(u(Ge, Pt, ji)), o(this, Ee).size > 0) {
+      const e = o(this, te);
+      for (const [t, i] of o(this, Ee)) {
         if (!document.getElementById(t)) {
-          o(this, we).delete(t);
+          o(this, Ee).delete(t);
           continue;
         }
-        c(this, ai, Qn).call(this, t, e[i]);
+        u(this, si, Xn).call(this, t, e[i]);
       }
     }
-    for (const [e, t] of o(this, ke))
+    for (const [e, t] of o(this, Me))
       this.addPointerInTextLayer(e, t);
-    o(this, ke).clear();
+    o(this, Me).clear();
   }
   disable() {
-    o(this, Ee) && (o(this, ke).clear(), f(this, ie, null), f(this, Ee, !1));
+    o(this, be) && (o(this, Me).clear(), f(this, te, null), f(this, be, !1));
   }
   removePointerInTextLayer(e) {
-    if (!o(this, Ee)) {
-      o(this, ke).delete(e);
+    if (!o(this, be)) {
+      o(this, Me).delete(e);
       return;
     }
-    const t = o(this, ie);
+    const t = o(this, te);
     if (!t || t.length === 0)
       return;
     const {
       id: i
-    } = e, n = o(this, we).get(i);
+    } = e, n = o(this, Ee).get(i);
     if (n === void 0)
       return;
     const s = t[n];
-    o(this, we).delete(i);
+    o(this, Ee).delete(i);
     let r = s.getAttribute("aria-owns");
-    r != null && r.includes(i) && (r = r.split(" ").filter((l) => l !== i).join(" "), r ? s.setAttribute("aria-owns", r) : (s.removeAttribute("aria-owns"), s.setAttribute("role", "presentation")));
+    r?.includes(i) && (r = r.split(" ").filter((l) => l !== i).join(" "), r ? s.setAttribute("aria-owns", r) : (s.removeAttribute("aria-owns"), s.setAttribute("role", "presentation")));
   }
   addPointerInTextLayer(e, t) {
     const {
@@ -3757,60 +3741,60 @@ const Ke = class Ke {
     } = e;
     if (!i)
       return null;
-    if (!o(this, Ee))
-      return o(this, ke).set(e, t), null;
+    if (!o(this, be))
+      return o(this, Me).set(e, t), null;
     t && this.removePointerInTextLayer(e);
-    const n = o(this, ie);
+    const n = o(this, te);
     if (!n || n.length === 0)
       return null;
-    const s = Zt(n, (u) => {
-      var g;
-      return c(g = Ke, St, Vi).call(g, e, u) < 0;
+    const s = Kt(n, (c) => {
+      var p;
+      return u(p = Ge, Pt, ji).call(p, e, c) < 0;
     }), r = Math.max(0, s - 1), l = n[r];
-    c(this, ai, Qn).call(this, i, l), o(this, we).set(i, r);
+    u(this, si, Xn).call(this, i, l), o(this, Ee).set(i, r);
     const d = l.parentNode;
-    return d != null && d.classList.contains("markedContent") ? d.id : null;
+    return d?.classList.contains("markedContent") ? d.id : null;
   }
   moveElementInDOM(e, t, i, n) {
     const s = this.addPointerInTextLayer(i, n);
     if (!e.hasChildNodes())
       return e.append(t), s;
-    const r = Array.from(e.childNodes).filter((u) => u !== t);
+    const r = Array.from(e.childNodes).filter((c) => c !== t);
     if (r.length === 0)
       return s;
-    const l = i || t, d = Zt(r, (u) => {
-      var g;
-      return c(g = Ke, St, Vi).call(g, l, u) < 0;
+    const l = i || t, d = Kt(r, (c) => {
+      var p;
+      return u(p = Ge, Pt, ji).call(p, l, c) < 0;
     });
     return d === 0 ? r[0].before(t) : r[d - 1].after(t), s;
   }
 };
-Ee = new WeakMap(), ie = new WeakMap(), we = new WeakMap(), ke = new WeakMap(), St = new WeakSet(), Vi = /* @__PURE__ */ h(function(e, t) {
+be = new WeakMap(), te = new WeakMap(), Ee = new WeakMap(), Me = new WeakMap(), Pt = new WeakSet(), ji = /* @__PURE__ */ h(function(e, t) {
   const i = e.getBoundingClientRect(), n = t.getBoundingClientRect();
   if (i.width === 0 && i.height === 0)
     return 1;
   if (n.width === 0 && n.height === 0)
     return -1;
-  const s = i.y, r = i.y + i.height, l = i.y + i.height / 2, d = n.y, u = n.y + n.height, g = n.y + n.height / 2;
-  if (l <= d && g >= r)
+  const s = i.y, r = i.y + i.height, l = i.y + i.height / 2, d = n.y, c = n.y + n.height, p = n.y + n.height / 2;
+  if (l <= d && p >= r)
     return -1;
-  if (g <= s && l >= u)
+  if (p <= s && l >= c)
     return 1;
   const E = i.x + i.width / 2, w = n.x + n.width / 2;
   return E - w;
-}, "#compareElementPositions"), ai = new WeakSet(), Qn = /* @__PURE__ */ h(function(e, t) {
+}, "#compareElementPositions"), si = new WeakSet(), Xn = /* @__PURE__ */ h(function(e, t) {
   const i = t.getAttribute("aria-owns");
-  i != null && i.includes(e) || t.setAttribute("aria-owns", i ? `${i} ${e}` : e), t.removeAttribute("role");
-}, "#addIdToAriaOwns"), b(Ke, St), h(Ke, "TextAccessibilityManager");
-let Zn = Ke;
-var Oe;
-const Vs = class Vs {
+  i?.includes(e) || t.setAttribute("aria-owns", i ? `${i} ${e}` : e), t.removeAttribute("role");
+}, "#addIdToAriaOwns"), m(Ge, Pt), h(Ge, "TextAccessibilityManager");
+let Kn = Ge;
+var ke;
+const js = class js {
   constructor({
     findController: e,
     eventBus: t,
     pageIndex: i
   }) {
-    b(this, Oe, null);
+    m(this, ke, null);
     this.findController = e, this.matches = [], this.eventBus = t, this.pageIdx = i, this.textDivs = null, this.textContentItemsStr = null, this.enabled = !1;
   }
   setTextMapping(e, t) {
@@ -3821,15 +3805,14 @@ const Vs = class Vs {
       throw new Error("Text divs and strings have not been set.");
     if (this.enabled)
       throw new Error("TextHighlighter is already enabled.");
-    this.enabled = !0, o(this, Oe) || (f(this, Oe, new AbortController()), this.eventBus._on("updatetextlayermatches", (e) => {
+    this.enabled = !0, o(this, ke) || (f(this, ke, new AbortController()), this.eventBus._on("updatetextlayermatches", (e) => {
       (e.pageIndex === this.pageIdx || e.pageIndex === -1) && this._updateMatches();
     }, {
-      signal: o(this, Oe).signal
+      signal: o(this, ke).signal
     })), this._updateMatches();
   }
   disable() {
-    var e;
-    this.enabled && (this.enabled = !1, (e = o(this, Oe)) == null || e.abort(), f(this, Oe, null), this._updateMatches(!0));
+    this.enabled && (this.enabled = !1, o(this, ke)?.abort(), f(this, ke, null), this._updateMatches(!0));
   }
   _convertMatches(e, t) {
     if (!e)
@@ -3839,22 +3822,22 @@ const Vs = class Vs {
     } = this;
     let n = 0, s = 0;
     const r = i.length - 1, l = [];
-    for (let d = 0, u = e.length; d < u; d++) {
-      let g = e[d];
-      for (; n !== r && g >= s + i[n].length; )
+    for (let d = 0, c = e.length; d < c; d++) {
+      let p = e[d];
+      for (; n !== r && p >= s + i[n].length; )
         s += i[n].length, n++;
       n === i.length && console.error("Could not find a matching mapping");
       const E = {
         begin: {
           divIdx: n,
-          offset: g - s
+          offset: p - s
         }
       };
-      for (g += t[d]; n !== r && g > s + i[n].length; )
+      for (p += t[d]; n !== r && p > s + i[n].length; )
         s += i[n].length, n++;
       E.end = {
         divIdx: n,
-        offset: g - s
+        offset: p - s
       }, l.push(E);
     }
     return l;
@@ -3869,64 +3852,64 @@ const Vs = class Vs {
       textContentItemsStr: n,
       textDivs: s
     } = this, r = i === t.selected.pageIdx, l = t.selected.matchIdx, d = t.state.highlightAll;
-    let u = null;
-    const g = {
+    let c = null;
+    const p = {
       offset: void 0
     };
-    function E(T, M) {
-      const v = T.divIdx;
-      return s[v].textContent = "", w(v, 0, T.offset, M);
+    function E(N, M) {
+      const x = N.divIdx;
+      return s[x].textContent = "", w(x, 0, N.offset, M);
     }
     h(E, "beginText");
-    function w(T, M, v, C) {
-      let F = s[T];
-      if (F.nodeType === Node.TEXT_NODE) {
-        const V = document.createElement("span");
-        F.before(V), V.append(F), s[T] = V, F = V;
+    function w(N, M, x, P) {
+      let k = s[N];
+      if (k.nodeType === Node.TEXT_NODE) {
+        const j = document.createElement("span");
+        k.before(j), j.append(k), s[N] = j, k = j;
       }
-      const B = n[T].substring(M, v), W = document.createTextNode(B);
-      if (C) {
-        const V = document.createElement("span");
-        if (V.className = `${C} appended`, V.append(W), F.append(V), C.includes("selected")) {
+      const F = n[N].substring(M, x), B = document.createTextNode(F);
+      if (P) {
+        const j = document.createElement("span");
+        if (j.className = `${P} appended`, j.append(B), k.append(j), P.includes("selected")) {
           const {
-            left: p
-          } = V.getClientRects()[0], _ = F.getBoundingClientRect().left;
-          return p - _;
+            left: b
+          } = j.getClientRects()[0], _ = k.getBoundingClientRect().left;
+          return b - _;
         }
         return 0;
       }
-      return F.append(W), 0;
+      return k.append(B), 0;
     }
     h(w, "appendTextToDiv");
-    let L = l, I = L + 1;
+    let A = l, C = A + 1;
     if (d)
-      L = 0, I = e.length;
+      A = 0, C = e.length;
     else if (!r)
       return;
-    let P = -1, S = -1;
-    for (let T = L; T < I; T++) {
-      const M = e[T], v = M.begin;
-      if (v.divIdx === P && v.offset === S)
+    let I = -1, L = -1;
+    for (let N = A; N < C; N++) {
+      const M = e[N], x = M.begin;
+      if (x.divIdx === I && x.offset === L)
         continue;
-      P = v.divIdx, S = v.offset;
-      const C = M.end, F = r && T === l, B = F ? " selected" : "";
-      let W = 0;
-      if (!u || v.divIdx !== u.divIdx ? (u !== null && w(u.divIdx, u.offset, g.offset), E(v)) : w(u.divIdx, u.offset, v.offset), v.divIdx === C.divIdx)
-        W = w(v.divIdx, v.offset, C.offset, "highlight" + B);
+      I = x.divIdx, L = x.offset;
+      const P = M.end, k = r && N === l, F = k ? " selected" : "";
+      let B = 0;
+      if (!c || x.divIdx !== c.divIdx ? (c !== null && w(c.divIdx, c.offset, p.offset), E(x)) : w(c.divIdx, c.offset, x.offset), x.divIdx === P.divIdx)
+        B = w(x.divIdx, x.offset, P.offset, "highlight" + F);
       else {
-        W = w(v.divIdx, v.offset, g.offset, "highlight begin" + B);
-        for (let V = v.divIdx + 1, p = C.divIdx; V < p; V++)
-          s[V].className = "highlight middle" + B;
-        E(C, "highlight end" + B);
+        B = w(x.divIdx, x.offset, p.offset, "highlight begin" + F);
+        for (let j = x.divIdx + 1, b = P.divIdx; j < b; j++)
+          s[j].className = "highlight middle" + F;
+        E(P, "highlight end" + F);
       }
-      u = C, F && t.scrollMatchIntoView({
-        element: s[v.divIdx],
-        selectedLeft: W,
+      c = P, k && t.scrollMatchIntoView({
+        element: s[x.divIdx],
+        selectedLeft: B,
         pageIndex: i,
         matchIndex: l
       });
     }
-    u && w(u.divIdx, u.offset, g.offset);
+    c && w(c.divIdx, c.offset, p.offset);
   }
   _updateMatches(e = !1) {
     if (!this.enabled && !e)
@@ -3940,24 +3923,24 @@ const Vs = class Vs {
       textDivs: r
     } = this;
     let l = -1;
-    for (const g of i) {
-      const E = Math.max(l, g.begin.divIdx);
-      for (let w = E, L = g.end.divIdx; w <= L; w++) {
-        const I = r[w];
-        I.textContent = s[w], I.className = "";
+    for (const p of i) {
+      const E = Math.max(l, p.begin.divIdx);
+      for (let w = E, A = p.end.divIdx; w <= A; w++) {
+        const C = r[w];
+        C.textContent = s[w], C.className = "";
       }
-      l = g.end.divIdx + 1;
+      l = p.end.divIdx + 1;
     }
-    if (!(t != null && t.highlightMatches) || e)
+    if (!t?.highlightMatches || e)
       return;
-    const d = t.pageMatches[n] || null, u = t.pageMatchesLength[n] || null;
-    this.matches = this._convertMatches(d, u), this._renderMatches(this.matches);
+    const d = t.pageMatches[n] || null, c = t.pageMatchesLength[n] || null;
+    this.matches = this._convertMatches(d, c), this._renderMatches(this.matches);
   }
 };
-Oe = new WeakMap(), h(Vs, "TextHighlighter");
-let Jn = Vs;
-var oi, li, Je, he, Y, De, nn, ta, Ft, ia, na;
-const me = class me {
+ke = new WeakMap(), h(js, "TextHighlighter");
+let Zn = js;
+var ri, ai, Qe, le, J, Oe, en, ea, Dt, ta, ia;
+const ge = class ge {
   constructor({
     pdfPage: e,
     highlighter: t = null,
@@ -3965,23 +3948,23 @@ const me = class me {
     enablePermissions: n = !1,
     onAppend: s = null
   }) {
-    b(this, nn);
-    b(this, oi, !1);
-    b(this, li, null);
-    b(this, Je, !1);
-    b(this, he, null);
-    this.pdfPage = e, this.highlighter = t, this.accessibilityManager = i, f(this, oi, n === !0), f(this, li, s), this.div = document.createElement("div"), this.div.tabIndex = 0, this.div.className = "textLayer";
+    m(this, en);
+    m(this, ri, !1);
+    m(this, ai, null);
+    m(this, Qe, !1);
+    m(this, le, null);
+    this.pdfPage = e, this.highlighter = t, this.accessibilityManager = i, f(this, ri, n === !0), f(this, ai, s), this.div = document.createElement("div"), this.div.tabIndex = 0, this.div.className = "textLayer";
   }
   async render(e, t = null) {
-    var r, l, d, u, g;
-    if (o(this, Je) && o(this, he)) {
-      o(this, he).update({
+    var r;
+    if (o(this, Qe) && o(this, le)) {
+      o(this, le).update({
         viewport: e,
         onBefore: this.hide.bind(this)
       }), this.show();
       return;
     }
-    this.cancel(), f(this, he, new co({
+    this.cancel(), f(this, le, new co({
       textContentSource: this.pdfPage.streamTextContent(t || {
         includeMarkedContent: !0,
         disableNormalization: !0
@@ -3992,25 +3975,23 @@ const me = class me {
     const {
       textDivs: i,
       textContentItemsStr: n
-    } = o(this, he);
-    (r = this.highlighter) == null || r.setTextMapping(i, n), (l = this.accessibilityManager) == null || l.setTextMapping(i), await o(this, he).render(), f(this, Je, !0);
+    } = o(this, le);
+    this.highlighter?.setTextMapping(i, n), this.accessibilityManager?.setTextMapping(i), await o(this, le).render(), f(this, Qe, !0);
     const s = document.createElement("div");
-    s.className = "endOfContent", this.div.append(s), c(this, nn, ta).call(this, s), (d = o(this, li)) == null || d.call(this, this.div), (u = this.highlighter) == null || u.enable(), (g = this.accessibilityManager) == null || g.enable();
+    s.className = "endOfContent", this.div.append(s), u(this, en, ea).call(this, s), (r = o(this, ai)) == null || r.call(this, this.div), this.highlighter?.enable(), this.accessibilityManager?.enable();
   }
   hide() {
-    var e;
-    !this.div.hidden && o(this, Je) && ((e = this.highlighter) == null || e.disable(), this.div.hidden = !0);
+    !this.div.hidden && o(this, Qe) && (this.highlighter?.disable(), this.div.hidden = !0);
   }
   show() {
-    var e;
-    this.div.hidden && o(this, Je) && (this.div.hidden = !1, (e = this.highlighter) == null || e.enable());
+    this.div.hidden && o(this, Qe) && (this.div.hidden = !1, this.highlighter?.enable());
   }
   cancel() {
-    var e, t, i, n;
-    (e = o(this, he)) == null || e.cancel(), f(this, he, null), (t = this.highlighter) == null || t.disable(), (i = this.accessibilityManager) == null || i.disable(), c(n = me, Ft, ia).call(n, this.div);
+    var e;
+    o(this, le)?.cancel(), f(this, le, null), this.highlighter?.disable(), this.accessibilityManager?.disable(), u(e = ge, Dt, ta).call(e, this.div);
   }
 };
-oi = new WeakMap(), li = new WeakMap(), Je = new WeakMap(), he = new WeakMap(), Y = new WeakMap(), De = new WeakMap(), nn = new WeakSet(), ta = /* @__PURE__ */ h(function(e) {
+ri = new WeakMap(), ai = new WeakMap(), Qe = new WeakMap(), le = new WeakMap(), J = new WeakMap(), Oe = new WeakMap(), en = new WeakSet(), ea = /* @__PURE__ */ h(function(e) {
   var i;
   const {
     div: t
@@ -4018,22 +3999,21 @@ oi = new WeakMap(), li = new WeakMap(), Je = new WeakMap(), he = new WeakMap(), 
   t.addEventListener("mousedown", () => {
     t.classList.add("selecting");
   }), t.addEventListener("copy", (n) => {
-    if (!o(this, oi)) {
+    if (!o(this, ri)) {
       const s = document.getSelection();
-      n.clipboardData.setData("text/plain", Kt(lo(s.toString())));
+      n.clipboardData.setData("text/plain", zt(lo(s.toString())));
     }
-    Sn(n);
-  }), o(me, Y).set(t, e), c(i = me, Ft, na).call(i);
-}, "#bindMouse"), Ft = new WeakSet(), ia = /* @__PURE__ */ h(function(e) {
-  var t;
-  o(this, Y).delete(e), o(this, Y).size === 0 && ((t = o(this, De)) == null || t.abort(), f(this, De, null));
-}, "#removeGlobalSelectionListener"), na = /* @__PURE__ */ h(function() {
-  if (o(this, De))
+    Pn(n);
+  }), o(ge, J).set(t, e), u(i = ge, Dt, ia).call(i);
+}, "#bindMouse"), Dt = new WeakSet(), ta = /* @__PURE__ */ h(function(e) {
+  o(this, J).delete(e), o(this, J).size === 0 && (o(this, Oe)?.abort(), f(this, Oe, null));
+}, "#removeGlobalSelectionListener"), ia = /* @__PURE__ */ h(function() {
+  if (o(this, Oe))
     return;
-  f(this, De, new AbortController());
+  f(this, Oe, new AbortController());
   const {
     signal: e
-  } = o(this, De), t = /* @__PURE__ */ h((r, l) => {
+  } = o(this, Oe), t = /* @__PURE__ */ h((r, l) => {
     l.append(r), r.style.width = "", r.style.height = "", l.classList.remove("selecting");
   }, "reset");
   let i = !1;
@@ -4042,47 +4022,46 @@ oi = new WeakMap(), li = new WeakMap(), Je = new WeakMap(), he = new WeakMap(), 
   }, {
     signal: e
   }), document.addEventListener("pointerup", () => {
-    i = !1, o(this, Y).forEach(t);
+    i = !1, o(this, J).forEach(t);
   }, {
     signal: e
   }), window.addEventListener("blur", () => {
-    i = !1, o(this, Y).forEach(t);
+    i = !1, o(this, J).forEach(t);
   }, {
     signal: e
   }), document.addEventListener("keyup", () => {
-    i || o(this, Y).forEach(t);
+    i || o(this, J).forEach(t);
   }, {
     signal: e
   });
   var n, s;
   document.addEventListener("selectionchange", () => {
-    var L;
     const r = document.getSelection();
     if (r.rangeCount === 0) {
-      o(this, Y).forEach(t);
+      o(this, J).forEach(t);
       return;
     }
     const l = /* @__PURE__ */ new Set();
-    for (let I = 0; I < r.rangeCount; I++) {
-      const P = r.getRangeAt(I);
-      for (const S of o(this, Y).keys())
-        !l.has(S) && P.intersectsNode(S) && l.add(S);
+    for (let A = 0; A < r.rangeCount; A++) {
+      const C = r.getRangeAt(A);
+      for (const I of o(this, J).keys())
+        !l.has(I) && C.intersectsNode(I) && l.add(I);
     }
-    for (const [I, P] of o(this, Y))
-      l.has(I) ? I.classList.add("selecting") : t(P, I);
-    if (n ?? (n = getComputedStyle(o(this, Y).values().next().value).getPropertyValue("-moz-user-select") === "none"), n)
+    for (const [A, C] of o(this, J))
+      l.has(A) ? A.classList.add("selecting") : t(C, A);
+    if (n ??= getComputedStyle(o(this, J).values().next().value).getPropertyValue("-moz-user-select") === "none", n)
       return;
-    const d = r.getRangeAt(0), u = s && (d.compareBoundaryPoints(Range.END_TO_END, s) === 0 || d.compareBoundaryPoints(Range.START_TO_END, s) === 0);
-    let g = u ? d.startContainer : d.endContainer;
-    g.nodeType === Node.TEXT_NODE && (g = g.parentNode);
-    const E = (L = g.parentElement) == null ? void 0 : L.closest(".textLayer"), w = o(this, Y).get(E);
-    w && (w.style.width = E.style.width, w.style.height = E.style.height, g.parentElement.insertBefore(w, u ? g : g.nextSibling)), s = d.cloneRange();
+    const d = r.getRangeAt(0), c = s && (d.compareBoundaryPoints(Range.END_TO_END, s) === 0 || d.compareBoundaryPoints(Range.START_TO_END, s) === 0);
+    let p = c ? d.startContainer : d.endContainer;
+    p.nodeType === Node.TEXT_NODE && (p = p.parentNode);
+    const E = p.parentElement?.closest(".textLayer"), w = o(this, J).get(E);
+    w && (w.style.width = E.style.width, w.style.height = E.style.height, p.parentElement.insertBefore(w, c ? p : p.nextSibling)), s = d.cloneRange();
   }, {
     signal: e
   });
-}, "#enableGlobalSelectionListener"), b(me, Ft), h(me, "TextLayerBuilder"), b(me, Y, /* @__PURE__ */ new Map()), b(me, De, null);
-let Ji = me;
-const Bs = class Bs {
+}, "#enableGlobalSelectionListener"), m(ge, Dt), h(ge, "TextLayerBuilder"), m(ge, J, /* @__PURE__ */ new Map()), m(ge, Oe, null);
+let Zi = ge;
+const Fs = class Fs {
   constructor({
     pdfPage: e,
     annotationStorage: t = null,
@@ -4103,7 +4082,7 @@ const Bs = class Bs {
         linkService: this.linkService,
         intent: t
       };
-      return this.div = document.createElement("div"), s.div = this.div, un.render(s);
+      return this.div = document.createElement("div"), s.div = this.div, hn.render(s);
     }
     const i = await this.pdfPage.getXfa();
     if (this._cancelled || !i)
@@ -4120,7 +4099,7 @@ const Bs = class Bs {
       linkService: this.linkService,
       intent: t
     };
-    return this.div ? un.update(n) : (this.div = document.createElement("div"), n.div = this.div, un.render(n));
+    return this.div ? hn.update(n) : (this.div = document.createElement("div"), n.div = this.div, hn.render(n));
   }
   cancel() {
     this._cancelled = !0;
@@ -4129,8 +4108,8 @@ const Bs = class Bs {
     this.div && (this.div.hidden = !0);
   }
 };
-h(Bs, "XfaLayerBuilder");
-let Yi = Bs;
+h(Fs, "XfaLayerBuilder");
+let Qi = Fs;
 const rl = {
   annotationEditorUIManager: null,
   annotationStorage: null,
@@ -4140,91 +4119,87 @@ const rl = {
   findController: null,
   hasJSActionsPromise: null,
   get linkService() {
-    return new Qt();
+    return new Xt();
   }
 }, al = /* @__PURE__ */ new Map([["canvasWrapper", 0], ["textLayer", 1], ["annotationLayer", 2], ["annotationEditorLayer", 3], ["xfaLayer", 3]]);
-var Ye, je, hi, qe, di, Fe, Ve, At, ui, ci, fi, et, It, Lt, _e, Be, N, ft, Bi, $t, Yn, qn, es, ts, is, sa, ra, ns, ss;
-const Hs = class Hs {
+var Je, De, oi, Ye, li, je, Fe, xt, hi, di, ui, qe, St, At, we, Ve, R, ut, Fi, Ht, Qn, Jn, Yn, qn, es, na, sa, ts, is;
+const Vs = class Vs {
   constructor(e) {
-    b(this, N);
-    b(this, Ye, Pe.ENABLE_FORMS);
-    b(this, je, null);
-    b(this, hi, !1);
-    b(this, qe, !1);
-    b(this, di, !1);
-    b(this, Fe, null);
-    b(this, Ve, null);
-    b(this, At, null);
-    b(this, ui, null);
-    b(this, ci, 1);
-    b(this, fi, 1);
-    b(this, et, null);
-    b(this, It, U.INITIAL);
-    b(this, Lt, ce.ENABLE);
-    b(this, _e, {
+    m(this, R);
+    m(this, Je, ye.ENABLE_FORMS);
+    m(this, De, null);
+    m(this, oi, !1);
+    m(this, Ye, !1);
+    m(this, li, !1);
+    m(this, je, null);
+    m(this, Fe, null);
+    m(this, xt, null);
+    m(this, hi, null);
+    m(this, di, 1);
+    m(this, ui, 1);
+    m(this, qe, null);
+    m(this, St, H.INITIAL);
+    m(this, At, ue.ENABLE);
+    m(this, we, {
       directDrawing: !0,
       initialOptionalContent: !0,
       regularAnnotations: !0
     });
-    b(this, Be, [null, null, null, null]);
-    var s, r;
+    m(this, Ve, [null, null, null, null]);
     const t = e.container, i = e.defaultViewport;
-    this.id = e.id, this.renderingId = "page" + this.id, f(this, Fe, e.layerProperties || rl), this.pdfPage = null, this.pageLabel = null, this.rotation = 0, this.scale = e.scale || Rr, this.viewport = i, this.pdfPageRotate = i.rotation, this._optionalContentConfigPromise = e.optionalContentConfigPromise || null, f(this, Lt, e.textLayerMode ?? ce.ENABLE), f(this, Ye, e.annotationMode ?? Pe.ENABLE_FORMS), this.imageResourcesPath = e.imageResourcesPath || "", this.maxCanvasPixels = e.maxCanvasPixels ?? zn.get("maxCanvasPixels"), this.pageColors = e.pageColors || null, f(this, hi, e.enableHWA || !1), this.eventBus = e.eventBus, this.renderingQueue = e.renderingQueue, this.l10n = e.l10n, this.l10n || (this.l10n = new Dt()), this.renderTask = null, this.resume = null, this._isStandalone = !((s = this.renderingQueue) != null && s.hasViewer()), this._container = t, this._annotationCanvasMap = null, this.annotationLayer = null, this.annotationEditorLayer = null, this.textLayer = null, this.xfaLayer = null, this.structTreeLayer = null, this.drawLayer = null;
+    this.id = e.id, this.renderingId = "page" + this.id, f(this, je, e.layerProperties || rl), this.pdfPage = null, this.pageLabel = null, this.rotation = 0, this.scale = e.scale || Tr, this.viewport = i, this.pdfPageRotate = i.rotation, this._optionalContentConfigPromise = e.optionalContentConfigPromise || null, f(this, At, e.textLayerMode ?? ue.ENABLE), f(this, Je, e.annotationMode ?? ye.ENABLE_FORMS), this.imageResourcesPath = e.imageResourcesPath || "", this.maxCanvasPixels = e.maxCanvasPixels ?? $n.get("maxCanvasPixels"), this.pageColors = e.pageColors || null, f(this, oi, e.enableHWA || !1), this.eventBus = e.eventBus, this.renderingQueue = e.renderingQueue, this.l10n = e.l10n, this.l10n ||= new kt(), this.renderTask = null, this.resume = null, this._isStandalone = !this.renderingQueue?.hasViewer(), this._container = t, this._annotationCanvasMap = null, this.annotationLayer = null, this.annotationEditorLayer = null, this.textLayer = null, this.xfaLayer = null, this.structTreeLayer = null, this.drawLayer = null;
     const n = document.createElement("div");
     if (n.className = "page", n.setAttribute("data-page-number", this.id), n.setAttribute("role", "region"), n.setAttribute("data-l10n-id", "pdfjs-page-landmark"), n.setAttribute("data-l10n-args", JSON.stringify({
       page: this.id
-    })), this.div = n, c(this, N, Bi).call(this), t == null || t.append(n), this._isStandalone) {
-      t == null || t.style.setProperty("--scale-factor", this.scale * be.PDF_TO_CSS_UNITS), (r = this.pageColors) != null && r.background && (t == null || t.style.setProperty("--page-bg-color", this.pageColors.background));
+    })), this.div = n, u(this, R, Fi).call(this), t?.append(n), this._isStandalone) {
+      t?.style.setProperty("--scale-factor", this.scale * me.PDF_TO_CSS_UNITS), this.pageColors?.background && t?.style.setProperty("--page-bg-color", this.pageColors.background);
       const {
-        optionalContentConfigPromise: l
+        optionalContentConfigPromise: s
       } = e;
-      l && l.then((d) => {
-        l === this._optionalContentConfigPromise && (o(this, _e).initialOptionalContent = d.hasInitialVisibility);
+      s && s.then((r) => {
+        s === this._optionalContentConfigPromise && (o(this, we).initialOptionalContent = r.hasInitialVisibility);
       }), e.l10n || this.l10n.translate(this.div);
     }
   }
   get renderingState() {
-    return o(this, It);
+    return o(this, St);
   }
   set renderingState(e) {
-    if (e !== o(this, It))
-      switch (f(this, It, e), o(this, Ve) && (clearTimeout(o(this, Ve)), f(this, Ve, null)), e) {
-        case U.PAUSED:
+    if (e !== o(this, St))
+      switch (f(this, St, e), o(this, Fe) && (clearTimeout(o(this, Fe)), f(this, Fe, null)), e) {
+        case H.PAUSED:
           this.div.classList.remove("loading");
           break;
-        case U.RUNNING:
-          this.div.classList.add("loadingIcon"), f(this, Ve, setTimeout(() => {
-            this.div.classList.add("loading"), f(this, Ve, null);
+        case H.RUNNING:
+          this.div.classList.add("loadingIcon"), f(this, Fe, setTimeout(() => {
+            this.div.classList.add("loading"), f(this, Fe, null);
           }, 0));
           break;
-        case U.INITIAL:
-        case U.FINISHED:
+        case H.INITIAL:
+        case H.FINISHED:
           this.div.classList.remove("loadingIcon", "loading");
           break;
       }
   }
   setPdfPage(e) {
-    var i, n, s, r;
-    this._isStandalone && (((i = this.pageColors) == null ? void 0 : i.foreground) === "CanvasText" || ((n = this.pageColors) == null ? void 0 : n.background) === "Canvas") && ((s = this._container) == null || s.style.setProperty("--hcm-highlight-filter", e.filterFactory.addHighlightHCMFilter("highlight", "CanvasText", "Canvas", "HighlightText", "Highlight")), (r = this._container) == null || r.style.setProperty("--hcm-highlight-selected-filter", e.filterFactory.addHighlightHCMFilter("highlight_selected", "CanvasText", "Canvas", "HighlightText", "Highlight"))), this.pdfPage = e, this.pdfPageRotate = e.rotate;
+    this._isStandalone && (this.pageColors?.foreground === "CanvasText" || this.pageColors?.background === "Canvas") && (this._container?.style.setProperty("--hcm-highlight-filter", e.filterFactory.addHighlightHCMFilter("highlight", "CanvasText", "Canvas", "HighlightText", "Highlight")), this._container?.style.setProperty("--hcm-highlight-selected-filter", e.filterFactory.addHighlightHCMFilter("highlight_selected", "CanvasText", "Canvas", "HighlightText", "Highlight"))), this.pdfPage = e, this.pdfPageRotate = e.rotate;
     const t = (this.rotation + this.pdfPageRotate) % 360;
     this.viewport = e.getViewport({
-      scale: this.scale * be.PDF_TO_CSS_UNITS,
+      scale: this.scale * me.PDF_TO_CSS_UNITS,
       rotation: t
-    }), c(this, N, Bi).call(this), this.reset();
+    }), u(this, R, Fi).call(this), this.reset();
   }
   destroy() {
-    var e;
-    this.reset(), (e = this.pdfPage) == null || e.cleanup();
+    this.reset(), this.pdfPage?.cleanup();
   }
   hasEditableAnnotations() {
-    var e;
-    return !!((e = this.annotationLayer) != null && e.hasEditableAnnotations());
+    return !!this.annotationLayer?.hasEditableAnnotations();
   }
   get _textHighlighter() {
-    return zi(this, "_textHighlighter", new Jn({
+    return $i(this, "_textHighlighter", new Zn({
       pageIndex: this.id - 1,
       eventBus: this.eventBus,
-      findController: o(this, Fe).findController
+      findController: o(this, je).findController
     }));
   }
   reset({
@@ -4234,32 +4209,31 @@ const Hs = class Hs {
     keepTextLayer: n = !1,
     keepCanvasWrapper: s = !1
   } = {}) {
-    var L, I, P, S, T;
     this.cancelRendering({
       keepAnnotationLayer: e,
       keepAnnotationEditorLayer: t,
       keepXfaLayer: i,
       keepTextLayer: n
-    }), this.renderingState = U.INITIAL;
-    const r = this.div, l = r.childNodes, d = e && ((L = this.annotationLayer) == null ? void 0 : L.div) || null, u = t && ((I = this.annotationEditorLayer) == null ? void 0 : I.div) || null, g = i && ((P = this.xfaLayer) == null ? void 0 : P.div) || null, E = n && ((S = this.textLayer) == null ? void 0 : S.div) || null, w = s && o(this, je) || null;
-    for (let M = l.length - 1; M >= 0; M--) {
-      const v = l[M];
-      switch (v) {
+    }), this.renderingState = H.INITIAL;
+    const r = this.div, l = r.childNodes, d = e && this.annotationLayer?.div || null, c = t && this.annotationEditorLayer?.div || null, p = i && this.xfaLayer?.div || null, E = n && this.textLayer?.div || null, w = s && o(this, De) || null;
+    for (let A = l.length - 1; A >= 0; A--) {
+      const C = l[A];
+      switch (C) {
         case d:
-        case u:
-        case g:
+        case c:
+        case p:
         case E:
         case w:
           continue;
       }
-      v.remove();
-      const C = o(this, Be).indexOf(v);
-      C >= 0 && (o(this, Be)[C] = null);
+      C.remove();
+      const I = o(this, Ve).indexOf(C);
+      I >= 0 && (o(this, Ve)[I] = null);
     }
-    r.removeAttribute("data-loaded"), d && this.annotationLayer.hide(), u && this.annotationEditorLayer.hide(), g && this.xfaLayer.hide(), E && this.textLayer.hide(), (T = this.structTreeLayer) == null || T.hide(), !s && o(this, je) && (f(this, je, null), c(this, N, ns).call(this));
+    r.removeAttribute("data-loaded"), d && this.annotationLayer.hide(), c && this.annotationEditorLayer.hide(), p && this.xfaLayer.hide(), E && this.textLayer.hide(), this.structTreeLayer?.hide(), !s && o(this, De) && (f(this, De, null), u(this, R, ts).call(this));
   }
   toggleEditingMode(e) {
-    this.hasEditableAnnotations() && (f(this, di, e), this.reset({
+    this.hasEditableAnnotations() && (f(this, li, e), this.reset({
       keepAnnotationLayer: !0,
       keepAnnotationEditorLayer: !0,
       keepXfaLayer: !0,
@@ -4273,52 +4247,51 @@ const Hs = class Hs {
     optionalContentConfigPromise: i = null,
     drawingDelay: n = -1
   }) {
-    var r;
-    this.scale = e || this.scale, typeof t == "number" && (this.rotation = t), i instanceof Promise && (this._optionalContentConfigPromise = i, i.then((l) => {
-      i === this._optionalContentConfigPromise && (o(this, _e).initialOptionalContent = l.hasInitialVisibility);
-    })), o(this, _e).directDrawing = !0;
+    this.scale = e || this.scale, typeof t == "number" && (this.rotation = t), i instanceof Promise && (this._optionalContentConfigPromise = i, i.then((r) => {
+      i === this._optionalContentConfigPromise && (o(this, we).initialOptionalContent = r.hasInitialVisibility);
+    })), o(this, we).directDrawing = !0;
     const s = (this.rotation + this.pdfPageRotate) % 360;
     if (this.viewport = this.viewport.clone({
-      scale: this.scale * be.PDF_TO_CSS_UNITS,
+      scale: this.scale * me.PDF_TO_CSS_UNITS,
       rotation: s
-    }), c(this, N, Bi).call(this), this._isStandalone && ((r = this._container) == null || r.style.setProperty("--scale-factor", this.viewport.scale)), this.canvas) {
-      let l = !1;
-      if (o(this, qe)) {
+    }), u(this, R, Fi).call(this), this._isStandalone && this._container?.style.setProperty("--scale-factor", this.viewport.scale), this.canvas) {
+      let r = !1;
+      if (o(this, Ye)) {
         if (this.maxCanvasPixels === 0)
-          l = !0;
+          r = !0;
         else if (this.maxCanvasPixels > 0) {
           const {
-            width: u,
-            height: g
+            width: d,
+            height: c
           } = this.viewport, {
-            sx: E,
-            sy: w
+            sx: p,
+            sy: E
           } = this.outputScale;
-          l = (Math.floor(u) * E | 0) * (Math.floor(g) * w | 0) > this.maxCanvasPixels;
+          r = (Math.floor(d) * p | 0) * (Math.floor(c) * E | 0) > this.maxCanvasPixels;
         }
       }
-      const d = n >= 0 && n < 1e3;
-      if (d || l) {
-        if (d && !l && this.renderingState !== U.FINISHED && (this.cancelRendering({
+      const l = n >= 0 && n < 1e3;
+      if (l || r) {
+        if (l && !r && this.renderingState !== H.FINISHED && (this.cancelRendering({
           keepAnnotationLayer: !0,
           keepAnnotationEditorLayer: !0,
           keepXfaLayer: !0,
           keepTextLayer: !0,
           cancelExtraDelay: n
-        }), this.renderingState = U.FINISHED, o(this, _e).directDrawing = !1), this.cssTransform({
+        }), this.renderingState = H.FINISHED, o(this, we).directDrawing = !1), this.cssTransform({
           redrawAnnotationLayer: !0,
           redrawAnnotationEditorLayer: !0,
           redrawXfaLayer: !0,
-          redrawTextLayer: !d,
-          hideTextLayer: d
-        }), d)
+          redrawTextLayer: !l,
+          hideTextLayer: l
+        }), l)
           return;
         this.eventBus.dispatch("pagerendered", {
           source: this,
           pageNumber: this.id,
           cssTransform: !0,
           timestamp: performance.now(),
-          error: o(this, et)
+          error: o(this, qe)
         });
         return;
       }
@@ -4338,8 +4311,7 @@ const Hs = class Hs {
     keepTextLayer: n = !1,
     cancelExtraDelay: s = 0
   } = {}) {
-    var r;
-    this.renderTask && (this.renderTask.cancel(s), this.renderTask = null), this.resume = null, this.textLayer && (!n || !this.textLayer.div) && (this.textLayer.cancel(), this.textLayer = null), this.annotationLayer && (!e || !this.annotationLayer.div) && (this.annotationLayer.cancel(), this.annotationLayer = null, this._annotationCanvasMap = null), this.structTreeLayer && !this.textLayer && (this.structTreeLayer = null), this.annotationEditorLayer && (!t || !this.annotationEditorLayer.div) && (this.drawLayer && (this.drawLayer.cancel(), this.drawLayer = null), this.annotationEditorLayer.cancel(), this.annotationEditorLayer = null), this.xfaLayer && (!i || !this.xfaLayer.div) && (this.xfaLayer.cancel(), this.xfaLayer = null, (r = this._textHighlighter) == null || r.disable());
+    this.renderTask && (this.renderTask.cancel(s), this.renderTask = null), this.resume = null, this.textLayer && (!n || !this.textLayer.div) && (this.textLayer.cancel(), this.textLayer = null), this.annotationLayer && (!e || !this.annotationLayer.div) && (this.annotationLayer.cancel(), this.annotationLayer = null, this._annotationCanvasMap = null), this.structTreeLayer && !this.textLayer && (this.structTreeLayer = null), this.annotationEditorLayer && (!t || !this.annotationEditorLayer.div) && (this.drawLayer && (this.drawLayer.cancel(), this.drawLayer = null), this.annotationEditorLayer.cancel(), this.annotationEditorLayer = null), this.xfaLayer && (!i || !this.xfaLayer.div) && (this.xfaLayer.cancel(), this.xfaLayer = null, this._textHighlighter?.disable());
   }
   cssTransform({
     redrawAnnotationLayer: e = !1,
@@ -4348,25 +4320,24 @@ const Hs = class Hs {
     redrawTextLayer: n = !1,
     hideTextLayer: s = !1
   }) {
-    var d;
     const {
       canvas: r
     } = this;
     if (!r)
       return;
-    const l = o(this, At);
+    const l = o(this, xt);
     if (this.viewport !== l) {
-      const u = (360 + this.viewport.rotation - l.rotation) % 360;
-      if (u === 90 || u === 270) {
+      const d = (360 + this.viewport.rotation - l.rotation) % 360;
+      if (d === 90 || d === 270) {
         const {
-          width: g,
-          height: E
-        } = this.viewport, w = E / g, L = g / E;
-        r.style.transform = `rotate(${u}deg) scale(${w},${L})`;
+          width: c,
+          height: p
+        } = this.viewport, E = p / c, w = c / p;
+        r.style.transform = `rotate(${d}deg) scale(${E},${w})`;
       } else
-        r.style.transform = u === 0 ? "" : `rotate(${u}deg)`;
+        r.style.transform = d === 0 ? "" : `rotate(${d}deg)`;
     }
-    e && this.annotationLayer && c(this, N, Yn).call(this), t && this.annotationEditorLayer && (this.drawLayer && c(this, N, es).call(this), c(this, N, qn).call(this)), i && this.xfaLayer && c(this, N, ts).call(this), this.textLayer && (s ? (this.textLayer.hide(), (d = this.structTreeLayer) == null || d.hide()) : n && c(this, N, is).call(this));
+    e && this.annotationLayer && u(this, R, Qn).call(this), t && this.annotationEditorLayer && (this.drawLayer && u(this, R, Yn).call(this), u(this, R, Jn).call(this)), i && this.xfaLayer && u(this, R, qn).call(this), this.textLayer && (s ? (this.textLayer.hide(), this.structTreeLayer?.hide()) : n && u(this, R, es).call(this));
   }
   get width() {
     return this.viewport.width;
@@ -4378,7 +4349,7 @@ const Hs = class Hs {
     return this.viewport.convertToPdfPoint(e, t);
   }
   async draw() {
-    this.renderingState !== U.INITIAL && (console.error("Must be in new state before drawing"), this.reset());
+    this.renderingState !== H.INITIAL && (console.error("Must be in new state before drawing"), this.reset());
     const {
       div: e,
       l10n: t,
@@ -4387,126 +4358,125 @@ const Hs = class Hs {
       viewport: s
     } = this;
     if (!n)
-      throw this.renderingState = U.FINISHED, new Error("pdfPage is not loaded");
-    this.renderingState = U.RUNNING;
-    let r = o(this, je);
-    if (r || (r = f(this, je, document.createElement("div")), r.classList.add("canvasWrapper"), c(this, N, ft).call(this, r, "canvasWrapper")), !this.textLayer && o(this, Lt) !== ce.DISABLE && !n.isPureXfa && (this._accessibilityManager || (this._accessibilityManager = new Zn()), this.textLayer = new Ji({
+      throw this.renderingState = H.FINISHED, new Error("pdfPage is not loaded");
+    this.renderingState = H.RUNNING;
+    let r = o(this, De);
+    if (r || (r = f(this, De, document.createElement("div")), r.classList.add("canvasWrapper"), u(this, R, ut).call(this, r, "canvasWrapper")), !this.textLayer && o(this, At) !== ue.DISABLE && !n.isPureXfa && (this._accessibilityManager ||= new Kn(), this.textLayer = new Zi({
       pdfPage: n,
       highlighter: this._textHighlighter,
       accessibilityManager: this._accessibilityManager,
-      enablePermissions: o(this, Lt) === ce.ENABLE_PERMISSIONS,
-      onAppend: /* @__PURE__ */ h((x) => {
-        this.l10n.pause(), c(this, N, ft).call(this, x, "textLayer"), this.l10n.resume();
+      enablePermissions: o(this, At) === ue.ENABLE_PERMISSIONS,
+      onAppend: /* @__PURE__ */ h((v) => {
+        this.l10n.pause(), u(this, R, ut).call(this, v, "textLayer"), this.l10n.resume();
       }, "onAppend")
-    })), !this.annotationLayer && o(this, Ye) !== Pe.DISABLE) {
+    })), !this.annotationLayer && o(this, Je) !== ye.DISABLE) {
       const {
-        annotationStorage: x,
-        annotationEditorUIManager: j,
-        downloadManager: D,
-        enableScripting: k,
-        fieldObjectsPromise: z,
-        hasJSActionsPromise: ut,
+        annotationStorage: v,
+        annotationEditorUIManager: O,
+        downloadManager: Z,
+        enableScripting: K,
+        fieldObjectsPromise: nn,
+        hasJSActionsPromise: ma,
         linkService: ba
-      } = o(this, Fe);
-      this._annotationCanvasMap || (this._annotationCanvasMap = /* @__PURE__ */ new Map()), this.annotationLayer = new Gi({
+      } = o(this, je);
+      this._annotationCanvasMap ||= /* @__PURE__ */ new Map(), this.annotationLayer = new Wi({
         pdfPage: n,
-        annotationStorage: x,
+        annotationStorage: v,
         imageResourcesPath: this.imageResourcesPath,
-        renderForms: o(this, Ye) === Pe.ENABLE_FORMS,
+        renderForms: o(this, Je) === ye.ENABLE_FORMS,
         linkService: ba,
-        downloadManager: D,
-        enableScripting: k,
-        hasJSActionsPromise: ut,
-        fieldObjectsPromise: z,
+        downloadManager: Z,
+        enableScripting: K,
+        hasJSActionsPromise: ma,
+        fieldObjectsPromise: nn,
         annotationCanvasMap: this._annotationCanvasMap,
         accessibilityManager: this._accessibilityManager,
-        annotationEditorUIManager: j,
+        annotationEditorUIManager: O,
         onAppend: /* @__PURE__ */ h((Ea) => {
-          c(this, N, ft).call(this, Ea, "annotationLayer");
+          u(this, R, ut).call(this, Ea, "annotationLayer");
         }, "onAppend")
       });
     }
-    const l = /* @__PURE__ */ h((x) => {
-      if (I == null || I(!1), this.renderingQueue && !this.renderingQueue.isHighestPriority(this)) {
-        this.renderingState = U.PAUSED, this.resume = () => {
-          this.renderingState = U.RUNNING, x();
+    const l = /* @__PURE__ */ h((v) => {
+      if (C?.(!1), this.renderingQueue && !this.renderingQueue.isHighestPriority(this)) {
+        this.renderingState = H.PAUSED, this.resume = () => {
+          this.renderingState = H.RUNNING, v();
         };
         return;
       }
-      x();
+      v();
     }, "renderContinueCallback"), {
       width: d,
-      height: u
-    } = s, g = document.createElement("canvas");
-    g.setAttribute("role", "presentation");
-    const E = !!(i != null && i.background && (i != null && i.foreground)), w = this.canvas, L = !w && !E;
-    this.canvas = g, f(this, At, s);
-    let I = /* @__PURE__ */ h((x) => {
-      if (L) {
-        r.prepend(g), I = null;
+      height: c
+    } = s, p = document.createElement("canvas");
+    p.setAttribute("role", "presentation");
+    const E = !!(i?.background && i?.foreground), w = this.canvas, A = !w && !E;
+    this.canvas = p, f(this, xt, s);
+    let C = /* @__PURE__ */ h((v) => {
+      if (A) {
+        r.prepend(p), C = null;
         return;
       }
-      x && (w ? (w.replaceWith(g), w.width = w.height = 0) : r.prepend(g), I = null);
+      v && (w ? (w.replaceWith(p), w.width = w.height = 0) : r.prepend(p), C = null);
     }, "showCanvas");
-    const P = g.getContext("2d", {
+    const I = p.getContext("2d", {
       alpha: !1,
-      willReadFrequently: !o(this, hi)
-    }), S = this.outputScale = new ho();
+      willReadFrequently: !o(this, oi)
+    }), L = this.outputScale = new ho();
     if (this.maxCanvasPixels === 0) {
-      const x = 1 / this.scale;
-      S.sx *= x, S.sy *= x, f(this, qe, !0);
+      const v = 1 / this.scale;
+      L.sx *= v, L.sy *= v, f(this, Ye, !0);
     } else if (this.maxCanvasPixels > 0) {
-      const x = d * u, j = Math.sqrt(this.maxCanvasPixels / x);
-      S.sx > j || S.sy > j ? (S.sx = j, S.sy = j, f(this, qe, !0)) : f(this, qe, !1);
+      const v = d * c, O = Math.sqrt(this.maxCanvasPixels / v);
+      L.sx > O || L.sy > O ? (L.sx = O, L.sy = O, f(this, Ye, !0)) : f(this, Ye, !1);
     }
-    const T = ir(S.sx), M = ir(S.sy), v = g.width = Li(Ti(d * S.sx), T[0]), C = g.height = Li(Ti(u * S.sy), M[0]), F = Li(Ti(d), T[1]), B = Li(Ti(u), M[1]);
-    S.sx = v / F, S.sy = C / B, o(this, ci) !== T[1] && (e.style.setProperty("--scale-round-x", `${T[1]}px`), f(this, ci, T[1])), o(this, fi) !== M[1] && (e.style.setProperty("--scale-round-y", `${M[1]}px`), f(this, fi, M[1]));
-    const W = S.scaled ? [S.sx, 0, 0, S.sy, 0, 0] : null, V = {
-      canvasContext: P,
-      transform: W,
+    const N = tr(L.sx), M = tr(L.sy), x = p.width = Ai(Ii(d * L.sx), N[0]), P = p.height = Ai(Ii(c * L.sy), M[0]), k = Ai(Ii(d), N[1]), F = Ai(Ii(c), M[1]);
+    L.sx = x / k, L.sy = P / F, o(this, di) !== N[1] && (e.style.setProperty("--scale-round-x", `${N[1]}px`), f(this, di, N[1])), o(this, ui) !== M[1] && (e.style.setProperty("--scale-round-y", `${M[1]}px`), f(this, ui, M[1]));
+    const B = L.scaled ? [L.sx, 0, 0, L.sy, 0, 0] : null, j = {
+      canvasContext: I,
+      transform: B,
       viewport: s,
-      annotationMode: o(this, Ye),
+      annotationMode: o(this, Je),
       optionalContentConfigPromise: this._optionalContentConfigPromise,
       annotationCanvasMap: this._annotationCanvasMap,
       pageColors: i,
-      isEditing: o(this, di)
-    }, p = this.renderTask = n.render(V);
-    p.onContinue = l;
-    const _ = p.promise.then(async () => {
-      var j;
-      I == null || I(!0), await c(this, N, ss).call(this, p), this.structTreeLayer || (this.structTreeLayer = new Qi(n, s.rawDims)), c(this, N, is).call(this), this.annotationLayer && await c(this, N, Yn).call(this);
+      isEditing: o(this, li)
+    }, b = this.renderTask = n.render(j);
+    b.onContinue = l;
+    const _ = b.promise.then(async () => {
+      C?.(!0), await u(this, R, is).call(this, b), this.structTreeLayer ||= new Xi(n, s.rawDims), u(this, R, es).call(this), this.annotationLayer && await u(this, R, Qn).call(this);
       const {
-        annotationEditorUIManager: x
-      } = o(this, Fe);
-      x && (this.drawLayer || (this.drawLayer = new Gn({
+        annotationEditorUIManager: v
+      } = o(this, je);
+      v && (this.drawLayer ||= new Wn({
         pageIndex: this.id
-      })), await c(this, N, es).call(this), this.drawLayer.setParent(r), this.annotationEditorLayer || (this.annotationEditorLayer = new Un({
-        uiManager: x,
+      }), await u(this, R, Yn).call(this), this.drawLayer.setParent(r), this.annotationEditorLayer ||= new Bn({
+        uiManager: v,
         pdfPage: n,
         l10n: t,
         structTreeLayer: this.structTreeLayer,
         accessibilityManager: this._accessibilityManager,
-        annotationLayer: (j = this.annotationLayer) == null ? void 0 : j.annotationLayer,
+        annotationLayer: this.annotationLayer?.annotationLayer,
         textLayer: this.textLayer,
         drawLayer: this.drawLayer.getDrawLayer(),
-        onAppend: /* @__PURE__ */ h((D) => {
-          c(this, N, ft).call(this, D, "annotationEditorLayer");
+        onAppend: /* @__PURE__ */ h((O) => {
+          u(this, R, ut).call(this, O, "annotationEditorLayer");
         }, "onAppend")
-      })), c(this, N, qn).call(this));
-    }, (x) => (x instanceof xn ? (w == null || w.remove(), c(this, N, ns).call(this)) : I == null || I(!0), c(this, N, ss).call(this, p, x)));
+      }), u(this, R, Jn).call(this));
+    }, (v) => (v instanceof yn ? (w?.remove(), u(this, R, ts).call(this)) : C?.(!0), u(this, R, is).call(this, b, v)));
     if (n.isPureXfa) {
       if (!this.xfaLayer) {
         const {
-          annotationStorage: x,
-          linkService: j
-        } = o(this, Fe);
-        this.xfaLayer = new Yi({
+          annotationStorage: v,
+          linkService: O
+        } = o(this, je);
+        this.xfaLayer = new Qi({
           pdfPage: n,
-          annotationStorage: x,
-          linkService: j
+          annotationStorage: v,
+          linkService: O
         });
       }
-      c(this, N, ts).call(this);
+      u(this, R, qn).call(this);
     }
     return e.setAttribute("data-loaded", !0), this.eventBus.dispatch("pagerender", {
       source: this,
@@ -4523,41 +4493,41 @@ const Hs = class Hs {
       directDrawing: e,
       initialOptionalContent: t,
       regularAnnotations: i
-    } = o(this, _e);
+    } = o(this, we);
     return e && t && i ? this.canvas : null;
   }
 };
-Ye = new WeakMap(), je = new WeakMap(), hi = new WeakMap(), qe = new WeakMap(), di = new WeakMap(), Fe = new WeakMap(), Ve = new WeakMap(), At = new WeakMap(), ui = new WeakMap(), ci = new WeakMap(), fi = new WeakMap(), et = new WeakMap(), It = new WeakMap(), Lt = new WeakMap(), _e = new WeakMap(), Be = new WeakMap(), N = new WeakSet(), ft = /* @__PURE__ */ h(function(e, t) {
-  const i = al.get(t), n = o(this, Be)[i];
-  if (o(this, Be)[i] = e, n) {
+Je = new WeakMap(), De = new WeakMap(), oi = new WeakMap(), Ye = new WeakMap(), li = new WeakMap(), je = new WeakMap(), Fe = new WeakMap(), xt = new WeakMap(), hi = new WeakMap(), di = new WeakMap(), ui = new WeakMap(), qe = new WeakMap(), St = new WeakMap(), At = new WeakMap(), we = new WeakMap(), Ve = new WeakMap(), R = new WeakSet(), ut = /* @__PURE__ */ h(function(e, t) {
+  const i = al.get(t), n = o(this, Ve)[i];
+  if (o(this, Ve)[i] = e, n) {
     n.replaceWith(e);
     return;
   }
   for (let s = i - 1; s >= 0; s--) {
-    const r = o(this, Be)[s];
+    const r = o(this, Ve)[s];
     if (r) {
       r.after(e);
       return;
     }
   }
   this.div.prepend(e);
-}, "#addLayer"), Bi = /* @__PURE__ */ h(function() {
+}, "#addLayer"), Fi = /* @__PURE__ */ h(function() {
   const {
     viewport: e
   } = this;
   if (this.pdfPage) {
-    if (o(this, ui) === e.rotation)
+    if (o(this, hi) === e.rotation)
       return;
-    f(this, ui, e.rotation);
+    f(this, hi, e.rotation);
   }
   uo(this.div, e, !0, !1);
-}, "#setDimensions"), $t = /* @__PURE__ */ h(function(e, t) {
+}, "#setDimensions"), Ht = /* @__PURE__ */ h(function(e, t) {
   this.eventBus.dispatch(e, {
     source: this,
     pageNumber: this.id,
     error: t
   });
-}, "#dispatchLayerRendered"), Yn = /* @__PURE__ */ h(async function() {
+}, "#dispatchLayerRendered"), Qn = /* @__PURE__ */ h(async function() {
   let e = null;
   try {
     await this.annotationLayer.render(this.viewport, {
@@ -4566,35 +4536,34 @@ Ye = new WeakMap(), je = new WeakMap(), hi = new WeakMap(), qe = new WeakMap(), 
   } catch (t) {
     console.error("#renderAnnotationLayer:", t), e = t;
   } finally {
-    c(this, N, $t).call(this, "annotationlayerrendered", e);
+    u(this, R, Ht).call(this, "annotationlayerrendered", e);
   }
-}, "#renderAnnotationLayer"), qn = /* @__PURE__ */ h(async function() {
+}, "#renderAnnotationLayer"), Jn = /* @__PURE__ */ h(async function() {
   let e = null;
   try {
     await this.annotationEditorLayer.render(this.viewport, "display");
   } catch (t) {
     console.error("#renderAnnotationEditorLayer:", t), e = t;
   } finally {
-    c(this, N, $t).call(this, "annotationeditorlayerrendered", e);
+    u(this, R, Ht).call(this, "annotationeditorlayerrendered", e);
   }
-}, "#renderAnnotationEditorLayer"), es = /* @__PURE__ */ h(async function() {
+}, "#renderAnnotationEditorLayer"), Yn = /* @__PURE__ */ h(async function() {
   try {
     await this.drawLayer.render("display");
   } catch (e) {
     console.error("#renderDrawLayer:", e);
   }
-}, "#renderDrawLayer"), ts = /* @__PURE__ */ h(async function() {
-  var t;
+}, "#renderDrawLayer"), qn = /* @__PURE__ */ h(async function() {
   let e = null;
   try {
-    const i = await this.xfaLayer.render(this.viewport, "display");
-    i != null && i.textDivs && this._textHighlighter && c(this, N, ra).call(this, i.textDivs);
-  } catch (i) {
-    console.error("#renderXfaLayer:", i), e = i;
+    const t = await this.xfaLayer.render(this.viewport, "display");
+    t?.textDivs && this._textHighlighter && u(this, R, sa).call(this, t.textDivs);
+  } catch (t) {
+    console.error("#renderXfaLayer:", t), e = t;
   } finally {
-    (t = this.xfaLayer) != null && t.div && (this.l10n.pause(), c(this, N, ft).call(this, this.xfaLayer.div, "xfaLayer"), this.l10n.resume()), c(this, N, $t).call(this, "xfalayerrendered", e);
+    this.xfaLayer?.div && (this.l10n.pause(), u(this, R, ut).call(this, this.xfaLayer.div, "xfaLayer"), this.l10n.resume()), u(this, R, Ht).call(this, "xfalayerrendered", e);
   }
-}, "#renderXfaLayer"), is = /* @__PURE__ */ h(async function() {
+}, "#renderXfaLayer"), es = /* @__PURE__ */ h(async function() {
   if (!this.textLayer)
     return;
   let e = null;
@@ -4605,38 +4574,37 @@ Ye = new WeakMap(), je = new WeakMap(), hi = new WeakMap(), qe = new WeakMap(), 
       return;
     console.error("#renderTextLayer:", t), e = t;
   }
-  c(this, N, $t).call(this, "textlayerrendered", e), c(this, N, sa).call(this);
-}, "#renderTextLayer"), sa = /* @__PURE__ */ h(async function() {
-  var t, i, n;
+  u(this, R, Ht).call(this, "textlayerrendered", e), u(this, R, na).call(this);
+}, "#renderTextLayer"), na = /* @__PURE__ */ h(async function() {
   if (!this.textLayer)
     return;
-  const e = await ((t = this.structTreeLayer) == null ? void 0 : t.render());
-  e && (this.l10n.pause(), (i = this.structTreeLayer) == null || i.addElementsToTextLayer(), this.canvas && e.parentNode !== this.canvas && this.canvas.append(e), this.l10n.resume()), (n = this.structTreeLayer) == null || n.show();
-}, "#renderStructTreeLayer"), ra = /* @__PURE__ */ h(async function(e) {
+  const e = await this.structTreeLayer?.render();
+  e && (this.l10n.pause(), this.structTreeLayer?.addElementsToTextLayer(), this.canvas && e.parentNode !== this.canvas && this.canvas.append(e), this.l10n.resume()), this.structTreeLayer?.show();
+}, "#renderStructTreeLayer"), sa = /* @__PURE__ */ h(async function(e) {
   const t = await this.pdfPage.getTextContent(), i = [];
   for (const n of t.items)
     i.push(n.str);
   this._textHighlighter.setTextMapping(e, i), this._textHighlighter.enable();
-}, "#buildXfaTextContentItems"), ns = /* @__PURE__ */ h(function() {
+}, "#buildXfaTextContentItems"), ts = /* @__PURE__ */ h(function() {
   const {
     canvas: e
   } = this;
-  e && (e.remove(), e.width = e.height = 0, this.canvas = null, f(this, At, null));
-}, "#resetCanvas"), ss = /* @__PURE__ */ h(async function(e, t = null) {
-  if (e === this.renderTask && (this.renderTask = null), t instanceof xn) {
-    f(this, et, null);
+  e && (e.remove(), e.width = e.height = 0, this.canvas = null, f(this, xt, null));
+}, "#resetCanvas"), is = /* @__PURE__ */ h(async function(e, t = null) {
+  if (e === this.renderTask && (this.renderTask = null), t instanceof yn) {
+    f(this, qe, null);
     return;
   }
-  if (f(this, et, t), this.renderingState = U.FINISHED, o(this, _e).regularAnnotations = !e.separateAnnots, this.eventBus.dispatch("pagerendered", {
+  if (f(this, qe, t), this.renderingState = H.FINISHED, o(this, we).regularAnnotations = !e.separateAnnots, this.eventBus.dispatch("pagerendered", {
     source: this,
     pageNumber: this.id,
     cssTransform: !1,
     timestamp: performance.now(),
-    error: o(this, et)
+    error: o(this, qe)
   }), t)
     throw t;
-}, "#finishRenderTask"), h(Hs, "PDFPageView");
-let qi = Hs;
+}, "#finishRenderTask"), h(Vs, "PDFPageView");
+let Ji = Vs;
 async function ol(a) {
   const e = "", t = e.split("#", 1)[0];
   let {
@@ -4656,14 +4624,14 @@ async function ol(a) {
     baseURL: t,
     filesize: r,
     filename: s || ao(e),
-    metadata: n == null ? void 0 : n.getRaw(),
-    authors: n == null ? void 0 : n.get("dc:creator"),
+    metadata: n?.getRaw(),
+    authors: n?.get("dc:creator"),
     numPages: a.numPages,
     URL: e
   };
 }
 h(ol, "docProperties");
-const Us = class Us {
+const Bs = class Bs {
   constructor(e) {
     this._ready = new Promise((t, i) => {
       import(
@@ -4690,90 +4658,87 @@ const Us = class Us {
     (await this._ready).nukeSandbox();
   }
 };
-h(Us, "GenericScripting");
-let rs = Us;
-var de, tt, gi, it, nt, pi, Q, ye, Tt, G, ne, X, aa, Hi, os, oa, Wt;
-const $s = class $s {
+h(Bs, "GenericScripting");
+let ns = Bs;
+var he, et, ci, tt, it, fi, X, _e, It, $, ie, z, ra, Vi, rs, aa, Ut;
+const Hs = class Hs {
   constructor({
     eventBus: e,
     externalServices: t = null,
     docProperties: i = null
   }) {
-    b(this, X);
-    b(this, de, null);
-    b(this, tt, null);
-    b(this, gi, null);
-    b(this, it, null);
-    b(this, nt, null);
-    b(this, pi, null);
-    b(this, Q, null);
-    b(this, ye, null);
-    b(this, Tt, !1);
-    b(this, G, null);
-    b(this, ne, null);
-    f(this, nt, e), f(this, pi, t), f(this, gi, i);
+    m(this, z);
+    m(this, he, null);
+    m(this, et, null);
+    m(this, ci, null);
+    m(this, tt, null);
+    m(this, it, null);
+    m(this, fi, null);
+    m(this, X, null);
+    m(this, _e, null);
+    m(this, It, !1);
+    m(this, $, null);
+    m(this, ie, null);
+    f(this, it, e), f(this, fi, t), f(this, ci, i);
   }
   setViewer(e) {
-    f(this, ye, e);
+    f(this, _e, e);
   }
   async setDocument(e) {
-    var l;
-    if (o(this, Q) && await c(this, X, Wt).call(this), f(this, Q, e), !e)
+    if (o(this, X) && await u(this, z, Ut).call(this), f(this, X, e), !e)
       return;
     const [t, i, n] = await Promise.all([e.getFieldObjects(), e.getCalculationOrderIds(), e.getJSActions()]);
     if (!t && !n) {
-      await c(this, X, Wt).call(this);
+      await u(this, z, Ut).call(this);
       return;
     }
-    if (e !== o(this, Q))
+    if (e !== o(this, X))
       return;
     try {
-      f(this, G, c(this, X, oa).call(this));
-    } catch (d) {
-      console.error("setDocument:", d), await c(this, X, Wt).call(this);
+      f(this, $, u(this, z, aa).call(this));
+    } catch (l) {
+      console.error("setDocument:", l), await u(this, z, Ut).call(this);
       return;
     }
-    const s = o(this, nt);
-    f(this, it, new AbortController());
+    const s = o(this, it);
+    f(this, tt, new AbortController());
     const {
       signal: r
-    } = o(this, it);
-    s._on("updatefromsandbox", (d) => {
-      (d == null ? void 0 : d.source) === window && c(this, X, aa).call(this, d.detail);
+    } = o(this, tt);
+    s._on("updatefromsandbox", (l) => {
+      l?.source === window && u(this, z, ra).call(this, l.detail);
     }, {
       signal: r
-    }), s._on("dispatcheventinsandbox", (d) => {
-      var u;
-      (u = o(this, G)) == null || u.dispatchEventInSandbox(d.detail);
+    }), s._on("dispatcheventinsandbox", (l) => {
+      o(this, $)?.dispatchEventInSandbox(l.detail);
     }, {
       signal: r
     }), s._on("pagechanging", ({
-      pageNumber: d,
-      previous: u
+      pageNumber: l,
+      previous: d
     }) => {
-      d !== u && (c(this, X, os).call(this, u), c(this, X, Hi).call(this, d));
+      l !== d && (u(this, z, rs).call(this, d), u(this, z, Vi).call(this, l));
     }, {
       signal: r
     }), s._on("pagerendered", ({
-      pageNumber: d
+      pageNumber: l
     }) => {
-      this._pageOpenPending.has(d) && d === o(this, ye).currentPageNumber && c(this, X, Hi).call(this, d);
+      this._pageOpenPending.has(l) && l === o(this, _e).currentPageNumber && u(this, z, Vi).call(this, l);
     }, {
       signal: r
     }), s._on("pagesdestroy", async () => {
-      var d, u;
-      await c(this, X, os).call(this, o(this, ye).currentPageNumber), await ((d = o(this, G)) == null ? void 0 : d.dispatchEventInSandbox({
+      await u(this, z, rs).call(this, o(this, _e).currentPageNumber), await o(this, $)?.dispatchEventInSandbox({
         id: "doc",
         name: "WillClose"
-      })), (u = o(this, de)) == null || u.resolve();
+      }), o(this, he)?.resolve();
     }, {
       signal: r
     });
     try {
-      const d = await o(this, gi).call(this, e);
-      if (e !== o(this, Q))
+      const l = await o(this, ci).call(this, e);
+      if (e !== o(this, X))
         return;
-      await o(this, G).createSandbox({
+      await o(this, $).createSandbox({
         objects: t,
         calculationOrder: i,
         appInfo: {
@@ -4781,76 +4746,70 @@ const $s = class $s {
           language: navigator.language
         },
         docInfo: {
-          ...d,
+          ...l,
           actions: n
         }
       }), s.dispatch("sandboxcreated", {
         source: this
       });
-    } catch (d) {
-      console.error("setDocument:", d), await c(this, X, Wt).call(this);
+    } catch (l) {
+      console.error("setDocument:", l), await u(this, z, Ut).call(this);
       return;
     }
-    await ((l = o(this, G)) == null ? void 0 : l.dispatchEventInSandbox({
+    await o(this, $)?.dispatchEventInSandbox({
       id: "doc",
       name: "Open"
-    })), await c(this, X, Hi).call(this, o(this, ye).currentPageNumber, !0), Promise.resolve().then(() => {
-      e === o(this, Q) && f(this, Tt, !0);
+    }), await u(this, z, Vi).call(this, o(this, _e).currentPageNumber, !0), Promise.resolve().then(() => {
+      e === o(this, X) && f(this, It, !0);
     });
   }
   async dispatchWillSave() {
-    var e;
-    return (e = o(this, G)) == null ? void 0 : e.dispatchEventInSandbox({
+    return o(this, $)?.dispatchEventInSandbox({
       id: "doc",
       name: "WillSave"
     });
   }
   async dispatchDidSave() {
-    var e;
-    return (e = o(this, G)) == null ? void 0 : e.dispatchEventInSandbox({
+    return o(this, $)?.dispatchEventInSandbox({
       id: "doc",
       name: "DidSave"
     });
   }
   async dispatchWillPrint() {
-    var e;
-    if (o(this, G)) {
-      await ((e = o(this, ne)) == null ? void 0 : e.promise), f(this, ne, Promise.withResolvers());
+    if (o(this, $)) {
+      await o(this, ie)?.promise, f(this, ie, Promise.withResolvers());
       try {
-        await o(this, G).dispatchEventInSandbox({
+        await o(this, $).dispatchEventInSandbox({
           id: "doc",
           name: "WillPrint"
         });
-      } catch (t) {
-        throw o(this, ne).resolve(), f(this, ne, null), t;
+      } catch (e) {
+        throw o(this, ie).resolve(), f(this, ie, null), e;
       }
-      await o(this, ne).promise;
+      await o(this, ie).promise;
     }
   }
   async dispatchDidPrint() {
-    var e;
-    return (e = o(this, G)) == null ? void 0 : e.dispatchEventInSandbox({
+    return o(this, $)?.dispatchEventInSandbox({
       id: "doc",
       name: "DidPrint"
     });
   }
   get destroyPromise() {
-    var e;
-    return ((e = o(this, tt)) == null ? void 0 : e.promise) || null;
+    return o(this, et)?.promise || null;
   }
   get ready() {
-    return o(this, Tt);
+    return o(this, It);
   }
   get _pageOpenPending() {
-    return zi(this, "_pageOpenPending", /* @__PURE__ */ new Set());
+    return $i(this, "_pageOpenPending", /* @__PURE__ */ new Set());
   }
   get _visitedPages() {
-    return zi(this, "_visitedPages", /* @__PURE__ */ new Map());
+    return $i(this, "_visitedPages", /* @__PURE__ */ new Map());
   }
 };
-de = new WeakMap(), tt = new WeakMap(), gi = new WeakMap(), it = new WeakMap(), nt = new WeakMap(), pi = new WeakMap(), Q = new WeakMap(), ye = new WeakMap(), Tt = new WeakMap(), G = new WeakMap(), ne = new WeakMap(), X = new WeakSet(), aa = /* @__PURE__ */ h(async function(e) {
-  var u, g;
-  const t = o(this, ye), i = t.isInPresentationMode || t.isChangingPresentationMode, {
+he = new WeakMap(), et = new WeakMap(), ci = new WeakMap(), tt = new WeakMap(), it = new WeakMap(), fi = new WeakMap(), X = new WeakMap(), _e = new WeakMap(), It = new WeakMap(), $ = new WeakMap(), ie = new WeakMap(), z = new WeakSet(), ra = /* @__PURE__ */ h(async function(e) {
+  const t = o(this, _e), i = t.isInPresentationMode || t.isChangingPresentationMode, {
     id: n,
     siblings: s,
     command: r,
@@ -4866,15 +4825,15 @@ de = new WeakMap(), tt = new WeakMap(), gi = new WeakMap(), it = new WeakMap(), 
         break;
       case "layout":
         if (!i) {
-          const E = Na(l);
-          t.spreadMode = E.spreadMode;
+          const c = Ca(l);
+          t.spreadMode = c.spreadMode;
         }
         break;
       case "page-num":
         t.currentPageNumber = l + 1;
         break;
       case "print":
-        await t.pagesPromise, o(this, nt).dispatch("print", {
+        await t.pagesPromise, o(this, it).dispatch("print", {
           source: this
         });
         break;
@@ -4885,7 +4844,7 @@ de = new WeakMap(), tt = new WeakMap(), gi = new WeakMap(), it = new WeakMap(), 
         i || (t.currentScaleValue = l);
         break;
       case "SaveAs":
-        o(this, nt).dispatch("download", {
+        o(this, it).dispatch("download", {
           source: this
         });
         break;
@@ -4908,7 +4867,7 @@ de = new WeakMap(), tt = new WeakMap(), gi = new WeakMap(), it = new WeakMap(), 
         i || t.decreaseScale();
         break;
       case "WillPrintFinished":
-        (u = o(this, ne)) == null || u.resolve(), f(this, ne, null);
+        o(this, ie)?.resolve(), f(this, ie, null);
         break;
     }
     return;
@@ -4917,80 +4876,77 @@ de = new WeakMap(), tt = new WeakMap(), gi = new WeakMap(), it = new WeakMap(), 
     return;
   delete e.id, delete e.siblings;
   const d = s ? [n, ...s] : [n];
-  for (const E of d) {
-    const w = document.querySelector(`[data-element-id="${E}"]`);
-    w ? w.dispatchEvent(new CustomEvent("updatefromsandbox", {
+  for (const c of d) {
+    const p = document.querySelector(`[data-element-id="${c}"]`);
+    p ? p.dispatchEvent(new CustomEvent("updatefromsandbox", {
       detail: e
-    })) : (g = o(this, Q)) == null || g.annotationStorage.setValue(E, e);
+    })) : o(this, X)?.annotationStorage.setValue(c, e);
   }
-}, "#updateFromSandbox"), Hi = /* @__PURE__ */ h(async function(e, t = !1) {
-  const i = o(this, Q), n = this._visitedPages;
-  if (t && f(this, de, Promise.withResolvers()), !o(this, de))
+}, "#updateFromSandbox"), Vi = /* @__PURE__ */ h(async function(e, t = !1) {
+  const i = o(this, X), n = this._visitedPages;
+  if (t && f(this, he, Promise.withResolvers()), !o(this, he))
     return;
-  const s = o(this, ye).getPageView(e - 1);
-  if ((s == null ? void 0 : s.renderingState) !== U.FINISHED) {
+  const s = o(this, _e).getPageView(e - 1);
+  if (s?.renderingState !== H.FINISHED) {
     this._pageOpenPending.add(e);
     return;
   }
   this._pageOpenPending.delete(e);
   const r = (async () => {
-    var d, u;
-    const l = await (n.has(e) ? null : (d = s.pdfPage) == null ? void 0 : d.getJSActions());
-    i === o(this, Q) && await ((u = o(this, G)) == null ? void 0 : u.dispatchEventInSandbox({
+    const l = await (n.has(e) ? null : s.pdfPage?.getJSActions());
+    i === o(this, X) && await o(this, $)?.dispatchEventInSandbox({
       id: "page",
       name: "PageOpen",
       pageNumber: e,
       actions: l
-    }));
+    });
   })();
   n.set(e, r);
-}, "#dispatchPageOpen"), os = /* @__PURE__ */ h(async function(e) {
-  var s;
-  const t = o(this, Q), i = this._visitedPages;
-  if (!o(this, de) || this._pageOpenPending.has(e))
+}, "#dispatchPageOpen"), rs = /* @__PURE__ */ h(async function(e) {
+  const t = o(this, X), i = this._visitedPages;
+  if (!o(this, he) || this._pageOpenPending.has(e))
     return;
   const n = i.get(e);
-  n && (i.set(e, null), await n, t === o(this, Q) && await ((s = o(this, G)) == null ? void 0 : s.dispatchEventInSandbox({
+  n && (i.set(e, null), await n, t === o(this, X) && await o(this, $)?.dispatchEventInSandbox({
     id: "page",
     name: "PageClose",
     pageNumber: e
-  })));
-}, "#dispatchPageClose"), oa = /* @__PURE__ */ h(function() {
-  if (f(this, tt, Promise.withResolvers()), o(this, G))
+  }));
+}, "#dispatchPageClose"), aa = /* @__PURE__ */ h(function() {
+  if (f(this, et, Promise.withResolvers()), o(this, $))
     throw new Error("#initScripting: Scripting already exists.");
-  return o(this, pi).createScripting();
-}, "#initScripting"), Wt = /* @__PURE__ */ h(async function() {
-  var e, t, i, n;
-  if (!o(this, G)) {
-    f(this, Q, null), (e = o(this, tt)) == null || e.resolve();
+  return o(this, fi).createScripting();
+}, "#initScripting"), Ut = /* @__PURE__ */ h(async function() {
+  if (!o(this, $)) {
+    f(this, X, null), o(this, et)?.resolve();
     return;
   }
-  o(this, de) && (await Promise.race([o(this, de).promise, new Promise((s) => {
-    setTimeout(s, 1e3);
+  o(this, he) && (await Promise.race([o(this, he).promise, new Promise((e) => {
+    setTimeout(e, 1e3);
   })]).catch(() => {
-  }), f(this, de, null)), f(this, Q, null);
+  }), f(this, he, null)), f(this, X, null);
   try {
-    await o(this, G).destroySandbox();
+    await o(this, $).destroySandbox();
   } catch {
   }
-  (t = o(this, ne)) == null || t.reject(new Error("Scripting destroyed.")), f(this, ne, null), (i = o(this, it)) == null || i.abort(), f(this, it, null), this._pageOpenPending.clear(), this._visitedPages.clear(), f(this, G, null), f(this, Tt, !1), (n = o(this, tt)) == null || n.resolve();
-}, "#destroyScripting"), h($s, "PDFScriptingManager");
-let as = $s;
-const Ws = class Ws extends as {
+  o(this, ie)?.reject(new Error("Scripting destroyed.")), f(this, ie, null), o(this, tt)?.abort(), f(this, tt, null), this._pageOpenPending.clear(), this._visitedPages.clear(), f(this, $, null), f(this, It, !1), o(this, et)?.resolve();
+}, "#destroyScripting"), h(Hs, "PDFScriptingManager");
+let ss = Hs;
+const Us = class Us extends ss {
   constructor(e) {
     e.externalServices || window.addEventListener("updatefromsandbox", (t) => {
       e.eventBus.dispatch("updatefromsandbox", {
         source: window,
         detail: t.detail
       });
-    }), e.externalServices || (e.externalServices = {
-      createScripting: /* @__PURE__ */ h(() => new rs(e.sandboxBundleSrc), "createScripting")
-    }), e.docProperties || (e.docProperties = (t) => ol(t)), super(e);
+    }), e.externalServices ||= {
+      createScripting: /* @__PURE__ */ h(() => new ns(e.sandboxBundleSrc), "createScripting")
+    }, e.docProperties ||= (t) => ol(t), super(e);
   }
 };
-h(Ws, "PDFScriptingManagerComponents");
-let ls = Ws;
-const ll = 3e4, zs = class zs {
+h(Us, "PDFScriptingManagerComponents");
+let as = Us;
+const ll = 3e4, $s = class $s {
   constructor() {
     this.pdfViewer = null, this.pdfThumbnailViewer = null, this.onIdle = null, this.highestPriorityPage = null, this.idleTimeout = null, this.printing = !1, this.isThumbnailViewEnabled = !1, Object.defineProperty(this, "hasViewer", {
       value: /* @__PURE__ */ h(() => !!this.pdfViewer, "value")
@@ -5006,8 +4962,7 @@ const ll = 3e4, zs = class zs {
     return this.highestPriorityPage === e.renderingId;
   }
   renderHighestPriority(e) {
-    var t;
-    this.idleTimeout && (clearTimeout(this.idleTimeout), this.idleTimeout = null), !this.pdfViewer.forceRendering(e) && (this.isThumbnailViewEnabled && ((t = this.pdfThumbnailViewer) != null && t.forceRendering()) || this.printing || this.onIdle && (this.idleTimeout = setTimeout(this.onIdle.bind(this), ll)));
+    this.idleTimeout && (clearTimeout(this.idleTimeout), this.idleTimeout = null), !this.pdfViewer.forceRendering(e) && (this.isThumbnailViewEnabled && this.pdfThumbnailViewer?.forceRendering() || this.printing || this.onIdle && (this.idleTimeout = setTimeout(this.onIdle.bind(this), ll)));
   }
   getHighestPriority(e, t, i, n = !1) {
     const s = e.views, r = s.length;
@@ -5021,67 +4976,67 @@ const ll = 3e4, zs = class zs {
     const l = e.first.id, d = e.last.id;
     if (d - l + 1 > r) {
       const E = e.ids;
-      for (let w = 1, L = d - l; w < L; w++) {
-        const I = i ? l + w : d - w;
-        if (E.has(I))
+      for (let w = 1, A = d - l; w < A; w++) {
+        const C = i ? l + w : d - w;
+        if (E.has(C))
           continue;
-        const P = t[I - 1];
-        if (!this.isViewFinished(P))
-          return P;
+        const I = t[C - 1];
+        if (!this.isViewFinished(I))
+          return I;
       }
     }
-    let u = i ? d : l - 2, g = t[u];
-    return g && !this.isViewFinished(g) || n && (u += i ? 1 : -1, g = t[u], g && !this.isViewFinished(g)) ? g : null;
+    let c = i ? d : l - 2, p = t[c];
+    return p && !this.isViewFinished(p) || n && (c += i ? 1 : -1, p = t[c], p && !this.isViewFinished(p)) ? p : null;
   }
   isViewFinished(e) {
-    return e.renderingState === U.FINISHED;
+    return e.renderingState === H.FINISHED;
   }
   renderView(e) {
     switch (e.renderingState) {
-      case U.FINISHED:
+      case H.FINISHED:
         return !1;
-      case U.PAUSED:
+      case H.PAUSED:
         this.highestPriorityPage = e.renderingId, e.resume();
         break;
-      case U.RUNNING:
+      case H.RUNNING:
         this.highestPriorityPage = e.renderingId;
         break;
-      case U.INITIAL:
+      case H.INITIAL:
         this.highestPriorityPage = e.renderingId, e.draw().finally(() => {
           this.renderHighestPriority();
         }).catch((t) => {
-          t instanceof xn || console.error("renderView:", t);
+          t instanceof yn || console.error("renderView:", t);
         });
         break;
     }
     return !0;
   }
 };
-h(zs, "PDFRenderingQueue");
-let hs = zs;
-const Lr = 10, Mi = {
+h($s, "PDFRenderingQueue");
+let os = $s;
+const Ir = 10, Ci = {
   FORCE_SCROLL_MODE_PAGE: 1e4,
   FORCE_LAZY_PAGE_INIT: 5e3,
   PAUSE_EAGER_PAGE_INIT: 250
 };
-function Tr(a) {
-  return Object.values(q).includes(a) && a !== q.DISABLE;
+function Lr(a) {
+  return Object.values(Y).includes(a) && a !== Y.DISABLE;
 }
-h(Tr, "isValidAnnotationEditorMode");
-var ve, st, mi, us;
-const Gs = class Gs {
+h(Lr, "isValidAnnotationEditorMode");
+var ve, nt, pi, hs;
+const Ws = class Ws {
   constructor(e) {
-    b(this, mi);
-    b(this, ve, /* @__PURE__ */ new Set());
-    b(this, st, 0);
-    f(this, st, e);
+    m(this, pi);
+    m(this, ve, /* @__PURE__ */ new Set());
+    m(this, nt, 0);
+    f(this, nt, e);
   }
   push(e) {
     const t = o(this, ve);
-    t.has(e) && t.delete(e), t.add(e), t.size > o(this, st) && c(this, mi, us).call(this);
+    t.has(e) && t.delete(e), t.add(e), t.size > o(this, nt) && u(this, pi, hs).call(this);
   }
   resize(e, t = null) {
-    f(this, st, e);
+    f(this, nt, e);
     const i = o(this, ve);
     if (t) {
       const n = i.size;
@@ -5090,8 +5045,8 @@ const Gs = class Gs {
         if (t.has(r.id) && (i.delete(r), i.add(r)), ++s > n)
           break;
     }
-    for (; i.size > o(this, st); )
-      c(this, mi, us).call(this);
+    for (; i.size > o(this, nt); )
+      u(this, pi, hs).call(this);
   }
   has(e) {
     return o(this, ve).has(e);
@@ -5100,63 +5055,62 @@ const Gs = class Gs {
     return o(this, ve).keys();
   }
 };
-ve = new WeakMap(), st = new WeakMap(), mi = new WeakSet(), us = /* @__PURE__ */ h(function() {
+ve = new WeakMap(), nt = new WeakMap(), pi = new WeakSet(), hs = /* @__PURE__ */ h(function() {
   const e = o(this, ve).keys().next().value;
-  e == null || e.destroy(), o(this, ve).delete(e);
-}, "#destroyFirstView"), h(Gs, "PDFPageViewBuffer");
-let ds = Gs;
-var He, bi, Ei, ue, ee, rt, wi, _i, yi, vi, Pi, xi, Si, Ue, at, ot, lt, Rt, $e, Nt, Ai, Ct, ht, We, Ii, Mt, A, la, ha, da, zt, Ui, ua, cs, ca, Se, fs, fa, ga, pa, gs, ma, $i;
-const Ks = class Ks {
+  e?.destroy(), o(this, ve).delete(e);
+}, "#destroyFirstView"), h(Ws, "PDFPageViewBuffer");
+let ls = Ws;
+var Be, gi, mi, de, q, st, bi, Ei, wi, _i, vi, yi, Pi, He, rt, at, ot, Lt, Ue, Tt, xi, Rt, lt, $e, Si, Ct, S, oa, la, ha, $t, Bi, da, ds, ua, xe, us, ca, fa, pa, cs, ga, Hi;
+const zs = class zs {
   constructor(e) {
-    b(this, A);
-    b(this, He, null);
-    b(this, bi, null);
-    b(this, Ei, null);
-    b(this, ue, q.NONE);
-    b(this, ee, null);
-    b(this, rt, Pe.ENABLE_FORMS);
-    b(this, wi, null);
-    b(this, _i, null);
-    b(this, yi, !1);
-    b(this, vi, !1);
-    b(this, Pi, !1);
-    b(this, xi, !1);
-    b(this, Si, !1);
-    b(this, Ue, null);
-    b(this, at, null);
-    b(this, ot, null);
-    b(this, lt, null);
-    b(this, Rt, !1);
-    b(this, $e, null);
-    b(this, Nt, !1);
-    b(this, Ai, 0);
-    b(this, Ct, new ResizeObserver(c(this, A, ma).bind(this)));
-    b(this, ht, null);
-    b(this, We, null);
-    b(this, Ii, !0);
-    b(this, Mt, ce.ENABLE);
-    var n, s;
+    m(this, S);
+    m(this, Be, null);
+    m(this, gi, null);
+    m(this, mi, null);
+    m(this, de, Y.NONE);
+    m(this, q, null);
+    m(this, st, ye.ENABLE_FORMS);
+    m(this, bi, null);
+    m(this, Ei, null);
+    m(this, wi, !1);
+    m(this, _i, !1);
+    m(this, vi, !1);
+    m(this, yi, !1);
+    m(this, Pi, !1);
+    m(this, He, null);
+    m(this, rt, null);
+    m(this, at, null);
+    m(this, ot, null);
+    m(this, Lt, !1);
+    m(this, Ue, null);
+    m(this, Tt, !1);
+    m(this, xi, 0);
+    m(this, Rt, new ResizeObserver(u(this, S, ga).bind(this)));
+    m(this, lt, null);
+    m(this, $e, null);
+    m(this, Si, !0);
+    m(this, Ct, ue.ENABLE);
     const t = "4.10.38";
-    if (ur !== t)
-      throw new Error(`The API version "${ur}" does not match the Viewer version "${t}".`);
-    if (this.container = e.container, this.viewer = e.viewer || e.container.firstElementChild, ((n = this.container) == null ? void 0 : n.tagName) !== "DIV" || ((s = this.viewer) == null ? void 0 : s.tagName) !== "DIV")
+    if (dr !== t)
+      throw new Error(`The API version "${dr}" does not match the Viewer version "${t}".`);
+    if (this.container = e.container, this.viewer = e.viewer || e.container.firstElementChild, this.container?.tagName !== "DIV" || this.viewer?.tagName !== "DIV")
       throw new Error("Invalid `container` and/or `viewer` option.");
     if (this.container.offsetParent && getComputedStyle(this.container).position !== "absolute")
       throw new Error("The `container` must be absolutely positioned.");
-    o(this, Ct).observe(this.container), this.eventBus = e.eventBus, this.linkService = e.linkService || new Qt(), this.downloadManager = e.downloadManager || null, this.findController = e.findController || null, f(this, bi, e.altTextManager || null), f(this, _i, e.editorUndoBar || null), this.findController && (this.findController.onIsPageVisible = (r) => this._getVisiblePages().ids.has(r)), this._scriptingManager = e.scriptingManager || null, f(this, Mt, e.textLayerMode ?? ce.ENABLE), f(this, rt, e.annotationMode ?? Pe.ENABLE_FORMS), f(this, ue, e.annotationEditorMode ?? q.NONE), f(this, Ei, e.annotationEditorHighlightColors || null), f(this, vi, e.enableHighlightFloatingButton === !0), f(this, xi, e.enableUpdatedAddImage === !0), f(this, Si, e.enableNewAltTextWhenAddingImage === !0), this.imageResourcesPath = e.imageResourcesPath || "", this.enablePrintAutoRotate = e.enablePrintAutoRotate || !1, this.removePageBorders = e.removePageBorders || !1, this.maxCanvasPixels = e.maxCanvasPixels, this.l10n = e.l10n, this.l10n || (this.l10n = new Dt()), f(this, Pi, e.enablePermissions || !1), this.pageColors = e.pageColors || null, f(this, at, e.mlManager || null), f(this, yi, e.enableHWA || !1), f(this, Ii, e.supportsPinchToZoom !== !1), this.defaultRenderingQueue = !e.renderingQueue, this.defaultRenderingQueue ? (this.renderingQueue = new hs(), this.renderingQueue.setViewer(this)) : this.renderingQueue = e.renderingQueue;
+    o(this, Rt).observe(this.container), this.eventBus = e.eventBus, this.linkService = e.linkService || new Xt(), this.downloadManager = e.downloadManager || null, this.findController = e.findController || null, f(this, gi, e.altTextManager || null), f(this, Ei, e.editorUndoBar || null), this.findController && (this.findController.onIsPageVisible = (n) => this._getVisiblePages().ids.has(n)), this._scriptingManager = e.scriptingManager || null, f(this, Ct, e.textLayerMode ?? ue.ENABLE), f(this, st, e.annotationMode ?? ye.ENABLE_FORMS), f(this, de, e.annotationEditorMode ?? Y.NONE), f(this, mi, e.annotationEditorHighlightColors || null), f(this, _i, e.enableHighlightFloatingButton === !0), f(this, yi, e.enableUpdatedAddImage === !0), f(this, Pi, e.enableNewAltTextWhenAddingImage === !0), this.imageResourcesPath = e.imageResourcesPath || "", this.enablePrintAutoRotate = e.enablePrintAutoRotate || !1, this.removePageBorders = e.removePageBorders || !1, this.maxCanvasPixels = e.maxCanvasPixels, this.l10n = e.l10n, this.l10n ||= new kt(), f(this, vi, e.enablePermissions || !1), this.pageColors = e.pageColors || null, f(this, rt, e.mlManager || null), f(this, wi, e.enableHWA || !1), f(this, Si, e.supportsPinchToZoom !== !1), this.defaultRenderingQueue = !e.renderingQueue, this.defaultRenderingQueue ? (this.renderingQueue = new os(), this.renderingQueue.setViewer(this)) : this.renderingQueue = e.renderingQueue;
     const {
       abortSignal: i
     } = e;
-    i == null || i.addEventListener("abort", () => {
-      o(this, Ct).disconnect(), f(this, Ct, null);
+    i?.addEventListener("abort", () => {
+      o(this, Rt).disconnect(), f(this, Rt, null);
     }, {
       once: !0
-    }), this.scroll = xa(this.container, this._scrollUpdate.bind(this), i), this.presentationModeState = pt.UNKNOWN, this._resetView(), this.removePageBorders && this.viewer.classList.add("removePageBorders"), c(this, A, gs).call(this), this.eventBus._on("thumbnailrendered", ({
-      pageNumber: r,
-      pdfPage: l
+    }), this.scroll = xa(this.container, this._scrollUpdate.bind(this), i), this.presentationModeState = ft.UNKNOWN, this._resetView(), this.removePageBorders && this.viewer.classList.add("removePageBorders"), u(this, S, cs).call(this), this.eventBus._on("thumbnailrendered", ({
+      pageNumber: n,
+      pdfPage: s
     }) => {
-      const d = this._pages[r - 1];
-      o(this, He).has(d) || l == null || l.cleanup();
+      const r = this._pages[n - 1];
+      o(this, Be).has(r) || s?.cleanup();
     }), e.l10n || this.l10n.translate(this.container);
   }
   get pagesCount() {
@@ -5166,13 +5120,13 @@ const Ks = class Ks {
     return this._pages[e];
   }
   getCachedPageViews() {
-    return new Set(o(this, He));
+    return new Set(o(this, Be));
   }
   get pageViewsReady() {
-    return this._pages.every((e) => e == null ? void 0 : e.pdfPage);
+    return this._pages.every((e) => e?.pdfPage);
   }
   get renderForms() {
-    return o(this, rt) === Pe.ENABLE_FORMS;
+    return o(this, st) === ye.ENABLE_FORMS;
   }
   get enableScripting() {
     return !!this._scriptingManager;
@@ -5186,22 +5140,20 @@ const Ks = class Ks {
     this.pdfDocument && (this._setCurrentPageNumber(e, !0) || console.error(`currentPageNumber: "${e}" is not a valid page.`));
   }
   _setCurrentPageNumber(e, t = !1) {
-    var n;
     if (this._currentPageNumber === e)
-      return t && c(this, A, fs).call(this), !0;
+      return t && u(this, S, us).call(this), !0;
     if (!(0 < e && e <= this.pagesCount))
       return !1;
     const i = this._currentPageNumber;
     return this._currentPageNumber = e, this.eventBus.dispatch("pagechanging", {
       source: this,
       pageNumber: e,
-      pageLabel: ((n = this._pageLabels) == null ? void 0 : n[e - 1]) ?? null,
+      pageLabel: this._pageLabels?.[e - 1] ?? null,
       previous: i
-    }), t && c(this, A, fs).call(this), !0;
+    }), t && u(this, S, us).call(this), !0;
   }
   get currentPageLabel() {
-    var e;
-    return ((e = this._pageLabels) == null ? void 0 : e[this._currentPageNumber - 1]) ?? null;
+    return this._pageLabels?.[this._currentPageNumber - 1] ?? null;
   }
   set currentPageLabel(e) {
     if (!this.pdfDocument)
@@ -5214,12 +5166,12 @@ const Ks = class Ks {
     this._setCurrentPageNumber(t, !0) || console.error(`currentPageLabel: "${e}" is not a valid page.`);
   }
   get currentScale() {
-    return this._currentScale !== on ? this._currentScale : Rr;
+    return this._currentScale !== rn ? this._currentScale : Tr;
   }
   set currentScale(e) {
     if (isNaN(e))
       throw new Error("Invalid numeric scale.");
-    this.pdfDocument && c(this, A, Se).call(this, e, {
+    this.pdfDocument && u(this, S, xe).call(this, e, {
       noScroll: !1
     });
   }
@@ -5227,7 +5179,7 @@ const Ks = class Ks {
     return this._currentScaleValue;
   }
   set currentScaleValue(e) {
-    this.pdfDocument && c(this, A, Se).call(this, e, {
+    this.pdfDocument && u(this, S, xe).call(this, e, {
       noScroll: !1
     });
   }
@@ -5243,7 +5195,7 @@ const Ks = class Ks {
     const t = this._currentPageNumber;
     this.refresh(!0, {
       rotation: e
-    }), this._currentScaleValue && c(this, A, Se).call(this, this._currentScaleValue, {
+    }), this._currentScaleValue && u(this, S, xe).call(this, this._currentScaleValue, {
       noScroll: !0
     }), this.eventBus.dispatch("rotationchanging", {
       source: this,
@@ -5262,13 +5214,12 @@ const Ks = class Ks {
   }
   get _layerProperties() {
     const e = this;
-    return zi(this, "_layerProperties", {
+    return $i(this, "_layerProperties", {
       get annotationEditorUIManager() {
-        return o(e, ee);
+        return o(e, q);
       },
       get annotationStorage() {
-        var t;
-        return (t = e.pdfDocument) == null ? void 0 : t.annotationStorage;
+        return e.pdfDocument?.annotationStorage;
       },
       get downloadManager() {
         return e.downloadManager;
@@ -5277,15 +5228,13 @@ const Ks = class Ks {
         return !!e._scriptingManager;
       },
       get fieldObjectsPromise() {
-        var t;
-        return (t = e.pdfDocument) == null ? void 0 : t.getFieldObjects();
+        return e.pdfDocument?.getFieldObjects();
       },
       get findController() {
         return e.findController;
       },
       get hasJSActionsPromise() {
-        var t;
-        return (t = e.pdfDocument) == null ? void 0 : t.hasJSActions();
+        return e.pdfDocument?.hasJSActions();
       },
       get linkService() {
         return e.linkService;
@@ -5295,7 +5244,7 @@ const Ks = class Ks {
   async getAllText() {
     const e = [], t = [];
     for (let i = 1, n = this.pdfDocument.numPages; i <= n; ++i) {
-      if (o(this, Nt))
+      if (o(this, Tt))
         return null;
       t.length = 0;
       const s = await this.pdfDocument.getPage(i), {
@@ -5304,34 +5253,33 @@ const Ks = class Ks {
       for (const l of r)
         l.str && t.push(l.str), l.hasEOL && t.push(`
 `);
-      e.push(Kt(t.join("")));
+      e.push(zt(t.join("")));
     }
     return e.join(`
 `);
   }
   setDocument(e) {
-    var w, L, I;
     if (this.pdfDocument && (this.eventBus.dispatch("pagesdestroy", {
       source: this
-    }), this._cancelRendering(), this._resetView(), (w = this.findController) == null || w.setDocument(null), (L = this._scriptingManager) == null || L.setDocument(null), (I = o(this, ee)) == null || I.destroy(), f(this, ee, null)), this.pdfDocument = e, !e)
+    }), this._cancelRendering(), this._resetView(), this.findController?.setDocument(null), this._scriptingManager?.setDocument(null), o(this, q)?.destroy(), f(this, q, null)), this.pdfDocument = e, !e)
       return;
     const t = e.numPages, i = e.getPage(1), n = e.getOptionalContentConfig({
       intent: "display"
-    }), s = o(this, Pi) ? e.getPermissions() : Promise.resolve(), {
+    }), s = o(this, vi) ? e.getPermissions() : Promise.resolve(), {
       eventBus: r,
       pageColors: l,
       viewer: d
     } = this;
-    f(this, Ue, new AbortController());
+    f(this, He, new AbortController());
     const {
-      signal: u
-    } = o(this, Ue);
-    if (t > Mi.FORCE_SCROLL_MODE_PAGE) {
+      signal: c
+    } = o(this, He);
+    if (t > Ci.FORCE_SCROLL_MODE_PAGE) {
       console.warn("Forcing PAGE-scrolling for performance reasons, given the length of the document.");
-      const P = this._scrollMode = O.PAGE;
+      const w = this._scrollMode = D.PAGE;
       r.dispatch("scrollmodechanged", {
         source: this,
-        mode: P
+        mode: w
       });
     }
     this._pagesCapability.promise.then(() => {
@@ -5341,118 +5289,114 @@ const Ks = class Ks {
       });
     }, () => {
     });
-    const g = /* @__PURE__ */ h((P) => {
-      const S = this._pages[P.pageNumber - 1];
-      S && o(this, He).push(S);
+    const p = /* @__PURE__ */ h((w) => {
+      const A = this._pages[w.pageNumber - 1];
+      A && o(this, Be).push(A);
     }, "onBeforeDraw");
-    r._on("pagerender", g, {
-      signal: u
+    r._on("pagerender", p, {
+      signal: c
     });
-    const E = /* @__PURE__ */ h((P) => {
-      P.cssTransform || (this._onePageRenderedCapability.resolve({
-        timestamp: P.timestamp
+    const E = /* @__PURE__ */ h((w) => {
+      w.cssTransform || (this._onePageRenderedCapability.resolve({
+        timestamp: w.timestamp
       }), r._off("pagerendered", E));
     }, "onAfterDraw");
     r._on("pagerendered", E, {
-      signal: u
-    }), Promise.all([i, s]).then(([P, S]) => {
-      var W, V;
+      signal: c
+    }), Promise.all([i, s]).then(([w, A]) => {
       if (e !== this.pdfDocument)
         return;
-      this._firstPageCapability.resolve(P), this._optionalContentConfigPromise = n;
+      this._firstPageCapability.resolve(w), this._optionalContentConfigPromise = n;
       const {
-        annotationEditorMode: T,
-        annotationMode: M,
-        textLayerMode: v
-      } = c(this, A, la).call(this, S);
-      if (v !== ce.DISABLE) {
-        const p = f(this, $e, document.createElement("div"));
-        p.id = "hiddenCopyElement", d.before(p);
+        annotationEditorMode: C,
+        annotationMode: I,
+        textLayerMode: L
+      } = u(this, S, oa).call(this, A);
+      if (L !== ue.DISABLE) {
+        const P = f(this, Ue, document.createElement("div"));
+        P.id = "hiddenCopyElement", d.before(P);
       }
-      if (typeof AbortSignal.any == "function" && T !== q.DISABLE) {
-        const p = T;
-        e.isPureXfa ? console.warn("Warning: XFA-editing is not implemented.") : Tr(p) ? (f(this, ee, new io(this.container, d, o(this, bi), r, e, l, o(this, Ei), o(this, vi), o(this, xi), o(this, Si), o(this, at), o(this, _i), o(this, Ii))), r.dispatch("annotationeditoruimanager", {
+      if (typeof AbortSignal.any == "function" && C !== Y.DISABLE) {
+        const P = C;
+        e.isPureXfa ? console.warn("Warning: XFA-editing is not implemented.") : Lr(P) ? (f(this, q, new io(this.container, d, o(this, gi), r, e, l, o(this, mi), o(this, _i), o(this, yi), o(this, Pi), o(this, rt), o(this, Ei), o(this, Si))), r.dispatch("annotationeditoruimanager", {
           source: this,
-          uiManager: o(this, ee)
-        }), p !== q.NONE && (p === q.STAMP && ((W = o(this, at)) == null || W.loadModel("altText")), o(this, ee).updateMode(p))) : console.error(`Invalid AnnotationEditor mode: ${p}`);
+          uiManager: o(this, q)
+        }), P !== Y.NONE && (P === Y.STAMP && o(this, rt)?.loadModel("altText"), o(this, q).updateMode(P))) : console.error(`Invalid AnnotationEditor mode: ${P}`);
       }
-      const C = this._scrollMode === O.PAGE ? null : d, F = this.currentScale, B = P.getViewport({
-        scale: F * be.PDF_TO_CSS_UNITS
+      const N = this._scrollMode === D.PAGE ? null : d, M = this.currentScale, x = w.getViewport({
+        scale: M * me.PDF_TO_CSS_UNITS
       });
-      d.style.setProperty("--scale-factor", B.scale), l != null && l.background && d.style.setProperty("--page-bg-color", l.background), ((l == null ? void 0 : l.foreground) === "CanvasText" || (l == null ? void 0 : l.background) === "Canvas") && (d.style.setProperty("--hcm-highlight-filter", e.filterFactory.addHighlightHCMFilter("highlight", "CanvasText", "Canvas", "HighlightText", "Highlight")), d.style.setProperty("--hcm-highlight-selected-filter", e.filterFactory.addHighlightHCMFilter("highlight_selected", "CanvasText", "Canvas", "HighlightText", "ButtonText")));
-      for (let p = 1; p <= t; ++p) {
-        const _ = new qi({
-          container: C,
+      d.style.setProperty("--scale-factor", x.scale), l?.background && d.style.setProperty("--page-bg-color", l.background), (l?.foreground === "CanvasText" || l?.background === "Canvas") && (d.style.setProperty("--hcm-highlight-filter", e.filterFactory.addHighlightHCMFilter("highlight", "CanvasText", "Canvas", "HighlightText", "Highlight")), d.style.setProperty("--hcm-highlight-selected-filter", e.filterFactory.addHighlightHCMFilter("highlight_selected", "CanvasText", "Canvas", "HighlightText", "ButtonText")));
+      for (let P = 1; P <= t; ++P) {
+        const k = new Ji({
+          container: N,
           eventBus: r,
-          id: p,
-          scale: F,
-          defaultViewport: B.clone(),
+          id: P,
+          scale: M,
+          defaultViewport: x.clone(),
           optionalContentConfigPromise: n,
           renderingQueue: this.renderingQueue,
-          textLayerMode: v,
-          annotationMode: M,
+          textLayerMode: L,
+          annotationMode: I,
           imageResourcesPath: this.imageResourcesPath,
           maxCanvasPixels: this.maxCanvasPixels,
           pageColors: l,
           l10n: this.l10n,
           layerProperties: this._layerProperties,
-          enableHWA: o(this, yi)
+          enableHWA: o(this, wi)
         });
-        this._pages.push(_);
+        this._pages.push(k);
       }
-      (V = this._pages[0]) == null || V.setPdfPage(P), this._scrollMode === O.PAGE ? c(this, A, zt).call(this) : this._spreadMode !== Z.NONE && this._updateSpreadMode(), c(this, A, ha).call(this, u).then(async () => {
-        var _, x;
+      this._pages[0]?.setPdfPage(w), this._scrollMode === D.PAGE ? u(this, S, $t).call(this) : this._spreadMode !== G.NONE && this._updateSpreadMode(), u(this, S, la).call(this, c).then(async () => {
         if (e !== this.pdfDocument)
           return;
-        if ((_ = this.findController) == null || _.setDocument(e), (x = this._scriptingManager) == null || x.setDocument(e), o(this, $e) && document.addEventListener("copy", c(this, A, da).bind(this, v), {
-          signal: u
-        }), o(this, ee) && r.dispatch("annotationeditormodechanged", {
+        if (this.findController?.setDocument(e), this._scriptingManager?.setDocument(e), o(this, Ue) && document.addEventListener("copy", u(this, S, ha).bind(this, L), {
+          signal: c
+        }), o(this, q) && r.dispatch("annotationeditormodechanged", {
           source: this,
-          mode: o(this, ue)
-        }), e.loadingParams.disableAutoFetch || t > Mi.FORCE_LAZY_PAGE_INIT) {
+          mode: o(this, de)
+        }), e.loadingParams.disableAutoFetch || t > Ci.FORCE_LAZY_PAGE_INIT) {
           this._pagesCapability.resolve();
           return;
         }
-        let p = t - 1;
-        if (p <= 0) {
+        let P = t - 1;
+        if (P <= 0) {
           this._pagesCapability.resolve();
           return;
         }
-        for (let j = 2; j <= t; ++j) {
-          const D = e.getPage(j).then((k) => {
-            const z = this._pages[j - 1];
-            z.pdfPage || z.setPdfPage(k), --p === 0 && this._pagesCapability.resolve();
-          }, (k) => {
-            console.error(`Unable to get page ${j} to initialize viewer`, k), --p === 0 && this._pagesCapability.resolve();
+        for (let k = 2; k <= t; ++k) {
+          const F = e.getPage(k).then((B) => {
+            const j = this._pages[k - 1];
+            j.pdfPage || j.setPdfPage(B), --P === 0 && this._pagesCapability.resolve();
+          }, (B) => {
+            console.error(`Unable to get page ${k} to initialize viewer`, B), --P === 0 && this._pagesCapability.resolve();
           });
-          j % Mi.PAUSE_EAGER_PAGE_INIT === 0 && await D;
+          k % Ci.PAUSE_EAGER_PAGE_INIT === 0 && await F;
         }
       }), r.dispatch("pagesinit", {
         source: this
       }), e.getMetadata().then(({
-        info: p
+        info: P
       }) => {
-        e === this.pdfDocument && p.Language && (d.lang = p.Language);
+        e === this.pdfDocument && P.Language && (d.lang = P.Language);
       }), this.defaultRenderingQueue && this.update();
-    }).catch((P) => {
-      console.error("Unable to initialize viewer", P), this._pagesCapability.reject(P);
+    }).catch((w) => {
+      console.error("Unable to initialize viewer", w), this._pagesCapability.reject(w);
     });
   }
   setPageLabels(e) {
-    var t;
     if (this.pdfDocument) {
       e ? Array.isArray(e) && this.pdfDocument.numPages === e.length ? this._pageLabels = e : (this._pageLabels = null, console.error("setPageLabels: Invalid page labels.")) : this._pageLabels = null;
-      for (let i = 0, n = this._pages.length; i < n; i++)
-        this._pages[i].setPageLabel(((t = this._pageLabels) == null ? void 0 : t[i]) ?? null);
+      for (let t = 0, i = this._pages.length; t < i; t++)
+        this._pages[t].setPageLabel(this._pageLabels?.[t] ?? null);
     }
   }
   _resetView() {
-    var e, t;
-    this._pages = [], this._currentPageNumber = 1, this._currentScale = on, this._currentScaleValue = null, this._pageLabels = null, f(this, He, new ds(Lr)), this._location = null, this._pagesRotation = 0, this._optionalContentConfigPromise = null, this._firstPageCapability = Promise.withResolvers(), this._onePageRenderedCapability = Promise.withResolvers(), this._pagesCapability = Promise.withResolvers(), this._scrollMode = O.VERTICAL, this._previousScrollMode = O.UNKNOWN, this._spreadMode = Z.NONE, f(this, ht, {
+    this._pages = [], this._currentPageNumber = 1, this._currentScale = rn, this._currentScaleValue = null, this._pageLabels = null, f(this, Be, new ls(Ir)), this._location = null, this._pagesRotation = 0, this._optionalContentConfigPromise = null, this._firstPageCapability = Promise.withResolvers(), this._onePageRenderedCapability = Promise.withResolvers(), this._pagesCapability = Promise.withResolvers(), this._scrollMode = D.VERTICAL, this._previousScrollMode = D.UNKNOWN, this._spreadMode = G.NONE, f(this, lt, {
       previousPageNumber: 1,
       scrollDown: !0,
       pages: []
-    }), (e = o(this, Ue)) == null || e.abort(), f(this, Ue, null), this.viewer.textContent = "", this._updateScrollMode(), this.viewer.removeAttribute("lang"), (t = o(this, $e)) == null || t.remove(), f(this, $e, null), c(this, A, $i).call(this);
+    }), o(this, He)?.abort(), f(this, He, null), this.viewer.textContent = "", this._updateScrollMode(), this.viewer.removeAttribute("lang"), o(this, Ue)?.remove(), f(this, Ue, null), u(this, S, Hi).call(this);
   }
   _scrollUpdate() {
     this.pagesCount !== 0 && this.update();
@@ -5480,53 +5424,53 @@ const Ks = class Ks {
       this._setCurrentPageNumber(e, !0);
       return;
     }
-    let r = 0, l = 0, d = 0, u = 0, g, E;
-    const w = s.rotation % 180 !== 0, L = (w ? s.height : s.width) / s.scale / be.PDF_TO_CSS_UNITS, I = (w ? s.width : s.height) / s.scale / be.PDF_TO_CSS_UNITS;
-    let P = 0;
+    let r = 0, l = 0, d = 0, c = 0, p, E;
+    const w = s.rotation % 180 !== 0, A = (w ? s.height : s.width) / s.scale / me.PDF_TO_CSS_UNITS, C = (w ? s.width : s.height) / s.scale / me.PDF_TO_CSS_UNITS;
+    let I = 0;
     switch (t[1].name) {
       case "XYZ":
-        r = t[2], l = t[3], P = t[4], r = r !== null ? r : 0, l = l !== null ? l : I;
+        r = t[2], l = t[3], I = t[4], r = r !== null ? r : 0, l = l !== null ? l : C;
         break;
       case "Fit":
       case "FitB":
-        P = "page-fit";
+        I = "page-fit";
         break;
       case "FitH":
       case "FitBH":
-        l = t[2], P = "page-width", l === null && this._location ? (r = this._location.left, l = this._location.top) : (typeof l != "number" || l < 0) && (l = I);
+        l = t[2], I = "page-width", l === null && this._location ? (r = this._location.left, l = this._location.top) : (typeof l != "number" || l < 0) && (l = C);
         break;
       case "FitV":
       case "FitBV":
-        r = t[2], d = L, u = I, P = "page-height";
+        r = t[2], d = A, c = C, I = "page-height";
         break;
       case "FitR":
-        r = t[2], l = t[3], d = t[4] - r, u = t[5] - l;
-        let v = qs, C = er;
-        this.removePageBorders && (v = C = 0), g = (this.container.clientWidth - v) / d / be.PDF_TO_CSS_UNITS, E = (this.container.clientHeight - C) / u / be.PDF_TO_CSS_UNITS, P = Math.min(Math.abs(g), Math.abs(E));
+        r = t[2], l = t[3], d = t[4] - r, c = t[5] - l;
+        let x = Ys, P = qs;
+        this.removePageBorders && (x = P = 0), p = (this.container.clientWidth - x) / d / me.PDF_TO_CSS_UNITS, E = (this.container.clientHeight - P) / c / me.PDF_TO_CSS_UNITS, I = Math.min(Math.abs(p), Math.abs(E));
         break;
       default:
         console.error(`scrollPageIntoView: "${t[1].name}" is not a valid destination type.`);
         return;
     }
-    if (n || (P && P !== this._currentScale ? this.currentScaleValue = P : this._currentScale === on && (this.currentScaleValue = _a)), P === "page-fit" && !t[4]) {
-      c(this, A, Ui).call(this, s);
+    if (n || (I && I !== this._currentScale ? this.currentScaleValue = I : this._currentScale === rn && (this.currentScaleValue = _a)), I === "page-fit" && !t[4]) {
+      u(this, S, Bi).call(this, s);
       return;
     }
-    const S = [s.viewport.convertToViewportPoint(r, l), s.viewport.convertToViewportPoint(r + d, l + u)];
-    let T = Math.min(S[0][0], S[1][0]), M = Math.min(S[0][1], S[1][1]);
-    i || (T = Math.max(T, 0), M = Math.max(M, 0)), c(this, A, Ui).call(this, s, {
-      left: T,
+    const L = [s.viewport.convertToViewportPoint(r, l), s.viewport.convertToViewportPoint(r + d, l + c)];
+    let N = Math.min(L[0][0], L[1][0]), M = Math.min(L[0][1], L[1][1]);
+    i || (N = Math.max(N, 0), M = Math.max(M, 0)), u(this, S, Bi).call(this, s, {
+      left: N,
       top: M
     });
   }
   _updateLocation(e) {
-    const t = this._currentScale, i = this._currentScaleValue, n = parseFloat(i) === t ? Math.round(t * 1e4) / 100 : i, s = e.id, r = this._pages[s - 1], l = this.container, d = r.getPagePoint(l.scrollLeft - e.x, l.scrollTop - e.y), u = Math.round(d[0]), g = Math.round(d[1]);
+    const t = this._currentScale, i = this._currentScaleValue, n = parseFloat(i) === t ? Math.round(t * 1e4) / 100 : i, s = e.id, r = this._pages[s - 1], l = this.container, d = r.getPagePoint(l.scrollLeft - e.x, l.scrollTop - e.y), c = Math.round(d[0]), p = Math.round(d[1]);
     let E = `#page=${s}`;
-    this.isInPresentationMode || (E += `&zoom=${n},${u},${g}`), this._location = {
+    this.isInPresentationMode || (E += `&zoom=${n},${c},${p}`), this._location = {
       pageNumber: s,
       scale: n,
-      top: g,
-      left: u,
+      top: p,
+      left: c,
       rotation: this._pagesRotation,
       pdfOpenParams: E
     };
@@ -5535,9 +5479,9 @@ const Ks = class Ks {
     const e = this._getVisiblePages(), t = e.views, i = t.length;
     if (i === 0)
       return;
-    const n = Math.max(Lr, 2 * i + 1);
-    o(this, He).resize(n, e.ids), this.renderingQueue.renderHighestPriority(e);
-    const s = this._spreadMode === Z.NONE && (this._scrollMode === O.PAGE || this._scrollMode === O.VERTICAL), r = this._currentPageNumber;
+    const n = Math.max(Ir, 2 * i + 1);
+    o(this, Be).resize(n, e.ids), this.renderingQueue.renderHighestPriority(e);
+    const s = this._spreadMode === G.NONE && (this._scrollMode === D.PAGE || this._scrollMode === D.VERTICAL), r = this._currentPageNumber;
     let l = !1;
     for (const d of t) {
       if (d.percent < 100)
@@ -5562,10 +5506,10 @@ const Ks = class Ks {
     return getComputedStyle(this.container).direction === "rtl";
   }
   get isInPresentationMode() {
-    return this.presentationModeState === pt.FULLSCREEN;
+    return this.presentationModeState === ft.FULLSCREEN;
   }
   get isChangingPresentationMode() {
-    return this.presentationModeState === pt.CHANGING;
+    return this.presentationModeState === ft.CHANGING;
   }
   get isHorizontalScrollbarEnabled() {
     return this.isInPresentationMode ? !1 : this.container.scrollWidth > this.container.clientWidth;
@@ -5574,7 +5518,7 @@ const Ks = class Ks {
     return this.isInPresentationMode ? !1 : this.container.scrollHeight > this.container.clientHeight;
   }
   _getVisiblePages() {
-    const e = this._scrollMode === O.PAGE ? o(this, ht).pages : this._pages, t = this._scrollMode === O.HORIZONTAL, i = t && this._isContainerRtl;
+    const e = this._scrollMode === D.PAGE ? o(this, lt).pages : this._pages, t = this._scrollMode === D.HORIZONTAL, i = t && this._isContainerRtl;
     return Aa({
       scrollEl: this.container,
       views: e,
@@ -5585,15 +5529,15 @@ const Ks = class Ks {
   }
   cleanup() {
     for (const e of this._pages)
-      e.renderingState !== U.FINISHED && e.reset();
+      e.renderingState !== H.FINISHED && e.reset();
   }
   _cancelRendering() {
     for (const e of this._pages)
       e.cancelRendering();
   }
   forceRendering(e) {
-    const t = e || this._getVisiblePages(), i = c(this, A, pa).call(this, t), n = this._spreadMode !== Z.NONE && this._scrollMode !== O.HORIZONTAL, s = this.renderingQueue.getHighestPriority(t, this._pages, i, n);
-    return s ? (c(this, A, ga).call(this, s).then(() => {
+    const t = e || this._getVisiblePages(), i = u(this, S, pa).call(this, t), n = this._spreadMode !== G.NONE && this._scrollMode !== D.HORIZONTAL, s = this.renderingQueue.getHighestPriority(t, this._pages, i, n);
+    return s ? (u(this, S, fa).call(this, s).then(() => {
       this.renderingQueue.renderView(s);
     }), !0) : !1;
   }
@@ -5611,7 +5555,7 @@ const Ks = class Ks {
     return this._pages.map((t) => {
       const i = t.pdfPage.getViewport({
         scale: 1
-      }), n = nr(i);
+      }), n = ir(i);
       if (e === void 0)
         e = n;
       else if (this.enablePrintAutoRotate && n !== e)
@@ -5649,7 +5593,7 @@ const Ks = class Ks {
     if (this._scrollMode !== e) {
       if (!Ia(e))
         throw new Error(`Invalid scroll mode: ${e}`);
-      this.pagesCount > Mi.FORCE_SCROLL_MODE_PAGE || (this._previousScrollMode = this._scrollMode, this._scrollMode = e, this.eventBus.dispatch("scrollmodechanged", {
+      this.pagesCount > Ci.FORCE_SCROLL_MODE_PAGE || (this._previousScrollMode = this._scrollMode, this._scrollMode = e, this.eventBus.dispatch("scrollmodechanged", {
         source: this,
         mode: e
       }), this._updateScrollMode(this._currentPageNumber));
@@ -5657,7 +5601,7 @@ const Ks = class Ks {
   }
   _updateScrollMode(e = null) {
     const t = this._scrollMode, i = this.viewer;
-    i.classList.toggle("scrollHorizontal", t === O.HORIZONTAL), i.classList.toggle("scrollWrapped", t === O.WRAPPED), !(!this.pdfDocument || !e) && (t === O.PAGE ? c(this, A, zt).call(this) : this._previousScrollMode === O.PAGE && this._updateSpreadMode(), this._currentScaleValue && isNaN(this._currentScaleValue) && c(this, A, Se).call(this, this._currentScaleValue, {
+    i.classList.toggle("scrollHorizontal", t === D.HORIZONTAL), i.classList.toggle("scrollWrapped", t === D.WRAPPED), !(!this.pdfDocument || !e) && (t === D.PAGE ? u(this, S, $t).call(this) : this._previousScrollMode === D.PAGE && this._updateSpreadMode(), this._currentScaleValue && isNaN(this._currentScaleValue) && u(this, S, xe).call(this, this._currentScaleValue, {
       noScroll: !0
     }), this._setCurrentPageNumber(e, !0), this.update());
   }
@@ -5678,9 +5622,9 @@ const Ks = class Ks {
     if (!this.pdfDocument)
       return;
     const t = this.viewer, i = this._pages;
-    if (this._scrollMode === O.PAGE)
-      c(this, A, zt).call(this);
-    else if (t.textContent = "", this._spreadMode === Z.NONE)
+    if (this._scrollMode === D.PAGE)
+      u(this, S, $t).call(this);
+    else if (t.textContent = "", this._spreadMode === G.NONE)
       for (const n of this._pages)
         t.append(n.div);
     else {
@@ -5689,13 +5633,13 @@ const Ks = class Ks {
       for (let r = 0, l = i.length; r < l; ++r)
         s === null ? (s = document.createElement("div"), s.className = "spread", t.append(s)) : r % 2 === n && (s = s.cloneNode(!1), t.append(s)), s.append(i[r].div);
     }
-    e && (this._currentScaleValue && isNaN(this._currentScaleValue) && c(this, A, Se).call(this, this._currentScaleValue, {
+    e && (this._currentScaleValue && isNaN(this._currentScaleValue) && u(this, S, xe).call(this, this._currentScaleValue, {
       noScroll: !0
     }), this._setCurrentPageNumber(e, !0), this.update());
   }
   _getPageAdvance(e, t = !1) {
     switch (this._scrollMode) {
-      case O.WRAPPED: {
+      case D.WRAPPED: {
         const {
           views: i
         } = this._getVisiblePages(), n = /* @__PURE__ */ new Map();
@@ -5707,8 +5651,8 @@ const Ks = class Ks {
         } of i) {
           if (l === 0 || d < 100)
             continue;
-          let u = n.get(r);
-          u || n.set(r, u || (u = [])), u.push(s);
+          let c = n.get(r);
+          c || n.set(r, c ||= []), c.push(s);
         }
         for (const s of n.values()) {
           const r = s.indexOf(e);
@@ -5718,15 +5662,15 @@ const Ks = class Ks {
           if (l === 1)
             break;
           if (t)
-            for (let d = r - 1, u = 0; d >= u; d--) {
-              const g = s[d], E = s[d + 1] - 1;
-              if (g < E)
+            for (let d = r - 1, c = 0; d >= c; d--) {
+              const p = s[d], E = s[d + 1] - 1;
+              if (p < E)
                 return e - E;
             }
           else
-            for (let d = r + 1, u = l; d < u; d++) {
-              const g = s[d], E = s[d - 1] + 1;
-              if (g > E)
+            for (let d = r + 1, c = l; d < c; d++) {
+              const p = s[d], E = s[d - 1] + 1;
+              if (p > E)
                 return E - e;
             }
           if (t) {
@@ -5742,11 +5686,11 @@ const Ks = class Ks {
         }
         break;
       }
-      case O.HORIZONTAL:
+      case D.HORIZONTAL:
         break;
-      case O.PAGE:
-      case O.VERTICAL: {
-        if (this._spreadMode === Z.NONE)
+      case D.PAGE:
+      case D.VERTICAL: {
+        if (this._spreadMode === G.NONE)
           break;
         const i = this._spreadMode - 1;
         if (t && e % 2 !== i)
@@ -5799,13 +5743,13 @@ const Ks = class Ks {
     if (t > 0 && t !== 1)
       s = Math.round(s * t * 100) / 100;
     else if (i) {
-      const r = i > 0 ? Ys : 1 / Ys, l = i > 0 ? Math.ceil : Math.floor;
+      const r = i > 0 ? Js : 1 / Js, l = i > 0 ? Math.ceil : Math.floor;
       i = Math.abs(i);
       do
         s = l((s * r).toFixed(2) * 10) / 10;
       while (--i > 0);
     }
-    s = Math.max(ya, Math.min(va, s)), c(this, A, Se).call(this, s, {
+    s = Math.max(va, Math.min(ya, s)), u(this, S, xe).call(this, s, {
       noScroll: !1,
       drawingDelay: e,
       origin: n
@@ -5824,49 +5768,48 @@ const Ks = class Ks {
     });
   }
   get containerTopLeft() {
-    return o(this, wi) || f(this, wi, [this.container.offsetTop, this.container.offsetLeft]);
+    return o(this, bi) || f(this, bi, [this.container.offsetTop, this.container.offsetLeft]);
   }
   get annotationEditorMode() {
-    return o(this, ee) ? o(this, ue) : q.DISABLE;
+    return o(this, q) ? o(this, de) : Y.DISABLE;
   }
   set annotationEditorMode({
     mode: e,
     editId: t = null,
     isFromKeyboard: i = !1
   }) {
-    var r;
-    if (!o(this, ee))
+    if (!o(this, q))
       throw new Error("The AnnotationEditor is not enabled.");
-    if (o(this, ue) === e)
+    if (o(this, de) === e)
       return;
-    if (!Tr(e))
+    if (!Lr(e))
       throw new Error(`Invalid AnnotationEditor mode: ${e}`);
     if (!this.pdfDocument)
       return;
-    e === q.STAMP && ((r = o(this, at)) == null || r.loadModel("altText"));
+    e === Y.STAMP && o(this, rt)?.loadModel("altText");
     const {
       eventBus: n
     } = this, s = /* @__PURE__ */ h(() => {
-      c(this, A, $i).call(this), f(this, ue, e), o(this, ee).updateMode(e, t, i), n.dispatch("annotationeditormodechanged", {
+      u(this, S, Hi).call(this), f(this, de, e), o(this, q).updateMode(e, t, i), n.dispatch("annotationeditormodechanged", {
         source: this,
         mode: e
       });
     }, "updater");
-    if (e === q.NONE || o(this, ue) === q.NONE) {
-      const l = e !== q.NONE;
-      l || this.pdfDocument.annotationStorage.resetModifiedIds();
-      for (const u of this._pages)
-        u.toggleEditingMode(l);
-      const d = c(this, A, fa).call(this);
-      if (l && d) {
-        c(this, A, $i).call(this), f(this, ot, new AbortController());
-        const u = AbortSignal.any([o(this, Ue).signal, o(this, ot).signal]);
+    if (e === Y.NONE || o(this, de) === Y.NONE) {
+      const r = e !== Y.NONE;
+      r || this.pdfDocument.annotationStorage.resetModifiedIds();
+      for (const d of this._pages)
+        d.toggleEditingMode(r);
+      const l = u(this, S, ca).call(this);
+      if (r && l) {
+        u(this, S, Hi).call(this), f(this, at, new AbortController());
+        const d = AbortSignal.any([o(this, He).signal, o(this, at).signal]);
         n._on("pagerendered", ({
-          pageNumber: g
+          pageNumber: c
         }) => {
-          d.delete(g), d.size === 0 && f(this, lt, setTimeout(s, 0));
+          l.delete(c), l.size === 0 && f(this, ot, setTimeout(s, 0));
         }, {
-          signal: u
+          signal: d
         });
         return;
       }
@@ -5877,18 +5820,18 @@ const Ks = class Ks {
     if (this.pdfDocument) {
       for (const i of this._pages)
         i.update(t);
-      o(this, We) !== null && (clearTimeout(o(this, We)), f(this, We, null)), e || this.update();
+      o(this, $e) !== null && (clearTimeout(o(this, $e)), f(this, $e, null)), e || this.update();
     }
   }
 };
-He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), ee = new WeakMap(), rt = new WeakMap(), wi = new WeakMap(), _i = new WeakMap(), yi = new WeakMap(), vi = new WeakMap(), Pi = new WeakMap(), xi = new WeakMap(), Si = new WeakMap(), Ue = new WeakMap(), at = new WeakMap(), ot = new WeakMap(), lt = new WeakMap(), Rt = new WeakMap(), $e = new WeakMap(), Nt = new WeakMap(), Ai = new WeakMap(), Ct = new WeakMap(), ht = new WeakMap(), We = new WeakMap(), Ii = new WeakMap(), Mt = new WeakMap(), A = new WeakSet(), la = /* @__PURE__ */ h(function(e) {
+Be = new WeakMap(), gi = new WeakMap(), mi = new WeakMap(), de = new WeakMap(), q = new WeakMap(), st = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), wi = new WeakMap(), _i = new WeakMap(), vi = new WeakMap(), yi = new WeakMap(), Pi = new WeakMap(), He = new WeakMap(), rt = new WeakMap(), at = new WeakMap(), ot = new WeakMap(), Lt = new WeakMap(), Ue = new WeakMap(), Tt = new WeakMap(), xi = new WeakMap(), Rt = new WeakMap(), lt = new WeakMap(), $e = new WeakMap(), Si = new WeakMap(), Ct = new WeakMap(), S = new WeakSet(), oa = /* @__PURE__ */ h(function(e) {
   const t = {
-    annotationEditorMode: o(this, ue),
-    annotationMode: o(this, rt),
-    textLayerMode: o(this, Mt)
+    annotationEditorMode: o(this, de),
+    annotationMode: o(this, st),
+    textLayerMode: o(this, Ct)
   };
-  return e && (!e.includes(Ni.COPY) && o(this, Mt) === ce.ENABLE && (t.textLayerMode = ce.ENABLE_PERMISSIONS), e.includes(Ni.MODIFY_CONTENTS) || (t.annotationEditorMode = q.DISABLE), !e.includes(Ni.MODIFY_ANNOTATIONS) && !e.includes(Ni.FILL_INTERACTIVE_FORMS) && o(this, rt) === Pe.ENABLE_FORMS && (t.annotationMode = Pe.ENABLE)), t;
-}, "#initializePermissions"), ha = /* @__PURE__ */ h(async function(e) {
+  return e && (!e.includes(Ti.COPY) && o(this, Ct) === ue.ENABLE && (t.textLayerMode = ue.ENABLE_PERMISSIONS), e.includes(Ti.MODIFY_CONTENTS) || (t.annotationEditorMode = Y.DISABLE), !e.includes(Ti.MODIFY_ANNOTATIONS) && !e.includes(Ti.FILL_INTERACTIVE_FORMS) && o(this, st) === ye.ENABLE_FORMS && (t.annotationMode = ye.ENABLE)), t;
+}, "#initializePermissions"), la = /* @__PURE__ */ h(async function(e) {
   if (document.visibilityState === "hidden" || !this.container.offsetParent || this._getVisiblePages().views.length === 0)
     return;
   const t = Promise.withResolvers(), i = new AbortController();
@@ -5897,37 +5840,37 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
   }, {
     signal: typeof AbortSignal.any == "function" ? AbortSignal.any([e, i.signal]) : e
   }), await Promise.race([this._onePageRenderedCapability.promise, t.promise]), i.abort();
-}, "#onePageRenderedOrForceFetch"), da = /* @__PURE__ */ h(function(e, t) {
+}, "#onePageRenderedOrForceFetch"), ha = /* @__PURE__ */ h(function(e, t) {
   const i = document.getSelection(), {
     focusNode: n,
     anchorNode: s
   } = i;
-  if (s && n && i.containsNode(o(this, $e))) {
-    if (o(this, Rt) || e === ce.ENABLE_PERMISSIONS) {
-      Sn(t);
+  if (s && n && i.containsNode(o(this, Ue))) {
+    if (o(this, Lt) || e === ue.ENABLE_PERMISSIONS) {
+      Pn(t);
       return;
     }
-    f(this, Rt, !0);
+    f(this, Lt, !0);
     const {
       classList: r
     } = this.viewer;
     r.add("copyAll");
     const l = new AbortController();
-    window.addEventListener("keydown", (d) => f(this, Nt, d.key === "Escape"), {
+    window.addEventListener("keydown", (d) => f(this, Tt, d.key === "Escape"), {
       signal: l.signal
     }), this.getAllText().then(async (d) => {
       d !== null && await navigator.clipboard.writeText(d);
     }).catch((d) => {
       console.warn(`Something goes wrong when extracting the text: ${d.message}`);
     }).finally(() => {
-      f(this, Rt, !1), f(this, Nt, !1), l.abort(), r.remove("copyAll");
-    }), Sn(t);
+      f(this, Lt, !1), f(this, Tt, !1), l.abort(), r.remove("copyAll");
+    }), Pn(t);
   }
-}, "#copyCallback"), zt = /* @__PURE__ */ h(function() {
-  if (this._scrollMode !== O.PAGE)
+}, "#copyCallback"), $t = /* @__PURE__ */ h(function() {
+  if (this._scrollMode !== D.PAGE)
     throw new Error("#ensurePageViewVisible: Invalid scrollMode value.");
-  const e = this._currentPageNumber, t = o(this, ht), i = this.viewer;
-  if (i.textContent = "", t.pages.length = 0, this._spreadMode === Z.NONE && !this.isInPresentationMode) {
+  const e = this._currentPageNumber, t = o(this, lt), i = this.viewer;
+  if (i.textContent = "", t.pages.length = 0, this._spreadMode === G.NONE && !this.isInPresentationMode) {
     const n = this._pages[e - 1];
     i.append(n.div), t.pages.push(n);
   } else {
@@ -5945,31 +5888,31 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
     i.append(r);
   }
   t.scrollDown = e >= t.previousPageNumber, t.previousPageNumber = e;
-}, "#ensurePageViewVisible"), Ui = /* @__PURE__ */ h(function(e, t = null) {
+}, "#ensurePageViewVisible"), Bi = /* @__PURE__ */ h(function(e, t = null) {
   const {
     div: i,
     id: n
   } = e;
-  if (this._currentPageNumber !== n && this._setCurrentPageNumber(n), this._scrollMode === O.PAGE && (c(this, A, zt).call(this), this.update()), !t && !this.isInPresentationMode) {
+  if (this._currentPageNumber !== n && this._setCurrentPageNumber(n), this._scrollMode === D.PAGE && (u(this, S, $t).call(this), this.update()), !t && !this.isInPresentationMode) {
     const s = i.offsetLeft + i.clientLeft, r = s + i.clientWidth, {
       scrollLeft: l,
       clientWidth: d
     } = this.container;
-    (this._scrollMode === O.HORIZONTAL || s < l || r > l + d) && (t = {
+    (this._scrollMode === D.HORIZONTAL || s < l || r > l + d) && (t = {
       left: 0,
       top: 0
     });
   }
-  Nr(i, t), !this._currentScaleValue && this._location && (this._location = null);
-}, "#scrollIntoView"), ua = /* @__PURE__ */ h(function(e) {
+  Rr(i, t), !this._currentScaleValue && this._location && (this._location = null);
+}, "#scrollIntoView"), da = /* @__PURE__ */ h(function(e) {
   return e === this._currentScale || Math.abs(e - this._currentScale) < 1e-15;
-}, "#isSameScale"), cs = /* @__PURE__ */ h(function(e, t, {
+}, "#isSameScale"), ds = /* @__PURE__ */ h(function(e, t, {
   noScroll: i = !1,
   preset: n = !1,
   drawingDelay: s = -1,
   origin: r = null
 }) {
-  if (this._currentScaleValue = t.toString(), c(this, A, ua).call(this, e)) {
+  if (this._currentScaleValue = t.toString(), u(this, S, da).call(this, e)) {
     n && this.eventBus.dispatch("scalechanging", {
       source: this,
       scale: e,
@@ -5977,26 +5920,26 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
     });
     return;
   }
-  this.viewer.style.setProperty("--scale-factor", e * be.PDF_TO_CSS_UNITS);
+  this.viewer.style.setProperty("--scale-factor", e * me.PDF_TO_CSS_UNITS);
   const l = s >= 0 && s < 1e3;
   this.refresh(!0, {
     scale: e,
     drawingDelay: l ? s : -1
-  }), l && f(this, We, setTimeout(() => {
-    f(this, We, null), this.refresh();
+  }), l && f(this, $e, setTimeout(() => {
+    f(this, $e, null), this.refresh();
   }, s));
   const d = this._currentScale;
   if (this._currentScale = e, !i) {
-    let u = this._currentPageNumber, g;
-    if (this._location && !(this.isInPresentationMode || this.isChangingPresentationMode) && (u = this._location.pageNumber, g = [null, {
+    let c = this._currentPageNumber, p;
+    if (this._location && !(this.isInPresentationMode || this.isChangingPresentationMode) && (c = this._location.pageNumber, p = [null, {
       name: "XYZ"
     }, this._location.left, this._location.top, null]), this.scrollPageIntoView({
-      pageNumber: u,
-      destArray: g,
+      pageNumber: c,
+      destArray: p,
       allowNegativeOffset: !0
     }), Array.isArray(r)) {
-      const E = e / d - 1, [w, L] = this.containerTopLeft;
-      this.container.scrollLeft += (r[0] - L) * E, this.container.scrollTop += (r[1] - w) * E;
+      const E = e / d - 1, [w, A] = this.containerTopLeft;
+      this.container.scrollLeft += (r[0] - A) * E, this.container.scrollTop += (r[1] - w) * E;
     }
   }
   this.eventBus.dispatch("scalechanging", {
@@ -6004,19 +5947,19 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
     scale: e,
     presetValue: n ? t : void 0
   }), this.defaultRenderingQueue && this.update();
-}, "#setScaleUpdatePages"), ca = /* @__PURE__ */ h(function() {
-  return this._spreadMode !== Z.NONE && this._scrollMode !== O.HORIZONTAL ? 2 : 1;
-}, "#pageWidthScaleFactor"), Se = /* @__PURE__ */ h(function(e, t) {
+}, "#setScaleUpdatePages"), ua = /* @__PURE__ */ h(function() {
+  return this._spreadMode !== G.NONE && this._scrollMode !== D.HORIZONTAL ? 2 : 1;
+}, "#pageWidthScaleFactor"), xe = /* @__PURE__ */ h(function(e, t) {
   let i = parseFloat(e);
   if (i > 0)
-    t.preset = !1, c(this, A, cs).call(this, i, e, t);
+    t.preset = !1, u(this, S, ds).call(this, i, e, t);
   else {
     const n = this._pages[this._currentPageNumber - 1];
     if (!n)
       return;
-    let s = qs, r = er;
-    this.isInPresentationMode ? (s = r = 4, this._spreadMode !== Z.NONE && (s *= 2)) : this.removePageBorders ? s = r = 0 : this._scrollMode === O.HORIZONTAL && ([s, r] = [r, s]);
-    const l = (this.container.clientWidth - s) / n.width * n.scale / o(this, A, ca), d = (this.container.clientHeight - r) / n.height * n.scale;
+    let s = Ys, r = qs;
+    this.isInPresentationMode ? (s = r = 4, this._spreadMode !== G.NONE && (s *= 2)) : this.removePageBorders ? s = r = 0 : this._scrollMode === D.HORIZONTAL && ([s, r] = [r, s]);
+    const l = (this.container.clientWidth - s) / n.width * n.scale / o(this, S, ua), d = (this.container.clientHeight - r) / n.height * n.scale;
     switch (e) {
       case "page-actual":
         i = 1;
@@ -6031,21 +5974,21 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
         i = Math.min(l, d);
         break;
       case "auto":
-        const u = nr(n) ? l : Math.min(d, l);
-        i = Math.min(Pa, u);
+        const c = ir(n) ? l : Math.min(d, l);
+        i = Math.min(Pa, c);
         break;
       default:
         console.error(`#setScale: "${e}" is an unknown zoom value.`);
         return;
     }
-    t.preset = !0, c(this, A, cs).call(this, i, e, t);
+    t.preset = !0, u(this, S, ds).call(this, i, e, t);
   }
-}, "#setScale"), fs = /* @__PURE__ */ h(function() {
+}, "#setScale"), us = /* @__PURE__ */ h(function() {
   const e = this._pages[this._currentPageNumber - 1];
-  this.isInPresentationMode && c(this, A, Se).call(this, this._currentScaleValue, {
+  this.isInPresentationMode && u(this, S, xe).call(this, this._currentScaleValue, {
     noScroll: !0
-  }), c(this, A, Ui).call(this, e);
-}, "#resetCurrentPageView"), fa = /* @__PURE__ */ h(function() {
+  }), u(this, S, Bi).call(this, e);
+}, "#resetCurrentPageView"), ca = /* @__PURE__ */ h(function() {
   const e = this._getVisiblePages(), t = [], {
     ids: i,
     views: n
@@ -6066,7 +6009,7 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
     views: t,
     ids: i
   }), i);
-}, "#switchToEditAnnotationMode"), ga = /* @__PURE__ */ h(async function(e) {
+}, "#switchToEditAnnotationMode"), fa = /* @__PURE__ */ h(async function(e) {
   if (e.pdfPage)
     return e.pdfPage;
   try {
@@ -6076,34 +6019,32 @@ He = new WeakMap(), bi = new WeakMap(), Ei = new WeakMap(), ue = new WeakMap(), 
     return console.error("Unable to get page for page view", t), null;
   }
 }, "#ensurePdfPageLoaded"), pa = /* @__PURE__ */ h(function(e) {
-  var t, i;
-  if (((t = e.first) == null ? void 0 : t.id) === 1)
+  if (e.first?.id === 1)
     return !0;
-  if (((i = e.last) == null ? void 0 : i.id) === this.pagesCount)
+  if (e.last?.id === this.pagesCount)
     return !1;
   switch (this._scrollMode) {
-    case O.PAGE:
-      return o(this, ht).scrollDown;
-    case O.HORIZONTAL:
+    case D.PAGE:
+      return o(this, lt).scrollDown;
+    case D.HORIZONTAL:
       return this.scroll.right;
   }
   return this.scroll.down;
-}, "#getScrollAhead"), gs = /* @__PURE__ */ h(function(e = this.container.clientHeight) {
-  e !== o(this, Ai) && (f(this, Ai, e), Ta.setProperty("--viewer-container-height", `${e}px`));
-}, "#updateContainerHeightCss"), ma = /* @__PURE__ */ h(function(e) {
+}, "#getScrollAhead"), cs = /* @__PURE__ */ h(function(e = this.container.clientHeight) {
+  e !== o(this, xi) && (f(this, xi, e), Ta.setProperty("--viewer-container-height", `${e}px`));
+}, "#updateContainerHeightCss"), ga = /* @__PURE__ */ h(function(e) {
   for (const t of e)
     if (t.target === this.container) {
-      c(this, A, gs).call(this, Math.floor(t.borderBoxSize[0].blockSize)), f(this, wi, null);
+      u(this, S, cs).call(this, Math.floor(t.borderBoxSize[0].blockSize)), f(this, bi, null);
       break;
     }
-}, "#resizeObserverCallback"), $i = /* @__PURE__ */ h(function() {
-  var e;
-  (e = o(this, ot)) == null || e.abort(), f(this, ot, null), o(this, lt) !== null && (clearTimeout(o(this, lt)), f(this, lt, null));
-}, "#cleanupSwitchAnnotationEditorMode"), h(Ks, "PDFViewer");
-let en = Ks;
-const Xs = class Xs extends en {
+}, "#resizeObserverCallback"), Hi = /* @__PURE__ */ h(function() {
+  o(this, at)?.abort(), f(this, at, null), o(this, ot) !== null && (clearTimeout(o(this, ot)), f(this, ot, null));
+}, "#cleanupSwitchAnnotationEditorMode"), h(zs, "PDFViewer");
+let Yi = zs;
+const Gs = class Gs extends Yi {
   _resetView() {
-    super._resetView(), this._scrollMode = O.PAGE, this._spreadMode = Z.NONE;
+    super._resetView(), this._scrollMode = D.PAGE, this._spreadMode = G.NONE;
   }
   set scrollMode(e) {
   }
@@ -6114,9 +6055,9 @@ const Xs = class Xs extends en {
   _updateSpreadMode() {
   }
 };
-h(Xs, "PDFSinglePageViewer");
-let ps = Xs;
-var Ml = H.AnnotationLayerBuilder, kl = H.DownloadManager, Ol = H.EventBus, Dl = H.FindState, jl = H.GenericL10n, Fl = H.LinkTarget, Vl = H.PDFFindController, Bl = H.PDFHistory, Hl = H.PDFLinkService, Ul = H.PDFPageView, $l = H.PDFScriptingManager, Wl = H.PDFSinglePageViewer, zl = H.PDFViewer, Gl = H.ProgressBar, Kl = H.RenderingStates, Xl = H.ScrollMode, Zl = H.SimpleLinkService, Ql = H.SpreadMode, Jl = H.StructTreeLayerBuilder, Yl = H.TextLayerBuilder, ql = H.XfaLayerBuilder, eh = H.parseQueryString;
+h(Gs, "PDFSinglePageViewer");
+let fs = Gs;
+var Ml = V.AnnotationLayerBuilder, kl = V.DownloadManager, Ol = V.EventBus, Dl = V.FindState, jl = V.GenericL10n, Fl = V.LinkTarget, Vl = V.PDFFindController, Bl = V.PDFHistory, Hl = V.PDFLinkService, Ul = V.PDFPageView, $l = V.PDFScriptingManager, Wl = V.PDFSinglePageViewer, zl = V.PDFViewer, Gl = V.ProgressBar, Kl = V.RenderingStates, Xl = V.ScrollMode, Zl = V.SimpleLinkService, Ql = V.SpreadMode, Jl = V.StructTreeLayerBuilder, Yl = V.TextLayerBuilder, ql = V.XfaLayerBuilder, eh = V.parseQueryString;
 export {
   Ml as AnnotationLayerBuilder,
   kl as DownloadManager,

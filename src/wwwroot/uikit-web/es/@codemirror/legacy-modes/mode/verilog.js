@@ -218,7 +218,7 @@ var S = {
   "@": "stage",
   "\\": "keyword"
 }, B = 3, A = /^([~!@#\$%\^&\*-\+=\?\/\\\|'"<>]+)([\d\w_]*)/, J = /^[! ] */, Q = /^\/[\/\*]/;
-const Z = O({
+O({
   hooks: {
     electricInput: !1,
     // Return undefined for verilog tokenizing, or style for TLV token (null not used).
@@ -269,6 +269,5 @@ const Z = O({
   }
 });
 export {
-  Z as tlv,
   Y as verilog
 };

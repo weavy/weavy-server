@@ -316,11 +316,11 @@ t(O, "mkPython");
 var P = /* @__PURE__ */ t(function(r) {
   return r.split(" ");
 }, "words");
-const j = O({}), J = O({
+O({});
+const j = O({
   extra_keywords: P("by cdef cimport cpdef ctypedef enum except extern gil include nogil property public readonly struct union DEF IF ELIF ELSE")
 });
 export {
-  J as cython,
-  O as mkPython,
-  j as python
+  j as cython,
+  O as mkPython
 };
