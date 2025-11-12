@@ -13329,7 +13329,7 @@ function bM(n, t, e, i, s) {
   }
   return { state: n.streamParser.startState(s ? vw(s) : 4), tree: Lt.empty };
 }
-c(bM, "eb$1");
+c(bM, "e1$1");
 f(bM, "findStartInFragments");
 var AO, dd;
 let eD = (AO = (dd = class {
@@ -13505,7 +13505,7 @@ function kM(n, t) {
   ], top: !0 });
   return bw.push(e), e;
 }
-c(kM, "nb$1");
+c(kM, "n1$1");
 f(kM, "docID");
 Qe.RTL, Qe.LTR;
 var pd;
@@ -13583,7 +13583,7 @@ function PM(n) {
   let i = Cx(t) + Cx(e) + "*$";
   return [new RegExp("^" + i), new RegExp(i)];
 }
-c(PM, "sb$1");
+c(PM, "s1$1");
 f(PM, "prefixMatch");
 function nS(n) {
   let t = n.map((s) => typeof s == "string" ? { label: s } : s), [e, i] = t.every((s) => /^\w+$/.test(s.label)) ? [/\w*$/, /\w+$/] : PM(t);
@@ -13605,7 +13605,7 @@ function CM(n, t) {
     return t(e);
   };
 }
-c(CM, "ob$1");
+c(CM, "o1$1");
 f(CM, "ifNotIn");
 var fd;
 const QM = (fd = class {
@@ -13644,7 +13644,7 @@ function MM(n, t, e, i) {
     userEvent: "input.complete"
   };
 }
-c(MM, "lb$1");
+c(MM, "l1$1");
 f(MM, "insertCompletionText");
 const R4 = /* @__PURE__ */ new WeakMap();
 function TM(n) {
@@ -13653,7 +13653,7 @@ function TM(n) {
   let t = R4.get(n);
   return t || R4.set(n, t = nS(n)), t;
 }
-c(TM, "ab$1");
+c(TM, "a1$1");
 f(TM, "asSource");
 const yv = /* @__PURE__ */ Bt.define(), Ow = /* @__PURE__ */ Bt.define();
 var yd;
@@ -13794,7 +13794,7 @@ function EM(n, t, e, i, s, r) {
     class: "cm-completionInfo-" + (l ? a ? "left-narrow" : "right-narrow" : o ? "left" : "right")
   };
 }
-c(EM, "hb$1");
+c(EM, "h1$1");
 f(EM, "defaultPositionInfo");
 function _M(n) {
   let t = n.addToOptions.slice();
@@ -13828,7 +13828,7 @@ function _M(n) {
     position: 80
   }), t.sort((e, i) => e.position - i.position).map((e) => e.render);
 }
-c(_M, "fb$1");
+c(_M, "f1$1");
 f(_M, "optionContent");
 function l1(n, t, e) {
   if (n <= e)
@@ -13981,13 +13981,13 @@ let aD = zM;
 function LM(n, t) {
   return (e) => new aD(e, n, t);
 }
-c(LM, "cb$1");
+c(LM, "c1$1");
 f(LM, "completionTooltip");
 function IM(n, t) {
   let e = n.getBoundingClientRect(), i = t.getBoundingClientRect(), s = e.height / n.offsetHeight;
   i.top < e.top ? n.scrollTop -= (e.top - i.top) / s : i.bottom > e.bottom && (n.scrollTop += (i.bottom - e.bottom) / s);
 }
-c(IM, "ub$1");
+c(IM, "u1$1");
 f(IM, "scrollIntoView");
 function Mx(n) {
   return (n.boost || 0) * 100 + (n.apply ? 10 : 0) + (n.info ? 5 : 0) + (n.type ? 1 : 0);
@@ -14038,7 +14038,7 @@ function ZM(n, t) {
   }
   return o;
 }
-c(ZM, "db$1");
+c(ZM, "d1$1");
 f(ZM, "sortOptions");
 var Yn;
 const VM = (Yn = class {
@@ -14130,7 +14130,7 @@ function WM(n, t) {
       return !1;
   }
 }
-c(WM, "Ob$1");
+c(WM, "O1$1");
 f(WM, "sameResults");
 const cD = {
   "aria-autocomplete": "list"
@@ -14248,7 +14248,7 @@ function UM(n, t, e, i) {
   let s = t.sliceDoc(e, i);
   return typeof n == "function" ? n(s, e, i, t) : sS(n, !0).test(s);
 }
-c(UM, "yb$1");
+c(UM, "y1$1");
 f(UM, "checkValid");
 const oS = /* @__PURE__ */ Bt.define({
   map(n, t) {
@@ -14682,7 +14682,7 @@ function JM(n) {
     e.dispatch(e.state.update(h));
   };
 }
-c(JM, "Tb$1");
+c(JM, "T1$1");
 f(JM, "snippet");
 function lS(n) {
   return ({ state: t, dispatch: e }) => {
@@ -14738,7 +14738,7 @@ function ED(n = {}) {
     NM
   ];
 }
-c(ED, "Eb$1");
+c(ED, "E1$1");
 f(ED, "autocompletion");
 const _D = [
   { key: "Ctrl-Space", run: RO },
@@ -14758,7 +14758,7 @@ function LD(n) {
     /* State.Inactive */
   ) ? "active" : null;
 }
-c(LD, "Wb$1");
+c(LD, "W1$1");
 f(LD, "completionStatus");
 var Qo;
 const eT = (Qo = class {
@@ -15873,7 +15873,7 @@ function OT(n, t, e, i, s) {
   }
   return Rt(e, i, o, t);
 }
-c(OT, "Ib$1");
+c(OT, "I1$1");
 f(OT, "finishLink");
 function mS(n, t, e) {
   if (n.charCodeAt(t) == 60) {
@@ -16204,7 +16204,7 @@ function xT(n, t, e) {
   }
   return i;
 }
-c(xT, "zb$1");
+c(xT, "z1$1");
 f(xT, "leftOverSpace");
 function kT(n) {
   let { codeParser: t, htmlParser: e } = n;
@@ -16224,7 +16224,7 @@ function kT(n) {
     return null;
   }) };
 }
-c(kT, "Nb$1");
+c(kT, "N1$1");
 f(kT, "parseCode");
 const HD = { resolve: "Strikethrough", mark: "StrikethroughMark" }, YD = {
   defineNodes: [{
@@ -16371,7 +16371,7 @@ function QT(n, t) {
   }
   return i;
 }
-c(QT, "e1$1");
+c(QT, "eb$1");
 f(QT, "autolinkURLEnd");
 function Vx(n, t) {
   V4.lastIndex = t;
@@ -17159,7 +17159,7 @@ function ZT(n, t, e, i) {
   let s = Dx(e, i, t);
   return s < 0 || Dx(e, i, n) < s;
 }
-c(ZT, "o1$1");
+c(ZT, "ob$1");
 f(ZT, "overrides");
 const Li = typeof process < "u" && process.env && /\bparse\b/.test(process.env.LOG);
 let LO = null;
@@ -17801,7 +17801,7 @@ function BT(n) {
   }
   return t;
 }
-c(BT, "l1$1");
+c(BT, "lb$1");
 f(BT, "findFinished");
 function jx(n) {
   if (n.external) {
@@ -17891,7 +17891,7 @@ const fW = 54, yW = 1, mW = 55, wW = 2, gW = 56, vW = 3, j4 = 4, bW = 5, vv = 6,
 function tA(n) {
   return n == 45 || n == 46 || n == 58 || n >= 65 && n <= 90 || n == 95 || n >= 97 && n <= 122 || n >= 161;
 }
-c(tA, "A1$1");
+c(tA, "Ab$1");
 f(tA, "nameChar");
 function xS(n) {
   return n == 9 || n == 10 || n == 13 || n == 32;
@@ -17976,7 +17976,7 @@ function iA(n) {
     if (n.name == "svg" || n.name == "math") return !0;
   return !1;
 }
-c(iA, "U1$1");
+c(iA, "Ub$1");
 f(iA, "inForeignElement");
 const jW = new dn((n, t) => {
   if (n.next == kS && n.peek(1) == Ov) {
@@ -20673,7 +20673,7 @@ function bj(n) {
   return import(
     /* webpackIgnore: true */
     /* @vite-ignore */
-    new URL("./@codemirror/lang-sql/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+    new URL("./@codemirror/lang-sql/dist/index-Ccug1YFL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
   ).then((t) => t.sql({ dialect: t[n] }));
 }
 c(bj, "pt$1");
@@ -26563,7 +26563,7 @@ const lU = /* @__PURE__ */ d((n) => {
         ["sv-SE", () => import(
           /* webpackIgnore: true */
           /* @vite-ignore */
-          new URL("./es/locales/sv-SE.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+          new URL("./es/locales/sv-SE-onPJtCj4.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
         ).then((s) => s.svSE)]
       ]), this._locale = t.sourceLocale;
     }
@@ -29076,12 +29076,12 @@ const bU = /* @__PURE__ */ d((n) => {
           const o = s.split(".").slice(0, 2), l = a.split(".").slice(0, 2);
           if (o[0] !== l[0])
             throw new Error();
-          o[1] !== l[1] && console.warn(
-            `Version inconsistency: ${Gt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${a}`
+          o[1] !== l[1] && console.error(
+            `Version inconsistency: ${Gt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${a} - This may cause unexpected errors!`
           );
         } catch {
           throw new Error(
-            `Version mismatch! ${Gt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${a}`
+            `Version mismatch! ${Gt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${a} - This will likely cause errors!`
           );
         }
     }
@@ -29348,7 +29348,7 @@ const Sm = (qe = class {
     L(this, km, !0), console.info(this.weavyId, "was destroyed");
   }
 }, c(qe, "ae"), qe);
-$1 = /* @__PURE__ */ new WeakMap(), x1 = /* @__PURE__ */ new WeakMap(), hr = /* @__PURE__ */ new WeakMap(), km = /* @__PURE__ */ new WeakMap(), d(Sm, "WeavyClient"), Sm.version = "29.3.0", Sm.sourceName = "@weavy/uikit-web", Sm.defaults = {
+$1 = /* @__PURE__ */ new WeakMap(), x1 = /* @__PURE__ */ new WeakMap(), hr = /* @__PURE__ */ new WeakMap(), km = /* @__PURE__ */ new WeakMap(), d(Sm, "WeavyClient"), Sm.version = "29.4.0", Sm.sourceName = "@weavy/uikit-web", Sm.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -36078,11 +36078,11 @@ ${s.join(`
     super.willUpdate(t), t.has("weavy") && this.weavy && (this.pdfjsLib || (await this.weavy.whenUrl(), this.pdfjsLib = await import(
       /* webpackIgnore: true */
       /* @vite-ignore */
-      new URL("./es/pdfjs-dist/build/pdf.mjs.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+      new URL("./es/pdfjs-dist/build/pdf.mjs-BpNReg9A.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
     ), globalThis.pdfjsLib = this.pdfjsLib, this.pdfjsViewer = await import(
       /* webpackIgnore: true */
       /* @vite-ignore */
-      new URL("./es/pdfjs-dist/web/pdf_viewer.mjs.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+      new URL("./es/pdfjs-dist/web/pdf_viewer.mjs-BDbjEEB2.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
     ), this.whenPdfjsResolve?.({
       pdfjsLib: this.pdfjsLib,
       pdfjsViewer: this.pdfjsViewer
@@ -37458,7 +37458,7 @@ let qt = (P2 = (Hp = class extends _t {
       import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./es/editor.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./es/editor-CmQAVKQ-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((e) => e.editor).then(
         ({
           weavyHighlighter: e,
@@ -42811,7 +42811,7 @@ var SY = Object.defineProperty, PY = Object.getOwnPropertyDescriptor, $g = /* @_
     (a = n[r]) && (s = (i ? a(t, e, s) : a(s)) || s);
   return i && s && SY(t, e, s), s;
 }, "__decorateClass$g");
-const _K = new Map(
+const EK = new Map(
   Object.entries({
     [gn.ChatRoom]: Pt.ChatRoom,
     [gn.PrivateChat]: Pt.PrivateChat,
@@ -45315,7 +45315,7 @@ const st = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
 Gt.version = "1.0.0";
 Gt.sourceName = "@weavy/uikit-react";
 const yG = _Z(null);
-function zK(n, t = []) {
+function _K(n, t = []) {
   const [e, i] = NC(), s = {
     ...n,
     cloudFilePickerUrl: n.cloudFilePickerUrl?.toString(),
@@ -45341,7 +45341,7 @@ function zK(n, t = []) {
     }
   }, [s]), e;
 }
-c(zK, "useWeavy");
+c(_K, "useWeavy");
 const vZ = Promise.resolve(), bC = class bC {
   constructor(t, e) {
     this.o = [], this.t = !0, this.i = !1, this.l = t, this.h = e, this.u = new Promise((i, s) => {
@@ -45400,8 +45400,7 @@ function wG(n, t) {
   }, [i, e]), i.context?.value;
 }
 c(wG, "useWeavyContext");
-var gG = /* @__PURE__ */ ((n) => (n.Attachments = "attachments", n.agents = "agents", n.CloudFiles = "cloud_files", n.ContextData = "context_data", n.Comments = "comments", n.Embeds = "embeds", n.GoogleMeet = "google_meet", n.Meetings = "meetings", n.Mentions = "mentions", n.MicrosoftTeams = "microsoft_teams", n.Polls = "polls", n.Previews = "previews", n.Reactions = "reactions", n.Receipts = "receipts", n.Thumbnails = "thumbnails", n.Typing = "typing", n.Versions = "versions", n.WebDAV = "web_dav", n.ZoomMeetings = "zoom_meetings", n))(gG || {});
-const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "className"]), u9 = /* @__PURE__ */ new WeakMap(), p9 = /* @__PURE__ */ c((n, t, e, i, s) => {
+const gG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "className"]), u9 = /* @__PURE__ */ new WeakMap(), p9 = /* @__PURE__ */ c((n, t, e, i, s) => {
   const r = s?.[t];
   r === void 0 ? (n[t] = e, e == null && t in HTMLElement.prototype && n.removeAttribute(t)) : e !== i && ((a, o, l) => {
     let h = u9.get(a);
@@ -45412,7 +45411,7 @@ const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cl
 }, "t"), G = /* @__PURE__ */ c(({ react: n, tagName: t, elementClass: e, events: i, displayName: s }) => {
   const r = new Set(Object.keys(i ?? {})), a = n.forwardRef((o, l) => {
     const h = n.useRef(/* @__PURE__ */ new Map()), u = n.useRef(null), p = {}, y = {};
-    for (const [m, w] of Object.entries(o)) vG.has(m) ? p[m === "className" ? "class" : m] = w : r.has(m) || m in e.prototype ? y[m] = w : p[m] = w;
+    for (const [m, w] of Object.entries(o)) gG.has(m) ? p[m === "className" ? "class" : m] = w : r.has(m) || m in e.prototype ? y[m] = w : p[m] = w;
     return n.useLayoutEffect(() => {
       if (u.current === null) return;
       const m = /* @__PURE__ */ new Map();
@@ -45426,7 +45425,7 @@ const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cl
     }, [l]) });
   });
   return a.displayName = s ?? e.name, a;
-}, "o"), LK = G({
+}, "o"), zK = G({
   react: Y,
   tagName: vI,
   elementClass: yy,
@@ -45434,7 +45433,7 @@ const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cl
     onWyApp: "wy-app",
     onWyPreviewOpen: "wy-preview-open"
   }
-}), IK = G({
+}), LK = G({
   react: Y,
   tagName: OI,
   elementClass: my,
@@ -45442,14 +45441,14 @@ const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cl
     onWyApp: "wy-app",
     onWyPreviewOpen: "wy-preview-open"
   }
-}), ZK = G({
+}), IK = G({
   react: Y,
   tagName: U_,
   elementClass: Bo,
   events: {
     onWyApp: "wy-app"
   }
-}), bG = G({
+}), vG = G({
   react: Y,
   tagName: j_,
   elementClass: ie,
@@ -45457,15 +45456,15 @@ const vG = /* @__PURE__ */ new Set(["children", "localName", "ref", "style", "cl
     onWyNotifications: "wy-notifications"
   }
 });
-function VK({
+function ZK({
   children: n,
   ...t
 }) {
   const e = zZ(null), i = wG(() => e.current);
-  return /* @__PURE__ */ Y.createElement(bG, { ref: e, ...t }, /* @__PURE__ */ Y.createElement(yG.Provider, { value: i ?? null }, n));
+  return /* @__PURE__ */ Y.createElement(vG, { ref: e, ...t }, /* @__PURE__ */ Y.createElement(yG.Provider, { value: i ?? null }, n));
 }
-c(VK, "WyContext");
-const DK = G({
+c(ZK, "WyContext");
+const VK = G({
   react: Y,
   tagName: xI,
   elementClass: il,
@@ -45474,7 +45473,7 @@ const DK = G({
     onWyMessage: "wy-message",
     onWyPreviewOpen: "wy-preview-open"
   }
-}), WK = G({
+}), DK = G({
   react: Y,
   tagName: qI,
   elementClass: ca,
@@ -45482,14 +45481,14 @@ const DK = G({
     onWyApp: "wy-app",
     onWyPreviewOpen: "wy-preview-open"
   }
-}), qK = G({
+}), WK = G({
   react: Y,
   tagName: XI,
   elementClass: Us,
   events: {
     onWyPreviewOpen: "wy-preview-open"
   }
-}), jK = G({
+}), qK = G({
   react: Y,
   tagName: YI,
   elementClass: Hw,
@@ -45497,7 +45496,7 @@ const DK = G({
     onWyApp: "wy-app",
     onWyLink: "wy-link"
   }
-}), FK = G({
+}), jK = G({
   react: Y,
   tagName: JI,
   elementClass: cs,
@@ -45506,7 +45505,7 @@ const DK = G({
     onWyLink: "wy-link",
     onWyNotification: "wy-notification"
   }
-}), UK = G({
+}), FK = G({
   react: Y,
   tagName: fZ,
   elementClass: by,
@@ -45514,34 +45513,34 @@ const DK = G({
     onWyApp: "wy-app",
     onWyPreviewOpen: "wy-preview-open"
   }
-}), OG = G({
+}), bG = G({
   react: Y,
   tagName: "wy-attachment",
   elementClass: st.WyAttachment
-}), $G = G({
+}), OG = G({
   react: Y,
   tagName: "wy-attachments-list",
   elementClass: st.WyAttachmentsList,
   events: {
     onFileOpen: "file-open"
   }
-}), xG = G({
+}), $G = G({
   react: Y,
   tagName: "wy-avatar",
   elementClass: st.WyAvatar
-}), kG = G({
+}), xG = G({
   react: Y,
   tagName: "wy-blob-upload",
   elementClass: st.WyBlobUpload
-}), SG = G({
+}), kG = G({
   react: Y,
   tagName: "wy-button",
   elementClass: st.WyButton
-}), PG = G({
+}), SG = G({
   react: Y,
   tagName: "wy-buttons",
   elementClass: st.WyButtons
-}), CG = G({
+}), PG = G({
   react: Y,
   tagName: "wy-cloud-files",
   elementClass: st.WyCloudFiles,
@@ -45549,11 +45548,11 @@ const DK = G({
     onExternalBlobs: "external-blobs",
     onReleaseFocus: "release-focus"
   }
-}), QG = G({
+}), CG = G({
   react: Y,
   tagName: "wy-comment-list",
   elementClass: st.WyCommentList
-}), MG = G({
+}), QG = G({
   react: Y,
   tagName: "wy-comment",
   elementClass: st.WyComment,
@@ -45563,7 +45562,7 @@ const DK = G({
     onTrash: "trash",
     onRestore: "restore"
   }
-}), TG = G({
+}), MG = G({
   react: Y,
   tagName: "wy-comment-view",
   elementClass: st.WyCommentView,
@@ -45572,56 +45571,56 @@ const DK = G({
     onTrash: "trash",
     onEdit: "edit"
   }
-}), AG = G({
+}), TG = G({
   react: Y,
   tagName: "wy-comment-edit",
   elementClass: st.WyCommentEdit,
   events: {
     onEdit: "edit"
   }
-}), RG = G({
+}), AG = G({
   react: Y,
   tagName: "wy-comment-editor",
   elementClass: st.WyCommentEditor,
   events: {
     onSubmit: "submit"
   }
-}), EG = G({
+}), RG = G({
   react: Y,
   tagName: "wy-comment-trashed",
   elementClass: st.WyCommentTrashed,
   events: {
     onRestore: "restore"
   }
-}), _G = G({
+}), EG = G({
   react: Y,
   tagName: "wy-conversation",
   elementClass: st.WyConversation,
   events: {
     onReleaseFocus: "release-focus"
   }
-}), zG = G({
+}), _G = G({
   react: Y,
   tagName: "wy-conversation-appbar",
   elementClass: st.WyConversationAppbar,
   events: {
     onReleaseFocus: "release-focus"
   }
-}), LG = G({
+}), zG = G({
   react: Y,
   tagName: "wy-conversation-new",
   elementClass: st.WyConversationNew,
   events: {
     onReleaseFocus: "release-focus"
   }
-}), IG = G({
+}), LG = G({
   react: Y,
   tagName: "wy-conversation-list",
   elementClass: st.WyConversationList,
   events: {
     onConversationSelected: "conversation-selected"
   }
-}), ZG = G({
+}), IG = G({
   react: Y,
   tagName: "wy-conversation-list-item",
   elementClass: st.WyConversationListItem,
@@ -45633,30 +45632,30 @@ const DK = G({
     onMark: "mark",
     onLeave: "leave"
   }
-}), VG = G({
+}), ZG = G({
   react: Y,
   tagName: "wy-dropdown",
   elementClass: st.WyDropdown
-}), DG = G({
+}), VG = G({
   react: Y,
   tagName: "wy-dropdown-item",
   elementClass: st.WyDropdownItem
-}), WG = G({
+}), DG = G({
   react: Y,
   tagName: "wy-dropdown-option",
   elementClass: st.WyDropdownOption
-}), qG = G({
+}), WG = G({
   react: Y,
   tagName: "wy-dropdown-divider",
   elementClass: st.WyDropdownDivider
-}), jG = G({
+}), qG = G({
   react: Y,
   tagName: "wy-editor",
   elementClass: st.WyEditor,
   events: {
     onSubmit: "submit"
   }
-}), FG = G({
+}), jG = G({
   react: Y,
   tagName: "wy-embed",
   elementClass: st.WyEmbed,
@@ -45664,11 +45663,11 @@ const DK = G({
     onEmbedRemove: "embed-remove",
     onEmbedSwap: "embed-swap"
   }
-}), UG = G({
+}), FG = G({
   react: Y,
   tagName: "wy-empty",
   elementClass: st.WyEmpty
-}), BG = G({
+}), UG = G({
   react: Y,
   tagName: "wy-file-item",
   elementClass: st.WyFileItem,
@@ -45680,7 +45679,7 @@ const DK = G({
     onDeleteForever: "delete-forever",
     onSubscribe: "subscribe"
   }
-}), XG = G({
+}), BG = G({
   react: Y,
   tagName: "wy-file-menu",
   elementClass: st.WyFileMenu,
@@ -45691,14 +45690,14 @@ const DK = G({
     onRestore: "restore",
     onDeleteForever: "delete-forever"
   }
-}), NG = G({
+}), XG = G({
   react: Y,
   tagName: "wy-file-versions",
   elementClass: st.WyFileVersions,
   events: {
     onFileVersionSelect: "file-version-select"
   }
-}), HG = G({
+}), NG = G({
   react: Y,
   tagName: "wy-files-appbar",
   elementClass: st.WyFilesAppbar,
@@ -45712,7 +45711,7 @@ const DK = G({
     onShowTrashed: "show-trashed",
     onSubscribe: "subscribe"
   }
-}), YG = G({
+}), HG = G({
   react: Y,
   tagName: "wy-files-list",
   elementClass: st.WyFilesList,
@@ -45726,64 +45725,64 @@ const DK = G({
     onDeleteForever: "delete-forever",
     onSubscribe: "subscribe"
   }
-}), GG = G({
+}), YG = G({
   react: Y,
   tagName: "wy-icon",
   elementClass: st.WyIcon
-}), KG = G({
+}), GG = G({
   react: Y,
   tagName: "wy-image-grid",
   elementClass: st.WyImageGrid,
   events: {
     onFileOpen: "file-open"
   }
-}), JG = G({
+}), KG = G({
   react: Y,
   tagName: "wy-meeting-card",
   elementClass: st.WyMeetingCard
-}), tK = G({
+}), JG = G({
   react: Y,
   tagName: "wy-message",
   elementClass: st.WyMessage
-}), eK = G({
+}), tK = G({
   react: Y,
   tagName: "wy-messages",
   elementClass: st.WyMessages,
   events: {
     onScrollToBottom: "scroll-to-bottom"
   }
-}), iK = G({
+}), eK = G({
   react: Y,
   tagName: "wy-message-editor",
   elementClass: st.WyMessageEditor,
   events: {
     onSubmit: "submit"
   }
-}), nK = G({
+}), iK = G({
   react: Y,
   tagName: "wy-message-typing",
   elementClass: st.WyMessageTyping
-}), sK = G({
+}), nK = G({
   react: Y,
   tagName: "wy-messenger-badge",
   elementClass: st.WyMessengerBadge
-}), rK = G({
+}), sK = G({
   react: Y,
   tagName: "wy-notification-badge",
   elementClass: st.WyNotificationBadge
-}), aK = G({
+}), rK = G({
   react: Y,
   tagName: "wy-notification-button-list",
   elementClass: st.WyNotificationButtonList
-}), oK = G({
+}), aK = G({
   react: Y,
   tagName: "wy-notification-list",
   elementClass: st.WyNotificationList
-}), lK = G({
+}), oK = G({
   react: Y,
   tagName: "wy-notification-list-item",
   elementClass: st.WyNotificationListItem
-}), cK = G({
+}), lK = G({
   react: Y,
   tagName: "wy-overlay",
   elementClass: st.WyOverlay,
@@ -45791,11 +45790,11 @@ const DK = G({
     onReleaseFocus: "release-focus",
     onClose: "close"
   }
-}), hK = G({
+}), cK = G({
   react: Y,
   tagName: "wy-pdf-viewer",
   elementClass: st.WyPdfViewer
-}), dK = G({
+}), hK = G({
   react: Y,
   tagName: "wy-poll",
   elementClass: st.WyPoll,
@@ -45803,7 +45802,7 @@ const DK = G({
     onReleaseFocus: "release-focus",
     onVote: "vote"
   }
-}), uK = G({
+}), dK = G({
   react: Y,
   tagName: "wy-poll-option",
   elementClass: st.WyPollOption,
@@ -45811,7 +45810,7 @@ const DK = G({
     onReleaseFocus: "release-focus",
     onVote: "vote"
   }
-}), pK = G({
+}), uK = G({
   react: Y,
   tagName: "wy-post",
   elementClass: st.WyPost,
@@ -45821,7 +45820,7 @@ const DK = G({
     onTrash: "trash",
     onRestore: "restore"
   }
-}), fK = G({
+}), pK = G({
   react: Y,
   tagName: "wy-post-view",
   elementClass: st.WyPostView,
@@ -45831,25 +45830,25 @@ const DK = G({
     onTrash: "trash",
     onEdit: "edit"
   }
-}), yK = G({
+}), fK = G({
   react: Y,
   tagName: "wy-post-edit",
   elementClass: st.WyPostEdit,
   events: {
     onEdit: "edit"
   }
-}), mK = G({
+}), yK = G({
   react: Y,
   tagName: "wy-post-trashed",
   elementClass: st.WyPostTrashed,
   events: {
     onRestore: "restore"
   }
-}), wK = G({
+}), mK = G({
   react: Y,
   tagName: "wy-presence",
   elementClass: st.WyPresence
-}), gK = G({
+}), wK = G({
   react: Y,
   tagName: "wy-preview",
   elementClass: st.WyPreview,
@@ -45858,42 +45857,42 @@ const DK = G({
     onWyPreviewOpen: "wy-preview-open",
     onWyPreviewClose: "wy-preview-close"
   }
-}), vK = G({
+}), gK = G({
   react: Y,
   tagName: "wy-preview-item",
   elementClass: st.WyPreviewItem
-}), bK = G({
+}), vK = G({
   react: Y,
   tagName: "wy-preview-embed",
   elementClass: st.WyPreviewEmbed
-}), OK = G({
+}), bK = G({
   react: Y,
   tagName: "wy-preview-icon",
   elementClass: st.WyPreviewIcon
-}), $K = G({
+}), OK = G({
   react: Y,
   tagName: "wy-preview-image",
   elementClass: st.WyPreviewImage
-}), xK = G({
+}), $K = G({
   react: Y,
   tagName: "wy-preview-media",
   elementClass: st.WyPreviewMedia
-}), kK = G({
+}), xK = G({
   react: Y,
   tagName: "wy-preview-text",
   elementClass: st.WyPreviewText
-}), SK = G({
+}), kK = G({
   react: Y,
   tagName: "wy-reactions",
   elementClass: st.WyReactions,
   events: {
     onReleaseFocus: "release-focus"
   }
-}), PK = G({
+}), SK = G({
   react: Y,
   tagName: "wy-reaction-item",
   elementClass: st.WyReactionItem
-}), CK = G({
+}), PK = G({
   react: Y,
   tagName: "wy-sheet",
   elementClass: st.WySheet,
@@ -45901,111 +45900,110 @@ const DK = G({
     onReleaseFocus: "release-focus",
     onClose: "close"
   }
-}), QK = G({
+}), CK = G({
   react: Y,
   tagName: "wy-skeleton",
   elementClass: st.WySkeleton
-}), MK = G({
+}), QK = G({
   react: Y,
   tagName: "wy-spinner",
   elementClass: st.WySpinner
-}), TK = G({
+}), MK = G({
   react: Y,
   tagName: "wy-typing",
   elementClass: st.WyTyping
-}), AK = G({
+}), TK = G({
   react: Y,
   tagName: "wy-users-search",
   elementClass: st.WyUsersSearch,
   events: {
     onSubmit: "submit"
   }
-}), BK = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}), UK = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  WyAttachment: OG,
-  WyAttachmentsList: $G,
-  WyAvatar: xG,
-  WyBlobUpload: kG,
-  WyButton: SG,
-  WyButtons: PG,
-  WyCloudFiles: CG,
-  WyComment: MG,
-  WyCommentEdit: AG,
-  WyCommentEditor: RG,
-  WyCommentList: QG,
-  WyCommentTrashed: EG,
-  WyCommentView: TG,
-  WyConversation: _G,
-  WyConversationAppbar: zG,
-  WyConversationList: IG,
-  WyConversationListItem: ZG,
-  WyConversationNew: LG,
-  WyDropdown: VG,
-  WyDropdownDivider: qG,
-  WyDropdownItem: DG,
-  WyDropdownOption: WG,
-  WyEditor: jG,
-  WyEmbed: FG,
-  WyEmpty: UG,
-  WyFileItem: BG,
-  WyFileMenu: XG,
-  WyFileVersions: NG,
-  WyFilesAppbar: HG,
-  WyFilesList: YG,
-  WyIcon: GG,
-  WyImageGrid: KG,
-  WyMeetingCard: JG,
-  WyMessage: tK,
-  WyMessageEditor: iK,
-  WyMessageTyping: nK,
-  WyMessages: eK,
-  WyMessengerBadge: sK,
-  WyNotificationBadge: rK,
-  WyNotificationButtonList: aK,
-  WyNotificationList: oK,
-  WyNotificationListitem: lK,
-  WyOverlay: cK,
-  WyPdfViewer: hK,
-  WyPoll: dK,
-  WyPollOption: uK,
-  WyPost: pK,
-  WyPostEdit: yK,
-  WyPostTrashed: mK,
-  WyPostView: fK,
-  WyPresence: wK,
-  WyPreview: gK,
-  WyPreviewEmbed: bK,
-  WyPreviewIcon: OK,
-  WyPreviewImage: $K,
-  WyPreviewItem: vK,
-  WyPreviewMedia: xK,
-  WyPreviewText: kK,
-  WyReactionItem: PK,
-  WyReactions: SK,
-  WySheet: CK,
-  WySkeleton: QK,
-  WySpinner: MK,
-  WyTyping: TK,
-  WyUsersSearch: AK
+  WyAttachment: bG,
+  WyAttachmentsList: OG,
+  WyAvatar: $G,
+  WyBlobUpload: xG,
+  WyButton: kG,
+  WyButtons: SG,
+  WyCloudFiles: PG,
+  WyComment: QG,
+  WyCommentEdit: TG,
+  WyCommentEditor: AG,
+  WyCommentList: CG,
+  WyCommentTrashed: RG,
+  WyCommentView: MG,
+  WyConversation: EG,
+  WyConversationAppbar: _G,
+  WyConversationList: LG,
+  WyConversationListItem: IG,
+  WyConversationNew: zG,
+  WyDropdown: ZG,
+  WyDropdownDivider: WG,
+  WyDropdownItem: VG,
+  WyDropdownOption: DG,
+  WyEditor: qG,
+  WyEmbed: jG,
+  WyEmpty: FG,
+  WyFileItem: UG,
+  WyFileMenu: BG,
+  WyFileVersions: XG,
+  WyFilesAppbar: NG,
+  WyFilesList: HG,
+  WyIcon: YG,
+  WyImageGrid: GG,
+  WyMeetingCard: KG,
+  WyMessage: JG,
+  WyMessageEditor: eK,
+  WyMessageTyping: iK,
+  WyMessages: tK,
+  WyMessengerBadge: nK,
+  WyNotificationBadge: sK,
+  WyNotificationButtonList: rK,
+  WyNotificationList: aK,
+  WyNotificationListitem: oK,
+  WyOverlay: lK,
+  WyPdfViewer: cK,
+  WyPoll: hK,
+  WyPollOption: dK,
+  WyPost: uK,
+  WyPostEdit: fK,
+  WyPostTrashed: yK,
+  WyPostView: pK,
+  WyPresence: mK,
+  WyPreview: wK,
+  WyPreviewEmbed: vK,
+  WyPreviewIcon: bK,
+  WyPreviewImage: OK,
+  WyPreviewItem: gK,
+  WyPreviewMedia: $K,
+  WyPreviewText: xK,
+  WyReactionItem: SK,
+  WyReactions: kK,
+  WySheet: PK,
+  WySkeleton: CK,
+  WySpinner: QK,
+  WyTyping: MK,
+  WyUsersSearch: TK
 }, Symbol.toStringTag, { value: "Module" }));
 export {
   D_ as AppTypeGuids,
   ZU as AppTypeStrings,
-  gG as Feature,
-  _K as MessengerTypes,
+  EK as MessengerTypes,
   le as Weavy,
-  BK as WeavyComponents,
+  UK as WeavyComponents,
   yG as WeavyContext,
-  LK as WyChat,
-  IK as WyComments,
-  ZK as WyComponent,
-  VK as WyContext,
-  DK as WyCopilot,
-  WK as WyFiles,
-  qK as WyMessenger,
-  FK as WyNotificationToasts,
-  jK as WyNotifications,
-  UK as WyPosts,
-  zK as useWeavy,
+  zK as WyChat,
+  LK as WyComments,
+  IK as WyComponent,
+  ZK as WyContext,
+  VK as WyCopilot,
+  DK as WyFiles,
+  WK as WyMessenger,
+  jK as WyNotificationToasts,
+  qK as WyNotifications,
+  FK as WyPosts,
+  _K as useWeavy,
   wG as useWeavyContext
 };

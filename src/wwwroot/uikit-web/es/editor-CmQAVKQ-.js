@@ -12847,10 +12847,10 @@ const Lu = /* @__PURE__ */ new WeakMap(), co = class co extends me {
   constructor(e) {
     let t = So(e.languageData), i = Ky(e), n, s = new class extends ji {
       createParse(o, l, a) {
-        return new tb(n, o, l, a);
+        return new t1(n, o, l, a);
       }
     }();
-    super(t, s, [], e.name), this.topNode = nb(t, this), n = this, this.streamParser = i, this.stateAfter = new C({ perNode: !0 }), this.tokenTable = e.tokenTable ? new ks(i.tokenTable) : rb;
+    super(t, s, [], e.name), this.topNode = n1(t, this), n = this, this.streamParser = i, this.stateAfter = new C({ perNode: !0 }), this.tokenTable = e.tokenTable ? new ks(i.tokenTable) : r1;
   }
   /**
   Define a stream language.
@@ -12915,7 +12915,7 @@ function hp(r, e, t, i, n) {
   return null;
 }
 c(hp, "cutTree");
-function eb(r, e, t, i, n) {
+function e1(r, e, t, i, n) {
   for (let s of e) {
     let o = s.from + (s.openStart ? 25 : 0), l = s.to - (s.openEnd ? 25 : 0), a = o <= t && l > t && dh(r, s.tree, 0 - s.offset, t, l), h;
     if (a && a.pos <= i && (h = hp(r, s.tree, t + s.offset, a.pos + s.offset, !1)))
@@ -12923,12 +12923,12 @@ function eb(r, e, t, i, n) {
   }
   return { state: r.streamParser.startState(n ? ai(n) : 4), tree: V.empty };
 }
-c(eb, "findStartInFragments");
+c(e1, "findStartInFragments");
 var _i;
-let tb = (_i = class {
+let t1 = (_i = class {
   constructor(e, t, i, n) {
     this.lang = e, this.input = t, this.fragments = i, this.ranges = n, this.stoppedAt = null, this.chunks = [], this.chunkPos = [], this.chunk = [], this.chunkReused = void 0, this.rangeIndex = 0, this.to = n[n.length - 1].to;
-    let s = qi.get(), o = n[0].from, { state: l, tree: a } = eb(e, i, o, this.to, s?.state);
+    let s = qi.get(), o = n[0].from, { state: l, tree: a } = e1(e, i, o, this.to, s?.state);
     this.state = l, this.parsedPos = this.chunkStart = o + a.length;
     for (let h = 0; h < a.children.length; h++)
       this.chunks.push(a.children[h]), this.chunkPos.push(a.positions[h]);
@@ -13011,7 +13011,7 @@ let tb = (_i = class {
       buffer: this.chunk,
       start: this.chunkStart,
       length: this.parsedPos - this.chunkStart,
-      nodeSet: ib,
+      nodeSet: i1,
       topID: 0,
       maxBufferLength: 512,
       reused: this.chunkReused
@@ -13032,7 +13032,7 @@ function fp(r, e, t) {
   throw new Error("Stream parser failed to advance stream.");
 }
 c(fp, "readToken$1");
-const Oh = /* @__PURE__ */ Object.create(null), an = [te.none], ib = /* @__PURE__ */ new Yi(an), Mu = [], _u = /* @__PURE__ */ Object.create(null), cp = /* @__PURE__ */ Object.create(null);
+const Oh = /* @__PURE__ */ Object.create(null), an = [te.none], i1 = /* @__PURE__ */ new Yi(an), Mu = [], _u = /* @__PURE__ */ Object.create(null), cp = /* @__PURE__ */ Object.create(null);
 for (let [r, e] of [
   ["variable", "variableName"],
   ["variable-2", "variableName.special"],
@@ -13058,7 +13058,7 @@ const Nf = class Nf {
 };
 c(Nf, "TokenTable");
 let ks = Nf;
-const rb = /* @__PURE__ */ new ks(Oh);
+const r1 = /* @__PURE__ */ new ks(Oh);
 function Vo(r, e) {
   Mu.indexOf(r) > -1 || (Mu.push(r), console.warn(e));
 }
@@ -13087,14 +13087,14 @@ function up(r, e) {
   return an.push(o), o.id;
 }
 c(up, "createTokenType");
-function nb(r, e) {
+function n1(r, e) {
   let t = te.define({ id: an.length, name: "Document", props: [
     Qt.add(() => r),
     er.add(() => (i) => e.getIndent(i))
   ], top: !0 });
   return an.push(t), t;
 }
-c(nb, "docID");
+c(n1, "docID");
 ee.RTL, ee.LTR;
 const Gf = class Gf {
   /**
@@ -13159,7 +13159,7 @@ function Cu(r) {
   return t && (e = e.replace(/\w/g, "")), `[${t ? "\\w" : ""}${e.replace(/[^\w\s]/g, "\\$&")}]`;
 }
 c(Cu, "toSet");
-function sb(r) {
+function s1(r) {
   let e = /* @__PURE__ */ Object.create(null), t = /* @__PURE__ */ Object.create(null);
   for (let { label: n } of r) {
     e[n[0]] = !0;
@@ -13169,16 +13169,16 @@ function sb(r) {
   let i = Cu(e) + Cu(t) + "*$";
   return [new RegExp("^" + i), new RegExp(i)];
 }
-c(sb, "prefixMatch");
+c(s1, "prefixMatch");
 function dp(r) {
-  let e = r.map((n) => typeof n == "string" ? { label: n } : n), [t, i] = e.every((n) => /^\w+$/.test(n.label)) ? [/\w*$/, /\w+$/] : sb(e);
+  let e = r.map((n) => typeof n == "string" ? { label: n } : n), [t, i] = e.every((n) => /^\w+$/.test(n.label)) ? [/\w*$/, /\w+$/] : s1(e);
   return (n) => {
     let s = n.matchBefore(i);
     return s || n.explicit ? { from: s ? s.from : n.pos, options: e, validFor: t } : null;
   };
 }
 c(dp, "completeFromList");
-function ob(r, e) {
+function o1(r, e) {
   return (t) => {
     for (let i = F(t.state).resolveInner(t.pos, -1); i; i = i.parent) {
       if (r.indexOf(i.name) > -1)
@@ -13189,7 +13189,7 @@ function ob(r, e) {
     return e(t);
   };
 }
-c(ob, "ifNotIn");
+c(o1, "ifNotIn");
 const Hf = class Hf {
   constructor(e, t, i, n) {
     this.completion = e, this.source = t, this.match = i, this.score = n;
@@ -13208,7 +13208,7 @@ function Op(r, e) {
 }
 c(Op, "ensureAnchor");
 const ph = /* @__PURE__ */ Ie.define();
-function lb(r, e, t, i) {
+function l1(r, e, t, i) {
   let { main: n } = r.selection, s = t - n.from, o = i - n.from;
   return {
     ...r.changeByRange((l) => {
@@ -13224,15 +13224,15 @@ function lb(r, e, t, i) {
     userEvent: "input.complete"
   };
 }
-c(lb, "insertCompletionText");
+c(l1, "insertCompletionText");
 const Eu = /* @__PURE__ */ new WeakMap();
-function ab(r) {
+function a1(r) {
   if (!Array.isArray(r))
     return r;
   let e = Eu.get(r);
   return e || Eu.set(r, e = dp(r)), e;
 }
-c(ab, "asSource");
+c(a1, "asSource");
 const Rs = /* @__PURE__ */ I.define(), hn = /* @__PURE__ */ I.define(), Ff = class Ff {
   constructor(e) {
     this.pattern = e, this.chars = [], this.folded = [], this.any = [], this.precise = [], this.byWord = [], this.score = 0, this.matched = [];
@@ -13329,7 +13329,7 @@ const ie = /* @__PURE__ */ M.define({
       aboveCursor: !1,
       icons: !0,
       addToOptions: [],
-      positionInfo: hb,
+      positionInfo: h1,
       filterStrict: !1,
       compareCompletions: /* @__PURE__ */ c((e, t) => e.label.localeCompare(t.label), "compareCompletions"),
       interactionDelay: 75,
@@ -13349,7 +13349,7 @@ function Vu(r, e) {
   return r ? e ? r + " " + e : r : e;
 }
 c(Vu, "joinClass");
-function hb(r, e, t, i, n, s) {
+function h1(r, e, t, i, n, s) {
   let o = r.textDirection == ee.RTL, l = o, a = !1, h = "top", f, u, d = e.left - n.left, O = n.right - e.right, p = i.right - i.left, m = i.bottom - i.top;
   if (l && d < Math.min(p, O) ? l = !1 : !l && O < Math.min(p, d) && (l = !0), p <= (l ? d : O))
     f = Math.max(n.top, Math.min(t.top, n.bottom - m)) - e.top, u = Math.min(400, l ? d : O);
@@ -13368,8 +13368,8 @@ function hb(r, e, t, i, n, s) {
     class: "cm-completionInfo-" + (a ? o ? "left-narrow" : "right-narrow" : l ? "left" : "right")
   };
 }
-c(hb, "defaultPositionInfo");
-function fb(r) {
+c(h1, "defaultPositionInfo");
+function f1(r) {
   let e = r.addToOptions.slice();
   return r.icons && e.push({
     render(t) {
@@ -13401,7 +13401,7 @@ function fb(r) {
     position: 80
   }), e.sort((t, i) => t.position - i.position).map((t) => t.render);
 }
-c(fb, "optionContent");
+c(f1, "optionContent");
 function Uo(r, e, t) {
   if (r <= t)
     return { from: 0, to: r };
@@ -13421,7 +13421,7 @@ const Jf = class Jf {
       key: this
     }, this.space = null, this.currentClass = "";
     let n = e.state.field(t), { options: s, selected: o } = n.open, l = e.state.facet(ie);
-    this.optionContent = fb(l), this.optionClass = l.optionClass, this.tooltipClass = l.tooltipClass, this.range = Uo(s.length, o, l.maxRenderedOptions), this.dom = document.createElement("div"), this.dom.className = "cm-tooltip-autocomplete", this.updateTooltipClass(e.state), this.dom.addEventListener("mousedown", (a) => {
+    this.optionContent = f1(l), this.optionClass = l.optionClass, this.tooltipClass = l.tooltipClass, this.range = Uo(s.length, o, l.maxRenderedOptions), this.dom = document.createElement("div"), this.dom.className = "cm-tooltip-autocomplete", this.updateTooltipClass(e.state), this.dom.addEventListener("mousedown", (a) => {
       let { options: h } = e.state.field(t).open;
       for (let f = a.target, u; f && f != this.dom; f = f.parentNode)
         if (f.nodeName == "LI" && (u = /-(\d+)$/.exec(f.id)) && +u[1] < h.length) {
@@ -13494,7 +13494,7 @@ const Jf = class Jf {
     let t = null;
     for (let i = this.list.firstChild, n = this.range.from; i; i = i.nextSibling, n++)
       i.nodeName != "LI" || !i.id ? n-- : n == e ? i.hasAttribute("aria-selected") || (i.setAttribute("aria-selected", "true"), t = i) : i.hasAttribute("aria-selected") && (i.removeAttribute("aria-selected"), i.removeAttribute("aria-describedby"));
-    return t && ub(this.list, t), t;
+    return t && u1(this.list, t), t;
   }
   measureInfo() {
     let e = this.dom.querySelector("[aria-selected]");
@@ -13548,20 +13548,20 @@ const Jf = class Jf {
 };
 c(Jf, "CompletionTooltip");
 let ya = Jf;
-function cb(r, e) {
+function c1(r, e) {
   return (t) => new ya(t, r, e);
 }
-c(cb, "completionTooltip");
-function ub(r, e) {
+c(c1, "completionTooltip");
+function u1(r, e) {
   let t = r.getBoundingClientRect(), i = e.getBoundingClientRect(), n = t.height / r.offsetHeight;
   i.top < t.top ? r.scrollTop -= (t.top - i.top) / n : i.bottom > t.bottom && (r.scrollTop += (i.bottom - t.bottom) / n);
 }
-c(ub, "scrollIntoView");
+c(u1, "scrollIntoView");
 function Uu(r) {
   return (r.boost || 0) * 100 + (r.apply ? 10 : 0) + (r.info ? 5 : 0) + (r.type ? 1 : 0);
 }
 c(Uu, "score");
-function db(r, e) {
+function d1(r, e) {
   let t = [], i = null, n = null, s = /* @__PURE__ */ c((f) => {
     t.push(f);
     let { section: u } = f.completion;
@@ -13605,7 +13605,7 @@ function db(r, e) {
   }
   return l;
 }
-c(db, "sortOptions");
+c(d1, "sortOptions");
 const zt = class zt {
   constructor(e, t, i, n, s, o) {
     this.options = e, this.attrs = t, this.tooltip = i, this.timestamp = n, this.selected = s, this.disabled = o;
@@ -13616,7 +13616,7 @@ const zt = class zt {
   static build(e, t, i, n, s, o) {
     if (n && !o && e.some((h) => h.isPending))
       return n.setDisabled();
-    let l = db(e, t);
+    let l = d1(e, t);
     if (!l.length)
       return n && e.some((h) => h.isPending) ? n.setDisabled() : null;
     let a = t.facet(ie).selectOnOpen ? 0 : -1;
@@ -13630,7 +13630,7 @@ const zt = class zt {
     }
     return new zt(l, Wu(i, a), {
       pos: e.reduce((h, f) => f.hasResult() ? Math.min(h, f.from) : h, 1e8),
-      create: bb,
+      create: b1,
       above: s.aboveCursor
     }, n ? n.timestamp : Date.now(), a, !1);
   }
@@ -13648,10 +13648,10 @@ const jr = class jr {
     this.active = e, this.id = t, this.open = i;
   }
   static start() {
-    return new jr(gb, "cm-ac-" + Math.floor(Math.random() * 2e6).toString(36), null);
+    return new jr(g1, "cm-ac-" + Math.floor(Math.random() * 2e6).toString(36), null);
   }
   update(e) {
-    let { state: t } = e, i = t.facet(ie), s = (i.override || t.languageDataAt("autocomplete", Jt(t)).map(ab)).map((a) => (this.active.find((f) => f.source == a) || new ct(
+    let { state: t } = e, i = t.facet(ie), s = (i.override || t.languageDataAt("autocomplete", Jt(t)).map(a1)).map((a) => (this.active.find((f) => f.source == a) || new ct(
       a,
       this.active.some(
         (f) => f.state != 0
@@ -13661,7 +13661,7 @@ const jr = class jr {
     )).update(e, i));
     s.length == this.active.length && s.every((a, h) => a == this.active[h]) && (s = this.active);
     let o = this.open, l = e.effects.some((a) => a.is(mh));
-    o && e.docChanged && (o = o.map(e.changes)), e.selection || s.some((a) => a.hasResult() && e.changes.touchesRange(a.from, a.to)) || !Ob(s, this.active) || l ? o = ba.build(s, t, this.id, o, i, l) : o && o.disabled && !s.some((a) => a.isPending) && (o = null), !o && s.every((a) => !a.isPending) && s.some((a) => a.hasResult()) && (s = s.map((a) => a.hasResult() ? new ct(
+    o && e.docChanged && (o = o.map(e.changes)), e.selection || s.some((a) => a.hasResult() && e.changes.touchesRange(a.from, a.to)) || !O1(s, this.active) || l ? o = ba.build(s, t, this.id, o, i, l) : o && o.disabled && !s.some((a) => a.isPending) && (o = null), !o && s.every((a) => !a.isPending) && s.some((a) => a.hasResult()) && (s = s.map((a) => a.hasResult() ? new ct(
       a.source,
       0
       /* State.Inactive */
@@ -13674,12 +13674,12 @@ const jr = class jr {
     return this.open ? this.open.tooltip : null;
   }
   get attrs() {
-    return this.open ? this.open.attrs : this.active.length ? pb : mb;
+    return this.open ? this.open.attrs : this.active.length ? p1 : m1;
   }
 };
 c(jr, "CompletionState");
 let Sa = jr;
-function Ob(r, e) {
+function O1(r, e) {
   if (r == e)
     return !0;
   for (let t = 0, i = 0; ; ) {
@@ -13694,10 +13694,10 @@ function Ob(r, e) {
       return !1;
   }
 }
-c(Ob, "sameResults");
-const pb = {
+c(O1, "sameResults");
+const p1 = {
   "aria-autocomplete": "list"
-}, mb = {};
+}, m1 = {};
 function Wu(r, e) {
   let t = {
     "aria-autocomplete": "list",
@@ -13707,7 +13707,7 @@ function Wu(r, e) {
   return e > -1 && (t["aria-activedescendant"] = r + "-" + e), t;
 }
 c(Wu, "makeAttrs");
-const gb = [];
+const g1 = [];
 function pp(r, e) {
   if (r.isUserEvent("input.complete")) {
     let i = r.annotation(ph);
@@ -13786,7 +13786,7 @@ const xi = class xi extends ct {
         /* State.Inactive */
       );
     let a = e.changes.mapPos(this.limit);
-    return yb(n.validFor, e.state, s, o) ? new xi(this.source, this.explicit, a, n, s, o) : n.update && (n = n.update(n, s, o, new zi(e.state, l, !1))) ? new xi(this.source, this.explicit, a, n, n.from, (i = n.to) !== null && i !== void 0 ? i : Jt(e.state)) : new ct(this.source, 1, this.explicit);
+    return y1(n.validFor, e.state, s, o) ? new xi(this.source, this.explicit, a, n, s, o) : n.update && (n = n.update(n, s, o, new zi(e.state, l, !1))) ? new xi(this.source, this.explicit, a, n, n.from, (i = n.to) !== null && i !== void 0 ? i : Jt(e.state)) : new ct(this.source, 1, this.explicit);
   }
   map(e) {
     return e.empty ? this : (this.result.map ? this.result.map(this.result, e) : this.result) ? new xi(this.source, this.explicit, e.mapPos(this.limit), this.result, e.mapPos(this.from), e.mapPos(this.to, 1)) : new ct(
@@ -13801,13 +13801,13 @@ const xi = class xi extends ct {
 };
 c(xi, "ActiveResult");
 let $s = xi;
-function yb(r, e, t, i) {
+function y1(r, e, t, i) {
   if (!r)
     return !1;
   let n = e.sliceDoc(t, i);
   return typeof r == "function" ? r(n, t, i, e) : Op(r, !0).test(n);
 }
-c(yb, "checkValid");
+c(y1, "checkValid");
 const mh = /* @__PURE__ */ I.define({
   map(r, e) {
     return r.map((t) => t.map(e));
@@ -13828,12 +13828,12 @@ function gh(r, e) {
   const t = e.completion.apply || e.completion.label;
   let i = r.state.field(ue).active.find((n) => n.source == e.source);
   return i instanceof $s ? (typeof t == "string" ? r.dispatch({
-    ...lb(r.state, t, i.from, i.to),
+    ...l1(r.state, t, i.from, i.to),
     annotations: ph.of(e.completion)
   }) : t(r, e.completion, i.from, i.to), !0) : !1;
 }
 c(gh, "applyCompletion");
-const bb = /* @__PURE__ */ cb(ue, gh);
+const b1 = /* @__PURE__ */ c1(ue, gh);
 function Yn(r, e = "option") {
   return (t) => {
     let i = t.state.field(ue, !1);
@@ -13849,7 +13849,7 @@ c(Yn, "moveCompletionSelection");
 const gp = /* @__PURE__ */ c((r) => {
   let e = r.state.field(ue, !1);
   return r.state.readOnly || !e || !e.open || e.open.selected < 0 || e.open.disabled || Date.now() - e.open.timestamp < r.state.facet(ie).interactionDelay ? !1 : gh(r, e.open.options[e.open.selected]);
-}, "acceptCompletion"), Wo = /* @__PURE__ */ c((r) => r.state.field(ue, !1) ? (r.dispatch({ effects: Rs.of(!0) }), !0) : !1, "startCompletion"), Sb = /* @__PURE__ */ c((r) => {
+}, "acceptCompletion"), Wo = /* @__PURE__ */ c((r) => r.state.field(ue, !1) ? (r.dispatch({ effects: Rs.of(!0) }), !0) : !1, "startCompletion"), S1 = /* @__PURE__ */ c((r) => {
   let e = r.state.field(ue, !1);
   return !e || !e.active.some(
     (t) => t.state != 0
@@ -13862,7 +13862,7 @@ const gp = /* @__PURE__ */ c((r) => {
 };
 c(ec, "RunningQuery");
 let Qa = ec;
-const Qb = 50, wb = 1e3, xb = /* @__PURE__ */ je.fromClass(class {
+const Q1 = 50, w1 = 1e3, x1 = /* @__PURE__ */ je.fromClass(class {
   constructor(r) {
     this.view = r, this.debounceUpdate = -1, this.running = [], this.debounceAccept = -1, this.pendingStart = !1, this.composing = 0;
     for (let e of r.state.field(ue).active)
@@ -13878,7 +13878,7 @@ const Qb = 50, wb = 1e3, xb = /* @__PURE__ */ je.fromClass(class {
     });
     for (let s = 0; s < this.running.length; s++) {
       let o = this.running[s];
-      if (i || o.context.abortOnDocChange && r.docChanged || o.updates.length + r.transactions.length > Qb && Date.now() - o.time > wb) {
+      if (i || o.context.abortOnDocChange && r.docChanged || o.updates.length + r.transactions.length > Q1 && Date.now() - o.time > w1) {
         for (let l of o.context.abortListeners)
           try {
             l();
@@ -13964,10 +13964,10 @@ const Qb = 50, wb = 1e3, xb = /* @__PURE__ */ je.fromClass(class {
       this.composing == 3 && setTimeout(() => this.view.dispatch({ effects: Rs.of(!1) }), 20), this.composing = 0;
     }
   }
-}), kb = typeof navigator == "object" && /* @__PURE__ */ /Win/.test(navigator.platform), Pb = /* @__PURE__ */ fi.highest(/* @__PURE__ */ _.domEventHandlers({
+}), k1 = typeof navigator == "object" && /* @__PURE__ */ /Win/.test(navigator.platform), P1 = /* @__PURE__ */ fi.highest(/* @__PURE__ */ _.domEventHandlers({
   keydown(r, e) {
     let t = e.state.field(ue, !1);
-    if (!t || !t.open || t.open.disabled || t.open.selected < 0 || r.key.length > 1 || r.ctrlKey && !(kb && r.altKey) || r.metaKey)
+    if (!t || !t.open || t.open.disabled || t.open.selected < 0 || r.key.length > 1 || r.ctrlKey && !(k1 && r.altKey) || r.metaKey)
       return !1;
     let i = t.open.options[t.open.selected], n = t.active.find((o) => o.source == i.source), s = i.completion.commitCharacters || n.result.commitCharacters;
     return s && s.indexOf(r.key) > -1 && gh(e, i), !1;
@@ -14163,7 +14163,7 @@ const Oo = class Oo {
   }
 };
 c(Oo, "Snippet");
-let ka = Oo, Rb = /* @__PURE__ */ j.widget({ widget: /* @__PURE__ */ new class extends vt {
+let ka = Oo, R1 = /* @__PURE__ */ j.widget({ widget: /* @__PURE__ */ new class extends vt {
   toDOM() {
     let r = document.createElement("span");
     return r.className = "cm-snippetFieldPosition", r;
@@ -14171,10 +14171,10 @@ let ka = Oo, Rb = /* @__PURE__ */ j.widget({ widget: /* @__PURE__ */ new class e
   ignoreEvent() {
     return !1;
   }
-}() }), $b = /* @__PURE__ */ j.mark({ class: "cm-snippetField" });
+}() }), $1 = /* @__PURE__ */ j.mark({ class: "cm-snippetField" });
 const po = class po {
   constructor(e, t) {
-    this.ranges = e, this.active = t, this.deco = j.set(e.map((i) => (i.from == i.to ? Rb : $b).range(i.from, i.to)), !0);
+    this.ranges = e, this.active = t, this.deco = j.set(e.map((i) => (i.from == i.to ? R1 : $1).range(i.from, i.to)), !0);
   }
   map(e) {
     let t = [];
@@ -14196,7 +14196,7 @@ const wn = /* @__PURE__ */ I.define({
   map(r, e) {
     return r && r.map(e);
   }
-}), vb = /* @__PURE__ */ I.define(), fn = /* @__PURE__ */ Ye.define({
+}), v1 = /* @__PURE__ */ I.define(), fn = /* @__PURE__ */ Ye.define({
   create() {
     return null;
   },
@@ -14204,7 +14204,7 @@ const wn = /* @__PURE__ */ I.define({
     for (let t of e.effects) {
       if (t.is(wn))
         return t.value;
-      if (t.is(vb) && r)
+      if (t.is(v1) && r)
         return new Ni(r.ranges, t.value);
     }
     return r && e.docChanged && (r = r.map(e.changes)), r && e.selection && !r.selectionInsideField(e.selection) && (r = null), r;
@@ -14215,7 +14215,7 @@ function yh(r, e) {
   return P.create(r.filter((t) => t.field == e).map((t) => P.range(t.from, t.to)));
 }
 c(yh, "fieldSelection");
-function Tb(r) {
+function T1(r) {
   let e = ka.parse(r);
   return (t, i, n, s) => {
     let { text: o, ranges: l } = e.instantiate(t.state, n), { main: a } = t.state.selection, h = {
@@ -14225,12 +14225,12 @@ function Tb(r) {
     };
     if (l.length && (h.selection = yh(l, 0)), l.some((f) => f.field > 0)) {
       let f = new Ni(l, 0), u = h.effects = [wn.of(f)];
-      t.state.field(fn, !1) === void 0 && u.push(I.appendConfig.of([fn, _b, Cb, yp]));
+      t.state.field(fn, !1) === void 0 && u.push(I.appendConfig.of([fn, _1, C1, yp]));
     }
     t.dispatch(t.state.update(h));
   };
 }
-c(Tb, "snippet");
+c(T1, "snippet");
 function bp(r) {
   return ({ state: e, dispatch: t }) => {
     let i = e.field(fn, !1);
@@ -14245,19 +14245,19 @@ function bp(r) {
   };
 }
 c(bp, "moveField");
-const Ab = /* @__PURE__ */ c(({ state: r, dispatch: e }) => r.field(fn, !1) ? (e(r.update({ effects: wn.of(null) })), !0) : !1, "clearSnippet"), Zb = /* @__PURE__ */ bp(1), Lb = /* @__PURE__ */ bp(-1), Mb = [
-  { key: "Tab", run: Zb, shift: Lb },
-  { key: "Escape", run: Ab }
+const A1 = /* @__PURE__ */ c(({ state: r, dispatch: e }) => r.field(fn, !1) ? (e(r.update({ effects: wn.of(null) })), !0) : !1, "clearSnippet"), Z1 = /* @__PURE__ */ bp(1), L1 = /* @__PURE__ */ bp(-1), M1 = [
+  { key: "Tab", run: Z1, shift: L1 },
+  { key: "Escape", run: A1 }
 ], Xu = /* @__PURE__ */ M.define({
   combine(r) {
-    return r.length ? r[0] : Mb;
+    return r.length ? r[0] : M1;
   }
-}), _b = /* @__PURE__ */ fi.highest(/* @__PURE__ */ bn.compute([Xu], (r) => r.facet(Xu)));
+}), _1 = /* @__PURE__ */ fi.highest(/* @__PURE__ */ bn.compute([Xu], (r) => r.facet(Xu)));
 function ge(r, e) {
-  return { ...e, apply: Tb(r) };
+  return { ...e, apply: T1(r) };
 }
 c(ge, "snippetCompletion");
-const Cb = /* @__PURE__ */ _.domEventHandlers({
+const C1 = /* @__PURE__ */ _.domEventHandlers({
   mousedown(r, e) {
     let t = e.state.field(fn, !1), i;
     if (!t || (i = e.posAtCoords({ x: r.clientX, y: r.clientY })) == null)
@@ -14273,36 +14273,36 @@ const Cb = /* @__PURE__ */ _.domEventHandlers({
 }();
 Sp.startSide = 1;
 Sp.endSide = -1;
-function Eb(r = {}) {
+function E1(r = {}) {
   return [
-    Pb,
+    P1,
     ue,
     ie.of(r),
-    xb,
-    Ub,
+    x1,
+    U1,
     yp
   ];
 }
-c(Eb, "autocompletion");
-const Vb = [
+c(E1, "autocompletion");
+const V1 = [
   { key: "Ctrl-Space", run: Wo },
   { mac: "Alt-`", run: Wo },
   { mac: "Alt-i", run: Wo },
-  { key: "Escape", run: Sb },
+  { key: "Escape", run: S1 },
   { key: "ArrowDown", run: /* @__PURE__ */ Yn(!0) },
   { key: "ArrowUp", run: /* @__PURE__ */ Yn(!1) },
   { key: "PageDown", run: /* @__PURE__ */ Yn(!0, "page") },
   { key: "PageUp", run: /* @__PURE__ */ Yn(!1, "page") },
   { key: "Enter", run: gp }
-], Ub = /* @__PURE__ */ fi.highest(/* @__PURE__ */ bn.computeN([ie], (r) => r.facet(ie).defaultKeymap ? [Vb] : []));
-function Wb(r) {
+], U1 = /* @__PURE__ */ fi.highest(/* @__PURE__ */ bn.computeN([ie], (r) => r.facet(ie).defaultKeymap ? [V1] : []));
+function W1(r) {
   let e = r.field(ue, !1);
   return e && e.active.some((t) => t.isPending) ? "pending" : e && e.active.some(
     (t) => t.state != 0
     /* State.Inactive */
   ) ? "active" : null;
 }
-c(Wb, "completionStatus");
+c(W1, "completionStatus");
 const mo = class mo {
   static create(e, t, i, n, s) {
     let o = n + (n << 8) + e + (t << 4) | 0;
@@ -14771,7 +14771,7 @@ const Ap = {
   SetextHeading() {
     return new Aa();
   }
-}, Xb = [
+}, X1 = [
   (r, e) => Pp(e) >= 0,
   (r, e) => wp(e) >= 0,
   (r, e) => xp(e) >= 0,
@@ -14779,12 +14779,12 @@ const Ap = {
   (r, e) => Qh(e, r, !0) >= 0,
   (r, e) => bh(e, r, !0) >= 0,
   (r, e) => Tp(e, r, !0) >= 0
-], Yb = { text: "", end: 0 }, oc = class oc {
+], Y1 = { text: "", end: 0 }, oc = class oc {
   /**
   @internal
   */
   constructor(e, t, i, n) {
-    this.parser = e, this.input = t, this.ranges = n, this.line = new Ra(), this.atEnd = !1, this.reusePlaceholders = /* @__PURE__ */ new Map(), this.stoppedAt = null, this.rangeI = 0, this.to = n[n.length - 1].to, this.lineStart = this.absoluteLineStart = this.absoluteLineEnd = n[0].from, this.block = vs.create(k.Document, 0, this.lineStart, 0, 0), this.stack = [this.block], this.fragments = i.length ? new qb(i, t) : null, this.readLine();
+    this.parser = e, this.input = t, this.ranges = n, this.line = new Ra(), this.atEnd = !1, this.reusePlaceholders = /* @__PURE__ */ new Map(), this.stoppedAt = null, this.rangeI = 0, this.to = n[n.length - 1].to, this.lineStart = this.absoluteLineStart = this.absoluteLineEnd = n[0].from, this.block = vs.create(k.Document, 0, this.lineStart, 0, 0), this.stack = [this.block], this.fragments = i.length ? new q1(i, t) : null, this.readLine();
   }
   get parsedPos() {
     return this.absoluteLineStart;
@@ -14896,7 +14896,7 @@ const Ap = {
   Collect the text for the next line.
   */
   scanLine(e) {
-    let t = Yb;
+    let t = Y1;
     if (t.end = e, e >= this.to)
       t.text = "";
     else if (t.text = this.lineChunkAt(e), t.end += t.text.length, this.ranges.length > 1) {
@@ -15359,7 +15359,7 @@ const Yo = {
       if (n instanceof ye && (n.type == di || n.type == Ma)) {
         if (!n.side || r.skipSpace(n.to) == t && !/[(\[]/.test(r.slice(t + 1, t + 2)))
           return r.parts[i] = null, -1;
-        let s = r.takeContent(i), o = r.parts[i] = Ib(r, s, n.type == di ? k.Link : k.Image, n.from, t + 1);
+        let s = r.takeContent(i), o = r.parts[i] = I1(r, s, n.type == di ? k.Link : k.Image, n.from, t + 1);
         if (n.type == di)
           for (let l = 0; l < i; l++) {
             let a = r.parts[l];
@@ -15371,7 +15371,7 @@ const Yo = {
     return -1;
   }
 };
-function Ib(r, e, t, i, n) {
+function I1(r, e, t, i, n) {
   let { text: s } = r, o = r.char(n), l = n;
   if (e.unshift(W(k.LinkMark, i, i + (t == k.Image ? 2 : 1))), e.push(W(k.LinkMark, n - 1, n)), o == 40) {
     let a = r.skipSpace(n + 1), h = Cp(s, a - r.offset, r.offset), f;
@@ -15382,7 +15382,7 @@ function Ib(r, e, t, i, n) {
   }
   return W(t, i, l, e);
 }
-c(Ib, "finishLink");
+c(I1, "finishLink");
 function Cp(r, e, t) {
   if (r.charCodeAt(e) == 60) {
     for (let n = e + 1; n < r.length; n++) {
@@ -15602,9 +15602,9 @@ function Ca(r, e) {
   return t;
 }
 c(Ca, "injectMarks");
-const jb = [k.CodeBlock, k.ListItem, k.OrderedList, k.BulletList];
+const j1 = [k.CodeBlock, k.ListItem, k.OrderedList, k.BulletList];
 var Ei;
-let qb = (Ei = class {
+let q1 = (Ei = class {
   constructor(e, t) {
     this.fragments = e, this.input = t, this.i = 0, this.fragment = null, this.fragmentEnd = -1, this.cursor = null, e.length && (this.fragment = e[this.i++]);
   }
@@ -15655,7 +15655,7 @@ let qb = (Ei = class {
         let u = new V(e.parser.nodeSet.types[k.Paragraph], [], [], 0, e.block.hashProp);
         e.reusePlaceholders.set(u, t.tree), e.addNode(u, f);
       }
-      if (t.type.is("Block") && (jb.indexOf(t.type.id) < 0 ? (o = t.to - i, l = e.block.children.length) : (o = a, l = h, a = t.to - i, h = e.block.children.length)), !t.nextSibling())
+      if (t.type.is("Block") && (j1.indexOf(t.type.id) < 0 ? (o = t.to - i, l = e.block.children.length) : (o = a, l = h, a = t.to - i, h = e.block.children.length)), !t.nextSibling())
         break;
     }
     for (; e.block.children.length > l; )
@@ -15672,7 +15672,7 @@ function Up(r, e) {
   return t;
 }
 c(Up, "toRelative");
-const Db = Ji({
+const D1 = Ji({
   "Blockquote/...": g.quote,
   HorizontalRule: g.contentSeparator,
   "ATXHeading1/... SetextHeading1/...": g.heading1,
@@ -15695,8 +15695,8 @@ const Db = Ji({
   "CodeInfo LinkLabel": g.labelName,
   LinkTitle: g.string,
   Paragraph: g.content
-}), Bb = new Ts(new Yi(Lp).extend(Db), Object.keys(In).map((r) => In[r]), Object.keys(In).map((r) => Ap[r]), Object.keys(In), Xb, Qp, Object.keys(Yo).map((r) => Yo[r]), Object.keys(Yo), []);
-function zb(r, e, t) {
+}), B1 = new Ts(new Yi(Lp).extend(D1), Object.keys(In).map((r) => In[r]), Object.keys(In).map((r) => Ap[r]), Object.keys(In), X1, Qp, Object.keys(Yo).map((r) => Yo[r]), Object.keys(Yo), []);
+function z1(r, e, t) {
   let i = [];
   for (let n = r.firstChild, s = e; ; n = n.nextSibling) {
     let o = n ? n.from : t;
@@ -15706,8 +15706,8 @@ function zb(r, e, t) {
   }
   return i;
 }
-c(zb, "leftOverSpace");
-function Nb(r) {
+c(z1, "leftOverSpace");
+function N1(r) {
   let { codeParser: e, htmlParser: t } = r;
   return { wrap: JO((n, s) => {
     let o = n.type.id;
@@ -15721,12 +15721,12 @@ function Nb(r) {
       if (a)
         return { parser: a, overlay: /* @__PURE__ */ c((h) => h.type.id == k.CodeText, "overlay") };
     } else if (t && (o == k.HTMLBlock || o == k.HTMLTag))
-      return { parser: t, overlay: zb(n.node, n.from, n.to) };
+      return { parser: t, overlay: z1(n.node, n.from, n.to) };
     return null;
   }) };
 }
-c(Nb, "parseCode");
-const Gb = { resolve: "Strikethrough", mark: "StrikethroughMark" }, Hb = {
+c(N1, "parseCode");
+const G1 = { resolve: "Strikethrough", mark: "StrikethroughMark" }, H1 = {
   defineNodes: [{
     name: "Strikethrough",
     style: { "Strikethrough/...": g.strikethrough }
@@ -15740,7 +15740,7 @@ const Gb = { resolve: "Strikethrough", mark: "StrikethroughMark" }, Hb = {
       if (e != 126 || r.char(t + 1) != 126 || r.char(t + 2) == 126)
         return -1;
       let i = r.slice(t - 1, t), n = r.slice(t + 2, t + 3), s = /\s|^$/.test(i), o = /\s|^$/.test(n), l = un.test(i), a = un.test(n);
-      return r.addDelimiter(Gb, t, t + 2, !o && (!a || s || l), !s && (!l || o || a));
+      return r.addDelimiter(G1, t, t + 2, !o && (!a || s || l), !s && (!l || o || a));
     },
     after: "Emphasis"
   }]
@@ -15793,7 +15793,7 @@ const Wp = /^\|?(\s*:?-+:?\s*\|)+(\s*:?-+:?\s*)?$/, cc = class cc {
 };
 c(cc, "TableParser");
 let Ls = cc;
-const Fb = {
+const F1 = {
   defineNodes: [
     { name: "Table", block: !0 },
     { name: "TableHeader", style: { "TableHeader/...": g.heading } },
@@ -15827,7 +15827,7 @@ const Fb = {
 };
 c(uc, "TaskParser");
 let Ea = uc;
-const Kb = {
+const K1 = {
   defineNodes: [
     { name: "Task", block: !0, style: g.list },
     { name: "TaskMarker", style: g.atom }
@@ -15839,7 +15839,7 @@ const Kb = {
     },
     after: "SetextHeading"
   }]
-}, Bu = /(www\.)|(https?:\/\/)|([\w.+-]{1,100}@)|(mailto:|xmpp:)/gy, zu = /[\w-]+(\.[\w-]+)+(\/[^\s<]*)?/gy, Jb = /[\w-]+\.[\w-]+($|\/)/, Nu = /[\w.+-]+@[\w-]+(\.[\w.-]+)+/gy, Gu = /\/[a-zA-Z\d@.]+/gy;
+}, Bu = /(www\.)|(https?:\/\/)|([\w.+-]{1,100}@)|(mailto:|xmpp:)/gy, zu = /[\w-]+(\.[\w-]+)+(\/[^\s<]*)?/gy, J1 = /[\w-]+\.[\w-]+($|\/)/, Nu = /[\w.+-]+@[\w-]+(\.[\w.-]+)+/gy, Gu = /\/[a-zA-Z\d@.]+/gy;
 function Hu(r, e, t, i) {
   let n = 0;
   for (let s = e; s < t; s++)
@@ -15847,10 +15847,10 @@ function Hu(r, e, t, i) {
   return n;
 }
 c(Hu, "count");
-function e1(r, e) {
+function eb(r, e) {
   zu.lastIndex = e;
   let t = zu.exec(r);
-  if (!t || Jb.exec(t[0])[0].indexOf("_") > -1)
+  if (!t || J1.exec(t[0])[0].indexOf("_") > -1)
     return -1;
   let i = e + t[0].length;
   for (; ; ) {
@@ -15864,7 +15864,7 @@ function e1(r, e) {
   }
   return i;
 }
-c(e1, "autolinkURLEnd");
+c(eb, "autolinkURLEnd");
 function Fu(r, e) {
   Nu.lastIndex = e;
   let t = Nu.exec(r);
@@ -15874,7 +15874,7 @@ function Fu(r, e) {
   return i == "_" || i == "-" ? -1 : e + t[0].length - (i == "." ? 1 : 0);
 }
 c(Fu, "autolinkEmailEnd");
-const t1 = {
+const tb = {
   parseInline: [{
     name: "Autolink",
     parse(r, e, t) {
@@ -15886,7 +15886,7 @@ const t1 = {
       if (!n)
         return -1;
       if (n[1] || n[2]) {
-        if (s = e1(r.text, i + n[0].length), s > -1 && r.hasOpenLink) {
+        if (s = eb(r.text, i + n[0].length), s > -1 && r.hasOpenLink) {
           let o = /([^\[\]]|\[[^\]]*\])*/.exec(r.text.slice(i, s));
           s = i + o[0].length;
         }
@@ -15894,7 +15894,7 @@ const t1 = {
       return s < 0 ? -1 : (r.addElement(r.elt("URL", t, s + r.offset)), s + r.offset);
     }
   }]
-}, i1 = [Fb, Kb, Hb, t1];
+}, ib = [F1, K1, H1, tb];
 function Xp(r, e, t) {
   return (i, n, s) => {
     if (n != r || i.char(s + 1) == r)
@@ -15911,7 +15911,7 @@ function Xp(r, e, t) {
   };
 }
 c(Xp, "parseSubSuper");
-const r1 = {
+const rb = {
   defineNodes: [
     { name: "Superscript", style: g.special(g.content) },
     { name: "SuperscriptMark", style: g.processingInstruction }
@@ -15920,7 +15920,7 @@ const r1 = {
     name: "Superscript",
     parse: Xp(94, "Superscript", "SuperscriptMark")
   }]
-}, n1 = {
+}, nb = {
   defineNodes: [
     { name: "Subscript", style: g.special(g.content) },
     { name: "SubscriptMark", style: g.processingInstruction }
@@ -15929,7 +15929,7 @@ const r1 = {
     name: "Subscript",
     parse: Xp(126, "Subscript", "SubscriptMark")
   }]
-}, s1 = {
+}, sb = {
   defineNodes: [{ name: "Emoji", style: g.character }],
   parseInline: [{
     name: "Emoji",
@@ -16599,7 +16599,7 @@ function Yp(r, e, t, i, n, s) {
     for (let O = o + 3; O < h; O += 2)
       if ((r[O + 1] & l) > 0) {
         let p = r[O];
-        if (a.allows(p) && (e.token.value == -1 || e.token.value == p || o1(p, e.token.value, n, s))) {
+        if (a.allows(p) && (e.token.value == -1 || e.token.value == p || ob(p, e.token.value, n, s))) {
           e.acceptToken(p);
           break;
         }
@@ -16631,11 +16631,11 @@ function Ju(r, e, t) {
   return -1;
 }
 c(Ju, "findOffset");
-function o1(r, e, t, i) {
+function ob(r, e, t, i) {
   let n = Ju(t, i, e);
   return n < 0 || Ju(t, i, r) < n;
 }
-c(o1, "overrides");
+c(ob, "overrides");
 const we = typeof process < "u" && process.env && /\bparse\b/.test(process.env.LOG);
 let Io = null;
 function ed(r, e, t) {
@@ -16826,7 +16826,7 @@ const wc = class wc {
       }
     }
     if (!i.length) {
-      let o = n && l1(n);
+      let o = n && lb(n);
       if (o)
         return we && console.log("Finish with " + this.stackID(o)), this.stackToTree(o);
       if (this.parser.strict)
@@ -17254,7 +17254,7 @@ function at(r, e) {
   return r[e] | r[e + 1] << 16;
 }
 c(at, "pair");
-function l1(r) {
+function lb(r) {
   let e = null;
   for (let t of r) {
     let i = t.p.stoppedAt;
@@ -17266,7 +17266,7 @@ function l1(r) {
   }
   return e;
 }
-c(l1, "findFinished");
+c(lb, "findFinished");
 function id(r) {
   if (r.external) {
     let e = r.extend ? 1 : 0;
@@ -17275,7 +17275,7 @@ function id(r) {
   return r.get;
 }
 c(id, "getSpecializer");
-const a1 = 54, h1 = 1, f1 = 55, c1 = 2, u1 = 56, d1 = 3, rd = 4, O1 = 5, Cs = 6, Ip = 7, jp = 8, qp = 9, Dp = 10, p1 = 11, m1 = 12, g1 = 13, qo = 57, y1 = 14, nd = 58, Bp = 20, b1 = 22, zp = 23, S1 = 24, Da = 26, Np = 27, Q1 = 28, w1 = 31, x1 = 34, k1 = 36, P1 = 37, R1 = 0, $1 = 1, v1 = {
+const ab = 54, hb = 1, fb = 55, cb = 2, ub = 56, db = 3, rd = 4, Ob = 5, Cs = 6, Ip = 7, jp = 8, qp = 9, Dp = 10, pb = 11, mb = 12, gb = 13, qo = 57, yb = 14, nd = 58, Bp = 20, bb = 22, zp = 23, Sb = 24, Da = 26, Np = 27, Qb = 28, wb = 31, xb = 34, kb = 36, Pb = 37, Rb = 0, $b = 1, vb = {
   area: !0,
   base: !0,
   br: !0,
@@ -17294,7 +17294,7 @@ const a1 = 54, h1 = 1, f1 = 55, c1 = 2, u1 = 56, d1 = 3, rd = 4, O1 = 5, Cs = 6,
   track: !0,
   wbr: !0,
   menuitem: !0
-}, T1 = {
+}, Tb = {
   dd: !0,
   li: !0,
   optgroup: !0,
@@ -17351,10 +17351,10 @@ const a1 = 54, h1 = 1, f1 = 55, c1 = 2, u1 = 56, d1 = 3, rd = 4, O1 = 5, Cs = 6,
   thead: { tbody: !0, tfoot: !0 },
   tr: { tr: !0 }
 };
-function A1(r) {
+function Ab(r) {
   return r == 45 || r == 46 || r == 58 || r >= 65 && r <= 90 || r == 95 || r >= 97 && r <= 122 || r >= 161;
 }
-c(A1, "nameChar");
+c(Ab, "nameChar");
 function Gp(r) {
   return r == 9 || r == 10 || r == 13 || r == 32;
 }
@@ -17366,30 +17366,30 @@ function Ba(r, e) {
   let i = r.peek(e);
   for (; Gp(i); ) i = r.peek(++e);
   let n = "";
-  for (; A1(i); )
+  for (; Ab(i); )
     n += String.fromCharCode(i), i = r.peek(++e);
-  return ld = r, ad = t, od = n ? n.toLowerCase() : i == Z1 || i == L1 ? void 0 : null;
+  return ld = r, ad = t, od = n ? n.toLowerCase() : i == Zb || i == Lb ? void 0 : null;
 }
 c(Ba, "tagNameAfter");
-const Hp = 60, Es = 62, wh = 47, Z1 = 63, L1 = 33, M1 = 45;
+const Hp = 60, Es = 62, wh = 47, Zb = 63, Lb = 33, Mb = 45;
 function hd(r, e) {
   this.name = r, this.parent = e;
 }
 c(hd, "ElementContext");
-const _1 = [Cs, Dp, Ip, jp, qp], C1 = new _s({
+const _b = [Cs, Dp, Ip, jp, qp], Cb = new _s({
   start: null,
   shift(r, e, t, i) {
-    return _1.indexOf(e) > -1 ? new hd(Ba(i, 1) || "", r) : r;
+    return _b.indexOf(e) > -1 ? new hd(Ba(i, 1) || "", r) : r;
   },
   reduce(r, e) {
     return e == Bp && r ? r.parent : r;
   },
   reuse(r, e, t, i) {
     let n = e.type.id;
-    return n == Cs || n == k1 ? new hd(Ba(i, 1) || "", r) : r;
+    return n == Cs || n == kb ? new hd(Ba(i, 1) || "", r) : r;
   },
   strict: !1
-}), E1 = new Qe((r, e) => {
+}), Eb = new Qe((r, e) => {
   if (r.next != Hp) {
     r.next < 0 && e.context && r.acceptToken(qo);
     return;
@@ -17399,28 +17399,28 @@ const _1 = [Cs, Dp, Ip, jp, qp], C1 = new _s({
   t && r.advance();
   let i = Ba(r, 0);
   if (i === void 0) return;
-  if (!i) return r.acceptToken(t ? y1 : Cs);
+  if (!i) return r.acceptToken(t ? yb : Cs);
   let n = e.context ? e.context.name : null;
   if (t) {
-    if (i == n) return r.acceptToken(p1);
-    if (n && T1[n]) return r.acceptToken(qo, -2);
-    if (e.dialectEnabled(R1)) return r.acceptToken(m1);
+    if (i == n) return r.acceptToken(pb);
+    if (n && Tb[n]) return r.acceptToken(qo, -2);
+    if (e.dialectEnabled(Rb)) return r.acceptToken(mb);
     for (let s = e.context; s; s = s.parent) if (s.name == i) return;
-    r.acceptToken(g1);
+    r.acceptToken(gb);
   } else {
     if (i == "script") return r.acceptToken(Ip);
     if (i == "style") return r.acceptToken(jp);
     if (i == "textarea") return r.acceptToken(qp);
-    if (v1.hasOwnProperty(i)) return r.acceptToken(Dp);
+    if (vb.hasOwnProperty(i)) return r.acceptToken(Dp);
     n && sd[n] && sd[n][i] ? r.acceptToken(qo, -1) : r.acceptToken(Cs);
   }
-}, { contextual: !0 }), V1 = new Qe((r) => {
+}, { contextual: !0 }), Vb = new Qe((r) => {
   for (let e = 0, t = 0; ; t++) {
     if (r.next < 0) {
       t && r.acceptToken(nd);
       break;
     }
-    if (r.next == M1)
+    if (r.next == Mb)
       e++;
     else if (r.next == Es && e >= 2) {
       t >= 3 && r.acceptToken(nd, -2);
@@ -17430,16 +17430,16 @@ const _1 = [Cs, Dp, Ip, jp, qp], C1 = new _s({
     r.advance();
   }
 });
-function U1(r) {
+function Ub(r) {
   for (; r; r = r.parent)
     if (r.name == "svg" || r.name == "math") return !0;
   return !1;
 }
-c(U1, "inForeignElement");
-const W1 = new Qe((r, e) => {
+c(Ub, "inForeignElement");
+const Wb = new Qe((r, e) => {
   if (r.next == wh && r.peek(1) == Es) {
-    let t = e.dialectEnabled($1) || U1(e.context);
-    r.acceptToken(t ? O1 : rd, 2);
+    let t = e.dialectEnabled($b) || Ub(e.context);
+    r.acceptToken(t ? Ob : rd, 2);
   } else r.next == Es && r.acceptToken(rd, 1);
 });
 function xh(r, e, t) {
@@ -17467,7 +17467,7 @@ function xh(r, e, t) {
   });
 }
 c(xh, "contentTokenizer");
-const X1 = xh("script", a1, h1), Y1 = xh("style", f1, c1), I1 = xh("textarea", u1, d1), j1 = Ji({
+const Xb = xh("script", ab, hb), Yb = xh("style", fb, cb), Ib = xh("textarea", ub, db), jb = Ji({
   "Text RawText": g.content,
   "StartTag StartCloseTag SelfClosingEndTag EndTag": g.angleBracket,
   TagName: g.tagName,
@@ -17479,25 +17479,25 @@ const X1 = xh("script", a1, h1), Y1 = xh("style", f1, c1), I1 = xh("textarea", u
   Comment: g.blockComment,
   ProcessingInst: g.processingInstruction,
   DoctypeDecl: g.documentMeta
-}), q1 = dn.deserialize({
+}), qb = dn.deserialize({
   version: 14,
   states: ",xOVO!rOOO!WQ#tO'#CqO!]Q#tO'#CzO!bQ#tO'#C}O!gQ#tO'#DQO!lQ#tO'#DSO!qOaO'#CpO!|ObO'#CpO#XOdO'#CpO$eO!rO'#CpOOO`'#Cp'#CpO$lO$fO'#DTO$tQ#tO'#DVO$yQ#tO'#DWOOO`'#Dk'#DkOOO`'#DY'#DYQVO!rOOO%OQ&rO,59]O%ZQ&rO,59fO%fQ&rO,59iO%qQ&rO,59lO%|Q&rO,59nOOOa'#D^'#D^O&XOaO'#CxO&dOaO,59[OOOb'#D_'#D_O&lObO'#C{O&wObO,59[OOOd'#D`'#D`O'POdO'#DOO'[OdO,59[OOO`'#Da'#DaO'dO!rO,59[O'kQ#tO'#DROOO`,59[,59[OOOp'#Db'#DbO'pO$fO,59oOOO`,59o,59oO'xQ#|O,59qO'}Q#|O,59rOOO`-E7W-E7WO(SQ&rO'#CsOOQW'#DZ'#DZO(bQ&rO1G.wOOOa1G.w1G.wOOO`1G/Y1G/YO(mQ&rO1G/QOOOb1G/Q1G/QO(xQ&rO1G/TOOOd1G/T1G/TO)TQ&rO1G/WOOO`1G/W1G/WO)`Q&rO1G/YOOOa-E7[-E7[O)kQ#tO'#CyOOO`1G.v1G.vOOOb-E7]-E7]O)pQ#tO'#C|OOOd-E7^-E7^O)uQ#tO'#DPOOO`-E7_-E7_O)zQ#|O,59mOOOp-E7`-E7`OOO`1G/Z1G/ZOOO`1G/]1G/]OOO`1G/^1G/^O*PQ,UO,59_OOQW-E7X-E7XOOOa7+$c7+$cOOO`7+$t7+$tOOOb7+$l7+$lOOOd7+$o7+$oOOO`7+$r7+$rO*[Q#|O,59eO*aQ#|O,59hO*fQ#|O,59kOOO`1G/X1G/XO*kO7[O'#CvO*|OMhO'#CvOOQW1G.y1G.yOOO`1G/P1G/POOO`1G/S1G/SOOO`1G/V1G/VOOOO'#D['#D[O+_O7[O,59bOOQW,59b,59bOOOO'#D]'#D]O+pOMhO,59bOOOO-E7Y-E7YOOQW1G.|1G.|OOOO-E7Z-E7Z",
   stateData: ",]~O!^OS~OUSOVPOWQOXROYTO[]O][O^^O`^Oa^Ob^Oc^Ox^O{_O!dZO~OfaO~OfbO~OfcO~OfdO~OfeO~O!WfOPlP!ZlP~O!XiOQoP!ZoP~O!YlORrP!ZrP~OUSOVPOWQOXROYTOZqO[]O][O^^O`^Oa^Ob^Oc^Ox^O!dZO~O!ZrO~P#dO![sO!euO~OfvO~OfwO~OS|OT}OhyO~OS!POT}OhyO~OS!ROT}OhyO~OS!TOT}OhyO~OS}OT}OhyO~O!WfOPlX!ZlX~OP!WO!Z!XO~O!XiOQoX!ZoX~OQ!ZO!Z!XO~O!YlORrX!ZrX~OR!]O!Z!XO~O!Z!XO~P#dOf!_O~O![sO!e!aO~OS!bO~OS!cO~Oi!dOSgXTgXhgX~OS!fOT!gOhyO~OS!hOT!gOhyO~OS!iOT!gOhyO~OS!jOT!gOhyO~OS!gOT!gOhyO~Of!kO~Of!lO~Of!mO~OS!nO~Ok!qO!`!oO!b!pO~OS!rO~OS!sO~OS!tO~Oa!uOb!uOc!uO!`!wO!a!uO~Oa!xOb!xOc!xO!b!wO!c!xO~Oa!uOb!uOc!uO!`!{O!a!uO~Oa!xOb!xOc!xO!b!{O!c!xO~OT~bac!dx{!d~",
   goto: "%p!`PPPPPPPPPPPPPPPPPPPP!a!gP!mPP!yP!|#P#S#Y#]#`#f#i#l#r#x!aP!a!aP$O$U$l$r$x%O%U%[%bPPPPPPPP%hX^OX`pXUOX`pezabcde{!O!Q!S!UR!q!dRhUR!XhXVOX`pRkVR!XkXWOX`pRnWR!XnXXOX`pQrXR!XpXYOX`pQ`ORx`Q{aQ!ObQ!QcQ!SdQ!UeZ!e{!O!Q!S!UQ!v!oR!z!vQ!y!pR!|!yQgUR!VgQjVR!YjQmWR![mQpXR!^pQtZR!`tS_O`ToXp",
   nodeNames: "⚠ StartCloseTag StartCloseTag StartCloseTag EndTag SelfClosingEndTag StartTag StartTag StartTag StartTag StartTag StartCloseTag StartCloseTag StartCloseTag IncompleteCloseTag Document Text EntityReference CharacterReference InvalidEntity Element OpenTag TagName Attribute AttributeName Is AttributeValue UnquotedAttributeValue ScriptText CloseTag OpenTag StyleText CloseTag OpenTag TextareaText CloseTag OpenTag CloseTag SelfClosingTag Comment ProcessingInst MismatchedCloseTag CloseTag DoctypeDecl",
   maxTerm: 67,
-  context: C1,
+  context: Cb,
   nodeProps: [
     ["closedBy", -10, 1, 2, 3, 7, 8, 9, 10, 11, 12, 13, "EndTag", 6, "EndTag SelfClosingEndTag", -4, 21, 30, 33, 36, "CloseTag"],
     ["openedBy", 4, "StartTag StartCloseTag", 5, "StartTag", -4, 29, 32, 35, 37, "OpenTag"],
     ["group", -9, 14, 17, 18, 19, 20, 39, 40, 41, 42, "Entity", 16, "Entity TextContent", -3, 28, 31, 34, "TextContent Entity"],
     ["isolate", -11, 21, 29, 30, 32, 33, 35, 36, 37, 38, 41, 42, "ltr", -3, 26, 27, 39, ""]
   ],
-  propSources: [j1],
+  propSources: [jb],
   skippedNodes: [0],
   repeatNodeCount: 9,
   tokenData: "!<p!aR!YOX$qXY,QYZ,QZ[$q[]&X]^,Q^p$qpq,Qqr-_rs3_sv-_vw3}wxHYx}-_}!OH{!O!P-_!P!Q$q!Q![-_![!]Mz!]!^-_!^!_!$S!_!`!;x!`!a&X!a!c-_!c!}Mz!}#R-_#R#SMz#S#T1k#T#oMz#o#s-_#s$f$q$f%W-_%W%oMz%o%p-_%p&aMz&a&b-_&b1pMz1p4U-_4U4dMz4d4e-_4e$ISMz$IS$I`-_$I`$IbMz$Ib$Kh-_$Kh%#tMz%#t&/x-_&/x&EtMz&Et&FV-_&FV;'SMz;'S;:j!#|;:j;=`3X<%l?&r-_?&r?AhMz?Ah?BY$q?BY?MnMz?MnO$q!Z$|c`PkW!a`!cpOX$qXZ&XZ[$q[^&X^p$qpq&Xqr$qrs&}sv$qvw+Pwx(tx!^$q!^!_*V!_!a&X!a#S$q#S#T&X#T;'S$q;'S;=`+z<%lO$q!R&bX`P!a`!cpOr&Xrs&}sv&Xwx(tx!^&X!^!_*V!_;'S&X;'S;=`*y<%lO&Xq'UV`P!cpOv&}wx'kx!^&}!^!_(V!_;'S&};'S;=`(n<%lO&}P'pT`POv'kw!^'k!_;'S'k;'S;=`(P<%lO'kP(SP;=`<%l'kp([S!cpOv(Vx;'S(V;'S;=`(h<%lO(Vp(kP;=`<%l(Vq(qP;=`<%l&}a({W`P!a`Or(trs'ksv(tw!^(t!^!_)e!_;'S(t;'S;=`*P<%lO(t`)jT!a`Or)esv)ew;'S)e;'S;=`)y<%lO)e`)|P;=`<%l)ea*SP;=`<%l(t!Q*^V!a`!cpOr*Vrs(Vsv*Vwx)ex;'S*V;'S;=`*s<%lO*V!Q*vP;=`<%l*V!R*|P;=`<%l&XW+UYkWOX+PZ[+P^p+Pqr+Psw+Px!^+P!a#S+P#T;'S+P;'S;=`+t<%lO+PW+wP;=`<%l+P!Z+}P;=`<%l$q!a,]``P!a`!cp!^^OX&XXY,QYZ,QZ]&X]^,Q^p&Xpq,Qqr&Xrs&}sv&Xwx(tx!^&X!^!_*V!_;'S&X;'S;=`*y<%lO&X!_-ljhS`PkW!a`!cpOX$qXZ&XZ[$q[^&X^p$qpq&Xqr-_rs&}sv-_vw/^wx(tx!P-_!P!Q$q!Q!^-_!^!_*V!_!a&X!a#S-_#S#T1k#T#s-_#s$f$q$f;'S-_;'S;=`3X<%l?Ah-_?Ah?BY$q?BY?Mn-_?MnO$q[/ebhSkWOX+PZ[+P^p+Pqr/^sw/^x!P/^!P!Q+P!Q!^/^!a#S/^#S#T0m#T#s/^#s$f+P$f;'S/^;'S;=`1e<%l?Ah/^?Ah?BY+P?BY?Mn/^?MnO+PS0rXhSqr0msw0mx!P0m!Q!^0m!a#s0m$f;'S0m;'S;=`1_<%l?Ah0m?BY?Mn0mS1bP;=`<%l0m[1hP;=`<%l/^!V1vchS`P!a`!cpOq&Xqr1krs&}sv1kvw0mwx(tx!P1k!P!Q&X!Q!^1k!^!_*V!_!a&X!a#s1k#s$f&X$f;'S1k;'S;=`3R<%l?Ah1k?Ah?BY&X?BY?Mn1k?MnO&X!V3UP;=`<%l1k!_3[P;=`<%l-_!Z3hV!`h`P!cpOv&}wx'kx!^&}!^!_(V!_;'S&};'S;=`(n<%lO&}!_4WihSkWc!ROX5uXZ7SZ[5u[^7S^p5uqr8trs7Sst>]tw8twx7Sx!P8t!P!Q5u!Q!]8t!]!^/^!^!a7S!a#S8t#S#T;{#T#s8t#s$f5u$f;'S8t;'S;=`>V<%l?Ah8t?Ah?BY5u?BY?Mn8t?MnO5u!Z5zbkWOX5uXZ7SZ[5u[^7S^p5uqr5urs7Sst+Ptw5uwx7Sx!]5u!]!^7w!^!a7S!a#S5u#S#T7S#T;'S5u;'S;=`8n<%lO5u!R7VVOp7Sqs7St!]7S!]!^7l!^;'S7S;'S;=`7q<%lO7S!R7qOa!R!R7tP;=`<%l7S!Z8OYkWa!ROX+PZ[+P^p+Pqr+Psw+Px!^+P!a#S+P#T;'S+P;'S;=`+t<%lO+P!Z8qP;=`<%l5u!_8{ihSkWOX5uXZ7SZ[5u[^7S^p5uqr8trs7Sst/^tw8twx7Sx!P8t!P!Q5u!Q!]8t!]!^:j!^!a7S!a#S8t#S#T;{#T#s8t#s$f5u$f;'S8t;'S;=`>V<%l?Ah8t?Ah?BY5u?BY?Mn8t?MnO5u!_:sbhSkWa!ROX+PZ[+P^p+Pqr/^sw/^x!P/^!P!Q+P!Q!^/^!a#S/^#S#T0m#T#s/^#s$f+P$f;'S/^;'S;=`1e<%l?Ah/^?Ah?BY+P?BY?Mn/^?MnO+P!V<QchSOp7Sqr;{rs7Sst0mtw;{wx7Sx!P;{!P!Q7S!Q!];{!]!^=]!^!a7S!a#s;{#s$f7S$f;'S;{;'S;=`>P<%l?Ah;{?Ah?BY7S?BY?Mn;{?MnO7S!V=dXhSa!Rqr0msw0mx!P0m!Q!^0m!a#s0m$f;'S0m;'S;=`1_<%l?Ah0m?BY?Mn0m!V>SP;=`<%l;{!_>YP;=`<%l8t!_>dhhSkWOX@OXZAYZ[@O[^AY^p@OqrBwrsAYswBwwxAYx!PBw!P!Q@O!Q!]Bw!]!^/^!^!aAY!a#SBw#S#TE{#T#sBw#s$f@O$f;'SBw;'S;=`HS<%l?AhBw?Ah?BY@O?BY?MnBw?MnO@O!Z@TakWOX@OXZAYZ[@O[^AY^p@Oqr@OrsAYsw@OwxAYx!]@O!]!^Az!^!aAY!a#S@O#S#TAY#T;'S@O;'S;=`Bq<%lO@O!RA]UOpAYq!]AY!]!^Ao!^;'SAY;'S;=`At<%lOAY!RAtOb!R!RAwP;=`<%lAY!ZBRYkWb!ROX+PZ[+P^p+Pqr+Psw+Px!^+P!a#S+P#T;'S+P;'S;=`+t<%lO+P!ZBtP;=`<%l@O!_COhhSkWOX@OXZAYZ[@O[^AY^p@OqrBwrsAYswBwwxAYx!PBw!P!Q@O!Q!]Bw!]!^Dj!^!aAY!a#SBw#S#TE{#T#sBw#s$f@O$f;'SBw;'S;=`HS<%l?AhBw?Ah?BY@O?BY?MnBw?MnO@O!_DsbhSkWb!ROX+PZ[+P^p+Pqr/^sw/^x!P/^!P!Q+P!Q!^/^!a#S/^#S#T0m#T#s/^#s$f+P$f;'S/^;'S;=`1e<%l?Ah/^?Ah?BY+P?BY?Mn/^?MnO+P!VFQbhSOpAYqrE{rsAYswE{wxAYx!PE{!P!QAY!Q!]E{!]!^GY!^!aAY!a#sE{#s$fAY$f;'SE{;'S;=`G|<%l?AhE{?Ah?BYAY?BY?MnE{?MnOAY!VGaXhSb!Rqr0msw0mx!P0m!Q!^0m!a#s0m$f;'S0m;'S;=`1_<%l?Ah0m?BY?Mn0m!VHPP;=`<%lE{!_HVP;=`<%lBw!ZHcW!bx`P!a`Or(trs'ksv(tw!^(t!^!_)e!_;'S(t;'S;=`*P<%lO(t!aIYlhS`PkW!a`!cpOX$qXZ&XZ[$q[^&X^p$qpq&Xqr-_rs&}sv-_vw/^wx(tx}-_}!OKQ!O!P-_!P!Q$q!Q!^-_!^!_*V!_!a&X!a#S-_#S#T1k#T#s-_#s$f$q$f;'S-_;'S;=`3X<%l?Ah-_?Ah?BY$q?BY?Mn-_?MnO$q!aK_khS`PkW!a`!cpOX$qXZ&XZ[$q[^&X^p$qpq&Xqr-_rs&}sv-_vw/^wx(tx!P-_!P!Q$q!Q!^-_!^!_*V!_!`&X!`!aMS!a#S-_#S#T1k#T#s-_#s$f$q$f;'S-_;'S;=`3X<%l?Ah-_?Ah?BY$q?BY?Mn-_?MnO$q!TM_X`P!a`!cp!eQOr&Xrs&}sv&Xwx(tx!^&X!^!_*V!_;'S&X;'S;=`*y<%lO&X!aNZ!ZhSfQ`PkW!a`!cpOX$qXZ&XZ[$q[^&X^p$qpq&Xqr-_rs&}sv-_vw/^wx(tx}-_}!OMz!O!PMz!P!Q$q!Q![Mz![!]Mz!]!^-_!^!_*V!_!a&X!a!c-_!c!}Mz!}#R-_#R#SMz#S#T1k#T#oMz#o#s-_#s$f$q$f$}-_$}%OMz%O%W-_%W%oMz%o%p-_%p&aMz&a&b-_&b1pMz1p4UMz4U4dMz4d4e-_4e$ISMz$IS$I`-_$I`$IbMz$Ib$Je-_$Je$JgMz$Jg$Kh-_$Kh%#tMz%#t&/x-_&/x&EtMz&Et&FV-_&FV;'SMz;'S;:j!#|;:j;=`3X<%l?&r-_?&r?AhMz?Ah?BY$q?BY?MnMz?MnO$q!a!$PP;=`<%lMz!R!$ZY!a`!cpOq*Vqr!$yrs(Vsv*Vwx)ex!a*V!a!b!4t!b;'S*V;'S;=`*s<%lO*V!R!%Q]!a`!cpOr*Vrs(Vsv*Vwx)ex}*V}!O!%y!O!f*V!f!g!']!g#W*V#W#X!0`#X;'S*V;'S;=`*s<%lO*V!R!&QX!a`!cpOr*Vrs(Vsv*Vwx)ex}*V}!O!&m!O;'S*V;'S;=`*s<%lO*V!R!&vV!a`!cp!dPOr*Vrs(Vsv*Vwx)ex;'S*V;'S;=`*s<%lO*V!R!'dX!a`!cpOr*Vrs(Vsv*Vwx)ex!q*V!q!r!(P!r;'S*V;'S;=`*s<%lO*V!R!(WX!a`!cpOr*Vrs(Vsv*Vwx)ex!e*V!e!f!(s!f;'S*V;'S;=`*s<%lO*V!R!(zX!a`!cpOr*Vrs(Vsv*Vwx)ex!v*V!v!w!)g!w;'S*V;'S;=`*s<%lO*V!R!)nX!a`!cpOr*Vrs(Vsv*Vwx)ex!{*V!{!|!*Z!|;'S*V;'S;=`*s<%lO*V!R!*bX!a`!cpOr*Vrs(Vsv*Vwx)ex!r*V!r!s!*}!s;'S*V;'S;=`*s<%lO*V!R!+UX!a`!cpOr*Vrs(Vsv*Vwx)ex!g*V!g!h!+q!h;'S*V;'S;=`*s<%lO*V!R!+xY!a`!cpOr!+qrs!,hsv!+qvw!-Swx!.[x!`!+q!`!a!/j!a;'S!+q;'S;=`!0Y<%lO!+qq!,mV!cpOv!,hvx!-Sx!`!,h!`!a!-q!a;'S!,h;'S;=`!.U<%lO!,hP!-VTO!`!-S!`!a!-f!a;'S!-S;'S;=`!-k<%lO!-SP!-kO{PP!-nP;=`<%l!-Sq!-xS!cp{POv(Vx;'S(V;'S;=`(h<%lO(Vq!.XP;=`<%l!,ha!.aX!a`Or!.[rs!-Ssv!.[vw!-Sw!`!.[!`!a!.|!a;'S!.[;'S;=`!/d<%lO!.[a!/TT!a`{POr)esv)ew;'S)e;'S;=`)y<%lO)ea!/gP;=`<%l!.[!R!/sV!a`!cp{POr*Vrs(Vsv*Vwx)ex;'S*V;'S;=`*s<%lO*V!R!0]P;=`<%l!+q!R!0gX!a`!cpOr*Vrs(Vsv*Vwx)ex#c*V#c#d!1S#d;'S*V;'S;=`*s<%lO*V!R!1ZX!a`!cpOr*Vrs(Vsv*Vwx)ex#V*V#V#W!1v#W;'S*V;'S;=`*s<%lO*V!R!1}X!a`!cpOr*Vrs(Vsv*Vwx)ex#h*V#h#i!2j#i;'S*V;'S;=`*s<%lO*V!R!2qX!a`!cpOr*Vrs(Vsv*Vwx)ex#m*V#m#n!3^#n;'S*V;'S;=`*s<%lO*V!R!3eX!a`!cpOr*Vrs(Vsv*Vwx)ex#d*V#d#e!4Q#e;'S*V;'S;=`*s<%lO*V!R!4XX!a`!cpOr*Vrs(Vsv*Vwx)ex#X*V#X#Y!+q#Y;'S*V;'S;=`*s<%lO*V!R!4{Y!a`!cpOr!4trs!5ksv!4tvw!6Vwx!8]x!a!4t!a!b!:]!b;'S!4t;'S;=`!;r<%lO!4tq!5pV!cpOv!5kvx!6Vx!a!5k!a!b!7W!b;'S!5k;'S;=`!8V<%lO!5kP!6YTO!a!6V!a!b!6i!b;'S!6V;'S;=`!7Q<%lO!6VP!6lTO!`!6V!`!a!6{!a;'S!6V;'S;=`!7Q<%lO!6VP!7QOxPP!7TP;=`<%l!6Vq!7]V!cpOv!5kvx!6Vx!`!5k!`!a!7r!a;'S!5k;'S;=`!8V<%lO!5kq!7yS!cpxPOv(Vx;'S(V;'S;=`(h<%lO(Vq!8YP;=`<%l!5ka!8bX!a`Or!8]rs!6Vsv!8]vw!6Vw!a!8]!a!b!8}!b;'S!8];'S;=`!:V<%lO!8]a!9SX!a`Or!8]rs!6Vsv!8]vw!6Vw!`!8]!`!a!9o!a;'S!8];'S;=`!:V<%lO!8]a!9vT!a`xPOr)esv)ew;'S)e;'S;=`)y<%lO)ea!:YP;=`<%l!8]!R!:dY!a`!cpOr!4trs!5ksv!4tvw!6Vwx!8]x!`!4t!`!a!;S!a;'S!4t;'S;=`!;r<%lO!4t!R!;]V!a`!cpxPOr*Vrs(Vsv*Vwx)ex;'S*V;'S;=`*s<%lO*V!R!;uP;=`<%l!4t!V!<TXiS`P!a`!cpOr&Xrs&}sv&Xwx(tx!^&X!^!_*V!_;'S&X;'S;=`*y<%lO&X",
-  tokenizers: [X1, Y1, I1, W1, E1, V1, 0, 1, 2, 3, 4, 5],
+  tokenizers: [Xb, Yb, Ib, Wb, Eb, Vb, 0, 1, 2, 3, 4, 5],
   topRules: { Document: [0, 15] },
   dialects: { noMatch: 0, selfClosing: 509 },
   tokenPrec: 511
@@ -17505,14 +17505,14 @@ const X1 = xh("script", a1, h1), Y1 = xh("style", f1, c1), I1 = xh("textarea", u
 function Fp(r, e) {
   let t = /* @__PURE__ */ Object.create(null);
   for (let i of r.getChildren(zp)) {
-    let n = i.getChild(S1), s = i.getChild(Da) || i.getChild(Np);
+    let n = i.getChild(Sb), s = i.getChild(Da) || i.getChild(Np);
     n && (t[e.read(n.from, n.to)] = s ? s.type.id == Da ? e.read(s.from + 1, s.to - 1) : e.read(s.from, s.to) : "");
   }
   return t;
 }
 c(Fp, "getAttrs");
 function fd(r, e) {
-  let t = r.getChild(b1);
+  let t = r.getChild(bb);
   return t ? e.read(t.from, t.to) : " ";
 }
 c(fd, "findTagName");
@@ -17532,15 +17532,15 @@ function Kp(r = [], e = []) {
   for (let l of e) (o[l.name] || (o[l.name] = [])).push(l);
   return JO((l, a) => {
     let h = l.type.id;
-    if (h == Q1) return Do(l, a, t);
-    if (h == w1) return Do(l, a, i);
-    if (h == x1) return Do(l, a, n);
+    if (h == Qb) return Do(l, a, t);
+    if (h == wb) return Do(l, a, i);
+    if (h == xb) return Do(l, a, n);
     if (h == Bp && s.length) {
       let f = l.node, u = f.firstChild, d = u && fd(u, a), O;
       if (d) {
         for (let p of s)
           if (p.tag == d && (!p.attrs || p.attrs(O || (O = Fp(u, a))))) {
-            let m = f.lastChild, y = m.type.id == P1 ? m.from : f.to;
+            let m = f.lastChild, y = m.type.id == Pb ? m.from : f.to;
             if (y > u.to)
               return { parser: p.parser, overlay: [{ from: u.to, to: y }] };
           }
@@ -17565,7 +17565,7 @@ function Kp(r = [], e = []) {
   });
 }
 c(Kp, "configureNesting");
-const D1 = 100, cd = 1, B1 = 101, z1 = 102, ud = 2, Jp = [
+const Db = 100, cd = 1, Bb = 101, zb = 102, ud = 2, Jp = [
   9,
   10,
   11,
@@ -17591,7 +17591,7 @@ const D1 = 100, cd = 1, B1 = 101, z1 = 102, ud = 2, Jp = [
   8239,
   8287,
   12288
-], N1 = 58, G1 = 40, em = 95, H1 = 91, Kn = 45, F1 = 46, K1 = 35, J1 = 37, eS = 38, tS = 92, iS = 10;
+], Nb = 58, Gb = 40, em = 95, Hb = 91, Kn = 45, Fb = 46, Kb = 35, Jb = 37, eS = 38, tS = 92, iS = 10;
 function On(r) {
   return r >= 65 && r <= 90 || r >= 97 && r <= 122 || r >= 161;
 }
@@ -17608,19 +17608,19 @@ const rS = new Qe((r, e) => {
     else if (s == tS && r.peek(1) != iS)
       r.advance(), r.next > -1 && r.advance(), t = !0;
     else {
-      t && r.acceptToken(s == G1 ? B1 : i == 2 && e.canShift(ud) ? ud : z1);
+      t && r.acceptToken(s == Gb ? Bb : i == 2 && e.canShift(ud) ? ud : zb);
       break;
     }
   }
 }), nS = new Qe((r) => {
   if (Jp.includes(r.peek(-1))) {
     let { next: e } = r;
-    (On(e) || e == em || e == K1 || e == F1 || e == H1 || e == N1 && On(r.peek(1)) || e == Kn || e == eS) && r.acceptToken(D1);
+    (On(e) || e == em || e == Kb || e == Fb || e == Hb || e == Nb && On(r.peek(1)) || e == Kn || e == eS) && r.acceptToken(Db);
   }
 }), sS = new Qe((r) => {
   if (!Jp.includes(r.peek(-1))) {
     let { next: e } = r;
-    if (e == J1 && (r.advance(), r.acceptToken(cd)), On(e)) {
+    if (e == Jb && (r.advance(), r.acceptToken(cd)), On(e)) {
       do
         r.advance();
       while (On(r.next) || tm(r.next));
@@ -18970,7 +18970,7 @@ function pm(r = {}) {
   let e = r.jsx ? r.typescript ? vh : $h : r.typescript ? Rh : Ce, t = r.typescript ? lm.concat(JS) : kh.concat(Om);
   return new Mt(e, [
     Ce.data.of({
-      autocomplete: ob(Ph, dp(t))
+      autocomplete: o1(Ph, dp(t))
     }),
     Ce.data.of({
       autocomplete: fm
@@ -19670,7 +19670,7 @@ const aQ = /* @__PURE__ */ Ce.parser.configure({ top: "SingleExpression" }), km 
   }
 ].concat(/* @__PURE__ */ ym.map((r) => ({ name: r, parser: Ce.parser }))), Ah = /* @__PURE__ */ on.define({
   name: "html",
-  parser: /* @__PURE__ */ q1.configure({
+  parser: /* @__PURE__ */ qb.configure({
     props: [
       /* @__PURE__ */ er.add({
         Element(r) {
@@ -19763,7 +19763,7 @@ const wd = /* @__PURE__ */ new Set(/* @__PURE__ */ "area base br col command emb
   htmlCompletionSourceWith: xm,
   htmlLanguage: Pr,
   htmlPlain: Ah
-}, Symbol.toStringTag, { value: "Module" })), vm = /* @__PURE__ */ So({ commentTokens: { block: { open: "<!--", close: "-->" } } }), Tm = /* @__PURE__ */ new C(), Am = /* @__PURE__ */ Bb.configure({
+}, Symbol.toStringTag, { value: "Module" })), vm = /* @__PURE__ */ So({ commentTokens: { block: { open: "<!--", close: "-->" } } }), Tm = /* @__PURE__ */ new C(), Am = /* @__PURE__ */ B1.configure({
   props: [
     /* @__PURE__ */ Qn.add((r) => !r.is("Block") || r.is("Document") || Ga(r) != null || fQ(r) ? void 0 : (e, t) => ({ from: t.doc.lineAt(e.from).to, to: e.to })),
     /* @__PURE__ */ Tm.add(Ga),
@@ -19810,7 +19810,7 @@ function Zh(r) {
   return new me(vm, r, [], "markdown");
 }
 c(Zh, "mkLang");
-const Zm = /* @__PURE__ */ Zh(Am), dQ = /* @__PURE__ */ Am.configure([i1, n1, r1, s1, {
+const Zm = /* @__PURE__ */ Zh(Am), dQ = /* @__PURE__ */ Am.configure([ib, nb, rb, sb, {
   props: [
     /* @__PURE__ */ Qn.add({
       Table: /* @__PURE__ */ c((r, e) => ({ from: e.doc.lineAt(r.from).to, to: r.to }), "Table")
@@ -20037,7 +20037,7 @@ function Wm(r = {}) {
   let a = r.extensions ? [r.extensions] : [], h = [l.support, uQ], f;
   o && h.push(Xm), t instanceof Mt ? (h.push(t.support), f = t.language) : t && (f = t);
   let u = e || f ? OQ(e, f) : void 0;
-  a.push(Nb({ codeParser: u, htmlParser: l.language.parser })), i && h.push(fi.high(bn.of(Vm)));
+  a.push(N1({ codeParser: u, htmlParser: l.language.parser })), i && h.push(fi.high(bn.of(Vm)));
   let d = Zh(n.configure(a));
   return s && h.push(d.data.of({ autocomplete: gQ })), new Mt(d, h);
 }
@@ -20112,7 +20112,7 @@ function pt(r) {
   return import(
     /* webpackIgnore: true */
     /* @vite-ignore */
-    new URL("./@codemirror/lang-sql/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+    new URL("./@codemirror/lang-sql/dist/index-Ccug1YFL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
   ).then((e) => e.sql({ dialect: e[r] }));
 }
 c(pt, "sql");
@@ -20125,7 +20125,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-cpp/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-cpp/dist/index-DAFr9f1G.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.cpp());
     }
   }),
@@ -20137,7 +20137,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-cpp/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-cpp/dist/index-DAFr9f1G.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.cpp());
     }
   }),
@@ -20163,7 +20163,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-go/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-go/dist/index-BVdAoH0H.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.go());
     }
   }),
@@ -20182,7 +20182,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-java/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-java/dist/index-CKy3inJR.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.java());
     }
   }),
@@ -20201,7 +20201,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-jinja/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-jinja/dist/index-CrfC93rZ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.jinja());
     }
   }),
@@ -20213,7 +20213,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-json/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-json/dist/index-C5i5bwJO.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.json());
     }
   }),
@@ -20231,7 +20231,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-less/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-less/dist/index-DbYLtW-o.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.less());
     }
   }),
@@ -20242,7 +20242,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-liquid/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-liquid/dist/index-D9jKxFjH.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.liquid());
     }
   }),
@@ -20278,7 +20278,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-php/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-php/dist/index-yQA3PxSW.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.php());
     }
   }),
@@ -20303,7 +20303,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-python/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-python/dist/index-D7AUJIpf.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.python());
     }
   }),
@@ -20314,7 +20314,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-rust/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-rust/dist/index-BQUS3xAk.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.rust());
     }
   }),
@@ -20325,7 +20325,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-sass/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-sass/dist/index-DLOp9H5h.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.sass({ indented: !0 }));
     }
   }),
@@ -20336,7 +20336,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-sass/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-sass/dist/index-DLOp9H5h.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.sass());
     }
   }),
@@ -20375,7 +20375,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-wast/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-wast/dist/index-0lp6C37o.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.wast());
     }
   }),
@@ -20387,7 +20387,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-xml/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-xml/dist/index-i8zcOjAY.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.xml());
     }
   }),
@@ -20399,7 +20399,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-yaml/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-yaml/dist/index-GMz7U6-F.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.yaml());
     }
   }),
@@ -20411,7 +20411,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/apl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/apl-DUTwTK5s.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.apl));
     }
   }),
@@ -20423,7 +20423,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/asciiarmor.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/asciiarmor-BaMeU_np.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.asciiArmor));
     }
   }),
@@ -20434,7 +20434,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/asn1.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/asn1-kGGq8akK.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.asn1({})));
     }
   }),
@@ -20445,7 +20445,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/asterisk.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/asterisk-DwFJ90p_.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.asterisk));
     }
   }),
@@ -20456,7 +20456,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/brainfuck.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/brainfuck-DDeqt8lW.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.brainfuck));
     }
   }),
@@ -20467,7 +20467,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/cobol.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/cobol-D0ow5oA-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.cobol));
     }
   }),
@@ -20479,7 +20479,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.csharp));
     }
   }),
@@ -20490,7 +20490,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clojure.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clojure-DfbyEN0r.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.clojure));
     }
   }),
@@ -20501,7 +20501,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clojure.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clojure-DfbyEN0r.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.clojure));
     }
   }),
@@ -20512,7 +20512,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/css.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/css-Dtg6soxg.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.gss));
     }
   }),
@@ -20524,7 +20524,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/cmake.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/cmake-C-B_OncM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.cmake));
     }
   }),
@@ -20536,7 +20536,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/coffeescript.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/coffeescript-CYoPSWAO.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.coffeeScript));
     }
   }),
@@ -20548,7 +20548,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/commonlisp.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/commonlisp-D-pga8tw.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.commonLisp));
     }
   }),
@@ -20559,7 +20559,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/cypher.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/cypher-Clmah-Ga.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.cypher));
     }
   }),
@@ -20570,7 +20570,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/python.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/python-CrfIqTjY.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.cython));
     }
   }),
@@ -20581,7 +20581,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/crystal.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/crystal-qx5TWdJg.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.crystal));
     }
   }),
@@ -20592,7 +20592,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/d.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/d-DcxBG_qD.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.d));
     }
   }),
@@ -20603,7 +20603,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.dart));
     }
   }),
@@ -20614,7 +20614,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/diff.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/diff-uc52sYtT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.diff));
     }
   }),
@@ -20625,7 +20625,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/dockerfile.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/dockerfile-F-aRIewF.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.dockerFile));
     }
   }),
@@ -20636,7 +20636,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/dtd.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/dtd-DSGG6ojJ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.dtd));
     }
   }),
@@ -20647,7 +20647,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/dylan.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/dylan-Cf8tjg5f.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.dylan));
     }
   }),
@@ -20657,7 +20657,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ebnf.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ebnf-UWLho9r-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ebnf));
     }
   }),
@@ -20668,7 +20668,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ecl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ecl-BIX-mrMd.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ecl));
     }
   }),
@@ -20679,7 +20679,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clojure.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clojure-DfbyEN0r.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.clojure));
     }
   }),
@@ -20690,7 +20690,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/eiffel.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/eiffel-BdFLNHQ9.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.eiffel));
     }
   }),
@@ -20701,7 +20701,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/elm.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/elm-lodpOZNT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.elm));
     }
   }),
@@ -20712,7 +20712,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/erlang.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/erlang-0jNGRix1.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.erlang));
     }
   }),
@@ -20722,7 +20722,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/sql.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/sql-UTwNxHBe.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.esper));
     }
   }),
@@ -20733,7 +20733,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/factor.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/factor-W4utxmyM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.factor));
     }
   }),
@@ -20743,7 +20743,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/fcl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/fcl-CUfc8YOk.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.fcl));
     }
   }),
@@ -20754,7 +20754,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/forth.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/forth-BJih3NcC.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.forth));
     }
   }),
@@ -20765,7 +20765,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/fortran.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/fortran-BBvdgjvb.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.fortran));
     }
   }),
@@ -20777,7 +20777,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mllike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mllike-BNp26hou.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.fSharp));
     }
   }),
@@ -20788,7 +20788,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/gas.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/gas-sXTmKY5L.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.gas));
     }
   }),
@@ -20799,7 +20799,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/gherkin.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/gherkin-CfSuZ3KN.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.gherkin));
     }
   }),
@@ -20811,7 +20811,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/groovy.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/groovy-B5F8Qy02.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.groovy));
     }
   }),
@@ -20822,7 +20822,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/haskell.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/haskell-B0njtwfz.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.haskell));
     }
   }),
@@ -20833,7 +20833,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/haxe.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/haxe-b1Z_RqBo.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.haxe));
     }
   }),
@@ -20844,7 +20844,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/haxe.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/haxe-b1Z_RqBo.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.hxml));
     }
   }),
@@ -20854,7 +20854,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/http.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/http-CBcBgwPE.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.http));
     }
   }),
@@ -20865,7 +20865,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/idl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/idl-DC3hHTOH.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.idl));
     }
   }),
@@ -20877,7 +20877,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/javascript.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/javascript-DzY599r-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.jsonld));
     }
   }),
@@ -20888,7 +20888,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/julia.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/julia-CNtVJniM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.julia));
     }
   }),
@@ -20899,7 +20899,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.kotlin));
     }
   }),
@@ -20911,7 +20911,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/livescript.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/livescript-CTBqbKCT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.liveScript));
     }
   }),
@@ -20922,7 +20922,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/lua.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/lua-C8n6UujM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.lua));
     }
   }),
@@ -20933,7 +20933,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mirc.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mirc-oeFladKZ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.mirc));
     }
   }),
@@ -20944,7 +20944,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mathematica.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mathematica-CvZOoSSH.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.mathematica));
     }
   }),
@@ -20955,7 +20955,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/modelica.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/modelica-CnWqw80P.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.modelica));
     }
   }),
@@ -20966,7 +20966,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mumps.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mumps-pCEuPi_v.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.mumps));
     }
   }),
@@ -20977,7 +20977,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mbox.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mbox-DrNd_bv1.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.mbox));
     }
   }),
@@ -20988,7 +20988,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/nginx.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/nginx-BVbogYCV.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.nginx));
     }
   }),
@@ -20999,7 +20999,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/nsis.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/nsis-c6uFd8zT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.nsis));
     }
   }),
@@ -21010,7 +21010,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ntriples.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ntriples-DjWhsHUR.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ntriples));
     }
   }),
@@ -21022,7 +21022,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.objectiveC));
     }
   }),
@@ -21034,7 +21034,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.objectiveCpp));
     }
   }),
@@ -21045,7 +21045,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mllike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mllike-BNp26hou.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.oCaml));
     }
   }),
@@ -21056,7 +21056,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/octave.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/octave-D6_f-FeL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.octave));
     }
   }),
@@ -21067,7 +21067,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/oz.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/oz-DCQrfpwn.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.oz));
     }
   }),
@@ -21078,7 +21078,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/pascal.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/pascal-zeWJYdMx.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.pascal));
     }
   }),
@@ -21089,7 +21089,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/perl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/perl-D74SawOe.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.perl));
     }
   }),
@@ -21100,7 +21100,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/pig.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/pig-B17mY-WJ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.pig));
     }
   }),
@@ -21111,7 +21111,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/powershell.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/powershell-DESElJhV.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.powerShell));
     }
   }),
@@ -21123,7 +21123,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/properties.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/properties-DG65_nKK.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.properties));
     }
   }),
@@ -21134,7 +21134,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/protobuf.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/protobuf-CgLVJqxd.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.protobuf));
     }
   }),
@@ -21146,7 +21146,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/pug.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/pug-C42NKq_U.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.pug));
     }
   }),
@@ -21157,7 +21157,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/puppet.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/puppet-FkVlVVOu.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.puppet));
     }
   }),
@@ -21168,7 +21168,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/q.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/q-guKv4p8q.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.q));
     }
   }),
@@ -21180,7 +21180,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/r.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/r-h50dFPd6.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.r));
     }
   }),
@@ -21190,7 +21190,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/rpm.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/rpm-Ch3uNl7-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.rpmChanges));
     }
   }),
@@ -21201,7 +21201,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/rpm.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/rpm-Ch3uNl7-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.rpmSpec));
     }
   }),
@@ -21214,7 +21214,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ruby.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ruby-D9Xx7-fE.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ruby));
     }
   }),
@@ -21225,7 +21225,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/sas.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/sas-CQP6sezv.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.sas));
     }
   }),
@@ -21236,7 +21236,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.scala));
     }
   }),
@@ -21247,7 +21247,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/scheme.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/scheme-BUxHmh4Q.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.scheme));
     }
   }),
@@ -21260,7 +21260,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/shell.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/shell-CHgqAKoz.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.shell));
     }
   }),
@@ -21271,7 +21271,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/sieve.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/sieve-B0pugzpM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.sieve));
     }
   }),
@@ -21282,7 +21282,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/smalltalk.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/smalltalk-BPx4qaXq.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.smalltalk));
     }
   }),
@@ -21292,7 +21292,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/solr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/solr-C37DTTTI.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.solr));
     }
   }),
@@ -21303,7 +21303,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mllike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mllike-BNp26hou.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.sml));
     }
   }),
@@ -21315,7 +21315,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/sparql.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/sparql-B14fIQGL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.sparql));
     }
   }),
@@ -21326,7 +21326,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/spreadsheet.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/spreadsheet-BtyWNxQX.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.spreadsheet));
     }
   }),
@@ -21337,7 +21337,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/clike.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/clike-CdUsThjr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.squirrel));
     }
   }),
@@ -21348,7 +21348,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/stylus.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/stylus-De-cFJQT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.stylus));
     }
   }),
@@ -21359,7 +21359,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/swift.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/swift-CoxtLSqn.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.swift));
     }
   }),
@@ -21369,7 +21369,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/stex.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/stex-COcMwSBq.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.stex));
     }
   }),
@@ -21381,7 +21381,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/stex.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/stex-COcMwSBq.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.stex));
     }
   }),
@@ -21392,7 +21392,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/verilog.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/verilog-Bq3UnBM0.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.verilog));
     }
   }),
@@ -21403,7 +21403,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/tcl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/tcl-Cgli26Z-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.tcl));
     }
   }),
@@ -21414,7 +21414,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/textile.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/textile-liATuEBW.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.textile));
     }
   }),
@@ -21424,7 +21424,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/tiddlywiki.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/tiddlywiki-BI0mnSbe.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.tiddlyWiki));
     }
   }),
@@ -21434,7 +21434,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/tiki.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/tiki-C3sn29N5.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.tiki));
     }
   }),
@@ -21445,7 +21445,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/toml.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/toml-MSAeqdsb.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.toml));
     }
   }),
@@ -21456,7 +21456,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/troff.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/troff-BtPe0Kr7.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.troff));
     }
   }),
@@ -21467,7 +21467,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ttcn.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ttcn-D3NR1Our.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ttcn));
     }
   }),
@@ -21478,7 +21478,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/ttcn-cfg.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/ttcn-cfg-BZV72khF.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.ttcnCfg));
     }
   }),
@@ -21489,7 +21489,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/turtle.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/turtle-MJ-6fM67.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.turtle));
     }
   }),
@@ -21500,7 +21500,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/webidl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/webidl-X9dBkADT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.webIDL));
     }
   }),
@@ -21511,7 +21511,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/vb.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/vb-uqWL2gDw.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.vb));
     }
   }),
@@ -21522,7 +21522,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/vbscript.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/vbscript-DKHTisfa.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.vbScript));
     }
   }),
@@ -21533,7 +21533,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/velocity.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/velocity-JMrlzxby.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.velocity));
     }
   }),
@@ -21544,7 +21544,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/verilog.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/verilog-Bq3UnBM0.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.verilog));
     }
   }),
@@ -21555,7 +21555,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/vhdl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/vhdl-DRYcsAb2.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.vhdl));
     }
   }),
@@ -21566,7 +21566,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/xquery.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/xquery-C1XEch7Y.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.xQuery));
     }
   }),
@@ -21577,7 +21577,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/yacas.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/yacas-Cnt7xTGr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.yacas));
     }
   }),
@@ -21588,7 +21588,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/z80.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/z80-DZ2g9Rr2.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.z80));
     }
   }),
@@ -21599,7 +21599,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mscgen.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mscgen-co5J8Ag0.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.mscgen));
     }
   }),
@@ -21610,7 +21610,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mscgen.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mscgen-co5J8Ag0.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.xu));
     }
   }),
@@ -21621,7 +21621,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/mscgen.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/mscgen-co5J8Ag0.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => w(r.msgenny));
     }
   }),
@@ -21632,7 +21632,7 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-vue/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-vue/dist/index-KiQAy4dh.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.vue());
     }
   }),
@@ -21642,14 +21642,14 @@ const QQ = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-angular/dist/index.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-angular/dist/index-CpixCfrr.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.angular());
     }
   })
 ], wQ = [{ key: "Mod-Enter", run: Ym }], xQ = [{ key: "Enter", run: Ym }], kQ = [
   {
     key: "Tab",
-    run: /* @__PURE__ */ c((r) => Wb(r.state) ? gp(r) : !1, "run")
+    run: /* @__PURE__ */ c((r) => W1(r.state) ? gp(r) : !1, "run")
   }
 ];
 function Ym(r) {
@@ -22523,7 +22523,7 @@ const Mw = /* @__PURE__ */ c(({ state: r, dispatch: e }) => {
   EditorState: J,
   EditorView: _,
   ViewUpdate: nn,
-  autocompletion: Eb,
+  autocompletion: E1,
   defaultKeymap: Ww,
   dropCursor: Oy,
   history: CQ,
@@ -22655,7 +22655,7 @@ export {
   op as foldInside,
   Qn as foldNodeProp,
   Rm as html,
-  ob as ifNotIn,
+  o1 as ifNotIn,
   er as indentNodeProp,
   ex as isDomAvailable,
   Kw as isInShadowDom,

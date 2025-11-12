@@ -1,6 +1,6 @@
 ﻿var d = Object.defineProperty;
 var t = (i, n) => d(i, "name", { value: n, configurable: !0 });
-import { javascript as r } from "./javascript.js";
+import { javascript as r } from "./javascript-DzY599r-.js";
 var l = {
   "{": "}",
   "(": ")",

@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v29.4.0
+
+<time>2025-11-12</time>
+
+* Improved cache handling for UI kit assets on the server. This requires you to always match UI kit and server with *exact* versions.
+
 ## v29.3.0
 
 <time>2025-11-05</time>

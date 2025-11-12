@@ -7251,12 +7251,12 @@ const pI = (t) => {
         const s = i.split(".").slice(0, 2), a = r.split(".").slice(0, 2);
         if (s[0] !== a[0])
           throw new Error();
-        s[1] !== a[1] && console.warn(
-          `Version inconsistency: ${Wt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${r}`
+        s[1] !== a[1] && console.error(
+          `Version inconsistency: ${Wt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${r} - This may cause unexpected errors!`
         );
       } catch {
         throw new Error(
-          `Version mismatch! ${Wt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${r}`
+          `Version mismatch! ${Wt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${r} - This will likely cause errors!`
         );
       }
   }
@@ -7507,7 +7507,7 @@ const nn = class nn {
     rs(this, qO, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-hf = new WeakMap(), uf = new WeakMap(), Ra = new WeakMap(), qO = new WeakMap(), nn.version = "29.3.0", nn.sourceName = "@weavy/uikit-web", nn.defaults = {
+hf = new WeakMap(), uf = new WeakMap(), Ra = new WeakMap(), qO = new WeakMap(), nn.version = "29.4.0", nn.sourceName = "@weavy/uikit-web", nn.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,

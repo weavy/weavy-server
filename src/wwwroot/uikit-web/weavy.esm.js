@@ -13,8 +13,8 @@ var El = (i, t, e, s) => ({
     return y(i, t, s);
   }
 });
-import { observeConnected as Xm, throwOnDomNotAvailable as Le, isDomAvailable as ju, whenConnected as kw, whenParentsDefined as tc, defaultVisibilityCheckOptions as Jm, isInShadowDom as ay, isPopoverPolyfilled as jh, autofocusRef as Wu, whenElementVisible as Wh, whenDocumentVisible as tv } from "./es/editor.js";
-import { configureLocalization as ev, e as iv, i as ot, i$1 as tt, m as sv, b as rv, x as h, r as nv, S as av, W as ov, E as x, w as yl, T as oy, msg as f, localized as it, str as pt } from "./es/locales/sv-SE.js";
+import { observeConnected as Xm, throwOnDomNotAvailable as Le, isDomAvailable as ju, whenConnected as kw, whenParentsDefined as tc, defaultVisibilityCheckOptions as Jm, isInShadowDom as ay, isPopoverPolyfilled as jh, autofocusRef as Wu, whenElementVisible as Wh, whenDocumentVisible as tv } from "./es/editor-CmQAVKQ-.js";
+import { configureLocalization as ev, e as iv, i as ot, i$1 as tt, m as sv, b as rv, x as h, r as nv, S as av, W as ov, E as x, w as yl, T as oy, msg as f, localized as it, str as pt } from "./es/locales/sv-SE-onPJtCj4.js";
 function ql(i) {
   return Object.prototype.toString.call(i) === "[object Object]";
 }
@@ -4063,7 +4063,7 @@ const a1 = /* @__PURE__ */ a((i) => {
         ["sv-SE", () => import(
           /* webpackIgnore: true */
           /* @vite-ignore */
-          new URL("./es/locales/sv-SE.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+          new URL("./es/locales/sv-SE-onPJtCj4.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
         ).then((s) => s.svSE)]
       ]), this._locale = t.sourceLocale;
     }
@@ -6512,12 +6512,12 @@ const F1 = /* @__PURE__ */ a((i) => {
           const o = s.split(".").slice(0, 2), c = n.split(".").slice(0, 2);
           if (o[0] !== c[0])
             throw new Error();
-          o[1] !== c[1] && console.warn(
-            `Version inconsistency: ${St.sourceName}@${this.version} ≠ ${this.url?.hostname}@${n}`
+          o[1] !== c[1] && console.error(
+            `Version inconsistency: ${St.sourceName}@${this.version} ≠ ${this.url?.hostname}@${n} - This may cause unexpected errors!`
           );
         } catch {
           throw new Error(
-            `Version mismatch! ${St.sourceName}@${this.version} ≠ ${this.url?.hostname}@${n}`
+            `Version mismatch! ${St.sourceName}@${this.version} ≠ ${this.url?.hostname}@${n} - This will likely cause errors!`
           );
         }
     }
@@ -6788,7 +6788,7 @@ const ae = class ae {
     z(this, zn, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Zc = new WeakMap(), Yc = new WeakMap(), Vi = new WeakMap(), zn = new WeakMap(), a(ae, "WeavyClient"), ae.version = "29.3.0", ae.sourceName = "@weavy/uikit-web", ae.defaults = {
+Zc = new WeakMap(), Yc = new WeakMap(), Vi = new WeakMap(), zn = new WeakMap(), a(ae, "WeavyClient"), ae.version = "29.4.0", ae.sourceName = "@weavy/uikit-web", ae.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -13395,11 +13395,11 @@ ${r.join(`
     super.willUpdate(t), t.has("weavy") && this.weavy && (this.pdfjsLib || (await this.weavy.whenUrl(), this.pdfjsLib = await import(
       /* webpackIgnore: true */
       /* @vite-ignore */
-      new URL("./es/pdfjs-dist/build/pdf.mjs.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+      new URL("./es/pdfjs-dist/build/pdf.mjs-BpNReg9A.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
     ), globalThis.pdfjsLib = this.pdfjsLib, this.pdfjsViewer = await import(
       /* webpackIgnore: true */
       /* @vite-ignore */
-      new URL("./es/pdfjs-dist/web/pdf_viewer.mjs.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+      new URL("./es/pdfjs-dist/web/pdf_viewer.mjs-BDbjEEB2.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
     ), this.whenPdfjsResolve?.({
       pdfjsLib: this.pdfjsLib,
       pdfjsViewer: this.pdfjsViewer
@@ -14762,7 +14762,7 @@ let xt = (Na = class extends dt {
       import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./es/editor.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./es/editor-CmQAVKQ-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((e) => e.editor).then(
         ({
           weavyHighlighter: e,
