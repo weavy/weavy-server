@@ -1,6 +1,6 @@
 ﻿var I = Object.defineProperty;
 var i = (e, n) => I(e, "name", { value: n, configurable: !0 });
-var h = function() {
+var h = (function() {
   function e(z) {
     return { type: z, style: "keyword" };
   }
@@ -256,7 +256,7 @@ var h = function() {
   ], o = 0, l = m.length; o < l; o++)
     c[m[o]] = a;
   return c;
-}();
+})();
 function g(e, n, t) {
   return n.tokenize = t, t(e, n);
 }

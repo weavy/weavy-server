@@ -395,7 +395,7 @@ const _e = y({
   ),
   indentStatements: !1,
   multiLineStrings: !0,
-  number: /^(?:0x[a-f\d_]+|0b[01_]+|(?:[\d_]+(\.\d+)?|\.\d+)(?:e[-+]?[\d_]+)?)(u|ll?|l|f)?/i,
+  number: /^(?:0x[a-f\d_]+|0b[01_]+|(?:[\d_]+(\.\d+)?|\.\d+)(?:e[-+]?[\d_]+)?)(ul?|l|f)?/i,
   blockKeywords: i("catch class do else finally for if where try while enum"),
   defKeywords: i("class val var object interface fun"),
   atoms: i("true false null this"),

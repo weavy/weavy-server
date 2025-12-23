@@ -375,10 +375,10 @@ function Ca(a) {
   };
 }
 h(Ca, "apiPageLayoutToViewerModes");
-const Ii = function() {
+const Ii = (function() {
   const a = document.createElement("div");
   return a.style.width = "round(down, calc(1.6666666666666665 * 792px), 1px)", a.style.width === "calc(1320px)" ? Math.fround : (e) => e;
-}(), ne = {
+})(), ne = {
   SPACE: 0,
   ALPHA_LETTER: 1,
   PUNCT: 2,
@@ -3159,9 +3159,9 @@ let Bn = ks;
   const a = navigator.userAgent || "", e = navigator.platform || "", t = navigator.maxTouchPoints || 1, i = /Android/.test(a), n = /\b(iPad|iPhone|iPod)(?=;)/.test(a) || e === "MacIntel" && t > 1;
   (function() {
     (n || i) && Hn.set("maxCanvasPixels", 5242880);
-  })(), function() {
+  })(), (function() {
     i && Hn.set("useSystemFonts", !1);
-  }();
+  })();
 }
 const g = {
   BROWSER: 1,
@@ -4606,7 +4606,7 @@ Je = new WeakMap(), De = new WeakMap(), oi = new WeakMap(), Ye = new WeakMap(), 
 }, "#finishRenderTask"), h(Vs, "PDFPageView");
 let Ji = Vs;
 async function ol(a) {
-  const e = "", t = e.split("#", 1)[0];
+  const t = "".split("#", 1)[0];
   let {
     info: i,
     metadata: n,
@@ -4623,11 +4623,11 @@ async function ol(a) {
     ...i,
     baseURL: t,
     filesize: r,
-    filename: s || ao(e),
+    filename: s || ao(""),
     metadata: n?.getRaw(),
     authors: n?.get("dc:creator"),
     numPages: a.numPages,
-    URL: e
+    URL: ""
   };
 }
 h(ol, "docProperties");

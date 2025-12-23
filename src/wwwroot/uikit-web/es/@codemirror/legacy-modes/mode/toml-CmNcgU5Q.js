@@ -1,6 +1,6 @@
-﻿var r = Object.defineProperty;
-var i = (n, e) => r(n, "name", { value: e, configurable: !0 });
-const f = {
+﻿var u = Object.defineProperty;
+var i = (n, e) => u(n, "name", { value: e, configurable: !0 });
+const o = {
   name: "toml",
   startState: /* @__PURE__ */ i(function() {
     return {
@@ -11,9 +11,18 @@ const f = {
     };
   }, "startState"),
   token: /* @__PURE__ */ i(function(n, e) {
-    if (!e.inString && (n.peek() == '"' || n.peek() == "'") && (e.stringType = n.peek(), n.next(), e.inString = !0), n.sol() && e.inArray === 0 && (e.lhs = !0), e.inString) {
-      for (; e.inString && !n.eol(); )
-        n.peek() === e.stringType ? (n.next(), e.inString = !1) : n.peek() === "\\" ? (n.next(), n.next()) : n.match(/^.[^\\\"\']*/);
+    let l;
+    if (!e.inString && (l = n.match(/^('''|"""|'|")/)) && (e.stringType = l[0], e.inString = !0), n.sol() && !e.inString && e.inArray === 0 && (e.lhs = !0), e.inString) {
+      for (; e.inString; )
+        if (n.match(e.stringType))
+          e.inString = !1;
+        else if (n.peek() === "\\")
+          n.next(), n.next();
+        else {
+          if (n.eol())
+            break;
+          n.match(/^.[^\\\"\']*/);
+        }
       return e.lhs ? "property" : "string";
     } else {
       if (e.inArray && n.peek() === "]")
@@ -24,8 +33,8 @@ const f = {
         return n.skipToEnd(), "comment";
       if (n.eatSpace())
         return null;
-      if (e.lhs && n.eatWhile(function(l) {
-        return l != "=" && l != " ";
+      if (e.lhs && n.eatWhile(function(r) {
+        return r != "=" && r != " ";
       }))
         return "property";
       if (e.lhs && n.peek() === "=")
@@ -47,5 +56,5 @@ const f = {
   }
 };
 export {
-  f as toml
+  o as toml
 };

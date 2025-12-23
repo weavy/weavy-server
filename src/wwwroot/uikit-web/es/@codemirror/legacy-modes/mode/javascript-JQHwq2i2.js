@@ -1,7 +1,7 @@
 ﻿var me = Object.defineProperty;
 var i = (g, G) => me(g, "name", { value: G, configurable: !0 });
 function ar(g) {
-  var G = g.statementIndent, or = g.jsonld, wr = g.json || or, b = g.typescript, H = g.wordCharacters || /[\w$\xa1-\uffff]/, hr = function() {
+  var G = g.statementIndent, or = g.jsonld, wr = g.json || or, b = g.typescript, H = g.wordCharacters || /[\w$\xa1-\uffff]/, hr = (function() {
     function r(y) {
       return { type: y, style: "keyword" };
     }
@@ -50,7 +50,7 @@ function ar(g) {
       extends: u,
       await: u
     };
-  }(), xr = /[+\-*&%=<>!?|~^@]/, qr = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)"/;
+  })(), xr = /[+\-*&%=<>!?|~^@]/, qr = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)"/;
   function Nr(r) {
     for (var e = !1, t, u = !1; (t = r.next()) != null; ) {
       if (!e) {

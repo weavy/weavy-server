@@ -4695,7 +4695,7 @@ const Df = class Df extends oo {
       offsetY: -h,
       scaleX: 1 / A,
       scaleY: 1 / y
-    }, _ = d + 2 * 2, v = p + 2 * 2, S = s.getCanvas("mesh", _, v), x = S.context, E = x.createImageData(d, p);
+    }, _ = d + 4, v = p + 4, S = s.getCanvas("mesh", _, v), x = S.context, E = x.createImageData(d, p);
     if (e) {
       const k = E.data;
       for (let T = 0, F = k.length; T < F; T += 4)

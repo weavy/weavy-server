@@ -69,7 +69,7 @@ function R(e, t) {
   return e.eat("\\") ? u(e, t, g) : (e.next(), t(l), "error");
 }
 a(R, "stringGap");
-var h = function() {
+var h = (function() {
   var e = {};
   function t(n) {
     return function() {
@@ -358,7 +358,7 @@ var h = function() {
     "zipWith",
     "zipWith3"
   ), e;
-}();
+})();
 const y = {
   name: "haskell",
   startState: /* @__PURE__ */ a(function() {

@@ -1,5 +1,50 @@
 # Changelog for Weavy
 
+## v30.0.0
+
+<time>2025-12-23</time>
+
+* Holiday edition! ☃️🎄
+* Added api endpoint for creating notifications.
+* Added api endpoint to create embeds.
+* Added option to use Weavy as authentication provider.
+* Added support for displaying embeds with `actions`.
+* Added `<wy-notification-button>` component to display a complete UI for Notifications with a button and a badge opening a list of unread notifications in an overlay.
+* Added `<wy-notification-badge>` component to display the number of unread notifications.
+* Added `wy-action` event for handling actions when interacting with items. Currently triggered by conversation selection, notification selection and embed actions.
+* Added `wy-unread` event when the number of unread notifications/conversations change.
+* Added `.selectMembers()` method in `<wy-messenger>` for triggering user member selection when creating a conversation.
+* Added CSS parts for sub-components in UI kit.
+* Added CSS variable `--wy-color-scheme` for setting `dark` or `light` color scheme as alternative to using the `.wy-dark` class in UI kit.
+* Added CSS variable `--wy-padding-outer` and `--wy-border-radius-outer` to adapt the outermost padding and roundness of components in UI kit.
+* Updated visual style with improved MD3 support in UI kit.
+* Updated layout for better adaption of padding in UI kit.
+* Updated visual style for image content display to better support various image sizes.
+* Reaction-only messages are displayed with enlarged style in UI kit.
+* Improved file upload handling with possibility to abort uploads.
+* Improved types, component documentation and custom elements definition in the UI kit.
+* Fixed some issues when using app id for `uid` property in UI kit.
+* Fixed issue that prevented clearing the `directory` property via the Users API.
+* Adjusted incorrect notification toast duration in UI kit.
+
+###### Breaking Changes
+
+* The visual appearance of components in UI kit has changed slightly and you may need to adapt the appearance using `--wy-padding-outer` and `--wy-border-radius-outer` CSS variables to fit your layout.
+* Renamed `original_url` to `url` in the Embeds API.
+* Renamed the `autoUid` property to `generateUid` in UI kit.
+* Changed CSS variable `--wy-appbar-height` to `--wy-titlebar-height` in UI kit.
+* Changed the `appTypes` property to `componentTypes` in UI kit.
+* Changed the `componentType` property to `appType` in UI kit.
+* The `.createConversation()` method in `<wy-messenger>` now explicitly only creates conversations programmatically. Use `.selectMembers()` to trigger user member selection.
+* Removed legacy `release-focus` events in UI kit.
+* Removed legacy use of CSS media breakpoints in favor of CSS container breakpoints in UI kit.
+* Removed `wy-notifications` event on the Weavy instance. Use `wy-notification` and `wy-notifications-unread` events instead.
+* Removed experimental api functions on the Weavy instance. Use the `.fetch()` functionality instead.
+* Removed the built-in notification button in each Weavy component. This also removes the settings for `notifications` and `notificationBadge`. Use the `<wy-notification-button>` component in conjunction with the `actions` slot on a Weavy component instead.
+* Removed deprecated `.conversationBelongsToMessenger(app)` in `<wy-messenger>`. Compare app to to `.appTypes` instead.
+* Removed deprecated `.selectConversation(id)` and `clearConversation()` in `<wy-messenger>`. Set `.conversationId` instead.
+* Removed tag name constants from UI kit. Use actual tag names directly instead.
+
 ## v29.4.0
 
 <time>2025-11-12</time>

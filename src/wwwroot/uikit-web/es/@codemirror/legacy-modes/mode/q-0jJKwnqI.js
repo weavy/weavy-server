@@ -1,22 +1,22 @@
 ﻿var f = Object.defineProperty;
 var c = (n, e) => f(n, "name", { value: e, configurable: !0 });
-var r, x = v(["abs", "acos", "aj", "aj0", "all", "and", "any", "asc", "asin", "asof", "atan", "attr", "avg", "avgs", "bin", "by", "ceiling", "cols", "cor", "cos", "count", "cov", "cross", "csv", "cut", "delete", "deltas", "desc", "dev", "differ", "distinct", "div", "do", "each", "ej", "enlist", "eval", "except", "exec", "exit", "exp", "fby", "fills", "first", "fkeys", "flip", "floor", "from", "get", "getenv", "group", "gtime", "hclose", "hcount", "hdel", "hopen", "hsym", "iasc", "idesc", "if", "ij", "in", "insert", "inter", "inv", "key", "keys", "last", "like", "list", "lj", "load", "log", "lower", "lsq", "ltime", "ltrim", "mavg", "max", "maxs", "mcount", "md5", "mdev", "med", "meta", "min", "mins", "mmax", "mmin", "mmu", "mod", "msum", "neg", "next", "not", "null", "or", "over", "parse", "peach", "pj", "plist", "prd", "prds", "prev", "prior", "rand", "rank", "ratios", "raze", "read0", "read1", "reciprocal", "reverse", "rload", "rotate", "rsave", "rtrim", "save", "scan", "select", "set", "setenv", "show", "signum", "sin", "sqrt", "ss", "ssr", "string", "sublist", "sum", "sums", "sv", "system", "tables", "tan", "til", "trim", "txf", "type", "uj", "ungroup", "union", "update", "upper", "upsert", "value", "var", "view", "views", "vs", "wavg", "where", "where", "while", "within", "wj", "wj1", "wsum", "xasc", "xbar", "xcol", "xcols", "xdesc", "xexp", "xgroup", "xkey", "xlog", "xprev", "xrank"]), s = /[|/&^!+:\\\-*%$=~#;@><,?_\'\"\[\(\]\)\s{}]/;
-function v(n) {
+var r, x = k(["abs", "acos", "aj", "aj0", "all", "and", "any", "asc", "asin", "asof", "atan", "attr", "avg", "avgs", "bin", "by", "ceiling", "cols", "cor", "cos", "count", "cov", "cross", "csv", "cut", "delete", "deltas", "desc", "dev", "differ", "distinct", "div", "do", "each", "ej", "enlist", "eval", "except", "exec", "exit", "exp", "fby", "fills", "first", "fkeys", "flip", "floor", "from", "get", "getenv", "group", "gtime", "hclose", "hcount", "hdel", "hopen", "hsym", "iasc", "idesc", "if", "ij", "in", "insert", "inter", "inv", "key", "keys", "last", "like", "list", "lj", "load", "log", "lower", "lsq", "ltime", "ltrim", "mavg", "max", "maxs", "mcount", "md5", "mdev", "med", "meta", "min", "mins", "mmax", "mmin", "mmu", "mod", "msum", "neg", "next", "not", "null", "or", "over", "parse", "peach", "pj", "plist", "prd", "prds", "prev", "prior", "rand", "rank", "ratios", "raze", "read0", "read1", "reciprocal", "reverse", "rload", "rotate", "rsave", "rtrim", "save", "scan", "select", "set", "setenv", "show", "signum", "sin", "sqrt", "ss", "ssr", "string", "sublist", "sum", "sums", "sv", "system", "tables", "tan", "til", "trim", "txf", "type", "uj", "ungroup", "union", "update", "upper", "upsert", "value", "var", "view", "views", "vs", "wavg", "where", "where", "while", "within", "wj", "wj1", "wsum", "xasc", "xbar", "xcol", "xcols", "xdesc", "xexp", "xgroup", "xkey", "xlog", "xprev", "xrank"]), s = /[|/&^!+:\\\-*%$=~#;@><,?_\'\"\[\(\]\)\s{}]/;
+function k(n) {
   return new RegExp("^(" + n.join("|") + ")$");
 }
-c(v, "buildRE");
+c(k, "buildRE");
 function l(n, e) {
   var o = n.sol(), i = n.next();
   if (r = null, o) {
     if (i == "/")
-      return (e.tokenize = k)(n, e);
+      return (e.tokenize = v)(n, e);
     if (i == "\\")
-      return n.eol() || /\s/.test(n.peek()) ? (n.skipToEnd(), /^\\\s*$/.test(n.current()) ? (e.tokenize = h)(n) : e.tokenize = l, "comment") : (e.tokenize = l, "builtin");
+      return n.eol() || /\s/.test(n.peek()) ? (n.skipToEnd(), /^\\\s*$/.test(n.current()) ? (e.tokenize = a)(n) : e.tokenize = l, "comment") : (e.tokenize = l, "builtin");
   }
   if (/\s/.test(i))
     return n.peek() == "/" ? (n.skipToEnd(), "comment") : "null";
   if (i == '"')
-    return (e.tokenize = a)(n, e);
+    return (e.tokenize = g)(n, e);
   if (i == "`")
     return n.eatWhile(/[A-Za-z\d_:\/.]/), "macroName";
   if (i == "." && /\d/.test(n.peek()) || /\d/.test(i)) {
@@ -26,20 +26,20 @@ function l(n, e) {
   return /[A-Za-z]|\./.test(i) ? (n.eatWhile(/[A-Za-z._\d]/), x.test(n.current()) ? "keyword" : "variable") : /[|/&^!+:\\\-*%$=~#;@><\.,?_\']/.test(i) || /[{}\(\[\]\)]/.test(i) ? null : "error";
 }
 c(l, "tokenBase");
-function k(n, e) {
-  return n.skipToEnd(), /\/\s*$/.test(n.current()) ? (e.tokenize = m)(n, e) : e.tokenize = l, "comment";
+function v(n, e) {
+  return n.skipToEnd(), /^\/\s*$/.test(n.current()) ? (e.tokenize = m)(n, e) : e.tokenize = l, "comment";
 }
-c(k, "tokenLineComment");
+c(v, "tokenLineComment");
 function m(n, e) {
   var o = n.sol() && n.peek() == "\\";
   return n.skipToEnd(), o && /^\\\s*$/.test(n.current()) && (e.tokenize = l), "comment";
 }
 c(m, "tokenBlockComment");
-function h(n) {
+function a(n) {
   return n.skipToEnd(), "comment";
 }
-c(h, "tokenCommentToEOF");
-function a(n, e) {
+c(a, "tokenCommentToEOF");
+function g(n, e) {
   for (var o = !1, i, t = !1; i = n.next(); ) {
     if (i == '"' && !o) {
       t = !0;
@@ -49,7 +49,7 @@ function a(n, e) {
   }
   return t && (e.tokenize = l), "string";
 }
-c(a, "tokenString");
+c(g, "tokenString");
 function u(n, e, o) {
   n.context = { prev: n.context, indent: n.indent, col: o, type: e };
 }
@@ -86,7 +86,10 @@ const y = {
       for (; t && t.type == "pattern"; ) t = t.prev;
     var p = t && i == t.type;
     return t ? t.type == "pattern" ? t.col : t.align ? t.col + (p ? 0 : 1) : t.indent + (p ? 0 : o.unit) : 0;
-  }, "indent")
+  }, "indent"),
+  languageData: {
+    commentTokens: { line: "/" }
+  }
 };
 export {
   y as q
