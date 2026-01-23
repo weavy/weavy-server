@@ -1,4 +1,4 @@
-﻿import { simpleMode as e } from "../../../editor-7s3r7liE.js";
+﻿import { simpleMode as e } from "../../../editor-M1x0pxVu.js";
 const n = e({
   start: [
     // comments

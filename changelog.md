@@ -1,5 +1,15 @@
 # Changelog for Weavy
 
+## v30.1.0
+
+<time>2026-01-23</time>
+
+* Added `<wy-messenger-button>` component to display a complete UI for the Messenger as a button with a badge, opening the Messenger in an overlay.
+* Added `<wy-messenger-badge>` component to display the number of unread Messenger conversations.
+* Added `instructions` property to `<wy-messenger>` and. `<wy-chat>`, to append agent instructions to messages when using agents.
+* Renamed `list` property in `<wy-notification-button>` to `overlay`. The `list` property still works, but is deprecated.
+* Fixed an issue when using `uid` with `<wy-copilot>`.
+
 ## v30.0.0
 
 <time>2025-12-23</time>
