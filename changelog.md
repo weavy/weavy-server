@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v30.1.1
+
+<time>2026-01-24</time>
+
+* Reverted broken color scheme update.
+
 ## v30.1.0
 
 <time>2026-01-23</time>
