@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v30.2.0
+
+<time>2026-01-26</time>
+
+* Improved color generation for theme colors, with included support for vibrant, black/white and gray scale theme colors.
+* Fixed an issue with unstyled links in some components.
+* Fixed some issues with matching Notification links in some Weavy components, which caused Notification toasts to unnecessary be displayed when the component was visible.
+
 ## v30.1.1
 
 <time>2026-01-24</time>
