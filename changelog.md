@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v30.2.1
+
+<time>2026-01-28</time>
+
+* Fixed an issue with theme and CSS variables not applying to `<wy-messenger-badge>`, `<wy-notification-badge>` and `<wy-notification-button>`.
+
 ## v30.2.0
 
 <time>2026-01-26</time>

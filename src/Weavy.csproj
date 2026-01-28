@@ -10,9 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="30.2.0" />
-    <PackageReference Include="Weavy.Core" Version="30.2.0" />
-    <PackageReference Include="Weavy.Admin" Version="30.2.0" />
+    <PackageReference Include="Weavy.Api" Version="30.2.1" />
+    <PackageReference Include="Weavy.Core" Version="30.2.1" />
+    <PackageReference Include="Weavy.Admin" Version="30.2.1" />
   </ItemGroup>
 
   <ItemGroup>
