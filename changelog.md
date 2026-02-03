@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v30.3.0
+
+<time>2026-02-03</time>
+
+* Added functionality for version checking using the async `.checkVersion()` in the UI kit or by checking the `/version` endpoint on the Weavy environment.
+* Adjusted paddings in UI kit.
+* Fixed incorrect block styles for `<wy-messenger-button>`.
+* Fixed some issues with `selectMembers()` in Messenger.
+
 ## v30.2.1
 
 <time>2026-01-28</time>
