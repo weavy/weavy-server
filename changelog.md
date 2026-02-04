@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v30.3.1
+
+<time>2026-02-04</time>
+
+* Added missing _dark mode_ for `<wy-messenger-badge>`, `<wy-messenger-button>`, `<wy-notification-badge>` and `<wy-notification-button>`.
+
 ## v30.3.0
 
 <time>2026-02-03</time>

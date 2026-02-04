@@ -4718,7 +4718,7 @@ const bf = class bf {
     var s;
     this.flushBuffer();
     let o = this.ensureMarks(t, i), l = o.lastChild;
-    if (l && l.isText() && !(l.flags & 8)) {
+    if (l && l.isText() && !(l.flags & 8) && l.length + e.length < 512) {
       this.cache.reused.set(
         l,
         2
@@ -5062,7 +5062,7 @@ const kf = class kf {
       span: /* @__PURE__ */ f((l, a, h, c) => {
         for (let u = l; u < a; ) {
           let O = this.text.next(Math.min(512, a - u));
-          O == null ? (n.addLineStartIfNotCovered(i), n.addBreak(), u++) : (n.ensureLine(i), n.addText(O, h, c), u += O.length), i = null;
+          O == null ? (n.addLineStartIfNotCovered(i), n.addBreak(), u++) : (n.ensureLine(i), n.addText(O, h, u == l ? c : h.length), u += O.length), i = null;
         }
       }, "span")
     });
@@ -5768,6 +5768,8 @@ function Vl(r, e, t, i) {
     if (h = r.elementAtHeight(a), i == null)
       break;
     if (h.type == Ce.Text) {
+      if (i < 0 ? h.to < r.viewport.from : h.from > r.viewport.to)
+        break;
       let O = r.docView.coordsAt(i < 0 ? h.from : h.to, i);
       if (O && (i < 0 ? O.top <= a + s : O.bottom >= a + s))
         break;
@@ -20292,7 +20294,7 @@ function mt(r) {
   return import(
     /* webpackIgnore: true */
     /* @vite-ignore */
-    new URL("./@codemirror/lang-sql/dist/index-BV9u_JGn.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+    new URL("./@codemirror/lang-sql/dist/index-HIuthktG.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
   ).then((e) => e.sql({ dialect: e[r] }));
 }
 f(mt, "sql");
@@ -20305,7 +20307,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-cpp/dist/index-q3bi0Oof.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-cpp/dist/index-Ch31MBAM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.cpp());
     }
   }),
@@ -20317,7 +20319,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-cpp/dist/index-q3bi0Oof.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-cpp/dist/index-Ch31MBAM.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.cpp());
     }
   }),
@@ -20343,7 +20345,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-go/dist/index-C6h88umQ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-go/dist/index-EKY_B7sl.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.go());
     }
   }),
@@ -20362,7 +20364,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-java/dist/index-CYZLix4P.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-java/dist/index-CBLhhqp4.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.java());
     }
   }),
@@ -20381,7 +20383,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-jinja/dist/index-BV-Qb4um.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-jinja/dist/index-BNnKGusA.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.jinja());
     }
   }),
@@ -20393,7 +20395,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-json/dist/index-Cyke9NoH.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-json/dist/index-CG8_L514.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.json());
     }
   }),
@@ -20411,7 +20413,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-less/dist/index-Dy_f_Hnd.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-less/dist/index-B_EcMqCi.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.less());
     }
   }),
@@ -20422,7 +20424,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-liquid/dist/index-B7vvrxld.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-liquid/dist/index-B5bZJwiV.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.liquid());
     }
   }),
@@ -20458,7 +20460,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-php/dist/index-YBXMtGLF.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-php/dist/index-DvQw9Mp-.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.php());
     }
   }),
@@ -20483,7 +20485,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-python/dist/index-5ajPRs70.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-python/dist/index-vhifJ9Nf.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.python());
     }
   }),
@@ -20494,7 +20496,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-rust/dist/index-CBDAiU1X.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-rust/dist/index-D-WtCRyO.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.rust());
     }
   }),
@@ -20505,7 +20507,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-sass/dist/index-DKWg_lX_.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-sass/dist/index-C4TVT0EJ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.sass({ indented: !0 }));
     }
   }),
@@ -20516,7 +20518,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-sass/dist/index-DKWg_lX_.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-sass/dist/index-C4TVT0EJ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.sass());
     }
   }),
@@ -20555,7 +20557,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-wast/dist/index-DSUY3-3e.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-wast/dist/index-ClegdLlZ.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.wast());
     }
   }),
@@ -20567,7 +20569,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-xml/dist/index-B1s9Euan.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-xml/dist/index-wnasnZ7w.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.xml());
     }
   }),
@@ -20579,7 +20581,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-yaml/dist/index-C3S-G724.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-yaml/dist/index-De-u6TgO.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.yaml());
     }
   }),
@@ -20805,7 +20807,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/dockerfile-Cya3UKhx.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/dockerfile-B7rWGakX.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => b(r.dockerFile));
     }
   }),
@@ -20913,7 +20915,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/factor-CoOQSb4r.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/factor-BIldxVsL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => b(r.factor));
     }
   }),
@@ -21179,7 +21181,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/legacy-modes/mode/nsis-GFApVD5h.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/legacy-modes/mode/nsis-CeZzo5a6.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => b(r.nsis));
     }
   }),
@@ -21812,7 +21814,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-vue/dist/index-Py-qOXak.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-vue/dist/index-sXjDQ2oL.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.vue());
     }
   }),
@@ -21822,7 +21824,7 @@ const Bb = [
       return import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./@codemirror/lang-angular/dist/index-DDMIzvru.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
+        new URL("./@codemirror/lang-angular/dist/index-5RG-Ndlp.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? WEAVY_IMPORT_URL : import.meta.url).href
       ).then((r) => r.angular());
     }
   })
