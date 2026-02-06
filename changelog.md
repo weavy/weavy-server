@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v30.3.2
+
+<time>2026-02-06</time>
+
+* Disabled notification consumption in `<wy-messenger-badge>`, causing message notification toasts to not show up when the component was present.
+
 ## v30.3.1
 
 <time>2026-02-04</time>

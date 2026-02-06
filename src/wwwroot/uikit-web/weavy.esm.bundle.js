@@ -9547,7 +9547,7 @@ const cn = class cn {
     fa(this, pd, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Kf = new WeakMap(), Jf = new WeakMap(), Us = new WeakMap(), pd = new WeakMap(), cn.version = "30.3.1", cn.sourceName = "@weavy/uikit-web", cn.defaults = {
+Kf = new WeakMap(), Jf = new WeakMap(), Us = new WeakMap(), pd = new WeakMap(), cn.version = "30.3.2", cn.sourceName = "@weavy/uikit-web", cn.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -25140,6 +25140,13 @@ let zd = class extends ch {
   constructor() {
     super(...arguments), this.unreadNotifications = new PP(this), this.theme = new Zn(this, zd.styles), this.currentTypeFilter = St.All, this.typeFilter = St.All;
   }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
+  }
   /** Current unread notification count. */
   get unread() {
     return this.unreadNotifications.unread;
@@ -25196,6 +25203,13 @@ let Xc = class extends ch {
   constructor() {
     super(...arguments), this.theme = new Zn(this, Xc.styles), this.unreadNotifications = new PP(this), this.badge = "count", this.badgePosition = "inline", this.typeFilter = St.All;
   }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
+  }
   /** Current unread notification count. */
   get unread() {
     return this.unreadNotifications.unread;
@@ -25238,6 +25252,13 @@ var gG = Object.defineProperty, yG = Object.getOwnPropertyDescriptor, Pl = (t, e
 let Ea = class extends ch {
   constructor() {
     super(...arguments), this.theme = new Zn(this, Ea.styles), this.unreadNotifications = new PP(this), this.overlay = "sheet", this.badge = "compact", this.badgePosition = "top-right", this.typeFilter = St.All, this.currentTypeFilter = St.All, this.showNotificationList = !1;
+  }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
   }
   set list(t) {
     console.warn(`.list is deprecated. Use .overlay = "${t}"; instead`), this.overlay = t;
@@ -25506,6 +25527,13 @@ let oo = class extends ch {
           (!this.requestUserPermission && this.appearance !== "native" || await this.hasUserPermission() ? this.dispatchEvent(r) : !1) && (t.action === "notification_created" && t.notification.is_unread ? await this.addOrUpdateNotification(t.notification) : await this.updateNotification(t.notification), await this.addOrUpdateNativeNotification(n));
         }
     }, QG(this, YO);
+  }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
   }
   /** @internal */
   async addOrUpdateNotification(t) {
@@ -26754,6 +26782,13 @@ let ly = class extends Ai {
   constructor() {
     super(...arguments), this.theme = new Zn(this, ly.styles), this.createConversationController = new Ow(this), this.conversationNewRef = Ue();
   }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
+  }
   /**
    * Creates a new conversation.
    *
@@ -26799,6 +26834,13 @@ var UG = Object.defineProperty, YG = Object.getOwnPropertyDescriptor, gp = (t, e
 let cl = class extends Ai {
   constructor() {
     super(...arguments), this.theme = new Zn(this, cl.styles), this.unreadConversations = new hw(this), this.componentTypes = [Ze.ChatRoom, Ze.PrivateChat], this.badge = "count", this.badgePosition = "inline";
+  }
+  /** 
+   * Disabled link matching/consuming.
+   * @internal 
+   */
+  matchesLink() {
+    return !1;
   }
   set agent(t) {
     super.agent = t, this._agentUid ? this.componentTypes = [Ze.AgentChat] : this.componentTypes = [Ze.ChatRoom, Ze.PrivateChat];
