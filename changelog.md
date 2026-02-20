@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v30.4.0
+
+<time>2026-02-20</time>
+
+* Added _readonly_ `sourceFormat` variable to the Weavy instance in UI kit to indicate the format of the loaded lib.
+* Fixed loading of the _PDF preview worker_ and _CMAPS_ in UMD bundle sources of the UI kit.
+* Fixed an issue with _subscribe_ in the `wy-posts` component.
+
 ## v30.3.2
 
 <time>2026-02-06</time>
