@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v30.4.1
+
+<time>2026-03-10</time>
+
+* Fixed an CSS issue that caused Safari v18 to crash.
+* Fixed an issue with RegExp that caused UI kit to not load/render in Safari < v16.4.
+
 ## v30.4.0
 
 <time>2026-02-20</time>

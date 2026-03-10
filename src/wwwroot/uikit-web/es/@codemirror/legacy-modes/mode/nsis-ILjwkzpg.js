@@ -1,4 +1,4 @@
-﻿import { simpleMode as e } from "../../../editor-IET2ERyn.js";
+﻿import { simpleMode as e } from "../../../editor-DEqj4mj4.js";
 const n = e({
   start: [
     // Numbers
