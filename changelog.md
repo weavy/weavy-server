@@ -1,5 +1,27 @@
 # Changelog for Weavy
 
+## v31.0.0
+
+<time>2026-03-13</time>
+
+* Updated backend to .NET 10.0.
+* Added functionality to display a user details overlay when clicking a name or an avatar.
+* Added functionality for following/unfollowing users. The feature can be controlled using the `follow` feature flag in UI kit.
+* Added `whenReady()` method on all Weavy components, which resolves when the component has rendered first time.
+* Added new `<wy-feed>` component to render a consolidated feed of posts from one or multiple sources. 
+* Added search capabilities to `<wy-feed>` and `<wy-posts>`. A search input can be shown by enabling the `search` property on the component. 
+* Added a `<wy-post-editor>` component that can post to a specific app. The user may choose from several post apps when configured with multiple space separated `uid`:s.
+* Added graceful avatar image loading with name initials fallback.
+* Added experimental cross platform support, allowing on-prem installations of Weavy to run on Linux and MacOS (in addition to Windows).
+* Changed `<wy-posts>` component to only have a post list. It has the same feed capabilities as the `<wy-feed>` component, but without a post editor. In addition to `<wy-feed>` it can also display a consolidated feed from _all_ available sources.
+* Fixed some errors when Weavy server is unreachable.
+
+###### Breaking changes
+
+* The `<wy-posts>` component is superseded by the new `<wy-feed>` component which includes all the functionality of the previous `<wy-posts>` component. To upgrade existing implementations, simply change `<wy-posts>` => `<wy-feed>`. The `<wy-posts>` component still exists, but without a post editor. The post editor can be used separately using the new `<wy-post-editor>` component. 
+* Changed `features` property on components to be relative to component defaults and added support for disabling features using _negative_ `-` prefix. This means you _must_ specify any features you want to disable, i.e `features="meetings -reactions"` _adds_ "meetings" feature and _removes_ "reactions" feature.
+* Some CSS shadow part names has changed, especially names associated with to the editor.
+
 ## v30.4.1
 
 <time>2026-03-10</time>

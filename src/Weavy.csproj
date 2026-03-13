@@ -2,28 +2,28 @@
 
   <PropertyGroup>
     <Description>ASP.NET Core application for hosting Weavy server/backend services.</Description>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <SatelliteResourceLanguages>none</SatelliteResourceLanguages>
-    <TargetFramework>net9.0-windows</TargetFramework>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>    
     <DefaultItemExcludesInProjectFolder>$(DefaultItemExcludesInProjectFolder);blobs\**;cache\**;index\**;logs\**;temp\**;</DefaultItemExcludesInProjectFolder>
-    <UserSecretsId>0afc46f5-f8f9-459c-8539-e6c3d4f97b90</UserSecretsId>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="30.4.1" />
-    <PackageReference Include="Weavy.Core" Version="30.4.1" />
-    <PackageReference Include="Weavy.Admin" Version="30.4.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="9.0.9" />
+    <PackageReference Include="Weavy.Api" Version="31.0.0" />
+    <PackageReference Include="Weavy.Core" Version="31.0.0" />
+    <PackageReference Include="Weavy.Admin" Version="31.0.0" />
   </ItemGroup>
 
   <!-- Copy doc files to output for openapi.json, see https://github.com/dotnet/sdk/issues/9498 -->
-  <Target Name="CopyReferenceFiles" BeforeTargets="Build">
+  <Target Name="CopyDocsToOutput" BeforeTargets="Build">
     <ItemGroup>
       <XmlReferenceFiles Condition="Exists('$(OutputPath)%(Filename).dll')" Include="%(Reference.RelativeDir)%(Reference.Filename).xml" />
     </ItemGroup>
     <Copy SourceFiles="@(XmlReferenceFiles)" DestinationFolder="$(OutputPath)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)') AND $([System.String]::Copy('%(Filename)').StartsWith('Weavy'))" />
-  </Target>
+  </Target>  
+  <Target Name="CopyDocsToPublish" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <XmlReferenceFiles Condition="Exists('$(OutputPath)%(Filename).dll')" Include="%(Reference.RelativeDir)%(Reference.Filename).xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(XmlReferenceFiles)" DestinationFolder="$(PublishDir)" Condition="Exists('%(RootDir)%(Directory)%(Filename)%(Extension)') AND $([System.String]::Copy('%(Filename)').StartsWith('Weavy'))" />
+  </Target>  
 </Project>

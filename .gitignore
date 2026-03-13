@@ -21,6 +21,7 @@ appsettings.json
 appsettings.*.json
 
 # build output
+artifacts/
 bin/
 obj/
 dist/
