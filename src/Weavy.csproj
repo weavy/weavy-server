@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weavy.Api" Version="31.0.0" />
-    <PackageReference Include="Weavy.Core" Version="31.0.0" />
-    <PackageReference Include="Weavy.Admin" Version="31.0.0" />
+    <PackageReference Include="Weavy.Api" Version="31.1.0" />
+    <PackageReference Include="Weavy.Core" Version="31.1.0" />
+    <PackageReference Include="Weavy.Admin" Version="31.1.0" />
   </ItemGroup>
 
   <!-- Copy doc files to output for openapi.json, see https://github.com/dotnet/sdk/issues/9498 -->

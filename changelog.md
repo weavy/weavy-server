@@ -1,5 +1,22 @@
 # Changelog for Weavy
 
+## v31.1.0
+
+<time>2026-03-19</time>
+
+* Text readability improvements for some theme colors.
+* Added possibility to reset theme color.
+* Added `comment` feature flag to control whether the comment editor is available.
+* Added admin permission checks for files, posts and comments.
+* Updated SignalR to v10.
+* Updated PDF.js to v5 with added support for ICC-profiles, base font rendering and improved image decoding.
+* Fixed incorrect alignment in table headers.
+* Fixed some issues with touch scrolling in the preview.
+* Fixed an issue when disabling the editor.
+* Fixed an issue with excessive updates in feeds/posts.
+* Fixed some incorrectly reported error messages for realtime.
+* Fixed a build error affecting PDF viewer in legacy UI kit lib builds.
+
 ## v31.0.0
 
 <time>2026-03-13</time>
