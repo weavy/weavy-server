@@ -1,4 +1,4 @@
-﻿import { simpleMode as o } from "../../../editor-r4hb6K3o.js";
+﻿import { simpleMode as o } from "../../../editor-COKVbB29.js";
 var e = "from", s = new RegExp("^(\\s*)\\b(" + e + ")\\b", "i"), n = ["run", "cmd", "entrypoint", "shell"], l = new RegExp("^(\\s*)(" + n.join("|") + ")(\\s+\\[)", "i"), t = "expose", x = new RegExp("^(\\s*)(" + t + ")(\\s+)", "i"), g = [
   "arg",
   "from",

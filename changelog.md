@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v31.1.1
+
+<time>2026-03-25</time>
+
+* Fixed some preview layout issues in Safari.
+* Fixed an issue with overlay icons in Safari.
+* Fixed an issue with file thumbnails in Safari.
+
 ## v31.1.0
 
 <time>2026-03-19</time>
