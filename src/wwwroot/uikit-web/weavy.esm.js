@@ -3,17 +3,17 @@ var im = (n) => {
   throw TypeError(n);
 };
 var s = (n, t) => a0(n, "name", { value: t, configurable: !0 });
-var Vp = (n, t, e) => t.has(n) || im("Cannot " + e);
-var y = (n, t, e) => (Vp(n, t, "read from private field"), e ? e.call(n) : t.get(n)), R = (n, t, e) => t.has(n) ? im("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), P = (n, t, e, i) => (Vp(n, t, "write to private field"), i ? i.call(n, e) : t.set(n, e), e), at = (n, t, e) => (Vp(n, t, "access private method"), e);
+var Hp = (n, t, e) => t.has(n) || im("Cannot " + e);
+var p = (n, t, e) => (Hp(n, t, "read from private field"), e ? e.call(n) : t.get(n)), R = (n, t, e) => t.has(n) ? im("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), P = (n, t, e, i) => (Hp(n, t, "write to private field"), i ? i.call(n, e) : t.set(n, e), e), at = (n, t, e) => (Hp(n, t, "access private method"), e);
 var Ch = (n, t, e, i) => ({
   set _(r) {
     P(n, t, r, e);
   },
   get _() {
-    return y(n, t, i);
+    return p(n, t, i);
   }
 });
-import { observeConnected as c0, throwOnDomNotAvailable as ke, isDomAvailable as uw, whenConnected as Sv, whenParentsDefined as xi, defaultVisibilityCheckOptions as l0, isInShadowDom as rm, isModifiedClick as Cu, isPopoverPolyfilled as Hs, inOverlay as d0, autofocusRef as pw, whenElementVisible as oy, whenDocumentVisible as h0 } from "./es/editor-COKVbB29.js";
+import { observeConnected as c0, throwOnDomNotAvailable as ke, isDomAvailable as uw, whenConnected as Sv, whenParentsDefined as xi, defaultVisibilityCheckOptions as l0, isInShadowDom as rm, isModifiedClick as Cu, isPopoverPolyfilled as Vs, inOverlay as d0, autofocusRef as pw, whenElementVisible as oy, whenDocumentVisible as h0 } from "./es/editor-COKVbB29.js";
 import { configureLocalization as u0, e as p0, i as j, i$1 as st, m as y0, b as w0, r as f0, S as nm, T as h, Z as m0, A as g, E as $u, b$1 as Wh, msg as x, localized as ut, str as gt } from "./es/locales/sv-SE-CbJCEhR6.js";
 const o0 = "esm/dynamic";
 function jh(n) {
@@ -36,16 +36,16 @@ function v0(n) {
   return typeof n == "boolean" || typeof n == "number" || typeof n == "string" || n === null || Xe(n) || Array.isArray(n);
 }
 s(v0, "isJSONSerializable");
-function Vs(n, t, e = !1) {
+function Hs(n, t, e = !1) {
   n = n || {}, t = t || {};
   const i = {};
   for (const r in n)
     Object.prototype.hasOwnProperty.call(n, r) && (i[r] = n[r]);
   for (const r in t)
-    Object.prototype.hasOwnProperty.call(t, r) && (e && i[r] && Xe(i[r]) && Xe(t[r]) ? i[r] = Vs(i[r], t[r], e) : i[r] = t[r]);
+    Object.prototype.hasOwnProperty.call(t, r) && (e && i[r] && Xe(i[r]) && Xe(t[r]) ? i[r] = Hs(i[r], t[r], e) : i[r] = t[r]);
   return i;
 }
-s(Vs, "assign");
+s(Hs, "assign");
 function yw(n) {
   return n ? Array.isArray(n) ? n : [n] : [];
 }
@@ -355,7 +355,7 @@ function T0() {
         typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(N, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(N, "t", { value: !0 });
       };
       var r, a = {};
-      i.r(a), i.d(a, { AbortError: /* @__PURE__ */ s(() => l, "AbortError"), DefaultHttpClient: /* @__PURE__ */ s(() => At, "DefaultHttpClient"), HttpClient: /* @__PURE__ */ s(() => $, "HttpClient"), HttpError: /* @__PURE__ */ s(() => o, "HttpError"), HttpResponse: /* @__PURE__ */ s(() => f, "HttpResponse"), HttpTransportType: /* @__PURE__ */ s(() => Et, "HttpTransportType"), HubConnection: /* @__PURE__ */ s(() => Wi, "HubConnection"), HubConnectionBuilder: /* @__PURE__ */ s(() => op, "HubConnectionBuilder"), HubConnectionState: /* @__PURE__ */ s(() => Ct, "HubConnectionState"), JsonHubProtocol: /* @__PURE__ */ s(() => gh, "JsonHubProtocol"), LogLevel: /* @__PURE__ */ s(() => r, "LogLevel"), MessageType: /* @__PURE__ */ s(() => dt, "MessageType"), NullLogger: /* @__PURE__ */ s(() => E, "NullLogger"), Subject: /* @__PURE__ */ s(() => di, "Subject"), TimeoutError: /* @__PURE__ */ s(() => c, "TimeoutError"), TransferFormat: /* @__PURE__ */ s(() => re, "TransferFormat"), VERSION: /* @__PURE__ */ s(() => S, "VERSION") });
+      i.r(a), i.d(a, { AbortError: /* @__PURE__ */ s(() => l, "AbortError"), DefaultHttpClient: /* @__PURE__ */ s(() => At, "DefaultHttpClient"), HttpClient: /* @__PURE__ */ s(() => $, "HttpClient"), HttpError: /* @__PURE__ */ s(() => o, "HttpError"), HttpResponse: /* @__PURE__ */ s(() => f, "HttpResponse"), HttpTransportType: /* @__PURE__ */ s(() => Et, "HttpTransportType"), HubConnection: /* @__PURE__ */ s(() => Wi, "HubConnection"), HubConnectionBuilder: /* @__PURE__ */ s(() => op, "HubConnectionBuilder"), HubConnectionState: /* @__PURE__ */ s(() => Ct, "HubConnectionState"), JsonHubProtocol: /* @__PURE__ */ s(() => gh, "JsonHubProtocol"), LogLevel: /* @__PURE__ */ s(() => r, "LogLevel"), MessageType: /* @__PURE__ */ s(() => dt, "MessageType"), NullLogger: /* @__PURE__ */ s(() => E, "NullLogger"), Subject: /* @__PURE__ */ s(() => di, "Subject"), TimeoutError: /* @__PURE__ */ s(() => c, "TimeoutError"), TransferFormat: /* @__PURE__ */ s(() => ie, "TransferFormat"), VERSION: /* @__PURE__ */ s(() => S, "VERSION") });
       const cp = class cp extends Error {
         constructor(d, w) {
           const _ = new.target.prototype;
@@ -483,7 +483,7 @@ function T0() {
         }
       };
       s(gs, "g");
-      let V = gs;
+      let H = gs;
       function O(N, d) {
         let w = "";
         return I(N) ? (w = `Binary data of length ${N.byteLength}`, d && (w += `. Content: '${(function(_) {
@@ -546,7 +546,7 @@ function T0() {
       let it = xp;
       function lt() {
         let N = "X-SignalR-User-Agent";
-        return V.isNode && (N = "User-Agent"), [N, nt(S, Ot(), V.isNode ? "NodeJS" : "Browser", zt())];
+        return H.isNode && (N = "User-Agent"), [N, nt(S, Ot(), H.isNode ? "NodeJS" : "Browser", zt())];
       }
       s(lt, "$");
       function nt(N, d, w, _) {
@@ -556,7 +556,7 @@ function T0() {
       }
       s(nt, "C");
       function Ot() {
-        if (!V.isNode) return "";
+        if (!H.isNode) return "";
         switch (process.platform) {
           case "win32":
             return "Windows NT";
@@ -570,7 +570,7 @@ function T0() {
       }
       s(Ot, "S");
       function zt() {
-        if (V.isNode) return process.versions.node;
+        if (H.isNode) return process.versions.node;
       }
       s(zt, "k");
       function Mt(N) {
@@ -579,7 +579,7 @@ function T0() {
       s(Mt, "P");
       const Cp = class Cp extends $ {
         constructor(d) {
-          if (super(), this.u = d, typeof fetch > "u" || V.isNode) {
+          if (super(), this.u = d, typeof fetch > "u" || H.isNode) {
             const w = Up;
             this.p = new (w("tough-cookie")).CookieJar(), typeof fetch > "u" ? this.m = w("node-fetch") : this.m = fetch, this.m = w("fetch-cookie")(this.m, this.p);
           } else this.m = fetch.bind((function() {
@@ -619,20 +619,20 @@ function T0() {
             L && clearTimeout(L), d.abortSignal && (d.abortSignal.onabort = null);
           }
           if (!M.ok) {
-            const X = await Ht(M, "text");
+            const X = await Dt(M, "text");
             throw new o(X || M.statusText, M.status);
           }
-          const F = Ht(M, d.responseType), Z = await F;
+          const F = Dt(M, d.responseType), Z = await F;
           return new f(M.status, M.statusText, Z);
         }
         getCookieString(d) {
           let w = "";
-          return V.isNode && this.p && this.p.getCookies(d, ((_, M) => w = M.join("; "))), w;
+          return H.isNode && this.p && this.p.getCookies(d, ((_, M) => w = M.join("; "))), w;
         }
       };
       s(Cp, "T");
       let vt = Cp;
-      function Ht(N, d) {
+      function Dt(N, d) {
         let w;
         switch (d) {
           case "arraybuffer":
@@ -649,7 +649,7 @@ function T0() {
         }
         return w;
       }
-      s(Ht, "I");
+      s(Dt, "I");
       const $p = class $p extends $ {
         constructor(d) {
           super(), this.u = d;
@@ -677,7 +677,7 @@ function T0() {
       let be = $p;
       const kp = class kp extends $ {
         constructor(d) {
-          if (super(), typeof fetch < "u" || V.isNode) this.$ = new vt(d);
+          if (super(), typeof fetch < "u" || H.isNode) this.$ = new vt(d);
           else {
             if (typeof XMLHttpRequest > "u") throw new Error("No usable HttpClient found.");
             this.$ = new be(d);
@@ -728,7 +728,7 @@ function T0() {
         }
       };
       s(_p, "R");
-      let ie = _p;
+      let ee = _p;
       var dt, Ct;
       (function(N) {
         N[N.Invocation = 1] = "Invocation", N[N.StreamItem = 2] = "StreamItem", N[N.Completion = 3] = "Completion", N[N.StreamInvocation = 4] = "StreamInvocation", N[N.CancelInvocation = 5] = "CancelInvocation", N[N.Ping = 6] = "Ping", N[N.Close = 7] = "Close", N[N.Ack = 8] = "Ack", N[N.Sequence = 9] = "Sequence";
@@ -854,7 +854,7 @@ function T0() {
         constructor(d, w, _, M, L, F, Z) {
           this.K = 0, this.G = () => {
             this.u.log(r.Warning, "The page is being frozen, this will likely lead to the connection being closed and messages being lost. For more information see the docs at https://learn.microsoft.com/aspnet/core/signalr/javascript-client#bsleep");
-          }, T.isRequired(d, "connection"), T.isRequired(w, "logger"), T.isRequired(_, "protocol"), this.serverTimeoutInMilliseconds = L ?? 3e4, this.keepAliveIntervalInMilliseconds = F ?? 15e3, this.Y = Z ?? 1e5, this.u = w, this.D = _, this.connection = d, this.Z = M, this.tt = new ie(), this.connection.onreceive = (X) => this.et(X), this.connection.onclose = (X) => this.st(X), this.it = {}, this.nt = {}, this.rt = [], this.ot = [], this.ht = [], this.ct = 0, this.lt = !1, this.ut = Ct.Disconnected, this.dt = !1, this.ft = this.D.writeMessage({ type: dt.Ping });
+          }, T.isRequired(d, "connection"), T.isRequired(w, "logger"), T.isRequired(_, "protocol"), this.serverTimeoutInMilliseconds = L ?? 3e4, this.keepAliveIntervalInMilliseconds = F ?? 15e3, this.Y = Z ?? 1e5, this.u = w, this.D = _, this.connection = d, this.Z = M, this.tt = new ee(), this.connection.onreceive = (X) => this.et(X), this.connection.onclose = (X) => this.st(X), this.it = {}, this.nt = {}, this.rt = [], this.ot = [], this.ht = [], this.ct = 0, this.lt = !1, this.ut = Ct.Disconnected, this.dt = !1, this.ft = this.D.writeMessage({ type: dt.Ping });
         }
         get state() {
           return this.ut;
@@ -877,7 +877,7 @@ function T0() {
           if (this.ut !== Ct.Disconnected) return Promise.reject(new Error("Cannot start a HubConnection that is not in the 'Disconnected' state."));
           this.ut = Ct.Connecting, this.u.log(r.Debug, "Starting HubConnection.");
           try {
-            await this.yt(), V.isBrowser && window.document.addEventListener("freeze", this.G), this.ut = Ct.Connected, this.dt = !0, this.u.log(r.Debug, "HubConnection connected successfully.");
+            await this.yt(), H.isBrowser && window.document.addEventListener("freeze", this.G), this.ut = Ct.Connected, this.dt = !0, this.u.log(r.Debug, "HubConnection connected successfully.");
           } catch (d) {
             return this.ut = Ct.Disconnected, this.u.log(r.Debug, `HubConnection failed to start successfully because of error '${d}'.`), Promise.reject(d);
           }
@@ -1070,7 +1070,7 @@ function T0() {
         }
         Dt(d) {
           if (this.dt) {
-            this.ut = Ct.Disconnected, this.dt = !1, this.Pt && (this.Pt.X(d ?? new Error("Connection closed.")), this.Pt = void 0), V.isBrowser && window.document.removeEventListener("freeze", this.G);
+            this.ut = Ct.Disconnected, this.dt = !1, this.Pt && (this.Pt.X(d ?? new Error("Connection closed.")), this.Pt = void 0), H.isBrowser && window.document.removeEventListener("freeze", this.G);
             try {
               this.rt.forEach(((w) => w.apply(this, [d])));
             } catch (w) {
@@ -1226,12 +1226,12 @@ function T0() {
       };
       s(Rp, "O");
       let Fe = Rp;
-      var Et, re;
+      var Et, ie;
       (function(N) {
         N[N.None = 0] = "None", N[N.WebSockets = 1] = "WebSockets", N[N.ServerSentEvents = 2] = "ServerSentEvents", N[N.LongPolling = 4] = "LongPolling";
       })(Et || (Et = {})), (function(N) {
         N[N.Text = 1] = "Text", N[N.Binary = 2] = "Binary";
-      })(re || (re = {}));
+      })(ie || (ie = {}));
       const Tp = class Tp {
         constructor() {
           this.se = !1, this.onabort = null;
@@ -1256,9 +1256,9 @@ function T0() {
           this.$ = d, this.u = w, this.ie = new ip(), this.ne = _, this.re = !1, this.onreceive = null, this.onclose = null;
         }
         async connect(d, w) {
-          if (T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, re, "transferFormat"), this.oe = d, this.u.log(r.Trace, "(LongPolling transport) Connecting."), w === re.Binary && typeof XMLHttpRequest < "u" && typeof new XMLHttpRequest().responseType != "string") throw new Error("Binary protocols over XmlHttpRequest not implementing advanced features are not supported.");
+          if (T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, ie, "transferFormat"), this.oe = d, this.u.log(r.Trace, "(LongPolling transport) Connecting."), w === ie.Binary && typeof XMLHttpRequest < "u" && typeof new XMLHttpRequest().responseType != "string") throw new Error("Binary protocols over XmlHttpRequest not implementing advanced features are not supported.");
           const [_, M] = lt(), L = { [_]: M, ...this.ne.headers }, F = { abortSignal: this.ie.signal, headers: L, timeout: 1e5, withCredentials: this.ne.withCredentials };
-          w === re.Binary && (F.responseType = "arraybuffer");
+          w === ie.Binary && (F.responseType = "arraybuffer");
           const Z = `${d}&_=${Date.now()}`;
           this.u.log(r.Trace, `(LongPolling transport) polling: ${Z}.`);
           const X = await this.$.get(Z, F);
@@ -1313,10 +1313,10 @@ function T0() {
           this.$ = d, this.te = w, this.u = _, this.ne = M, this.onreceive = null, this.onclose = null;
         }
         async connect(d, w) {
-          return T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, re, "transferFormat"), this.u.log(r.Trace, "(SSE transport) Connecting."), this.oe = d, this.te && (d += (d.indexOf("?") < 0 ? "?" : "&") + `access_token=${encodeURIComponent(this.te)}`), new Promise(((_, M) => {
+          return T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, ie, "transferFormat"), this.u.log(r.Trace, "(SSE transport) Connecting."), this.oe = d, this.te && (d += (d.indexOf("?") < 0 ? "?" : "&") + `access_token=${encodeURIComponent(this.te)}`), new Promise(((_, M) => {
             let L, F = !1;
-            if (w === re.Text) {
-              if (V.isBrowser || V.isWebWorker) L = new this.ne.EventSource(d, { withCredentials: this.ne.withCredentials });
+            if (w === ie.Text) {
+              if (H.isBrowser || H.isWebWorker) L = new this.ne.EventSource(d, { withCredentials: this.ne.withCredentials });
               else {
                 const Z = this.$.getCookieString(d), X = {};
                 X.Cookie = Z;
@@ -1359,16 +1359,16 @@ function T0() {
         }
         async connect(d, w) {
           let _;
-          return T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, re, "transferFormat"), this.u.log(r.Trace, "(WebSockets transport) Connecting."), this.Zt && (_ = await this.Zt()), new Promise(((M, L) => {
+          return T.isRequired(d, "url"), T.isRequired(w, "transferFormat"), T.isIn(w, ie, "transferFormat"), this.u.log(r.Trace, "(WebSockets transport) Connecting."), this.Zt && (_ = await this.Zt()), new Promise(((M, L) => {
             let F;
             d = d.replace(/^http/, "ws");
             const Z = this.$.getCookieString(d);
             let X = !1;
-            if (V.isNode || V.isReactNative) {
+            if (H.isNode || H.isReactNative) {
               const ft = {}, [Rt, xs] = lt();
               ft[Rt] = xs, _ && (ft[$t.Authorization] = `Bearer ${_}`), Z && (ft[$t.Cookie] = Z), F = new this.pe(d, void 0, { headers: { ...ft, ...this.we } });
             } else _ && (d += (d.indexOf("?") < 0 ? "?" : "&") + `access_token=${encodeURIComponent(_)}`);
-            F || (F = new this.pe(d)), w === re.Binary && (F.binaryType = "arraybuffer"), F.onopen = (ft) => {
+            F || (F = new this.pe(d)), w === ie.Binary && (F.binaryType = "arraybuffer"), F.onopen = (ft) => {
               this.u.log(r.Information, `WebSocket connected to ${d}.`), this.ge = F, X = !0, M();
             }, F.onerror = (ft) => {
               let Rt = null;
@@ -1413,14 +1413,14 @@ function T0() {
           }, this.features = {}, this.ve = 1, T.isRequired(d, "url"), this.u = (_ = w.logger) === void 0 ? new it(r.Information) : _ === null ? E.instance : _.log !== void 0 ? _ : new it(_), this.baseUrl = this.be(d), (w = w || {}).logMessageContent = w.logMessageContent !== void 0 && w.logMessageContent, typeof w.withCredentials != "boolean" && w.withCredentials !== void 0) throw new Error("withCredentials option was not a 'boolean' or 'undefined' value");
           w.withCredentials = w.withCredentials === void 0 || w.withCredentials, w.timeout = w.timeout === void 0 ? 1e5 : w.timeout;
           let M = null, L = null;
-          if (V.isNode) {
+          if (H.isNode) {
             const F = Up;
             M = F("ws"), L = F("eventsource");
           }
-          V.isNode || typeof WebSocket > "u" || w.WebSocket ? V.isNode && !w.WebSocket && M && (w.WebSocket = M) : w.WebSocket = WebSocket, V.isNode || typeof EventSource > "u" || w.EventSource ? V.isNode && !w.EventSource && L !== void 0 && (w.EventSource = L) : w.EventSource = EventSource, this.$ = new Fe(w.httpClient || new At(this.u), w.accessTokenFactory), this.ut = "Disconnected", this.dt = !1, this.ne = w, this.onreceive = null, this.onclose = null;
+          H.isNode || typeof WebSocket > "u" || w.WebSocket ? H.isNode && !w.WebSocket && M && (w.WebSocket = M) : w.WebSocket = WebSocket, H.isNode || typeof EventSource > "u" || w.EventSource ? H.isNode && !w.EventSource && L !== void 0 && (w.EventSource = L) : w.EventSource = EventSource, this.$ = new Fe(w.httpClient || new At(this.u), w.accessTokenFactory), this.ut = "Disconnected", this.dt = !1, this.ne = w, this.onreceive = null, this.onclose = null;
         }
         async start(d) {
-          if (d = d || re.Binary, T.isIn(d, re, "transferFormat"), this.u.log(r.Debug, `Starting connection with transfer format '${re[d]}'.`), this.ut !== "Disconnected") return Promise.reject(new Error("Cannot start an HttpConnection that is not in the 'Disconnected' state."));
+          if (d = d || ie.Binary, T.isIn(d, ie, "transferFormat"), this.u.log(r.Debug, `Starting connection with transfer format '${ie[d]}'.`), this.ut !== "Disconnected") return Promise.reject(new Error("Cannot start an HttpConnection that is not in the 'Disconnected' state."));
           if (this.ut = "Connecting", this.Ee = this.yt(d), await this.Ee, this.ut === "Disconnecting") {
             const w = "Failed to start the HttpConnection before stop() was called.";
             return this.u.log(r.Error, w), await this.It, Promise.reject(new l(w));
@@ -1561,7 +1561,7 @@ function T0() {
           if (!(function(F, Z) {
             return !F || !!(Z & F);
           })(w, L)) return this.u.log(r.Debug, `Skipping transport '${Et[L]}' because it was disabled by the client.`), new b(`'${Et[L]}' is disabled by the client.`, L);
-          if (!(d.transferFormats.map(((F) => re[F])).indexOf(_) >= 0)) return this.u.log(r.Debug, `Skipping transport '${Et[L]}' because it does not support the requested transfer format '${re[_]}'.`), new Error(`'${Et[L]}' does not support ${re[_]}.`);
+          if (!(d.transferFormats.map(((F) => ie[F])).indexOf(_) >= 0)) return this.u.log(r.Debug, `Skipping transport '${Et[L]}' because it does not support the requested transfer format '${ie[_]}'.`), new Error(`'${Et[L]}' does not support ${ie[_]}.`);
           if (L === Et.WebSockets && !this.ne.WebSocket || L === Et.ServerSentEvents && !this.ne.EventSource) return this.u.log(r.Debug, `Skipping transport '${Et[L]}' because it is not supported in your environment.'`), new u(`'${Et[L]}' is not supported in your environment.`, L);
           this.u.log(r.Debug, `Selecting transport '${Et[L]}'.`);
           try {
@@ -1590,7 +1590,7 @@ function T0() {
         }
         be(d) {
           if (d.lastIndexOf("https://", 0) === 0 || d.lastIndexOf("http://", 0) === 0) return d;
-          if (!V.isBrowser) throw new Error(`Cannot resolve '${d}'.`);
+          if (!H.isBrowser) throw new Error(`Cannot resolve '${d}'.`);
           const w = window.document.createElement("a");
           return w.href = d, this.u.log(r.Information, `Normalizing '${d}' to '${w.href}'.`), w.href;
         }
@@ -1659,7 +1659,7 @@ function T0() {
       let vs = Ip;
       const Dp = class Dp {
         constructor() {
-          this.name = "json", this.version = 2, this.transferFormat = re.Text;
+          this.name = "json", this.version = 2, this.transferFormat = ie.Text;
         }
         parseMessages(d, w) {
           if (typeof d != "string") throw new Error("Invalid input for JSON hub protocol. Expected a string.");
@@ -1721,7 +1721,7 @@ function T0() {
       };
       s(Dp, "Y");
       let gh = Dp;
-      const s0 = { trace: r.Trace, debug: r.Debug, info: r.Information, information: r.Information, warn: r.Warning, warning: r.Warning, error: r.Error, critical: r.Critical, none: r.None }, Hp = class Hp {
+      const s0 = { trace: r.Trace, debug: r.Debug, info: r.Information, information: r.Information, warn: r.Warning, warning: r.Warning, error: r.Error, critical: r.Critical, none: r.None }, Vp = class Vp {
         configureLogging(d) {
           if (T.isRequired(d, "logging"), d.log !== void 0) this.logger = d;
           else if (typeof d == "string") {
@@ -1760,8 +1760,8 @@ function T0() {
           return Wi.create(w, this.logger || E.instance, this.protocol || new gh(), this.reconnectPolicy, this.Ke, this.Ge, this.Y);
         }
       };
-      s(Hp, "tt");
-      let op = Hp;
+      s(Vp, "tt");
+      let op = Vp;
       return Uint8Array.prototype.indexOf || Object.defineProperty(Uint8Array.prototype, "indexOf", { value: Array.prototype.indexOf, writable: !0 }), Uint8Array.prototype.slice || Object.defineProperty(Uint8Array.prototype, "slice", { value: /* @__PURE__ */ s(function(N, d) {
         return new Uint8Array(Array.prototype.slice.call(this, N, d));
       }, "value"), writable: !0 }), Uint8Array.prototype.forEach || Object.defineProperty(Uint8Array.prototype, "forEach", { value: Array.prototype.forEach, writable: !0 }), a;
@@ -1915,12 +1915,12 @@ const O0 = /* @__PURE__ */ s((n) => {
         throw new Ut();
       const a = {
         headers: {
-          "X-Weavy-Source": `${Zt.sourceName}@${Zt.version}`,
+          "X-Weavy-Source": `${Qt.sourceName}@${Qt.version}`,
           "Content-Type": Kh.JSON
         },
         method: "GET"
-      }, o = Vs(Vs(S0, a, !0), i, !0);
-      return r ? Vs(
+      }, o = Hs(Hs(S0, a, !0), i, !0);
+      return r ? Hs(
         o,
         {
           headers: {
@@ -1952,7 +1952,7 @@ const O0 = /* @__PURE__ */ s((n) => {
       const b = await this.getToken();
       return await new Promise((C, v) => {
         const m = new XMLHttpRequest();
-        m.open(r, new URL(i, this.url), !0), m.setRequestHeader("Authorization", "Bearer " + b), m.setRequestHeader("X-Weavy-Source", `${Zt.sourceName}@${Zt.version}`), o && m.setRequestHeader("Content-Type", o), c && m.upload.addEventListener("progress", (f) => {
+        m.open(r, new URL(i, this.url), !0), m.setRequestHeader("Authorization", "Bearer " + b), m.setRequestHeader("X-Weavy-Source", `${Qt.sourceName}@${Qt.version}`), o && m.setRequestHeader("Content-Type", o), c && m.upload.addEventListener("progress", (f) => {
           c(f.loaded / f.total * 100 || 100);
         }), m.onload = (f) => {
           u && (m.status === 401 || m.status === 401) ? this.getToken(!0).then(() => this.upload(i, r, a, o, c, l, !1)).then(C).catch(v) : C(new Response(m.response, { status: m.status, statusText: m.statusText }));
@@ -2162,20 +2162,20 @@ var Ns, ul = (Ns = class {
     });
   }
   onSubscribe() {
-    y(this, zr) || this.setEventListener(y(this, qs));
+    p(this, zr) || this.setEventListener(p(this, qs));
   }
   onUnsubscribe() {
     var e;
-    this.hasListeners() || ((e = y(this, zr)) == null || e.call(this), P(this, zr, void 0));
+    this.hasListeners() || ((e = p(this, zr)) == null || e.call(this), P(this, zr, void 0));
   }
   setEventListener(e) {
     var i;
-    P(this, qs, e), (i = y(this, zr)) == null || i.call(this), P(this, zr, e((r) => {
+    P(this, qs, e), (i = p(this, zr)) == null || i.call(this), P(this, zr, e((r) => {
       typeof r == "boolean" ? this.setFocused(r) : this.onFocus();
     }));
   }
   setFocused(e) {
-    y(this, kn) !== e && (P(this, kn, e), this.onFocus());
+    p(this, kn) !== e && (P(this, kn, e), this.onFocus());
   }
   onFocus() {
     const e = this.isFocused();
@@ -2184,7 +2184,7 @@ var Ns, ul = (Ns = class {
     });
   }
   isFocused() {
-    return typeof y(this, kn) == "boolean" ? y(this, kn) : globalThis.document?.visibilityState !== "hidden";
+    return typeof p(this, kn) == "boolean" ? p(this, kn) : globalThis.document?.visibilityState !== "hidden";
   }
 }, kn = new WeakMap(), zr = new WeakMap(), qs = new WeakMap(), s(Ws, "FocusManager"), Ws), fw = new I0(), D0 = {
   // We need the wrapper function syntax below instead of direct references to
@@ -2201,7 +2201,7 @@ var Ns, ul = (Ns = class {
   clearTimeout: /* @__PURE__ */ s((n) => clearTimeout(n), "clearTimeout"),
   setInterval: /* @__PURE__ */ s((n, t) => setInterval(n, t), "setInterval"),
   clearInterval: /* @__PURE__ */ s((n) => clearInterval(n), "clearInterval")
-}, Fr, hw, js, H0 = (js = class {
+}, Fr, hw, js, V0 = (js = class {
   constructor() {
     // We cannot have TimeoutManager<T> as we must instantiate it with a concrete
     // type at app boot; and if we leave that type, then any new timer provider
@@ -2217,22 +2217,22 @@ var Ns, ul = (Ns = class {
     P(this, Fr, t);
   }
   setTimeout(t, e) {
-    return y(this, Fr).setTimeout(t, e);
+    return p(this, Fr).setTimeout(t, e);
   }
   clearTimeout(t) {
-    y(this, Fr).clearTimeout(t);
+    p(this, Fr).clearTimeout(t);
   }
   setInterval(t, e) {
-    return y(this, Fr).setInterval(t, e);
+    return p(this, Fr).setInterval(t, e);
   }
   clearInterval(t) {
-    y(this, Fr).clearInterval(t);
+    p(this, Fr).clearInterval(t);
   }
-}, Fr = new WeakMap(), hw = new WeakMap(), s(js, "TimeoutManager"), js), Qr = new H0();
-function V0(n) {
+}, Fr = new WeakMap(), hw = new WeakMap(), s(js, "TimeoutManager"), js), Qr = new V0();
+function H0(n) {
   setTimeout(n, 0);
 }
-s(V0, "systemSetTimeoutZero");
+s(H0, "systemSetTimeoutZero");
 var U0 = typeof window > "u" || "Deno" in globalThis;
 function Ee() {
 }
@@ -2515,7 +2515,7 @@ function eb(n, t, e) {
     ({ queryKey: l, state: u, queryHash: b, meta: C, promise: v, dehydratedAt: m }) => {
       const f = v ? Q0(v) : void 0, $ = u.data === void 0 ? f?.data : u.data, E = $ === void 0 ? $ : a($);
       let S = r.get(b);
-      const T = S?.state.status === "pending", V = S?.state.fetchStatus === "fetching";
+      const T = S?.state.status === "pending", H = S?.state.fetchStatus === "fetching";
       if (S) {
         const O = f && // We only need this undefined check to handle older dehydration
         // payloads that might not have dehydratedAt
@@ -2546,7 +2546,7 @@ function eb(n, t, e) {
             status: E !== void 0 ? "success" : u.status
           }
         );
-      v && !T && !V && // Only hydrate if dehydration is newer than any existing data,
+      v && !T && !H && // Only hydrate if dehydration is newer than any existing data,
       // this is always true for new queries
       (m === void 0 || m > S.state.dataUpdatedAt) && S.fetch(void 0, {
         // RSC transformed promises are not thenable
@@ -2556,7 +2556,7 @@ function eb(n, t, e) {
   );
 }
 s(eb, "hydrate");
-var ib = V0;
+var ib = H0;
 function rb() {
   let n = [], t = 0, e = /* @__PURE__ */ s((c) => {
     c();
@@ -2633,23 +2633,23 @@ var $e = rb(), Ks, Ir, Qs, Gs, nb = (Gs = class extends ul {
     });
   }
   onSubscribe() {
-    y(this, Ir) || this.setEventListener(y(this, Qs));
+    p(this, Ir) || this.setEventListener(p(this, Qs));
   }
   onUnsubscribe() {
     var e;
-    this.hasListeners() || ((e = y(this, Ir)) == null || e.call(this), P(this, Ir, void 0));
+    this.hasListeners() || ((e = p(this, Ir)) == null || e.call(this), P(this, Ir, void 0));
   }
   setEventListener(e) {
     var i;
-    P(this, Qs, e), (i = y(this, Ir)) == null || i.call(this), P(this, Ir, e(this.setOnline.bind(this)));
+    P(this, Qs, e), (i = p(this, Ir)) == null || i.call(this), P(this, Ir, e(this.setOnline.bind(this)));
   }
   setOnline(e) {
-    y(this, Ks) !== e && (P(this, Ks, e), this.listeners.forEach((r) => {
+    p(this, Ks) !== e && (P(this, Ks, e), this.listeners.forEach((r) => {
       r(e);
     }));
   }
   isOnline() {
-    return y(this, Ks);
+    return p(this, Ks);
   }
 }, Ks = new WeakMap(), Ir = new WeakMap(), Qs = new WeakMap(), s(Gs, "OnlineManager"), Gs), Zh = new nb();
 function sb(n) {
@@ -2665,7 +2665,7 @@ var Zs, py = (Zs = class extends Error {
     super("CancelledError"), this.revert = t?.revert, this.silent = t?.silent;
   }
 }, s(Zs, "CancelledError"), Zs);
-function Hv(n) {
+function Vv(n) {
   let t = !1, e = 0, i;
   const r = uy(), a = /* @__PURE__ */ s(() => r.status !== "pending", "isResolved"), o = /* @__PURE__ */ s(($) => {
     if (!a()) {
@@ -2699,7 +2699,7 @@ function Hv(n) {
     Promise.resolve($).then(C).catch((S) => {
       if (a())
         return;
-      const T = n.retry ?? (Gh.isServer() ? 0 : 3), V = n.retryDelay ?? sb, O = typeof V == "function" ? V(e, S) : V, I = T === !0 || typeof T == "number" && e < T || typeof T == "function" && T(e, S);
+      const T = n.retry ?? (Gh.isServer() ? 0 : 3), H = n.retryDelay ?? sb, O = typeof H == "function" ? H(e, S) : H, I = T === !0 || typeof T == "number" && e < T || typeof T == "function" && T(e, S);
       if (t || !I) {
         v(S);
         return;
@@ -2720,8 +2720,8 @@ function Hv(n) {
     start: /* @__PURE__ */ s(() => (b() ? f() : m().then(f), r), "start")
   };
 }
-s(Hv, "createRetryer");
-var _n, Ys, Vv = (Ys = class {
+s(Vv, "createRetryer");
+var _n, Ys, Hv = (Ys = class {
   constructor() {
     R(this, _n);
   }
@@ -2740,9 +2740,9 @@ var _n, Ys, Vv = (Ys = class {
     );
   }
   clearGcTimeout() {
-    y(this, _n) && (Qr.clearTimeout(y(this, _n)), P(this, _n, void 0));
+    p(this, _n) && (Qr.clearTimeout(p(this, _n)), P(this, _n, void 0));
   }
-}, _n = new WeakMap(), s(Ys, "Removable"), Ys), Pn, Xs, ii, Sn, fe, $d, Mn, Ze, Uv, Ki, Js, ab = (Js = class extends Vv {
+}, _n = new WeakMap(), s(Ys, "Removable"), Ys), Pn, Xs, ii, Sn, fe, $d, Mn, Ze, Uv, Ki, Js, ab = (Js = class extends Hv {
   constructor(e) {
     super();
     R(this, Ze);
@@ -2753,16 +2753,16 @@ var _n, Ys, Vv = (Ys = class {
     R(this, fe);
     R(this, $d);
     R(this, Mn);
-    P(this, Mn, !1), P(this, $d, e.defaultOptions), this.setOptions(e.options), this.observers = [], P(this, Sn, e.client), P(this, ii, y(this, Sn).getQueryCache()), this.queryKey = e.queryKey, this.queryHash = e.queryHash, P(this, Pn, pm(this.options)), this.state = e.state ?? y(this, Pn), this.scheduleGc();
+    P(this, Mn, !1), P(this, $d, e.defaultOptions), this.setOptions(e.options), this.observers = [], P(this, Sn, e.client), P(this, ii, p(this, Sn).getQueryCache()), this.queryKey = e.queryKey, this.queryHash = e.queryHash, P(this, Pn, pm(this.options)), this.state = e.state ?? p(this, Pn), this.scheduleGc();
   }
   get meta() {
     return this.options.meta;
   }
   get promise() {
-    return y(this, fe)?.promise;
+    return p(this, fe)?.promise;
   }
   setOptions(e) {
-    if (this.options = { ...y(this, $d), ...e }, this.updateGcTime(this.options.gcTime), this.state && this.state.data === void 0) {
+    if (this.options = { ...p(this, $d), ...e }, this.updateGcTime(this.options.gcTime), this.state && this.state.data === void 0) {
       const i = pm(this.options);
       i.data !== void 0 && (this.setState(
         um(i.data, i.dataUpdatedAt)
@@ -2770,7 +2770,7 @@ var _n, Ys, Vv = (Ys = class {
     }
   }
   optionalRemove() {
-    !this.observers.length && this.state.fetchStatus === "idle" && y(this, ii).remove(this);
+    !this.observers.length && this.state.fetchStatus === "idle" && p(this, ii).remove(this);
   }
   setData(e, i) {
     const r = hy(this.state.data, e, this.options);
@@ -2785,14 +2785,14 @@ var _n, Ys, Vv = (Ys = class {
     at(this, Ze, Ki).call(this, { type: "setState", state: e, setStateOptions: i });
   }
   cancel(e) {
-    const i = y(this, fe)?.promise;
-    return y(this, fe)?.cancel(e), i ? i.then(Ee).catch(Ee) : Promise.resolve();
+    const i = p(this, fe)?.promise;
+    return p(this, fe)?.cancel(e), i ? i.then(Ee).catch(Ee) : Promise.resolve();
   }
   destroy() {
     super.destroy(), this.cancel({ silent: !0 });
   }
   get resetState() {
-    return y(this, Pn);
+    return p(this, Pn);
   }
   reset() {
     this.destroy(), this.setState(this.resetState);
@@ -2822,16 +2822,16 @@ var _n, Ys, Vv = (Ys = class {
     return this.state.data === void 0 ? !0 : e === "static" ? !1 : this.state.isInvalidated ? !0 : !zv(this.state.dataUpdatedAt, e);
   }
   onFocus() {
-    this.observers.find((i) => i.shouldFetchOnWindowFocus())?.refetch({ cancelRefetch: !1 }), y(this, fe)?.continue();
+    this.observers.find((i) => i.shouldFetchOnWindowFocus())?.refetch({ cancelRefetch: !1 }), p(this, fe)?.continue();
   }
   onOnline() {
-    this.observers.find((i) => i.shouldFetchOnReconnect())?.refetch({ cancelRefetch: !1 }), y(this, fe)?.continue();
+    this.observers.find((i) => i.shouldFetchOnReconnect())?.refetch({ cancelRefetch: !1 }), p(this, fe)?.continue();
   }
   addObserver(e) {
-    this.observers.includes(e) || (this.observers.push(e), this.clearGcTimeout(), y(this, ii).notify({ type: "observerAdded", query: this, observer: e }));
+    this.observers.includes(e) || (this.observers.push(e), this.clearGcTimeout(), p(this, ii).notify({ type: "observerAdded", query: this, observer: e }));
   }
   removeObserver(e) {
-    this.observers.includes(e) && (this.observers = this.observers.filter((i) => i !== e), this.observers.length || (y(this, fe) && (y(this, Mn) || at(this, Ze, Uv).call(this) ? y(this, fe).cancel({ revert: !0 }) : y(this, fe).cancelRetry()), this.scheduleGc()), y(this, ii).notify({ type: "observerRemoved", query: this, observer: e }));
+    this.observers.includes(e) && (this.observers = this.observers.filter((i) => i !== e), this.observers.length || (p(this, fe) && (p(this, Mn) || at(this, Ze, Uv).call(this) ? p(this, fe).cancel({ revert: !0 }) : p(this, fe).cancelRetry()), this.scheduleGc()), p(this, ii).notify({ type: "observerRemoved", query: this, observer: e }));
   }
   getObserversCount() {
     return this.observers.length;
@@ -2843,11 +2843,11 @@ var _n, Ys, Vv = (Ys = class {
     if (this.state.fetchStatus !== "idle" && // If the promise in the retryer is already rejected, we have to definitely
     // re-start the fetch; there is a chance that the query is still in a
     // pending state when that happens
-    y(this, fe)?.status() !== "rejected") {
+    p(this, fe)?.status() !== "rejected") {
       if (this.state.data !== void 0 && i?.cancelRefetch)
         this.cancel({ silent: !0 });
-      else if (y(this, fe))
-        return y(this, fe).continueRetry(), y(this, fe).promise;
+      else if (p(this, fe))
+        return p(this, fe).continueRetry(), p(this, fe).promise;
     }
     if (e && this.setOptions(e), !this.options.queryFn) {
       const u = this.observers.find((b) => b.options.queryFn);
@@ -2861,7 +2861,7 @@ var _n, Ys, Vv = (Ys = class {
     }, "addSignalProperty"), o = /* @__PURE__ */ s(() => {
       const u = Fv(this.options, i), C = (/* @__PURE__ */ s(() => {
         const v = {
-          client: y(this, Sn),
+          client: p(this, Sn),
           queryKey: this.queryKey,
           meta: this.meta
         };
@@ -2877,18 +2877,18 @@ var _n, Ys, Vv = (Ys = class {
         fetchOptions: i,
         options: this.options,
         queryKey: this.queryKey,
-        client: y(this, Sn),
+        client: p(this, Sn),
         state: this.state,
         fetchFn: o
       };
       return a(u), u;
     }, "createFetchContext"))();
-    this.options.behavior?.onFetch(l, this), P(this, Xs, this.state), (this.state.fetchStatus === "idle" || this.state.fetchMeta !== l.fetchOptions?.meta) && at(this, Ze, Ki).call(this, { type: "fetch", meta: l.fetchOptions?.meta }), P(this, fe, Hv({
+    this.options.behavior?.onFetch(l, this), P(this, Xs, this.state), (this.state.fetchStatus === "idle" || this.state.fetchMeta !== l.fetchOptions?.meta) && at(this, Ze, Ki).call(this, { type: "fetch", meta: l.fetchOptions?.meta }), P(this, fe, Vv({
       initialPromise: i?.initialPromise,
       fn: l.fetchFn,
       onCancel: /* @__PURE__ */ s((u) => {
         u instanceof py && u.revert && this.setState({
-          ...y(this, Xs),
+          ...p(this, Xs),
           fetchStatus: "idle"
         }), r.abort();
       }, "onCancel"),
@@ -2907,10 +2907,10 @@ var _n, Ys, Vv = (Ys = class {
       canRun: /* @__PURE__ */ s(() => !0, "canRun")
     }));
     try {
-      const u = await y(this, fe).start();
+      const u = await p(this, fe).start();
       if (u === void 0)
         throw new Error(`${this.queryHash} data is undefined`);
-      return this.setData(u), y(this, ii).config.onSuccess?.(u, this), y(this, ii).config.onSettled?.(
+      return this.setData(u), p(this, ii).config.onSuccess?.(u, this), p(this, ii).config.onSettled?.(
         u,
         this.state.error,
         this
@@ -2918,7 +2918,7 @@ var _n, Ys, Vv = (Ys = class {
     } catch (u) {
       if (u instanceof py) {
         if (u.silent)
-          return y(this, fe).promise;
+          return p(this, fe).promise;
         if (u.revert) {
           if (this.state.data === void 0)
             throw u;
@@ -2928,10 +2928,10 @@ var _n, Ys, Vv = (Ys = class {
       throw at(this, Ze, Ki).call(this, {
         type: "error",
         error: u
-      }), y(this, ii).config.onError?.(
+      }), p(this, ii).config.onError?.(
         u,
         this
-      ), y(this, ii).config.onSettled?.(
+      ), p(this, ii).config.onSettled?.(
         this.state.data,
         u,
         this
@@ -3009,7 +3009,7 @@ var _n, Ys, Vv = (Ys = class {
   this.state = i(this.state), $e.batch(() => {
     this.observers.forEach((r) => {
       r.onQueryUpdate();
-    }), y(this, ii).notify({ query: this, type: "updated", action: e });
+    }), p(this, ii).notify({ query: this, type: "updated", action: e });
   });
 }, "#dispatch"), s(Js, "Query"), Js);
 function Bv(n, t) {
@@ -3052,7 +3052,7 @@ function pm(n) {
   };
 }
 s(pm, "getDefaultState$1");
-var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, fy, my, vy, gy, by, qv, na, Nv = (na = class extends ul {
+var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Vr, ra, Pt, Fl, yy, wy, fy, my, vy, gy, by, qv, na, Nv = (na = class extends ul {
   constructor(e, i) {
     super();
     R(this, Pt);
@@ -3071,7 +3071,7 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     R(this, ia);
     R(this, An);
     R(this, Rn);
-    R(this, Hr);
+    R(this, Vr);
     R(this, ra, /* @__PURE__ */ new Set());
     this.options = i, P(this, De, e), P(this, Dr, null), P(this, Gi, uy()), this.bindMethods(), this.setOptions(i);
   }
@@ -3079,59 +3079,59 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     this.refetch = this.refetch.bind(this);
   }
   onSubscribe() {
-    this.listeners.size === 1 && (y(this, bt).addObserver(this), ym(y(this, bt), this.options) ? at(this, Pt, Fl).call(this) : this.updateResult(), at(this, Pt, my).call(this));
+    this.listeners.size === 1 && (p(this, bt).addObserver(this), ym(p(this, bt), this.options) ? at(this, Pt, Fl).call(this) : this.updateResult(), at(this, Pt, my).call(this));
   }
   onUnsubscribe() {
     this.hasListeners() || this.destroy();
   }
   shouldFetchOnReconnect() {
     return xy(
-      y(this, bt),
+      p(this, bt),
       this.options,
       this.options.refetchOnReconnect
     );
   }
   shouldFetchOnWindowFocus() {
     return xy(
-      y(this, bt),
+      p(this, bt),
       this.options,
       this.options.refetchOnWindowFocus
     );
   }
   destroy() {
-    this.listeners = /* @__PURE__ */ new Set(), at(this, Pt, vy).call(this), at(this, Pt, gy).call(this), y(this, bt).removeObserver(this);
+    this.listeners = /* @__PURE__ */ new Set(), at(this, Pt, vy).call(this), at(this, Pt, gy).call(this), p(this, bt).removeObserver(this);
   }
   setOptions(e) {
-    const i = this.options, r = y(this, bt);
-    if (this.options = y(this, De).defaultQueryOptions(e), this.options.enabled !== void 0 && typeof this.options.enabled != "boolean" && typeof this.options.enabled != "function" && typeof ni(this.options.enabled, y(this, bt)) != "boolean")
+    const i = this.options, r = p(this, bt);
+    if (this.options = p(this, De).defaultQueryOptions(e), this.options.enabled !== void 0 && typeof this.options.enabled != "boolean" && typeof this.options.enabled != "function" && typeof ni(this.options.enabled, p(this, bt)) != "boolean")
       throw new Error(
         "Expected enabled to be a boolean or a callback that returns a boolean"
       );
-    at(this, Pt, by).call(this), y(this, bt).setOptions(this.options), i._defaulted && !Qh(this.options, i) && y(this, De).getQueryCache().notify({
+    at(this, Pt, by).call(this), p(this, bt).setOptions(this.options), i._defaulted && !Qh(this.options, i) && p(this, De).getQueryCache().notify({
       type: "observerOptionsUpdated",
-      query: y(this, bt),
+      query: p(this, bt),
       observer: this
     });
     const a = this.hasListeners();
     a && wm(
-      y(this, bt),
+      p(this, bt),
       r,
       this.options,
       i
-    ) && at(this, Pt, Fl).call(this), this.updateResult(), a && (y(this, bt) !== r || ni(this.options.enabled, y(this, bt)) !== ni(i.enabled, y(this, bt)) || Yr(this.options.staleTime, y(this, bt)) !== Yr(i.staleTime, y(this, bt))) && at(this, Pt, yy).call(this);
+    ) && at(this, Pt, Fl).call(this), this.updateResult(), a && (p(this, bt) !== r || ni(this.options.enabled, p(this, bt)) !== ni(i.enabled, p(this, bt)) || Yr(this.options.staleTime, p(this, bt)) !== Yr(i.staleTime, p(this, bt))) && at(this, Pt, yy).call(this);
     const o = at(this, Pt, wy).call(this);
-    a && (y(this, bt) !== r || ni(this.options.enabled, y(this, bt)) !== ni(i.enabled, y(this, bt)) || o !== y(this, Hr)) && at(this, Pt, fy).call(this, o);
+    a && (p(this, bt) !== r || ni(this.options.enabled, p(this, bt)) !== ni(i.enabled, p(this, bt)) || o !== p(this, Vr)) && at(this, Pt, fy).call(this, o);
   }
   getOptimisticResult(e) {
-    const i = y(this, De).getQueryCache().build(y(this, De), e), r = this.createResult(i, e);
-    return cb(this, r) && (P(this, Oe, r), P(this, ta, this.options), P(this, En, y(this, bt).state)), r;
+    const i = p(this, De).getQueryCache().build(p(this, De), e), r = this.createResult(i, e);
+    return cb(this, r) && (P(this, Oe, r), P(this, ta, this.options), P(this, En, p(this, bt).state)), r;
   }
   getCurrentResult() {
-    return y(this, Oe);
+    return p(this, Oe);
   }
   trackResult(e, i) {
     return new Proxy(e, {
-      get: /* @__PURE__ */ s((r, a) => (this.trackProp(a), i?.(a), a === "promise" && (this.trackProp("data"), !this.options.experimental_prefetchInRender && y(this, Gi).status === "pending" && y(this, Gi).reject(
+      get: /* @__PURE__ */ s((r, a) => (this.trackProp(a), i?.(a), a === "promise" && (this.trackProp("data"), !this.options.experimental_prefetchInRender && p(this, Gi).status === "pending" && p(this, Gi).reject(
         new Error(
           "experimental_prefetchInRender feature flag is not enabled"
         )
@@ -3139,10 +3139,10 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     });
   }
   trackProp(e) {
-    y(this, ra).add(e);
+    p(this, ra).add(e);
   }
   getCurrentQuery() {
-    return y(this, bt);
+    return p(this, bt);
   }
   refetch({ ...e } = {}) {
     return this.fetch({
@@ -3150,17 +3150,17 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     });
   }
   fetchOptimistic(e) {
-    const i = y(this, De).defaultQueryOptions(e), r = y(this, De).getQueryCache().build(y(this, De), i);
+    const i = p(this, De).defaultQueryOptions(e), r = p(this, De).getQueryCache().build(p(this, De), i);
     return r.fetch().then(() => this.createResult(r, i));
   }
   fetch(e) {
     return at(this, Pt, Fl).call(this, {
       ...e,
       cancelRefetch: e.cancelRefetch ?? !0
-    }).then(() => (this.updateResult(), y(this, Oe)));
+    }).then(() => (this.updateResult(), p(this, Oe)));
   }
   createResult(e, i) {
-    const r = y(this, bt), a = this.options, o = y(this, Oe), c = y(this, En), l = y(this, ta), b = e !== r ? e.state : y(this, kd), { state: C } = e;
+    const r = p(this, bt), a = this.options, o = p(this, Oe), c = p(this, En), l = p(this, ta), b = e !== r ? e.state : p(this, kd), { state: C } = e;
     let v = { ...C }, m = !1, f;
     if (i._optimisticResults) {
       const nt = this.hasListeners(), Ot = !nt && ym(e, i), zt = nt && wm(e, r, i, a);
@@ -3175,8 +3175,8 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     if (i.placeholderData !== void 0 && f === void 0 && S === "pending") {
       let nt;
       o?.isPlaceholderData && i.placeholderData === l?.placeholderData ? (nt = o.data, T = !0) : nt = typeof i.placeholderData == "function" ? i.placeholderData(
-        y(this, ia)?.state.data,
-        y(this, ia)
+        p(this, ia)?.state.data,
+        p(this, ia)
       ) : i.placeholderData, nt !== void 0 && (S = "success", f = hy(
         o?.data,
         nt,
@@ -3184,16 +3184,16 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
       ), m = !0);
     }
     if (i.select && f !== void 0 && !T)
-      if (o && f === c?.data && i.select === y(this, _d))
-        f = y(this, ea);
+      if (o && f === c?.data && i.select === p(this, _d))
+        f = p(this, ea);
       else
         try {
           P(this, _d, i.select), f = i.select(f), f = hy(o?.data, f, i), P(this, ea, f), P(this, Dr, null);
         } catch (nt) {
           P(this, Dr, nt);
         }
-    y(this, Dr) && ($ = y(this, Dr), f = y(this, ea), E = Date.now(), S = "error");
-    const V = v.fetchStatus === "fetching", O = S === "pending", I = S === "error", B = O && V, K = f !== void 0, lt = {
+    p(this, Dr) && ($ = p(this, Dr), f = p(this, ea), E = Date.now(), S = "error");
+    const H = v.fetchStatus === "fetching", O = S === "pending", I = S === "error", B = O && H, K = f !== void 0, lt = {
       status: S,
       fetchStatus: v.fetchStatus,
       isPending: O,
@@ -3210,24 +3210,24 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
       errorUpdateCount: v.errorUpdateCount,
       isFetched: e.isFetched(),
       isFetchedAfterMount: v.dataUpdateCount > b.dataUpdateCount || v.errorUpdateCount > b.errorUpdateCount,
-      isFetching: V,
-      isRefetching: V && !O,
+      isFetching: H,
+      isRefetching: H && !O,
       isLoadingError: I && !K,
       isPaused: v.fetchStatus === "paused",
       isPlaceholderData: m,
       isRefetchError: I && K,
       isStale: gw(e, i),
       refetch: this.refetch,
-      promise: y(this, Gi),
+      promise: p(this, Gi),
       isEnabled: ni(i.enabled, e) !== !1
     };
     if (this.options.experimental_prefetchInRender) {
-      const nt = lt.data !== void 0, Ot = lt.status === "error" && !nt, zt = /* @__PURE__ */ s((Ht) => {
-        Ot ? Ht.reject(lt.error) : nt && Ht.resolve(lt.data);
+      const nt = lt.data !== void 0, Ot = lt.status === "error" && !nt, zt = /* @__PURE__ */ s((Dt) => {
+        Ot ? Dt.reject(lt.error) : nt && Dt.resolve(lt.data);
       }, "finalizeThenableIfPossible"), Mt = /* @__PURE__ */ s(() => {
-        const Ht = P(this, Gi, lt.promise = uy());
-        zt(Ht);
-      }, "recreateThenable"), vt = y(this, Gi);
+        const Dt = P(this, Gi, lt.promise = uy());
+        zt(Dt);
+      }, "recreateThenable"), vt = p(this, Gi);
       switch (vt.status) {
         case "pending":
           e.queryHash === r.queryHash && zt(vt);
@@ -3243,22 +3243,22 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
     return lt;
   }
   updateResult() {
-    const e = y(this, Oe), i = this.createResult(y(this, bt), this.options);
-    if (P(this, En, y(this, bt).state), P(this, ta, this.options), y(this, En).data !== void 0 && P(this, ia, y(this, bt)), Qh(i, e))
+    const e = p(this, Oe), i = this.createResult(p(this, bt), this.options);
+    if (P(this, En, p(this, bt).state), P(this, ta, this.options), p(this, En).data !== void 0 && P(this, ia, p(this, bt)), Qh(i, e))
       return;
     P(this, Oe, i);
     const r = /* @__PURE__ */ s(() => {
       if (!e)
         return !0;
       const { notifyOnChangeProps: a } = this.options, o = typeof a == "function" ? a() : a;
-      if (o === "all" || !o && !y(this, ra).size)
+      if (o === "all" || !o && !p(this, ra).size)
         return !0;
       const c = new Set(
-        o ?? y(this, ra)
+        o ?? p(this, ra)
       );
-      return this.options.throwOnError && c.add("error"), Object.keys(y(this, Oe)).some((l) => {
+      return this.options.throwOnError && c.add("error"), Object.keys(p(this, Oe)).some((l) => {
         const u = l;
-        return y(this, Oe)[u] !== e[u] && c.has(u);
+        return p(this, Oe)[u] !== e[u] && c.has(u);
       });
     }, "shouldNotifyListeners");
     at(this, Pt, qv).call(this, { listeners: r() });
@@ -3266,9 +3266,9 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
   onQueryUpdate() {
     this.updateResult(), this.hasListeners() && at(this, Pt, my).call(this);
   }
-}, De = new WeakMap(), bt = new WeakMap(), kd = new WeakMap(), Oe = new WeakMap(), En = new WeakMap(), ta = new WeakMap(), Gi = new WeakMap(), Dr = new WeakMap(), _d = new WeakMap(), ea = new WeakMap(), ia = new WeakMap(), An = new WeakMap(), Rn = new WeakMap(), Hr = new WeakMap(), ra = new WeakMap(), Pt = new WeakSet(), Fl = /* @__PURE__ */ s(function(e) {
+}, De = new WeakMap(), bt = new WeakMap(), kd = new WeakMap(), Oe = new WeakMap(), En = new WeakMap(), ta = new WeakMap(), Gi = new WeakMap(), Dr = new WeakMap(), _d = new WeakMap(), ea = new WeakMap(), ia = new WeakMap(), An = new WeakMap(), Rn = new WeakMap(), Vr = new WeakMap(), ra = new WeakMap(), Pt = new WeakSet(), Fl = /* @__PURE__ */ s(function(e) {
   at(this, Pt, by).call(this);
-  let i = y(this, bt).fetch(
+  let i = p(this, bt).fetch(
     this.options,
     e
   );
@@ -3277,38 +3277,38 @@ var De, bt, kd, Oe, En, ta, Gi, Dr, _d, ea, ia, An, Rn, Hr, ra, Pt, Fl, yy, wy, 
   at(this, Pt, vy).call(this);
   const e = Yr(
     this.options.staleTime,
-    y(this, bt)
+    p(this, bt)
   );
-  if (Gh.isServer() || y(this, Oe).isStale || !ly(e))
+  if (Gh.isServer() || p(this, Oe).isStale || !ly(e))
     return;
-  const r = zv(y(this, Oe).dataUpdatedAt, e) + 1;
+  const r = zv(p(this, Oe).dataUpdatedAt, e) + 1;
   P(this, An, Qr.setTimeout(() => {
-    y(this, Oe).isStale || this.updateResult();
+    p(this, Oe).isStale || this.updateResult();
   }, r));
 }, "#updateStaleTimeout"), wy = /* @__PURE__ */ s(function() {
-  return (typeof this.options.refetchInterval == "function" ? this.options.refetchInterval(y(this, bt)) : this.options.refetchInterval) ?? !1;
+  return (typeof this.options.refetchInterval == "function" ? this.options.refetchInterval(p(this, bt)) : this.options.refetchInterval) ?? !1;
 }, "#computeRefetchInterval"), fy = /* @__PURE__ */ s(function(e) {
-  at(this, Pt, gy).call(this), P(this, Hr, e), !(Gh.isServer() || ni(this.options.enabled, y(this, bt)) === !1 || !ly(y(this, Hr)) || y(this, Hr) === 0) && P(this, Rn, Qr.setInterval(() => {
+  at(this, Pt, gy).call(this), P(this, Vr, e), !(Gh.isServer() || ni(this.options.enabled, p(this, bt)) === !1 || !ly(p(this, Vr)) || p(this, Vr) === 0) && P(this, Rn, Qr.setInterval(() => {
     (this.options.refetchIntervalInBackground || fw.isFocused()) && at(this, Pt, Fl).call(this);
-  }, y(this, Hr)));
+  }, p(this, Vr)));
 }, "#updateRefetchInterval"), my = /* @__PURE__ */ s(function() {
   at(this, Pt, yy).call(this), at(this, Pt, fy).call(this, at(this, Pt, wy).call(this));
 }, "#updateTimers"), vy = /* @__PURE__ */ s(function() {
-  y(this, An) && (Qr.clearTimeout(y(this, An)), P(this, An, void 0));
+  p(this, An) && (Qr.clearTimeout(p(this, An)), P(this, An, void 0));
 }, "#clearStaleTimeout"), gy = /* @__PURE__ */ s(function() {
-  y(this, Rn) && (Qr.clearInterval(y(this, Rn)), P(this, Rn, void 0));
+  p(this, Rn) && (Qr.clearInterval(p(this, Rn)), P(this, Rn, void 0));
 }, "#clearRefetchInterval"), by = /* @__PURE__ */ s(function() {
-  const e = y(this, De).getQueryCache().build(y(this, De), this.options);
-  if (e === y(this, bt))
+  const e = p(this, De).getQueryCache().build(p(this, De), this.options);
+  if (e === p(this, bt))
     return;
-  const i = y(this, bt);
+  const i = p(this, bt);
   P(this, bt, e), P(this, kd, e.state), this.hasListeners() && (i?.removeObserver(this), e.addObserver(this));
 }, "#updateQuery"), qv = /* @__PURE__ */ s(function(e) {
   $e.batch(() => {
     e.listeners && this.listeners.forEach((i) => {
-      i(y(this, Oe));
-    }), y(this, De).getQueryCache().notify({
-      query: y(this, bt),
+      i(p(this, Oe));
+    }), p(this, De).getQueryCache().notify({
+      query: p(this, bt),
       type: "observerResultsUpdated"
     });
   });
@@ -3368,9 +3368,9 @@ function Yh(n) {
               meta: t.options.meta
             };
             return C(B), B;
-          }, "createQueryFnContext"))(), V = await v(T), { maxPages: O } = t.options, I = E ? j0 : W0;
+          }, "createQueryFnContext"))(), H = await v(T), { maxPages: O } = t.options, I = E ? j0 : W0;
           return {
-            pages: I(f.pages, V, O),
+            pages: I(f.pages, H, O),
             pageParams: I(f.pageParams, $, O)
           };
         }, "fetchPage");
@@ -3475,7 +3475,7 @@ var sa, hb = (sa = class extends Nv {
       isRefetching: o && !C && !m
     };
   }
-}, s(sa, "InfiniteQueryObserver"), sa), Pd, Si, Me, Tn, Mi, Rr, aa, ub = (aa = class extends Vv {
+}, s(sa, "InfiniteQueryObserver"), sa), Pd, Si, Me, Tn, Mi, Rr, aa, ub = (aa = class extends Hv {
   constructor(e) {
     super();
     R(this, Mi);
@@ -3492,35 +3492,35 @@ var sa, hb = (sa = class extends Nv {
     return this.options.meta;
   }
   addObserver(e) {
-    y(this, Si).includes(e) || (y(this, Si).push(e), this.clearGcTimeout(), y(this, Me).notify({
+    p(this, Si).includes(e) || (p(this, Si).push(e), this.clearGcTimeout(), p(this, Me).notify({
       type: "observerAdded",
       mutation: this,
       observer: e
     }));
   }
   removeObserver(e) {
-    P(this, Si, y(this, Si).filter((i) => i !== e)), this.scheduleGc(), y(this, Me).notify({
+    P(this, Si, p(this, Si).filter((i) => i !== e)), this.scheduleGc(), p(this, Me).notify({
       type: "observerRemoved",
       mutation: this,
       observer: e
     });
   }
   optionalRemove() {
-    y(this, Si).length || (this.state.status === "pending" ? this.scheduleGc() : y(this, Me).remove(this));
+    p(this, Si).length || (this.state.status === "pending" ? this.scheduleGc() : p(this, Me).remove(this));
   }
   continue() {
-    return y(this, Tn)?.continue() ?? // continuing a mutation assumes that variables are set, mutation must have been dehydrated before
+    return p(this, Tn)?.continue() ?? // continuing a mutation assumes that variables are set, mutation must have been dehydrated before
     this.execute(this.state.variables);
   }
   async execute(e) {
     const i = /* @__PURE__ */ s(() => {
       at(this, Mi, Rr).call(this, { type: "continue" });
     }, "onContinue"), r = {
-      client: y(this, Pd),
+      client: p(this, Pd),
       meta: this.options.meta,
       mutationKey: this.options.mutationKey
     };
-    P(this, Tn, Hv({
+    P(this, Tn, Vv({
       fn: /* @__PURE__ */ s(() => this.options.mutationFn ? this.options.mutationFn(e, r) : Promise.reject(new Error("No mutationFn found")), "fn"),
       onFail: /* @__PURE__ */ s((c, l) => {
         at(this, Mi, Rr).call(this, { type: "failed", failureCount: c, error: l });
@@ -3532,14 +3532,14 @@ var sa, hb = (sa = class extends Nv {
       retry: this.options.retry ?? 0,
       retryDelay: this.options.retryDelay,
       networkMode: this.options.networkMode,
-      canRun: /* @__PURE__ */ s(() => y(this, Me).canRun(this), "canRun")
+      canRun: /* @__PURE__ */ s(() => p(this, Me).canRun(this), "canRun")
     }));
-    const a = this.state.status === "pending", o = !y(this, Tn).canStart();
+    const a = this.state.status === "pending", o = !p(this, Tn).canStart();
     try {
       if (a)
         i();
       else {
-        at(this, Mi, Rr).call(this, { type: "pending", variables: e, isPaused: o }), y(this, Me).config.onMutate && await y(this, Me).config.onMutate(
+        at(this, Mi, Rr).call(this, { type: "pending", variables: e, isPaused: o }), p(this, Me).config.onMutate && await p(this, Me).config.onMutate(
           e,
           this,
           r
@@ -3555,8 +3555,8 @@ var sa, hb = (sa = class extends Nv {
           isPaused: o
         });
       }
-      const c = await y(this, Tn).start();
-      return await y(this, Me).config.onSuccess?.(
+      const c = await p(this, Tn).start();
+      return await p(this, Me).config.onSuccess?.(
         c,
         e,
         this.state.context,
@@ -3567,7 +3567,7 @@ var sa, hb = (sa = class extends Nv {
         e,
         this.state.context,
         r
-      ), await y(this, Me).config.onSettled?.(
+      ), await p(this, Me).config.onSettled?.(
         c,
         null,
         this.state.variables,
@@ -3583,7 +3583,7 @@ var sa, hb = (sa = class extends Nv {
       ), at(this, Mi, Rr).call(this, { type: "success", data: c }), c;
     } catch (c) {
       try {
-        await y(this, Me).config.onError?.(
+        await p(this, Me).config.onError?.(
           c,
           e,
           this.state.context,
@@ -3604,7 +3604,7 @@ var sa, hb = (sa = class extends Nv {
         Promise.reject(l);
       }
       try {
-        await y(this, Me).config.onSettled?.(
+        await p(this, Me).config.onSettled?.(
           void 0,
           c,
           this.state.variables,
@@ -3628,7 +3628,7 @@ var sa, hb = (sa = class extends Nv {
       }
       throw at(this, Mi, Rr).call(this, { type: "error", error: c }), c;
     } finally {
-      y(this, Me).runNext(this);
+      p(this, Me).runNext(this);
     }
   }
 }, Pd = new WeakMap(), Si = new WeakMap(), Me = new WeakMap(), Tn = new WeakMap(), Mi = new WeakSet(), Rr = /* @__PURE__ */ s(function(e) {
@@ -3686,9 +3686,9 @@ var sa, hb = (sa = class extends Nv {
     }
   }, "reducer");
   this.state = i(this.state), $e.batch(() => {
-    y(this, Si).forEach((r) => {
+    p(this, Si).forEach((r) => {
       r.onMutationUpdate(e);
-    }), y(this, Me).notify({
+    }), p(this, Me).notify({
       mutation: this,
       type: "updated",
       action: e
@@ -3728,24 +3728,24 @@ var Zi, hi, Sd, oa, pb = (oa = class extends ul {
     return this.add(a), a;
   }
   add(e) {
-    y(this, Zi).add(e);
+    p(this, Zi).add(e);
     const i = kh(e);
     if (typeof i == "string") {
-      const r = y(this, hi).get(i);
-      r ? r.push(e) : y(this, hi).set(i, [e]);
+      const r = p(this, hi).get(i);
+      r ? r.push(e) : p(this, hi).set(i, [e]);
     }
     this.notify({ type: "added", mutation: e });
   }
   remove(e) {
-    if (y(this, Zi).delete(e)) {
+    if (p(this, Zi).delete(e)) {
       const i = kh(e);
       if (typeof i == "string") {
-        const r = y(this, hi).get(i);
+        const r = p(this, hi).get(i);
         if (r)
           if (r.length > 1) {
             const a = r.indexOf(e);
             a !== -1 && r.splice(a, 1);
-          } else r[0] === e && y(this, hi).delete(i);
+          } else r[0] === e && p(this, hi).delete(i);
       }
     }
     this.notify({ type: "removed", mutation: e });
@@ -3753,7 +3753,7 @@ var Zi, hi, Sd, oa, pb = (oa = class extends ul {
   canRun(e) {
     const i = kh(e);
     if (typeof i == "string") {
-      const a = y(this, hi).get(i)?.find(
+      const a = p(this, hi).get(i)?.find(
         (o) => o.state.status === "pending"
       );
       return !a || a === e;
@@ -3762,17 +3762,17 @@ var Zi, hi, Sd, oa, pb = (oa = class extends ul {
   }
   runNext(e) {
     const i = kh(e);
-    return typeof i == "string" ? y(this, hi).get(i)?.find((a) => a !== e && a.state.isPaused)?.continue() ?? Promise.resolve() : Promise.resolve();
+    return typeof i == "string" ? p(this, hi).get(i)?.find((a) => a !== e && a.state.isPaused)?.continue() ?? Promise.resolve() : Promise.resolve();
   }
   clear() {
     $e.batch(() => {
-      y(this, Zi).forEach((e) => {
+      p(this, Zi).forEach((e) => {
         this.notify({ type: "removed", mutation: e });
-      }), y(this, Zi).clear(), y(this, hi).clear();
+      }), p(this, Zi).clear(), p(this, hi).clear();
     });
   }
   getAll() {
-    return Array.from(y(this, Zi));
+    return Array.from(p(this, Zi));
   }
   find(e) {
     const i = { exact: !0, ...e };
@@ -3803,13 +3803,13 @@ function kh(n) {
   return n.options.scope?.id;
 }
 s(kh, "scopeFor");
-var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
+var Yi, Hr, Ve, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   constructor(e, i) {
     super();
     R(this, sr);
     R(this, Yi);
-    R(this, Vr);
-    R(this, He);
+    R(this, Hr);
+    R(this, Ve);
     R(this, Xi);
     P(this, Yi, e), this.setOptions(i), this.bindMethods(), at(this, sr, Eh).call(this);
   }
@@ -3818,30 +3818,30 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   }
   setOptions(e) {
     const i = this.options;
-    this.options = y(this, Yi).defaultMutationOptions(e), Qh(this.options, i) || y(this, Yi).getMutationCache().notify({
+    this.options = p(this, Yi).defaultMutationOptions(e), Qh(this.options, i) || p(this, Yi).getMutationCache().notify({
       type: "observerOptionsUpdated",
-      mutation: y(this, He),
+      mutation: p(this, Ve),
       observer: this
-    }), i?.mutationKey && this.options.mutationKey && Bn(i.mutationKey) !== Bn(this.options.mutationKey) ? this.reset() : y(this, He)?.state.status === "pending" && y(this, He).setOptions(this.options);
+    }), i?.mutationKey && this.options.mutationKey && Bn(i.mutationKey) !== Bn(this.options.mutationKey) ? this.reset() : p(this, Ve)?.state.status === "pending" && p(this, Ve).setOptions(this.options);
   }
   onUnsubscribe() {
-    this.hasListeners() || y(this, He)?.removeObserver(this);
+    this.hasListeners() || p(this, Ve)?.removeObserver(this);
   }
   onMutationUpdate(e) {
     at(this, sr, Eh).call(this), at(this, sr, $y).call(this, e);
   }
   getCurrentResult() {
-    return y(this, Vr);
+    return p(this, Hr);
   }
   reset() {
-    y(this, He)?.removeObserver(this), P(this, He, void 0), at(this, sr, Eh).call(this), at(this, sr, $y).call(this);
+    p(this, Ve)?.removeObserver(this), P(this, Ve, void 0), at(this, sr, Eh).call(this), at(this, sr, $y).call(this);
   }
   mutate(e, i) {
-    return P(this, Xi, i), y(this, He)?.removeObserver(this), P(this, He, y(this, Yi).getMutationCache().build(y(this, Yi), this.options)), y(this, He).addObserver(this), y(this, He).execute(e);
+    return P(this, Xi, i), p(this, Ve)?.removeObserver(this), P(this, Ve, p(this, Yi).getMutationCache().build(p(this, Yi), this.options)), p(this, Ve).addObserver(this), p(this, Ve).execute(e);
   }
-}, Yi = new WeakMap(), Vr = new WeakMap(), He = new WeakMap(), Xi = new WeakMap(), sr = new WeakSet(), Eh = /* @__PURE__ */ s(function() {
-  const e = y(this, He)?.state ?? jv();
-  P(this, Vr, {
+}, Yi = new WeakMap(), Hr = new WeakMap(), Ve = new WeakMap(), Xi = new WeakMap(), sr = new WeakSet(), Eh = /* @__PURE__ */ s(function() {
+  const e = p(this, Ve)?.state ?? jv();
+  P(this, Hr, {
     ...e,
     isPending: e.status === "pending",
     isSuccess: e.status === "success",
@@ -3852,15 +3852,15 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   });
 }, "#updateResult"), $y = /* @__PURE__ */ s(function(e) {
   $e.batch(() => {
-    if (y(this, Xi) && this.hasListeners()) {
-      const i = y(this, Vr).variables, r = y(this, Vr).context, a = {
-        client: y(this, Yi),
+    if (p(this, Xi) && this.hasListeners()) {
+      const i = p(this, Hr).variables, r = p(this, Hr).context, a = {
+        client: p(this, Yi),
         meta: this.options.meta,
         mutationKey: this.options.mutationKey
       };
       if (e?.type === "success") {
         try {
-          y(this, Xi).onSuccess?.(
+          p(this, Xi).onSuccess?.(
             e.data,
             i,
             r,
@@ -3870,7 +3870,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
           Promise.reject(o);
         }
         try {
-          y(this, Xi).onSettled?.(
+          p(this, Xi).onSettled?.(
             e.data,
             null,
             i,
@@ -3882,7 +3882,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
         }
       } else if (e?.type === "error") {
         try {
-          y(this, Xi).onError?.(
+          p(this, Xi).onError?.(
             e.error,
             i,
             r,
@@ -3892,7 +3892,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
           Promise.reject(o);
         }
         try {
-          y(this, Xi).onSettled?.(
+          p(this, Xi).onSettled?.(
             void 0,
             e.error,
             i,
@@ -3905,7 +3905,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
       }
     }
     this.listeners.forEach((i) => {
-      i(y(this, Vr));
+      i(p(this, Hr));
     });
   });
 }, "#notify"), s(ca, "MutationObserver"), ca), Ei, la, yb = (la = class extends ul {
@@ -3927,14 +3927,14 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     }), this.add(c)), c;
   }
   add(e) {
-    y(this, Ei).has(e.queryHash) || (y(this, Ei).set(e.queryHash, e), this.notify({
+    p(this, Ei).has(e.queryHash) || (p(this, Ei).set(e.queryHash, e), this.notify({
       type: "added",
       query: e
     }));
   }
   remove(e) {
-    const i = y(this, Ei).get(e.queryHash);
-    i && (e.destroy(), i === e && y(this, Ei).delete(e.queryHash), this.notify({ type: "removed", query: e }));
+    const i = p(this, Ei).get(e.queryHash);
+    i && (e.destroy(), i === e && p(this, Ei).delete(e.queryHash), this.notify({ type: "removed", query: e }));
   }
   clear() {
     $e.batch(() => {
@@ -3944,10 +3944,10 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     });
   }
   get(e) {
-    return y(this, Ei).get(e);
+    return p(this, Ei).get(e);
   }
   getAll() {
-    return [...y(this, Ei).values()];
+    return [...p(this, Ei).values()];
   }
   find(e) {
     const i = { exact: !0, ...e };
@@ -3980,9 +3980,9 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
       });
     });
   }
-}, Ei = new WeakMap(), s(la, "QueryCache"), la), Vt, Ur, Br, da, ha, Nr, ua, pa, ya, wb = (ya = class {
+}, Ei = new WeakMap(), s(la, "QueryCache"), la), Ht, Ur, Br, da, ha, Nr, ua, pa, ya, wb = (ya = class {
   constructor(t = {}) {
-    R(this, Vt);
+    R(this, Ht);
     R(this, Ur);
     R(this, Br);
     R(this, da);
@@ -3990,24 +3990,24 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     R(this, Nr);
     R(this, ua);
     R(this, pa);
-    P(this, Vt, t.queryCache || new yb()), P(this, Ur, t.mutationCache || new pb()), P(this, Br, t.defaultOptions || {}), P(this, da, /* @__PURE__ */ new Map()), P(this, ha, /* @__PURE__ */ new Map()), P(this, Nr, 0);
+    P(this, Ht, t.queryCache || new yb()), P(this, Ur, t.mutationCache || new pb()), P(this, Br, t.defaultOptions || {}), P(this, da, /* @__PURE__ */ new Map()), P(this, ha, /* @__PURE__ */ new Map()), P(this, Nr, 0);
   }
   mount() {
-    Ch(this, Nr)._++, y(this, Nr) === 1 && (P(this, ua, fw.subscribe(async (t) => {
-      t && (await this.resumePausedMutations(), y(this, Vt).onFocus());
+    Ch(this, Nr)._++, p(this, Nr) === 1 && (P(this, ua, fw.subscribe(async (t) => {
+      t && (await this.resumePausedMutations(), p(this, Ht).onFocus());
     })), P(this, pa, Zh.subscribe(async (t) => {
-      t && (await this.resumePausedMutations(), y(this, Vt).onOnline());
+      t && (await this.resumePausedMutations(), p(this, Ht).onOnline());
     })));
   }
   unmount() {
     var t, e;
-    Ch(this, Nr)._--, y(this, Nr) === 0 && ((t = y(this, ua)) == null || t.call(this), P(this, ua, void 0), (e = y(this, pa)) == null || e.call(this), P(this, pa, void 0));
+    Ch(this, Nr)._--, p(this, Nr) === 0 && ((t = p(this, ua)) == null || t.call(this), P(this, ua, void 0), (e = p(this, pa)) == null || e.call(this), P(this, pa, void 0));
   }
   isFetching(t) {
-    return y(this, Vt).findAll({ ...t, fetchStatus: "fetching" }).length;
+    return p(this, Ht).findAll({ ...t, fetchStatus: "fetching" }).length;
   }
   isMutating(t) {
-    return y(this, Ur).findAll({ ...t, status: "pending" }).length;
+    return p(this, Ur).findAll({ ...t, status: "pending" }).length;
   }
   /**
    * Imperative (non-reactive) way to retrieve data for a QueryKey.
@@ -4018,28 +4018,28 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
    */
   getQueryData(t) {
     const e = this.defaultQueryOptions({ queryKey: t });
-    return y(this, Vt).get(e.queryHash)?.state.data;
+    return p(this, Ht).get(e.queryHash)?.state.data;
   }
   ensureQueryData(t) {
-    const e = this.defaultQueryOptions(t), i = y(this, Vt).build(this, e), r = i.state.data;
+    const e = this.defaultQueryOptions(t), i = p(this, Ht).build(this, e), r = i.state.data;
     return r === void 0 ? this.fetchQuery(t) : (t.revalidateIfStale && i.isStaleByTime(Yr(e.staleTime, i)) && this.prefetchQuery(e), Promise.resolve(r));
   }
   getQueriesData(t) {
-    return y(this, Vt).findAll(t).map(({ queryKey: e, state: i }) => {
+    return p(this, Ht).findAll(t).map(({ queryKey: e, state: i }) => {
       const r = i.data;
       return [e, r];
     });
   }
   setQueryData(t, e, i) {
-    const r = this.defaultQueryOptions({ queryKey: t }), o = y(this, Vt).get(
+    const r = this.defaultQueryOptions({ queryKey: t }), o = p(this, Ht).get(
       r.queryHash
     )?.state.data, c = B0(e, o);
     if (c !== void 0)
-      return y(this, Vt).build(this, r).setData(c, { ...i, manual: !0 });
+      return p(this, Ht).build(this, r).setData(c, { ...i, manual: !0 });
   }
   setQueriesData(t, e, i) {
     return $e.batch(
-      () => y(this, Vt).findAll(t).map(({ queryKey: r }) => [
+      () => p(this, Ht).findAll(t).map(({ queryKey: r }) => [
         r,
         this.setQueryData(r, e, i)
       ])
@@ -4047,12 +4047,12 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   }
   getQueryState(t) {
     const e = this.defaultQueryOptions({ queryKey: t });
-    return y(this, Vt).get(
+    return p(this, Ht).get(
       e.queryHash
     )?.state;
   }
   removeQueries(t) {
-    const e = y(this, Vt);
+    const e = p(this, Ht);
     $e.batch(() => {
       e.findAll(t).forEach((i) => {
         e.remove(i);
@@ -4060,7 +4060,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     });
   }
   resetQueries(t, e) {
-    const i = y(this, Vt);
+    const i = p(this, Ht);
     return $e.batch(() => (i.findAll(t).forEach((r) => {
       r.reset();
     }), this.refetchQueries(
@@ -4073,12 +4073,12 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   }
   cancelQueries(t, e = {}) {
     const i = { revert: !0, ...e }, r = $e.batch(
-      () => y(this, Vt).findAll(t).map((a) => a.cancel(i))
+      () => p(this, Ht).findAll(t).map((a) => a.cancel(i))
     );
     return Promise.all(r).then(Ee).catch(Ee);
   }
   invalidateQueries(t, e = {}) {
-    return $e.batch(() => (y(this, Vt).findAll(t).forEach((i) => {
+    return $e.batch(() => (p(this, Ht).findAll(t).forEach((i) => {
       i.invalidate();
     }), t?.refetchType === "none" ? Promise.resolve() : this.refetchQueries(
       {
@@ -4093,7 +4093,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
       ...e,
       cancelRefetch: e.cancelRefetch ?? !0
     }, r = $e.batch(
-      () => y(this, Vt).findAll(t).filter((a) => !a.isDisabled() && !a.isStatic()).map((a) => {
+      () => p(this, Ht).findAll(t).filter((a) => !a.isDisabled() && !a.isStatic()).map((a) => {
         let o = a.fetch(void 0, i);
         return i.throwOnError || (o = o.catch(Ee)), a.state.fetchStatus === "paused" ? Promise.resolve() : o;
       })
@@ -4103,7 +4103,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   fetchQuery(t) {
     const e = this.defaultQueryOptions(t);
     e.retry === void 0 && (e.retry = !1);
-    const i = y(this, Vt).build(this, e);
+    const i = p(this, Ht).build(this, e);
     return i.isStaleByTime(
       Yr(e.staleTime, i)
     ) ? i.fetch(e) : Promise.resolve(i.state.data);
@@ -4121,40 +4121,40 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     return t.behavior = Yh(t.pages), this.ensureQueryData(t);
   }
   resumePausedMutations() {
-    return Zh.isOnline() ? y(this, Ur).resumePausedMutations() : Promise.resolve();
+    return Zh.isOnline() ? p(this, Ur).resumePausedMutations() : Promise.resolve();
   }
   getQueryCache() {
-    return y(this, Vt);
+    return p(this, Ht);
   }
   getMutationCache() {
-    return y(this, Ur);
+    return p(this, Ur);
   }
   getDefaultOptions() {
-    return y(this, Br);
+    return p(this, Br);
   }
   setDefaultOptions(t) {
     P(this, Br, t);
   }
   setQueryDefaults(t, e) {
-    y(this, da).set(Bn(t), {
+    p(this, da).set(Bn(t), {
       queryKey: t,
       defaultOptions: e
     });
   }
   getQueryDefaults(t) {
-    const e = [...y(this, da).values()], i = {};
+    const e = [...p(this, da).values()], i = {};
     return e.forEach((r) => {
       Wl(t, r.queryKey) && Object.assign(i, r.defaultOptions);
     }), i;
   }
   setMutationDefaults(t, e) {
-    y(this, ha).set(Bn(t), {
+    p(this, ha).set(Bn(t), {
       mutationKey: t,
       defaultOptions: e
     });
   }
   getMutationDefaults(t) {
-    const e = [...y(this, ha).values()], i = {};
+    const e = [...p(this, ha).values()], i = {};
     return e.forEach((r) => {
       Wl(t, r.mutationKey) && Object.assign(i, r.defaultOptions);
     }), i;
@@ -4163,7 +4163,7 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
     if (t._defaulted)
       return t;
     const e = {
-      ...y(this, Br).queries,
+      ...p(this, Br).queries,
       ...this.getQueryDefaults(t.queryKey),
       ...t,
       _defaulted: !0
@@ -4175,16 +4175,16 @@ var Yi, Vr, He, Xi, sr, Eh, $y, ca, St = (ca = class extends ul {
   }
   defaultMutationOptions(t) {
     return t?._defaulted ? t : {
-      ...y(this, Br).mutations,
+      ...p(this, Br).mutations,
       ...t?.mutationKey && this.getMutationDefaults(t.mutationKey),
       ...t,
       _defaulted: !0
     };
   }
   clear() {
-    y(this, Vt).clear(), y(this, Ur).clear();
+    p(this, Ht).clear(), p(this, Ur).clear();
   }
-}, Vt = new WeakMap(), Ur = new WeakMap(), Br = new WeakMap(), da = new WeakMap(), ha = new WeakMap(), Nr = new WeakMap(), ua = new WeakMap(), pa = new WeakMap(), s(ya, "QueryClient"), ya);
+}, Ht = new WeakMap(), Ur = new WeakMap(), Br = new WeakMap(), da = new WeakMap(), ha = new WeakMap(), Nr = new WeakMap(), ua = new WeakMap(), pa = new WeakMap(), s(ya, "QueryClient"), ya);
 function Np() {
 }
 s(Np, "noop");
@@ -4365,19 +4365,19 @@ const xb = /* @__PURE__ */ s((n) => {
       this._annotations = i, this.updateContext();
     }
     get annotations() {
-      return this._annotations ?? Zt.defaults.annotations;
+      return this._annotations ?? Qt.defaults.annotations;
     }
     set enterToSend(i) {
       this._enterToSend = i, this.updateContext();
     }
     get enterToSend() {
-      return this._enterToSend ?? Zt.defaults.enterToSend;
+      return this._enterToSend ?? Qt.defaults.enterToSend;
     }
     set reactions(i) {
       this._reactions = i, this.updateContext();
     }
     get reactions() {
-      return this._reactions ?? Zt.defaults.reactions;
+      return this._reactions ?? Qt.defaults.reactions;
     }
   }, s(t, "WeavySettings"), t;
 }, "WeavySettingsMixin");
@@ -4385,10 +4385,10 @@ function Ie(n) {
   return n < 0 ? -1 : n === 0 ? 0 : 1;
 }
 s(Ie, "signum");
-function Hl(n, t, e) {
+function Vl(n, t, e) {
   return (1 - e) * n + e * t;
 }
-s(Hl, "lerp");
+s(Vl, "lerp");
 function $b(n, t, e) {
   return e < n ? n : e > t ? t : e;
 }
@@ -4401,10 +4401,10 @@ function vm(n) {
   return n = n % 360, n < 0 && (n = n + 360), n;
 }
 s(vm, "sanitizeDegreesInt");
-function Ve(n) {
+function He(n) {
   return n = n % 360, n < 0 && (n = n + 360), n;
 }
-s(Ve, "sanitizeDegreesDouble");
+s(He, "sanitizeDegreesDouble");
 function ky(n, t) {
   const e = n[0] * t[0][0] + n[1] * t[0][1] + n[2] * t[0][2], i = n[0] * t[1][0] + n[1] * t[1][1] + n[2] * t[1][2], r = n[0] * t[2][0] + n[1] * t[2][1] + n[2] * t[2][2];
   return [e, i, r];
@@ -4436,7 +4436,7 @@ function bw(n, t, e) {
 }
 s(bw, "argbFromRgb");
 function gm(n) {
-  const t = Vn(n[0]), e = Vn(n[1]), i = Vn(n[2]);
+  const t = Hn(n[0]), e = Hn(n[1]), i = Hn(n[2]);
   return bw(t, e, i);
 }
 s(gm, "argbFromLinrgb");
@@ -4457,7 +4457,7 @@ function $w(n) {
 }
 s($w, "blueFromArgb");
 function Pb(n, t, e) {
-  const i = kb, r = i[0][0] * n + i[0][1] * t + i[0][2] * e, a = i[1][0] * n + i[1][1] * t + i[1][2] * e, o = i[2][0] * n + i[2][1] * t + i[2][2] * e, c = Vn(r), l = Vn(a), u = Vn(o);
+  const i = kb, r = i[0][0] * n + i[0][1] * t + i[0][2] * e, a = i[1][0] * n + i[1][1] * t + i[1][2] * e, o = i[2][0] * n + i[2][1] * t + i[2][2] * e, c = Hn(r), l = Hn(a), u = Hn(o);
   return bw(c, l, u);
 }
 s(Pb, "argbFromXyz");
@@ -4467,18 +4467,18 @@ function Sb(n) {
 }
 s(Sb, "xyzFromArgb");
 function Mb(n) {
-  const t = rr(xw(n)), e = rr(Cw(n)), i = rr($w(n)), r = Kv, a = r[0][0] * t + r[0][1] * e + r[0][2] * i, o = r[1][0] * t + r[1][1] * e + r[1][2] * i, c = r[2][0] * t + r[2][1] * e + r[2][2] * i, l = Qv, u = a / l[0], b = o / l[1], C = c / l[2], v = Vl(u), m = Vl(b), f = Vl(C), $ = 116 * m - 16, E = 500 * (v - m), S = 200 * (m - f);
+  const t = rr(xw(n)), e = rr(Cw(n)), i = rr($w(n)), r = Kv, a = r[0][0] * t + r[0][1] * e + r[0][2] * i, o = r[1][0] * t + r[1][1] * e + r[1][2] * i, c = r[2][0] * t + r[2][1] * e + r[2][2] * i, l = Qv, u = a / l[0], b = o / l[1], C = c / l[2], v = Hl(u), m = Hl(b), f = Hl(C), $ = 116 * m - 16, E = 500 * (v - m), S = 200 * (m - f);
   return [$, E, S];
 }
 s(Mb, "labFromArgb");
 function Eb(n) {
-  const t = Gr(n), e = Vn(t);
+  const t = Gr(n), e = Hn(t);
   return bw(e, e, e);
 }
 s(Eb, "argbFromLstar");
 function bm(n) {
   const t = Sb(n)[1];
-  return 116 * Vl(t / 100) - 16;
+  return 116 * Hl(t / 100) - 16;
 }
 s(bm, "lstarFromArgb");
 function Gr(n) {
@@ -4486,7 +4486,7 @@ function Gr(n) {
 }
 s(Gr, "yFromLstar");
 function _y(n) {
-  return Vl(n / 100) * 116 - 16;
+  return Hl(n / 100) * 116 - 16;
 }
 s(_y, "lstarFromY");
 function rr(n) {
@@ -4494,21 +4494,21 @@ function rr(n) {
   return t <= 0.040449936 ? t / 12.92 * 100 : Math.pow((t + 0.055) / 1.055, 2.4) * 100;
 }
 s(rr, "linearized");
-function Vn(n) {
+function Hn(n) {
   const t = n / 100;
   let e = 0;
   return t <= 31308e-7 ? e = t * 12.92 : e = 1.055 * Math.pow(t, 1 / 2.4) - 0.055, $b(0, 255, Math.round(e * 255));
 }
-s(Vn, "delinearized");
+s(Hn, "delinearized");
 function Ab() {
   return Qv;
 }
 s(Ab, "whitePointD65");
-function Vl(n) {
+function Hl(n) {
   const t = 0.008856451679035631, e = 24389 / 27;
   return n > t ? Math.pow(n, 1 / 3) : (e * n + 16) / 116;
 }
-s(Vl, "labF");
+s(Hl, "labF");
 function Rb(n) {
   const t = 0.008856451679035631, e = 24389 / 27, i = n * n * n;
   return i > t ? i : (116 * n - 16) / e;
@@ -4538,14 +4538,14 @@ const vu = class vu {
    *       self-luminous objects like displays.
    */
   static make(t = Ab(), e = 200 / Math.PI * Gr(50) / 100, i = 50, r = 2, a = !1) {
-    const o = t, c = o[0] * 0.401288 + o[1] * 0.650173 + o[2] * -0.051461, l = o[0] * -0.250268 + o[1] * 1.204414 + o[2] * 0.045854, u = o[0] * -2079e-6 + o[1] * 0.048952 + o[2] * 0.953127, b = 0.8 + r / 10, C = b >= 0.9 ? Hl(0.59, 0.69, (b - 0.9) * 10) : Hl(0.525, 0.59, (b - 0.8) * 10);
+    const o = t, c = o[0] * 0.401288 + o[1] * 0.650173 + o[2] * -0.051461, l = o[0] * -0.250268 + o[1] * 1.204414 + o[2] * 0.045854, u = o[0] * -2079e-6 + o[1] * 0.048952 + o[2] * 0.953127, b = 0.8 + r / 10, C = b >= 0.9 ? Vl(0.59, 0.69, (b - 0.9) * 10) : Vl(0.525, 0.59, (b - 0.8) * 10);
     let v = a ? 1 : b * (1 - 1 / 3.6 * Math.exp((-e - 42) / 92));
     v = v > 1 ? 1 : v < 0 ? 0 : v;
     const m = b, f = [
       v * (100 / c) + 1 - v,
       v * (100 / l) + 1 - v,
       v * (100 / u) + 1 - v
-    ], $ = 1 / (5 * e + 1), E = $ * $ * $ * $, S = 1 - E, T = E * e + 0.1 * S * S * Math.cbrt(5 * e), V = Gr(i) / t[1], O = 1.48 + Math.sqrt(V), I = 0.725 / Math.pow(V, 0.2), B = I, K = [
+    ], $ = 1 / (5 * e + 1), E = $ * $ * $ * $, S = 1 - E, T = E * e + 0.1 * S * S * Math.cbrt(5 * e), H = Gr(i) / t[1], O = 1.48 + Math.sqrt(H), I = 0.725 / Math.pow(H, 0.2), B = I, K = [
       Math.pow(T * f[0] * c / 100, 0.42),
       Math.pow(T * f[1] * l / 100, 0.42),
       Math.pow(T * f[2] * u / 100, 0.42)
@@ -4554,7 +4554,7 @@ const vu = class vu {
       400 * K[1] / (K[1] + 27.13),
       400 * K[2] / (K[2] + 27.13)
     ], lt = (2 * it[0] + it[1] + 0.05 * it[2]) * I;
-    return new vu(V, lt, I, B, C, m, f, T, Math.pow(T, 0.25), O);
+    return new vu(H, lt, I, B, C, m, f, T, Math.pow(T, 0.25), O);
   }
   /**
    * Parameters are intermediate values of the CAM16 conversion process. Their
@@ -4618,7 +4618,7 @@ const Pi = class Pi {
    * @return CAM16 color.
    */
   static fromIntInViewingConditions(t, e) {
-    const i = (t & 16711680) >> 16, r = (t & 65280) >> 8, a = t & 255, o = rr(i), c = rr(r), l = rr(a), u = 0.41233895 * o + 0.35762064 * c + 0.18051042 * l, b = 0.2126 * o + 0.7152 * c + 0.0722 * l, C = 0.01932141 * o + 0.11916382 * c + 0.95034478 * l, v = 0.401288 * u + 0.650173 * b - 0.051461 * C, m = -0.250268 * u + 1.204414 * b + 0.045854 * C, f = -2079e-6 * u + 0.048952 * b + 0.953127 * C, $ = e.rgbD[0] * v, E = e.rgbD[1] * m, S = e.rgbD[2] * f, T = Math.pow(e.fl * Math.abs($) / 100, 0.42), V = Math.pow(e.fl * Math.abs(E) / 100, 0.42), O = Math.pow(e.fl * Math.abs(S) / 100, 0.42), I = Ie($) * 400 * T / (T + 27.13), B = Ie(E) * 400 * V / (V + 27.13), K = Ie(S) * 400 * O / (O + 27.13), it = (11 * I + -12 * B + K) / 11, lt = (I + B - 2 * K) / 9, nt = (20 * I + 20 * B + 21 * K) / 20, Ot = (40 * I + 20 * B + K) / 20, Mt = Math.atan2(lt, it) * 180 / Math.PI, vt = Ve(Mt), Ht = vt * Math.PI / 180, be = Ot * e.nbb, At = 100 * Math.pow(be / e.aw, e.c * e.z), xt = 4 / e.c * Math.sqrt(At / 100) * (e.aw + 4) * e.fLRoot, ie = vt < 20.14 ? vt + 360 : vt, dt = 0.25 * (Math.cos(ie * Math.PI / 180 + 2) + 3.8), di = 5e4 / 13 * dt * e.nc * e.ncb * Math.sqrt(it * it + lt * lt) / (nt + 0.305), Qe = Math.pow(di, 0.9) * Math.pow(1.64 - Math.pow(0.29, e.n), 0.73), qi = Qe * Math.sqrt(At / 100), Wi = qi * e.fLRoot, Al = 50 * Math.sqrt(Qe * e.c / (e.aw + 4)), ki = (1 + 100 * 7e-3) * At / (1 + 7e-3 * At), $t = 1 / 0.0228 * Math.log(1 + 0.0228 * Wi), Fe = $t * Math.cos(Ht), Et = $t * Math.sin(Ht);
+    const i = (t & 16711680) >> 16, r = (t & 65280) >> 8, a = t & 255, o = rr(i), c = rr(r), l = rr(a), u = 0.41233895 * o + 0.35762064 * c + 0.18051042 * l, b = 0.2126 * o + 0.7152 * c + 0.0722 * l, C = 0.01932141 * o + 0.11916382 * c + 0.95034478 * l, v = 0.401288 * u + 0.650173 * b - 0.051461 * C, m = -0.250268 * u + 1.204414 * b + 0.045854 * C, f = -2079e-6 * u + 0.048952 * b + 0.953127 * C, $ = e.rgbD[0] * v, E = e.rgbD[1] * m, S = e.rgbD[2] * f, T = Math.pow(e.fl * Math.abs($) / 100, 0.42), H = Math.pow(e.fl * Math.abs(E) / 100, 0.42), O = Math.pow(e.fl * Math.abs(S) / 100, 0.42), I = Ie($) * 400 * T / (T + 27.13), B = Ie(E) * 400 * H / (H + 27.13), K = Ie(S) * 400 * O / (O + 27.13), it = (11 * I + -12 * B + K) / 11, lt = (I + B - 2 * K) / 9, nt = (20 * I + 20 * B + 21 * K) / 20, Ot = (40 * I + 20 * B + K) / 20, Mt = Math.atan2(lt, it) * 180 / Math.PI, vt = He(Mt), Dt = vt * Math.PI / 180, be = Ot * e.nbb, At = 100 * Math.pow(be / e.aw, e.c * e.z), xt = 4 / e.c * Math.sqrt(At / 100) * (e.aw + 4) * e.fLRoot, ee = vt < 20.14 ? vt + 360 : vt, dt = 0.25 * (Math.cos(ee * Math.PI / 180 + 2) + 3.8), di = 5e4 / 13 * dt * e.nc * e.ncb * Math.sqrt(it * it + lt * lt) / (nt + 0.305), Qe = Math.pow(di, 0.9) * Math.pow(1.64 - Math.pow(0.29, e.n), 0.73), qi = Qe * Math.sqrt(At / 100), Wi = qi * e.fLRoot, Al = 50 * Math.sqrt(Qe * e.c / (e.aw + 4)), ki = (1 + 100 * 7e-3) * At / (1 + 7e-3 * At), $t = 1 / 0.0228 * Math.log(1 + 0.0228 * Wi), Fe = $t * Math.cos(Dt), Et = $t * Math.sin(Dt);
     return new Pi(vt, qi, At, xt, Wi, Al, ki, Fe, Et);
   }
   /**
@@ -4680,18 +4680,18 @@ const Pi = class Pi {
    * @return ARGB representation of color
    */
   viewed(t) {
-    const e = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100), i = Math.pow(e / Math.pow(1.64 - Math.pow(0.29, t.n), 0.73), 1 / 0.9), r = this.hue * Math.PI / 180, a = 0.25 * (Math.cos(r + 2) + 3.8), o = t.aw * Math.pow(this.j / 100, 1 / t.c / t.z), c = a * (5e4 / 13) * t.nc * t.ncb, l = o / t.nbb, u = Math.sin(r), b = Math.cos(r), C = 23 * (l + 0.305) * i / (23 * c + 11 * i * b + 108 * i * u), v = C * b, m = C * u, f = (460 * l + 451 * v + 288 * m) / 1403, $ = (460 * l - 891 * v - 261 * m) / 1403, E = (460 * l - 220 * v - 6300 * m) / 1403, S = Math.max(0, 27.13 * Math.abs(f) / (400 - Math.abs(f))), T = Ie(f) * (100 / t.fl) * Math.pow(S, 1 / 0.42), V = Math.max(0, 27.13 * Math.abs($) / (400 - Math.abs($))), O = Ie($) * (100 / t.fl) * Math.pow(V, 1 / 0.42), I = Math.max(0, 27.13 * Math.abs(E) / (400 - Math.abs(E))), B = Ie(E) * (100 / t.fl) * Math.pow(I, 1 / 0.42), K = T / t.rgbD[0], it = O / t.rgbD[1], lt = B / t.rgbD[2], nt = 1.86206786 * K - 1.01125463 * it + 0.14918677 * lt, Ot = 0.38752654 * K + 0.62144744 * it - 897398e-8 * lt, zt = -0.0158415 * K - 0.03412294 * it + 1.04996444 * lt;
+    const e = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100), i = Math.pow(e / Math.pow(1.64 - Math.pow(0.29, t.n), 0.73), 1 / 0.9), r = this.hue * Math.PI / 180, a = 0.25 * (Math.cos(r + 2) + 3.8), o = t.aw * Math.pow(this.j / 100, 1 / t.c / t.z), c = a * (5e4 / 13) * t.nc * t.ncb, l = o / t.nbb, u = Math.sin(r), b = Math.cos(r), C = 23 * (l + 0.305) * i / (23 * c + 11 * i * b + 108 * i * u), v = C * b, m = C * u, f = (460 * l + 451 * v + 288 * m) / 1403, $ = (460 * l - 891 * v - 261 * m) / 1403, E = (460 * l - 220 * v - 6300 * m) / 1403, S = Math.max(0, 27.13 * Math.abs(f) / (400 - Math.abs(f))), T = Ie(f) * (100 / t.fl) * Math.pow(S, 1 / 0.42), H = Math.max(0, 27.13 * Math.abs($) / (400 - Math.abs($))), O = Ie($) * (100 / t.fl) * Math.pow(H, 1 / 0.42), I = Math.max(0, 27.13 * Math.abs(E) / (400 - Math.abs(E))), B = Ie(E) * (100 / t.fl) * Math.pow(I, 1 / 0.42), K = T / t.rgbD[0], it = O / t.rgbD[1], lt = B / t.rgbD[2], nt = 1.86206786 * K - 1.01125463 * it + 0.14918677 * lt, Ot = 0.38752654 * K + 0.62144744 * it - 897398e-8 * lt, zt = -0.0158415 * K - 0.03412294 * it + 1.04996444 * lt;
     return Pb(nt, Ot, zt);
   }
   /// Given color expressed in XYZ and viewed in [viewingConditions], convert to
   /// CAM16.
   static fromXyzInViewingConditions(t, e, i, r) {
-    const a = 0.401288 * t + 0.650173 * e - 0.051461 * i, o = -0.250268 * t + 1.204414 * e + 0.045854 * i, c = -2079e-6 * t + 0.048952 * e + 0.953127 * i, l = r.rgbD[0] * a, u = r.rgbD[1] * o, b = r.rgbD[2] * c, C = Math.pow(r.fl * Math.abs(l) / 100, 0.42), v = Math.pow(r.fl * Math.abs(u) / 100, 0.42), m = Math.pow(r.fl * Math.abs(b) / 100, 0.42), f = Ie(l) * 400 * C / (C + 27.13), $ = Ie(u) * 400 * v / (v + 27.13), E = Ie(b) * 400 * m / (m + 27.13), S = (11 * f + -12 * $ + E) / 11, T = (f + $ - 2 * E) / 9, V = (20 * f + 20 * $ + 21 * E) / 20, O = (40 * f + 20 * $ + E) / 20, B = Math.atan2(T, S) * 180 / Math.PI, K = B < 0 ? B + 360 : B >= 360 ? B - 360 : B, it = K * Math.PI / 180, lt = O * r.nbb, nt = 100 * Math.pow(lt / r.aw, r.c * r.z), Ot = 4 / r.c * Math.sqrt(nt / 100) * (r.aw + 4) * r.fLRoot, zt = K < 20.14 ? K + 360 : K, Mt = 1 / 4 * (Math.cos(zt * Math.PI / 180 + 2) + 3.8), Ht = 5e4 / 13 * Mt * r.nc * r.ncb * Math.sqrt(S * S + T * T) / (V + 0.305), be = Math.pow(Ht, 0.9) * Math.pow(1.64 - Math.pow(0.29, r.n), 0.73), At = be * Math.sqrt(nt / 100), xt = At * r.fLRoot, ie = 50 * Math.sqrt(be * r.c / (r.aw + 4)), dt = (1 + 100 * 7e-3) * nt / (1 + 7e-3 * nt), Ct = Math.log(1 + 0.0228 * xt) / 0.0228, di = Ct * Math.cos(it), Qe = Ct * Math.sin(it);
-    return new Pi(K, At, nt, Ot, xt, ie, dt, di, Qe);
+    const a = 0.401288 * t + 0.650173 * e - 0.051461 * i, o = -0.250268 * t + 1.204414 * e + 0.045854 * i, c = -2079e-6 * t + 0.048952 * e + 0.953127 * i, l = r.rgbD[0] * a, u = r.rgbD[1] * o, b = r.rgbD[2] * c, C = Math.pow(r.fl * Math.abs(l) / 100, 0.42), v = Math.pow(r.fl * Math.abs(u) / 100, 0.42), m = Math.pow(r.fl * Math.abs(b) / 100, 0.42), f = Ie(l) * 400 * C / (C + 27.13), $ = Ie(u) * 400 * v / (v + 27.13), E = Ie(b) * 400 * m / (m + 27.13), S = (11 * f + -12 * $ + E) / 11, T = (f + $ - 2 * E) / 9, H = (20 * f + 20 * $ + 21 * E) / 20, O = (40 * f + 20 * $ + E) / 20, B = Math.atan2(T, S) * 180 / Math.PI, K = B < 0 ? B + 360 : B >= 360 ? B - 360 : B, it = K * Math.PI / 180, lt = O * r.nbb, nt = 100 * Math.pow(lt / r.aw, r.c * r.z), Ot = 4 / r.c * Math.sqrt(nt / 100) * (r.aw + 4) * r.fLRoot, zt = K < 20.14 ? K + 360 : K, Mt = 1 / 4 * (Math.cos(zt * Math.PI / 180 + 2) + 3.8), Dt = 5e4 / 13 * Mt * r.nc * r.ncb * Math.sqrt(S * S + T * T) / (H + 0.305), be = Math.pow(Dt, 0.9) * Math.pow(1.64 - Math.pow(0.29, r.n), 0.73), At = be * Math.sqrt(nt / 100), xt = At * r.fLRoot, ee = 50 * Math.sqrt(be * r.c / (r.aw + 4)), dt = (1 + 100 * 7e-3) * nt / (1 + 7e-3 * nt), Ct = Math.log(1 + 0.0228 * xt) / 0.0228, di = Ct * Math.cos(it), Qe = Ct * Math.sin(it);
+    return new Pi(K, At, nt, Ot, xt, ee, dt, di, Qe);
   }
   /// XYZ representation of CAM16 seen in [viewingConditions].
   xyzInViewingConditions(t) {
-    const e = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100), i = Math.pow(e / Math.pow(1.64 - Math.pow(0.29, t.n), 0.73), 1 / 0.9), r = this.hue * Math.PI / 180, a = 0.25 * (Math.cos(r + 2) + 3.8), o = t.aw * Math.pow(this.j / 100, 1 / t.c / t.z), c = a * (5e4 / 13) * t.nc * t.ncb, l = o / t.nbb, u = Math.sin(r), b = Math.cos(r), C = 23 * (l + 0.305) * i / (23 * c + 11 * i * b + 108 * i * u), v = C * b, m = C * u, f = (460 * l + 451 * v + 288 * m) / 1403, $ = (460 * l - 891 * v - 261 * m) / 1403, E = (460 * l - 220 * v - 6300 * m) / 1403, S = Math.max(0, 27.13 * Math.abs(f) / (400 - Math.abs(f))), T = Ie(f) * (100 / t.fl) * Math.pow(S, 1 / 0.42), V = Math.max(0, 27.13 * Math.abs($) / (400 - Math.abs($))), O = Ie($) * (100 / t.fl) * Math.pow(V, 1 / 0.42), I = Math.max(0, 27.13 * Math.abs(E) / (400 - Math.abs(E))), B = Ie(E) * (100 / t.fl) * Math.pow(I, 1 / 0.42), K = T / t.rgbD[0], it = O / t.rgbD[1], lt = B / t.rgbD[2], nt = 1.86206786 * K - 1.01125463 * it + 0.14918677 * lt, Ot = 0.38752654 * K + 0.62144744 * it - 897398e-8 * lt, zt = -0.0158415 * K - 0.03412294 * it + 1.04996444 * lt;
+    const e = this.chroma === 0 || this.j === 0 ? 0 : this.chroma / Math.sqrt(this.j / 100), i = Math.pow(e / Math.pow(1.64 - Math.pow(0.29, t.n), 0.73), 1 / 0.9), r = this.hue * Math.PI / 180, a = 0.25 * (Math.cos(r + 2) + 3.8), o = t.aw * Math.pow(this.j / 100, 1 / t.c / t.z), c = a * (5e4 / 13) * t.nc * t.ncb, l = o / t.nbb, u = Math.sin(r), b = Math.cos(r), C = 23 * (l + 0.305) * i / (23 * c + 11 * i * b + 108 * i * u), v = C * b, m = C * u, f = (460 * l + 451 * v + 288 * m) / 1403, $ = (460 * l - 891 * v - 261 * m) / 1403, E = (460 * l - 220 * v - 6300 * m) / 1403, S = Math.max(0, 27.13 * Math.abs(f) / (400 - Math.abs(f))), T = Ie(f) * (100 / t.fl) * Math.pow(S, 1 / 0.42), H = Math.max(0, 27.13 * Math.abs($) / (400 - Math.abs($))), O = Ie($) * (100 / t.fl) * Math.pow(H, 1 / 0.42), I = Math.max(0, 27.13 * Math.abs(E) / (400 - Math.abs(E))), B = Ie(E) * (100 / t.fl) * Math.pow(I, 1 / 0.42), K = T / t.rgbD[0], it = O / t.rgbD[1], lt = B / t.rgbD[2], nt = 1.86206786 * K - 1.01125463 * it + 0.14918677 * lt, Ot = 0.38752654 * K + 0.62144744 * it - 897398e-8 * lt, zt = -0.0158415 * K - 0.03412294 * it + 1.04996444 * lt;
     return [nt, Ot, zt];
   }
 };
@@ -4875,7 +4875,7 @@ const wt = class wt {
     let r = Math.sqrt(i) * 11;
     const a = Ti.DEFAULT, o = 1 / Math.pow(1.64 - Math.pow(0.29, a.n), 0.73), l = 0.25 * (Math.cos(t + 2) + 3.8) * (5e4 / 13) * a.nc * a.ncb, u = Math.sin(t), b = Math.cos(t);
     for (let C = 0; C < 5; C++) {
-      const v = r / 100, m = e === 0 || r === 0 ? 0 : e / Math.sqrt(v), f = Math.pow(m * o, 1 / 0.9), E = a.aw * Math.pow(v, 1 / a.c / a.z) / a.nbb, S = 23 * (E + 0.305) * f / (23 * l + 11 * f * b + 108 * f * u), T = S * b, V = S * u, O = (460 * E + 451 * T + 288 * V) / 1403, I = (460 * E - 891 * T - 261 * V) / 1403, B = (460 * E - 220 * T - 6300 * V) / 1403, K = wt.inverseChromaticAdaptation(O), it = wt.inverseChromaticAdaptation(I), lt = wt.inverseChromaticAdaptation(B), nt = ky([K, it, lt], wt.LINRGB_FROM_SCALED_DISCOUNT);
+      const v = r / 100, m = e === 0 || r === 0 ? 0 : e / Math.sqrt(v), f = Math.pow(m * o, 1 / 0.9), E = a.aw * Math.pow(v, 1 / a.c / a.z) / a.nbb, S = 23 * (E + 0.305) * f / (23 * l + 11 * f * b + 108 * f * u), T = S * b, H = S * u, O = (460 * E + 451 * T + 288 * H) / 1403, I = (460 * E - 891 * T - 261 * H) / 1403, B = (460 * E - 220 * T - 6300 * H) / 1403, K = wt.inverseChromaticAdaptation(O), it = wt.inverseChromaticAdaptation(I), lt = wt.inverseChromaticAdaptation(B), nt = ky([K, it, lt], wt.LINRGB_FROM_SCALED_DISCOUNT);
       if (nt[0] < 0 || nt[1] < 0 || nt[2] < 0)
         return 0;
       const Ot = wt.Y_FROM_LINRGB[0], zt = wt.Y_FROM_LINRGB[1], Mt = wt.Y_FROM_LINRGB[2], vt = Ot * nt[0] + zt * nt[1] + Mt * nt[2];
@@ -4902,7 +4902,7 @@ const wt = class wt {
   static solveToInt(t, e, i) {
     if (e < 1e-4 || i < 1e-4 || i > 99.9999)
       return Eb(i);
-    t = Ve(t);
+    t = He(t);
     const r = t / 180 * Math.PI, a = Gr(i), o = wt.findResultByJ(r, e, a);
     if (o !== 0)
       return o;
@@ -5642,9 +5642,9 @@ const af = class af {
       const a = r.roleA, o = r.roleB, c = r.delta, l = r.polarity, u = r.stayTogether, b = l === "nearer" || l === "lighter" && !t.isDark || l === "darker" && t.isDark, C = b ? a : o, v = b ? o : a, m = e.name === C.name, f = t.isDark ? 1 : -1;
       let $ = C.tone(t), E = v.tone(t);
       if (e.background && C.contrastCurve && v.contrastCurve) {
-        const S = e.background(t), T = C.contrastCurve(t), V = v.contrastCurve(t);
-        if (S && T && V) {
-          const O = S.getTone(t), I = T.get(t.contrastLevel), B = V.get(t.contrastLevel);
+        const S = e.background(t), T = C.contrastCurve(t), H = v.contrastCurve(t);
+        if (S && T && H) {
+          const O = S.getTone(t), I = T.get(t.contrastLevel), B = H.get(t.contrastLevel);
           ne.ratioOfTones(O, $) < I && ($ = z.foregroundTone(O, I)), ne.ratioOfTones(O, E) < B && (E = z.foregroundTone(O, B)), i && ($ = z.foregroundTone(O, I), E = z.foregroundTone(O, B));
         }
       }
@@ -5840,11 +5840,11 @@ const Ds = class Ds {
       const f = vm(i + l), $ = this.hctsByHue[f], E = this.relativeTemperature($), S = Math.abs(E - a);
       b += S;
       const T = o.length * u;
-      let V = b >= T, O = 1;
-      for (; V && o.length < e; ) {
+      let H = b >= T, O = 1;
+      for (; H && o.length < e; ) {
         o.push($);
         const I = (o.length + O) * u;
-        V = b >= I, O++;
+        H = b >= I, O++;
       }
       if (a = E, l++, l > 360) {
         for (; o.length < e; )
@@ -5882,7 +5882,7 @@ const Ds = class Ds {
     let b = 1e3, C = this.hctsByHue[Math.round(this.input.hue)];
     const v = 1 - this.inputRelativeTemperature;
     for (let m = 0; m <= 360; m += 1) {
-      const f = Ve(c + u * m);
+      const f = He(c + u * m);
       if (!Ds.isBetween(f, c, l))
         continue;
       const $ = this.hctsByHue[Math.round(f)], E = (this.tempsByHct.get($) - e) / a, S = Math.abs(v - E);
@@ -5949,8 +5949,8 @@ const Ds = class Ds {
    *   Assuming max of 130 chroma, 8.61.
    */
   static rawTemperature(t) {
-    const e = Mb(t.toInt()), i = Ve(Math.atan2(e[2], e[1]) * 180 / Math.PI), r = Math.sqrt(e[1] * e[1] + e[2] * e[2]);
-    return -0.5 + 0.02 * Math.pow(r, 1.07) * Math.cos(Ve(i - 50) * Math.PI / 180);
+    const e = Mb(t.toInt()), i = He(Math.atan2(e[2], e[1]) * 180 / Math.PI), r = Math.sqrt(e[1] * e[1] + e[2] * e[2]);
+    return -0.5 + 0.02 * Math.pow(r, 1.07) * Math.cos(He(i - 50) * Math.PI / 180);
   }
 };
 s(Ds, "TemperatureCache");
@@ -5975,7 +5975,7 @@ const lf = class lf {
    * @return The value. For contrast ratios, a number between 1.0 and 21.0.
    */
   get(t) {
-    return t <= -1 ? this.low : t < 0 ? Hl(this.low, this.normal, (t - -1) / 1) : t < 0.5 ? Hl(this.normal, this.medium, (t - 0) / 0.5) : t < 1 ? Hl(this.medium, this.high, (t - 0.5) / 0.5) : this.high;
+    return t <= -1 ? this.low : t < 0 ? Vl(this.low, this.normal, (t - -1) / 1) : t < 0.5 ? Vl(this.normal, this.medium, (t - 0) / 0.5) : t < 1 ? Vl(this.medium, this.high, (t - 0.5) / 0.5) : this.high;
   }
 };
 s(lf, "ContrastCurve");
@@ -7615,7 +7615,7 @@ const Nl = class Nl {
     const r = Math.min(e.length - 1, i.length), a = t.hue;
     for (let o = 0; o < r; o++)
       if (a >= e[o] && a < e[o + 1])
-        return Ve(i[o]);
+        return He(i[o]);
     return a;
   }
   /**
@@ -7641,7 +7641,7 @@ const Nl = class Nl {
    */
   static getRotatedHue(t, e, i) {
     let r = Nl.getPiecewiseHue(t, e, i);
-    return Math.min(e.length - 1, i.length) <= 0 && (r = 0), Ve(t.hue + r);
+    return Math.min(e.length - 1, i.length) <= 0 && (r = 0), He(t.hue + r);
   }
   getArgb(t) {
     return t.getArgb(this);
@@ -7859,7 +7859,7 @@ const pf = class pf {
       case A.FIDELITY:
         return q.fromHueAndChroma(e.hue, e.chroma);
       case A.FRUIT_SALAD:
-        return q.fromHueAndChroma(Ve(e.hue - 50), 48);
+        return q.fromHueAndChroma(He(e.hue - 50), 48);
       case A.MONOCHROME:
         return q.fromHueAndChroma(e.hue, 0);
       case A.NEUTRAL:
@@ -7869,7 +7869,7 @@ const pf = class pf {
       case A.TONAL_SPOT:
         return q.fromHueAndChroma(e.hue, 36);
       case A.EXPRESSIVE:
-        return q.fromHueAndChroma(Ve(e.hue + 240), 40);
+        return q.fromHueAndChroma(He(e.hue + 240), 40);
       case A.VIBRANT:
         return q.fromHueAndChroma(e.hue, 200);
       default:
@@ -7882,7 +7882,7 @@ const pf = class pf {
       case A.FIDELITY:
         return q.fromHueAndChroma(e.hue, Math.max(e.chroma - 32, e.chroma * 0.5));
       case A.FRUIT_SALAD:
-        return q.fromHueAndChroma(Ve(e.hue - 50), 36);
+        return q.fromHueAndChroma(He(e.hue - 50), 36);
       case A.MONOCHROME:
         return q.fromHueAndChroma(e.hue, 0);
       case A.NEUTRAL:
@@ -7918,7 +7918,7 @@ const pf = class pf {
         return q.fromHueAndChroma(e.hue, 16);
       case A.RAINBOW:
       case A.TONAL_SPOT:
-        return q.fromHueAndChroma(Ve(e.hue + 60), 24);
+        return q.fromHueAndChroma(He(e.hue + 60), 24);
       case A.EXPRESSIVE:
         return q.fromHueAndChroma(me.getRotatedHue(e, [0, 21, 51, 121, 151, 191, 271, 321, 360], [120, 120, 20, 45, 20, 15, 20, 120, 120]), 32);
       case A.VIBRANT:
@@ -7943,7 +7943,7 @@ const pf = class pf {
       case A.TONAL_SPOT:
         return q.fromHueAndChroma(e.hue, 6);
       case A.EXPRESSIVE:
-        return q.fromHueAndChroma(Ve(e.hue + 15), 8);
+        return q.fromHueAndChroma(He(e.hue + 15), 8);
       case A.VIBRANT:
         return q.fromHueAndChroma(e.hue, 10);
       default:
@@ -7967,7 +7967,7 @@ const pf = class pf {
       case A.TONAL_SPOT:
         return q.fromHueAndChroma(e.hue, 8);
       case A.EXPRESSIVE:
-        return q.fromHueAndChroma(Ve(e.hue + 15), 12);
+        return q.fromHueAndChroma(He(e.hue + 15), 12);
       case A.VIBRANT:
         return q.fromHueAndChroma(e.hue, 12);
       default:
@@ -8105,26 +8105,26 @@ function ji(n) {
   return parseInt(n, 16);
 }
 s(ji, "parseIntHex");
-function Hb(n, t = !1) {
+function Vb(n, t = !1) {
   const e = n.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/)?.slice(1).map((c, l) => l === 3 ? Math.round(parseFloat(c) * 255) : parseFloat(c));
   if (!e)
     throw new Error("Could not parse rgba color.");
   const [i, r, a, o] = e;
   return ((t ? 255 : o & 255) << 24 | (i & 255) << 16 | (r & 255) << 8 | a & 255) >>> 0;
 }
-s(Hb, "argbFromRgba");
+s(Vb, "argbFromRgba");
 function _i(n, t) {
   return Math.round(255 * t) << 24 | n & 16777215;
 }
 s(_i, "addAlphaToArgb");
-function Vb(n) {
+function Hb(n) {
   const t = xw(n), e = Cw(n), i = $w(n), r = _b(n), a = [t.toString(16), e.toString(16), i.toString(16)];
   r !== 255 && a.push(r.toString(16));
   for (const [o, c] of a.entries())
     c.length === 1 && (a[o] = "0" + c);
   return "#" + a.join("");
 }
-s(Vb, "hexWithAlphaFromArgb");
+s(Hb, "hexWithAlphaFromArgb");
 function Ub(n) {
   ke();
   const t = document.createElement("wy-compute-styles");
@@ -8144,7 +8144,7 @@ const yf = class yf extends me {
       primaryPalette: q.fromHueAndChroma(t.hue, a),
       secondaryPalette: q.fromHueAndChroma(t.hue, o),
       tertiaryPalette: q.fromHueAndChroma(
-        Ve(t.hue - 6 * 22.5),
+        He(t.hue - 6 * 22.5),
         c
       ),
       neutralPalette: q.fromHueAndChroma(t.hue, l),
@@ -8195,7 +8195,7 @@ const yf = class yf extends me {
         });
       }
     });
-    const v = t.hue, m = t.chroma, f = Math.max(48, m), $ = Math.min(f, 84), S = 360 / 16, T = 27.4, V = -8, O = (v + 360 - T - V + S / 2) % S + T + V - S / 2;
+    const v = t.hue, m = t.chroma, f = Math.max(48, m), $ = Math.min(f, 84), S = 360 / 16, T = 27.4, H = -8, O = (v + 360 - T - H + S / 2) % S + T + H - S / 2;
     this.errorPalette = q.fromHueAndChroma(O, 84), this.warningPalette = q.fromHueAndChroma(O + 4 * S, $), this.namedColorPalettes = {
       red: q.fromHueAndChroma(O, $),
       "deep-orange": q.fromHueAndChroma(O + 1 * S, $),
@@ -8430,7 +8430,7 @@ function Wb(n, t = !1) {
   t && e.push(`--wy-theme-color:${n};`);
   let i = n;
   !n.startsWith("#") && !n.startsWith("rgb") && (i = Ub(n));
-  const r = n.startsWith("#") ? Db(i) : Hb(i), a = yt.fromInt(r), o = {
+  const r = n.startsWith("#") ? Db(i) : Vb(i), a = yt.fromInt(r), o = {
     light: new tu(a, !1, 0, A.FIDELITY),
     dark: new tu(a, !0, 0, A.FIDELITY)
   }, c = {
@@ -8500,7 +8500,7 @@ function Wb(n, t = !1) {
   for (const l in o) {
     const u = o[l];
     for (const b in c) {
-      const C = c[b], v = Vb(u[b]);
+      const C = c[b], v = Hb(u[b]);
       e.push(`--wy-${C}-${l}:${v};`);
     }
   }
@@ -8515,12 +8515,12 @@ const jb = /* @__PURE__ */ s((n) => {
       const e = document.createElement("style"), i = global.litNonce;
       i !== void 0 && e.setAttribute("nonce", i), e.textContent = t.cssText, (document.head || document.documentElement).appendChild(e);
     }
-}, "adoptGlobalStyles"), Qt = j`@property --wy-color-scheme{syntax: \"normal | light | dark\"; inherits: true; initial-value: normal;}:is(.wy-light,[part~=wy-light]) :where(wy-chat),:is(.wy-light,[part~=wy-light]) :where(wy-comments),:is(.wy-light,[part~=wy-light]) :where(wy-component),:is(.wy-light,[part~=wy-light]) :where(wy-copilot),:is(.wy-light,[part~=wy-light]) :where(wy-feed),:is(.wy-light,[part~=wy-light]) :where(wy-files),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-badge),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-button),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-conversation),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-new),:is(.wy-light,[part~=wy-light]) :where(wy-messenger),:is(.wy-light,[part~=wy-light]) :where(wy-notification-badge),:is(.wy-light,[part~=wy-light]) :where(wy-notification-button),:is(.wy-light,[part~=wy-light]) :where(wy-notification-toasts),:is(.wy-light,[part~=wy-light]) :where(wy-notifications),:is(.wy-light,[part~=wy-light]) :where(wy-post-editor),:is(.wy-light,[part~=wy-light]) :where(wy-posts),:host(:is(.wy-light,[part~=wy-light])),:host :is(.wy-light,[part~=wy-light]),::slotted(:is(.wy-light,[part~=wy-light])){color-scheme:light;--wy-primary: var(--wy-primary-light, #2f628c);--wy-on-primary: var(--wy-on-primary-light, #ffffff);--wy-primary-container: var(--wy-primary-container-light, #cee5ff);--wy-on-primary-container: var(--wy-on-primary-container-light, #0d4a73);--wy-secondary: var(--wy-secondary-light, #51606f);--wy-on-secondary: var(--wy-on-secondary-light, #ffffff);--wy-secondary-container: var(--wy-secondary-container-light, #d5e4f7);--wy-on-secondary-container: var(--wy-on-secondary-container-light, #3a4857);--wy-tertiary: var(--wy-tertiary-light, #645f41);--wy-on-tertiary: var(--wy-on-tertiary-light, #ffffff);--wy-tertiary-container: var(--wy-tertiary-container-light, #ebe3bd);--wy-on-tertiary-container: var(--wy-on-tertiary-container-light, #4c472b);--wy-error: var(--wy-error-light, #ba1821);--wy-on-error: var(--wy-on-error-light, #ffffff);--wy-error-container: var(--wy-error-container-light, #ffdad6);--wy-on-error-container: var(--wy-on-error-container-light, #930012);--wy-background: var(--wy-background-light, #f7f9ff);--wy-on-background: var(--wy-on-background-light, #181c20);--wy-surface: var(--wy-surface-light, #f7f9ff);--wy-on-surface: var(--wy-on-surface-light, #181c20);--wy-surface-variant: var(--wy-surface-variant-light, #dee3eb);--wy-on-surface-variant: var(--wy-on-surface-variant-light, #42474e);--wy-outline: var(--wy-outline-light, #72777f);--wy-outline-variant: var(--wy-outline-variant-light, #c2c7cf);--wy-surface-container-highest: var(--wy-surface-container-highest-light, #e0e2e8);--wy-surface-container-high: var(--wy-surface-container-high-light, #e6e8ee);--wy-surface-container: var(--wy-surface-container-light, #eceef3);--wy-surface-container-low: var(--wy-surface-container-low-light, #f1f3f9);--wy-surface-container-lowest: var(--wy-surface-container-lowest-light, #ffffff);--wy-surface-layer-highest: var(--wy-surface-layer-highest-light, rgba(0, 0, 0, .1019607843));--wy-surface-layer-high: var(--wy-surface-layer-high-light, rgba(0, 0, 0, .0745098039));--wy-surface-layer: var(--wy-surface-layer-light, rgba(0, 0, 0, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-light, rgba(255, 255, 255, .5019607843));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-light, rgba(255, 255, 255, .7490196078));--wy-warning: var(--wy-warning-light, #adb140);--wy-on-warning: var(--wy-on-warning-light, #000000);--wy-warning-container: var(--wy-warning-container-light, #e5e972);--wy-on-warning-container: var(--wy-on-warning-container-light, #1c1d00);--wy-highlight: var(--wy-highlight-light, #e8f2ff);--wy-on-highlight: var(--wy-on-highlight-light, #001d32);--wy-link: var(--wy-primary-light, #2f628c);--wy-presence-active: var(--wy-green-light, #00a38d);--wy-shade: var(--wy-shade-light, rgba(0, 0, 0, .3));--wy-shade-invert: var(--wy-shade-invert-light, rgba(255, 255, 255, .15));--wy-shade-opaque: var(--wy-shade-opaque-light, white);--wy-blue: var(--wy-blue-light, #8aa9fc);--wy-indigo: var(--wy-indigo-light, #9285de);--wy-purple: var(--wy-purple-light, #c675b6);--wy-pink: var(--wy-pink-light, #d57193);--wy-red: var(--wy-red-light, #db726b);--wy-orange: var(--wy-orange-light, #e79b3a);--wy-yellow: var(--wy-yellow-light, #adb140);--wy-green: var(--wy-green-light, #00a38d);--wy-teal: var(--wy-teal-light, #00a0a9);--wy-cyan: var(--wy-cyan-light, #0081a2);--wy-gray: var(--wy-gray-light, #76777a);--wy-code-text: var(--wy-code-text-light, #3b3b3b);--wy-code-variable: var(--wy-code-variable-light, #001080);--wy-code-operator: var(--wy-code-operator-light, #000000);--wy-code-prolog: var(--wy-code-prolog-light, #000080);--wy-code-comment: var(--wy-code-comment-light, #008000);--wy-code-builtin: var(--wy-code-builtin-light, #0070C1);--wy-code-number: var(--wy-code-number-light, #098658);--wy-code-inserted: var(--wy-code-inserted-light, #098658);--wy-code-constant: var(--wy-code-constant-light, #811F3F);--wy-code-hexcode: var(--wy-code-hexcode-light, #811F3F);--wy-code-regex: var(--wy-code-regex-light, #811F3F);--wy-code-char: var(--wy-code-char-light, #811F3F);--wy-code-tag: var(--wy-code-tag-light, #800000);--wy-code-attr-name: var(--wy-code-attr-name-light, #E50000);--wy-code-selector: var(--wy-code-selector-light, #E50000);--wy-code-property: var(--wy-code-property-light, #E50000);--wy-code-deleted: var(--wy-code-deleted-light, #A31515);--wy-code-string: var(--wy-code-string-light, #A31515);--wy-code-changed: var(--wy-code-changed-light, #0451A5);--wy-code-punctuation: var(--wy-code-punctuation-light, #000000);--wy-code-function: var(--wy-code-function-light, #0000FF);--wy-code-keyword: var(--wy-code-keyword-light, #AF00DB);--wy-code-class-name: var(--wy-code-class-name-light, #267F99)}:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-chat),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-comments),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-component),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-copilot),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-feed),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-files),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-badge),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-button),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-conversation),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-new),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-badge),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-button),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-toasts),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notifications),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-post-editor),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-posts),:host(:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light])),:host :is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]),::slotted(:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light])){color-scheme:dark;--wy-primary: var(--wy-primary-dark, #9bcbfa);--wy-on-primary: var(--wy-on-primary-dark, #003353);--wy-primary-container: var(--wy-primary-container-dark, #0d4a73);--wy-on-primary-container: var(--wy-on-primary-container-dark, #cee5ff);--wy-secondary: var(--wy-secondary-dark, #b9c8da);--wy-on-secondary: var(--wy-on-secondary-dark, #233240);--wy-secondary-container: var(--wy-secondary-container-dark, #3a4857);--wy-on-secondary-container: var(--wy-on-secondary-container-dark, #d5e4f7);--wy-tertiary: var(--wy-tertiary-dark, #cfc7a2);--wy-on-tertiary: var(--wy-on-tertiary-dark, #353117);--wy-tertiary-container: var(--wy-tertiary-container-dark, #4c472b);--wy-on-tertiary-container: var(--wy-on-tertiary-container-dark, #ebe3bd);--wy-error: var(--wy-error-dark, #ffb3ad);--wy-on-error: var(--wy-on-error-dark, #680009);--wy-error-container: var(--wy-error-container-dark, #930012);--wy-on-error-container: var(--wy-on-error-container-dark, #ffdad6);--wy-background: var(--wy-background-dark, #101418);--wy-on-background: var(--wy-on-background-dark, #e0e2e8);--wy-surface: var(--wy-surface-dark, #101418);--wy-on-surface: var(--wy-on-surface-dark, #e0e2e8);--wy-surface-variant: var(--wy-surface-variant-dark, #42474e);--wy-on-surface-variant: var(--wy-on-surface-variant-dark, #c2c7cf);--wy-outline: var(--wy-outline-dark, #8c9198);--wy-outline-variant: var(--wy-outline-variant-dark, #42474e);--wy-surface-container-highest: var(--wy-surface-container-highest-dark, #323539);--wy-surface-container-high: var(--wy-surface-container-high-dark, #272a2f);--wy-surface-container: var(--wy-surface-container-dark, #1c2024);--wy-surface-container-low: var(--wy-surface-container-low-dark, #181c20);--wy-surface-container-lowest: var(--wy-surface-container-lowest-dark, #0b0f12);--wy-surface-layer-highest: var(--wy-surface-layer-highest-dark, rgba(255, 255, 255, .1490196078));--wy-surface-layer-high: var(--wy-surface-layer-high-dark, rgba(255, 255, 255, .1019607843));--wy-surface-layer: var(--wy-surface-layer-dark, rgba(255, 255, 255, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-dark, rgba(0, 0, 0, .2509803922));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-dark, rgba(0, 0, 0, .5019607843));--wy-warning: var(--wy-warning-dark, #e5e972);--wy-on-warning: var(--wy-on-warning-dark, #484a00);--wy-warning-container: var(--wy-warning-container-dark, #787c07);--wy-on-warning-container: var(--wy-on-warning-container-dark, #f4f87e);--wy-highlight: var(--wy-highlight-dark, #003353);--wy-on-highlight: var(--wy-on-highlight-dark, #cee5ff);--wy-link: var(--wy-primary-dark, #9bcbfa);--wy-presence-active: var(--wy-green-dark, #00a38d);--wy-shade: var(--wy-shade-dark, rgba(0, 0, 0, .5));--wy-shade-invert: var(--wy-shade-invert-dark, rgba(255, 255, 255, .25));--wy-shade-opaque: var(--wy-shade-opaque-dark, grey);--wy-blue: var(--wy-blue-dark, #b2c5ff);--wy-indigo: var(--wy-indigo-dark, #9285de);--wy-purple: var(--wy-purple-dark, #e48fd2);--wy-pink: var(--wy-pink-dark, #f58bad);--wy-red: var(--wy-red-dark, #db726b);--wy-orange: var(--wy-orange-dark, #e79b3a);--wy-yellow: var(--wy-yellow-dark, #c9cd59);--wy-green: var(--wy-green-dark, #00a38d);--wy-teal: var(--wy-teal-dark, #00a0a9);--wy-cyan: var(--wy-cyan-dark, #009dc4);--wy-gray: var(--wy-gray-dark, #909194);--wy-code-text: var(--wy-code-text-dark, #cccccc);--wy-code-variable: var(--wy-code-variable-dark, #9CDCFE);--wy-code-operator: var(--wy-code-operator-dark, #d4d4d4);--wy-code-prolog: var(--wy-code-prolog-dark, #569CD6);--wy-code-comment: var(--wy-code-comment-dark, #6a9955);--wy-code-builtin: var(--wy-code-builtin-dark, #4fc1ff);--wy-code-number: var(--wy-code-number-dark, #b5cea8);--wy-code-inserted: var(--wy-code-inserted-dark, #b5cea8);--wy-code-constant: var(--wy-code-constant-dark, #646695);--wy-code-hexcode: var(--wy-code-hexcode-dark, #646695);--wy-code-regex: var(--wy-code-regex-dark, #d16969);--wy-code-char: var(--wy-code-char-dark, #d16969);--wy-code-tag: var(--wy-code-tag-dark, #569cd6);--wy-code-attr-name: var(--wy-code-attr-name-dark, #9cdcfe);--wy-code-selector: var(--wy-code-selector-dark, #9cdcfe);--wy-code-property: var(--wy-code-property-dark, #9cdcfe);--wy-code-deleted: var(--wy-code-deleted-dark, #ce9178);--wy-code-string: var(--wy-code-string-dark, #ce9178);--wy-code-changed: var(--wy-code-changed-dark, #569cd6);--wy-code-punctuation: var(--wy-code-punctuation-dark, #D4D4D4);--wy-code-function: var(--wy-code-function-dark, #569cd6);--wy-code-keyword: var(--wy-code-keyword-dark, #C586C0);--wy-code-class-name: var(--wy-code-class-name-dark, #4ec9b0)}@container style(--wy-color-scheme: dark){html :where(wy-chat),html :where(wy-comments),html :where(wy-component),html :where(wy-copilot),html :where(wy-feed),html :where(wy-files),html :where(wy-messenger-badge),html :where(wy-messenger-button),html :where(wy-messenger-conversation),html :where(wy-messenger-new),html :where(wy-messenger),html :where(wy-notification-badge),html :where(wy-notification-button),html :where(wy-notification-toasts),html :where(wy-notifications),html :where(wy-post-editor),html :where(wy-posts){color-scheme:dark;--wy-primary: var(--wy-primary-dark, #9bcbfa);--wy-on-primary: var(--wy-on-primary-dark, #003353);--wy-primary-container: var(--wy-primary-container-dark, #0d4a73);--wy-on-primary-container: var(--wy-on-primary-container-dark, #cee5ff);--wy-secondary: var(--wy-secondary-dark, #b9c8da);--wy-on-secondary: var(--wy-on-secondary-dark, #233240);--wy-secondary-container: var(--wy-secondary-container-dark, #3a4857);--wy-on-secondary-container: var(--wy-on-secondary-container-dark, #d5e4f7);--wy-tertiary: var(--wy-tertiary-dark, #cfc7a2);--wy-on-tertiary: var(--wy-on-tertiary-dark, #353117);--wy-tertiary-container: var(--wy-tertiary-container-dark, #4c472b);--wy-on-tertiary-container: var(--wy-on-tertiary-container-dark, #ebe3bd);--wy-error: var(--wy-error-dark, #ffb3ad);--wy-on-error: var(--wy-on-error-dark, #680009);--wy-error-container: var(--wy-error-container-dark, #930012);--wy-on-error-container: var(--wy-on-error-container-dark, #ffdad6);--wy-background: var(--wy-background-dark, #101418);--wy-on-background: var(--wy-on-background-dark, #e0e2e8);--wy-surface: var(--wy-surface-dark, #101418);--wy-on-surface: var(--wy-on-surface-dark, #e0e2e8);--wy-surface-variant: var(--wy-surface-variant-dark, #42474e);--wy-on-surface-variant: var(--wy-on-surface-variant-dark, #c2c7cf);--wy-outline: var(--wy-outline-dark, #8c9198);--wy-outline-variant: var(--wy-outline-variant-dark, #42474e);--wy-surface-container-highest: var(--wy-surface-container-highest-dark, #323539);--wy-surface-container-high: var(--wy-surface-container-high-dark, #272a2f);--wy-surface-container: var(--wy-surface-container-dark, #1c2024);--wy-surface-container-low: var(--wy-surface-container-low-dark, #181c20);--wy-surface-container-lowest: var(--wy-surface-container-lowest-dark, #0b0f12);--wy-surface-layer-highest: var(--wy-surface-layer-highest-dark, rgba(255, 255, 255, .1490196078));--wy-surface-layer-high: var(--wy-surface-layer-high-dark, rgba(255, 255, 255, .1019607843));--wy-surface-layer: var(--wy-surface-layer-dark, rgba(255, 255, 255, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-dark, rgba(0, 0, 0, .2509803922));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-dark, rgba(0, 0, 0, .5019607843));--wy-warning: var(--wy-warning-dark, #e5e972);--wy-on-warning: var(--wy-on-warning-dark, #484a00);--wy-warning-container: var(--wy-warning-container-dark, #787c07);--wy-on-warning-container: var(--wy-on-warning-container-dark, #f4f87e);--wy-highlight: var(--wy-highlight-dark, #003353);--wy-on-highlight: var(--wy-on-highlight-dark, #cee5ff);--wy-link: var(--wy-primary-dark, #9bcbfa);--wy-presence-active: var(--wy-green-dark, #00a38d);--wy-shade: var(--wy-shade-dark, rgba(0, 0, 0, .5));--wy-shade-invert: var(--wy-shade-invert-dark, rgba(255, 255, 255, .25));--wy-shade-opaque: var(--wy-shade-opaque-dark, grey);--wy-blue: var(--wy-blue-dark, #b2c5ff);--wy-indigo: var(--wy-indigo-dark, #9285de);--wy-purple: var(--wy-purple-dark, #e48fd2);--wy-pink: var(--wy-pink-dark, #f58bad);--wy-red: var(--wy-red-dark, #db726b);--wy-orange: var(--wy-orange-dark, #e79b3a);--wy-yellow: var(--wy-yellow-dark, #c9cd59);--wy-green: var(--wy-green-dark, #00a38d);--wy-teal: var(--wy-teal-dark, #00a0a9);--wy-cyan: var(--wy-cyan-dark, #009dc4);--wy-gray: var(--wy-gray-dark, #909194);--wy-code-text: var(--wy-code-text-dark, #cccccc);--wy-code-variable: var(--wy-code-variable-dark, #9CDCFE);--wy-code-operator: var(--wy-code-operator-dark, #d4d4d4);--wy-code-prolog: var(--wy-code-prolog-dark, #569CD6);--wy-code-comment: var(--wy-code-comment-dark, #6a9955);--wy-code-builtin: var(--wy-code-builtin-dark, #4fc1ff);--wy-code-number: var(--wy-code-number-dark, #b5cea8);--wy-code-inserted: var(--wy-code-inserted-dark, #b5cea8);--wy-code-constant: var(--wy-code-constant-dark, #646695);--wy-code-hexcode: var(--wy-code-hexcode-dark, #646695);--wy-code-regex: var(--wy-code-regex-dark, #d16969);--wy-code-char: var(--wy-code-char-dark, #d16969);--wy-code-tag: var(--wy-code-tag-dark, #569cd6);--wy-code-attr-name: var(--wy-code-attr-name-dark, #9cdcfe);--wy-code-selector: var(--wy-code-selector-dark, #9cdcfe);--wy-code-property: var(--wy-code-property-dark, #9cdcfe);--wy-code-deleted: var(--wy-code-deleted-dark, #ce9178);--wy-code-string: var(--wy-code-string-dark, #ce9178);--wy-code-changed: var(--wy-code-changed-dark, #569cd6);--wy-code-punctuation: var(--wy-code-punctuation-dark, #D4D4D4);--wy-code-function: var(--wy-code-function-dark, #569cd6);--wy-code-keyword: var(--wy-code-keyword-dark, #C586C0);--wy-code-class-name: var(--wy-code-class-name-dark, #4ec9b0)}}`, Kb = j`@property --wy-component-color{syntax: \"<color>\"; inherits: true; initial-value: currentColor;}@property --wy-component-background-color{syntax: \"<color>\"; inherits: true; initial-value: transparent;}`, Qb = /* @__PURE__ */ s((n) => {
+}, "adoptGlobalStyles"), Kt = j`@property --wy-color-scheme{syntax: \"normal | light | dark\"; inherits: true; initial-value: normal;}:is(.wy-light,[part~=wy-light]) :where(wy-chat),:is(.wy-light,[part~=wy-light]) :where(wy-comments),:is(.wy-light,[part~=wy-light]) :where(wy-component),:is(.wy-light,[part~=wy-light]) :where(wy-copilot),:is(.wy-light,[part~=wy-light]) :where(wy-feed),:is(.wy-light,[part~=wy-light]) :where(wy-files),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-badge),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-button),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-conversation),:is(.wy-light,[part~=wy-light]) :where(wy-messenger-new),:is(.wy-light,[part~=wy-light]) :where(wy-messenger),:is(.wy-light,[part~=wy-light]) :where(wy-notification-badge),:is(.wy-light,[part~=wy-light]) :where(wy-notification-button),:is(.wy-light,[part~=wy-light]) :where(wy-notification-toasts),:is(.wy-light,[part~=wy-light]) :where(wy-notifications),:is(.wy-light,[part~=wy-light]) :where(wy-post-editor),:is(.wy-light,[part~=wy-light]) :where(wy-posts),:host(:is(.wy-light,[part~=wy-light])),:host :is(.wy-light,[part~=wy-light]),::slotted(:is(.wy-light,[part~=wy-light])){color-scheme:light;--wy-primary: var(--wy-primary-light, #2f628c);--wy-on-primary: var(--wy-on-primary-light, #ffffff);--wy-primary-container: var(--wy-primary-container-light, #cee5ff);--wy-on-primary-container: var(--wy-on-primary-container-light, #0d4a73);--wy-secondary: var(--wy-secondary-light, #51606f);--wy-on-secondary: var(--wy-on-secondary-light, #ffffff);--wy-secondary-container: var(--wy-secondary-container-light, #d5e4f7);--wy-on-secondary-container: var(--wy-on-secondary-container-light, #3a4857);--wy-tertiary: var(--wy-tertiary-light, #645f41);--wy-on-tertiary: var(--wy-on-tertiary-light, #ffffff);--wy-tertiary-container: var(--wy-tertiary-container-light, #ebe3bd);--wy-on-tertiary-container: var(--wy-on-tertiary-container-light, #4c472b);--wy-error: var(--wy-error-light, #ba1821);--wy-on-error: var(--wy-on-error-light, #ffffff);--wy-error-container: var(--wy-error-container-light, #ffdad6);--wy-on-error-container: var(--wy-on-error-container-light, #930012);--wy-background: var(--wy-background-light, #f7f9ff);--wy-on-background: var(--wy-on-background-light, #181c20);--wy-surface: var(--wy-surface-light, #f7f9ff);--wy-on-surface: var(--wy-on-surface-light, #181c20);--wy-surface-variant: var(--wy-surface-variant-light, #dee3eb);--wy-on-surface-variant: var(--wy-on-surface-variant-light, #42474e);--wy-outline: var(--wy-outline-light, #72777f);--wy-outline-variant: var(--wy-outline-variant-light, #c2c7cf);--wy-surface-container-highest: var(--wy-surface-container-highest-light, #e0e2e8);--wy-surface-container-high: var(--wy-surface-container-high-light, #e6e8ee);--wy-surface-container: var(--wy-surface-container-light, #eceef3);--wy-surface-container-low: var(--wy-surface-container-low-light, #f1f3f9);--wy-surface-container-lowest: var(--wy-surface-container-lowest-light, #ffffff);--wy-surface-layer-highest: var(--wy-surface-layer-highest-light, rgba(0, 0, 0, .1019607843));--wy-surface-layer-high: var(--wy-surface-layer-high-light, rgba(0, 0, 0, .0745098039));--wy-surface-layer: var(--wy-surface-layer-light, rgba(0, 0, 0, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-light, rgba(255, 255, 255, .5019607843));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-light, rgba(255, 255, 255, .7490196078));--wy-warning: var(--wy-warning-light, #adb140);--wy-on-warning: var(--wy-on-warning-light, #000000);--wy-warning-container: var(--wy-warning-container-light, #e5e972);--wy-on-warning-container: var(--wy-on-warning-container-light, #1c1d00);--wy-highlight: var(--wy-highlight-light, #e8f2ff);--wy-on-highlight: var(--wy-on-highlight-light, #001d32);--wy-link: var(--wy-primary-light, #2f628c);--wy-presence-active: var(--wy-green-light, #00a38d);--wy-shade: var(--wy-shade-light, rgba(0, 0, 0, .3));--wy-shade-invert: var(--wy-shade-invert-light, rgba(255, 255, 255, .15));--wy-shade-opaque: var(--wy-shade-opaque-light, white);--wy-blue: var(--wy-blue-light, #8aa9fc);--wy-indigo: var(--wy-indigo-light, #9285de);--wy-purple: var(--wy-purple-light, #c675b6);--wy-pink: var(--wy-pink-light, #d57193);--wy-red: var(--wy-red-light, #db726b);--wy-orange: var(--wy-orange-light, #e79b3a);--wy-yellow: var(--wy-yellow-light, #adb140);--wy-green: var(--wy-green-light, #00a38d);--wy-teal: var(--wy-teal-light, #00a0a9);--wy-cyan: var(--wy-cyan-light, #0081a2);--wy-gray: var(--wy-gray-light, #76777a);--wy-code-text: var(--wy-code-text-light, #3b3b3b);--wy-code-variable: var(--wy-code-variable-light, #001080);--wy-code-operator: var(--wy-code-operator-light, #000000);--wy-code-prolog: var(--wy-code-prolog-light, #000080);--wy-code-comment: var(--wy-code-comment-light, #008000);--wy-code-builtin: var(--wy-code-builtin-light, #0070C1);--wy-code-number: var(--wy-code-number-light, #098658);--wy-code-inserted: var(--wy-code-inserted-light, #098658);--wy-code-constant: var(--wy-code-constant-light, #811F3F);--wy-code-hexcode: var(--wy-code-hexcode-light, #811F3F);--wy-code-regex: var(--wy-code-regex-light, #811F3F);--wy-code-char: var(--wy-code-char-light, #811F3F);--wy-code-tag: var(--wy-code-tag-light, #800000);--wy-code-attr-name: var(--wy-code-attr-name-light, #E50000);--wy-code-selector: var(--wy-code-selector-light, #E50000);--wy-code-property: var(--wy-code-property-light, #E50000);--wy-code-deleted: var(--wy-code-deleted-light, #A31515);--wy-code-string: var(--wy-code-string-light, #A31515);--wy-code-changed: var(--wy-code-changed-light, #0451A5);--wy-code-punctuation: var(--wy-code-punctuation-light, #000000);--wy-code-function: var(--wy-code-function-light, #0000FF);--wy-code-keyword: var(--wy-code-keyword-light, #AF00DB);--wy-code-class-name: var(--wy-code-class-name-light, #267F99)}:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-chat),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-comments),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-component),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-copilot),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-feed),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-files),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-badge),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-button),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-conversation),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger-new),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-messenger),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-badge),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-button),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notification-toasts),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-notifications),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-post-editor),:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]) :where(wy-posts),:host(:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light])),:host :is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light]),::slotted(:is(.wy-dark,[part~=wy-dark]):not(.wy-light,[part~=wy-light])){color-scheme:dark;--wy-primary: var(--wy-primary-dark, #9bcbfa);--wy-on-primary: var(--wy-on-primary-dark, #003353);--wy-primary-container: var(--wy-primary-container-dark, #0d4a73);--wy-on-primary-container: var(--wy-on-primary-container-dark, #cee5ff);--wy-secondary: var(--wy-secondary-dark, #b9c8da);--wy-on-secondary: var(--wy-on-secondary-dark, #233240);--wy-secondary-container: var(--wy-secondary-container-dark, #3a4857);--wy-on-secondary-container: var(--wy-on-secondary-container-dark, #d5e4f7);--wy-tertiary: var(--wy-tertiary-dark, #cfc7a2);--wy-on-tertiary: var(--wy-on-tertiary-dark, #353117);--wy-tertiary-container: var(--wy-tertiary-container-dark, #4c472b);--wy-on-tertiary-container: var(--wy-on-tertiary-container-dark, #ebe3bd);--wy-error: var(--wy-error-dark, #ffb3ad);--wy-on-error: var(--wy-on-error-dark, #680009);--wy-error-container: var(--wy-error-container-dark, #930012);--wy-on-error-container: var(--wy-on-error-container-dark, #ffdad6);--wy-background: var(--wy-background-dark, #101418);--wy-on-background: var(--wy-on-background-dark, #e0e2e8);--wy-surface: var(--wy-surface-dark, #101418);--wy-on-surface: var(--wy-on-surface-dark, #e0e2e8);--wy-surface-variant: var(--wy-surface-variant-dark, #42474e);--wy-on-surface-variant: var(--wy-on-surface-variant-dark, #c2c7cf);--wy-outline: var(--wy-outline-dark, #8c9198);--wy-outline-variant: var(--wy-outline-variant-dark, #42474e);--wy-surface-container-highest: var(--wy-surface-container-highest-dark, #323539);--wy-surface-container-high: var(--wy-surface-container-high-dark, #272a2f);--wy-surface-container: var(--wy-surface-container-dark, #1c2024);--wy-surface-container-low: var(--wy-surface-container-low-dark, #181c20);--wy-surface-container-lowest: var(--wy-surface-container-lowest-dark, #0b0f12);--wy-surface-layer-highest: var(--wy-surface-layer-highest-dark, rgba(255, 255, 255, .1490196078));--wy-surface-layer-high: var(--wy-surface-layer-high-dark, rgba(255, 255, 255, .1019607843));--wy-surface-layer: var(--wy-surface-layer-dark, rgba(255, 255, 255, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-dark, rgba(0, 0, 0, .2509803922));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-dark, rgba(0, 0, 0, .5019607843));--wy-warning: var(--wy-warning-dark, #e5e972);--wy-on-warning: var(--wy-on-warning-dark, #484a00);--wy-warning-container: var(--wy-warning-container-dark, #787c07);--wy-on-warning-container: var(--wy-on-warning-container-dark, #f4f87e);--wy-highlight: var(--wy-highlight-dark, #003353);--wy-on-highlight: var(--wy-on-highlight-dark, #cee5ff);--wy-link: var(--wy-primary-dark, #9bcbfa);--wy-presence-active: var(--wy-green-dark, #00a38d);--wy-shade: var(--wy-shade-dark, rgba(0, 0, 0, .5));--wy-shade-invert: var(--wy-shade-invert-dark, rgba(255, 255, 255, .25));--wy-shade-opaque: var(--wy-shade-opaque-dark, grey);--wy-blue: var(--wy-blue-dark, #b2c5ff);--wy-indigo: var(--wy-indigo-dark, #9285de);--wy-purple: var(--wy-purple-dark, #e48fd2);--wy-pink: var(--wy-pink-dark, #f58bad);--wy-red: var(--wy-red-dark, #db726b);--wy-orange: var(--wy-orange-dark, #e79b3a);--wy-yellow: var(--wy-yellow-dark, #c9cd59);--wy-green: var(--wy-green-dark, #00a38d);--wy-teal: var(--wy-teal-dark, #00a0a9);--wy-cyan: var(--wy-cyan-dark, #009dc4);--wy-gray: var(--wy-gray-dark, #909194);--wy-code-text: var(--wy-code-text-dark, #cccccc);--wy-code-variable: var(--wy-code-variable-dark, #9CDCFE);--wy-code-operator: var(--wy-code-operator-dark, #d4d4d4);--wy-code-prolog: var(--wy-code-prolog-dark, #569CD6);--wy-code-comment: var(--wy-code-comment-dark, #6a9955);--wy-code-builtin: var(--wy-code-builtin-dark, #4fc1ff);--wy-code-number: var(--wy-code-number-dark, #b5cea8);--wy-code-inserted: var(--wy-code-inserted-dark, #b5cea8);--wy-code-constant: var(--wy-code-constant-dark, #646695);--wy-code-hexcode: var(--wy-code-hexcode-dark, #646695);--wy-code-regex: var(--wy-code-regex-dark, #d16969);--wy-code-char: var(--wy-code-char-dark, #d16969);--wy-code-tag: var(--wy-code-tag-dark, #569cd6);--wy-code-attr-name: var(--wy-code-attr-name-dark, #9cdcfe);--wy-code-selector: var(--wy-code-selector-dark, #9cdcfe);--wy-code-property: var(--wy-code-property-dark, #9cdcfe);--wy-code-deleted: var(--wy-code-deleted-dark, #ce9178);--wy-code-string: var(--wy-code-string-dark, #ce9178);--wy-code-changed: var(--wy-code-changed-dark, #569cd6);--wy-code-punctuation: var(--wy-code-punctuation-dark, #D4D4D4);--wy-code-function: var(--wy-code-function-dark, #569cd6);--wy-code-keyword: var(--wy-code-keyword-dark, #C586C0);--wy-code-class-name: var(--wy-code-class-name-dark, #4ec9b0)}@container style(--wy-color-scheme: dark){html :where(wy-chat),html :where(wy-comments),html :where(wy-component),html :where(wy-copilot),html :where(wy-feed),html :where(wy-files),html :where(wy-messenger-badge),html :where(wy-messenger-button),html :where(wy-messenger-conversation),html :where(wy-messenger-new),html :where(wy-messenger),html :where(wy-notification-badge),html :where(wy-notification-button),html :where(wy-notification-toasts),html :where(wy-notifications),html :where(wy-post-editor),html :where(wy-posts){color-scheme:dark;--wy-primary: var(--wy-primary-dark, #9bcbfa);--wy-on-primary: var(--wy-on-primary-dark, #003353);--wy-primary-container: var(--wy-primary-container-dark, #0d4a73);--wy-on-primary-container: var(--wy-on-primary-container-dark, #cee5ff);--wy-secondary: var(--wy-secondary-dark, #b9c8da);--wy-on-secondary: var(--wy-on-secondary-dark, #233240);--wy-secondary-container: var(--wy-secondary-container-dark, #3a4857);--wy-on-secondary-container: var(--wy-on-secondary-container-dark, #d5e4f7);--wy-tertiary: var(--wy-tertiary-dark, #cfc7a2);--wy-on-tertiary: var(--wy-on-tertiary-dark, #353117);--wy-tertiary-container: var(--wy-tertiary-container-dark, #4c472b);--wy-on-tertiary-container: var(--wy-on-tertiary-container-dark, #ebe3bd);--wy-error: var(--wy-error-dark, #ffb3ad);--wy-on-error: var(--wy-on-error-dark, #680009);--wy-error-container: var(--wy-error-container-dark, #930012);--wy-on-error-container: var(--wy-on-error-container-dark, #ffdad6);--wy-background: var(--wy-background-dark, #101418);--wy-on-background: var(--wy-on-background-dark, #e0e2e8);--wy-surface: var(--wy-surface-dark, #101418);--wy-on-surface: var(--wy-on-surface-dark, #e0e2e8);--wy-surface-variant: var(--wy-surface-variant-dark, #42474e);--wy-on-surface-variant: var(--wy-on-surface-variant-dark, #c2c7cf);--wy-outline: var(--wy-outline-dark, #8c9198);--wy-outline-variant: var(--wy-outline-variant-dark, #42474e);--wy-surface-container-highest: var(--wy-surface-container-highest-dark, #323539);--wy-surface-container-high: var(--wy-surface-container-high-dark, #272a2f);--wy-surface-container: var(--wy-surface-container-dark, #1c2024);--wy-surface-container-low: var(--wy-surface-container-low-dark, #181c20);--wy-surface-container-lowest: var(--wy-surface-container-lowest-dark, #0b0f12);--wy-surface-layer-highest: var(--wy-surface-layer-highest-dark, rgba(255, 255, 255, .1490196078));--wy-surface-layer-high: var(--wy-surface-layer-high-dark, rgba(255, 255, 255, .1019607843));--wy-surface-layer: var(--wy-surface-layer-dark, rgba(255, 255, 255, .0509803922));--wy-surface-layer-low: var(--wy-surface-layer-low-dark, rgba(0, 0, 0, .2509803922));--wy-surface-layer-lowest: var(--wy-surface-layer-lowest-dark, rgba(0, 0, 0, .5019607843));--wy-warning: var(--wy-warning-dark, #e5e972);--wy-on-warning: var(--wy-on-warning-dark, #484a00);--wy-warning-container: var(--wy-warning-container-dark, #787c07);--wy-on-warning-container: var(--wy-on-warning-container-dark, #f4f87e);--wy-highlight: var(--wy-highlight-dark, #003353);--wy-on-highlight: var(--wy-on-highlight-dark, #cee5ff);--wy-link: var(--wy-primary-dark, #9bcbfa);--wy-presence-active: var(--wy-green-dark, #00a38d);--wy-shade: var(--wy-shade-dark, rgba(0, 0, 0, .5));--wy-shade-invert: var(--wy-shade-invert-dark, rgba(255, 255, 255, .25));--wy-shade-opaque: var(--wy-shade-opaque-dark, grey);--wy-blue: var(--wy-blue-dark, #b2c5ff);--wy-indigo: var(--wy-indigo-dark, #9285de);--wy-purple: var(--wy-purple-dark, #e48fd2);--wy-pink: var(--wy-pink-dark, #f58bad);--wy-red: var(--wy-red-dark, #db726b);--wy-orange: var(--wy-orange-dark, #e79b3a);--wy-yellow: var(--wy-yellow-dark, #c9cd59);--wy-green: var(--wy-green-dark, #00a38d);--wy-teal: var(--wy-teal-dark, #00a0a9);--wy-cyan: var(--wy-cyan-dark, #009dc4);--wy-gray: var(--wy-gray-dark, #909194);--wy-code-text: var(--wy-code-text-dark, #cccccc);--wy-code-variable: var(--wy-code-variable-dark, #9CDCFE);--wy-code-operator: var(--wy-code-operator-dark, #d4d4d4);--wy-code-prolog: var(--wy-code-prolog-dark, #569CD6);--wy-code-comment: var(--wy-code-comment-dark, #6a9955);--wy-code-builtin: var(--wy-code-builtin-dark, #4fc1ff);--wy-code-number: var(--wy-code-number-dark, #b5cea8);--wy-code-inserted: var(--wy-code-inserted-dark, #b5cea8);--wy-code-constant: var(--wy-code-constant-dark, #646695);--wy-code-hexcode: var(--wy-code-hexcode-dark, #646695);--wy-code-regex: var(--wy-code-regex-dark, #d16969);--wy-code-char: var(--wy-code-char-dark, #d16969);--wy-code-tag: var(--wy-code-tag-dark, #569cd6);--wy-code-attr-name: var(--wy-code-attr-name-dark, #9cdcfe);--wy-code-selector: var(--wy-code-selector-dark, #9cdcfe);--wy-code-property: var(--wy-code-property-dark, #9cdcfe);--wy-code-deleted: var(--wy-code-deleted-dark, #ce9178);--wy-code-string: var(--wy-code-string-dark, #ce9178);--wy-code-changed: var(--wy-code-changed-dark, #569cd6);--wy-code-punctuation: var(--wy-code-punctuation-dark, #D4D4D4);--wy-code-function: var(--wy-code-function-dark, #569cd6);--wy-code-keyword: var(--wy-code-keyword-dark, #C586C0);--wy-code-class-name: var(--wy-code-class-name-dark, #4ec9b0)}}`, Kb = j`@property --wy-component-color{syntax: \"<color>\"; inherits: true; initial-value: currentColor;}@property --wy-component-background-color{syntax: \"<color>\"; inherits: true; initial-value: transparent;}`, Qb = /* @__PURE__ */ s((n) => {
   var t;
   return t = class extends n {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     constructor(...i) {
-      super(...i), jb([Kb, Qt]);
+      super(...i), jb([Kb, Kt]);
     }
   }, s(t, "WeavyStyles"), t;
 }, "WeavyStylesMixin"), Gb = /* @__PURE__ */ s((n) => {
@@ -8530,7 +8530,7 @@ const jb = /* @__PURE__ */ s((n) => {
     constructor(...a) {
       super(...a);
       R(this, t);
-      this.version = Zt.version, this.whenUrl().then(() => {
+      this.version = Qt.version, this.whenUrl().then(() => {
         this.isDestroyed || this.checkVersion();
       });
     }
@@ -8539,7 +8539,7 @@ const jb = /* @__PURE__ */ s((n) => {
      *
      */
     async checkVersion() {
-      return y(this, t) || P(this, t, (async () => {
+      return p(this, t) || P(this, t, (async () => {
         await this.whenUrl(), this.networkStateIsPending = !0;
         let a;
         try {
@@ -8551,7 +8551,7 @@ const jb = /* @__PURE__ */ s((n) => {
         } catch (c) {
           return this.networkStateIsPending = !1, this.serverState = "unreachable", console.warn("Could not check Weavy version: " + c.toString()), {
             client: {
-              name: Zt.sourceName,
+              name: Qt.sourceName,
               version: this.version
             },
             environment: {
@@ -8578,12 +8578,12 @@ const jb = /* @__PURE__ */ s((n) => {
               });
           } catch (c) {
             throw new Error(
-              `Weavy version mismatch! ${Zt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${o} - This will likely cause errors!`,
+              `Weavy version mismatch! ${Qt.sourceName}@${this.version} ≠ ${this.url?.hostname}@${o} - This will likely cause errors!`,
               {
                 cause: {
                   mismatch: c.cause,
                   client: {
-                    name: Zt.sourceName,
+                    name: Qt.sourceName,
                     version: this.version
                   },
                   environment: {
@@ -8600,7 +8600,7 @@ const jb = /* @__PURE__ */ s((n) => {
           console.info(`Weavy version ${this.version} ☑️`);
         return {
           client: {
-            name: Zt.sourceName,
+            name: Qt.sourceName,
             version: this.version
           },
           environment: {
@@ -8608,7 +8608,7 @@ const jb = /* @__PURE__ */ s((n) => {
             version: o
           }
         };
-      })()), await y(this, t);
+      })()), await p(this, t);
     }
   }, t = new WeakMap(), s(e, "WeavyVersion"), e;
 }, "WeavyVersionMixin");
@@ -8782,9 +8782,9 @@ const mf = class mf extends Oy {
 };
 s(mf, "WyContextProvider");
 let eu = mf;
-const Jt = Symbol.for("weavy-client");
+const Xt = Symbol.for("weavy-client");
 function Xb(n, t) {
-  return ke(), new eu(n, { context: Jt, initialValue: t });
+  return ke(), new eu(n, { context: Xt, initialValue: t });
 }
 s(Xb, "createWeavyContextProvider");
 const Tl = uw() ? Xb(document.documentElement) : void 0, Jb = /* @__PURE__ */ s((n) => {
@@ -8797,20 +8797,20 @@ const Tl = uw() ? Xb(document.documentElement) : void 0, Jb = /* @__PURE__ */ s(
       // SHOULD BE APPLIED LAST TO ENSURE EVERYTHING IS SET BEFORE CONTEXT GETS PROVIDED
       R(this, t);
       this.host !== document.documentElement ? (Tl?.detachListeners(), P(this, t, new eu(this.host, {
-        context: Jt,
+        context: Xt,
         initialValue: this
       }))) : Tl?.setValue(this);
     }
     updateContext() {
-      this.host !== document.documentElement ? y(this, t)?.updateObservers() : Tl?.updateObservers();
+      this.host !== document.documentElement ? p(this, t)?.updateObservers() : Tl?.updateObservers();
     }
     destroy() {
-      super.destroy(), this.host !== document.documentElement ? y(this, t)?.detachListeners() : Tl?.value === this && Tl?.setValue(void 0);
+      super.destroy(), this.host !== document.documentElement ? p(this, t)?.detachListeners() : Tl?.value === this && Tl?.setValue(void 0);
     }
   }, t = new WeakMap(), s(e, "WeavyContextProvider"), e;
 }, "WeavyContextProviderMixin");
 var Md, Ed, Ji, ba;
-const Gt = class Gt {
+const re = class re {
   // CONSTRUCTOR
   constructor(t) {
     // Promises
@@ -8820,9 +8820,9 @@ const Gt = class Gt {
     // Reactive options
     R(this, Ji);
     R(this, ba);
-    this.weavySid = ql(), this.weavyId = `${Gt.sourceName}#${this.weavySid}`, this.cloudFilePickerUrl = Gt.defaults.cloudFilePickerUrl, this.configurationTimeout = Gt.defaults.configurationTimeout, this.disableEnvironmentImports = Gt.defaults.disableEnvironmentImports, this.gcTime = Gt.defaults.gcTime, this.pdfHWA = Gt.defaults.pdfHWA, this.scrollBehavior = Gt.defaults.scrollBehavior, this.staleTime = Gt.defaults.staleTime, this.tokenFactoryRetryDelay = Gt.defaults.tokenFactoryRetryDelay, this.tokenFactoryTimeout = Gt.defaults.tokenFactoryTimeout, P(this, Ed, new Promise((i) => {
+    this.weavySid = ql(), this.weavyId = `${re.sourceName}#${this.weavySid}`, this.cloudFilePickerUrl = re.defaults.cloudFilePickerUrl, this.configurationTimeout = re.defaults.configurationTimeout, this.disableEnvironmentImports = re.defaults.disableEnvironmentImports, this.gcTime = re.defaults.gcTime, this.scrollBehavior = re.defaults.scrollBehavior, this.staleTime = re.defaults.staleTime, this.tokenFactoryRetryDelay = re.defaults.tokenFactoryRetryDelay, this.tokenFactoryTimeout = re.defaults.tokenFactoryTimeout, P(this, Ed, new Promise((i) => {
       P(this, Md, i);
-    })), P(this, ba, !1), console.info(`${Gt.sourceName}@${Gt.version} (${Gt.sourceFormat}) #${this.weavySid}`), ke(), this.host = document.documentElement;
+    })), P(this, ba, !1), console.info(`${re.sourceName}@${re.version} (${re.sourceFormat}) #${this.weavySid}`), ke(), this.host = document.documentElement;
     const e = {};
     for (const i in t) {
       const r = i;
@@ -8831,13 +8831,13 @@ const Gt = class Gt {
     e?.host && (this.host = e.host, delete e.host), e && Object.assign(this, e);
   }
   async whenUrl() {
-    await y(this, Ed);
+    await p(this, Ed);
   }
   /**
    * The URL to the weavy environment.
    */
   get url() {
-    return y(this, Ji);
+    return p(this, Ji);
   }
   set url(t) {
     var e;
@@ -8858,26 +8858,26 @@ const Gt = class Gt {
     t && !this.disableEnvironmentImports && globalThis.WEAVY_IMPORT_URL === void 0 && (globalThis.WEAVY_IMPORT_URL = new URL(
       "./uikit-web/",
       t
-    ).href), y(this, Ji) && ((e = y(this, Md)) == null || e.call(this, y(this, Ji)));
+    ).href), p(this, Ji) && ((e = p(this, Md)) == null || e.call(this, p(this, Ji)));
   }
   /**
    * Prefix to use for caches.
    */
   get cachePrefix() {
-    return `${Gt.version}:${this.url}`;
+    return `${re.version}:${this.url}`;
   }
   // eslint-disable-next-line @typescript-eslint/require-await
   async reset() {
     console.info(this.weavyId, "is reset");
   }
   get isDestroyed() {
-    return y(this, ba);
+    return p(this, ba);
   }
   destroy() {
     P(this, ba, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Md = new WeakMap(), Ed = new WeakMap(), Ji = new WeakMap(), ba = new WeakMap(), s(Gt, "WeavyClient"), Gt.version = "31.1.1", Gt.sourceName = "@weavy/uikit-web", Gt.sourceFormat = o0 ?? "typescript", Gt.defaults = {
+Md = new WeakMap(), Ed = new WeakMap(), Ji = new WeakMap(), ba = new WeakMap(), s(re, "WeavyClient"), re.version = "31.2.0", re.sourceName = "@weavy/uikit-web", re.sourceFormat = o0 ?? "typescript", re.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -8885,7 +8885,6 @@ Md = new WeakMap(), Ed = new WeakMap(), Ji = new WeakMap(), ba = new WeakMap(), 
   gcTime: 1e3 * 60 * 60 * 24,
   // 24h,
   locale: Ov,
-  pdfHWA: "auto",
   scrollBehavior: "auto",
   staleTime: 1e3 * 1,
   // 1s
@@ -8896,13 +8895,13 @@ Md = new WeakMap(), Ed = new WeakMap(), Ji = new WeakMap(), ba = new WeakMap(), 
   enterToSend: "auto",
   reactions: "😍 😎 😉 😜 👍"
 };
-let Zt = Gt;
+let Qt = re;
 const vf = class vf extends Jb(
   z0(
     L0(
       F0(
         A0(
-          xb(Gb(O0(Qb(Cb(Zt)))))
+          xb(Gb(O0(Qb(Cb(Qt)))))
         )
       )
     )
@@ -8910,7 +8909,7 @@ const vf = class vf extends Jb(
 ) {
 };
 s(vf, "Weavy");
-let It = vf;
+let Vt = vf;
 const Jd = Symbol.for("weavy-app"), Yv = Symbol.for("weavy-apps"), Xv = Symbol.for("weavy-context-id"), Jv = Symbol.for("weavy-data-blobs");
 var k = /* @__PURE__ */ ((n) => (n.Attachments = "attachments", n.CloudFiles = "cloud_files", n.ContextData = "context_data", n.Comments = "comments", n.Comment = "comment", n.Embeds = "embeds", n.Follow = "follow", n.GoogleMeet = "google_meet", n.Meetings = "meetings", n.Mentions = "mentions", n.MicrosoftTeams = "microsoft_teams", n.Polls = "polls", n.Previews = "previews", n.Reactions = "reactions", n.Receipts = "receipts", n.Thumbnails = "thumbnails", n.Typing = "typing", n.Versions = "versions", n.WebDAV = "web_dav", n.ZoomMeetings = "zoom_meetings", n))(k || {});
 const ku = Symbol.for("weavy-features");
@@ -8929,37 +8928,37 @@ const bu = class bu {
     P(this, qr, Object.keys(t)), P(this, Wr, Object.entries(t).reduce(
       (i, [r, a]) => (a && i.push(r), i),
       []
-    )), P(this, Ai, e ?? y(this, Wr));
+    )), P(this, Ai, e ?? p(this, Wr));
   }
   features() {
-    return y(this, qr);
+    return p(this, qr);
   }
   supportedFeature(...t) {
-    return t.every((e) => y(this, qr).includes(e));
+    return t.every((e) => p(this, qr).includes(e));
   }
   allowedFeatures() {
-    return y(this, Ai);
+    return p(this, Ai);
   }
   allowsFeature(...t) {
-    return t.every((e) => this.supportedFeature(e) ? y(this, Ai).includes(e) : !1);
+    return t.every((e) => this.supportedFeature(e) ? p(this, Ai).includes(e) : !1);
   }
   allowsAnyFeature(...t) {
-    return t.some((e) => this.supportedFeature(e) ? y(this, Ai).includes(e) : !1);
+    return t.some((e) => this.supportedFeature(e) ? p(this, Ai).includes(e) : !1);
   }
   /**
    * Sets the allowed features.
    * @param allowedFeatures - Space separated string with features that will be enabled. Empty string will disable all features. `null` or `undefined` will enable all features.
    */
   setAllowedFeatures(t) {
-    return P(this, Ai, typeof t == "string" ? t1(t, y(this, qr), y(this, Wr)) : y(this, Wr)), y(this, Ai);
+    return P(this, Ai, typeof t == "string" ? t1(t, p(this, qr), p(this, Wr)) : p(this, Wr)), p(this, Ai);
   }
   immutableCopy() {
-    const t = kw(y(this, qr), y(this, Wr));
-    return new bu(t, y(this, Ai));
+    const t = kw(p(this, qr), p(this, Wr));
+    return new bu(t, p(this, Ai));
   }
 };
 qr = new WeakMap(), Wr = new WeakMap(), Ai = new WeakMap(), s(bu, "ComponentFeatures");
-let Yt = bu;
+let Gt = bu;
 function t1(n, t, e) {
   let i = [...e];
   return n.split(" ").forEach((r) => {
@@ -8981,7 +8980,7 @@ const gf = class gf {
   // PROPERTY INIT
   constructor(t) {
     R(this, Ad);
-    this.enterToSend = Zt.defaults.enterToSend, this.reactions = Zt.defaults.reactions, this.annotations = Zt.defaults.annotations, P(this, Ad, t), Object.keys(this).forEach((i) => {
+    this.enterToSend = Qt.defaults.enterToSend, this.reactions = Qt.defaults.reactions, this.annotations = Qt.defaults.annotations, P(this, Ad, t), Object.keys(this).forEach((i) => {
       i in t && Object.assign(this, { [i]: t[i] });
     });
   }
@@ -8989,7 +8988,7 @@ const gf = class gf {
    * Provides a reference to the host.
    */
   get component() {
-    return y(this, Ad);
+    return p(this, Ad);
   }
 };
 Ad = new WeakMap(), s(gf, "WeavyComponentSettings");
@@ -9066,7 +9065,7 @@ const xf = class xf {
 };
 s(xf, "ContextController");
 let Cm = xf;
-var rt = /* @__PURE__ */ ((n) => (n.Chat = "d65dd4bc-418e-403c-9f56-f9cf4da931ed", n.Comments = "88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd", n.Files = "523edd88-4bbf-4547-b60f-2859a6d2ddc1", n.Posts = "5ebfa152-de85-48da-82dd-30a1b560c313", n.ChatRoom = "edb400ac-839b-45a7-b2a8-6a01820d1c44", n.PrivateChat = "7e14f418-8f15-46f4-b182-f619b671e470", n.AgentChat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(rt || {}), pi = /* @__PURE__ */ ((n) => (n.Chat = "chat", n.Comments = "comments", n.Files = "files", n.Posts = "posts", n.ChatRoom = "chat_room", n.PrivateChat = "private_chat", n.AgentChat = "agent_chat", n))(pi || {}), r1 = /* @__PURE__ */ ((n) => (n["d65dd4bc-418e-403c-9f56-f9cf4da931ed"] = "chat", n["88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd"] = "comments", n["523edd88-4bbf-4547-b60f-2859a6d2ddc1"] = "files", n["5ebfa152-de85-48da-82dd-30a1b560c313"] = "posts", n["edb400ac-839b-45a7-b2a8-6a01820d1c44"] = "chat_room", n["7e14f418-8f15-46f4-b182-f619b671e470"] = "private_chat", n["2352a1c6-abc6-420e-8b85-ca7d5aed8779"] = "agent_chat", n))(r1 || {}), n1 = /* @__PURE__ */ ((n) => (n.chat = "d65dd4bc-418e-403c-9f56-f9cf4da931ed", n.comments = "88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd", n.files = "523edd88-4bbf-4547-b60f-2859a6d2ddc1", n.posts = "5ebfa152-de85-48da-82dd-30a1b560c313", n.chat_room = "edb400ac-839b-45a7-b2a8-6a01820d1c44", n.private_chat = "7e14f418-8f15-46f4-b182-f619b671e470", n.agent_chat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(n1 || {}), s1 = /* @__PURE__ */ ((n) => (n["2352a1c6-abc6-420e-8b85-ca7d5aed8779"] = "agent_chat", n))(s1 || {}), a1 = /* @__PURE__ */ ((n) => (n.agent_chat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(a1 || {}), Lr = /* @__PURE__ */ ((n) => (n.None = "none", n.Read = "read", n.Write = "write", n.Admin = "admin", n))(Lr || {}), de = /* @__PURE__ */ ((n) => (n.List = "list", n.Read = "read", n.Create = "create", n.Update = "update", n.Delete = "delete", n.Admin = "admin", n))(de || {}), Dt = /* @__PURE__ */ ((n) => (n.App = "app", n.File = "file", n.Message = "message", n.User = "user", n.Comment = "comment", n.Post = "post", n))(Dt || {});
+var rt = /* @__PURE__ */ ((n) => (n.Chat = "d65dd4bc-418e-403c-9f56-f9cf4da931ed", n.Comments = "88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd", n.Files = "523edd88-4bbf-4547-b60f-2859a6d2ddc1", n.Posts = "5ebfa152-de85-48da-82dd-30a1b560c313", n.ChatRoom = "edb400ac-839b-45a7-b2a8-6a01820d1c44", n.PrivateChat = "7e14f418-8f15-46f4-b182-f619b671e470", n.AgentChat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(rt || {}), pi = /* @__PURE__ */ ((n) => (n.Chat = "chat", n.Comments = "comments", n.Files = "files", n.Posts = "posts", n.ChatRoom = "chat_room", n.PrivateChat = "private_chat", n.AgentChat = "agent_chat", n))(pi || {}), r1 = /* @__PURE__ */ ((n) => (n["d65dd4bc-418e-403c-9f56-f9cf4da931ed"] = "chat", n["88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd"] = "comments", n["523edd88-4bbf-4547-b60f-2859a6d2ddc1"] = "files", n["5ebfa152-de85-48da-82dd-30a1b560c313"] = "posts", n["edb400ac-839b-45a7-b2a8-6a01820d1c44"] = "chat_room", n["7e14f418-8f15-46f4-b182-f619b671e470"] = "private_chat", n["2352a1c6-abc6-420e-8b85-ca7d5aed8779"] = "agent_chat", n))(r1 || {}), n1 = /* @__PURE__ */ ((n) => (n.chat = "d65dd4bc-418e-403c-9f56-f9cf4da931ed", n.comments = "88f96a08-c6c1-4eac-a0bd-5bf8fba1a3fd", n.files = "523edd88-4bbf-4547-b60f-2859a6d2ddc1", n.posts = "5ebfa152-de85-48da-82dd-30a1b560c313", n.chat_room = "edb400ac-839b-45a7-b2a8-6a01820d1c44", n.private_chat = "7e14f418-8f15-46f4-b182-f619b671e470", n.agent_chat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(n1 || {}), s1 = /* @__PURE__ */ ((n) => (n["2352a1c6-abc6-420e-8b85-ca7d5aed8779"] = "agent_chat", n))(s1 || {}), a1 = /* @__PURE__ */ ((n) => (n.agent_chat = "2352a1c6-abc6-420e-8b85-ca7d5aed8779", n))(a1 || {}), Lr = /* @__PURE__ */ ((n) => (n.None = "none", n.Read = "read", n.Write = "write", n.Admin = "admin", n))(Lr || {}), le = /* @__PURE__ */ ((n) => (n.List = "list", n.Read = "read", n.Create = "create", n.Update = "update", n.Delete = "delete", n.Admin = "admin", n))(le || {}), It = /* @__PURE__ */ ((n) => (n.App = "app", n.File = "file", n.Message = "message", n.User = "user", n.Comment = "comment", n.Post = "post", n))(It || {});
 function ar(n, t, e, i, r, a = "GET") {
   return {
     // eslint-disable-next-line @tanstack/query/exhaustive-deps
@@ -9107,17 +9106,17 @@ const t2 = { attribute: !0, type: String, converter: w0, reflect: !1, hasChanged
   }
   throw Error("Unsupported decorator location: " + i);
 }, "r$3");
-function p(n) {
+function y(n) {
   return (t, e) => typeof e == "object" ? e2(n, t, e) : ((i, r, a) => {
     const o = r.hasOwnProperty(a);
     return r.constructor.createProperty(a, i), o ? Object.getOwnPropertyDescriptor(r, a) : void 0;
   })(n, t, e);
 }
-s(p, "n$3");
-function H(n) {
-  return p({ ...n, state: !0, attribute: !1 });
+s(y, "n$3");
+function V(n) {
+  return y({ ...n, state: !0, attribute: !1 });
 }
-s(H, "r$2");
+s(V, "r$2");
 const i2 = /* @__PURE__ */ s((n, t, e) => (e.configurable = !0, e.enumerable = !0, Reflect.decorate && typeof t != "object" && Object.defineProperty(n, t, e), e), "e$3");
 function pl(n) {
   return (t, e) => {
@@ -9138,7 +9137,7 @@ const Cf = class Cf {
   }
   async setContext() {
     await xi(this.host), this.context = new Ue(this.host, {
-      context: Jt,
+      context: Xt,
       subscribe: !0,
       callback: /* @__PURE__ */ s((t) => {
         t && (this.resolveContext?.(t), this.queryClient = t.queryClient, this.resolveQueryClient?.(t.queryClient));
@@ -9189,7 +9188,7 @@ const $f = class $f {
     t.addController(this), this.host = t, this.whenContext = new Promise((e) => this.resolveContext = e), this.whenObserver = new Promise((e) => this.resolveObserver = e), this.setContext();
   }
   async setContext() {
-    await xi(this.host), this.context = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.context = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   hostUpdate() {
     this.context?.value && this.resolveContext?.();
@@ -9716,7 +9715,7 @@ function Sw(n) {
   e === -1 ? t?.select() : e !== void 0 && t?.setSelectionRange(0, e);
 }
 s(Sw, "handleSelectFilename");
-async function Hy(n, t = "SHA-256") {
+async function Vy(n, t = "SHA-256") {
   return await new Promise((e) => {
     if (n) {
       const i = new FileReader();
@@ -9729,7 +9728,7 @@ async function Hy(n, t = "SHA-256") {
       e("");
   });
 }
-s(Hy, "getHash");
+s(Vy, "getHash");
 function Wp(n, t) {
   return n.findAll(t.filters).map((e) => t.select ? t.select(e) : e.state);
 }
@@ -9739,7 +9738,7 @@ const kf = class kf {
     this.alwaysUpdate = !1, t.addController(this), this.host = t, this.setContext();
   }
   async setContext() {
-    this.whenContext = new Promise((t) => this.resolveContext = t), await xi(this.host), this.context = new Ue(this.host, { context: Jt, subscribe: !0 });
+    this.whenContext = new Promise((t) => this.resolveContext = t), await xi(this.host), this.context = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   hostUpdate() {
     this.context?.value && this.resolveContext?.();
@@ -9849,10 +9848,10 @@ function p1(n) {
   };
 }
 s(p1, "getFileMutationsTotalProgress");
-function Vy(n) {
+function Hy(n) {
   return n ? n.some((t) => t.context?.status.state === "conflict") ? "conflict" : n.some((t) => t.status === "error") ? "error" : n.every((t) => t.status === "success") ? "ok" : "pending" : "ok";
 }
-s(Vy, "getFileMutationsTotalStatus");
+s(Hy, "getFileMutationsTotalStatus");
 function km(n) {
   return n?.filter((t) => t.context?.status.state === "pending") || [];
 }
@@ -9987,7 +9986,7 @@ function Ew(n, t, e, i, r = "blobs") {
           v.status.state = "pending", v.status.progress = C;
         });
       };
-      const b = await Hy(l.file);
+      const b = await Vy(l.file);
       return { type: "upload", file: u, status: { state: "pending" }, sha256: b };
     }, "onMutate"),
     onSuccess: /* @__PURE__ */ s((l, u, b) => {
@@ -10044,7 +10043,7 @@ const _f = class _f extends st {
    * @returns {Promise<ContextIdType>}
    */
   async whenContextId() {
-    return await y(this, Ca);
+    return await p(this, Ca);
   }
   /**
    * Resolves when current user data is available.
@@ -10052,7 +10051,7 @@ const _f = class _f extends st {
    * @returns {Promise<UserType>}
    */
   async whenUser() {
-    return await y(this, ka);
+    return await p(this, ka);
   }
   /**
    * Resolves when a weavy context is available.
@@ -10060,7 +10059,7 @@ const _f = class _f extends st {
    * @returns {Promise<WeavyType>}
    */
   async whenWeavy() {
-    return await y(this, Pa);
+    return await p(this, Pa);
   }
   /**
    * Resolves when the component has rendered first time.
@@ -10068,7 +10067,7 @@ const _f = class _f extends st {
    * @returns {Promise<WeavyComponent>}
    */
   async whenReady() {
-    return await y(this, Td);
+    return await p(this, Td);
   }
   connectedCallback() {
     super.connectedCallback(), this.contextId && this.requestUpdate("contextId"), this.user && this.requestUpdate("user"), this.weavy && this.requestUpdate("weavy");
@@ -10078,17 +10077,17 @@ const _f = class _f extends st {
   }
   async willUpdate(e) {
     var i, r, a;
-    super.willUpdate(e), this.weavyContextConsumer ??= new Ue(this, { context: Jt, subscribe: !0 }), this.weavyContextConsumer?.value && this.weavy !== this.weavyContextConsumer?.value && (this.weavy = this.weavyContextConsumer?.value), e.has("weavy") && this.weavy && await y(this, tr).trackQuery(ar(this.weavy, ["user"])), y(this, tr).result?.isPending || (this.user && y(this, tr).result.data && this.user.id !== y(this, tr).result.data.id && (console.warn("User mismatch, resetting"), this.weavy?.reset()), this.user = y(this, tr).result?.data), e.has("contextId") && this.contextId && (e.get("contextId") && P(this, Ca, new Promise((o) => {
+    super.willUpdate(e), this.weavyContextConsumer ??= new Ue(this, { context: Xt, subscribe: !0 }), this.weavyContextConsumer?.value && this.weavy !== this.weavyContextConsumer?.value && (this.weavy = this.weavyContextConsumer?.value), e.has("weavy") && this.weavy && await p(this, tr).trackQuery(ar(this.weavy, ["user"])), p(this, tr).result?.isPending || (this.user && p(this, tr).result.data && this.user.id !== p(this, tr).result.data.id && (console.warn("User mismatch, resetting"), this.weavy?.reset()), this.user = p(this, tr).result?.data), e.has("contextId") && this.contextId && (e.get("contextId") && P(this, Ca, new Promise((o) => {
       P(this, xa, o);
-    })), (i = y(this, xa)) == null || i.call(this, this.contextId)), e.has("user") && this.user && (e.get("user") && P(this, ka, new Promise((o) => {
+    })), (i = p(this, xa)) == null || i.call(this, this.contextId)), e.has("user") && this.user && (e.get("user") && P(this, ka, new Promise((o) => {
       P(this, $a, o);
-    })), (r = y(this, $a)) == null || r.call(this, this.user)), e.has("weavy") && this.weavy && (e.get("weavy") && P(this, Pa, new Promise((o) => {
+    })), (r = p(this, $a)) == null || r.call(this, this.user)), e.has("weavy") && this.weavy && (e.get("weavy") && P(this, Pa, new Promise((o) => {
       P(this, _a, o);
-    })), (a = y(this, _a)) == null || a.call(this, this.weavy));
+    })), (a = p(this, _a)) == null || a.call(this, this.weavy));
   }
   firstUpdated(e) {
     var i;
-    super.firstUpdated(e), (i = y(this, Rd)) == null || i.call(this, this), this.dispatchEvent(
+    super.firstUpdated(e), (i = p(this, Rd)) == null || i.call(this, this), this.dispatchEvent(
       new CustomEvent("ready", {
         bubbles: !0,
         composed: !0
@@ -10099,15 +10098,15 @@ const _f = class _f extends st {
 xa = new WeakMap(), Ca = new WeakMap(), $a = new WeakMap(), ka = new WeakMap(), _a = new WeakMap(), Pa = new WeakMap(), Rd = new WeakMap(), Td = new WeakMap(), tr = new WeakMap(), s(_f, "WeavyComponent");
 let jc = _f;
 Aw([
-  H()
+  V()
 ], jc.prototype, "weavy");
 Aw([
   Bi({ context: Xv }),
-  H()
+  V()
 ], jc.prototype, "contextId");
 Aw([
   Bi({ context: _u }),
-  H()
+  V()
 ], jc.prototype, "user");
 var g2 = Object.defineProperty, b2 = Object.getOwnPropertyDescriptor, We = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? b2(t, e) : t, a = n.length - 1, o; a >= 0; a--)
@@ -10245,25 +10244,25 @@ const Pf = class Pf extends jc {
    * @deprecated
    */
   get data() {
-    return y(this, Ld);
+    return p(this, Ld);
   }
   set annotations(e) {
     P(this, Od, e);
   }
   get annotations() {
-    return y(this, Od) ?? this.weavy?.annotations ?? Zt.defaults.annotations;
+    return p(this, Od) ?? this.weavy?.annotations ?? Qt.defaults.annotations;
   }
   set enterToSend(e) {
     P(this, zd, e);
   }
   get enterToSend() {
-    return y(this, zd) ?? this.weavy?.enterToSend ?? Zt.defaults.enterToSend;
+    return p(this, zd) ?? this.weavy?.enterToSend ?? Qt.defaults.enterToSend;
   }
   set reactions(e) {
     P(this, Fd, e);
   }
   get reactions() {
-    return y(this, Fd) ?? this.weavy?.reactions ?? Zt.defaults.reactions;
+    return p(this, Fd) ?? this.weavy?.reactions ?? Qt.defaults.reactions;
   }
   // PROMISES
   // TODO: Switch to Promise.withResolvers() when allowed by typescript
@@ -10282,7 +10281,7 @@ const Pf = class Pf extends jc {
    * @returns {Promise<ContextDataBlobsType>}
    */
   async whenContextDataBlobs() {
-    return await y(this, Ma);
+    return await p(this, Ma);
   }
   /**
    * Resolves when Weavy component features config is available.
@@ -10291,7 +10290,7 @@ const Pf = class Pf extends jc {
    * @returns {Promise<ComponentFeaturePolicy>}
    */
   async whenComponentFeatures() {
-    return await y(this, Aa);
+    return await p(this, Aa);
   }
   /**
    * Resolves when a provided link is available.
@@ -10300,7 +10299,7 @@ const Pf = class Pf extends jc {
    * @returns {Promise<LinkType>}
    */
   async whenLink() {
-    return await y(this, On);
+    return await p(this, On);
   }
   /**
    * Resolves when Weavy component settings are available.
@@ -10309,7 +10308,7 @@ const Pf = class Pf extends jc {
    * @returns {Promise<WeavyComponentSettingsType>}
    */
   async whenSettings() {
-    return await y(this, Ta);
+    return await p(this, Ta);
   }
   connectedCallback() {
     super.connectedCallback(), document.addEventListener("wy-link", this.linkEventHandler), window.addEventListener("storage", this.storageLinkHandler), this.componentFeatures && this.requestUpdate("componentFeatures"), this.contextDataBlobs && this.requestUpdate("contextDataBlobs"), this.link && this.requestUpdate("link"), this.settings && this.requestUpdate("settings");
@@ -10321,9 +10320,9 @@ const Pf = class Pf extends jc {
     var r, a, o, c;
     await super.willUpdate(e), e.has("bot") && typeof this.bot == "string" && console.error(`Using .bot property is deprecated. Use .agent = "${this.bot}"; instead`);
     const i = Object.keys(this.settings);
-    if ((e.has("weavy") || i.find((l) => e.has(l))) && (this.settings = new iu(this)), e.has("features") && this.componentFeatures && (this.componentFeatures.setAllowedFeatures(this.features), this.componentFeatures instanceof Yt && (this.componentFeatures = this.componentFeatures.immutableCopy())), (e.has("weavy") || e.has("contextId") || e.has("user") || e.has("componentFeatures")) && this.weavy && this.contextId && this.user && this.componentFeatures?.allowsFeature(k.ContextData) && (await y(this, La).trackMutation(
+    if ((e.has("weavy") || i.find((l) => e.has(l))) && (this.settings = new iu(this)), e.has("features") && this.componentFeatures && (this.componentFeatures.setAllowedFeatures(this.features), this.componentFeatures instanceof Gt && (this.componentFeatures = this.componentFeatures.immutableCopy())), (e.has("weavy") || e.has("contextId") || e.has("user") || e.has("componentFeatures")) && this.weavy && this.contextId && this.user && this.componentFeatures?.allowsFeature(k.ContextData) && (await p(this, La).trackMutation(
       Ew(this.weavy, this.user, this.contextId, void 0, "data")
-    ), await y(this, zn).trackMutationState(
+    ), await p(this, zn).trackMutationState(
       {
         filters: {
           mutationKey: ["apps", this.contextId, "data"],
@@ -10332,82 +10331,82 @@ const Pf = class Pf extends jc {
       },
       this.weavy.queryClient
     )), e.has("contextualData") || e.has("data") || e.has("componentFeatures")) {
-      const l = this.contextualData ? [this.contextualData] : this.data ? this.data : [], u = y(this, Ri);
+      const l = this.contextualData ? [this.contextualData] : this.data ? this.data : [], u = p(this, Ri);
       if (P(this, Ri, /* @__PURE__ */ new Map()), l.forEach((b) => {
         const C = u.get(b);
         if (C)
-          y(this, Ri).set(b, C);
+          p(this, Ri).set(b, C);
         else {
           const v = c2(b);
-          v && y(this, Ri).set(b, v);
+          v && p(this, Ri).set(b, v);
         }
-      }), y(this, Ri) && this.componentFeatures?.allowsFeature(k.ContextData)) {
-        for (const m of Array.from(y(this, Ri).values()))
+      }), p(this, Ri) && this.componentFeatures?.allowsFeature(k.ContextData)) {
+        for (const m of Array.from(p(this, Ri).values()))
           if (m.type === "file") {
-            const f = await Hy(m.item);
+            const f = await Vy(m.item);
             if (!await g0(
-              y(this, zn).result ?? [],
-              async (E) => (E.context?.sha256 ?? await Hy(E.variables?.file)) === f
+              p(this, zn).result ?? [],
+              async (E) => (E.context?.sha256 ?? await Vy(E.variables?.file)) === f
             ))
               try {
-                await y(this, La).mutate({ file: m.item });
+                await p(this, La).mutate({ file: m.item });
               } catch {
                 console.warn("Could not upload context data.");
               }
           }
-        const b = y(this, zn).result, C = b?.some((m) => m.status === "pending"), v = b?.map((m) => m.data?.id).filter(ls).reverse() ?? [];
+        const b = p(this, zn).result, C = b?.some((m) => m.status === "pending"), v = b?.map((m) => m.data?.id).filter(ls).reverse() ?? [];
         C || (this.contextDataBlobs = v);
       } else
         this.contextDataBlobs = [];
     }
     (e.has("componentTypes") || e.has("agent")) && this.componentTypes && this.readStorageLink(), e.has("link") && this.link && (console.info("Opening notification link"), this.consumeStorageLink()), e.has("contextDataBlobs") && this.contextDataBlobs && (e.get("contextDataBlobs") && P(this, Ma, new Promise((l) => {
       P(this, Sa, l);
-    })), (r = y(this, Sa)) == null || r.call(this, this.contextDataBlobs)), e.has("componentFeatures") && this.componentFeatures && (e.get("componentFeatures") && P(this, Aa, new Promise((l) => {
+    })), (r = p(this, Sa)) == null || r.call(this, this.contextDataBlobs)), e.has("componentFeatures") && this.componentFeatures && (e.get("componentFeatures") && P(this, Aa, new Promise((l) => {
       P(this, Ea, l);
-    })), (a = y(this, Ea)) == null || a.call(this, this.componentFeatures)), e.has("link") && this.link && (e.get("link") && P(this, On, new Promise((l) => {
+    })), (a = p(this, Ea)) == null || a.call(this, this.componentFeatures)), e.has("link") && this.link && (e.get("link") && P(this, On, new Promise((l) => {
       P(this, Ln, l);
-    })), (o = y(this, Ln)) == null || o.call(this, this.link)), e.has("settings") && this.settings && (e.get("settings") && P(this, Ta, new Promise((l) => {
+    })), (o = p(this, Ln)) == null || o.call(this, this.link)), e.has("settings") && this.settings && (e.get("settings") && P(this, Ta, new Promise((l) => {
       P(this, Ra, l);
-    })), (c = y(this, Ra)) == null || c.call(this, this.settings)), e.has("weavy") && this.weavy && this.weavy.host.addEventListener("wy-notification", this.notificationEventConsumer, { capture: !0 });
+    })), (c = p(this, Ra)) == null || c.call(this, this.settings)), e.has("weavy") && this.weavy && this.weavy.host.addEventListener("wy-notification", this.notificationEventConsumer, { capture: !0 });
   }
 };
 Ld = new WeakMap(), Od = new WeakMap(), zd = new WeakMap(), Fd = new WeakMap(), Sa = new WeakMap(), Ma = new WeakMap(), Ea = new WeakMap(), Aa = new WeakMap(), Ln = new WeakMap(), On = new WeakMap(), Ra = new WeakMap(), Ta = new WeakMap(), Ri = new WeakMap(), La = new WeakMap(), zn = new WeakMap(), s(Pf, "WeavyTypeComponent");
 let Nt = Pf;
 We([
   Bi({ context: Jv }),
-  H()
+  V()
 ], Nt.prototype, "contextDataBlobs", 2);
 We([
   Bi({ context: ku }),
-  H()
+  V()
 ], Nt.prototype, "componentFeatures", 2);
 We([
   Bi({ context: i1 }),
-  H()
+  V()
 ], Nt.prototype, "settings", 2);
 We([
   Bi({ context: e1 })
 ], Nt.prototype, "_link", 2);
 We([
-  p({ type: Object })
+  y({ type: Object })
 ], Nt.prototype, "link", 1);
 We([
-  H()
+  V()
 ], Nt.prototype, "componentTypes", 2);
 We([
-  p()
+  y()
 ], Nt.prototype, "features", 2);
 We([
-  p({ type: String })
+  y({ type: String })
 ], Nt.prototype, "agent", 1);
 We([
-  p({
+  y({
     attribute: !0,
     type: String
   })
 ], Nt.prototype, "contextualData", 2);
 We([
-  p({
+  y({
     attribute: !0,
     type: String,
     converter: {
@@ -10418,25 +10417,25 @@ We([
   })
 ], Nt.prototype, "data", 1);
 We([
-  p({ type: String })
+  y({ type: String })
 ], Nt.prototype, "annotations", 1);
 We([
-  p({ type: String })
+  y({ type: String })
 ], Nt.prototype, "enterToSend", 1);
 We([
-  p({ type: String })
+  y({ type: String })
 ], Nt.prototype, "reactions", 1);
 We([
-  p()
+  y()
 ], Nt.prototype, "bot", 2);
-const x2 = new Map(Mv(r1)), C2 = new Map(Mv(n1)), ru = new Map(Object.entries(s1)), Wk = new Map(Object.entries(a1));
+const x2 = new Map(Mv(r1)), C2 = new Map(Mv(n1)), ru = new Map(Object.entries(s1)), qk = new Map(Object.entries(a1));
 var $2 = Object.defineProperty, k2 = Object.getOwnPropertyDescriptor, $r = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? k2(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && $2(t, e, r), r;
 }, "__decorateClass$1n");
 const Oi = "unknown";
-var Id, ui, Oa, za, Dd, Hd, jr, ri, Fn, Il;
+var Id, ui, Oa, za, Dd, Vd, jr, ri, Fn, Il;
 const Sf = class Sf extends Nt {
   constructor() {
     super(...arguments);
@@ -10446,12 +10445,12 @@ const Sf = class Sf extends Nt {
     R(this, Oa);
     R(this, za);
     R(this, Dd);
-    R(this, Hd);
+    R(this, Vd);
     R(this, jr);
     R(this, ri);
     P(this, ui, []), this.currentUid = void 0, this.appSubscribeMutation = new Be(this), P(this, za, new Promise((e) => {
       P(this, Oa, e);
-    })), P(this, Hd, new Promise((e) => {
+    })), P(this, Vd, new Promise((e) => {
       P(this, Dd, e);
     })), P(this, jr, new ge(this)), P(this, ri, /* @__PURE__ */ new Map());
   }
@@ -10492,14 +10491,14 @@ const Sf = class Sf extends Nt {
     P(this, Id, e), typeof e == "string" ? P(this, ui, e.split(P0).filter(ls).map((i) => Pu(i))) : e ? P(this, ui, [e]) : P(this, ui, []);
   }
   get uid() {
-    return y(this, Id);
+    return p(this, Id);
   }
   /**
    * An array of parsed uids from the `uid` property.
    * @readonly
    */
   get uids() {
-    return [...y(this, ui)];
+    return [...p(this, ui)];
   }
   set name(e) {
     this._initialAppName = e, this._appName = e;
@@ -10539,7 +10538,7 @@ const Sf = class Sf extends Nt {
    * @returns {Promise<AppType>}
    */
   async whenApp() {
-    return await y(this, za);
+    return await p(this, za);
   }
   /**
    * Resolves when multiple apps is available.
@@ -10547,7 +10546,7 @@ const Sf = class Sf extends Nt {
    * @returns {Promise<AppType[]>}
    */
   async whenApps() {
-    return await y(this, Hd);
+    return await p(this, Vd);
   }
   connectedCallback() {
     super.connectedCallback(), this.app && this.requestUpdate("app");
@@ -10558,35 +10557,35 @@ const Sf = class Sf extends Nt {
       const o = [this.generateUid];
       this.agent && o.push(this.agent), this.user && o.push(this.user.uid || this.user.id), this.uid = o.join("-");
     }
-    if (e.has("uid") && this.uid && (!this.currentUid || this.currentUid && !y(this, ui).includes(this.currentUid))) {
-      const o = y(this, ui)[0];
+    if (e.has("uid") && this.uid && (!this.currentUid || this.currentUid && !p(this, ui).includes(this.currentUid))) {
+      const o = p(this, ui)[0];
       this.currentUid = o;
     }
     const i = this.name;
     if ((e.has("appType") || e.has("uid") || e.has("agent") || e.has("weavy")) && this._appName !== this._initialAppName && (this._appName = this._initialAppName, this.requestUpdate("name", i)), e.has("appType") || e.has("currentUid") || e.has("agent") || e.has("name") || e.has("weavy"))
       if (this.appType && this.currentUid && this.weavy) {
-        const o = y(this, ui).length === 1;
+        const o = p(this, ui).length === 1;
         !o && this.name && console.warn("Specifying a name for the app is not possible when using multiple uid.");
         const c = o && this.name ? { name: this.name } : void 0, l = this.agent ? [this.agent] : void 0;
-        await y(this, jr).trackQuery(
+        await p(this, jr).trackQuery(
           _2(this.weavy, this.currentUid, this.appType, l, c)
         );
       } else
-        y(this, jr).untrackQuery();
-    if (y(this, jr).result?.isPending || (this.app = y(this, jr).result?.data, this.app?.name && this._appName !== this.app.name && (this.name = this.app.name, this.requestUpdate("name", i))), (e.has("uid") || e.has("weavy")) && (this.uid || e.get("uid")) && this.weavy)
+        p(this, jr).untrackQuery();
+    if (p(this, jr).result?.isPending || (this.app = p(this, jr).result?.data, this.app?.name && this._appName !== this.app.name && (this.name = this.app.name, this.requestUpdate("name", i))), (e.has("uid") || e.has("weavy")) && (this.uid || e.get("uid")) && this.weavy)
       if (this.uids.length) {
-        for (const [o, c] of y(this, ri).entries())
-          this.uids.includes(o) || (c.untrackQuery(), y(this, ri).delete(o));
+        for (const [o, c] of p(this, ri).entries())
+          this.uids.includes(o) || (c.untrackQuery(), p(this, ri).delete(o));
         this.uids.forEach((o) => {
-          if (!y(this, ri).has(o) && this.weavy) {
+          if (!p(this, ri).has(o) && this.weavy) {
             const c = new ge(this);
-            c.trackQuery(w1(this.weavy, o)), y(this, ri).set(o, c);
+            c.trackQuery(w1(this.weavy, o)), p(this, ri).set(o, c);
           }
         });
-      } else y(this, ri).size && (y(this, ri).forEach((o) => o.untrackQuery()), y(this, ri).clear());
-    if (!y(this, Fn, Il).result.isPending && (!this.apps || JSON.stringify(this.apps) !== JSON.stringify(y(this, Fn, Il).result.data?.data)))
-      if (y(this, Fn, Il).result.data?.data) {
-        const o = y(this, Fn, Il).result.data?.data, c = this;
+      } else p(this, ri).size && (p(this, ri).forEach((o) => o.untrackQuery()), p(this, ri).clear());
+    if (!p(this, Fn, Il).result.isPending && (!this.apps || JSON.stringify(this.apps) !== JSON.stringify(p(this, Fn, Il).result.data?.data)))
+      if (p(this, Fn, Il).result.data?.data) {
+        const o = p(this, Fn, Il).result.data?.data, c = this;
         this.apps = o && Object.defineProperty([...o], "current", {
           set(l) {
             c.app = l || void 0, c.currentUid = l?.uid || l?.id;
@@ -10594,7 +10593,7 @@ const Sf = class Sf extends Nt {
           get() {
             return c.app || void 0;
           }
-        }), (r = y(this, Dd)) == null || r.call(this, this.apps);
+        }), (r = p(this, Dd)) == null || r.call(this, this.apps);
       } else
         this.apps = void 0;
     if (e.has("currentUid") && (this.currentUid || e.get("currentUid")) && this.currentUid !== e.get("currentUid") && this.clearLink(), !this.link && (e.has("currentUid") && this.currentUid || e.has("app") && this.app) && this.appType && this.appType !== Oi && this.readStorageLink(), e.has("app") && this.app) {
@@ -10609,41 +10608,41 @@ const Sf = class Sf extends Nt {
     }
     e.has("app") && this.app && (e.get("app") && P(this, za, new Promise((o) => {
       P(this, Oa, o);
-    })), (a = y(this, Oa)) == null || a.call(this, this.app)), (e.has("weavy") || e.has("app")) && this.weavy && this.app && this.appSubscribeMutation.trackMutation(S2(this.weavy, this.app));
+    })), (a = p(this, Oa)) == null || a.call(this, this.app)), (e.has("weavy") || e.has("app")) && this.weavy && this.app && this.appSubscribeMutation.trackMutation(S2(this.weavy, this.app));
   }
 };
-Id = new WeakMap(), ui = new WeakMap(), Oa = new WeakMap(), za = new WeakMap(), Dd = new WeakMap(), Hd = new WeakMap(), jr = new WeakMap(), ri = new WeakMap(), Fn = new WeakSet(), Il = /* @__PURE__ */ s(function() {
-  return A2(y(this, ri));
+Id = new WeakMap(), ui = new WeakMap(), Oa = new WeakMap(), za = new WeakMap(), Dd = new WeakMap(), Vd = new WeakMap(), jr = new WeakMap(), ri = new WeakMap(), Fn = new WeakSet(), Il = /* @__PURE__ */ s(function() {
+  return A2(p(this, ri));
 }, "#appsQuery"), s(Sf, "WeavyAppComponent");
 let ae = Sf;
 $r([
   Bi({ context: Jd }),
-  H()
+  V()
 ], ae.prototype, "app", 2);
 $r([
   Bi({ context: Yv }),
-  H()
+  V()
 ], ae.prototype, "apps", 2);
 $r([
-  p({ type: Object })
+  y({ type: Object })
 ], ae.prototype, "link", 1);
 $r([
-  H()
+  V()
 ], ae.prototype, "appType", 2);
 $r([
-  p()
+  y()
 ], ae.prototype, "generateUid", 2);
 $r([
-  p({ converter: Pu })
+  y({ converter: Pu })
 ], ae.prototype, "uid", 1);
 $r([
-  p()
+  y()
 ], ae.prototype, "currentUid", 2);
 $r([
-  p({ type: String })
+  y({ type: String })
 ], ae.prototype, "name", 1);
 $r([
-  p()
+  y()
 ], ae.prototype, "autoUid", 2);
 function w1(n, t, e = Oi, i) {
   return e === Oi || typeof t == "number" ? ar(n, ["apps", t]) : ar(n, ["apps", t], void 0, void 0, JSON.stringify({ type: e, ...i }), "PUT");
@@ -10781,7 +10780,7 @@ const Mf = class Mf {
    * Initiates context consumers
    */
   async setContexts() {
-    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   /**
    * Dispatch a `wy-action` event on the host.
@@ -10832,10 +10831,10 @@ const Ef = class Ef {
     }), t.addEventListener("dragleave", () => this.isDragActive = !1), t.addEventListener("dragend", () => this.isDragActive = !1), t.addEventListener("drop", (e) => this.handleDrop(e));
   }
   get isDragActive() {
-    return y(this, Fa);
+    return p(this, Fa);
   }
   set isDragActive(t) {
-    y(this, Fa) !== t && (P(this, Fa, t), this.host.requestUpdate());
+    p(this, Fa) !== t && (P(this, Fa, t), this.host.requestUpdate());
   }
   handleDrop(t) {
     t.preventDefault();
@@ -10860,7 +10859,7 @@ Fa = new WeakMap(), s(Ef, "DropZoneController");
 let nu = Ef;
 function Rh(n, t) {
   ke();
-  const e = Vs({}, window.history.state, !0);
+  const e = Hs({}, window.history.state, !0);
   if (!e.weavy || !e.weavy[n] || !Object.hasOwn(e.weavy[n], t))
     throw new Error("Property not found");
   return e.weavy[n][t];
@@ -10868,7 +10867,7 @@ function Rh(n, t) {
 s(Rh, "getBrowserStateProperty");
 function By(n, t, e = "push", i) {
   if (ke(), t) {
-    const r = Vs({}, window.history.state, !0);
+    const r = Hs({}, window.history.state, !0);
     r.weavy ??= {}, r.weavy[n] = t, i = i && String(i) || window.location.href;
     try {
       e === "replace" ? window.history.replaceState(r, "", i) : window.history.pushState(r, "", i);
@@ -10987,7 +10986,7 @@ const Rf = class Rf {
   }
   async setContext() {
     await xi(this.host), this.context = new Ue(this.host, {
-      context: Jt,
+      context: Xt,
       subscribe: !0,
       callback: /* @__PURE__ */ s((t) => {
         t && (this.resolveContext?.(t), this.queryClient = t.queryClient, this.resolveQueryClient?.(t.queryClient));
@@ -11208,27 +11207,27 @@ const Of = class Of {
       }
   }
   resetPersistPropertiesCache() {
-    y(this, er).clear();
+    p(this, er).clear();
   }
   getStorageItem(t, e) {
-    const i = y(this, In)?.getItem(`${t}-${e.toString()}`);
+    const i = p(this, In)?.getItem(`${t}-${e.toString()}`);
     if (i)
       return JSON.parse(i);
   }
   setStorageItem(t, e, i) {
     const r = JSON.stringify(i);
-    r && y(this, In)?.setItem(`${t}-${e.toString()}`, r);
+    r && p(this, In)?.setItem(`${t}-${e.toString()}`, r);
   }
   persistProperties(t, e, i, r, a) {
     const o = `${this.keyPrefix}:${r ? `${r}:` : ""}${typeof t}:${e}`, c = /* @__PURE__ */ new Map();
     for (const l of i) {
-      if (!y(this, er).has(l.name)) {
+      if (!p(this, er).has(l.name)) {
         const u = this.getStorageItem(o, l.name);
-        u && (l.override || !t[l.name]) && (c.set(l.name, t[l.name]), t[l.name] = u), y(this, er).set(l.name, u);
+        u && (l.override || !t[l.name]) && (c.set(l.name, t[l.name]), t[l.name] = u), p(this, er).set(l.name, u);
       }
-      if (a?.(c), t[l.name] !== y(this, er).get(l.name)) {
+      if (a?.(c), t[l.name] !== p(this, er).get(l.name)) {
         const u = t[l.name];
-        y(this, er).set(l.name, u), this.setStorageItem(o, l.name, u);
+        p(this, er).set(l.name, u), this.setStorageItem(o, l.name, u);
       }
     }
   }
@@ -11243,16 +11242,16 @@ const zf = class zf {
     P(this, Dn, ""), this.properties = [], this.initialProperties = /* @__PURE__ */ new Map(), this.persistStorageCache = new jy(), t.addController(this), this.host = t;
   }
   get prefixKey() {
-    return y(this, Dn);
+    return p(this, Dn);
   }
   set prefixKey(t) {
-    t !== y(this, Dn) && (this.persistStorageCache.resetPersistPropertiesCache(), P(this, Dn, t), this.host.requestUpdate());
+    t !== p(this, Dn) && (this.persistStorageCache.resetPersistPropertiesCache(), P(this, Dn, t), this.host.requestUpdate());
   }
   get cachePrefix() {
-    return y(this, Ia);
+    return p(this, Ia);
   }
   set cachePrefix(t) {
-    t !== y(this, Ia) && (this.persistStorageCache.resetPersistPropertiesCache(), P(this, Ia, t), this.host.requestUpdate());
+    t !== p(this, Ia) && (this.persistStorageCache.resetPersistPropertiesCache(), P(this, Ia, t), this.host.requestUpdate());
   }
   observe(t, e, i, r) {
     this.properties = t, this.callback = r;
@@ -11394,18 +11393,18 @@ const Df = class Df {
 };
 s(Df, "SwipeScrollController");
 let Ky = Df;
-var Da, Vd;
-const Hf = class Hf {
+var Da, Hd;
+const Vf = class Vf {
   constructor(t, e) {
     R(this, Da);
-    R(this, Vd);
+    R(this, Hd);
     P(this, Da, !0), this.styles = [], t.addController(this), this.host = t, e && (this.styles = e);
   }
   get themeColor() {
-    return y(this, Vd);
+    return p(this, Hd);
   }
   set themeColor(t) {
-    P(this, Vd, t), this.checkThemeUpdate();
+    P(this, Hd, t), this.checkThemeUpdate();
   }
   checkThemeUpdate() {
     const t = this.themeColor || Ty(this.host) || Ly();
@@ -11424,7 +11423,7 @@ const Hf = class Hf {
     }
   }
   hostUpdate() {
-    y(this, Da) && (this.checkThemeUpdate(), P(this, Da, !1));
+    p(this, Da) && (this.checkThemeUpdate(), P(this, Da, !1));
   }
   hostConnected() {
     requestAnimationFrame(() => {
@@ -11435,9 +11434,9 @@ const Hf = class Hf {
     this.cssObserverDisconnect?.(), this.metaObserverDisconnect?.();
   }
 };
-Da = new WeakMap(), Vd = new WeakMap(), s(Hf, "ThemeController");
-let he = Hf;
-const Vf = class Vf {
+Da = new WeakMap(), Hd = new WeakMap(), s(Vf, "ThemeController");
+let de = Vf;
+const Hf = class Hf {
   constructor(t) {
     this.registrationRequested = !1, this.typingTimeout = null, this.discardTime = 5 * 1e3, this.typingMembers = [], this.names = [], this.ellipsis = "", this.handleRealtimeTyping = (e) => {
       e.entity.id === this.appId && e.actor.id !== this.userId && (this.setTypers(e.actor), this.updateTyping());
@@ -11466,7 +11465,7 @@ const Vf = class Vf {
     t !== this._userId && (this.typingMembers = [], this.unregisterRealtime(), this._userId = t, this.registerRealtime());
   }
   async setContexts() {
-    this.whenWeavyContext = new Promise((t) => this.resolveWeavyContext = t), this.whenComponentFeaturesContext = new Promise((t) => this.resolveComponentFeaturesContext = t), await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 }), this.componentFeaturesContext = new Ue(this.host, {
+    this.whenWeavyContext = new Promise((t) => this.resolveWeavyContext = t), this.whenComponentFeaturesContext = new Promise((t) => this.resolveComponentFeaturesContext = t), await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 }), this.componentFeaturesContext = new Ue(this.host, {
       context: ku,
       subscribe: !0
     });
@@ -11519,13 +11518,13 @@ const Vf = class Vf {
     this.typingTimeout && (clearTimeout(this.typingTimeout), this.typingTimeout = null), this.typingMembers.length = 0, this.names.length = 0, this.weavy && this.unregisterRealtime(!0);
   }
 };
-s(Vf, "TypingController");
-let su = Vf;
-var Ha;
+s(Hf, "TypingController");
+let su = Hf;
+var Va;
 const Uf = class Uf {
   constructor(t) {
-    R(this, Ha);
-    this.appTypes = [], P(this, Ha, 0), this.registrationRequested = !1, this.handleRefresh = () => {
+    R(this, Va);
+    this.appTypes = [], P(this, Va, 0), this.registrationRequested = !1, this.handleRefresh = () => {
       this.unreadQuery.result.refetch();
     }, t.addController(this), this.host = t, this.unreadQuery = new ge(t), this.whenWeavyContext = new Promise((e) => this.resolveWeavyContext = e), this.setContexts(), this.registerRealtime();
   }
@@ -11533,7 +11532,7 @@ const Uf = class Uf {
    * The number of unread items for the current scope
    */
   get unread() {
-    return y(this, Ha);
+    return p(this, Va);
   }
   /**
    * Is the unread count pending?
@@ -11554,7 +11553,7 @@ const Uf = class Uf {
    * Initiates context consumers
    */
   async setContexts() {
-    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   /**
    * Dispatch a `wy-unread` event on the host.
@@ -11591,13 +11590,13 @@ const Uf = class Uf {
   hostUpdate() {
     this.weavyContext?.value && this.resolveWeavyContext?.(this.weavyContext?.value);
     const t = this.unreadQuery.result?.data?.count ?? 0;
-    t !== this.unread && (P(this, Ha, t), this.dispatchUnreadEvent(), this.host.requestUpdate());
+    t !== this.unread && (P(this, Va, t), this.dispatchUnreadEvent(), this.host.requestUpdate());
   }
   hostDisconnected() {
     this.weavy && this.unregisterRealtime(!0);
   }
 };
-Ha = new WeakMap(), s(Uf, "UnreadConversationsController");
+Va = new WeakMap(), s(Uf, "UnreadConversationsController");
 let Qc = Uf;
 var _t = /* @__PURE__ */ ((n) => (n.All = "", n.Activity = "activity", n.Mention = "mention", n.Reaction = "reaction", n))(_t || {});
 function g1(n) {
@@ -11747,7 +11746,7 @@ const Kl = /* @__PURE__ */ s((n, t, e, i, r) => (i ??= b1(t), n.setQueryData(t, 
 }, "updateCacheItems"), Eu = /* @__PURE__ */ s((n, t, e) => n.setQueryData(t, (i) => $1(
   i,
   e
-)), "removeCacheItem"), H2 = /* @__PURE__ */ s((n, t, e) => {
+)), "removeCacheItem"), V2 = /* @__PURE__ */ s((n, t, e) => {
   n.setQueriesData(t, (i) => $1(i, e));
 }, "removeCacheItems"), Ql = /* @__PURE__ */ s((n, t, e) => {
   n.setQueriesData(t, (i) => {
@@ -11791,7 +11790,7 @@ function Em(n) {
   return !n || !n?.pages.some((t) => t.data?.length);
 }
 s(Em, "isInfiniteResultDataEmpty");
-function V2(n, t = _t.All, e, i = {}) {
+function H2(n, t = _t.All, e, i = {}) {
   return {
     ...i,
     initialPageParam: 0,
@@ -11809,7 +11808,7 @@ function V2(n, t = _t.All, e, i = {}) {
     }, "getNextPageParam")
   };
 }
-s(V2, "getNotificationsOptions");
+s(H2, "getNotificationsOptions");
 function U2(n, t = _t.All, e) {
   const i = n.queryClient.getQueryData(["notifications", "list", e, t])?.pages.flatMap((a) => a.data);
   let r;
@@ -11931,11 +11930,11 @@ function W2(n, t = _t.All, e, i = {}) {
   return ar(n, e ? ["apps", "notifications", "unread", e, t] : ["notifications", "unread", t], a, i);
 }
 s(W2, "getUnreadOptions");
-var Va;
+var Ha;
 const Bf = class Bf {
   constructor(t) {
-    R(this, Va);
-    this.typeFilter = _t.All, P(this, Va, 0), this.registrationRequested = !1, this.handleRefresh = () => {
+    R(this, Ha);
+    this.typeFilter = _t.All, P(this, Ha, 0), this.registrationRequested = !1, this.handleRefresh = () => {
       this.unreadQuery.result.refetch();
     }, t.addController(this), this.host = t, this.unreadQuery = new ge(t), this.whenWeavyContext = new Promise((e) => this.resolveWeavyContext = e), this.setContexts(), this.registerRealtime();
   }
@@ -11943,7 +11942,7 @@ const Bf = class Bf {
    * The number of unread notifications for the current scope
    */
   get unread() {
-    return y(this, Va);
+    return p(this, Ha);
   }
   /**
    * Is the unread count pending?
@@ -11964,7 +11963,7 @@ const Bf = class Bf {
    * Initiates context consumers
    */
   async setContexts() {
-    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   /**
    * Dispatch a `wy-unread` event on the host.
@@ -12011,13 +12010,13 @@ const Bf = class Bf {
   hostUpdate() {
     this.weavyContext?.value && this.resolveWeavyContext?.(this.weavyContext?.value);
     const t = this.unreadQuery.result?.data?.count ?? 0;
-    t !== this.unread && (P(this, Va, t), this.dispatchNotificationUnreadEvent(), this.host.requestUpdate());
+    t !== this.unread && (P(this, Ha, t), this.dispatchNotificationUnreadEvent(), this.host.requestUpdate());
   }
   hostDisconnected() {
     this.weavy && this.unregisterRealtime(!0);
   }
 };
-Va = new WeakMap(), s(Bf, "UnreadNotificationsController");
+Ha = new WeakMap(), s(Bf, "UnreadNotificationsController");
 let Zl = Bf;
 var j2 = Object.defineProperty, K2 = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = void 0, a = n.length - 1, o; a >= 0; a--)
@@ -12032,7 +12031,7 @@ const Nf = class Nf extends ae {
 s(Nf, "WeavyOptionalAppComponent");
 let qn = Nf;
 K2([
-  H()
+  V()
 ], qn.prototype, "appType");
 var Q2 = Object.defineProperty, Rw = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = void 0, a = n.length - 1, o; a >= 0; a--)
@@ -12068,7 +12067,7 @@ const qf = class qf extends st {
    * @returns {Promise<ContextIdType>}
    */
   async whenContextId() {
-    return await y(this, Ud);
+    return await p(this, Ud);
   }
   /**
    * Resolves when current user data is available.
@@ -12077,7 +12076,7 @@ const qf = class qf extends st {
    * @returns {Promise<UserType>}
    */
   async whenUser() {
-    return await y(this, Bd);
+    return await p(this, Bd);
   }
   /**
    * Resolves when a weavy context is available.
@@ -12086,7 +12085,7 @@ const qf = class qf extends st {
    * @returns {Promise<WeavyType>}
    */
   async whenWeavy() {
-    return await y(this, Nd);
+    return await p(this, Nd);
   }
   /**
    * Resolves when the component has rendered first time.
@@ -12094,24 +12093,24 @@ const qf = class qf extends st {
    * @returns {Promise<WeavySubComponent>}
    */
   async whenReady() {
-    return await y(this, xu);
+    return await p(this, xu);
   }
   willUpdate(e) {
     var i, r, a;
     super.willUpdate(e), e.has("contextId") && this.contextId && (e.get("contextId") && P(this, Ud, new Promise((o) => {
       P(this, Ua, o);
-    })), (i = y(this, Ua)) == null || i.call(this, this.contextId)), e.has("user") && this.user && (e.get("user") && P(this, Bd, new Promise((o) => {
+    })), (i = p(this, Ua)) == null || i.call(this, this.contextId)), e.has("user") && this.user && (e.get("user") && P(this, Bd, new Promise((o) => {
       P(this, Ba, o);
-    })), (r = y(this, Ba)) == null || r.call(this, this.user)), e.has("weavy") && this.weavy && (e.get("weavy") && P(this, Nd, new Promise((o) => {
+    })), (r = p(this, Ba)) == null || r.call(this, this.user)), e.has("weavy") && this.weavy && (e.get("weavy") && P(this, Nd, new Promise((o) => {
       P(this, Na, o);
-    })), (a = y(this, Na)) == null || a.call(this, this.weavy));
+    })), (a = p(this, Na)) == null || a.call(this, this.weavy));
   }
   connectedCallback() {
     super.connectedCallback(), this.contextId && this.requestUpdate("contextId"), this.user && this.requestUpdate("user"), this.weavy && this.requestUpdate("weavy");
   }
   firstUpdated(e) {
     var i;
-    super.firstUpdated(e), (i = y(this, qd)) == null || i.call(this, this), this.dispatchEvent(
+    super.firstUpdated(e), (i = p(this, qd)) == null || i.call(this, this), this.dispatchEvent(
       new CustomEvent("ready", {
         bubbles: !1,
         composed: !1
@@ -12123,15 +12122,15 @@ Ua = new WeakMap(), Ud = new WeakMap(), Ba = new WeakMap(), Bd = new WeakMap(), 
 let Re = qf;
 Rw([
   oe({ context: Xv, subscribe: !0 }),
-  H()
+  V()
 ], Re.prototype, "contextId");
 Rw([
   oe({ context: _u, subscribe: !0 }),
-  H()
+  V()
 ], Re.prototype, "user");
 Rw([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], Re.prototype, "weavy");
 var G2 = Object.defineProperty, Au = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = void 0, a = n.length - 1, o; a >= 0; a--)
@@ -12174,7 +12173,7 @@ const Wf = class Wf extends Re {
    * @returns {Promise<ContextDataBlobsType>}
    */
   async whenContextDataBlobs() {
-    return await y(this, Wd);
+    return await p(this, Wd);
   }
   /**
    * Resolves when weavy component features config is available.
@@ -12183,7 +12182,7 @@ const Wf = class Wf extends Re {
    * @returns {Promise<ComponentFeaturePolicy>}
    */
   async whenComponentFeatures() {
-    return await y(this, jd);
+    return await p(this, jd);
   }
   /**
    * Resolves when a provided link is available.
@@ -12191,7 +12190,7 @@ const Wf = class Wf extends Re {
    * @returns {Promise<LinkType>}
    */
   async whenLink() {
-    return await y(this, Kd);
+    return await p(this, Kd);
   }
   /**
    * Resolves when weavy component settings are available.
@@ -12200,19 +12199,19 @@ const Wf = class Wf extends Re {
    * @returns {Promise<WeavyComponentSettingsType>}
    */
   async whenSettings() {
-    return await y(this, Qd);
+    return await p(this, Qd);
   }
   willUpdate(e) {
     var i, r, a, o;
     super.willUpdate(e), e.has("contextDataBlobs") && this.contextDataBlobs && (e.get("contextDataBlobs") && P(this, Wd, new Promise((c) => {
       P(this, qa, c);
-    })), (i = y(this, qa)) == null || i.call(this, this.contextDataBlobs)), e.has("componentFeatures") && this.componentFeatures && (e.get("componentFeatures") && P(this, jd, new Promise((c) => {
+    })), (i = p(this, qa)) == null || i.call(this, this.contextDataBlobs)), e.has("componentFeatures") && this.componentFeatures && (e.get("componentFeatures") && P(this, jd, new Promise((c) => {
       P(this, Wa, c);
-    })), (r = y(this, Wa)) == null || r.call(this, this.componentFeatures)), e.has("link") && this.link && (e.get("link") && P(this, Kd, new Promise((c) => {
+    })), (r = p(this, Wa)) == null || r.call(this, this.componentFeatures)), e.has("link") && this.link && (e.get("link") && P(this, Kd, new Promise((c) => {
       P(this, ja, c);
-    })), (a = y(this, ja)) == null || a.call(this, this.link)), e.has("settings") && this.settings && (e.get("settings") && P(this, Qd, new Promise((c) => {
+    })), (a = p(this, ja)) == null || a.call(this, this.link)), e.has("settings") && this.settings && (e.get("settings") && P(this, Qd, new Promise((c) => {
       P(this, Ka, c);
-    })), (o = y(this, Ka)) == null || o.call(this, this.settings));
+    })), (o = p(this, Ka)) == null || o.call(this, this.settings));
   }
   connectedCallback() {
     super.connectedCallback(), this.contextDataBlobs && this.requestUpdate("contextDataBlobs"), this.componentFeatures && this.requestUpdate("componentFeatures"), this.link && this.requestUpdate("link"), this.settings && this.requestUpdate("settings");
@@ -12222,19 +12221,19 @@ qa = new WeakMap(), Wd = new WeakMap(), Wa = new WeakMap(), jd = new WeakMap(), 
 let lr = Wf;
 Au([
   oe({ context: Jv, subscribe: !0 }),
-  H()
+  V()
 ], lr.prototype, "contextDataBlobs");
 Au([
   oe({ context: ku, subscribe: !0 }),
-  H()
+  V()
 ], lr.prototype, "componentFeatures");
 Au([
   oe({ context: e1, subscribe: !0 }),
-  H()
+  V()
 ], lr.prototype, "link");
 Au([
   oe({ context: i1, subscribe: !0 }),
-  H()
+  V()
 ], lr.prototype, "settings");
 var Z2 = Object.defineProperty, _1 = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = void 0, a = n.length - 1, o; a >= 0; a--)
@@ -12261,7 +12260,7 @@ const jf = class jf extends lr {
    * @returns {Promise<AppType>}
    */
   async whenApp() {
-    return await y(this, Gd);
+    return await p(this, Gd);
   }
   /**
    * Resolves when multiple app data is available.
@@ -12269,15 +12268,15 @@ const jf = class jf extends lr {
    * @returns {Promise<AppListType>}
    */
   async whenApps() {
-    return await y(this, Zd);
+    return await p(this, Zd);
   }
   willUpdate(e) {
     var i, r;
     super.willUpdate(e), e.has("app") && this.app && (e.get("app") && P(this, Gd, new Promise((a) => {
       P(this, Qa, a);
-    })), (i = y(this, Qa)) == null || i.call(this, this.app)), e.has("apps") && this.apps && (e.get("apps") && P(this, Zd, new Promise((a) => {
+    })), (i = p(this, Qa)) == null || i.call(this, this.app)), e.has("apps") && this.apps && (e.get("apps") && P(this, Zd, new Promise((a) => {
       P(this, Ga, a);
-    })), (r = y(this, Ga)) == null || r.call(this, this.apps));
+    })), (r = p(this, Ga)) == null || r.call(this, this.apps));
   }
   connectedCallback() {
     super.connectedCallback(), this.app && this.requestUpdate("app"), this.apps && this.requestUpdate("apps");
@@ -12287,11 +12286,11 @@ Qa = new WeakMap(), Gd = new WeakMap(), Ga = new WeakMap(), Zd = new WeakMap(), 
 let qt = jf;
 _1([
   oe({ context: Jd, subscribe: !0 }),
-  H()
+  V()
 ], qt.prototype, "app");
 _1([
   oe({ context: Yv, subscribe: !0 }),
-  H()
+  V()
 ], qt.prototype, "apps");
 const Y2 = eval;
 function X2(n) {
@@ -12315,7 +12314,7 @@ const U = /* @__PURE__ */ s((n) => (t, e) => {
     );
   }) : !customElements.get(n) && customElements.define(n, t);
 }, "customElement"), Y = j`:host{display:contents}`;
-var J2 = Object.defineProperty, t5 = Object.getOwnPropertyDescriptor, ce = /* @__PURE__ */ s((n, t, e, i) => {
+var J2 = Object.defineProperty, t5 = Object.getOwnPropertyDescriptor, pe = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? t5(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && J2(t, e, r), r;
@@ -12325,21 +12324,21 @@ function Am(n) {
 }
 s(Am, "acceptedValue");
 var Za;
-let Wt = (Za = class extends st {
+let Zt = (Za = class extends st {
   constructor() {
-    super(), this.provider = !1, this.annotations = It.defaults.annotations, this.cloudFilePickerUrl = It.defaults.cloudFilePickerUrl, this.configurationTimeout = It.defaults.configurationTimeout, this.disableEnvironmentImports = It.defaults.disableEnvironmentImports, this.enterToSend = It.defaults.enterToSend, this.locale = It.defaults.locale, this.locales = It.defaults.locales, this.gcTime = It.defaults.gcTime, this.pdfHWA = It.defaults.pdfHWA, this.scrollBehavior = It.defaults.scrollBehavior, this.staleTime = It.defaults.staleTime, this.tokenFactory = It.defaults.tokenFactory, this.tokenFactoryRetryDelay = It.defaults.tokenFactoryRetryDelay, this.tokenFactoryTimeout = It.defaults.tokenFactoryTimeout, this.tokenUrl = It.defaults.tokenUrl, this.url = It.defaults.url, this.reactions = It.defaults.reactions, this.childElementCount && (this.provider = !0), this.weavy ??= new It({ host: this.provider ? this : void 0 });
+    super(), this.provider = !1, this.annotations = Vt.defaults.annotations, this.cloudFilePickerUrl = Vt.defaults.cloudFilePickerUrl, this.configurationTimeout = Vt.defaults.configurationTimeout, this.disableEnvironmentImports = Vt.defaults.disableEnvironmentImports, this.enterToSend = Vt.defaults.enterToSend, this.locale = Vt.defaults.locale, this.locales = Vt.defaults.locales, this.gcTime = Vt.defaults.gcTime, this.scrollBehavior = Vt.defaults.scrollBehavior, this.staleTime = Vt.defaults.staleTime, this.tokenFactory = Vt.defaults.tokenFactory, this.tokenFactoryRetryDelay = Vt.defaults.tokenFactoryRetryDelay, this.tokenFactoryTimeout = Vt.defaults.tokenFactoryTimeout, this.tokenUrl = Vt.defaults.tokenUrl, this.url = Vt.defaults.url, this.reactions = Vt.defaults.reactions, this.childElementCount && (this.provider = !0), this.weavy ??= new Vt({ host: this.provider ? this : void 0 });
   }
   /** The semver version of the package. */
   get version() {
-    return It.version;
+    return Vt.version;
   }
   /** The Weavy source name; package name. */
   get sourceName() {
-    return It.sourceName;
+    return Vt.sourceName;
   }
   /** The Weavy source format; file format. */
   get sourceFormat() {
-    return It.sourceFormat;
+    return Vt.sourceFormat;
   }
   willUpdate(t) {
     if (super.willUpdate(t), this.weavy) {
@@ -12353,87 +12352,84 @@ let Wt = (Za = class extends st {
     return h` <slot></slot> `;
   }
 }, s(Za, "WyContext"), Za);
-Wt.styles = [Qt, Y];
-ce([
-  p({ attribute: !0, type: Boolean })
-], Wt.prototype, "provider", 2);
-ce([
-  p()
-], Wt.prototype, "annotations", 2);
-ce([
-  p({
+Zt.styles = [Kt, Y];
+pe([
+  y({ attribute: !0, type: Boolean })
+], Zt.prototype, "provider", 2);
+pe([
+  y()
+], Zt.prototype, "annotations", 2);
+pe([
+  y({
     attribute: !0,
     converter: {
       fromAttribute: /* @__PURE__ */ s((n) => Tw(n), "fromAttribute")
     }
   })
-], Wt.prototype, "cloudFilePickerUrl", 2);
-ce([
-  p({ type: Number, attribute: !0 })
-], Wt.prototype, "configurationTimeout", 2);
-ce([
-  p({ type: Boolean })
-], Wt.prototype, "disableEnvironmentImports", 2);
-ce([
-  p({ attribute: !0 })
-], Wt.prototype, "enterToSend", 2);
-ce([
-  p({ attribute: !0 })
-], Wt.prototype, "locale", 2);
-ce([
-  p({ attribute: !0, type: Array })
-], Wt.prototype, "locales", 2);
-ce([
-  p({ attribute: !0, type: Number })
-], Wt.prototype, "gcTime", 2);
-ce([
-  p({ attribute: !0 })
-], Wt.prototype, "pdfHWA", 2);
-ce([
-  p({ attribute: !0 })
-], Wt.prototype, "scrollBehavior", 2);
-ce([
-  p({ attribute: !0, type: Number })
-], Wt.prototype, "staleTime", 2);
-ce([
-  p({
+], Zt.prototype, "cloudFilePickerUrl", 2);
+pe([
+  y({ type: Number, attribute: !0 })
+], Zt.prototype, "configurationTimeout", 2);
+pe([
+  y({ type: Boolean })
+], Zt.prototype, "disableEnvironmentImports", 2);
+pe([
+  y({ attribute: !0 })
+], Zt.prototype, "enterToSend", 2);
+pe([
+  y({ attribute: !0 })
+], Zt.prototype, "locale", 2);
+pe([
+  y({ attribute: !0, type: Array })
+], Zt.prototype, "locales", 2);
+pe([
+  y({ attribute: !0, type: Number })
+], Zt.prototype, "gcTime", 2);
+pe([
+  y({ attribute: !0 })
+], Zt.prototype, "scrollBehavior", 2);
+pe([
+  y({ attribute: !0, type: Number })
+], Zt.prototype, "staleTime", 2);
+pe([
+  y({
     attribute: !0,
     converter: {
       fromAttribute: /* @__PURE__ */ s((n) => X2(n), "fromAttribute")
     }
   })
-], Wt.prototype, "tokenFactory", 2);
-ce([
-  p({ attribute: !0, type: Number })
-], Wt.prototype, "tokenFactoryRetryDelay", 2);
-ce([
-  p({ attribute: !0, type: Number })
-], Wt.prototype, "tokenFactoryTimeout", 2);
-ce([
-  p({
+], Zt.prototype, "tokenFactory", 2);
+pe([
+  y({ attribute: !0, type: Number })
+], Zt.prototype, "tokenFactoryRetryDelay", 2);
+pe([
+  y({ attribute: !0, type: Number })
+], Zt.prototype, "tokenFactoryTimeout", 2);
+pe([
+  y({
     attribute: !0,
     converter: {
       fromAttribute: /* @__PURE__ */ s((n) => Tw(n), "fromAttribute")
     }
   })
-], Wt.prototype, "tokenUrl", 2);
-ce([
-  p({
+], Zt.prototype, "tokenUrl", 2);
+pe([
+  y({
     attribute: !0,
     converter: {
       fromAttribute: /* @__PURE__ */ s((n) => Tw(n), "fromAttribute")
     }
   })
-], Wt.prototype, "url", 2);
-ce([
-  p({ attribute: !0 })
-], Wt.prototype, "reactions", 2);
-ce([
-  H()
-], Wt.prototype, "weavy", 2);
-Wt = ce([
+], Zt.prototype, "url", 2);
+pe([
+  y({ attribute: !0 })
+], Zt.prototype, "reactions", 2);
+pe([
+  V()
+], Zt.prototype, "weavy", 2);
+Zt = pe([
   U("wy-context")
-], Wt);
+], Zt);
 const Se = j`:host{font-family:var(--wy-font-family, unset)}`;
 var e5 = Object.defineProperty, i5 = Object.getOwnPropertyDescriptor, Lw = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? i5(t, e) : t, a = n.length - 1, o; a >= 0; a--)
@@ -12442,15 +12438,15 @@ var e5 = Object.defineProperty, i5 = Object.getOwnPropertyDescriptor, Lw = /* @_
 }, "__decorateClass$1h"), Ya;
 let Gc = (Ya = class extends ae {
   constructor() {
-    super(...arguments), this.appType = Oi, this.componentFeatures = new Yt(kw(Ah)), this.theme = new he(this, Gc.styles);
+    super(...arguments), this.appType = Oi, this.componentFeatures = new Gt(kw(Ah)), this.theme = new de(this, Gc.styles);
   }
   render() {
     return h`<slot></slot>`;
   }
 }, s(Ya, "WyComponent"), Ya);
-Gc.styles = [Qt, Y, Se];
+Gc.styles = [Kt, Y, Se];
 Lw([
-  p({
+  y({
     converter: {
       fromAttribute(n, t) {
         return C2.get(n) ?? n;
@@ -12459,11 +12455,11 @@ Lw([
   })
 ], Gc.prototype, "appType", 2);
 Lw([
-  p({
+  y({
     converter: {
       fromAttribute(n, t) {
         const e = typeof n == "string" ? t1(n, Ah, Ah) : Ah;
-        return new Yt(kw(e));
+        return new Gt(kw(e));
       }
     }
   })
@@ -13163,15 +13159,15 @@ Zc.styles = [
   Y
 ];
 Dw([
-  p()
+  y()
 ], Zc.prototype, "placement", 2);
 Dw([
-  p()
+  y()
 ], Zc.prototype, "status", 2);
 Zc = Dw([
   U("wy-presence")
 ], Zc);
-var F5 = "M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M1,10V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z", I5 = "M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z", D5 = "M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z", H5 = "M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", V5 = "M13 13H11V7H13M11 15H13V17H11M15.73 3H8.27L3 8.27V15.73L8.27 21H15.73L21 15.73V8.27L15.73 3Z", U5 = "M19.5,3.09L15,7.59V4H13V11H20V9H16.41L20.91,4.5L19.5,3.09M4,13V15H7.59L3.09,19.5L4.5,20.91L9,16.41V20H11V13H4Z", B5 = "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z", Om = "M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z", N5 = "M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z", q5 = "M7.5,18A5.5,5.5 0 0,1 2,12.5A5.5,5.5 0 0,1 7.5,7H18A4,4 0 0,1 22,11A4,4 0 0,1 18,15H9.5A2.5,2.5 0 0,1 7,12.5A2.5,2.5 0 0,1 9.5,10H17V11.5H9.5A1,1 0 0,0 8.5,12.5A1,1 0 0,0 9.5,13.5H18A2.5,2.5 0 0,0 20.5,11A2.5,2.5 0 0,0 18,8.5H7.5A4,4 0 0,0 3.5,12.5A4,4 0 0,0 7.5,16.5H17V18H7.5Z", W5 = "M12,3A9,9 0 0,0 3,12H0L4,16L8,12H5A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19C10.5,19 9.09,18.5 7.94,17.7L6.5,19.14C8.04,20.3 9.94,21 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M14,12A2,2 0 0,0 12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12Z", j5 = "M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21", K5 = "M20.84,22.73L18.11,20H3V19L5,17V11C5,9.86 5.29,8.73 5.83,7.72L1.11,3L2.39,1.73L22.11,21.46L20.84,22.73M19,15.8V11C19,7.9 16.97,5.17 14,4.29C14,4.19 14,4.1 14,4A2,2 0 0,0 12,2A2,2 0 0,0 10,4C10,4.1 10,4.19 10,4.29C9.39,4.47 8.8,4.74 8.26,5.09L19,15.8M12,23A2,2 0 0,0 14,21H10A2,2 0 0,0 12,23Z", Q5 = "M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M9 17H7V10H9V17M13 17H11V7H13V17M17 17H15V13H17V17Z", Gp = "M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z", G5 = "M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,11.93L11.66,13.34L18,7Z", Z5 = "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z", Y5 = "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z", X5 = "M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z", J5 = "M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z", tx = "M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", ex = "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z", ix = "M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z", rx = "M6.5 20Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20Z", nx = "M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z", sx = "M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10Z", ax = "M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z", ox = "M19,1L17.74,3.75L15,5L17.74,6.26L19,9L20.25,6.26L23,5L20.25,3.75M9,4L6.5,9.5L1,12L6.5,14.5L9,20L11.5,14.5L17,12L11.5,9.5M19,15L17.74,17.74L15,19L17.74,20.25L19,23L20.25,20.25L23,19L20.25,17.74", cx = "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z", lx = "M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z", dx = "M14,14H16L12,10L8,14H10V18H14V14M6,7H18V19C18,19.5 17.8,20 17.39,20.39C17,20.8 16.5,21 16,21H8C7.5,21 7,20.8 6.61,20.39C6.2,20 6,19.5 6,19V7M19,4V6H5V4H8.5L9.5,3H14.5L15.5,4H19Z", hx = "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z", ux = "M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z", px = "M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", yx = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z", wx = "M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", fx = "M15 18H18V15H20V18H23V20H20V23H18V20H15V18M12 17.5C9.67 17.5 7.69 16.04 6.89 14H15.69C14.5 14.78 13.62 15.97 13.23 17.36C12.83 17.45 12.42 17.5 12 17.5M8.5 11C7.67 11 7 10.33 7 9.5C7 8.67 7.67 8 8.5 8C9.33 8 10 8.67 10 9.5C10 10.33 9.33 11 8.5 11M15.5 11C14.67 11 14 10.33 14 9.5C14 8.67 14.67 8 15.5 8C16.33 8 17 8.67 17 9.5C17 10.33 16.33 11 15.5 11M12 20L13.07 19.93C13.18 20.61 13.4 21.26 13.72 21.85C13.16 21.95 12.58 22 12 22C6.47 22 2 17.5 2 12C2 6.5 6.47 2 12 2C17.5 2 22 6.5 22 12C22 12.59 21.95 13.16 21.85 13.72C21.26 13.4 20.62 13.18 19.93 13.07L20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20Z", mx = "M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z", zm = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M6.12,15.5L9.86,19.24L11.28,17.83L8.95,15.5L11.28,13.17L9.86,11.76L6.12,15.5M17.28,15.5L13.54,11.76L12.12,13.17L14.45,15.5L12.12,17.83L13.54,19.24L17.28,15.5Z", Fm = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z", vx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.8,20H14L12,16.6L10,20H8.2L11.1,15.5L8.2,11H10L12,14.4L14,11H15.8L12.9,15.5L15.8,20M13,9V3.5L18.5,9H13Z", gx = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M6,20H15L18,20V12L14,16L12,14L6,20M8,9A2,2 0 0,0 6,11A2,2 0 0,0 8,13A2,2 0 0,0 10,11A2,2 0 0,0 8,9Z", bx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,13H11V18A2,2 0 0,1 9,20A2,2 0 0,1 7,18A2,2 0 0,1 9,16C9.4,16 9.7,16.1 10,16.3V11H13V13M13,9V3.5L18.5,9H13Z", xx = "M12.6,12.3H10.6V15.5H12.7C13.3,15.5 13.6,15.3 13.9,15C14.2,14.7 14.3,14.4 14.3,13.9C14.3,13.4 14.2,13.1 13.9,12.8C13.6,12.5 13.2,12.3 12.6,12.3M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.2,16C14.6,16.5 14.1,16.7 12.8,16.7H10.6V20H9V11H12.8C14.1,11 14.7,11.3 15.2,11.8C15.8,12.4 16,13 16,13.9C16,14.8 15.8,15.5 15.2,16M13,9V3.5L18.5,9H13Z", Cx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13.5,16V19H10.5V16H8L12,12L16,16H13.5M13,9V3.5L18.5,9H13Z", $x = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M17,19V13L14,15.2V13H7V19H14V16.8L17,19Z", kx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.2,20H13.8L12,13.2L10.2,20H8.8L6.6,11H8.1L9.5,17.8L11.3,11H12.6L14.4,17.8L15.8,11H17.3L15.2,20M13,9V3.5L18.5,9H13Z", _x = "M20,2H4C2.89,2 2,2.89 2,4V20C2,21.11 2.89,22 4,22H20C21.11,22 22,21.11 22,20V4C22,2.89 21.11,2 20,2M12,4L15,7H13V9H11V7H9M7,15L4,12L7,9V11H9V13H7M12,20L9,17H11V15H13V17H15M17,15V13H15V11H17V9L20,12", Px = "M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z", Sx = "M20 6H12L10 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6M18 12H16V14H18V16H16V18H14V16H16V14H14V12H16V10H14V8H16V10H18V12Z", Mx = "M17,7H22V17H17V19A1,1 0 0,0 18,20H20V22H17.5C16.95,22 16,21.55 16,21C16,21.55 15.05,22 14.5,22H12V20H14A1,1 0 0,0 15,19V5A1,1 0 0,0 14,4H12V2H14.5C15.05,2 16,2.45 16,3C16,2.45 16.95,2 17.5,2H20V4H18A1,1 0 0,0 17,5V7M2,7H13V9H4V15H13V17H2V7M20,15V9H17V15H20Z", Ex = "M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z", Ax = "M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z", Rx = "M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z", Tx = "M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z", Lx = "M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z", Ox = "M7,10L12,15L17,10H7Z", zx = "M7,15L12,10L17,15H7Z", Fx = "M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z", Ix = "M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18", Dx = "M19,13H5V11H19V13Z", Hx = "M21 2C22.05 2 22.92 2.81 23 3.85L23 4V16C23 17.05 22.18 17.92 21.15 18L21 18H14V20H16V22H8V20H10V18H3C1.95 18 1.08 17.18 1 16.15L1 16V4C1 2.94 1.81 2.08 2.85 2L3 2H21M21 4H3V16H21V4M12 11C14.21 11 16 11.9 16 13V14H8V13C8 11.9 9.79 11 12 11M12 6C13.11 6 14 6.9 14 8S13.11 10 12 10 10 9.11 10 8 10.9 6 12 6Z", Vx = "M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z", Ux = "M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z", Bx = "M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z", Nx = "M2,5.27L3.28,4L20,20.72L18.73,22L12.8,16.07V22H11.2V16H6V14L8,12V11.27L2,5.27M16,12L18,14V16H17.82L8,6.18V4H7V2H17V4H16V12Z", qx = "M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z", Wx = "M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z", jx = "M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z", Kx = "M4,3H5V5H3V4A1,1 0 0,1 4,3M20,3A1,1 0 0,1 21,4V5H19V3H20M15,5V3H17V5H15M11,5V3H13V5H11M7,5V3H9V5H7M21,20A1,1 0 0,1 20,21H19V19H21V20M15,21V19H17V21H15M11,21V19H13V21H11M7,21V19H9V21H7M4,21A1,1 0 0,1 3,20V19H5V21H4M3,15H5V17H3V15M21,15V17H19V15H21M3,11H5V13H3V11M21,11V13H19V11H21M3,7H5V9H3V7M21,7V9H19V7H21Z", Qx = "M2,21L23,12L2,3V10L17,12L2,14V21Z", Gx = "M13,19H14A1,1 0 0,1 15,20H15.73L13,17.27V19M22,20V21.18L20.82,20H22M21,22.72L19.73,24L17.73,22H15A1,1 0 0,1 14,23H10A1,1 0 0,1 9,22H2V20H9A1,1 0 0,1 10,19H11V17H4A1,1 0 0,1 3,16V12A1,1 0 0,1 4,11H6.73L4.73,9H4A1,1 0 0,1 3,8V7.27L1,5.27L2.28,4L21,22.72M4,3H20A1,1 0 0,1 21,4V8A1,1 0 0,1 20,9H9.82L7,6.18V5H5.82L3.84,3C3.89,3 3.94,3 4,3M20,11A1,1 0 0,1 21,12V16A1,1 0 0,1 20,17H17.82L11.82,11H20M9,7H10V5H9V7M9,15H10V14.27L9,13.27V15M5,13V15H7V13H5Z", Zx = "M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M15.08 16L12 14.15L8.93 16L9.74 12.5L7.03 10.16L10.61 9.85L12 6.55L13.39 9.84L16.97 10.15L14.26 12.5L15.08 16Z", Yx = "M21 11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1L21 5V11M12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21M15.05 16L11.97 14.15L8.9 16L9.71 12.5L7 10.16L10.58 9.85L11.97 6.55L13.37 9.84L16.95 10.15L14.23 12.5L15.05 16", Xx = "M18 21L14 17H17V7H14L18 3L22 7H19V17H22M2 19V17H12V19M2 13V11H9V13M2 7V5H6V7H2Z", Jx = "M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z", t4 = "M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z", e4 = "M20.8 22.7L17.9 19.8L18.2 21L12 17.3L5.8 21L7.4 14L2 9.2L6.9 8.8L1.1 3L2.4 1.7L22.1 21.4L20.8 22.7M22 9.2L14.8 8.6L12 2L10 6.8L16.9 13.7L22 9.2Z", i4 = "M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z", r4 = "M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z", n4 = "M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z", s4 = "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z", a4 = "M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z", o4 = "M3 5V19H20V5H3M7 7V9H5V7H7M5 13V11H7V13H5M5 15H7V17H5V15M18 17H9V15H18V17M18 13H9V11H18V13M18 9H9V7H18V9Z", c4 = "M4 5V18H21V5H4M14 7V10.5H11V7H14M6 7H9V10.5H6V7M6 16V12.5H9V16H6M11 16V12.5H14V16H11M19 16H16V12.5H19V16M16 10.5V7H19V10.5H16Z", l4 = "M2.28,3L1,4.27L2.47,5.74C2.04,6 1.61,6.29 1.2,6.6L3,9C3.53,8.6 4.08,8.25 4.66,7.93L6.89,10.16C6.15,10.5 5.44,10.91 4.8,11.4L6.6,13.8C7.38,13.22 8.26,12.77 9.2,12.47L11.75,15C10.5,15.07 9.34,15.5 8.4,16.2L12,21L14.46,17.73L17.74,21L19,19.72M12,3C9.85,3 7.8,3.38 5.9,4.07L8.29,6.47C9.5,6.16 10.72,6 12,6C15.38,6 18.5,7.11 21,9L22.8,6.6C19.79,4.34 16.06,3 12,3M12,9C11.62,9 11.25,9 10.88,9.05L14.07,12.25C15.29,12.53 16.43,13.07 17.4,13.8L19.2,11.4C17.2,9.89 14.7,9 12,9Z";
+var F5 = "M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M1,10V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z", I5 = "M15,14C12.33,14 7,15.33 7,18V20H23V18C23,15.33 17.67,14 15,14M6,10V7H4V10H1V12H4V15H6V12H9V10M15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12Z", D5 = "M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z", V5 = "M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", H5 = "M13 13H11V7H13M11 15H13V17H11M15.73 3H8.27L3 8.27V15.73L8.27 21H15.73L21 15.73V8.27L15.73 3Z", U5 = "M19.5,3.09L15,7.59V4H13V11H20V9H16.41L20.91,4.5L19.5,3.09M4,13V15H7.59L3.09,19.5L4.5,20.91L9,16.41V20H11V13H4Z", B5 = "M10,21V19H6.41L10.91,14.5L9.5,13.09L5,17.59V14H3V21H10M14.5,10.91L19,6.41V10H21V3H14V5H17.59L13.09,9.5L14.5,10.91Z", Om = "M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z", N5 = "M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z", q5 = "M7.5,18A5.5,5.5 0 0,1 2,12.5A5.5,5.5 0 0,1 7.5,7H18A4,4 0 0,1 22,11A4,4 0 0,1 18,15H9.5A2.5,2.5 0 0,1 7,12.5A2.5,2.5 0 0,1 9.5,10H17V11.5H9.5A1,1 0 0,0 8.5,12.5A1,1 0 0,0 9.5,13.5H18A2.5,2.5 0 0,0 20.5,11A2.5,2.5 0 0,0 18,8.5H7.5A4,4 0 0,0 3.5,12.5A4,4 0 0,0 7.5,16.5H17V18H7.5Z", W5 = "M12,3A9,9 0 0,0 3,12H0L4,16L8,12H5A7,7 0 0,1 12,5A7,7 0 0,1 19,12A7,7 0 0,1 12,19C10.5,19 9.09,18.5 7.94,17.7L6.5,19.14C8.04,20.3 9.94,21 12,21A9,9 0 0,0 21,12A9,9 0 0,0 12,3M14,12A2,2 0 0,0 12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12Z", j5 = "M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21", K5 = "M20.84,22.73L18.11,20H3V19L5,17V11C5,9.86 5.29,8.73 5.83,7.72L1.11,3L2.39,1.73L22.11,21.46L20.84,22.73M19,15.8V11C19,7.9 16.97,5.17 14,4.29C14,4.19 14,4.1 14,4A2,2 0 0,0 12,2A2,2 0 0,0 10,4C10,4.1 10,4.19 10,4.29C9.39,4.47 8.8,4.74 8.26,5.09L19,15.8M12,23A2,2 0 0,0 14,21H10A2,2 0 0,0 12,23Z", Q5 = "M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M9 17H7V10H9V17M13 17H11V7H13V17M17 17H15V13H17V17Z", Gp = "M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z", G5 = "M0.41,13.41L6,19L7.41,17.58L1.83,12M22.24,5.58L11.66,16.17L7.5,12L6.07,13.41L11.66,19L23.66,7M18,7L16.59,5.58L10.24,11.93L11.66,13.34L18,7Z", Z5 = "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z", Y5 = "M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20M16.59 7.58L10 14.17L7.41 11.59L6 13L10 17L18 9L16.59 7.58Z", X5 = "M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M19,5V19H5V5H19Z", J5 = "M19,19H5V5H15V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V11H19M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z", tx = "M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", ex = "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z", ix = "M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z", rx = "M6.5 20Q4.22 20 2.61 18.43 1 16.85 1 14.58 1 12.63 2.17 11.1 3.35 9.57 5.25 9.15 5.88 6.85 7.75 5.43 9.63 4 12 4 14.93 4 16.96 6.04 19 8.07 19 11 20.73 11.2 21.86 12.5 23 13.78 23 15.5 23 17.38 21.69 18.69 20.38 20 18.5 20Z", nx = "M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9Z", sx = "M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M10,16V19.08L13.08,16H20V4H4V16H10Z", ax = "M15,9H5V5H15M12,19A3,3 0 0,1 9,16A3,3 0 0,1 12,13A3,3 0 0,1 15,16A3,3 0 0,1 12,19M17,3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V7L17,3Z", ox = "M19,1L17.74,3.75L15,5L17.74,6.26L19,9L20.25,6.26L23,5L20.25,3.75M9,4L6.5,9.5L1,12L6.5,14.5L9,20L11.5,14.5L17,12L11.5,9.5M19,15L17.74,17.74L15,19L17.74,20.25L19,23L20.25,20.25L23,19L20.25,17.74", cx = "M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z", lx = "M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8.46,11.88L9.87,10.47L12,12.59L14.12,10.47L15.53,11.88L13.41,14L15.53,16.12L14.12,17.53L12,15.41L9.88,17.53L8.47,16.12L10.59,14L8.46,11.88M15.5,4L14.5,3H9.5L8.5,4H5V6H19V4H15.5Z", dx = "M14,14H16L12,10L8,14H10V18H14V14M6,7H18V19C18,19.5 17.8,20 17.39,20.39C17,20.8 16.5,21 16,21H8C7.5,21 7,20.8 6.61,20.39C6.2,20 6,19.5 6,19V7M19,4V6H5V4H8.5L9.5,3H14.5L15.5,4H19Z", hx = "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z", ux = "M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z", px = "M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16A2,2 0 0,0 11,18M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", yx = "M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z", wx = "M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z", fx = "M15 18H18V15H20V18H23V20H20V23H18V20H15V18M12 17.5C9.67 17.5 7.69 16.04 6.89 14H15.69C14.5 14.78 13.62 15.97 13.23 17.36C12.83 17.45 12.42 17.5 12 17.5M8.5 11C7.67 11 7 10.33 7 9.5C7 8.67 7.67 8 8.5 8C9.33 8 10 8.67 10 9.5C10 10.33 9.33 11 8.5 11M15.5 11C14.67 11 14 10.33 14 9.5C14 8.67 14.67 8 15.5 8C16.33 8 17 8.67 17 9.5C17 10.33 16.33 11 15.5 11M12 20L13.07 19.93C13.18 20.61 13.4 21.26 13.72 21.85C13.16 21.95 12.58 22 12 22C6.47 22 2 17.5 2 12C2 6.5 6.47 2 12 2C17.5 2 22 6.5 22 12C22 12.59 21.95 13.16 21.85 13.72C21.26 13.4 20.62 13.18 19.93 13.07L20 12C20 7.58 16.42 4 12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20Z", mx = "M13,9V3.5L18.5,9M6,2C4.89,2 4,2.89 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6Z", zm = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M6.12,15.5L9.86,19.24L11.28,17.83L8.95,15.5L11.28,13.17L9.86,11.76L6.12,15.5M17.28,15.5L13.54,11.76L12.12,13.17L14.45,15.5L12.12,17.83L13.54,19.24L17.28,15.5Z", Fm = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M15,18V16H6V18H15M18,14V12H6V14H18Z", vx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.8,20H14L12,16.6L10,20H8.2L11.1,15.5L8.2,11H10L12,14.4L14,11H15.8L12.9,15.5L15.8,20M13,9V3.5L18.5,9H13Z", gx = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M6,20H15L18,20V12L14,16L12,14L6,20M8,9A2,2 0 0,0 6,11A2,2 0 0,0 8,13A2,2 0 0,0 10,11A2,2 0 0,0 8,9Z", bx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13,13H11V18A2,2 0 0,1 9,20A2,2 0 0,1 7,18A2,2 0 0,1 9,16C9.4,16 9.7,16.1 10,16.3V11H13V13M13,9V3.5L18.5,9H13Z", xx = "M12.6,12.3H10.6V15.5H12.7C13.3,15.5 13.6,15.3 13.9,15C14.2,14.7 14.3,14.4 14.3,13.9C14.3,13.4 14.2,13.1 13.9,12.8C13.6,12.5 13.2,12.3 12.6,12.3M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.2,16C14.6,16.5 14.1,16.7 12.8,16.7H10.6V20H9V11H12.8C14.1,11 14.7,11.3 15.2,11.8C15.8,12.4 16,13 16,13.9C16,14.8 15.8,15.5 15.2,16M13,9V3.5L18.5,9H13Z", Cx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13.5,16V19H10.5V16H8L12,12L16,16H13.5M13,9V3.5L18.5,9H13Z", $x = "M13,9H18.5L13,3.5V9M6,2H14L20,8V20A2,2 0 0,1 18,22H6C4.89,22 4,21.1 4,20V4C4,2.89 4.89,2 6,2M17,19V13L14,15.2V13H7V19H14V16.8L17,19Z", kx = "M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M15.2,20H13.8L12,13.2L10.2,20H8.8L6.6,11H8.1L9.5,17.8L11.3,11H12.6L14.4,17.8L15.8,11H17.3L15.2,20M13,9V3.5L18.5,9H13Z", _x = "M20,2H4C2.89,2 2,2.89 2,4V20C2,21.11 2.89,22 4,22H20C21.11,22 22,21.11 22,20V4C22,2.89 21.11,2 20,2M12,4L15,7H13V9H11V7H9M7,15L4,12L7,9V11H9V13H7M12,20L9,17H11V15H13V17H15M17,15V13H15V11H17V9L20,12", Px = "M17 4H20C21.1 4 22 4.9 22 6V8H20V6H17V4M4 8V6H7V4H4C2.9 4 2 4.9 2 6V8H4M20 16V18H17V20H20C21.1 20 22 19.1 22 18V16H20M7 18H4V16H2V18C2 19.1 2.9 20 4 20H7V18M18 8H6V16H18V8Z", Sx = "M20 6H12L10 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V8C22 6.9 21.1 6 20 6M18 12H16V14H18V16H16V18H14V16H16V14H14V12H16V10H14V8H16V10H18V12Z", Mx = "M17,7H22V17H17V19A1,1 0 0,0 18,20H20V22H17.5C16.95,22 16,21.55 16,21C16,21.55 15.05,22 14.5,22H12V20H14A1,1 0 0,0 15,19V5A1,1 0 0,0 14,4H12V2H14.5C15.05,2 16,2.45 16,3C16,2.45 16.95,2 17.5,2H20V4H18A1,1 0 0,0 17,5V7M2,7H13V9H4V15H13V17H2V7M20,15V9H17V15H20Z", Ex = "M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z", Ax = "M14,14H19V16H16V19H14V14M5,14H10V19H8V16H5V14M8,5H10V10H5V8H8V5M19,8V10H14V5H16V8H19Z", Rx = "M15.07,11.25L14.17,12.17C13.45,12.89 13,13.5 13,15H11V14.5C11,13.39 11.45,12.39 12.17,11.67L13.41,10.41C13.78,10.05 14,9.55 14,9C14,7.89 13.1,7 12,7A2,2 0 0,0 10,9H8A4,4 0 0,1 12,5A4,4 0 0,1 16,9C16,9.88 15.64,10.67 15.07,11.25M13,19H11V17H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z", Tx = "M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z", Lx = "M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z", Ox = "M7,10L12,15L17,10H7Z", zx = "M7,15L12,10L17,15H7Z", Fx = "M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z", Ix = "M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4A2,2 0 0,0 20,2M6,9H18V11H6M14,14H6V12H14M18,8H6V6H18", Dx = "M19,13H5V11H19V13Z", Vx = "M21 2C22.05 2 22.92 2.81 23 3.85L23 4V16C23 17.05 22.18 17.92 21.15 18L21 18H14V20H16V22H8V20H10V18H3C1.95 18 1.08 17.18 1 16.15L1 16V4C1 2.94 1.81 2.08 2.85 2L3 2H21M21 4H3V16H21V4M12 11C14.21 11 16 11.9 16 13V14H8V13C8 11.9 9.79 11 12 11M12 6C13.11 6 14 6.9 14 8S13.11 10 12 10 10 9.11 10 8 10.9 6 12 6Z", Hx = "M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z", Ux = "M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z", Bx = "M16,12V4H17V2H7V4H8V12L6,14V16H11.2V22H12.8V16H18V14L16,12Z", Nx = "M2,5.27L3.28,4L20,20.72L18.73,22L12.8,16.07V22H11.2V16H6V14L8,12V11.27L2,5.27M16,12L18,14V16H17.82L8,6.18V4H7V2H17V4H16V12Z", qx = "M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z", Wx = "M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z", jx = "M13,3A9,9 0 0,0 4,12H1L4.89,15.89L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3Z", Kx = "M4,3H5V5H3V4A1,1 0 0,1 4,3M20,3A1,1 0 0,1 21,4V5H19V3H20M15,5V3H17V5H15M11,5V3H13V5H11M7,5V3H9V5H7M21,20A1,1 0 0,1 20,21H19V19H21V20M15,21V19H17V21H15M11,21V19H13V21H11M7,21V19H9V21H7M4,21A1,1 0 0,1 3,20V19H5V21H4M3,15H5V17H3V15M21,15V17H19V15H21M3,11H5V13H3V11M21,11V13H19V11H21M3,7H5V9H3V7M21,7V9H19V7H21Z", Qx = "M2,21L23,12L2,3V10L17,12L2,14V21Z", Gx = "M13,19H14A1,1 0 0,1 15,20H15.73L13,17.27V19M22,20V21.18L20.82,20H22M21,22.72L19.73,24L17.73,22H15A1,1 0 0,1 14,23H10A1,1 0 0,1 9,22H2V20H9A1,1 0 0,1 10,19H11V17H4A1,1 0 0,1 3,16V12A1,1 0 0,1 4,11H6.73L4.73,9H4A1,1 0 0,1 3,8V7.27L1,5.27L2.28,4L21,22.72M4,3H20A1,1 0 0,1 21,4V8A1,1 0 0,1 20,9H9.82L7,6.18V5H5.82L3.84,3C3.89,3 3.94,3 4,3M20,11A1,1 0 0,1 21,12V16A1,1 0 0,1 20,17H17.82L11.82,11H20M9,7H10V5H9V7M9,15H10V14.27L9,13.27V15M5,13V15H7V13H5Z", Zx = "M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1M15.08 16L12 14.15L8.93 16L9.74 12.5L7.03 10.16L10.61 9.85L12 6.55L13.39 9.84L16.97 10.15L14.26 12.5L15.08 16Z", Yx = "M21 11C21 16.55 17.16 21.74 12 23C6.84 21.74 3 16.55 3 11V5L12 1L21 5V11M12 21C15.75 20 19 15.54 19 11.22V6.3L12 3.18L5 6.3V11.22C5 15.54 8.25 20 12 21M15.05 16L11.97 14.15L8.9 16L9.71 12.5L7 10.16L10.58 9.85L11.97 6.55L13.37 9.84L16.95 10.15L14.23 12.5L15.05 16", Xx = "M18 21L14 17H17V7H14L18 3L22 7H19V17H22M2 19V17H12V19M2 13V11H9V13M2 7V5H6V7H2Z", Jx = "M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z", t4 = "M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z", e4 = "M20.8 22.7L17.9 19.8L18.2 21L12 17.3L5.8 21L7.4 14L2 9.2L6.9 8.8L1.1 3L2.4 1.7L22.1 21.4L20.8 22.7M22 9.2L14.8 8.6L12 2L10 6.8L16.9 13.7L22 9.2Z", i4 = "M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z", r4 = "M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z", n4 = "M5,9V21H1V9H5M9,21A2,2 0 0,1 7,19V9C7,8.45 7.22,7.95 7.59,7.59L14.17,1L15.23,2.06C15.5,2.33 15.67,2.7 15.67,3.11L15.64,3.43L14.69,8H21C22.11,8 23,8.9 23,10V12C23,12.26 22.95,12.5 22.86,12.73L19.84,19.78C19.54,20.5 18.83,21 18,21H9M9,19H18.03L21,12V10H12.21L13.34,4.68L9,9.03V19Z", s4 = "M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M9,8H11V17H9V8M13,8H15V17H13V8Z", a4 = "M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z", o4 = "M3 5V19H20V5H3M7 7V9H5V7H7M5 13V11H7V13H5M5 15H7V17H5V15M18 17H9V15H18V17M18 13H9V11H18V13M18 9H9V7H18V9Z", c4 = "M4 5V18H21V5H4M14 7V10.5H11V7H14M6 7H9V10.5H6V7M6 16V12.5H9V16H6M11 16V12.5H14V16H11M19 16H16V12.5H19V16M16 10.5V7H19V10.5H16Z", l4 = "M2.28,3L1,4.27L2.47,5.74C2.04,6 1.61,6.29 1.2,6.6L3,9C3.53,8.6 4.08,8.25 4.66,7.93L6.89,10.16C6.15,10.5 5.44,10.91 4.8,11.4L6.6,13.8C7.38,13.22 8.26,12.77 9.2,12.47L11.75,15C10.5,15.07 9.34,15.5 8.4,16.2L12,21L14.46,17.73L17.74,21L19,19.72M12,3C9.85,3 7.8,3.38 5.9,4.07L8.29,6.47C9.5,6.16 10.72,6 12,6C15.38,6 18.5,7.11 21,9L22.8,6.6C19.79,4.34 16.06,3 12,3M12,9C11.62,9 11.25,9 10.88,9.05L14.07,12.25C15.29,12.53 16.43,13.07 17.4,13.8L19.2,11.4C17.2,9.89 14.7,9 12,9Z";
 const Im = Kx, Dm = {
   "zoom-meetings": '<path d="M21.5 12.5c0 .96-.08 1.91-.23 2.83a7.198 7.198 0 01-5.95 5.95 17.527 17.527 0 01-5.66 0 7.198 7.198 0 01-5.95-5.95 17.527 17.527 0 010-5.66c.49-3.05 2.9-5.46 5.95-5.95a17.527 17.527 0 015.66 0c3.05.49 5.46 2.9 5.95 5.95.15.92.23 1.86.23 2.83z" fill="#0b5cff"/><path d="M14.43 14.75c0 .53-.43.96-.96.96H9.29c-1.07 0-1.93-.86-1.93-1.93v-3.54c0-.53.43-.96.96-.96h4.18c1.07 0 1.93.86 1.93 1.93v3.54zM16.87 9.86l-1.41 1.06c-.24.18-.39.47-.39.77v1.61c0 .3.14.59.39.77l1.41 1.06c.32.24.77.01.77-.39v-4.5c0-.4-.45-.62-.77-.39z" fill="#fff"/>',
   "google-meet": '<path fill="#1e88e5" d="M3.5 9.07v5.86l2.09.42 2.1-.42V9.07l-2.1-.42-2.09.42z"/><path d="M17.73 12v5.86c0 .69-.56 1.26-1.26 1.26H7.69l-.42-2.09.42-2.09h5.86v-2.93l2.09-.42 2.09.42z" fill="#4caf50"/><path d="M17.73 6.14V12h-4.19V9.07H7.68l-.42-2.09.42-2.09h8.79c.69 0 1.26.56 1.26 1.26z" fill="#fbc02d"/><path d="M7.69 14.93v4.19H4.76c-.69 0-1.26-.56-1.26-1.26v-2.93h4.19z" fill="#1565c0"/><path fill="#e53935" d="M7.69 4.88v4.19H3.5l4.19-4.19z"/><path fill="#2e7d32" d="M18.15 12l-.42 3.54L13.55 12l4.18-3.54.42 3.54z"/><path d="M21.5 6.19v11.63c0 .35-.41.55-.68.33l-3.09-2.6V8.48l3.09-2.6c.27-.22.68-.03.68.33z" fill="#4caf50"/>',
@@ -13197,12 +13193,12 @@ const Im = Kx, Dm = {
   "file-pdf": Fm,
   "file-powerpoint": xx,
   "file-compressed": Sx
-}, Hm = {
+}, Vm = {
   "account-minus": F5,
   "account-plus": I5,
   alert: D5,
-  "alert-circle": H5,
-  "alert-octagon": V5,
+  "alert-circle": V5,
+  "alert-octagon": H5,
   "arrow-collapse": U5,
   "arrow-expand": B5,
   attachment: q5,
@@ -13239,14 +13235,14 @@ const Im = Kx, Dm = {
   "help-circle": Rx,
   information: Tx,
   magnify: Lx,
-  meeting: Hx,
+  meeting: Vx,
   "menu-down": Ox,
   "menu-up": zx,
   message: Fx,
   "message-text": Ix,
   minus: Dx,
   next: N5,
-  "open-in-new": Vx,
+  "open-in-new": Hx,
   pencil: Ux,
   pin: Bx,
   unpin: Nx,
@@ -13276,7 +13272,7 @@ const Im = Kx, Dm = {
   "wifi-off": l4,
   ...h4,
   ...d4
-}, Vm = {
+}, Hm = {
   dropbox: "#0061fe",
   onedrive: "#0078d4",
   box: "#0161d5",
@@ -13284,7 +13280,7 @@ const Im = Kx, Dm = {
   zoom: "#4a8cff"
 };
 function Um(n) {
-  return n && n in Hm ? Hm[n] : "";
+  return n && n in Vm ? Vm[n] : "";
 }
 s(Um, "getIconMapping");
 function u4(n) {
@@ -13314,18 +13310,18 @@ const Yf = class Yf extends Yc {
 s(Yf, "t");
 let Jl = Yf;
 Jl.directiveName = "unsafeSVG", Jl.resultType = 2;
-const Bm = ds(Jl), Hw = j`[part~=wy-icon-wrapper]{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative}[part~=wy-icon]{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative;width:var(--wy-component-icon-width);height:var(--wy-component-icon-height)}[part~=wy-icon][width=\"24\"]{width:var(--wy-component-icon-width, calc(1.5 * var(--wy-size, 1rem)))}[part~=wy-icon][height=\"24\"]{height:var(--wy-component-icon-height, calc(1.5 * var(--wy-size, 1rem)))}[part~=wy-icon-first]{margin-left:calc(-.5 * var(--wy-size, 1rem))}[part~=wy-icon-last]{margin-right:calc(-.5 * var(--wy-size, 1rem))}[part~=wy-icon-inline]{vertical-align:-.25em}[part~=wy-icon-overlay]{position:absolute;bottom:0;right:0;border-radius:50%}:host(wy-icon-stack),[part~=wy-icon-stack]{display:inline-flex;position:relative;line-height:1}[part~=wy-icon-stack-layer]{position:absolute}[part~=wy-icon-stack-overlay]{position:absolute;bottom:0;right:0;border-radius:50%;width:calc(var(--wy-component-icon-width) / 2);height:calc(var(--wy-component-icon-height) / 2)}[part~=wy-icon-current-color]{fill:currentColor}[part~=wy-icon-state]{transition:opacity var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));align-self:center;justify-self:center;margin:auto;opacity:0}[part~=wy-icon-state][part~=wy-active]{opacity:1}[part~=wy-icon-display]{color:var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));border-radius:var(--wy-component-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))));display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-icon-display-fill]{flex:1 0 auto}[part~=wy-icon-display-icon]{color:var(--wy-component-color);--wy-component-icon-width: calc(4 * var(--wy-size, 1rem));--wy-component-icon-height: calc(4 * var(--wy-size, 1rem));padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-icon-display-text],[part~=wy-icon-display-meta]{color:var(--wy-component-color);padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem));text-align:center;line-height:var(--wy-line-height, 1.5)}[part~=wy-icon-color-primary]{fill:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-icon-color-secondary]{fill:var(--wy-secondary, var(--wy-secondary-light, #51606f))}[part~=wy-icon-color-tertiary]{fill:var(--wy-tertiary, var(--wy-tertiary-light, #645f41))}[part~=wy-icon-color-surface]{fill:var(--wy-surface, var(--wy-surface-light, #f7f9ff))}[part~=wy-icon-color-surface-variant]{fill:var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb))}[part~=wy-icon-color-error]{fill:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-icon-color-warning]{fill:var(--wy-warning, var(--wy-warning-light, #adb140))}[part~=wy-icon-color-blue]{fill:var(--wy-blue, var(--wy-blue-light, #8aa9fc))}[part~=wy-icon-color-indigo]{fill:var(--wy-indigo, var(--wy-indigo-light, #9285de))}[part~=wy-icon-color-purple]{fill:var(--wy-purple, var(--wy-purple-light, #c675b6))}[part~=wy-icon-color-pink]{fill:var(--wy-pink, var(--wy-pink-light, #d57193))}[part~=wy-icon-color-red]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-icon-color-orange]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-icon-color-yellow]{fill:var(--wy-yellow, var(--wy-yellow-light, #adb140))}[part~=wy-icon-color-green]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-icon-color-teal]{fill:var(--wy-teal, var(--wy-teal-light, #00a0a9))}[part~=wy-icon-color-cyan]{fill:var(--wy-cyan, var(--wy-cyan-light, #0081a2))}[part~=wy-icon-color-gray]{fill:var(--wy-gray, var(--wy-gray-light, #76777a))}[part~=wy-icon-color-black]{fill:var(--wy-black, var(--wy-black, #000000))}[part~=wy-icon-color-white]{fill:var(--wy-white, var(--wy-white, #ffffff))}[part*=wy-kind-]{fill:var(--wy-gray, var(--wy-gray-light, #76777a))}[part~=wy-kind-archive]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-kind-audio]{fill:var(--wy-teal, var(--wy-teal-light, #00a0a9))}[part~=wy-kind-code]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-kind-document]{fill:var(--wy-blue, var(--wy-blue-light, #8aa9fc))}[part~=wy-kind-email]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-kind-presentation]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-kind-spreadsheet]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-kind-image]{fill:var(--wy-pink, var(--wy-pink-light, #d57193))}[part~=wy-kind-text]{fill:var(--wy-cyan, var(--wy-cyan-light, #0081a2))}[part~=wy-kind-video]{fill:var(--wy-purple, var(--wy-purple-light, #c675b6))}[part~=wy-ext-pdf]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-kind-text-icon]{width:calc(1.25 * var(--wy-size, 1rem));height:calc(1.25 * var(--wy-size, 1rem));vertical-align:calc(-.3125 * var(--wy-size, 1rem))}`;
-var p4 = Object.defineProperty, y4 = Object.getOwnPropertyDescriptor, te = /* @__PURE__ */ s((n, t, e, i) => {
+const Bm = ds(Jl), Vw = j`[part~=wy-icon-wrapper]{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative}[part~=wy-icon]{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;position:relative;width:var(--wy-component-icon-width);height:var(--wy-component-icon-height)}[part~=wy-icon][width=\"24\"]{width:var(--wy-component-icon-width, calc(1.5 * var(--wy-size, 1rem)))}[part~=wy-icon][height=\"24\"]{height:var(--wy-component-icon-height, calc(1.5 * var(--wy-size, 1rem)))}[part~=wy-icon-first]{margin-left:calc(-.5 * var(--wy-size, 1rem))}[part~=wy-icon-last]{margin-right:calc(-.5 * var(--wy-size, 1rem))}[part~=wy-icon-inline]{vertical-align:-.25em}[part~=wy-icon-overlay]{position:absolute;bottom:0;right:0;border-radius:50%}:host(wy-icon-stack),[part~=wy-icon-stack]{display:inline-flex;position:relative;line-height:1}[part~=wy-icon-stack-layer]{position:absolute}[part~=wy-icon-stack-overlay]{position:absolute;bottom:0;right:0;border-radius:50%;width:calc(var(--wy-component-icon-width) / 2);height:calc(var(--wy-component-icon-height) / 2)}[part~=wy-icon-current-color]{fill:currentColor}[part~=wy-icon-state]{transition:opacity var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));align-self:center;justify-self:center;margin:auto;opacity:0}[part~=wy-icon-state][part~=wy-active]{opacity:1}[part~=wy-icon-display]{color:var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));border-radius:var(--wy-component-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))));display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-icon-display-fill]{flex:1 0 auto}[part~=wy-icon-display-icon]{color:var(--wy-component-color);--wy-component-icon-width: calc(4 * var(--wy-size, 1rem));--wy-component-icon-height: calc(4 * var(--wy-size, 1rem));padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-icon-display-text],[part~=wy-icon-display-meta]{color:var(--wy-component-color);padding:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem));text-align:center;line-height:var(--wy-line-height, 1.5)}[part~=wy-icon-color-primary]{fill:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-icon-color-secondary]{fill:var(--wy-secondary, var(--wy-secondary-light, #51606f))}[part~=wy-icon-color-tertiary]{fill:var(--wy-tertiary, var(--wy-tertiary-light, #645f41))}[part~=wy-icon-color-surface]{fill:var(--wy-surface, var(--wy-surface-light, #f7f9ff))}[part~=wy-icon-color-surface-variant]{fill:var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb))}[part~=wy-icon-color-error]{fill:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-icon-color-warning]{fill:var(--wy-warning, var(--wy-warning-light, #adb140))}[part~=wy-icon-color-blue]{fill:var(--wy-blue, var(--wy-blue-light, #8aa9fc))}[part~=wy-icon-color-indigo]{fill:var(--wy-indigo, var(--wy-indigo-light, #9285de))}[part~=wy-icon-color-purple]{fill:var(--wy-purple, var(--wy-purple-light, #c675b6))}[part~=wy-icon-color-pink]{fill:var(--wy-pink, var(--wy-pink-light, #d57193))}[part~=wy-icon-color-red]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-icon-color-orange]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-icon-color-yellow]{fill:var(--wy-yellow, var(--wy-yellow-light, #adb140))}[part~=wy-icon-color-green]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-icon-color-teal]{fill:var(--wy-teal, var(--wy-teal-light, #00a0a9))}[part~=wy-icon-color-cyan]{fill:var(--wy-cyan, var(--wy-cyan-light, #0081a2))}[part~=wy-icon-color-gray]{fill:var(--wy-gray, var(--wy-gray-light, #76777a))}[part~=wy-icon-color-black]{fill:var(--wy-black, var(--wy-black, #000000))}[part~=wy-icon-color-white]{fill:var(--wy-white, var(--wy-white, #ffffff))}[part*=wy-kind-]{fill:var(--wy-gray, var(--wy-gray-light, #76777a))}[part~=wy-kind-archive]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-kind-audio]{fill:var(--wy-teal, var(--wy-teal-light, #00a0a9))}[part~=wy-kind-code]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-kind-document]{fill:var(--wy-blue, var(--wy-blue-light, #8aa9fc))}[part~=wy-kind-email]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-kind-presentation]{fill:var(--wy-orange, var(--wy-orange-light, #e79b3a))}[part~=wy-kind-spreadsheet]{fill:var(--wy-green, var(--wy-green-light, #00a38d))}[part~=wy-kind-image]{fill:var(--wy-pink, var(--wy-pink-light, #d57193))}[part~=wy-kind-text]{fill:var(--wy-cyan, var(--wy-cyan-light, #0081a2))}[part~=wy-kind-video]{fill:var(--wy-purple, var(--wy-purple-light, #c675b6))}[part~=wy-ext-pdf]{fill:var(--wy-red, var(--wy-red-light, #db726b))}[part~=wy-kind-text-icon]{width:calc(1.25 * var(--wy-size, 1rem));height:calc(1.25 * var(--wy-size, 1rem));vertical-align:calc(-.3125 * var(--wy-size, 1rem))}`;
+var p4 = Object.defineProperty, y4 = Object.getOwnPropertyDescriptor, Jt = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? y4(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && p4(t, e, r), r;
 }, "__decorateClass$1f"), to;
-let jt = (to = class extends st {
+let Wt = (to = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.color = "", this.size = 24, this.path = Im, this.inline = !1, this.first = !1, this.last = !1, this.layer = !1, this.state = !1, this.active = !1, this.uniqueId = `wy-icon-${ql()}`;
   }
   willUpdate(t) {
-    super.willUpdate(t), t.has("name") && this.name && (this.path = Um(this.name) || Im, this.overlayPath = Um(this.overlayName) || this.overlayPath, this.nativeIconColor = this.color === "native" && Vm[this.name] || void 0, this.nativeOverlayColor = this.overlayName && Vm[this.overlayName] || void 0);
+    super.willUpdate(t), t.has("name") && this.name && (this.path = Um(this.name) || Im, this.overlayPath = Um(this.overlayName) || this.overlayPath, this.nativeIconColor = this.color === "native" && Hm[this.name] || void 0, this.nativeOverlayColor = this.overlayName && Hm[this.overlayName] || void 0);
   }
   render() {
     const t = this.kind ? Av(this.kind) : this.kind, e = this.ext?.startsWith(".") ? this.ext.substring(1) : this.ext, i = {
@@ -13408,61 +13404,61 @@ let jt = (to = class extends st {
     `;
   }
 }, s(to, "WyIcon"), to);
-jt.styles = [Lt, Hw, Y];
-te([
-  p()
-], jt.prototype, "name", 2);
-te([
-  p()
-], jt.prototype, "overlayName", 2);
-te([
-  p()
-], jt.prototype, "svg", 2);
-te([
-  p()
-], jt.prototype, "color", 2);
-te([
-  p({ type: Number })
-], jt.prototype, "size", 2);
-te([
-  p()
-], jt.prototype, "kind", 2);
-te([
-  p()
-], jt.prototype, "ext", 2);
-te([
-  p({ attribute: !1 })
-], jt.prototype, "path", 2);
-te([
-  p({ attribute: !1 })
-], jt.prototype, "overlayPath", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "inline", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "first", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "last", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "layer", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "state", 2);
-te([
-  p({ type: Boolean })
-], jt.prototype, "active", 2);
-te([
-  H()
-], jt.prototype, "nativeIconColor", 2);
-te([
-  H()
-], jt.prototype, "nativeOverlayColor", 2);
-jt = te([
+Wt.styles = [Lt, Vw, Y];
+Jt([
+  y()
+], Wt.prototype, "name", 2);
+Jt([
+  y()
+], Wt.prototype, "overlayName", 2);
+Jt([
+  y()
+], Wt.prototype, "svg", 2);
+Jt([
+  y()
+], Wt.prototype, "color", 2);
+Jt([
+  y({ type: Number })
+], Wt.prototype, "size", 2);
+Jt([
+  y()
+], Wt.prototype, "kind", 2);
+Jt([
+  y()
+], Wt.prototype, "ext", 2);
+Jt([
+  y({ attribute: !1 })
+], Wt.prototype, "path", 2);
+Jt([
+  y({ attribute: !1 })
+], Wt.prototype, "overlayPath", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "inline", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "first", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "last", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "layer", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "state", 2);
+Jt([
+  y({ type: Boolean })
+], Wt.prototype, "active", 2);
+Jt([
+  V()
+], Wt.prototype, "nativeIconColor", 2);
+Jt([
+  V()
+], Wt.prototype, "nativeOverlayColor", 2);
+Wt = Jt([
   U("wy-icon")
-], jt);
+], Wt);
 var eo;
 let ou = (eo = class extends st {
   constructor() {
@@ -13472,8 +13468,8 @@ let ou = (eo = class extends st {
     return h`<slot></slot>`;
   }
 }, s(eo, "WyIconStack"), eo);
-ou.styles = [Lt, Hw];
-ou = te([
+ou.styles = [Lt, Vw];
+ou = Jt([
   U("wy-icon-stack")
 ], ou);
 var io;
@@ -13497,11 +13493,11 @@ let td = (io = class extends st {
     `;
   }
 }, s(io, "WyIconDisplay"), io);
-td.styles = [Lt, Hw, Y];
-te([
-  p({ type: Boolean })
+td.styles = [Lt, Vw, Y];
+Jt([
+  y({ type: Boolean })
 ], td.prototype, "fill", 2);
-td = te([
+td = Jt([
   U("wy-icon-display")
 ], td);
 var w4 = Object.defineProperty, f4 = Object.getOwnPropertyDescriptor, ei = /* @__PURE__ */ s((n, t, e, i) => {
@@ -13554,22 +13550,22 @@ let Fi = (ro = class extends st {
 }, s(ro, "WyAvatar"), ro);
 Fi.styles = [Lt, Iw, F1];
 ei([
-  p({ type: Number })
+  y({ type: Number })
 ], Fi.prototype, "size", 2);
 ei([
-  p()
+  y()
 ], Fi.prototype, "src", 2);
 ei([
-  p()
+  y()
 ], Fi.prototype, "name", 2);
 ei([
-  p()
+  y()
 ], Fi.prototype, "description", 2);
 ei([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], Fi.prototype, "isAgent", 2);
 ei([
-  p()
+  y()
 ], Fi.prototype, "presence", 2);
 Fi = ei([
   U("wy-avatar")
@@ -13639,17 +13635,17 @@ let Kn = (no = class extends st {
 }, s(no, "WyAvatarGroup"), no);
 Kn.styles = [Lt, Iw, Y];
 ei([
-  p({ type: Number })
+  y({ type: Number })
 ], Kn.prototype, "size", 2);
 ei([
-  p({
+  y({
     type: Array,
     attribute: !1
   })
 ], Kn.prototype, "members", 2);
 ei([
   oe({ context: _u, subscribe: !0 }),
-  H()
+  V()
 ], Kn.prototype, "user", 2);
 Kn = ei([
   U("wy-avatar-group")
@@ -13668,7 +13664,7 @@ let ed = (so = class extends st {
 }, s(so, "WyAvatarHeader"), so);
 ed.styles = [Lt, Iw];
 ei([
-  p()
+  y()
 ], ed.prototype, "description", 2);
 ed = ei([
   U("wy-avatar-header")
@@ -13770,30 +13766,30 @@ let wi = (ao = class extends st {
 }, s(ao, "WyProgressCircular"), ao);
 wi.styles = [Lt, I1, v4, Y];
 yn([
-  p({ type: Number })
+  y({ type: Number })
 ], wi.prototype, "size", 2);
 yn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], wi.prototype, "indeterminate", 2);
 yn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], wi.prototype, "padded", 2);
 yn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], wi.prototype, "overlay", 2);
 yn([
-  p({ type: Number })
+  y({ type: Number })
 ], wi.prototype, "value", 2);
 yn([
-  p({ type: Number })
+  y({ type: Number })
 ], wi.prototype, "max", 2);
 yn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], wi.prototype, "reveal", 2);
 wi = yn([
   U("wy-progress-circular")
 ], wi);
-var x4 = Object.defineProperty, C4 = Object.getOwnPropertyDescriptor, Vw = /* @__PURE__ */ s((n, t, e, i) => {
+var x4 = Object.defineProperty, C4 = Object.getOwnPropertyDescriptor, Hw = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? C4(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && x4(t, e, r), r;
@@ -13847,14 +13843,14 @@ Xc.styles = [
   m4,
   Y
 ];
-Vw([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+Hw([
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], Xc.prototype, "weavy", 2);
-Vw([
-  p({ type: Boolean })
+Hw([
+  y({ type: Boolean })
 ], Xc.prototype, "noNetwork", 2);
-Xc = Vw([
+Xc = Hw([
   U("wy-empty"),
   ut()
 ], Xc);
@@ -13919,40 +13915,40 @@ let ai = (co = class extends st {
 }, s(co, "WyMessageTyping"), co);
 ai.styles = [Lt, $4, Ru];
 Sr([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], ai.prototype, "weavy", 2);
 Sr([
-  p({ attribute: !0, type: Number })
+  y({ attribute: !0, type: Number })
 ], ai.prototype, "conversationId", 2);
 Sr([
-  p({ attribute: !0, type: Number })
+  y({ attribute: !0, type: Number })
 ], ai.prototype, "userId", 2);
 Sr([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ai.prototype, "isPrivateChat", 2);
 Sr([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], ai.prototype, "members", 2);
 Sr([
-  H()
+  V()
 ], ai.prototype, "typingMembers", 2);
 Sr([
-  H()
+  V()
 ], ai.prototype, "names", 2);
 Sr([
-  H()
+  V()
 ], ai.prototype, "typingTime", 2);
 ai = Sr([
   U("wy-message-typing")
 ], ai);
 const Ou = j`:host(wy-item),[part~=wy-item]{--wy-component-color: var(--wy-on-background, var(--wy-on-background-light, #181c20));display:flex;box-sizing:border-box}[part~=wy-item-rounded]{border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-item-rounded-outer]{border-radius:var(--wy-border-radius-outer, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-item-inner]{display:flex;position:relative;align-items:center;text-decoration:none;gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));flex:1 1 100%;min-width:0}[part~=wy-item-inner-no-padding]{padding:0}[part~=wy-item-sm]{min-height:calc(2 * var(--wy-size, 1rem));padding:0 var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-item-md]{min-height:calc(3 * var(--wy-size, 1rem))}[part~=wy-item-lg]{min-height:calc(4.5 * var(--wy-size, 1rem))}[part~=wy-item-top]{align-items:flex-start}[part~=wy-item-body]{width:100%;min-width:0;min-height:100%;display:flex}[part~=wy-item-rows]{display:flex;flex-direction:column;min-width:0;justify-content:space-evenly;flex:1 1 100%}[part~=wy-item-row]{display:flex;align-items:center;column-gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));min-height:calc(var(--wy-button-line-height, var(--wy-line-height, 1.5)) * var(--wy-size, 1rem))}[part~=wy-item-title] a:after{position:absolute;inset:0;z-index:1;content:\"\"}[part~=wy-item-title] a{color:inherit;text-decoration:none}[part~=wy-item-title]{color:var(--wy-component-color);font-size:var(--wy-item-title-font-size, var(--wy-font-size, 1em));font-weight:var(--wy-item-title-font-weight, var(--wy-font-weight, unset))}[part~=wy-item-title]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-item-image]{display:contents}[part~=wy-item-text]{color:var(--wy-component-color)}@supports (color: color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))){[part~=wy-item-text]{color:color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))}}[part~=wy-item-text]{font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)))}[part~=wy-item-text]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-item-text-sm]{font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)))}[part~=wy-item-meta]{white-space:nowrap}[part~=wy-item-actions]{--wy-component-background-color: transparent;display:flex;align-items:center;justify-items:flex-end;flex:0 0 auto;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-item-actions-top]{align-self:flex-start;margin:calc(-.25 * var(--wy-size, 1rem))}[part~=wy-item-actions-bottom]{align-self:flex-start;margin:calc(-.125 * var(--wy-size, 1rem)) 0 calc(-.625 * var(--wy-size, 1rem))}[part~=wy-item-left]{margin-right:auto}[part~=wy-item-right]{margin-left:auto}[part~=wy-read]{opacity:var(--wy-opacity-muted, 65%);--wy-component-color: var(--wy-outline, var(--wy-outline-light, #72777f))}[part~=wy-unread]{--wy-component-color: color.token(--wy-on-background)}[part~=wy-unread] [part~=wy-item-title],[part~=wy-unread] [part~=wy-item-text]{font-weight:var(--wy-font-weight-bold, 600);color:var(--wy-component-color)}[part~=wy-item-interactive]{background-color:var(--wy-component-background-color);color:var(--wy-component-color);-webkit-user-select:none;user-select:none;cursor:pointer}[part~=wy-item-interactive]:hover,[part~=wy-item-interactive]:focus{--wy-component-background-color: var(--wy-component-background-color-hover, var(--wy-surface-layer-high, var(--wy-surface-layer-high-light, rgba(0, 0, 0, .0745098039))));text-decoration:none}[part~=wy-item-interactive]:active{--wy-component-background-color: var(--wy-component-background-color-active, var(--wy-surface-layer-highest, var(--wy-surface-layer-highest-light, rgba(0, 0, 0, .1019607843))))}[part~=wy-item-interactive][part~=wy-disabled],[part~=wy-item-interactive]:disabled{opacity:var(--wy-opacity-disabled, 38%);pointer-events:none}[part~=wy-item-interactive][part~=wy-selected]{--wy-component-background-color: var(--wy-component-background-color-selected, var(--wy-secondary-container, var(--wy-secondary-container-light, #d5e4f7)));--wy-component-color: var(--wy-component-color-selected, var(--wy-on-secondary-container, var(--wy-on-secondary-container-light, #3a4857)));background-color:var(--wy-component-background-color);color:var(--wy-component-color);border-color:var(--wy-component-background-color)}[part~=wy-item-trashed]{text-decoration:line-through;opacity:var(--wy-opacity-disabled, 38%)}[part~=wy-item-trashed][part~=wy-item-interactive]:hover{opacity:1}[part~=wy-item-list]{display:flex;flex-direction:column;gap:var(--wy-border, 1px);min-width:0}[part~=wy-item-list-filled]{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));--wy-component-background-color: var(--wy-surface-layer-low, var(--wy-surface-layer-low-light, rgba(255, 255, 255, .5019607843)));--wy-component-background-color-hover: var(--wy-surface-layer-lowest, var(--wy-surface-layer-lowest-light, rgba(255, 255, 255, .7490196078)));--wy-component-background-color-active: var(--wy-surface-layer-lowest, var(--wy-surface-layer-lowest-light, rgba(255, 255, 255, .7490196078)))}[part~=wy-item-list-rounded]{border-radius:var(--wy-border-radius-sm, calc(var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))) - .25 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));clip-path:content-box}[part~=wy-item-list-rounded-outer]{border-radius:var(--wy-border-radius-outer, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))));clip-path:content-box}[part~=wy-item-list-bordered]{border:var(--wy-border, 1px) solid var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf));gap:0}[part~=wy-item-list-bordered]>:not(slot),[part~=wy-item-list-bordered] ::slotted(*){border-left:none;border-right:none}[part~=wy-item-list-bordered]>:not(slot):not(:first-child),[part~=wy-item-list-bordered] ::slotted(*:not(:first-child)){border-top:var(--wy-border, 1px) solid var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}`, wl = j`[part~=wy-title]{font-family:var(--wy-headings-font-family, var(--wy-font-family, unset));font-size:var(--wy-headings-font-size, var(--wy-font-size, 1em));font-style:var(--wy-headings-font-style, unset);font-weight:var(--wy-headings-font-weight, var(--wy-font-weight-bold, 600));line-height:var(--wy-headings-line-height, var(--wy-line-height, 1.5));margin-block:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-meta]{color:var(--wy-outline, var(--wy-outline-light, #72777f))}@supports (color: color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))){[part~=wy-meta]{color:color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))}}[part~=wy-meta]{font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)))}[part~=wy-meta-sm]{color:var(--wy-outline, var(--wy-outline-light, #72777f))}@supports (color: color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))){[part~=wy-meta-sm]{color:color(from var(--wy-component-color) srgb r g b/var(--wy-opacity-muted, 65%))}}[part~=wy-meta-sm]{font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)))}[part~=wy-quote]{color:var(--wy-outline, var(--wy-outline-light, #72777f))}[part~=wy-quote]:before,[part~=wy-quote]:after{content:'\"'}`;
-var P4 = Object.defineProperty, S4 = Object.getOwnPropertyDescriptor, ee = /* @__PURE__ */ s((n, t, e, i) => {
+var P4 = Object.defineProperty, S4 = Object.getOwnPropertyDescriptor, te = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? S4(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && P4(t, e, r), r;
 }, "__decorateClass$1a"), lo;
-let ue = (lo = class extends st {
+let he = (lo = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.size = "auto", this.align = "middle", this.actionsPosition = "end", this.rounded = !1, this.noPadding = !1, this.outer = !1, this.interactive = !1, this.selected = !1, this.disabled = !1, this.url = void 0, this.trashed = !1;
   }
@@ -14027,55 +14023,55 @@ let ue = (lo = class extends st {
     `;
   }
 }, s(lo, "WyItem"), lo);
-ue.styles = [Lt, Ou, wl];
-ee([
-  p()
-], ue.prototype, "size", 2);
-ee([
-  p()
-], ue.prototype, "align", 2);
-ee([
-  p()
-], ue.prototype, "actionsPosition", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "rounded", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "noPadding", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "outer", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "interactive", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "selected", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "disabled", 2);
-ee([
-  p({ reflect: !0 })
-], ue.prototype, "url", 2);
-ee([
-  p({ type: Boolean, reflect: !0 })
-], ue.prototype, "trashed", 2);
-ee([
-  p()
-], ue.prototype, "status", 2);
-ee([
+he.styles = [Lt, Ou, wl];
+te([
+  y()
+], he.prototype, "size", 2);
+te([
+  y()
+], he.prototype, "align", 2);
+te([
+  y()
+], he.prototype, "actionsPosition", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "rounded", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "noPadding", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "outer", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "interactive", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "selected", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "disabled", 2);
+te([
+  y({ reflect: !0 })
+], he.prototype, "url", 2);
+te([
+  y({ type: Boolean, reflect: !0 })
+], he.prototype, "trashed", 2);
+te([
+  y()
+], he.prototype, "status", 2);
+te([
   pl({ slot: "actions" })
-], ue.prototype, "_slotActions", 2);
-ee([
+], he.prototype, "_slotActions", 2);
+te([
   pl({ slot: "meta" })
-], ue.prototype, "_slotMeta", 2);
-ee([
+], he.prototype, "_slotMeta", 2);
+te([
   pl({ slot: "text" })
-], ue.prototype, "_slotText", 2);
-ue = ee([
+], he.prototype, "_slotText", 2);
+he = te([
   U("wy-item")
-], ue);
+], he);
 var ho;
 let Xr = (ho = class extends st {
   constructor() {
@@ -14093,22 +14089,22 @@ let Xr = (ho = class extends st {
   }
 }, s(ho, "WyItemList"), ho);
 Xr.styles = [Ou, Y];
-ee([
-  p({ type: Boolean })
+te([
+  y({ type: Boolean })
 ], Xr.prototype, "outer", 2);
-ee([
-  p({ type: Boolean })
+te([
+  y({ type: Boolean })
 ], Xr.prototype, "bordered", 2);
-ee([
-  p({ type: Boolean })
+te([
+  y({ type: Boolean })
 ], Xr.prototype, "rounded", 2);
-ee([
-  p({ type: Boolean })
+te([
+  y({ type: Boolean })
 ], Xr.prototype, "filled", 2);
-Xr = ee([
+Xr = te([
   U("wy-item-list")
 ], Xr);
-const D1 = j`[part~=wy-button]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c));color:var(--wy-component-color);background:var(--wy-component-background-color, transparent);height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));font-family:var(--wy-button-font-family, var(--wy-font-family, unset)),inherit;font-size:var(--wy-button-font-size, var(--wy-font-size, 1em));font-weight:var(--wy-button-font-weight, var(--wy-font-weight, unset));line-height:var(--wy-button-line-height, var(--wy-line-height, 1.5));text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;-webkit-user-select:none;user-select:none;border:var(--wy-button-border-width, var(--wy-border-outline, 0)) solid var(--wy-outline, var(--wy-outline-light, #72777f));border-radius:var(--wy-button-border-radius, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem))));display:inline-flex;align-items:center;justify-content:center;gap:var(--wy-button-gap, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem))))));position:relative}[part~=wy-button][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .25) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .5)}[part~=wy-button][part~=wy-disabled],[part~=wy-button]:disabled{opacity:var(--wy-opacity-disabled, 38%);cursor:unset;pointer-events:none}[part~=wy-button-state-layer]>*{z-index:3}[part~=wy-button-state-layer]:before{content:\"\";z-index:2;position:absolute;inset:0;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-button-state-layer]:hover:before{opacity:8%}[part~=wy-button-state-layer]:focus:before,[part~=wy-button-state-layer]:active:before,[part~=wy-button-state-layer][part~=wy-active]:before{opacity:12%}[part~=wy-button-icon]{--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));width:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));line-height:1;align-items:center;justify-content:center}[part~=wy-button-icon][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);padding:0;margin:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .5)}[part~=wy-button-icon][part~=wy-button-sm][part~=wy-button-state-layer]:before{margin:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.1)}[part~=wy-button-icon][part~=wy-active]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-button-icon-inline]{height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));width:auto;min-width:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));background:var(--wy-component-background-color);color:currentColor;display:inline-flex;padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-button-icon-inline][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);min-width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .25);margin:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .5)}[part~=wy-button-icon-inline][part~=wy-button-sm][part~=wy-button-state-layer]:before{margin:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.1)}[part~=wy-button-inline]{border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-button-inline][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);min-width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .75);margin-inline:calc(-.75 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-button-primary]{--wy-component-background-color: var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));--wy-component-color: var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73))}[part~=wy-button-variant]{--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}[part~=wy-button-primary-text]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-button-inherit-color]{--wy-component-color: currentColor}[part~=wy-button-no-color]{--wy-component-background-color: transparent;--wy-component-color: unset}[part~=wy-button-link]{padding:0;color:var(--wy-link, var(--wy-primary-light, #2f628c));background:transparent;text-decoration:var(--wy-link-decoration, none);height:auto;line-height:inherit;font-size:inherit;vertical-align:baseline}[part~=wy-button-link]:hover,[part~=wy-button-link]:focus{text-decoration:var(--wy-link-hover-decoration, var(--wy-link-decoration, none))}[part~=wy-buttons]{display:flex;align-items:center;flex-wrap:wrap;gap:calc(.5 * var(--wy-size, 1rem))}[part~=wy-buttons-reverse]{flex-direction:row-reverse}[part~=wy-buttons-floating]{position:sticky;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) 0;top:0;height:0;margin-bottom:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));z-index:1030;--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}[part~=wy-buttons-sticky]{position:sticky;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));top:var(--wy-component-offset-top, 0px);z-index:1021;--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}`, H1 = j`[part~=wy-tabs]{display:flex;overflow-y:hidden;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));flex:1 1 auto}[part~=wy-tabs]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-tabs]{scrollbar-width:thin;scrollbar-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf)) transparent}[part~=wy-tabs]::-webkit-scrollbar{height:.375rem;width:.375rem;background:transparent;z-index:999}[part~=wy-tabs]::-webkit-scrollbar-track{background:transparent}[part~=wy-tabs]::-webkit-scrollbar-thumb{background-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf));opacity:75%;border:0 solid transparent;border-radius:0;background-clip:padding-box}[part~=wy-tabs]::-webkit-scrollbar-thumb:hover{background-color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:75%}[part~=wy-tabs]::-webkit-scrollbar-thumb:window-inactive{background-color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:50%}[part~=wy-tab]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c));--wy-component-background-color: transparent;color:var(--wy-component-color);background:var(--wy-component-background-color);border:none;border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));position:relative;text-align:center;text-decoration:none;cursor:pointer;-webkit-user-select:none;user-select:none}[part~=wy-tab] .wy-tab-icon{position:relative;padding:calc(.25 * var(--wy-size, 1rem)) calc(1 * var(--wy-size, 1rem));border-radius:var(--wy-button-border-radius, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem))));display:inline-flex}[part~=wy-tab] .wy-tab-icon:before{content:\"\";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-tab]:hover .wy-tab-icon:before{opacity:8%}[part~=wy-tab]:focus .wy-tab-icon:before,[part~=wy-tab]:active .wy-tab-icon:before,[part~=wy-tab].wy-active .wy-tab-icon:before{opacity:12%}[part~=wy-tab] .wy-tab-label{font-family:var(--wy-button-font-family, var(--wy-font-family, unset)),inherit;line-height:var(--wy-button-line-height, var(--wy-line-height, 1.5));font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)));font-weight:var(--wy-font-weight, unset)}[part~=wy-button-state-layer][part~=wy-button-sm][part~=wy-tab-sm]{padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .5);margin:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) auto;font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6)}[part~=wy-button-state-layer][part~=wy-button-sm][part~=wy-tab-sm]:before{margin:calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.25) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * 0)}`;
+const D1 = j`[part~=wy-button]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c));color:var(--wy-component-color);background:var(--wy-component-background-color, transparent);height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));font-family:var(--wy-button-font-family, var(--wy-font-family, unset)),inherit;font-size:var(--wy-button-font-size, var(--wy-font-size, 1em));font-weight:var(--wy-button-font-weight, var(--wy-font-weight, unset));line-height:var(--wy-button-line-height, var(--wy-line-height, 1.5));text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;-webkit-user-select:none;user-select:none;border:var(--wy-button-border-width, var(--wy-border-outline, 0)) solid var(--wy-outline, var(--wy-outline-light, #72777f));border-radius:var(--wy-button-border-radius, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem))));display:inline-flex;align-items:center;justify-content:center;gap:var(--wy-button-gap, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem))))));position:relative}[part~=wy-button][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .25) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .5)}[part~=wy-button][part~=wy-disabled],[part~=wy-button]:disabled{opacity:var(--wy-opacity-disabled, 38%);cursor:unset;pointer-events:none}[part~=wy-button-state-layer]>*{z-index:3}[part~=wy-button-state-layer]:before{content:\"\";z-index:2;position:absolute;inset:0;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-button-state-layer]:hover:before{opacity:8%}[part~=wy-button-state-layer]:focus:before,[part~=wy-button-state-layer]:active:before,[part~=wy-button-state-layer][part~=wy-active]:before{opacity:12%}[part~=wy-button-icon]{--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));width:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));line-height:1;align-items:center;justify-content:center}[part~=wy-button-icon][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);padding:0;margin:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .5)}[part~=wy-button-icon][part~=wy-button-sm][part~=wy-button-state-layer]:before{margin:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.1)}[part~=wy-button-icon][part~=wy-active]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-button-icon-inline]{height:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));width:auto;min-width:var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));background:var(--wy-component-background-color);color:currentColor;display:inline-flex;padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-button-icon-inline][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);min-width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .25);margin:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .5)}[part~=wy-button-icon-inline][part~=wy-button-sm][part~=wy-button-state-layer]:before{margin:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.1)}[part~=wy-button-inline]{border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-button-inline][part~=wy-button-sm]{height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);min-width:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .8);padding:calc(var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * .75);margin-inline:calc(-.75 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-button-primary]{--wy-component-background-color: var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));--wy-component-color: var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73))}[part~=wy-button-variant]{--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}[part~=wy-button-primary-text]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-button-inherit-color]{--wy-component-color: currentColor}[part~=wy-button-no-color]{--wy-component-background-color: transparent;--wy-component-color: unset}[part~=wy-button-link]{padding:0;color:var(--wy-link, var(--wy-primary-light, #2f628c));background:transparent;text-decoration:var(--wy-link-decoration, none);height:auto;line-height:inherit;font-size:inherit;vertical-align:baseline}[part~=wy-button-link]:hover,[part~=wy-button-link]:focus{text-decoration:var(--wy-link-hover-decoration, var(--wy-link-decoration, none))}[part~=wy-buttons]{display:flex;align-items:center;flex-wrap:wrap;gap:calc(.5 * var(--wy-size, 1rem))}[part~=wy-buttons-reverse]{flex-direction:row-reverse}[part~=wy-buttons-floating]{position:sticky;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) 0;top:0;height:0;margin-bottom:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));z-index:1030;--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}[part~=wy-buttons-sticky]{position:sticky;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));top:var(--wy-component-offset-top, 0px);z-index:1021;--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e))}`, V1 = j`[part~=wy-tabs]{display:flex;overflow-y:hidden;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));flex:1 1 auto}[part~=wy-tabs]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-tabs]{scrollbar-width:thin;scrollbar-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf)) transparent}[part~=wy-tabs]::-webkit-scrollbar{height:.375rem;width:.375rem;background:transparent;z-index:999}[part~=wy-tabs]::-webkit-scrollbar-track{background:transparent}[part~=wy-tabs]::-webkit-scrollbar-thumb{background-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf));opacity:75%;border:0 solid transparent;border-radius:0;background-clip:padding-box}[part~=wy-tabs]::-webkit-scrollbar-thumb:hover{background-color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:75%}[part~=wy-tabs]::-webkit-scrollbar-thumb:window-inactive{background-color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:50%}[part~=wy-tab]{--wy-component-color: var(--wy-primary, var(--wy-primary-light, #2f628c));--wy-component-background-color: transparent;color:var(--wy-component-color);background:var(--wy-component-background-color);border:none;border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));position:relative;text-align:center;text-decoration:none;cursor:pointer;-webkit-user-select:none;user-select:none}[part~=wy-tab] .wy-tab-icon{position:relative;padding:calc(.25 * var(--wy-size, 1rem)) calc(1 * var(--wy-size, 1rem));border-radius:var(--wy-button-border-radius, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem))));display:inline-flex}[part~=wy-tab] .wy-tab-icon:before{content:\"\";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-tab]:hover .wy-tab-icon:before{opacity:8%}[part~=wy-tab]:focus .wy-tab-icon:before,[part~=wy-tab]:active .wy-tab-icon:before,[part~=wy-tab].wy-active .wy-tab-icon:before{opacity:12%}[part~=wy-tab] .wy-tab-label{font-family:var(--wy-button-font-family, var(--wy-font-family, unset)),inherit;line-height:var(--wy-button-line-height, var(--wy-line-height, 1.5));font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)));font-weight:var(--wy-font-weight, unset)}[part~=wy-button-state-layer][part~=wy-button-sm][part~=wy-tab-sm]{padding:var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .5);margin:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) auto;font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));height:calc(var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * .6)}[part~=wy-button-state-layer][part~=wy-button-sm][part~=wy-tab-sm]:before{margin:calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * -.25) calc(var(--wy-button-padding-x, calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) * 0)}`;
 var M4 = Object.defineProperty, E4 = Object.getOwnPropertyDescriptor, je = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? E4(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
@@ -14153,7 +14149,7 @@ let Je = (uo = class extends st {
 Je.styles = [
   Lt,
   D1,
-  H1,
+  V1,
   Y,
   j`
       :host {
@@ -14162,31 +14158,31 @@ Je.styles = [
     `
 ];
 je([
-  p()
+  y()
 ], Je.prototype, "type", 2);
 je([
-  p()
+  y()
 ], Je.prototype, "kind", 2);
 je([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Je.prototype, "active", 2);
 je([
-  p()
+  y()
 ], Je.prototype, "color", 2);
 je([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Je.prototype, "small", 2);
 je([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], Je.prototype, "disabled", 2);
 je([
-  p()
+  y()
 ], Je.prototype, "href", 2);
 je([
-  p()
+  y()
 ], Je.prototype, "target", 2);
 je([
-  p()
+  y()
 ], Je.prototype, "download", 2);
 Je = je([
   U("wy-button")
@@ -14210,22 +14206,22 @@ let Qn = (po = class extends st {
 Qn.styles = [
   Lt,
   D1,
-  H1,
+  V1,
   Y
 ];
 je([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Qn.prototype, "tabs", 2);
 je([
-  p({ type: String })
+  y({ type: String })
 ], Qn.prototype, "position", 2);
 je([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Qn.prototype, "reverse", 2);
 Qn = je([
   U("wy-buttons")
 ], Qn);
-const V1 = "important", A4 = " !" + V1, id = ds(class extends yl {
+const H1 = "important", A4 = " !" + H1, id = ds(class extends yl {
   constructor(n) {
     if (super(n), n.type !== ih.ATTRIBUTE || n.name !== "style" || n.strings?.length > 2) throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.");
   }
@@ -14244,7 +14240,7 @@ const V1 = "important", A4 = " !" + V1, id = ds(class extends yl {
       if (r != null) {
         this.ft.add(i);
         const a = typeof r == "string" && r.endsWith(A4);
-        i.includes("-") || a ? e.setProperty(i, a ? r.slice(0, -11) : r, a ? V1 : "") : e[i] = r;
+        i.includes("-") || a ? e.setProperty(i, a ? r.slice(0, -11) : r, a ? H1 : "") : e[i] = r;
       }
     }
     return $u;
@@ -14342,7 +14338,7 @@ function D4(n) {
   };
 }
 s(D4, "expandPaddingObject");
-function H4(n) {
+function V4(n) {
   return typeof n != "number" ? D4(n) : {
     top: n,
     right: n,
@@ -14350,7 +14346,7 @@ function H4(n) {
     left: n
   };
 }
-s(H4, "getPaddingObject");
+s(V4, "getPaddingObject");
 function hu(n) {
   const {
     x: t,
@@ -14419,7 +14415,7 @@ function jm(n, t, e) {
   return m;
 }
 s(jm, "computeCoordsFromPlacement");
-async function V4(n, t) {
+async function H4(n, t) {
   var e;
   t === void 0 && (t = {});
   const {
@@ -14435,7 +14431,7 @@ async function V4(n, t) {
     elementContext: C = "floating",
     altBoundary: v = !1,
     padding: m = 0
-  } = zu(t, n), f = H4(m), E = c[v ? C === "floating" ? "reference" : "floating" : C], S = hu(await a.getClippingRect({
+  } = zu(t, n), f = V4(m), E = c[v ? C === "floating" ? "reference" : "floating" : C], S = hu(await a.getClippingRect({
     element: (e = await (a.isElement == null ? void 0 : a.isElement(E))) == null || e ? E : E.contextElement || await (a.getDocumentElement == null ? void 0 : a.getDocumentElement(c.floating)),
     boundary: u,
     rootBoundary: b,
@@ -14445,7 +14441,7 @@ async function V4(n, t) {
     y: r,
     width: o.floating.width,
     height: o.floating.height
-  } : o.reference, V = await (a.getOffsetParent == null ? void 0 : a.getOffsetParent(c.floating)), O = await (a.isElement == null ? void 0 : a.isElement(V)) ? await (a.getScale == null ? void 0 : a.getScale(V)) || {
+  } : o.reference, H = await (a.getOffsetParent == null ? void 0 : a.getOffsetParent(c.floating)), O = await (a.isElement == null ? void 0 : a.isElement(H)) ? await (a.getScale == null ? void 0 : a.getScale(H)) || {
     x: 1,
     y: 1
   } : {
@@ -14454,7 +14450,7 @@ async function V4(n, t) {
   }, I = hu(a.convertOffsetParentRelativeRectToViewportRelativeRect ? await a.convertOffsetParentRelativeRectToViewportRelativeRect({
     elements: c,
     rect: T,
-    offsetParent: V,
+    offsetParent: H,
     strategy: l
   }) : T);
   return {
@@ -14464,7 +14460,7 @@ async function V4(n, t) {
     right: (I.right - S.right + f.right) / O.x
   };
 }
-s(V4, "detectOverflow");
+s(H4, "detectOverflow");
 const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
   const {
     placement: i = "bottom",
@@ -14473,7 +14469,7 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
     platform: o
   } = e, c = o.detectOverflow ? o : {
     ...o,
-    detectOverflow: V4
+    detectOverflow: H4
   }, l = await (o.isRTL == null ? void 0 : o.isRTL(t));
   let u = await o.getElementRects({
     reference: n,
@@ -14492,7 +14488,7 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
       name: S,
       fn: T
     } = E, {
-      x: V,
+      x: H,
       y: O,
       data: I,
       reset: B
@@ -14510,7 +14506,7 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
         floating: t
       }
     });
-    b = V ?? b, C = O ?? C, f[S] = {
+    b = H ?? b, C = O ?? C, f[S] = {
       ...f[S],
       ...I
     }, B && m < U4 && (m++, typeof B == "object" && (B.placement && (v = B.placement), B.rects && (u = B.rects === !0 ? await o.getElementRects({
@@ -14553,7 +14549,7 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
       } = zu(n, t);
       if ((e = a.arrow) != null && e.alignmentOffset)
         return {};
-      const S = Gn(r), T = Zr(c), V = Gn(c) === c, O = await (l.isRTL == null ? void 0 : l.isRTL(u.floating)), I = v || (V || !$ ? [du(c)] : L4(c)), B = f !== "none";
+      const S = Gn(r), T = Zr(c), H = Gn(c) === c, O = await (l.isRTL == null ? void 0 : l.isRTL(u.floating)), I = v || (H || !$ ? [du(c)] : L4(c)), B = f !== "none";
       !v && B && I.push(...I4(c, $, f, O));
       const K = [c, ...I], it = await l.detectOverflow(t, E), lt = [];
       let nt = ((i = a.flip) == null ? void 0 : i.overflows) || [];
@@ -14566,8 +14562,8 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
         overflows: lt
       }], !lt.every((vt) => vt <= 0)) {
         var Ot, zt;
-        const vt = (((Ot = a.flip) == null ? void 0 : Ot.index) || 0) + 1, Ht = K[vt];
-        if (Ht && (!(C === "alignment" ? T !== Zr(Ht) : !1) || // We leave the current main axis only if every placement on that axis
+        const vt = (((Ot = a.flip) == null ? void 0 : Ot.index) || 0) + 1, Dt = K[vt];
+        if (Dt && (!(C === "alignment" ? T !== Zr(Dt) : !1) || // We leave the current main axis only if every placement on that axis
         // overflows the main axis.
         nt.every((xt) => Zr(xt.placement) === T ? xt.overflows[0] > 0 : !0)))
           return {
@@ -14576,7 +14572,7 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
               overflows: nt
             },
             reset: {
-              placement: Ht
+              placement: Dt
             }
           };
         let be = (zt = nt.filter((At) => At.overflows[0] <= 0).sort((At, xt) => At.overflows[1] - xt.overflows[1])[0]) == null ? void 0 : zt.placement;
@@ -14586,13 +14582,13 @@ const U4 = 50, B4 = /* @__PURE__ */ s(async (n, t, e) => {
               var Mt;
               const At = (Mt = nt.filter((xt) => {
                 if (B) {
-                  const ie = Zr(xt.placement);
-                  return ie === T || // Create a bias to the `y` side axis due to horizontal
+                  const ee = Zr(xt.placement);
+                  return ee === T || // Create a bias to the `y` side axis due to horizontal
                   // reading directions favoring greater width.
-                  ie === "y";
+                  ee === "y";
                 }
                 return !0;
-              }).map((xt) => [xt.placement, xt.overflows.filter((ie) => ie > 0).reduce((ie, dt) => ie + dt, 0)]).sort((xt, ie) => xt[1] - ie[1])[0]) == null ? void 0 : Mt[0];
+              }).map((xt) => [xt.placement, xt.overflows.filter((ee) => ee > 0).reduce((ee, dt) => ee + dt, 0)]).sort((xt, ee) => xt[1] - ee[1])[0]) == null ? void 0 : Mt[0];
               At && (be = At);
               break;
             }
@@ -14678,11 +14674,11 @@ const j4 = /* @__PURE__ */ s(function(n) {
           fn: /* @__PURE__ */ s((S) => {
             let {
               x: T,
-              y: V
+              y: H
             } = S;
             return {
               x: T,
-              y: V
+              y: H
             };
           }, "fn")
         },
@@ -14693,12 +14689,12 @@ const j4 = /* @__PURE__ */ s(function(n) {
       }, C = await a.detectOverflow(t, u), v = Zr(Gn(r)), m = U1(v);
       let f = b[m], $ = b[v];
       if (o) {
-        const S = m === "y" ? "top" : "left", T = m === "y" ? "bottom" : "right", V = f + C[S], O = f - C[T];
-        f = Nm(V, f, O);
+        const S = m === "y" ? "top" : "left", T = m === "y" ? "bottom" : "right", H = f + C[S], O = f - C[T];
+        f = Nm(H, f, O);
       }
       if (c) {
-        const S = v === "y" ? "top" : "left", T = v === "y" ? "bottom" : "right", V = $ + C[S], O = $ - C[T];
-        $ = Nm(V, $, O);
+        const S = v === "y" ? "top" : "left", T = v === "y" ? "bottom" : "right", H = $ + C[S], O = $ - C[T];
+        $ = Nm(H, $, O);
       }
       const E = l.fn({
         ...t,
@@ -14811,7 +14807,7 @@ function mi(n) {
   return Ye(n).getComputedStyle(n);
 }
 s(mi, "getComputedStyle$1");
-function Hu(n) {
+function Vu(n) {
   return fi(n) ? {
     scrollLeft: n.scrollLeft,
     scrollTop: n.scrollTop
@@ -14820,7 +14816,7 @@ function Hu(n) {
     scrollTop: n.scrollY
   };
 }
-s(Hu, "getNodeScroll");
+s(Vu, "getNodeScroll");
 function Jr(n) {
   if (fl(n) === "html")
     return n;
@@ -14909,8 +14905,8 @@ function Zn(n, t, e, i) {
     const v = Ye(a), m = i && fi(i) ? Ye(i) : i;
     let f = v, $ = Xy(f);
     for (; $ && i && m !== f; ) {
-      const E = Bs($), S = $.getBoundingClientRect(), T = mi($), V = S.left + ($.clientLeft + parseFloat(T.paddingLeft)) * E.x, O = S.top + ($.clientTop + parseFloat(T.paddingTop)) * E.y;
-      l *= E.x, u *= E.y, b *= E.x, C *= E.y, l += V, u += O, f = Ye($), $ = Xy(f);
+      const E = Bs($), S = $.getBoundingClientRect(), T = mi($), H = S.left + ($.clientLeft + parseFloat(T.paddingLeft)) * E.x, O = S.top + ($.clientTop + parseFloat(T.paddingTop)) * E.y;
+      l *= E.x, u *= E.y, b *= E.x, C *= E.y, l += H, u += O, f = Ye($), $ = Xy(f);
     }
   }
   return hu({
@@ -14921,13 +14917,13 @@ function Zn(n, t, e, i) {
   });
 }
 s(Zn, "getBoundingClientRect");
-function Vu(n, t) {
-  const e = Hu(n).scrollLeft;
+function Hu(n, t) {
+  const e = Vu(n).scrollLeft;
   return t ? t.left + e : Zn(Ni(n)).left + e;
 }
-s(Vu, "getWindowScrollBarX");
+s(Hu, "getWindowScrollBarX");
 function Q1(n, t) {
-  const e = n.getBoundingClientRect(), i = e.left + t.scrollLeft - Vu(n, e), r = e.top + t.scrollTop;
+  const e = n.getBoundingClientRect(), i = e.left + t.scrollLeft - Hu(n, e), r = e.top + t.scrollTop;
   return {
     x: i,
     y: r
@@ -14949,7 +14945,7 @@ function tC(n) {
     scrollTop: 0
   }, u = zi(1);
   const b = zi(0), C = Mr(i);
-  if ((C || !C && !a) && ((fl(i) !== "body" || rh(o)) && (l = Hu(i)), C)) {
+  if ((C || !C && !a) && ((fl(i) !== "body" || rh(o)) && (l = Vu(i)), C)) {
     const m = Zn(i);
     u = Bs(i), b.x = m.x + i.clientLeft, b.y = m.y + i.clientTop;
   }
@@ -14967,8 +14963,8 @@ function eC(n) {
 }
 s(eC, "getClientRects");
 function iC(n) {
-  const t = Ni(n), e = Hu(n), i = n.ownerDocument.body, r = Un(t.scrollWidth, t.clientWidth, i.scrollWidth, i.clientWidth), a = Un(t.scrollHeight, t.clientHeight, i.scrollHeight, i.clientHeight);
-  let o = -e.scrollLeft + Vu(n);
+  const t = Ni(n), e = Vu(n), i = n.ownerDocument.body, r = Un(t.scrollWidth, t.clientWidth, i.scrollWidth, i.clientWidth), a = Un(t.scrollHeight, t.clientHeight, i.scrollHeight, i.clientHeight);
+  let o = -e.scrollLeft + Hu(n);
   const c = -e.scrollTop;
   return mi(i).direction === "rtl" && (o += Un(t.clientWidth, i.clientWidth) - r), {
     width: r,
@@ -14987,7 +14983,7 @@ function rC(n, t) {
     const b = Bw();
     (!b || b && t === "fixed") && (c = r.offsetLeft, l = r.offsetTop);
   }
-  const u = Vu(i);
+  const u = Hu(i);
   if (u <= 0) {
     const b = i.ownerDocument, C = b.body, v = getComputedStyle(C), m = b.compatMode === "CSS1Compat" && parseFloat(v.marginLeft) + parseFloat(v.marginRight) || 0, f = Math.abs(i.clientWidth - C.clientWidth - m);
     f <= Qm && (a -= f);
@@ -15089,10 +15085,10 @@ function cC(n, t, e) {
   };
   const l = zi(0);
   function u() {
-    l.x = Vu(r);
+    l.x = Hu(r);
   }
   if (s(u, "setLeftRTLScrollbarOffset"), i || !i && !a)
-    if ((fl(t) !== "body" || rh(r)) && (c = Hu(t)), i) {
+    if ((fl(t) !== "body" || rh(r)) && (c = Vu(t)), i) {
       const m = Zn(t, !0, a, t);
       l.x = m.x + t.clientLeft, l.y = m.y + t.clientTop;
     } else r && u();
@@ -15188,7 +15184,7 @@ function uC(n, t) {
     } = u;
     if (c || t(), !v || !m)
       return;
-    const f = _h(C), $ = _h(r.clientWidth - (b + v)), E = _h(r.clientHeight - (C + m)), S = _h(b), V = {
+    const f = _h(C), $ = _h(r.clientWidth - (b + v)), E = _h(r.clientHeight - (C + m)), S = _h(b), H = {
       rootMargin: -f + "px " + -$ + "px " + -E + "px " + -S + "px",
       threshold: Un(0, cu(1, l)) || 1
     };
@@ -15207,12 +15203,12 @@ function uC(n, t) {
     s(I, "handleObserve");
     try {
       e = new IntersectionObserver(I, {
-        ...V,
+        ...H,
         // Handle <iframe>s
         root: r.ownerDocument
       });
     } catch {
-      e = new IntersectionObserver(I, V);
+      e = new IntersectionObserver(I, H);
     }
     e.observe(n);
   }
@@ -15238,8 +15234,8 @@ function X1(n, t, e, i) {
   o && (m = new ResizeObserver((S) => {
     let [T] = S;
     T && T.target === u && m && t && (m.unobserve(t), cancelAnimationFrame(v), v = requestAnimationFrame(() => {
-      var V;
-      (V = m) == null || V.observe(t);
+      var H;
+      (H = m) == null || H.observe(t);
     })), e();
   }), u && !l && m.observe(u), t && m.observe(t));
   let f, $ = l ? Zn(n) : null;
@@ -15326,7 +15322,7 @@ let ti = (yo = class extends st {
       }
   }
   render() {
-    const t = this._slotButton.length === 0 || this._slotButton.length === 1 && this._slotButton[0] instanceof jt;
+    const t = this._slotButton.length === 0 || this._slotButton.length === 1 && this._slotButton[0] instanceof Wt;
     return h`
       <span part="wy-dropdown">
         <span
@@ -15355,8 +15351,8 @@ let ti = (yo = class extends st {
           part="wy-dropdown-menu"
           @click=${(e) => this.handleClickToggle(e)}
           @keyup=${zw}
-          ?hidden=${Hs() && !this.showMenu}
-          popover=${ct(Hs() ? void 0 : "auto")}
+          ?hidden=${Vs() && !this.showMenu}
+          popover=${ct(Vs() ? void 0 : "auto")}
         >
           <slot></slot>
         </div>
@@ -15375,31 +15371,31 @@ let ti = (yo = class extends st {
 }, s(yo, "WyDropdown"), yo);
 ti.styles = [Lt, Uu];
 Te([
-  p()
+  y()
 ], ti.prototype, "directionX", 2);
 Te([
-  p()
+  y()
 ], ti.prototype, "directionY", 2);
 Te([
-  p()
+  y()
 ], ti.prototype, "icon", 2);
 Te([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ti.prototype, "small", 2);
 Te([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ti.prototype, "disabled", 2);
 Te([
-  H()
+  V()
 ], ti.prototype, "_placement", 2);
 Te([
-  H()
+  V()
 ], ti.prototype, "showMenu", 2);
 Te([
   pl({ slot: "button-content" })
 ], ti.prototype, "_slotButton", 2);
 Te([
-  H()
+  V()
 ], ti.prototype, "computePositionCleanup", 2);
 ti = Te([
   U("wy-dropdown")
@@ -15415,7 +15411,7 @@ let nd = (wo = class extends st {
 }, s(wo, "WyDropdownItem"), wo);
 nd.styles = [Lt, Uu, Y];
 Te([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], nd.prototype, "active", 2);
 nd = Te([
   U("wy-dropdown-item")
@@ -15447,10 +15443,10 @@ let tl = (fo = class extends st {
 }, s(fo, "WyDropdownOption"), fo);
 tl.styles = [Lt, Uu, Y];
 Te([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], tl.prototype, "active", 2);
 Te([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], tl.prototype, "selected", 2);
 tl = Te([
   U("wy-dropdown-option")
@@ -15496,7 +15492,7 @@ let sd = (vo = class extends st {
 }, s(vo, "WySkeleton"), vo);
 sd.styles = [rg, Y];
 ng([
-  p()
+  y()
 ], sd.prototype, "text", 2);
 sd = ng([
   U("wy-skeleton")
@@ -15849,13 +15845,13 @@ let Yn = (go = class extends st {
 }, s(go, "WyImageGrid"), go);
 Yn.styles = [mC, Y];
 Nu([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Yn.prototype, "images", 2);
 Nu([
-  p({ type: Number })
+  y({ type: Number })
 ], Yn.prototype, "limit", 2);
 Nu([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], Yn.prototype, "outer", 2);
 Yn = Nu([
   U("wy-image-grid")
@@ -15902,7 +15898,7 @@ let ad = (bo = class extends st {
 }, s(bo, "WyAttachment"), bo);
 ad.styles = [Ou, Y];
 nh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], ad.prototype, "file", 2);
 ad = nh([
   U("wy-attachment")
@@ -15926,10 +15922,10 @@ let el = (xo = class extends st {
 }, s(xo, "WyAttachmentList"), xo);
 el.styles = [Ou, Y];
 nh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], el.prototype, "files", 2);
 nh([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], el.prototype, "filled", 2);
 el = nh([
   U("wy-attachment-list")
@@ -15979,7 +15975,7 @@ let od = (Co = class extends Re {
 }, s(Co, "WyAnnotation"), Co);
 od.styles = [Y];
 qu([
-  p({ type: Object, attribute: !1 })
+  y({ type: Object, attribute: !1 })
 ], od.prototype, "file", 2);
 od = qu([
   U("wy-annotation")
@@ -15999,7 +15995,7 @@ let cd = ($o = class extends qt {
 }, s($o, "WyAnnotationList"), $o);
 cd.styles = [Y];
 qu([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], cd.prototype, "files", 2);
 cd = qu([
   U("wy-annotation-list")
@@ -16179,10 +16175,10 @@ let il = (ko = class extends st {
 }, s(ko, "WyEmbed"), ko);
 il.styles = [Y, hg];
 sh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], il.prototype, "embed", 2);
 sh([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], il.prototype, "disabled", 2);
 il = sh([
   U("wy-embed")
@@ -16249,7 +16245,7 @@ let ld = (_o = class extends st {
 }, s(_o, "WyEmbedSelect"), _o);
 ld.styles = [Y, hg];
 sh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], ld.prototype, "embeds", 2);
 ld = sh([
   U("wy-embed-select")
@@ -16322,7 +16318,7 @@ let dd = (Po = class extends st {
 }, s(Po, "WyMeetingCard"), Po);
 dd.styles = [Y];
 ug([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], dd.prototype, "meeting", 2);
 dd = ug([
   U("wy-meeting-card"),
@@ -16374,19 +16370,19 @@ let hr = (So = class extends st {
 }, s(So, "WyTitlebar"), So);
 hr.styles = [Wu, pg, Y];
 wn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], hr.prototype, "header", 2);
 wn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], hr.prototype, "floating", 2);
 wn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], hr.prototype, "outer", 2);
 wn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], hr.prototype, "trashed", 2);
 wn([
-  p()
+  y()
 ], hr.prototype, "size", 2);
 hr = wn([
   U("wy-titlebar")
@@ -16405,7 +16401,7 @@ let hd = (Mo = class extends st {
 }, s(Mo, "WyTitlebarText"), Mo);
 hd.styles = [pg, Y];
 wn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], hd.prototype, "trashed", 2);
 hd = wn([
   U("wy-titlebar-text")
@@ -16506,18 +16502,18 @@ let tn = (Eo = class extends st {
     super.disconnectedCallback(), this.close();
   }
 }, s(Eo, "WyOverlay"), Eo);
-tn.styles = [Qt, Y, MC, EC, AC, RC];
+tn.styles = [Kt, Y, MC, EC, AC, RC];
 ah([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], tn.prototype, "show", 2);
 ah([
-  p({ type: String })
+  y({ type: String })
 ], tn.prototype, "type", 2);
 ah([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], tn.prototype, "maximized", 2);
 ah([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], tn.prototype, "noHeader", 2);
 tn = ah([
   U("wy-overlay")
@@ -16555,33 +16551,33 @@ let vi = (Ao = class extends st {
 }, s(Ao, "WyContainer"), Ao);
 vi.styles = [us, Y, FC];
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "scrollX", 2);
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "scrollY", 2);
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "padded", 2);
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "outer", 2);
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "scrollbars", 2);
 fn([
-  p()
+  y()
 ], vi.prototype, "gap", 2);
 fn([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vi.prototype, "fill", 2);
 vi = fn([
   U("wy-container")
 ], vi);
-var HC = Object.defineProperty, VC = Object.getOwnPropertyDescriptor, ml = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? VC(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var VC = Object.defineProperty, HC = Object.getOwnPropertyDescriptor, ml = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? HC(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && HC(t, e, r), r;
+  return i && r && VC(t, e, r), r;
 }, "__decorateClass$_"), Ro;
 let ud = (Ro = class extends st {
   constructor() {
@@ -16617,7 +16613,7 @@ ud.styles = [
   Y
 ];
 ml([
-  p({ type: Array, attribute: !1 })
+  y({ type: Array, attribute: !1 })
 ], ud.prototype, "pollOptions", 2);
 ud = ml([
   U("wy-poll")
@@ -16707,13 +16703,13 @@ let Xn = (To = class extends Re {
 }, s(To, "WyPollOption"), To);
 Xn.styles = [jw, Y];
 ml([
-  p({ type: Number, attribute: !1 })
+  y({ type: Number, attribute: !1 })
 ], Xn.prototype, "totalVotes", 2);
 ml([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Xn.prototype, "option", 2);
 ml([
-  H()
+  V()
 ], Xn.prototype, "showSheet", 2);
 Xn = ml([
   U("wy-poll-option"),
@@ -16758,12 +16754,12 @@ function rl(n, t, e) {
 }
 s(rl, "updateReaction");
 const NC = j`[part~=wy-reaction]{font-size:calc(1.125 * var(--wy-size, 1rem))}[part~=wy-reactions]{display:inline-flex;align-items:center;column-gap:calc(.25 * var(--wy-size, 1rem))}[part~=wy-reactions] :first-child:not(:only-child){margin-left:calc(.25 * var(--wy-size, 1rem))}[part~=wy-reactions] :last-child:not(:only-child){margin-right:calc(.25 * var(--wy-size, 1rem))}[part~=wy-reaction-count]{margin:0 calc(.25 * var(--wy-size, 1rem)) 0;line-height:1;font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)))}[part~=wy-reaction-menu]{width:max-content;position:absolute;z-index:1000;border:none;--wy-component-background-color: var(--wy-surface-container-lowest, var(--wy-surface-container-lowest-light, #ffffff));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-component-background-color);color:var(--wy-component-color);display:flex;margin:0;text-align:start;background-clip:padding-box;box-shadow:var(--wy-shadow-level1, 0 calc(.125 * var(--wy-size, 1rem)) calc(.125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.1875 * var(--wy-size, 1rem)) calc(.0625 * var(--wy-size, 1rem)) calc(-.125 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12));overflow:hidden;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));font-size:calc(1.25 * var(--wy-size, 1rem));border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))))}[part~=wy-reaction-picker]{display:flex;flex-direction:row;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-reactions-line]{display:flex;align-items:center;gap:calc(.1875 * var(--wy-size, 1rem));justify-content:end}[part~=wy-reactions-line-reverse]{flex-direction:row-reverse;justify-content:start}[part~=wy-reactions-line-bottom]{position:absolute;bottom:calc(-1 * var(--wy-size, 1rem));right:calc(.25 * var(--wy-size, 1rem));z-index:1}[part~=wy-reactions-line-below]{position:relative;height:0;min-height:0;max-height:0;margin:calc(var(--wy-message-padding, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) - var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) calc(-1 * var(--wy-message-padding, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))) calc(-1 * var(--wy-message-padding, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))));padding-left:calc(.1875 * var(--wy-size, 1rem));padding-right:calc(.1875 * var(--wy-size, 1rem));gap:calc(.125 * var(--wy-size, 1rem));flex:1 0 auto;justify-content:flex-end}`, yg = j`[part~=wy-emoji-icon]{display:inline-flex;justify-content:center;align-items:center;line-height:1;width:1em;height:1em;font-size:calc(1.25 * var(--wy-size, 1rem))}[part~=wy-emoji-icon-sm]{width:calc(1.125 * var(--wy-size, 1rem));height:calc(1.125 * var(--wy-size, 1rem));font-size:calc(1.125 * var(--wy-size, 1rem))}`;
-var qC = Object.defineProperty, WC = Object.getOwnPropertyDescriptor, le = /* @__PURE__ */ s((n, t, e, i) => {
+var qC = Object.defineProperty, WC = Object.getOwnPropertyDescriptor, ce = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? WC(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && qC(t, e, r), r;
 }, "__decorateClass$Z"), Lo;
-let Xt = (Lo = class extends qt {
+let Yt = (Lo = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.directionX = "left", this.directionY = "up", this.small = !1, this.reactions = [], this.emojis = "", this.parentType = "apps", this.entityType = "messages", this.line = !1, this.lineReverse = !1, this.lineBottom = !1, this.lineBelow = !1, this._placement = "bottom-start", this.show = !1, this.showSheet = !1, this.buttonRef = J(), this.menuRef = J(), this.reactionListQuery = new ge(this), this._documentClickHandler = (t) => {
       this.show && (t.preventDefault(), this.menuRef.value?.popover || (this.show = !1));
@@ -16924,7 +16920,7 @@ let Xt = (Lo = class extends qt {
             @click=${(u) => this.handleClickToggle(u)}
             @keyup=${zw}
             ?hidden=${!this.show}
-            popover=${ct(Hs() ? void 0 : "auto")}
+            popover=${ct(Vs() ? void 0 : "auto")}
           >
             <div part="wy-reaction-picker">
               ${this.emojis.split(" ").map(
@@ -16977,62 +16973,62 @@ let Xt = (Lo = class extends qt {
     this._computePositionCleanup?.(), super.disconnectedCallback();
   }
 }, s(Lo, "WyReactions"), Lo);
-Xt.styles = [Lt, NC, yg, Y];
-le([
-  p()
-], Xt.prototype, "directionX", 2);
-le([
-  p()
-], Xt.prototype, "directionY", 2);
-le([
-  p({ type: Boolean })
-], Xt.prototype, "small", 2);
-le([
-  p({ attribute: !1 })
-], Xt.prototype, "reactions", 2);
-le([
-  p({ attribute: !1 })
-], Xt.prototype, "emojis", 2);
-le([
-  p({ type: String })
-], Xt.prototype, "parentType", 2);
-le([
-  p({ attribute: !0, type: Number })
-], Xt.prototype, "parentId", 2);
-le([
-  p({ attribute: !0, type: String })
-], Xt.prototype, "entityType", 2);
-le([
-  p({ attribute: !0, type: Number })
-], Xt.prototype, "entityId", 2);
-le([
-  p({ type: Boolean })
-], Xt.prototype, "line", 2);
-le([
-  p({ type: Boolean })
-], Xt.prototype, "lineReverse", 2);
-le([
-  p({ type: Boolean })
-], Xt.prototype, "lineBottom", 2);
-le([
-  p({ type: Boolean })
-], Xt.prototype, "lineBelow", 2);
-le([
-  H()
-], Xt.prototype, "_placement", 2);
-le([
-  H()
-], Xt.prototype, "reactedEmoji", 2);
-le([
-  H()
-], Xt.prototype, "show", 2);
-le([
-  H()
-], Xt.prototype, "showSheet", 2);
-Xt = le([
+Yt.styles = [Lt, NC, yg, Y];
+ce([
+  y()
+], Yt.prototype, "directionX", 2);
+ce([
+  y()
+], Yt.prototype, "directionY", 2);
+ce([
+  y({ type: Boolean })
+], Yt.prototype, "small", 2);
+ce([
+  y({ attribute: !1 })
+], Yt.prototype, "reactions", 2);
+ce([
+  y({ attribute: !1 })
+], Yt.prototype, "emojis", 2);
+ce([
+  y({ type: String })
+], Yt.prototype, "parentType", 2);
+ce([
+  y({ attribute: !0, type: Number })
+], Yt.prototype, "parentId", 2);
+ce([
+  y({ attribute: !0, type: String })
+], Yt.prototype, "entityType", 2);
+ce([
+  y({ attribute: !0, type: Number })
+], Yt.prototype, "entityId", 2);
+ce([
+  y({ type: Boolean })
+], Yt.prototype, "line", 2);
+ce([
+  y({ type: Boolean })
+], Yt.prototype, "lineReverse", 2);
+ce([
+  y({ type: Boolean })
+], Yt.prototype, "lineBottom", 2);
+ce([
+  y({ type: Boolean })
+], Yt.prototype, "lineBelow", 2);
+ce([
+  V()
+], Yt.prototype, "_placement", 2);
+ce([
+  V()
+], Yt.prototype, "reactedEmoji", 2);
+ce([
+  V()
+], Yt.prototype, "show", 2);
+ce([
+  V()
+], Yt.prototype, "showSheet", 2);
+Yt = ce([
   U("wy-reactions"),
   ut()
-], Xt);
+], Yt);
 var Oo;
 let pd = (Oo = class extends st {
   constructor() {
@@ -17053,10 +17049,10 @@ let pd = (Oo = class extends st {
   }
 }, s(Oo, "WyReactionItem"), Oo);
 pd.styles = [Lt, yg];
-le([
-  p({ attribute: !1 })
+ce([
+  y({ attribute: !1 })
 ], pd.prototype, "reaction", 2);
-pd = le([
+pd = ce([
   U("wy-reaction-item")
 ], pd);
 const jC = j`[part~=wy-preview]{--wy-component-background-color: var(--wy-background, var(--wy-background-light, #f7f9ff));--wy-component-color: var(--wy-on-background, var(--wy-on-background-light, #181c20));background-color:var(--wy-component-background-color);color:var(--wy-component-color);display:flex;flex-direction:column;box-sizing:border-box;align-items:stretch;justify-content:stretch;position:relative;flex:1 1 100%;min-width:calc(16 * var(--wy-size, 1rem));min-height:calc(16 * var(--wy-size, 1rem));max-height:100%;max-width:100%}[part~=wy-preview-layout]{width:100%;height:100%;container-type:inline-size}[part~=wy-preview-main]{display:flex;height:calc(100% - var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem))))));min-height:0;flex-direction:row}@container (inline-size < 768px){[part~=wy-preview-main]{flex-direction:column}}[part~=wy-preview-swiper]{display:flex;flex-direction:row;flex:1 1 100%;align-items:center;justify-content:start;min-width:calc(16 * var(--wy-size, 1rem));min-height:calc(16 * var(--wy-size, 1rem));max-height:100%;max-width:100%;overflow-x:scroll;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:auto;overscroll-behavior-x:none;scrollbar-width:none}[part~=wy-preview-swiper]::-webkit-scrollbar{display:none}[part~=wy-preview-swiper-disabled]{overflow-x:hidden}[part~=wy-preview-area]{position:relative;min-width:100%;min-height:100%;width:100%;height:100%;flex:1 1 auto;display:flex;flex-direction:column;scroll-snap-stop:always;scroll-snap-align:center}[part~=wy-nav-prev],[part~=wy-nav-next]{--wy-component-background-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));--wy-component-color: var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));background-color:var(--wy-component-background-color);position:absolute;top:50%;z-index:1000;border-radius:50%}[part~=wy-nav-prev]{left:calc(.5 * var(--wy-size, 1rem))}[part~=wy-nav-next]{right:calc(.5 * var(--wy-size, 1rem))}`, KC = j`[part~=wy-sidebar]{--wy-component-background-color: var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background:var(--wy-component-background-color);color:var(--wy-component-color);min-width:0;min-height:0;flex-grow:0;flex-shrink:0;flex-basis:calc(22 * var(--wy-size, 1rem));z-index:10;display:flex;flex-direction:column;transition:flex-basis var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));position:relative;order:9999;overflow:clip}[part~=wy-sidebar]>*{transition:opacity var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))) calc(var(--wy-transition-duration, .2s) - var(--wy-transition-duration-fast, .1s));min-width:calc(22 * var(--wy-size, 1rem))}[part~=wy-sidebar][hidden]{display:flex!important;flex-basis:0}[part~=wy-sidebar][hidden]>*{transition:opacity var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));opacity:0}@container (inline-size >= 768px){[part~=wy-sidebar]>*{min-width:calc(22 * var(--wy-size, 1rem))}[part~=wy-sidebar] [part~=wy-sidebar-handle]{display:none}}@container (inline-size < 768px){[part~=wy-sidebar]{transition:flex-basis var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),margin-top var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));border-top-left-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));border-top-right-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));flex-basis:50vh}[part~=wy-sidebar]:not([hidden]){margin-top:calc(-1 * var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-sidebar]:not([hidden])[part~=wy-maximized]{flex-basis:calc(100% - var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem))))) * .5);margin-top:calc(-50% + var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem))))) * 2.5 - var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-sidebar]:not([hidden])[part~=wy-maximized]~* [part~=wy-nav-prev],[part~=wy-sidebar]:not([hidden])[part~=wy-maximized]~* [part~=wy-nav-next]{display:none}[part~=wy-sidebar]>*{min-height:var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))))}}[part~=wy-sidebar-handle]{width:calc(4 * var(--wy-size, 1rem));background-clip:content-box;background-color:var(--wy-on-surface-variant, var(--wy-on-surface-variant-light, #42474e));height:calc(1 * var(--wy-size, 1rem));border:calc(.375 * var(--wy-size, 1rem)) solid transparent;position:absolute;top:0;z-index:2;left:50%;margin-left:calc(-2 * var(--wy-size, 1rem));border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));cursor:pointer}`;
@@ -17100,13 +17096,13 @@ Jn.styles = [
   Y
 ];
 ju([
-  p()
+  y()
 ], Jn.prototype, "src", 2);
 ju([
-  p()
+  y()
 ], Jn.prototype, "icon", 2);
 ju([
-  p()
+  y()
 ], Jn.prototype, "provider", 2);
 Jn = ju([
   U("wy-preview-icon"),
@@ -17156,13 +17152,13 @@ let ts = (Fo = class extends st {
 }, s(Fo, "WyPreviewImage"), Fo);
 ts.styles = [ZC, Y];
 Ku([
-  p()
+  y()
 ], ts.prototype, "src", 2);
 Ku([
-  p({ type: Number })
+  y({ type: Number })
 ], ts.prototype, "width", 2);
 Ku([
-  p({ type: Number })
+  y({ type: Number })
 ], ts.prototype, "height", 2);
 ts = Ku([
   U("wy-preview-image"),
@@ -17254,19 +17250,19 @@ ur.styles = [
   Y
 ];
 vl([
-  p()
+  y()
 ], ur.prototype, "format", 2);
 vl([
-  p()
+  y()
 ], ur.prototype, "src", 2);
 vl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ur.prototype, "play", 2);
 vl([
-  p()
+  y()
 ], ur.prototype, "name", 2);
 vl([
-  p()
+  y()
 ], ur.prototype, "mediaType", 2);
 ur = vl([
   U("wy-preview-media")
@@ -17312,25 +17308,25 @@ let Ii = (Do = class extends st {
     </wy-container>`;
   }
 }, s(Do, "WyPreviewText"), Do);
-Ii.styles = [Qt, n3, r3, s3, a3, Y];
+Ii.styles = [Kt, n3, r3, s3, a3, Y];
 ps([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], Ii.prototype, "weavy", 2);
 ps([
-  p()
+  y()
 ], Ii.prototype, "src", 2);
 ps([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Ii.prototype, "html", 2);
 ps([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Ii.prototype, "code", 2);
 ps([
-  H()
+  V()
 ], Ii.prototype, "textOrHtmlContent", 2);
 ps([
-  H()
+  V()
 ], Ii.prototype, "loading", 2);
 Ii = ps([
   U("wy-preview-text")
@@ -17340,8 +17336,8 @@ var d3 = Object.defineProperty, h3 = Object.getOwnPropertyDescriptor, oh = /* @_
   for (var r = i > 1 ? void 0 : i ? h3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && d3(t, e, r), r;
-}, "__decorateClass$U"), Ho;
-let en = (Ho = class extends st {
+}, "__decorateClass$U"), Vo;
+let en = (Vo = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this);
   }
@@ -17388,54 +17384,34 @@ let en = (Ho = class extends st {
   disconnectedCallback() {
     this.unregisterLoading?.(), super.disconnectedCallback();
   }
-}, s(Ho, "WyPreviewEmbed"), Ho);
+}, s(Vo, "WyPreviewEmbed"), Vo);
 en.styles = [
   l3,
   Y
 ];
 oh([
-  p()
+  y()
 ], en.prototype, "src", 2);
 oh([
-  p()
+  y()
 ], en.prototype, "name", 2);
 oh([
-  p()
+  y()
 ], en.prototype, "icon", 2);
 oh([
-  p()
+  y()
 ], en.prototype, "provider", 2);
 en = oh([
   U("wy-preview-embed"),
   ut()
 ], en);
-const si = uw() ? window.navigator.userAgent : "", fg = si.includes("iPad") || si.includes("Android") && !si.includes("Mobi") || !1, u3 = si.includes("Mobi") || fg || !1, p3 = !u3 && !fg, tv = si.includes("Windows") ? "Windows" : si.includes("Macintosh") ? "Mac" : si.includes("iPad") || si.includes("iPhone") || si.includes("iPod") ? "iOS" : si.includes("Android") ? "Android" : void 0;
-tv === "Android" && si.includes("; wv") || tv === "iOS" && si.includes("Safari");
-function y3() {
-  if (typeof window > "u" || !window.document)
-    return !1;
-  const n = document.createElement("canvas"), t = n.getContext("webgl") || n.getContext("experimental-webgl");
-  if (!t)
-    return !1;
-  const e = t.getExtension("WEBGL_debug_renderer_info");
-  if (e) {
-    const i = t.getParameter(e.UNMASKED_RENDERER_WEBGL);
-    if (typeof i == "string") {
-      const r = i.toLowerCase();
-      if (["swiftshader", "software", "llvmpipe", "generic"].some((o) => r.includes(o)))
-        return !1;
-    }
-  }
-  return !("deviceMemory" in navigator && navigator.deviceMemory < 4);
-}
-s(y3, "isHWASuitable");
-const w3 = j`.wy-pdf-container{position:absolute;width:100%;height:100%;bottom:0;left:0;display:flex;flex-direction:column}.wy-pdf-container{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}.wy-pdf-container:not(body){-webkit-overflow-scrolling:touch}.wy-pdf-container{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}.wy-pdf-container{overflow-y:auto;overflow-x:auto;touch-action:pan-y pan-x}.wy-content-pdf{order:-1}.wy-content-pdf .textLayer{color-scheme:only light;position:absolute;text-align:initial;inset:0;overflow:clip;opacity:1;line-height:1;text-size-adjust:none;forced-color-adjust:none;transform-origin:0 0;caret-color:CanvasText;z-index:0}.wy-content-pdf .textLayer.highlighting{touch-action:none}.wy-content-pdf .textLayer :is(span,br){color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0% 0%}.wy-content-pdf .textLayer{--min-font-size: 1;--text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));--min-font-size-inv: calc(1 / var(--min-font-size))}.wy-content-pdf .textLayer>:not(.markedContent),.wy-content-pdf .textLayer .markedContent span:not(.markedContent){z-index:1;--font-height: 0;font-size:calc(var(--text-scale-factor) * var(--font-height));--scale-x: 1;--rotate: 0deg;transform:rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv))}.wy-content-pdf .textLayer .markedContent{display:contents}.wy-content-pdf .textLayer span[role=img]{-webkit-user-select:none;user-select:none;cursor:default}.wy-content-pdf .textLayer .highlight{--highlight-bg-color: rgb(180 0 170 / .25);--highlight-selected-bg-color: rgb(0 100 0 / .25);--highlight-backdrop-filter: none;--highlight-selected-backdrop-filter: none}@media screen and (forced-colors:active){.wy-content-pdf .textLayer .highlight{--highlight-bg-color: transparent;--highlight-selected-bg-color: transparent;--highlight-backdrop-filter: var(--hcm-highlight-filter);--highlight-selected-backdrop-filter: var(--hcm-highlight-selected-filter)}}.wy-content-pdf .textLayer .highlight{margin:-1px;padding:1px;background-color:var(--highlight-bg-color);-webkit-backdrop-filter:var(--highlight-backdrop-filter);backdrop-filter:var(--highlight-backdrop-filter);border-radius:4px}.wy-content-pdf .textLayer .highlight.appended{position:initial}.wy-content-pdf .textLayer .highlight.begin{border-radius:4px 0 0 4px}.wy-content-pdf .textLayer .highlight.end{border-radius:0 4px 4px 0}.wy-content-pdf .textLayer .highlight.middle{border-radius:0}.wy-content-pdf .textLayer .highlight.selected{background-color:var(--highlight-selected-bg-color);-webkit-backdrop-filter:var(--highlight-selected-backdrop-filter);backdrop-filter:var(--highlight-selected-backdrop-filter)}.wy-content-pdf .textLayer ::selection{background:#0000ff40;background:color-mix(in srgb,AccentColor,transparent 75%)}.wy-content-pdf .textLayer br::selection{background:transparent}.wy-content-pdf .textLayer .endOfContent{display:block;position:absolute;inset:100% 0 0;z-index:0;cursor:default;-webkit-user-select:none;user-select:none}.wy-content-pdf .textLayer.selecting .endOfContent{top:0}.wy-content-pdf .textLayerImages{position:absolute;inset:0;-webkit-user-select:none;user-select:none}.wy-content-pdf .textLayerImages canvas{position:absolute;transform-origin:0% 0%}.wy-content-pdf .annotationLayer{color-scheme:only light;--annotation-unfocused-field-background: url(\"data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>\");--input-focus-border-color: Highlight;--input-focus-outline: 1px solid Canvas;--input-unfocused-border-color: transparent;--input-disabled-border-color: transparent;--input-hover-border-color: black;--link-outline: none}@media screen and (forced-colors:active){.wy-content-pdf .annotationLayer{--input-focus-border-color: CanvasText;--input-unfocused-border-color: ActiveText;--input-disabled-border-color: GrayText;--input-hover-border-color: Highlight;--link-outline: 1.5px solid LinkText}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):required,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:required,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:required{outline:1.5px solid selectedItem}.wy-content-pdf .annotationLayer .linkAnnotation{outline:var(--link-outline)}.wy-content-pdf .annotationLayer .linkAnnotation:hover{-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter)}.wy-content-pdf .annotationLayer .linkAnnotation>a:hover{opacity:0!important;background:none!important;box-shadow:none}.wy-content-pdf .annotationLayer .popupAnnotation .popup{outline:calc(1.5px * var(--total-scale-factor)) solid CanvasText!important;background-color:ButtonFace!important;color:ButtonText!important}.wy-content-pdf .annotationLayer .highlightArea:hover:after{position:absolute;top:0;left:0;width:100%;height:100%;-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter);content:\"\";pointer-events:none}.wy-content-pdf .annotationLayer .popupAnnotation.focused .popup{outline:calc(3px * var(--total-scale-factor)) solid Highlight!important}}.wy-content-pdf .annotationLayer{position:absolute;top:0;left:0;pointer-events:none;transform-origin:0 0}.wy-content-pdf .annotationLayer[data-main-rotation=\"90\"] .norotate{transform:rotate(270deg) translate(-100%)}.wy-content-pdf .annotationLayer[data-main-rotation=\"180\"] .norotate{transform:rotate(180deg) translate(-100%,-100%)}.wy-content-pdf .annotationLayer[data-main-rotation=\"270\"] .norotate{transform:rotate(90deg) translateY(-100%)}.wy-content-pdf .annotationLayer.disabled section,.wy-content-pdf .annotationLayer.disabled .popup{pointer-events:none}.wy-content-pdf .annotationLayer .annotationContent{position:absolute;width:100%;height:100%;pointer-events:none}.wy-content-pdf .annotationLayer .annotationContent.freetext{background:transparent;border:none;inset:0;overflow:visible;white-space:nowrap;font:10px sans-serif;line-height:1.35}.wy-content-pdf .annotationLayer section{position:absolute;text-align:initial;pointer-events:auto;box-sizing:border-box;transform-origin:0 0;-webkit-user-select:none;user-select:none}.wy-content-pdf .annotationLayer section:has(div.annotationContent) canvas.annotationContent{display:none}.wy-content-pdf .annotationLayer section .overlaidText{position:absolute;top:0;left:0;width:0;height:0;display:inline-block;overflow:hidden}.textLayer.selecting~.wy-content-pdf .annotationLayer section{pointer-events:none}.wy-content-pdf .annotationLayer :is(.linkAnnotation,.buttonWidgetAnnotation.pushButton)>a{position:absolute;font-size:1em;top:0;left:0;width:100%;height:100%}.wy-content-pdf .annotationLayer :is(.linkAnnotation,.buttonWidgetAnnotation.pushButton):not(.hasBorder)>a:hover{opacity:.2;background-color:#ff0}.wy-content-pdf .annotationLayer .linkAnnotation.hasBorder:hover{background-color:#ff03}.wy-content-pdf .annotationLayer .hasBorder{background-size:100% 100%}.wy-content-pdf .annotationLayer .textAnnotation img{position:absolute;cursor:pointer;width:100%;height:100%;top:0;left:0}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea),.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input{background-image:var(--annotation-unfocused-field-background);border:2px solid var(--input-unfocused-border-color);box-sizing:border-box;font:calc(9px * var(--total-scale-factor)) sans-serif;height:100%;margin:0;vertical-align:top;width:100%}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):required,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:required,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:required{outline:1.5px solid red}.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select option{padding:0}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input{border-radius:50%}.wy-content-pdf .annotationLayer .textWidgetAnnotation textarea{resize:none}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea)[disabled],.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select[disabled],.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input[disabled]{background:none;border:2px solid var(--input-disabled-border-color);cursor:not-allowed}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):hover,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:hover,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:hover{border:2px solid var(--input-hover-border-color)}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):hover,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:hover,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:hover{border-radius:2px}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):focus,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:focus{background:none;border:2px solid var(--input-focus-border-color);border-radius:2px;outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) :focus{background-image:none;background-color:transparent}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox :focus{border:2px solid var(--input-focus-border-color);border-radius:2px;outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton :focus{border:2px solid var(--input-focus-border-color);outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before{background-color:CanvasText;content:\"\";display:block;position:absolute}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after{height:80%;left:45%;width:1px}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before{transform:rotate(45deg)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after{transform:rotate(-45deg)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before{border-radius:50%;height:50%;left:25%;top:25%;width:50%}.wy-content-pdf .annotationLayer .textWidgetAnnotation input.comb{font-family:monospace;padding-left:2px;padding-right:0}.wy-content-pdf .annotationLayer .textWidgetAnnotation input.comb:focus{width:103%}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input{appearance:none}.wy-content-pdf .annotationLayer .fileAttachmentAnnotation .popupTriggerArea{height:100%;width:100%}.wy-content-pdf .annotationLayer .popupAnnotation{position:absolute;font-size:calc(9px * var(--total-scale-factor));pointer-events:none;width:max-content;max-width:45%;height:auto}.wy-content-pdf .annotationLayer .popup{background-color:#ff9;color:#000;box-shadow:0 calc(2px * var(--total-scale-factor)) calc(5px * var(--total-scale-factor)) #888;border-radius:calc(2px * var(--total-scale-factor));outline:1.5px solid rgb(255,255,74);padding:calc(6px * var(--total-scale-factor));cursor:pointer;font:message-box;white-space:normal;word-wrap:break-word;pointer-events:auto;-webkit-user-select:text;user-select:text}.wy-content-pdf .annotationLayer .popupAnnotation.focused .popup{outline-width:3px}.wy-content-pdf .annotationLayer .popup *{font-size:calc(9px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .popup>.header{display:inline-block}.wy-content-pdf .annotationLayer .popup>.header>.title{display:inline;font-weight:700}.wy-content-pdf .annotationLayer .popup>.header .popupDate{display:inline-block;margin-left:calc(5px * var(--total-scale-factor));width:fit-content}.wy-content-pdf .annotationLayer .popupContent{border-top:1px solid rgb(51,51,51);margin-top:calc(2px * var(--total-scale-factor));padding-top:calc(2px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .richText>*{white-space:pre-wrap;font-size:calc(9px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .popupTriggerArea{cursor:pointer}.wy-content-pdf .annotationLayer .popupTriggerArea:hover{-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter)}.wy-content-pdf .annotationLayer section svg{position:absolute;width:100%;height:100%;top:0;left:0}.wy-content-pdf .annotationLayer .annotationTextContent{position:absolute;width:100%;height:100%;opacity:0;color:transparent;-webkit-user-select:none;user-select:none;pointer-events:none}.wy-content-pdf .annotationLayer .annotationTextContent span{width:100%;display:inline-block}.wy-content-pdf .annotationLayer svg.quadrilateralsContainer{contain:strict;width:0;height:0;position:absolute;top:0;left:0;z-index:-1}:host{--xfa-unfocused-field-background: url(\"data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>\");--xfa-focus-outline: auto}@media screen and (forced-colors:active){:host{--xfa-focus-outline: 2px solid CanvasText}.wy-content-pdf .xfaLayer *:required{outline:1.5px solid selectedItem}}.wy-content-pdf .xfaLayer{color-scheme:only light;background-color:transparent}.wy-content-pdf .xfaLayer .highlight{margin:-1px;padding:1px;background-color:#efcbed;border-radius:4px}.wy-content-pdf .xfaLayer .highlight.appended{position:initial}.wy-content-pdf .xfaLayer .highlight.begin{border-radius:4px 0 0 4px}.wy-content-pdf .xfaLayer .highlight.end{border-radius:0 4px 4px 0}.wy-content-pdf .xfaLayer .highlight.middle{border-radius:0}.wy-content-pdf .xfaLayer .highlight.selected{background-color:#cbdfcb}.wy-content-pdf .xfaPage{overflow:hidden;position:relative}.wy-content-pdf .xfaContentarea{position:absolute}.wy-content-pdf .xfaPrintOnly{display:none}.wy-content-pdf .xfaLayer{position:absolute;text-align:initial;top:0;left:0;transform-origin:0 0;line-height:1.2}.wy-content-pdf .xfaLayer *{color:inherit;font:inherit;font-style:inherit;font-weight:inherit;font-kerning:inherit;letter-spacing:-.01px;text-align:inherit;text-decoration:inherit;box-sizing:border-box;background-color:transparent;padding:0;margin:0;pointer-events:auto;line-height:inherit}.wy-content-pdf .xfaLayer *:required{outline:1.5px solid red}.wy-content-pdf .xfaLayer div,.wy-content-pdf .xfaLayer svg,.wy-content-pdf .xfaLayer svg *{pointer-events:none}.wy-content-pdf .xfaLayer a{color:#00f}.wy-content-pdf .xfaRich li{margin-left:3em}.wy-content-pdf .xfaFont{color:#000;font-weight:400;font-kerning:none;font-size:10px;font-style:normal;letter-spacing:0;text-decoration:none;vertical-align:0}.wy-content-pdf .xfaCaption{overflow:hidden;flex:0 0 auto}.wy-content-pdf .xfaCaptionForCheckButton{overflow:hidden;flex:1 1 auto}.wy-content-pdf .xfaLabel{height:100%;width:100%}.wy-content-pdf .xfaLeft{display:flex;flex-direction:row;align-items:center}.wy-content-pdf .xfaRight{display:flex;flex-direction:row-reverse;align-items:center}.wy-content-pdf :is(.xfaLeft,.xfaRight)>:is(.xfaCaption,.xfaCaptionForCheckButton){max-height:100%}.wy-content-pdf .xfaTop{display:flex;flex-direction:column;align-items:flex-start}.wy-content-pdf .xfaBottom{display:flex;flex-direction:column-reverse;align-items:flex-start}.wy-content-pdf :is(.xfaTop,.xfaBottom)>:is(.xfaCaption,.xfaCaptionForCheckButton){width:100%}.wy-content-pdf .xfaBorder{background-color:transparent;position:absolute;pointer-events:none}.wy-content-pdf .xfaWrapped{width:100%;height:100%}.wy-content-pdf :is(.xfaTextfield,.xfaSelect):focus{background-image:none;background-color:transparent;outline:var(--xfa-focus-outline);outline-offset:-1px}.wy-content-pdf :is(.xfaCheckbox,.xfaRadio):focus{outline:var(--xfa-focus-outline)}.wy-content-pdf .xfaTextfield,.wy-content-pdf .xfaSelect{height:100%;width:100%;flex:1 1 auto;border:none;resize:none;background-image:var(--xfa-unfocused-field-background)}.wy-content-pdf .xfaSelect{padding-inline:2px}.wy-content-pdf :is(.xfaTop,.xfaBottom)>:is(.xfaTextfield,.xfaSelect){flex:0 1 auto}.wy-content-pdf .xfaButton{cursor:pointer;width:100%;height:100%;border:none;text-align:center}.wy-content-pdf .xfaLink{width:100%;height:100%;position:absolute;top:0;left:0}.wy-content-pdf .xfaCheckbox,.wy-content-pdf .xfaRadio{width:100%;height:100%;flex:0 0 auto;border:none}.wy-content-pdf .xfaRich{white-space:pre-wrap;width:100%;height:100%}.wy-content-pdf .xfaImage{object-position:left top;object-fit:contain;width:100%;height:100%}.wy-content-pdf .xfaLrTb,.wy-content-pdf .xfaRlTb,.wy-content-pdf .xfaTb{display:flex;flex-direction:column;align-items:stretch}.wy-content-pdf .xfaLr{display:flex;flex-direction:row;align-items:stretch}.wy-content-pdf .xfaRl{display:flex;flex-direction:row-reverse;align-items:stretch}.wy-content-pdf .xfaTb>div{justify-content:left}.wy-content-pdf .xfaPosition,.wy-content-pdf .xfaArea{position:relative}.wy-content-pdf .xfaValignMiddle{display:flex;align-items:center}.wy-content-pdf .xfaTable{display:flex;flex-direction:column;align-items:stretch}.wy-content-pdf .xfaTable .xfaRow{display:flex;flex-direction:row;align-items:stretch}.wy-content-pdf .xfaTable .xfaRlRow{display:flex;flex-direction:row-reverse;align-items:stretch;flex:1}.wy-content-pdf .xfaTable .xfaRlRow>div{flex:1}.wy-content-pdf :is(.xfaNonInteractive,.xfaDisabled,.xfaReadOnly) :is(input,textarea){background:initial}@media print{.wy-content-pdf .xfaTextfield,.wy-content-pdf .xfaSelect{background:transparent}.wy-content-pdf .xfaSelect{appearance:none;text-indent:1px;text-overflow:\"\"}}:host{color-scheme:light dark;--viewer-container-height: 0;--pdfViewer-padding-bottom: 0;--page-margin: 1px auto -8px;--page-border: 9px solid transparent;--spreadHorizontalWrapped-margin-LR: -3.5px;--loading-icon-delay: .4s;--focus-ring-color: light-dark(#0060df, #0df);--focus-ring-outline: 2px solid var(--focus-ring-color)}@media screen and (forced-colors:active){:host{--pdfViewer-padding-bottom: 9px;--page-margin: 8px auto -1px;--page-border: 1px solid CanvasText;--spreadHorizontalWrapped-margin-LR: 3.5px;--focus-ring-color: CanvasText}}.wy-content-pdf [data-main-rotation=\"90\"]{transform:rotate(90deg) translateY(-100%)}.wy-content-pdf [data-main-rotation=\"180\"]{transform:rotate(180deg) translate(-100%,-100%)}.wy-content-pdf [data-main-rotation=\"270\"]{transform:rotate(270deg) translate(-100%)}.wy-content-pdf #hiddenCopyElement,.wy-content-pdf .hiddenCanvasElement{position:absolute;top:0;left:0;width:0;height:0;display:none}.wy-content-pdf .pdfViewer{--scale-factor: 1;--page-bg-color: unset;padding-bottom:var(--pdfViewer-padding-bottom);--hcm-highlight-filter: none;--hcm-highlight-selected-filter: none}@media screen and (forced-colors:active){.wy-content-pdf .pdfViewer{--hcm-highlight-filter: invert(100%)}}.wy-content-pdf .pdfViewer.copyAll{cursor:wait}.wy-content-pdf .pdfViewer .canvasWrapper{overflow:hidden;width:100%;height:100%}.wy-content-pdf .pdfViewer .canvasWrapper canvas{position:absolute;top:0;left:0;margin:0;display:block;width:100%;height:100%;contain:content}.wy-content-pdf .pdfViewer .canvasWrapper canvas .structTree{contain:strict}.wy-content-pdf .pdfViewer .canvasWrapper canvas.detailView{image-rendering:pixelated}.wy-content-pdf .pdfViewer .page{--user-unit: 1;--total-scale-factor: calc(var(--scale-factor) * var(--user-unit));--scale-round-x: 1px;--scale-round-y: 1px;direction:ltr;width:816px;height:1056px;margin:var(--page-margin);position:relative;overflow:visible;border:var(--page-border);background-clip:content-box;background-color:var(--page-bg-color, rgb(255, 255, 255))}.wy-content-pdf .pdfViewer .dummyPage{position:relative;width:0;height:var(--viewer-container-height)}.wy-content-pdf .pdfViewer.noUserSelect{-webkit-user-select:none;user-select:none}.wy-content-pdf .pdfViewer.removePageBorders .page{margin:0 auto 10px;border:none}.wy-content-pdf .pdfViewer.singlePageView{display:inline-block}.wy-content-pdf .pdfViewer.singlePageView .page{margin:0;border:none}.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped),.wy-content-pdf .spread{margin-inline:3.5px;text-align:center}.wy-content-pdf .pdfViewer.scrollHorizontal,.wy-content-pdf .spread{white-space:nowrap}.wy-content-pdf .pdfViewer.removePageBorders,.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) .spread{margin-inline:0}.wy-content-pdf .spread :is(.page,.dummyPage),.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) :is(.page,.spread){display:inline-block;vertical-align:middle}.wy-content-pdf .spread .page,.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) .page{margin-inline:var(--spreadHorizontalWrapped-margin-LR)}.wy-content-pdf .pdfViewer.removePageBorders .spread .page,.wy-content-pdf .pdfViewer.removePageBorders:is(.scrollHorizontal,.scrollWrapped) .page{margin-inline:5px}.wy-content-pdf .pdfViewer .page.loadingIcon:after{position:absolute;top:0;left:0;content:\"\";width:100%;height:100%;display:none;transition-property:display;transition-delay:var(--loading-icon-delay);z-index:5;contain:strict}.wy-content-pdf .pdfViewer .page.loading:after{display:block}.wy-content-pdf .pdfViewer .page:not(.loading):after{transition-property:none;display:none}.wy-content-pdf .pdfPresentationMode .pdfViewer{padding-bottom:0}.wy-content-pdf .pdfPresentationMode .spread{margin:0}.wy-content-pdf .pdfPresentationMode .pdfViewer .page{margin:0 auto;border:2px solid transparent}.wy-content-pdf .pdfViewer .page{box-shadow:var(--wy-shadow-level2, 0 calc(.25 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.625 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12), 0 calc(.125 * var(--wy-size, 1rem)) calc(.25 * var(--wy-size, 1rem)) calc(-.0625 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2));background-color:var(--wy-white, var(--wy-white, #ffffff))}.wy-content-pdf .pdfViewer .page.loadingIcon:after{background:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cstyle type='text/css'%3Eg%7Banimation:rotate 2s linear infinite;transform-origin:center center%7Dcircle%7Bstroke-dasharray:1,100;stroke-dashoffset:0;animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite%7D@keyframes rotate%7B100%25%7Btransform:rotate(360deg)%7D%7D@keyframes dash%7B0%25%7Bstroke-dasharray:1,100;stroke-dashoffset:0%7D50%25%7Bstroke-dasharray:44.5,100;stroke-dashoffset:-17.5px%7D100%25%7Bstroke-dasharray:44.5,100;stroke-dashoffset:-62px%7D%7D@keyframes color%7B0%25,100%25%7Bstroke:%23216eb4%7D40%25%7Bstroke:%2328b7cf%7D66%25%7Bstroke:%23216eb4%7D80%25,90%25%7Bstroke:%2328b7cf%7D%7D%3C/style%3E%3Cg%3E%3Ccircle fill='none' cx='12' cy='12' r='11' stroke-linecap='butt' stroke-width='2' /%3E%3C/g%3E%3C/svg%3E\") center no-repeat}[part~=wy-pdf-toolbar]{position:sticky;z-index:1020;bottom:0;left:0;right:0;min-height:min-content;display:flex;flex-direction:column;justify-content:center;justify-items:center;box-sizing:border-box;padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}.wy-pdf-page-number{min-width:1em;width:3em;max-width:calc(3 * var(--wy-size, 1rem))}@supports (field-sizing: content){.wy-pdf-page-number{width:auto;field-sizing:content}}.wy-pdf-page-number{font-variant-numeric:tabular-nums}.wy-pdf-zoom-level{min-width:1em;width:3em;max-width:calc(5 * var(--wy-size, 1rem))}@supports (field-sizing: content){.wy-pdf-zoom-level{width:auto;field-sizing:content}}.wy-pdf-zoom-level,.wy-pdf-page-number-total{font-variant-numeric:tabular-nums}`, mg = j`[part~=wy-toolbar]{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));--wy-component-background-color: var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;justify-items:center;min-height:var(--wy-toolbar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))));padding:calc(.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));flex:1 0 var(--wy-toolbar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))));gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));line-height:var(--wy-line-height, 1.5);background-color:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-component-border-radius)}[part~=wy-toolbar-center]{margin:0 auto;border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));justify-content:center;min-height:min-content}[part~=wy-toolbar-buttons]{display:flex;flex:0 0 auto;align-items:center;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));max-width:100%}[part~=wy-toolbar-buttons-last]{margin-inline-start:auto}[part~=wy-toolbar-text]{margin-left:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-toolbar-center-text]{text-align:center}`, mn = j`[part~=wy-input]{--wy-component-background-color: var(--wy-surface-container-lowest, var(--wy-surface-container-lowest-light, #ffffff));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-component-background-color);color:var(--wy-component-color);border:var(--wy-input-border-width, var(--wy-border, 1px)) solid var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)));display:block;max-width:100%;min-width:0;flex:1 1 auto;min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 + var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) * 2);padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));font-family:var(--wy-input-font-family, var(--wy-font-family, inherit)),inherit;font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));font-weight:var(--wy-input-font-weight, var(--wy-font-weight, unset));line-height:var(--wy-input-line-height, var(--wy-line-height, calc(1.5 * var(--wy-size, 1rem))));background-clip:padding-box;appearance:none;border-radius:var(--wy-input-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-input]:focus{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));color:var(--wy-component-color);border-color:var(--wy-primary, var(--wy-primary-light, #2f628c));outline:0}[part~=wy-input]::placeholder{color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:1}[part~=wy-input]:disabled{opacity:38%}[part~=wy-input]::file-selector-button,[part~=wy-input]::-webkit-file-upload-button{color:var(--wy-component-color);background-color:var(--wy-component-background-color);padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));margin:calc(-1 * var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) calc(-1 * var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))));margin-inline-end:var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:var(--wy-input-border-width, var(--wy-border, 1px));border-radius:0}[part~=wy-input]:hover:not(:disabled):not([readonly])::file-selector-button,[part~=wy-input]:hover:not(:disabled):not([readonly]) ::-webkit-file-upload-button{background-color:var(--wy-component-background-color)}[part~=wy-input][type=file]{overflow:hidden}[part~=wy-input][type=file]:not(:disabled):not([readonly]){cursor:pointer}[part~=wy-input]::-webkit-date-and-time-value{height:calc(var(--wy-input-line-height, var(--wy-line-height, calc(1.5 * var(--wy-size, 1rem)))) * 1em)}[part~=wy-input][type=search]::-webkit-search-cancel-button{-webkit-appearance:none}[part~=wy-input-filled]{--wy-component-background-color: var(--wy-surface-container, var(--wy-surface-container-light, #eceef3));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-input-filled-border-radius, var(--wy-border-radius-lg, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem)))));border-color:var(--wy-component-background-color)}[part~=wy-input-filled]:focus{border-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}[part~=wy-label]{display:inline-block;font-family:var(--wy-headings-font-family, var(--wy-font-family, unset));font-size:var(--wy-headings-font-size, var(--wy-font-size, 1em));font-style:var(--wy-headings-font-style, unset);font-weight:var(--wy-headings-font-weight, var(--wy-font-weight-bold, 600));line-height:var(--wy-headings-line-height, var(--wy-line-height, 1.5));margin-block:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-description]{color:var(--wy-outline, var(--wy-outline-light, #72777f));font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));margin-top:calc(.25 * var(--wy-size, 1rem))}[part~=wy-is-invalid],[part~=wy-is-invalid]:focus{border-color:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-invalid-feedback]{margin-top:calc(.25 * var(--wy-size, 1rem));font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));color:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-input-group]{position:relative;display:flex;gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));align-items:center;flex:1 0 auto}[part~=wy-input-group-button-icon]{--wy-component-background-color: transparent}[part~=wy-input-group-input-with-overlay]{padding-right:calc(var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) + var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))))}[part~=wy-input-group-button-icon-overlay]{position:absolute;display:inline-flex;top:0;right:0;z-index:4;border-radius:var(--wy-input-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))));--wy-component-background-color: transparent}[part~=wy-input-group-input]:placeholder-shown~[part~=wy-input-group-button-icon][type=reset]{display:none}[part~=wy-input-group-input]:not(:placeholder-shown)~[part~=wy-input-group-button-icon][type=reset]+[part~=wy-input-group-button-icon]{display:none}[part~=wy-no-result]{text-align:center;padding:calc(1 * var(--wy-size, 1rem))}`;
-var f3 = Object.defineProperty, m3 = Object.getOwnPropertyDescriptor, gl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? m3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+const u3 = j`.wy-pdf-container{position:absolute;width:100%;height:100%;bottom:0;left:0;display:flex;flex-direction:column}.wy-pdf-container{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}.wy-pdf-container:not(body){-webkit-overflow-scrolling:touch}.wy-pdf-container{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}.wy-pdf-container{overflow-y:auto;overflow-x:auto;touch-action:pan-y pan-x}.wy-content-pdf{order:-1}.wy-content-pdf .textLayer{color-scheme:only light;position:absolute;text-align:initial;inset:0;overflow:clip;opacity:1;line-height:1;text-size-adjust:none;forced-color-adjust:none;transform-origin:0 0;caret-color:CanvasText;z-index:0}.wy-content-pdf .textLayer.highlighting{touch-action:none}.wy-content-pdf .textLayer :is(span,br){color:transparent;position:absolute;white-space:pre;cursor:text;transform-origin:0% 0%}.wy-content-pdf .textLayer{--min-font-size: 1;--text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size));--min-font-size-inv: calc(1 / var(--min-font-size))}.wy-content-pdf .textLayer>:not(.markedContent),.wy-content-pdf .textLayer .markedContent span:not(.markedContent){z-index:1;--font-height: 0;font-size:calc(var(--text-scale-factor) * var(--font-height));--scale-x: 1;--rotate: 0deg;transform:rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv))}.wy-content-pdf .textLayer .markedContent{display:contents}.wy-content-pdf .textLayer span[role=img]{-webkit-user-select:none;user-select:none;cursor:default}.wy-content-pdf .textLayer .highlight{--highlight-bg-color: rgb(180 0 170 / .25);--highlight-selected-bg-color: rgb(0 100 0 / .25);--highlight-backdrop-filter: none;--highlight-selected-backdrop-filter: none}@media screen and (forced-colors:active){.wy-content-pdf .textLayer .highlight{--highlight-bg-color: transparent;--highlight-selected-bg-color: transparent;--highlight-backdrop-filter: var(--hcm-highlight-filter);--highlight-selected-backdrop-filter: var(--hcm-highlight-selected-filter)}}.wy-content-pdf .textLayer .highlight{margin:-1px;padding:1px;background-color:var(--highlight-bg-color);-webkit-backdrop-filter:var(--highlight-backdrop-filter);backdrop-filter:var(--highlight-backdrop-filter);border-radius:4px}.wy-content-pdf .textLayer .highlight.appended{position:initial}.wy-content-pdf .textLayer .highlight.begin{border-radius:4px 0 0 4px}.wy-content-pdf .textLayer .highlight.end{border-radius:0 4px 4px 0}.wy-content-pdf .textLayer .highlight.middle{border-radius:0}.wy-content-pdf .textLayer .highlight.selected{background-color:var(--highlight-selected-bg-color);-webkit-backdrop-filter:var(--highlight-selected-backdrop-filter);backdrop-filter:var(--highlight-selected-backdrop-filter)}.wy-content-pdf .textLayer ::selection{background:#0000ff40;background:color-mix(in srgb,AccentColor,transparent 75%)}.wy-content-pdf .textLayer br::selection{background:transparent}.wy-content-pdf .textLayer .endOfContent{display:block;position:absolute;inset:100% 0 0;z-index:0;cursor:default;-webkit-user-select:none;user-select:none}.wy-content-pdf .textLayer.selecting .endOfContent{top:0}.wy-content-pdf .textLayerImages{position:absolute;inset:0;-webkit-user-select:none;user-select:none}.wy-content-pdf .textLayerImages canvas{position:absolute;transform-origin:0% 0%}.wy-content-pdf .annotationLayer{color-scheme:only light;--annotation-unfocused-field-background: url(\"data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>\");--input-focus-border-color: Highlight;--input-focus-outline: 1px solid Canvas;--input-unfocused-border-color: transparent;--input-disabled-border-color: transparent;--input-hover-border-color: black;--link-outline: none}@media screen and (forced-colors:active){.wy-content-pdf .annotationLayer{--input-focus-border-color: CanvasText;--input-unfocused-border-color: ActiveText;--input-disabled-border-color: GrayText;--input-hover-border-color: Highlight;--link-outline: 1.5px solid LinkText}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):required,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:required,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:required{outline:1.5px solid selectedItem}.wy-content-pdf .annotationLayer .linkAnnotation{outline:var(--link-outline)}.wy-content-pdf .annotationLayer .linkAnnotation:hover{-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter)}.wy-content-pdf .annotationLayer .linkAnnotation>a:hover{opacity:0!important;background:none!important;box-shadow:none}.wy-content-pdf .annotationLayer .popupAnnotation .popup{outline:calc(1.5px * var(--total-scale-factor)) solid CanvasText!important;background-color:ButtonFace!important;color:ButtonText!important}.wy-content-pdf .annotationLayer .highlightArea:hover:after{position:absolute;top:0;left:0;width:100%;height:100%;-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter);content:\"\";pointer-events:none}.wy-content-pdf .annotationLayer .popupAnnotation.focused .popup{outline:calc(3px * var(--total-scale-factor)) solid Highlight!important}}.wy-content-pdf .annotationLayer{position:absolute;top:0;left:0;pointer-events:none;transform-origin:0 0}.wy-content-pdf .annotationLayer[data-main-rotation=\"90\"] .norotate{transform:rotate(270deg) translate(-100%)}.wy-content-pdf .annotationLayer[data-main-rotation=\"180\"] .norotate{transform:rotate(180deg) translate(-100%,-100%)}.wy-content-pdf .annotationLayer[data-main-rotation=\"270\"] .norotate{transform:rotate(90deg) translateY(-100%)}.wy-content-pdf .annotationLayer.disabled section,.wy-content-pdf .annotationLayer.disabled .popup{pointer-events:none}.wy-content-pdf .annotationLayer .annotationContent{position:absolute;width:100%;height:100%;pointer-events:none}.wy-content-pdf .annotationLayer .annotationContent.freetext{background:transparent;border:none;inset:0;overflow:visible;white-space:nowrap;font:10px sans-serif;line-height:1.35}.wy-content-pdf .annotationLayer section{position:absolute;text-align:initial;pointer-events:auto;box-sizing:border-box;transform-origin:0 0;-webkit-user-select:none;user-select:none}.wy-content-pdf .annotationLayer section:has(div.annotationContent) canvas.annotationContent{display:none}.wy-content-pdf .annotationLayer section .overlaidText{position:absolute;top:0;left:0;width:0;height:0;display:inline-block;overflow:hidden}.textLayer.selecting~.wy-content-pdf .annotationLayer section{pointer-events:none}.wy-content-pdf .annotationLayer :is(.linkAnnotation,.buttonWidgetAnnotation.pushButton)>a{position:absolute;font-size:1em;top:0;left:0;width:100%;height:100%}.wy-content-pdf .annotationLayer :is(.linkAnnotation,.buttonWidgetAnnotation.pushButton):not(.hasBorder)>a:hover{opacity:.2;background-color:#ff0}.wy-content-pdf .annotationLayer .linkAnnotation.hasBorder:hover{background-color:#ff03}.wy-content-pdf .annotationLayer .hasBorder{background-size:100% 100%}.wy-content-pdf .annotationLayer .textAnnotation img{position:absolute;cursor:pointer;width:100%;height:100%;top:0;left:0}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea),.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input{background-image:var(--annotation-unfocused-field-background);border:2px solid var(--input-unfocused-border-color);box-sizing:border-box;font:calc(9px * var(--total-scale-factor)) sans-serif;height:100%;margin:0;vertical-align:top;width:100%}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):required,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:required,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:required{outline:1.5px solid red}.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select option{padding:0}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input{border-radius:50%}.wy-content-pdf .annotationLayer .textWidgetAnnotation textarea{resize:none}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea)[disabled],.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select[disabled],.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input[disabled]{background:none;border:2px solid var(--input-disabled-border-color);cursor:not-allowed}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):hover,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:hover,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input:hover{border:2px solid var(--input-hover-border-color)}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):hover,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:hover,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:hover{border-radius:2px}.wy-content-pdf .annotationLayer .textWidgetAnnotation :is(input,textarea):focus,.wy-content-pdf .annotationLayer .choiceWidgetAnnotation select:focus{background:none;border:2px solid var(--input-focus-border-color);border-radius:2px;outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) :focus{background-image:none;background-color:transparent}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox :focus{border:2px solid var(--input-focus-border-color);border-radius:2px;outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton :focus{border:2px solid var(--input-focus-border-color);outline:var(--input-focus-outline)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before{background-color:CanvasText;content:\"\";display:block;position:absolute}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before,.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after{height:80%;left:45%;width:1px}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:before{transform:rotate(45deg)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.checkBox input:checked:after{transform:rotate(-45deg)}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation.radioButton input:checked:before{border-radius:50%;height:50%;left:25%;top:25%;width:50%}.wy-content-pdf .annotationLayer .textWidgetAnnotation input.comb{font-family:monospace;padding-left:2px;padding-right:0}.wy-content-pdf .annotationLayer .textWidgetAnnotation input.comb:focus{width:103%}.wy-content-pdf .annotationLayer .buttonWidgetAnnotation:is(.checkBox,.radioButton) input{appearance:none}.wy-content-pdf .annotationLayer .fileAttachmentAnnotation .popupTriggerArea{height:100%;width:100%}.wy-content-pdf .annotationLayer .popupAnnotation{position:absolute;font-size:calc(9px * var(--total-scale-factor));pointer-events:none;width:max-content;max-width:45%;height:auto}.wy-content-pdf .annotationLayer .popup{background-color:#ff9;color:#000;box-shadow:0 calc(2px * var(--total-scale-factor)) calc(5px * var(--total-scale-factor)) #888;border-radius:calc(2px * var(--total-scale-factor));outline:1.5px solid rgb(255,255,74);padding:calc(6px * var(--total-scale-factor));cursor:pointer;font:message-box;white-space:normal;word-wrap:break-word;pointer-events:auto;-webkit-user-select:text;user-select:text}.wy-content-pdf .annotationLayer .popupAnnotation.focused .popup{outline-width:3px}.wy-content-pdf .annotationLayer .popup *{font-size:calc(9px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .popup>.header{display:inline-block}.wy-content-pdf .annotationLayer .popup>.header>.title{display:inline;font-weight:700}.wy-content-pdf .annotationLayer .popup>.header .popupDate{display:inline-block;margin-left:calc(5px * var(--total-scale-factor));width:fit-content}.wy-content-pdf .annotationLayer .popupContent{border-top:1px solid rgb(51,51,51);margin-top:calc(2px * var(--total-scale-factor));padding-top:calc(2px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .richText>*{white-space:pre-wrap;font-size:calc(9px * var(--total-scale-factor))}.wy-content-pdf .annotationLayer .popupTriggerArea{cursor:pointer}.wy-content-pdf .annotationLayer .popupTriggerArea:hover{-webkit-backdrop-filter:var(--hcm-highlight-filter);backdrop-filter:var(--hcm-highlight-filter)}.wy-content-pdf .annotationLayer section svg{position:absolute;width:100%;height:100%;top:0;left:0}.wy-content-pdf .annotationLayer .annotationTextContent{position:absolute;width:100%;height:100%;opacity:0;color:transparent;-webkit-user-select:none;user-select:none;pointer-events:none}.wy-content-pdf .annotationLayer .annotationTextContent span{width:100%;display:inline-block}.wy-content-pdf .annotationLayer svg.quadrilateralsContainer{contain:strict;width:0;height:0;position:absolute;top:0;left:0;z-index:-1}:host{--xfa-unfocused-field-background: url(\"data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>\");--xfa-focus-outline: auto}@media screen and (forced-colors:active){:host{--xfa-focus-outline: 2px solid CanvasText}.wy-content-pdf .xfaLayer *:required{outline:1.5px solid selectedItem}}.wy-content-pdf .xfaLayer{color-scheme:only light;background-color:transparent}.wy-content-pdf .xfaLayer .highlight{margin:-1px;padding:1px;background-color:#efcbed;border-radius:4px}.wy-content-pdf .xfaLayer .highlight.appended{position:initial}.wy-content-pdf .xfaLayer .highlight.begin{border-radius:4px 0 0 4px}.wy-content-pdf .xfaLayer .highlight.end{border-radius:0 4px 4px 0}.wy-content-pdf .xfaLayer .highlight.middle{border-radius:0}.wy-content-pdf .xfaLayer .highlight.selected{background-color:#cbdfcb}.wy-content-pdf .xfaPage{overflow:hidden;position:relative}.wy-content-pdf .xfaContentarea{position:absolute}.wy-content-pdf .xfaPrintOnly{display:none}.wy-content-pdf .xfaLayer{position:absolute;text-align:initial;top:0;left:0;transform-origin:0 0;line-height:1.2}.wy-content-pdf .xfaLayer *{color:inherit;font:inherit;font-style:inherit;font-weight:inherit;font-kerning:inherit;letter-spacing:-.01px;text-align:inherit;text-decoration:inherit;box-sizing:border-box;background-color:transparent;padding:0;margin:0;pointer-events:auto;line-height:inherit}.wy-content-pdf .xfaLayer *:required{outline:1.5px solid red}.wy-content-pdf .xfaLayer div,.wy-content-pdf .xfaLayer svg,.wy-content-pdf .xfaLayer svg *{pointer-events:none}.wy-content-pdf .xfaLayer a{color:#00f}.wy-content-pdf .xfaRich li{margin-left:3em}.wy-content-pdf .xfaFont{color:#000;font-weight:400;font-kerning:none;font-size:10px;font-style:normal;letter-spacing:0;text-decoration:none;vertical-align:0}.wy-content-pdf .xfaCaption{overflow:hidden;flex:0 0 auto}.wy-content-pdf .xfaCaptionForCheckButton{overflow:hidden;flex:1 1 auto}.wy-content-pdf .xfaLabel{height:100%;width:100%}.wy-content-pdf .xfaLeft{display:flex;flex-direction:row;align-items:center}.wy-content-pdf .xfaRight{display:flex;flex-direction:row-reverse;align-items:center}.wy-content-pdf :is(.xfaLeft,.xfaRight)>:is(.xfaCaption,.xfaCaptionForCheckButton){max-height:100%}.wy-content-pdf .xfaTop{display:flex;flex-direction:column;align-items:flex-start}.wy-content-pdf .xfaBottom{display:flex;flex-direction:column-reverse;align-items:flex-start}.wy-content-pdf :is(.xfaTop,.xfaBottom)>:is(.xfaCaption,.xfaCaptionForCheckButton){width:100%}.wy-content-pdf .xfaBorder{background-color:transparent;position:absolute;pointer-events:none}.wy-content-pdf .xfaWrapped{width:100%;height:100%}.wy-content-pdf :is(.xfaTextfield,.xfaSelect):focus{background-image:none;background-color:transparent;outline:var(--xfa-focus-outline);outline-offset:-1px}.wy-content-pdf :is(.xfaCheckbox,.xfaRadio):focus{outline:var(--xfa-focus-outline)}.wy-content-pdf .xfaTextfield,.wy-content-pdf .xfaSelect{height:100%;width:100%;flex:1 1 auto;border:none;resize:none;background-image:var(--xfa-unfocused-field-background)}.wy-content-pdf .xfaSelect{padding-inline:2px}.wy-content-pdf :is(.xfaTop,.xfaBottom)>:is(.xfaTextfield,.xfaSelect){flex:0 1 auto}.wy-content-pdf .xfaButton{cursor:pointer;width:100%;height:100%;border:none;text-align:center}.wy-content-pdf .xfaLink{width:100%;height:100%;position:absolute;top:0;left:0}.wy-content-pdf .xfaCheckbox,.wy-content-pdf .xfaRadio{width:100%;height:100%;flex:0 0 auto;border:none}.wy-content-pdf .xfaRich{white-space:pre-wrap;width:100%;height:100%}.wy-content-pdf .xfaImage{object-position:left top;object-fit:contain;width:100%;height:100%}.wy-content-pdf .xfaLrTb,.wy-content-pdf .xfaRlTb,.wy-content-pdf .xfaTb{display:flex;flex-direction:column;align-items:stretch}.wy-content-pdf .xfaLr{display:flex;flex-direction:row;align-items:stretch}.wy-content-pdf .xfaRl{display:flex;flex-direction:row-reverse;align-items:stretch}.wy-content-pdf .xfaTb>div{justify-content:left}.wy-content-pdf .xfaPosition,.wy-content-pdf .xfaArea{position:relative}.wy-content-pdf .xfaValignMiddle{display:flex;align-items:center}.wy-content-pdf .xfaTable{display:flex;flex-direction:column;align-items:stretch}.wy-content-pdf .xfaTable .xfaRow{display:flex;flex-direction:row;align-items:stretch}.wy-content-pdf .xfaTable .xfaRlRow{display:flex;flex-direction:row-reverse;align-items:stretch;flex:1}.wy-content-pdf .xfaTable .xfaRlRow>div{flex:1}.wy-content-pdf :is(.xfaNonInteractive,.xfaDisabled,.xfaReadOnly) :is(input,textarea){background:initial}@media print{.wy-content-pdf .xfaTextfield,.wy-content-pdf .xfaSelect{background:transparent}.wy-content-pdf .xfaSelect{appearance:none;text-indent:1px;text-overflow:\"\"}}:host{color-scheme:light dark;--viewer-container-height: 0;--pdfViewer-padding-bottom: 0;--page-margin: 1px auto -8px;--page-border: 9px solid transparent;--spreadHorizontalWrapped-margin-LR: -3.5px;--loading-icon-delay: .4s;--focus-ring-color: light-dark(#0060df, #0df);--focus-ring-outline: 2px solid var(--focus-ring-color)}@media screen and (forced-colors:active){:host{--pdfViewer-padding-bottom: 9px;--page-margin: 8px auto -1px;--page-border: 1px solid CanvasText;--spreadHorizontalWrapped-margin-LR: 3.5px;--focus-ring-color: CanvasText}}.wy-content-pdf [data-main-rotation=\"90\"]{transform:rotate(90deg) translateY(-100%)}.wy-content-pdf [data-main-rotation=\"180\"]{transform:rotate(180deg) translate(-100%,-100%)}.wy-content-pdf [data-main-rotation=\"270\"]{transform:rotate(270deg) translate(-100%)}.wy-content-pdf #hiddenCopyElement,.wy-content-pdf .hiddenCanvasElement{position:absolute;top:0;left:0;width:0;height:0;display:none}.wy-content-pdf .pdfViewer{--scale-factor: 1;--page-bg-color: unset;padding-bottom:var(--pdfViewer-padding-bottom);--hcm-highlight-filter: none;--hcm-highlight-selected-filter: none}@media screen and (forced-colors:active){.wy-content-pdf .pdfViewer{--hcm-highlight-filter: invert(100%)}}.wy-content-pdf .pdfViewer.copyAll{cursor:wait}.wy-content-pdf .pdfViewer .canvasWrapper{overflow:hidden;width:100%;height:100%}.wy-content-pdf .pdfViewer .canvasWrapper canvas{position:absolute;top:0;left:0;margin:0;display:block;width:100%;height:100%;contain:content}.wy-content-pdf .pdfViewer .canvasWrapper canvas .structTree{contain:strict}.wy-content-pdf .pdfViewer .canvasWrapper canvas.detailView{image-rendering:pixelated}.wy-content-pdf .pdfViewer .page{--user-unit: 1;--total-scale-factor: calc(var(--scale-factor) * var(--user-unit));--scale-round-x: 1px;--scale-round-y: 1px;direction:ltr;width:816px;height:1056px;margin:var(--page-margin);position:relative;overflow:visible;border:var(--page-border);background-clip:content-box;background-color:var(--page-bg-color, rgb(255, 255, 255))}.wy-content-pdf .pdfViewer .dummyPage{position:relative;width:0;height:var(--viewer-container-height)}.wy-content-pdf .pdfViewer.noUserSelect{-webkit-user-select:none;user-select:none}.wy-content-pdf .pdfViewer.removePageBorders .page{margin:0 auto 10px;border:none}.wy-content-pdf .pdfViewer.singlePageView{display:inline-block}.wy-content-pdf .pdfViewer.singlePageView .page{margin:0;border:none}.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped),.wy-content-pdf .spread{margin-inline:3.5px;text-align:center}.wy-content-pdf .pdfViewer.scrollHorizontal,.wy-content-pdf .spread{white-space:nowrap}.wy-content-pdf .pdfViewer.removePageBorders,.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) .spread{margin-inline:0}.wy-content-pdf .spread :is(.page,.dummyPage),.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) :is(.page,.spread){display:inline-block;vertical-align:middle}.wy-content-pdf .spread .page,.wy-content-pdf .pdfViewer:is(.scrollHorizontal,.scrollWrapped) .page{margin-inline:var(--spreadHorizontalWrapped-margin-LR)}.wy-content-pdf .pdfViewer.removePageBorders .spread .page,.wy-content-pdf .pdfViewer.removePageBorders:is(.scrollHorizontal,.scrollWrapped) .page{margin-inline:5px}.wy-content-pdf .pdfViewer .page.loadingIcon:after{position:absolute;top:0;left:0;content:\"\";width:100%;height:100%;display:none;transition-property:display;transition-delay:var(--loading-icon-delay);z-index:5;contain:strict}.wy-content-pdf .pdfViewer .page.loading:after{display:block}.wy-content-pdf .pdfViewer .page:not(.loading):after{transition-property:none;display:none}.wy-content-pdf .pdfPresentationMode .pdfViewer{padding-bottom:0}.wy-content-pdf .pdfPresentationMode .spread{margin:0}.wy-content-pdf .pdfPresentationMode .pdfViewer .page{margin:0 auto;border:2px solid transparent}.wy-content-pdf .pdfViewer .page{box-shadow:var(--wy-shadow-level2, 0 calc(.25 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.625 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12), 0 calc(.125 * var(--wy-size, 1rem)) calc(.25 * var(--wy-size, 1rem)) calc(-.0625 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2));background-color:var(--wy-white, var(--wy-white, #ffffff))}.wy-content-pdf .pdfViewer .page.loadingIcon:after{background:url(\"data:image/svg+xml,%3Csvg viewBox='0 0 24 24' width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cstyle type='text/css'%3Eg%7Banimation:rotate 2s linear infinite;transform-origin:center center%7Dcircle%7Bstroke-dasharray:1,100;stroke-dashoffset:0;animation:dash 1.5s ease-in-out infinite,color 6s ease-in-out infinite%7D@keyframes rotate%7B100%25%7Btransform:rotate(360deg)%7D%7D@keyframes dash%7B0%25%7Bstroke-dasharray:1,100;stroke-dashoffset:0%7D50%25%7Bstroke-dasharray:44.5,100;stroke-dashoffset:-17.5px%7D100%25%7Bstroke-dasharray:44.5,100;stroke-dashoffset:-62px%7D%7D@keyframes color%7B0%25,100%25%7Bstroke:%23216eb4%7D40%25%7Bstroke:%2328b7cf%7D66%25%7Bstroke:%23216eb4%7D80%25,90%25%7Bstroke:%2328b7cf%7D%7D%3C/style%3E%3Cg%3E%3Ccircle fill='none' cx='12' cy='12' r='11' stroke-linecap='butt' stroke-width='2' /%3E%3C/g%3E%3C/svg%3E\") center no-repeat}[part~=wy-pdf-toolbar]{position:sticky;z-index:1020;bottom:0;left:0;right:0;min-height:min-content;display:flex;flex-direction:column;justify-content:center;justify-items:center;box-sizing:border-box;margin-top:auto;padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}.wy-pdf-page-number{min-width:1em;width:3em;max-width:calc(3 * var(--wy-size, 1rem))}@supports (field-sizing: content){.wy-pdf-page-number{width:auto;field-sizing:content}}.wy-pdf-page-number{font-variant-numeric:tabular-nums}.wy-pdf-zoom-level{min-width:1em;width:3em;max-width:calc(5 * var(--wy-size, 1rem))}@supports (field-sizing: content){.wy-pdf-zoom-level{width:auto;field-sizing:content}}.wy-pdf-zoom-level,.wy-pdf-page-number-total{font-variant-numeric:tabular-nums}`, fg = j`[part~=wy-toolbar]{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));--wy-component-background-color: var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;justify-items:center;min-height:var(--wy-toolbar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))));padding:calc(.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));flex:1 0 var(--wy-toolbar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))));gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));line-height:var(--wy-line-height, 1.5);background-color:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-component-border-radius)}[part~=wy-toolbar-center]{margin:0 auto;border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));justify-content:center;min-height:min-content}[part~=wy-toolbar-buttons]{display:flex;flex:0 0 auto;align-items:center;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));max-width:100%}[part~=wy-toolbar-buttons-last]{margin-inline-start:auto}[part~=wy-toolbar-text]{margin-left:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-toolbar-center-text]{text-align:center}`, mn = j`[part~=wy-input]{--wy-component-background-color: var(--wy-surface-container-lowest, var(--wy-surface-container-lowest-light, #ffffff));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-component-background-color);color:var(--wy-component-color);border:var(--wy-input-border-width, var(--wy-border, 1px)) solid var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)));display:block;max-width:100%;min-width:0;flex:1 1 auto;min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 + var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) * 2);padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));font-family:var(--wy-input-font-family, var(--wy-font-family, inherit)),inherit;font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));font-weight:var(--wy-input-font-weight, var(--wy-font-weight, unset));line-height:var(--wy-input-line-height, var(--wy-line-height, calc(1.5 * var(--wy-size, 1rem))));background-clip:padding-box;appearance:none;border-radius:var(--wy-input-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-input]:focus{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));color:var(--wy-component-color);border-color:var(--wy-primary, var(--wy-primary-light, #2f628c));outline:0}[part~=wy-input]::placeholder{color:var(--wy-outline, var(--wy-outline-light, #72777f));opacity:1}[part~=wy-input]:disabled{opacity:38%}[part~=wy-input]::file-selector-button,[part~=wy-input]::-webkit-file-upload-button{color:var(--wy-component-color);background-color:var(--wy-component-background-color);padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));margin:calc(-1 * var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) calc(-1 * var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))));margin-inline-end:var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:var(--wy-input-border-width, var(--wy-border, 1px));border-radius:0}[part~=wy-input]:hover:not(:disabled):not([readonly])::file-selector-button,[part~=wy-input]:hover:not(:disabled):not([readonly]) ::-webkit-file-upload-button{background-color:var(--wy-component-background-color)}[part~=wy-input][type=file]{overflow:hidden}[part~=wy-input][type=file]:not(:disabled):not([readonly]){cursor:pointer}[part~=wy-input]::-webkit-date-and-time-value{height:calc(var(--wy-input-line-height, var(--wy-line-height, calc(1.5 * var(--wy-size, 1rem)))) * 1em)}[part~=wy-input][type=search]::-webkit-search-cancel-button{-webkit-appearance:none}[part~=wy-input-filled]{--wy-component-background-color: var(--wy-surface-container, var(--wy-surface-container-light, #eceef3));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-input-filled-border-radius, var(--wy-border-radius-lg, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem)))));border-color:var(--wy-component-background-color)}[part~=wy-input-filled]:focus{border-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}[part~=wy-label]{display:inline-block;font-family:var(--wy-headings-font-family, var(--wy-font-family, unset));font-size:var(--wy-headings-font-size, var(--wy-font-size, 1em));font-style:var(--wy-headings-font-style, unset);font-weight:var(--wy-headings-font-weight, var(--wy-font-weight-bold, 600));line-height:var(--wy-headings-line-height, var(--wy-line-height, 1.5));margin-block:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-description]{color:var(--wy-outline, var(--wy-outline-light, #72777f));font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));margin-top:calc(.25 * var(--wy-size, 1rem))}[part~=wy-is-invalid],[part~=wy-is-invalid]:focus{border-color:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-invalid-feedback]{margin-top:calc(.25 * var(--wy-size, 1rem));font-size:var(--wy-font-size-sm, calc(.875 * var(--wy-font-size, 1em)));color:var(--wy-error, var(--wy-error-light, #ba1821))}[part~=wy-input-group]{position:relative;display:flex;gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));align-items:center;flex:1 0 auto}[part~=wy-input-group-button-icon]{--wy-component-background-color: transparent}[part~=wy-input-group-input-with-overlay]{padding-right:calc(var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) + var(--wy-button-size, calc(var(--wy-button-line-height, 1.5) * var(--wy-size, 1rem) + 2 * var(--wy-button-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))))}[part~=wy-input-group-button-icon-overlay]{position:absolute;display:inline-flex;top:0;right:0;z-index:4;border-radius:var(--wy-input-border-radius, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))));--wy-component-background-color: transparent}[part~=wy-input-group-input]:placeholder-shown~[part~=wy-input-group-button-icon][type=reset]{display:none}[part~=wy-input-group-input]:not(:placeholder-shown)~[part~=wy-input-group-button-icon][type=reset]+[part~=wy-input-group-button-icon]{display:none}[part~=wy-no-result]{text-align:center;padding:calc(1 * var(--wy-size, 1rem))}`;
+var p3 = Object.defineProperty, y3 = Object.getOwnPropertyDescriptor, gl = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? y3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && f3(t, e, r), r;
-}, "__decorateClass$T"), Vo;
-let pr = (Vo = class extends st {
+  return i && r && p3(t, e, r), r;
+}, "__decorateClass$T"), Ho;
+let pr = (Ho = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.whenPdfjs = new Promise((t) => {
       this.whenPdfjsResolve = t;
@@ -17628,11 +17604,11 @@ ${r.join(`
       if (this.pdfjsLib || (await this.weavy.whenUrl(), this.pdfjsLib = await import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./es/pdfjs-dist/build/pdf.mjs-DsloPUr7.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? new URL(WEAVY_IMPORT_URL, globalThis.location.href) : import.meta.url).href
+        new URL("./es/pdfjs-dist/build/pdf.mjs-Bi441t_l.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? new URL(WEAVY_IMPORT_URL, globalThis.location.href) : import.meta.url).href
       ), globalThis.pdfjsLib = this.pdfjsLib, this.pdfjsViewer = await import(
         /* webpackIgnore: true */
         /* @vite-ignore */
-        new URL("./es/pdfjs-dist/web/pdf_viewer.mjs-pQ2Brp--.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? new URL(WEAVY_IMPORT_URL, globalThis.location.href) : import.meta.url).href
+        new URL("./es/pdfjs-dist/web/pdf_viewer.mjs-DKLGAacT.js", typeof WEAVY_IMPORT_URL == "string" && (!import.meta.url || !new URL(import.meta.url).href.startsWith(WEAVY_IMPORT_URL)) ? new URL(WEAVY_IMPORT_URL, globalThis.location.href) : import.meta.url).href
       ), this.whenPdfjsResolve?.({
         pdfjsLib: this.pdfjsLib,
         pdfjsViewer: this.pdfjsViewer
@@ -17684,8 +17660,7 @@ ${r.join(`
         annotationEditorMode: t.AnnotationEditorType.DISABLE,
         l10n: this.l10n,
         maxCanvasPixels: this.MAX_CANVAS_PIXELS,
-        textLayerMode: this.TEXT_LAYER_MODE,
-        enableHWA: this.weavy.pdfHWA === "auto" ? y3() : this.weavy.pdfHWA === "always"
+        textLayerMode: this.TEXT_LAYER_MODE
       }), this.pdfLinkService?.setViewer(this.pdfViewer), this.pdfHistory = new e.PDFHistory({
         eventBus: this.pdfEventBus,
         linkService: this.pdfLinkService
@@ -17779,32 +17754,32 @@ ${r.join(`
     }
     this.pdfViewer = void 0, super.disconnectedCallback();
   }
-}, s(Vo, "WyPdfViewer"), Vo);
-pr.styles = [mn, Y, mg, w3];
+}, s(Ho, "WyPdfViewer"), Ho);
+pr.styles = [mn, Y, fg, u3];
 gl([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], pr.prototype, "weavy", 2);
 gl([
-  p()
+  y()
 ], pr.prototype, "src", 2);
 gl([
-  p({ type: Number })
+  y({ type: Number })
 ], pr.prototype, "size", 2);
 gl([
-  H()
+  V()
 ], pr.prototype, "pdfViewer", 2);
 gl([
-  H()
+  V()
 ], pr.prototype, "progress", 2);
 pr = gl([
   U("wy-pdf-viewer"),
   ut()
 ], pr);
-var v3 = Object.defineProperty, g3 = Object.getOwnPropertyDescriptor, Kw = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? g3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var w3 = Object.defineProperty, f3 = Object.getOwnPropertyDescriptor, Kw = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? f3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && v3(t, e, r), r;
+  return i && r && w3(t, e, r), r;
 }, "__decorateClass$S"), Uo;
 let nl = (Uo = class extends st {
   constructor() {
@@ -17870,18 +17845,18 @@ let nl = (Uo = class extends st {
 }, s(Uo, "WyPreviewItem"), Uo);
 nl.styles = [Y];
 Kw([
-  p({ type: Object })
+  y({ type: Object })
 ], nl.prototype, "file", 2);
 Kw([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], nl.prototype, "current", 2);
 nl = Kw([
   U("wy-preview-item")
 ], nl);
-var b3 = Object.defineProperty, x3 = Object.getOwnPropertyDescriptor, bl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? x3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var m3 = Object.defineProperty, v3 = Object.getOwnPropertyDescriptor, bl = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? v3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && b3(t, e, r), r;
+  return i && r && m3(t, e, r), r;
 }, "__decorateClass$R"), Bo;
 let rn = (Bo = class extends st {
   constructor() {
@@ -17981,7 +17956,7 @@ let rn = (Bo = class extends st {
   render() {
     if (!this.file)
       return g;
-    const { icon: t } = un(this.file.name), e = this.file.id >= 1, i = this.file.provider, r = this.file.provider || "app", a = Wn([de.Create, de.Admin], this.app?.permissions);
+    const { icon: t } = un(this.file.name), e = this.file.id >= 1, i = this.file.provider, r = this.file.provider || "app", a = Wn([le.Create, le.Admin], this.app?.permissions);
     return h`
       <wy-dropdown directionX="left" ?small=${this.small}>
         ${e && this.file.is_trashed ? h`
@@ -18053,26 +18028,26 @@ let rn = (Bo = class extends st {
 }, s(Bo, "WyFileMenu"), Bo);
 bl([
   oe({ context: ku, subscribe: !0 }),
-  H()
+  V()
 ], rn.prototype, "componentFeatures", 2);
 bl([
   oe({ context: Jd, subscribe: !0 }),
-  H()
+  V()
 ], rn.prototype, "app", 2);
 bl([
-  p({ type: Object })
+  y({ type: Object })
 ], rn.prototype, "file", 2);
 bl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], rn.prototype, "small", 2);
 bl([
-  p({ type: Object })
+  y({ type: Object })
 ], rn.prototype, "hasEventListener", 2);
 rn = bl([
   U("wy-file-menu"),
   ut()
 ], rn);
-function C3(n, t, e, i = {}) {
+function g3(n, t, e, i = {}) {
   return {
     ...i,
     initialPageParam: 0,
@@ -18087,8 +18062,8 @@ function C3(n, t, e, i = {}) {
     }, "getNextPageParam")
   };
 }
-s(C3, "getCommentsOptions");
-function $3(n, t) {
+s(g3, "getCommentsOptions");
+function b3(n, t) {
   return {
     mutationFn: /* @__PURE__ */ s(async (i) => await (await n.fetch("/api/comments/" + i.id, {
       method: "PATCH",
@@ -18107,8 +18082,8 @@ function $3(n, t) {
     }, "onSuccess")
   };
 }
-s($3, "getUpdateCommentMutationOptions");
-function k3(n) {
+s(b3, "getUpdateCommentMutationOptions");
+function x3(n) {
   const t = n.queryClient;
   return {
     mutationFn: /* @__PURE__ */ s(async (i) => await (await n.fetch("/api/" + i.type + "/" + i.parent_id + "/comments", {
@@ -18141,20 +18116,20 @@ function k3(n) {
           is_subscribed: !1,
           is_starred: !1
         };
-        i.type === "files" ? o.parent = { type: Dt.File, id: i.parent_id } : i.type === "posts" && (o.parent = { type: Dt.Post, id: i.parent_id }), Kl(t, r, o, { descending: !1 });
+        i.type === "files" ? o.parent = { type: It.File, id: i.parent_id } : i.type === "posts" && (o.parent = { type: It.Post, id: i.parent_id }), Kl(t, r, o, { descending: !1 });
       }
     }, "onMutate"),
     onSuccess: /* @__PURE__ */ s((i, r) => {
       const a = [r.type, "comments", i.parent?.id ?? i.app?.id];
       if (!eh(n.queryClient, a, i.id)) {
         const c = Gl(n.queryClient, a, !0);
-        c ? Ae(n.queryClient, a, c.id, () => i) : Kl(n.queryClient, a, i), i.parent?.type === Dt.Post && i.app && (ht(t, { queryKey: ["posts", i.app.id], exact: !1 }, i.parent.id, (l) => (l.comments ? l.comments.count += 1 : l.comments = { count: 1 }, l)), ht(t, { queryKey: ["posts", "feed"], exact: !1 }, i.parent.id, (l) => (l.comments ? l.comments.count += 1 : l.comments = { count: 1 }, l)));
+        c ? Ae(n.queryClient, a, c.id, () => i) : Kl(n.queryClient, a, i), i.parent?.type === It.Post && i.app && (ht(t, { queryKey: ["posts", i.app.id], exact: !1 }, i.parent.id, (l) => (l.comments ? l.comments.count += 1 : l.comments = { count: 1 }, l)), ht(t, { queryKey: ["posts", "feed"], exact: !1 }, i.parent.id, (l) => (l.comments ? l.comments.count += 1 : l.comments = { count: 1 }, l)));
       }
     }, "onSuccess")
   };
 }
-s(k3, "getAddCommentMutationOptions");
-function _3(n, t, e) {
+s(x3, "getAddCommentMutationOptions");
+function C3(n, t, e) {
   const i = n.queryClient, a = {
     mutationKey: [t, e, "comments"],
     mutationFn: /* @__PURE__ */ s(async ({ id: o }) => {
@@ -18175,12 +18150,12 @@ function _3(n, t, e) {
   };
   return a;
 }
-s(_3, "getTrashCommentMutationOptions");
-function P3(n, t, e) {
-  return new St(n.queryClient, _3(n, t, e));
+s(C3, "getTrashCommentMutationOptions");
+function $3(n, t, e) {
+  return new St(n.queryClient, C3(n, t, e));
 }
-s(P3, "getTrashCommentMutation");
-function S3(n, t, e) {
+s($3, "getTrashCommentMutation");
+function k3(n, t, e) {
   const i = n.queryClient, a = {
     mutationKey: [t, e, "comments"],
     mutationFn: /* @__PURE__ */ s(async ({ id: o }) => {
@@ -18204,12 +18179,12 @@ function S3(n, t, e) {
   };
   return a;
 }
-s(S3, "getRestoreCommentMutationOptions");
-function M3(n, t, e) {
-  return new St(n.queryClient, S3(n, t, e));
+s(k3, "getRestoreCommentMutationOptions");
+function _3(n, t, e) {
+  return new St(n.queryClient, k3(n, t, e));
 }
-s(M3, "getRestoreCommentMutation");
-const Qw = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}:host(wy-comments){--wy-component-background-color: var(--wy-surface-container, var(--wy-surface-container-light, #eceef3));--wy-component-border-radius: var(--wy-border-radius-outer, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-comment-list-padded]{padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-comments]{display:flex;flex-direction:column}[part~=wy-comment]{display:flex;flex-direction:column;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));margin-bottom:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-comment][part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-comment-reveal]{interpolate-size:allow-keywords;overflow:hidden;transition:height var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),margin-bottom var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),opacity var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))) var(--wy-transition-duration-fast, .1s);height:auto;opacity:1}@starting-style{[part~=wy-comment-reveal]{height:0;margin-bottom:0;opacity:0}}[part~=wy-comment-skeleton]{transition-delay:var(--wy-transition-reveal-delay, 1s)}[part~=wy-comment-body]{display:flex;flex-direction:column;gap:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));min-width:0;flex:1 1 100%}[part~=wy-comment-footer]{margin-left:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));margin-top:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}::part(wy-trashed){text-decoration:line-through;color:var(--wy-outline, var(--wy-outline-light, #72777f))}wy-comment::part(wy-editor){padding-left:0;padding-right:0;margin-right:calc(-1 * var(--wy-size, 1rem))}`, E3 = 1e3 * 60 * 60, Xp = E3 * 24;
+s(_3, "getRestoreCommentMutation");
+const Qw = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}:host(wy-comments){--wy-component-background-color: var(--wy-surface-container, var(--wy-surface-container-light, #eceef3));--wy-component-border-radius: var(--wy-border-radius-outer, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-comment-list-padded]{padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-comments]{display:flex;flex-direction:column}[part~=wy-comment]{display:flex;flex-direction:column;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));margin-bottom:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-comment][part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-comment-reveal]{interpolate-size:allow-keywords;overflow:hidden;transition:height var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),margin-bottom var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),opacity var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))) var(--wy-transition-duration-fast, .1s);height:auto;opacity:1}@starting-style{[part~=wy-comment-reveal]{height:0;margin-bottom:0;opacity:0}}[part~=wy-comment-skeleton]{transition-delay:var(--wy-transition-reveal-delay, 1s)}[part~=wy-comment-body]{display:flex;flex-direction:column;gap:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));min-width:0;flex:1 1 100%}[part~=wy-comment-footer]{margin-left:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));margin-top:calc(-1 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))}::part(wy-trashed){text-decoration:line-through;color:var(--wy-outline, var(--wy-outline-light, #72777f))}wy-comment::part(wy-editor){padding-left:0;padding-right:0;margin-right:calc(-1 * var(--wy-size, 1rem))}`, P3 = 1e3 * 60 * 60, Xp = P3 * 24;
 function xl(n, t, e, i = 7) {
   e ??= /* @__PURE__ */ new Date();
   const r = new Date(e.getFullYear(), e.getMonth(), e.getDate()), a = t.valueOf() - e.valueOf(), o = t.toDateString() === e.toDateString(), c = t.valueOf() > r.valueOf() - Xp * i && t.valueOf() < r.valueOf() + Xp * i;
@@ -18219,11 +18194,11 @@ function xl(n, t, e, i = 7) {
   } else return o ? new Intl.DateTimeFormat(n, { timeStyle: "short" }).format(t) : new Intl.DateTimeFormat(n, { dateStyle: "short" }).format(t);
 }
 s(xl, "relativeTime");
-const vg = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}`;
-var A3 = Object.defineProperty, R3 = Object.getOwnPropertyDescriptor, ys = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? R3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+const mg = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}`;
+var S3 = Object.defineProperty, M3 = Object.getOwnPropertyDescriptor, ys = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? M3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && A3(t, e, r), r;
+  return i && r && S3(t, e, r), r;
 }, "__decorateClass$Q"), No;
 let Di = (No = class extends qt {
   constructor() {
@@ -18280,8 +18255,8 @@ let Di = (No = class extends qt {
   }
   async willUpdate(t) {
     super.willUpdate(t), (t.has("parentId") || t.has("weavy")) && this.parentId && this.weavy && await this.updateCommentMutation.trackMutation(
-      $3(this.weavy, [this.location, this.parentId, "comments"])
-    ), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, Dt.Comment, { id: this.comment.id }))), t.has("highlight") && (this.highlight ? this.part.add("wy-highlight") : this.part.remove("wy-highlight"));
+      b3(this.weavy, [this.location, this.parentId, "comments"])
+    ), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, It.Comment, { id: this.comment.id }))), t.has("highlight") && (this.highlight ? this.part.add("wy-highlight") : this.part.remove("wy-highlight"));
   }
   render() {
     const t = this.comment.attachments?.data?.filter((o) => o.kind === "image" && o.thumbnail_url) || [], e = this.comment.attachments?.data?.filter((o) => o.kind !== "image" || !o.thumbnail_url) || [], i = new Intl.DateTimeFormat(this.weavy?.locale, {
@@ -18386,7 +18361,7 @@ let Di = (No = class extends qt {
                                     ${x("Edit")}
                                   </wy-dropdown-item>
                                 ` : g}
-                            ${this.user.id === this.comment.created_by.id || Yl(de.Admin, this.app?.permissions) ? h`
+                            ${this.user.id === this.comment.created_by.id || Yl(le.Admin, this.app?.permissions) ? h`
                                   <wy-dropdown-item @click=${() => this.dispatchTrash()}>
                                     <wy-icon name="trashcan"></wy-icon>
                                     ${x("Trash")}
@@ -18491,58 +18466,58 @@ let Di = (No = class extends qt {
     t.has("highlight") && this.highlight && this.highlightRef.value?.scrollIntoView({ block: "nearest" });
   }
 }, s(No, "WyComment"), No);
-Di.styles = [Lt, Qw, wl, vg, Ww, Y];
+Di.styles = [Lt, Qw, wl, mg, Ww, Y];
 ys([
-  p({ type: Object, attribute: !1 })
+  y({ type: Object, attribute: !1 })
 ], Di.prototype, "comment", 2);
 ys([
-  p({ type: Number })
+  y({ type: Number })
 ], Di.prototype, "parentId", 2);
 ys([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Di.prototype, "location", 2);
 ys([
-  H()
+  V()
 ], Di.prototype, "highlight", 2);
 ys([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], Di.prototype, "reveal", 2);
 ys([
-  H()
+  V()
 ], Di.prototype, "editing", 2);
 Di = ys([
   U("wy-comment"),
   ut()
 ], Di);
-const T3 = j`[part~=wy-editor-comment]{position:relative;border-radius:var(--wy-padding-outer, 0)}[part~=wy-editor-comment-bottom]{position:sticky;bottom:0;z-index:999;background-color:var(--wy-component-background-color);padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));border-radius:var(--wy-component-border-radius);color:var(--wy-component-color)}[part~=wy-editor-comment-inputs]{display:flex;flex-direction:row;align-items:flex-end;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-comment-text]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-editor-parts]{padding-top:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));min-height:0}`;
-var Jp, ev;
-function L3() {
-  if (ev) return Jp;
-  ev = 1;
+const E3 = j`[part~=wy-editor-comment]{position:relative;border-radius:var(--wy-padding-outer, 0)}[part~=wy-editor-comment-bottom]{position:sticky;bottom:0;z-index:999;background-color:var(--wy-component-background-color);padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));border-radius:var(--wy-component-border-radius);color:var(--wy-component-color)}[part~=wy-editor-comment-inputs]{display:flex;flex-direction:row;align-items:flex-end;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-comment-text]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-editor-parts]{padding-top:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));min-height:0}`;
+var Jp, tv;
+function A3() {
+  if (tv) return Jp;
+  tv = 1;
   var n = "Expected a function", t = NaN, e = "[object Symbol]", i = /^\s+|\s+$/g, r = /^[-+]0x[0-9a-f]+$/i, a = /^0b[01]+$/i, o = /^0o[0-7]+$/i, c = parseInt, l = typeof $h == "object" && $h && $h.Object === Object && $h, u = typeof self == "object" && self && self.Object === Object && self, b = l || u || Function("return this")(), C = Object.prototype, v = C.toString, m = Math.max, f = Math.min, $ = /* @__PURE__ */ s(function() {
     return b.Date.now();
   }, "now");
   function E(B, K, it) {
-    var lt, nt, Ot, zt, Mt, vt, Ht = 0, be = !1, At = !1, xt = !0;
+    var lt, nt, Ot, zt, Mt, vt, Dt = 0, be = !1, At = !1, xt = !0;
     if (typeof B != "function")
       throw new TypeError(n);
     K = I(K) || 0, T(it) && (be = !!it.leading, At = "maxWait" in it, Ot = At ? m(I(it.maxWait) || 0, K) : Ot, xt = "trailing" in it ? !!it.trailing : xt);
-    function ie($t) {
+    function ee($t) {
       var Fe = lt, Et = nt;
-      return lt = nt = void 0, Ht = $t, zt = B.apply(Et, Fe), zt;
+      return lt = nt = void 0, Dt = $t, zt = B.apply(Et, Fe), zt;
     }
-    s(ie, "invokeFunc");
+    s(ee, "invokeFunc");
     function dt($t) {
-      return Ht = $t, Mt = setTimeout(Qe, K), be ? ie($t) : zt;
+      return Dt = $t, Mt = setTimeout(Qe, K), be ? ee($t) : zt;
     }
     s(dt, "leadingEdge");
     function Ct($t) {
-      var Fe = $t - vt, Et = $t - Ht, re = K - Fe;
-      return At ? f(re, Ot - Et) : re;
+      var Fe = $t - vt, Et = $t - Dt, ie = K - Fe;
+      return At ? f(ie, Ot - Et) : ie;
     }
     s(Ct, "remainingWait");
     function di($t) {
-      var Fe = $t - vt, Et = $t - Ht;
+      var Fe = $t - vt, Et = $t - Dt;
       return vt === void 0 || Fe >= K || Fe < 0 || At && Et >= Ot;
     }
     s(di, "shouldInvoke");
@@ -18554,11 +18529,11 @@ function L3() {
     }
     s(Qe, "timerExpired");
     function qi($t) {
-      return Mt = void 0, xt && lt ? ie($t) : (lt = nt = void 0, zt);
+      return Mt = void 0, xt && lt ? ee($t) : (lt = nt = void 0, zt);
     }
     s(qi, "trailingEdge");
     function Wi() {
-      Mt !== void 0 && clearTimeout(Mt), Ht = 0, lt = vt = nt = Mt = void 0;
+      Mt !== void 0 && clearTimeout(Mt), Dt = 0, lt = vt = nt = Mt = void 0;
     }
     s(Wi, "cancel");
     function Al() {
@@ -18571,7 +18546,7 @@ function L3() {
         if (Mt === void 0)
           return dt(vt);
         if (At)
-          return Mt = setTimeout(Qe, K), ie(vt);
+          return Mt = setTimeout(Qe, K), ee(vt);
       }
       return Mt === void 0 && (Mt = setTimeout(Qe, K)), zt;
     }
@@ -18594,12 +18569,12 @@ function L3() {
     return !!B && (K == "object" || K == "function");
   }
   s(T, "isObject");
-  function V(B) {
+  function H(B) {
     return !!B && typeof B == "object";
   }
-  s(V, "isObjectLike");
+  s(H, "isObjectLike");
   function O(B) {
-    return typeof B == "symbol" || V(B) && v.call(B) == e;
+    return typeof B == "symbol" || H(B) && v.call(B) == e;
   }
   s(O, "isSymbol");
   function I(B) {
@@ -18619,10 +18594,10 @@ function L3() {
   }
   return s(I, "toNumber"), Jp = S, Jp;
 }
-s(L3, "requireLodash_throttle");
-var O3 = L3();
-const Gw = /* @__PURE__ */ R0(O3);
-function z3(n, t) {
+s(A3, "requireLodash_throttle");
+var R3 = A3();
+const Gw = /* @__PURE__ */ R0(R3);
+function T3(n, t) {
   return new St(n.queryClient, {
     mutationFn: /* @__PURE__ */ s(async () => await n.fetch(`/api/apps/${t}/typing`, {
       method: "PUT",
@@ -18630,8 +18605,8 @@ function z3(n, t) {
     }), "mutationFn")
   });
 }
-s(z3, "typingMutation");
-function iv(n, t) {
+s(T3, "typingMutation");
+function ev(n, t) {
   return new St(n.queryClient, {
     mutationFn: /* @__PURE__ */ s(async () => {
       const e = await n.fetch(`/x/${t}/meetings`, { method: "POST" });
@@ -18641,8 +18616,8 @@ function iv(n, t) {
     }, "mutationFn")
   });
 }
-s(iv, "addMeetingMutation");
-async function F3(n, t) {
+s(ev, "addMeetingMutation");
+async function L3(n, t) {
   const e = await n.fetch("/api/blobs/external", { method: "POST", body: JSON.stringify(t) });
   if (!e.ok) {
     const r = await e.json();
@@ -18650,11 +18625,11 @@ async function F3(n, t) {
   }
   return await e.json();
 }
-s(F3, "externalBlob");
-function I3(n, t, e, i) {
+s(L3, "externalBlob");
+function O3(n, t, e, i) {
   const r = n.queryClient, a = ["apps", e, "blobs", i];
   return {
-    mutationFn: /* @__PURE__ */ s(async (c) => await F3(n, c.externalBlob), "mutationFn"),
+    mutationFn: /* @__PURE__ */ s(async (c) => await L3(n, c.externalBlob), "mutationFn"),
     mutationKey: a,
     onMutate: /* @__PURE__ */ s(async (c) => (await r.cancelQueries({ queryKey: a, exact: !0 }), { type: "attach", file: Mw(void 0, c.externalBlob.name, c.externalBlob.size, void 0, t), status: { state: "pending" } }), "onMutate"),
     onSuccess: /* @__PURE__ */ s((c, l, u) => {
@@ -18672,19 +18647,19 @@ function I3(n, t, e, i) {
     }
   };
 }
-s(I3, "getExternalBlobMutationOptions");
-function gg(n, t, e, i) {
-  return new St(n.queryClient, I3(n, t, e, i));
+s(O3, "getExternalBlobMutationOptions");
+function vg(n, t, e, i) {
+  return new St(n.queryClient, O3(n, t, e, i));
 }
-s(gg, "getExternalBlobMutation");
-const D3 = /(((https?|ftp):\/\/|(www|ftp)\.)[\w]+(.[\w]+)([\w\-.,@?^=%&amp;:/~+#]*[\w\-@?^=%&amp;/~+#]))/gim;
+s(vg, "getExternalBlobMutation");
+const z3 = /(((https?|ftp):\/\/|(www|ftp)\.)[\w]+(.[\w]+)([\w\-.,@?^=%&amp;:/~+#]*[\w\-@?^=%&amp;/~+#]))/gim;
 let _s = [], yd = [], pu = [], Lh = [], ir = {};
-const H3 = /* @__PURE__ */ s((n, t) => n.length === t.length && n.every((e, i) => e === t[i]), "arrayEquals");
-function V3() {
+const F3 = /* @__PURE__ */ s((n, t) => n.length === t.length && n.every((e, i) => e === t[i]), "arrayEquals");
+function I3() {
   return !!Object.keys(ir).length;
 }
-s(V3, "isFetchingEmbeds");
-async function U3(n, t) {
+s(I3, "isFetchingEmbeds");
+async function D3(n, t) {
   let e;
   try {
     const i = await t.fetch(`/api/embeds?url=${encodeURIComponent(n)}`);
@@ -18696,18 +18671,18 @@ async function U3(n, t) {
   }
   return e;
 }
-s(U3, "fetchEmbed");
-const B3 = /* @__PURE__ */ s(() => {
+s(D3, "fetchEmbed");
+const V3 = /* @__PURE__ */ s(() => {
   _s = [], yd = [], pu = [], Lh = [], ir = {};
-}, "clearEmbeds"), rv = /* @__PURE__ */ s((n) => {
+}, "clearEmbeds"), iv = /* @__PURE__ */ s((n) => {
   yd = n;
-}, "initEmbeds"), N3 = /* @__PURE__ */ s((n, t, e) => {
-  let i = n.match(D3)?.map((r) => r) || null;
+}, "initEmbeds"), H3 = /* @__PURE__ */ s((n, t, e) => {
+  let i = n.match(z3)?.map((r) => r) || null;
   if (i !== null && (i = i.map((r) => r.startsWith("//") ? "http:" + r : !r.startsWith("http://") && !r.startsWith("https://") ? "http://" + r : r)), !(i === null || i.length === 0)) {
-    if (i.length !== _s.length || !H3(i, _s)) {
+    if (i.length !== _s.length || !F3(i, _s)) {
       _s = i, i.forEach((r) => {
         !yd.includes(r) && !pu.includes(r) && !Lh.includes(r) && typeof ir[r] > "u" && (ke(), ir[r] = window.setTimeout(async () => {
-          const a = await U3(r, e);
+          const a = await D3(r, e);
           a && t(a);
         }, 500));
       }), Lh = Lh.filter((r) => _s.includes(r));
@@ -18715,13 +18690,13 @@ const B3 = /* @__PURE__ */ s(() => {
         _s.includes(r) || (ke(), window.clearTimeout(ir[r]), delete ir[r]);
     }
   }
-}, "getEmbeds"), q3 = j`[part~=wy-editor-msg]{padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));display:flex;flex-direction:column;gap:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-msg-inputs]{display:flex;flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-msg-buttons]{display:flex;flex-direction:row;align-items:flex-end;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));flex:1 0 auto}[part~=wy-editor-msg-text]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-editor-parts]{display:flex;flex-direction:column;gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));min-height:0}`, bg = j`[part~=wy-dragging]:after{content:attr(data-drag-title);background-color:#ffffff80;display:flex;justify-content:center;align-items:center;border:calc(.125 * var(--wy-size, 1rem)) dashed var(--wy-outline, var(--wy-outline-light, #72777f));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));font-size:calc(1.5 * var(--wy-size, 1rem));font-weight:var(--wy-font-weight-bold, 600);z-index:10000;position:absolute;inset:0}`;
-var W3 = Object.defineProperty, j3 = Object.getOwnPropertyDescriptor, ws = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? j3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+}, "getEmbeds"), U3 = j`[part~=wy-editor-msg]{padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));display:flex;flex-direction:column;gap:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-msg-inputs]{display:flex;flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-editor-msg-buttons]{display:flex;flex-direction:row;align-items:flex-end;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));flex:1 0 auto}[part~=wy-editor-msg-text]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-editor-parts]{display:flex;flex-direction:column;gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));min-height:0}`, gg = j`[part~=wy-dragging]:after{content:attr(data-drag-title);background-color:#ffffff80;display:flex;justify-content:center;align-items:center;border:calc(.125 * var(--wy-size, 1rem)) dashed var(--wy-outline, var(--wy-outline-light, #72777f));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));font-size:calc(1.5 * var(--wy-size, 1rem));font-weight:var(--wy-font-weight-bold, 600);z-index:10000;position:absolute;inset:0}`;
+var B3 = Object.defineProperty, N3 = Object.getOwnPropertyDescriptor, ws = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? N3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && W3(t, e, r), r;
+  return i && r && B3(t, e, r), r;
 }, "__decorateClass$P"), qo;
-let Hi = (qo = class extends st {
+let Vi = (qo = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.status = {
       state: "ok"
@@ -18852,30 +18827,30 @@ let Hi = (qo = class extends st {
     `;
   }
 }, s(qo, "WyFileItem"), qo);
-Hi.styles = [mn];
+Vi.styles = [mn];
 ws([
-  p({ type: Object })
-], Hi.prototype, "file", 2);
+  y({ type: Object })
+], Vi.prototype, "file", 2);
 ws([
-  p({ type: Object })
-], Hi.prototype, "status", 2);
+  y({ type: Object })
+], Vi.prototype, "status", 2);
 ws([
-  p({ type: Boolean })
-], Hi.prototype, "interactive", 2);
+  y({ type: Boolean })
+], Vi.prototype, "interactive", 2);
 ws([
-  p({ type: Boolean })
-], Hi.prototype, "rounded", 2);
+  y({ type: Boolean })
+], Vi.prototype, "rounded", 2);
 ws([
-  p()
-], Hi.prototype, "actionType", 2);
+  y()
+], Vi.prototype, "actionType", 2);
 ws([
-  H()
-], Hi.prototype, "isRenaming", 2);
-Hi = ws([
+  V()
+], Vi.prototype, "isRenaming", 2);
+Vi = ws([
   U("wy-file-item")
-], Hi);
-const K3 = /* @__PURE__ */ s((n) => {
-  var t, e, i, r, ew, xg, iw, Ps, rw, b;
+], Vi);
+const q3 = /* @__PURE__ */ s((n) => {
+  var t, e, i, r, ew, bg, iw, Ps, rw, b;
   return b = class extends n {
     /**
      * @constructor
@@ -18889,13 +18864,13 @@ const K3 = /* @__PURE__ */ s((n) => {
       R(this, i, /* @__PURE__ */ new Set());
     }
     get eventParent() {
-      return y(this, e);
+      return p(this, e);
     }
     set eventParent(m) {
       m?.eventChildren && m.eventChildren.add(this), P(this, e, m);
     }
     get eventChildren() {
-      return y(this, i);
+      return p(this, i);
     }
     /**
      * Registers one or several event listeners. All event listeners are managed and automatically unregistered on destroy.
@@ -18961,7 +18936,7 @@ const K3 = /* @__PURE__ */ s((n) => {
      * @returns {boolean} Was the handler removed?
      */
     off(...m) {
-      const f = at(this, r, rw).call(this, m), $ = at(this, r, xg).call(this, f.events, f.selector, f.handler);
+      const f = at(this, r, rw).call(this, m), $ = at(this, r, bg).call(this, f.events, f.selector, f.handler);
       return at(this, r, iw).call(this, f.events, f.selector, $, f.handler);
     }
     /**
@@ -18972,7 +18947,7 @@ const K3 = /* @__PURE__ */ s((n) => {
      * @name WeavyEvents#clear
      */
     clearEventHandlers() {
-      y(this, t).length = 0;
+      p(this, t).length = 0;
     }
     /**
      * Trigger a custom event. Events are per default triggered on the weavy instance using the weavy namespace.
@@ -19049,7 +19024,7 @@ const K3 = /* @__PURE__ */ s((n) => {
     triggerEvent(m, f, ...$) {
       const E = /^(before|on|after):/.test(m), S = E ? m.split(":")[0] : "";
       m = m.replace(/^(before|on|after):/, "");
-      const T = "before:" + m, V = m, O = "after:" + m;
+      const T = "before:" + m, H = m, O = "after:" + m;
       if (f && typeof f == "string")
         try {
           f = JSON.parse(f);
@@ -19059,16 +19034,16 @@ const K3 = /* @__PURE__ */ s((n) => {
       let I;
       if (E) {
         if (S === "before" || S === "after") {
-          if (y(this, e) && (I = y(this, e).triggerEvent(
+          if (p(this, e) && (I = p(this, e).triggerEvent(
             S === "before" ? T : O,
             f,
             ...$
           ), f = I || I === !1 ? I : f, f === !1) || (I = at(this, r, Ps).call(this, S === "before" ? T : O, f, ...$), f = I || I === !1 ? I : f, f === !1))
             return f;
-        } else if (S === "on" && (I = at(this, r, Ps).call(this, V, f, ...$), f = I || I === !1 ? I : f, f === !1 || y(this, e) && (I = y(this, e).triggerEvent("on:" + V, f, ...$), f = I || I === !1 ? I : f, f === !1)))
+        } else if (S === "on" && (I = at(this, r, Ps).call(this, H, f, ...$), f = I || I === !1 ? I : f, f === !1 || p(this, e) && (I = p(this, e).triggerEvent("on:" + H, f, ...$), f = I || I === !1 ? I : f, f === !1)))
           return f;
       } else {
-        if (y(this, e) && (I = y(this, e).triggerEvent(T, f, ...$), f = I || I === !1 ? I : f, f === !1) || (I = at(this, r, Ps).call(this, T, f, ...$), f = I || I === !1 ? I : f, f === !1) || (I = at(this, r, Ps).call(this, V, f, ...$), f = I || I === !1 ? I : f, f === !1) || y(this, e) && (I = y(this, e).triggerEvent("on:" + V, f, ...$), f = I || I === !1 ? I : f, f === !1) || y(this, e) && (I = y(this, e).triggerEvent(O, f, ...$), f = I || I === !1 ? I : f, f === !1))
+        if (p(this, e) && (I = p(this, e).triggerEvent(T, f, ...$), f = I || I === !1 ? I : f, f === !1) || (I = at(this, r, Ps).call(this, T, f, ...$), f = I || I === !1 ? I : f, f === !1) || (I = at(this, r, Ps).call(this, H, f, ...$), f = I || I === !1 ? I : f, f === !1) || p(this, e) && (I = p(this, e).triggerEvent("on:" + H, f, ...$), f = I || I === !1 ? I : f, f === !1) || p(this, e) && (I = p(this, e).triggerEvent(O, f, ...$), f = I || I === !1 ? I : f, f === !1))
           return f;
         I = at(this, r, Ps).call(this, O, f, ...$), f = I || I === !1 ? I : f;
       }
@@ -19085,7 +19060,7 @@ const K3 = /* @__PURE__ */ s((n) => {
    * @param {function} originalHandler - The original non-wrapped event handler.
    */
   ew = /* @__PURE__ */ s(function(m, f, $, E) {
-    y(this, t).push({
+    p(this, t).push({
       events: m,
       selector: f,
       handler: $,
@@ -19101,13 +19076,13 @@ const K3 = /* @__PURE__ */ s((n) => {
    * @param {function} handler - The registered handler
    * @param {function} [originalHandler] - The original registered handler
    */
-  xg = /* @__PURE__ */ s(function(m, f, $, E) {
+  bg = /* @__PURE__ */ s(function(m, f, $, E) {
     const S = {
       events: m,
       selector: f,
       handler: $,
       originalHandler: E || $
-    }, T = y(this, t).filter((V) => Us(S, V, !0)).pop();
+    }, T = p(this, t).filter((H) => Us(S, H, !0)).pop();
     return T && T.handler;
   }, "#getEventHandler"), /**
    * Unregister an event handler. Arguments must match the registered event handler.
@@ -19127,8 +19102,8 @@ const K3 = /* @__PURE__ */ s((n) => {
       originalHandler: E
     };
     let T = !1;
-    return y(this, t).forEach((V, O) => {
-      Us(S, V, !0) && (T = !0, y(this, t).splice(O, 1));
+    return p(this, t).forEach((H, O) => {
+      Us(S, H, !0) && (T = !0, p(this, t).splice(O, 1));
     }), T;
   }, "#unregisterEventHandler"), /**
    * Triggers any local event handlers registered. Each handler may modify the data and return it or return false to cancel the event chain. .stopPropagation() and .preventDefault() may also be used.
@@ -19146,11 +19121,11 @@ const K3 = /* @__PURE__ */ s((n) => {
    */
   Ps = /* @__PURE__ */ s(function(m, f, ...$) {
     let E = !1;
-    return y(this, t).forEach((S) => {
+    return p(this, t).forEach((S) => {
       S.events.split(" ").forEach((T) => {
         if (T = T.indexOf("on:") === 0 ? T.split("on:")[1] : T, m === T && (!S.selector || Us(S.selector, f, !0))) {
-          const V = S.handler(f, ...$);
-          V ? f = V : V === !1 && (E = !0);
+          const H = S.handler(f, ...$);
+          H ? f = H : H === !1 && (E = !0);
         }
       });
     }), E ? !1 : f;
@@ -19170,9 +19145,9 @@ const K3 = /* @__PURE__ */ s((n) => {
     const f = typeof m[1] == "function" ? m[1] : m[2], $ = typeof m[1] == "function" ? null : m[1];
     return { events: m[0], selector: $, handler: f };
   }, "#getEventArguments"), s(b, "WeavyEvents"), b;
-}, "MixinWeavyEvents"), Q3 = K3(class {
+}, "MixinWeavyEvents"), W3 = q3(class {
 });
-function nv(n) {
+function rv(n) {
   let t = "";
   try {
     t = /^((?:https?:\/\/[^/]+)|(?:file:\/\/))\/?/.exec(n)?.[1] || "";
@@ -19183,10 +19158,10 @@ function nv(n) {
   }
   return t;
 }
-s(nv, "extractOrigin");
-const Xf = class Xf extends Q3 {
+s(rv, "extractOrigin");
+const Xf = class Xf extends W3 {
   constructor(t = {}) {
-    super(), this.contentWindows = /* @__PURE__ */ new Set(), this.contentWindowsMapByWeavyId = /* @__PURE__ */ new Map(), this.contentWindowOrigins = /* @__PURE__ */ new WeakMap(), this.contentWindowNames = /* @__PURE__ */ new WeakMap(), this.contentWindowWeavyIds = /* @__PURE__ */ new WeakMap(), this.contentWindowDomain = /* @__PURE__ */ new WeakMap(), this.origin = uw() ? nv(window.location.href) : "", this.timeout = 2e3, t?.timeout && (this.timeout = t.timeout), window.addEventListener("message", (e) => {
+    super(), this.contentWindows = /* @__PURE__ */ new Set(), this.contentWindowsMapByWeavyId = /* @__PURE__ */ new Map(), this.contentWindowOrigins = /* @__PURE__ */ new WeakMap(), this.contentWindowNames = /* @__PURE__ */ new WeakMap(), this.contentWindowWeavyIds = /* @__PURE__ */ new WeakMap(), this.contentWindowDomain = /* @__PURE__ */ new WeakMap(), this.origin = uw() ? rv(window.location.href) : "", this.timeout = 2e3, t?.timeout && (this.timeout = t.timeout), window.addEventListener("message", (e) => {
       if (e.data.name && e.data.weavyId !== void 0) {
         if (e.data.weavyMessageId && e.data.name !== "message-receipt" && e.data.name !== "unready")
           try {
@@ -19294,7 +19269,7 @@ const Xf = class Xf extends Q3 {
   }
   async whenPostMessage(t, e, i) {
     ke(), i === null && (i = void 0);
-    const r = t === window.self, a = r ? nv(window.location.href) : this.contentWindowOrigins.get(t);
+    const r = t === window.self, a = r ? rv(window.location.href) : this.contentWindowOrigins.get(t);
     if (r || t && a === this.contentWindowDomain.get(t)) {
       e.weavyMessageId || (e.weavyMessageId = ql() + ql());
       let c;
@@ -19363,10 +19338,10 @@ const Xf = class Xf extends Q3 {
 };
 s(Xf, "WeavyPostalParent");
 let nw = Xf;
-var G3 = Object.defineProperty, Z3 = Object.getOwnPropertyDescriptor, Qu = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Z3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var j3 = Object.defineProperty, K3 = Object.getOwnPropertyDescriptor, Qu = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? K3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && G3(t, e, r), r;
+  return i && r && j3(t, e, r), r;
 }, "__decorateClass$O"), Wo;
 let es = (Wo = class extends Re {
   constructor() {
@@ -19479,30 +19454,32 @@ es.styles = [
     `
 ];
 Qu([
-  H()
+  V()
 ], es.prototype, "src", 2);
 Qu([
-  H()
+  V()
 ], es.prototype, "iframeVisible", 2);
 Qu([
-  H()
+  V()
 ], es.prototype, "showOverlay", 2);
 es = Qu([
   U("wy-cloud-files"),
   ut()
 ], es);
-const Y3 = j`@charset \"UTF-8\";[part~=wy-scroll-y]{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-y]:not(body){-webkit-overflow-scrolling:touch}[part~=wy-scroll-x]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]:not(body){-webkit-overflow-scrolling:touch}[part~=wy-scroll-x-y]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]{overflow-y:auto;overflow-x:auto;touch-action:pan-y pan-x}[part~=wy-scroll-x-always],[part~=wy-scroll-y-always]{overflow-y:scroll}[part~=wy-code] pre,.wy-code pre,[part~=wy-core-editor] .cm-content pre{text-wrap:pretty}[part~=wy-code] .code,[part~=wy-code] code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code .code,.wy-code code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content .code,[part~=wy-core-editor] .cm-content code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{color:var(--wy-code-text, var(--wy-code-text-light, #3b3b3b));font-family:var(--wy-font-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);text-align:start;white-space:pre-wrap;word-spacing:normal;word-break:normal;word-wrap:break-word;line-height:1.25;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{[part~=wy-code] code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{text-shadow:none}}[part~=wy-code] pre[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}[part~=wy-code] :not(pre)>code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code :not(pre)>code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content :not(pre)>code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{color:var(--wy-code-text, var(--wy-code-text-light, #3b3b3b));background:var(--wy-background, var(--wy-background-light, #f7f9ff))}[part~=wy-code] :not(pre)>code[class*=language-],.wy-code :not(pre)>code[class*=language-],[part~=wy-core-editor] .cm-content :not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}[part~=wy-code] .token.variable,.wy-code .token.variable,[part~=wy-core-editor] .cm-content .token.variable{color:var(--wy-code-variable, var(--wy-code-variable-light, #001080))}[part~=wy-code] .token.operator,.wy-code .token.operator,[part~=wy-core-editor] .cm-content .token.operator{color:var(--wy-code-operator, var(--wy-code-operator-light, #000000))}[part~=wy-code] .token.prolog,.wy-code .token.prolog,[part~=wy-core-editor] .cm-content .token.prolog{color:var(--wy-code-prolog, var(--wy-code-prolog-light, #000080))}[part~=wy-code] .token.comment,.wy-code .token.comment,[part~=wy-core-editor] .cm-content .token.comment{color:var(--wy-code-comment, var(--wy-code-comment-light, #008000))}[part~=wy-code] .token.builtin,.wy-code .token.builtin,[part~=wy-core-editor] .cm-content .token.builtin{color:var(--wy-code-builtin, var(--wy-code-builtin-light, #0070C1))}[part~=wy-code] .token.number,.wy-code .token.number,[part~=wy-core-editor] .cm-content .token.number{color:var(--wy-code-number, var(--wy-code-number-light, #098658))}[part~=wy-code] .token.inserted,.wy-code .token.inserted,[part~=wy-core-editor] .cm-content .token.inserted{color:var(--wy-code-inserted, var(--wy-code-inserted-light, #098658))}[part~=wy-code] .token.constant,.wy-code .token.constant,[part~=wy-core-editor] .cm-content .token.constant{color:var(--wy-code-constant, var(--wy-code-constant-light, #811F3F))}[part~=wy-code] .token.hexcode,.wy-code .token.hexcode,[part~=wy-core-editor] .cm-content .token.hexcode{color:var(--wy-code-hexcode, var(--wy-code-hexcode-light, #811F3F))}[part~=wy-code] .token.regex,.wy-code .token.regex,[part~=wy-core-editor] .cm-content .token.regex{color:var(--wy-code-regex, var(--wy-code-regex-light, #811F3F))}[part~=wy-code] .token.char,.wy-code .token.char,[part~=wy-core-editor] .cm-content .token.char{color:var(--wy-code-char, var(--wy-code-char-light, #811F3F))}[part~=wy-code] .token.tag,.wy-code .token.tag,[part~=wy-core-editor] .cm-content .token.tag{color:var(--wy-code-tag, var(--wy-code-tag-light, #800000))}[part~=wy-code] .token.attr-name,.wy-code .token.attr-name,[part~=wy-core-editor] .cm-content .token.attr-name{color:var(--wy-code-attr-name, var(--wy-code-attr-name-light, #E50000))}[part~=wy-code] .token.selector,.wy-code .token.selector,[part~=wy-core-editor] .cm-content .token.selector{color:var(--wy-code-selector, var(--wy-code-selector-light, #E50000))}[part~=wy-code] .token.property,.wy-code .token.property,[part~=wy-core-editor] .cm-content .token.property{color:var(--wy-code-property, var(--wy-code-property-light, #E50000))}[part~=wy-code] .token.deleted,.wy-code .token.deleted,[part~=wy-core-editor] .cm-content .token.deleted{color:var(--wy-code-deleted, var(--wy-code-deleted-light, #A31515))}[part~=wy-code] .token.string,.wy-code .token.string,[part~=wy-core-editor] .cm-content .token.string{color:var(--wy-code-string, var(--wy-code-string-light, #A31515))}[part~=wy-code] .token.changed,.wy-code .token.changed,[part~=wy-core-editor] .cm-content .token.changed{color:var(--wy-code-changed, var(--wy-code-changed-light, #0451A5))}[part~=wy-code] .token.punctuation,.wy-code .token.punctuation,[part~=wy-core-editor] .cm-content .token.punctuation{color:var(--wy-code-punctuation, var(--wy-code-punctuation-light, #000000))}[part~=wy-code] .token.function,.wy-code .token.function,[part~=wy-core-editor] .cm-content .token.function{color:var(--wy-code-function, var(--wy-code-function-light, #0000FF))}[part~=wy-code] .token.keyword,.wy-code .token.keyword,[part~=wy-core-editor] .cm-content .token.keyword{color:var(--wy-code-keyword, var(--wy-code-keyword-light, #AF00DB))}[part~=wy-code] .token.class-name,.wy-code .token.class-name,[part~=wy-core-editor] .cm-content .token.class-name{color:var(--wy-code-class-name, var(--wy-code-class-name-light, #267F99))}[part~=wy-code] .token.important,[part~=wy-code] .token.bold,.wy-code .token.important,.wy-code .token.bold,[part~=wy-core-editor] .cm-content .token.important,[part~=wy-core-editor] .cm-content .token.bold{font-weight:700}[part~=wy-code] .token.italic,.wy-code .token.italic,[part~=wy-core-editor] .cm-content .token.italic{font-style:italic}[part~=wy-core-editor]{box-sizing:border-box}[part~=wy-core-editor] .cm-scroller{font-family:unset;line-height:1.5}[part~=wy-core-editor] .cm-widgetBuffer{vertical-align:unset}[part~=wy-core-editor] .cm-placeholder{pointer-events:none;color:var(--wy-outline, var(--wy-outline-light, #72777f))}[part~=wy-core-editor] .cm-content{caret-color:var(--wy-on-background, var(--wy-on-background-light, #181c20))}[part~=wy-core-editor] .cm-content ::part(wy-link){text-decoration:var(--wy-link-decoration, none);color:var(--wy-link, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .wy-mention{font-weight:700}[part~=wy-core-editor] .cm-editor{box-sizing:border-box;flex-direction:column;position:relative!important;display:flex!important}[part~=wy-core-editor] .cm-editor.cm-focused{--wy-component-color: var(--wy-on-background, var(--wy-on-background-light, #181c20));color:var(--wy-component-color);border-color:var(--wy-primary, var(--wy-primary-light, #2f628c));outline:0}[part~=wy-core-editor] .cm-editor .cm-scroller{overflow:auto}[part~=wy-core-editor] .cm-editor .cm-line{display:block;padding:0px var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) 0px var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-core-editor] .cm-tooltip.cm-tooltip-autocomplete>ul{font-family:unset;max-height:calc(15 * var(--wy-size, 1rem))}[part~=wy-core-editor] .cm-tooltip.cm-tooltip-autocomplete>ul>li{padding:0}[part~=wy-core-editor] .cm-tooltip{border:none;background-clip:padding-box;background-color:var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));box-shadow:var(--wy-shadow-level1, 0 calc(.125 * var(--wy-size, 1rem)) calc(.125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.1875 * var(--wy-size, 1rem)) calc(.0625 * var(--wy-size, 1rem)) calc(-.125 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12));overflow:hidden;z-index:1000}[part~=wy-core-editor] .cm-tooltip-autocomplete ul li[aria-selected] wy-item{background:var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));color:unset}[part~=wy-core-editor] .cm-tooltip-autocomplete .cm-completionLabel{display:none}[part~=wy-core-editor] .cm-tooltip-autocomplete ::part(wy-item-interactive):hover,[part~=wy-core-editor] .cm-tooltip-autocomplete ::part(wy-item-interactive):focus{background:var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb))}`, X3 = j`[part~=wy-core-editor]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-core-editor-message]{margin-inline:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-core-editor] .cm-editor{flex:1 1 100%;max-height:11.25em;background-color:var(--wy-surface-container-lowest, var(--wy-surface-container-lowest-light, #ffffff));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));border:var(--wy-input-border-width, var(--wy-border, 1px)) solid transparent;caret-color:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .cm-editor:focus{border-color:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .cm-editor .cm-content{font-family:var(--wy-input-font-family, var(--wy-font-family, inherit)),inherit;font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-core-editor-tooltips]{width:0;height:0;position:fixed;z-index:1000;border:none;padding:0;overflow:visible}[part~=wy-core-editor-tooltips]:not([popover]){display:block}[part~=wy-core-post-editor] .cm-editor{min-height:4em;border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-core-post-editor] .cm-editor .cm-line{padding:0}[part~=wy-core-editor-message] .cm-editor{border-radius:var(--wy-input-filled-border-radius, var(--wy-border-radius-lg, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem)))));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)))}[part~=wy-core-editor-message] .cm-editor.cm-focused{border-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}[part~=wy-core-editor-message] .cm-editor .cm-content{font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 - var(--wy-input-border-width, var(--wy-border, 1px)));line-height:calc(1.5 * var(--wy-size, 1rem))}[part~=wy-core-editor-comment] .cm-editor{border-radius:calc(1.25 * var(--wy-size, 1rem));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)))}`;
-var J3 = Object.defineProperty, t$ = Object.getOwnPropertyDescriptor, Cg = /* @__PURE__ */ s((n) => {
+const si = uw() ? window.navigator.userAgent : "", xg = si.includes("iPad") || si.includes("Android") && !si.includes("Mobi") || !1, Q3 = si.includes("Mobi") || xg || !1, G3 = !Q3 && !xg, nv = si.includes("Windows") ? "Windows" : si.includes("Macintosh") ? "Mac" : si.includes("iPad") || si.includes("iPhone") || si.includes("iPod") ? "iOS" : si.includes("Android") ? "Android" : void 0;
+nv === "Android" && si.includes("; wv") || nv === "iOS" && si.includes("Safari");
+const Z3 = j`@charset \"UTF-8\";[part~=wy-scroll-y]{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-y]:not(body){-webkit-overflow-scrolling:touch}[part~=wy-scroll-x]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]{overflow-y:auto;max-height:100%;overflow-x:hidden;overflow-anchor:none;touch-action:pan-y;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]:not(body){-webkit-overflow-scrolling:touch}[part~=wy-scroll-x-y]{overflow-x:auto;max-width:100%;overflow-y:hidden;overflow-anchor:none;touch-action:pan-x;will-change:scroll-position,opacity;backface-visibility:hidden}[part~=wy-scroll-x-y]{overflow-y:auto;overflow-x:auto;touch-action:pan-y pan-x}[part~=wy-scroll-x-always],[part~=wy-scroll-y-always]{overflow-y:scroll}[part~=wy-code] pre,.wy-code pre,[part~=wy-core-editor] .cm-content pre{text-wrap:pretty}[part~=wy-code] .code,[part~=wy-code] code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code .code,.wy-code code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content .code,[part~=wy-core-editor] .cm-content code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{color:var(--wy-code-text, var(--wy-code-text-light, #3b3b3b));font-family:var(--wy-font-monospace, ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace);text-align:start;white-space:pre-wrap;word-spacing:normal;word-break:normal;word-wrap:break-word;line-height:1.25;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}@media print{[part~=wy-code] code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{text-shadow:none}}[part~=wy-code] pre[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}[part~=wy-code] :not(pre)>code[class*=language-],[part~=wy-code] pre[class*=language-],.wy-code :not(pre)>code[class*=language-],.wy-code pre[class*=language-],[part~=wy-core-editor] .cm-content :not(pre)>code[class*=language-],[part~=wy-core-editor] .cm-content pre[class*=language-]{color:var(--wy-code-text, var(--wy-code-text-light, #3b3b3b));background:var(--wy-background, var(--wy-background-light, #f7f9ff))}[part~=wy-code] :not(pre)>code[class*=language-],.wy-code :not(pre)>code[class*=language-],[part~=wy-core-editor] .cm-content :not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}[part~=wy-code] .token.variable,.wy-code .token.variable,[part~=wy-core-editor] .cm-content .token.variable{color:var(--wy-code-variable, var(--wy-code-variable-light, #001080))}[part~=wy-code] .token.operator,.wy-code .token.operator,[part~=wy-core-editor] .cm-content .token.operator{color:var(--wy-code-operator, var(--wy-code-operator-light, #000000))}[part~=wy-code] .token.prolog,.wy-code .token.prolog,[part~=wy-core-editor] .cm-content .token.prolog{color:var(--wy-code-prolog, var(--wy-code-prolog-light, #000080))}[part~=wy-code] .token.comment,.wy-code .token.comment,[part~=wy-core-editor] .cm-content .token.comment{color:var(--wy-code-comment, var(--wy-code-comment-light, #008000))}[part~=wy-code] .token.builtin,.wy-code .token.builtin,[part~=wy-core-editor] .cm-content .token.builtin{color:var(--wy-code-builtin, var(--wy-code-builtin-light, #0070C1))}[part~=wy-code] .token.number,.wy-code .token.number,[part~=wy-core-editor] .cm-content .token.number{color:var(--wy-code-number, var(--wy-code-number-light, #098658))}[part~=wy-code] .token.inserted,.wy-code .token.inserted,[part~=wy-core-editor] .cm-content .token.inserted{color:var(--wy-code-inserted, var(--wy-code-inserted-light, #098658))}[part~=wy-code] .token.constant,.wy-code .token.constant,[part~=wy-core-editor] .cm-content .token.constant{color:var(--wy-code-constant, var(--wy-code-constant-light, #811F3F))}[part~=wy-code] .token.hexcode,.wy-code .token.hexcode,[part~=wy-core-editor] .cm-content .token.hexcode{color:var(--wy-code-hexcode, var(--wy-code-hexcode-light, #811F3F))}[part~=wy-code] .token.regex,.wy-code .token.regex,[part~=wy-core-editor] .cm-content .token.regex{color:var(--wy-code-regex, var(--wy-code-regex-light, #811F3F))}[part~=wy-code] .token.char,.wy-code .token.char,[part~=wy-core-editor] .cm-content .token.char{color:var(--wy-code-char, var(--wy-code-char-light, #811F3F))}[part~=wy-code] .token.tag,.wy-code .token.tag,[part~=wy-core-editor] .cm-content .token.tag{color:var(--wy-code-tag, var(--wy-code-tag-light, #800000))}[part~=wy-code] .token.attr-name,.wy-code .token.attr-name,[part~=wy-core-editor] .cm-content .token.attr-name{color:var(--wy-code-attr-name, var(--wy-code-attr-name-light, #E50000))}[part~=wy-code] .token.selector,.wy-code .token.selector,[part~=wy-core-editor] .cm-content .token.selector{color:var(--wy-code-selector, var(--wy-code-selector-light, #E50000))}[part~=wy-code] .token.property,.wy-code .token.property,[part~=wy-core-editor] .cm-content .token.property{color:var(--wy-code-property, var(--wy-code-property-light, #E50000))}[part~=wy-code] .token.deleted,.wy-code .token.deleted,[part~=wy-core-editor] .cm-content .token.deleted{color:var(--wy-code-deleted, var(--wy-code-deleted-light, #A31515))}[part~=wy-code] .token.string,.wy-code .token.string,[part~=wy-core-editor] .cm-content .token.string{color:var(--wy-code-string, var(--wy-code-string-light, #A31515))}[part~=wy-code] .token.changed,.wy-code .token.changed,[part~=wy-core-editor] .cm-content .token.changed{color:var(--wy-code-changed, var(--wy-code-changed-light, #0451A5))}[part~=wy-code] .token.punctuation,.wy-code .token.punctuation,[part~=wy-core-editor] .cm-content .token.punctuation{color:var(--wy-code-punctuation, var(--wy-code-punctuation-light, #000000))}[part~=wy-code] .token.function,.wy-code .token.function,[part~=wy-core-editor] .cm-content .token.function{color:var(--wy-code-function, var(--wy-code-function-light, #0000FF))}[part~=wy-code] .token.keyword,.wy-code .token.keyword,[part~=wy-core-editor] .cm-content .token.keyword{color:var(--wy-code-keyword, var(--wy-code-keyword-light, #AF00DB))}[part~=wy-code] .token.class-name,.wy-code .token.class-name,[part~=wy-core-editor] .cm-content .token.class-name{color:var(--wy-code-class-name, var(--wy-code-class-name-light, #267F99))}[part~=wy-code] .token.important,[part~=wy-code] .token.bold,.wy-code .token.important,.wy-code .token.bold,[part~=wy-core-editor] .cm-content .token.important,[part~=wy-core-editor] .cm-content .token.bold{font-weight:700}[part~=wy-code] .token.italic,.wy-code .token.italic,[part~=wy-core-editor] .cm-content .token.italic{font-style:italic}[part~=wy-core-editor]{box-sizing:border-box}[part~=wy-core-editor] .cm-scroller{font-family:unset;line-height:1.5}[part~=wy-core-editor] .cm-widgetBuffer{vertical-align:unset}[part~=wy-core-editor] .cm-placeholder{pointer-events:none;color:var(--wy-outline, var(--wy-outline-light, #72777f))}[part~=wy-core-editor] .cm-content{caret-color:var(--wy-on-background, var(--wy-on-background-light, #181c20))}[part~=wy-core-editor] .cm-content ::part(wy-link){text-decoration:var(--wy-link-decoration, none);color:var(--wy-link, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .wy-mention{font-weight:700}[part~=wy-core-editor] .cm-editor{box-sizing:border-box;flex-direction:column;position:relative!important;display:flex!important}[part~=wy-core-editor] .cm-editor.cm-focused{--wy-component-color: var(--wy-on-background, var(--wy-on-background-light, #181c20));color:var(--wy-component-color);border-color:var(--wy-primary, var(--wy-primary-light, #2f628c));outline:0}[part~=wy-core-editor] .cm-editor .cm-scroller{overflow:auto}[part~=wy-core-editor] .cm-editor .cm-line{display:block;padding:0px var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) 0px var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-core-editor] .cm-tooltip.cm-tooltip-autocomplete>ul{font-family:unset;max-height:calc(15 * var(--wy-size, 1rem))}[part~=wy-core-editor] .cm-tooltip.cm-tooltip-autocomplete>ul>li{padding:0}[part~=wy-core-editor] .cm-tooltip{border:none;background-clip:padding-box;background-color:var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));box-shadow:var(--wy-shadow-level1, 0 calc(.125 * var(--wy-size, 1rem)) calc(.125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.1875 * var(--wy-size, 1rem)) calc(.0625 * var(--wy-size, 1rem)) calc(-.125 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12));overflow:hidden;z-index:1000}[part~=wy-core-editor] .cm-tooltip-autocomplete ul li[aria-selected] wy-item{background:var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));color:unset}[part~=wy-core-editor] .cm-tooltip-autocomplete .cm-completionLabel{display:none}[part~=wy-core-editor] .cm-tooltip-autocomplete ::part(wy-item-interactive):hover,[part~=wy-core-editor] .cm-tooltip-autocomplete ::part(wy-item-interactive):focus{background:var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb))}`, Y3 = j`[part~=wy-core-editor]{flex:1 1 100%;display:flex;flex-direction:column}[part~=wy-core-editor-message]{margin-inline:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-core-editor] .cm-editor{flex:1 1 100%;max-height:11.25em;background-color:var(--wy-surface-container-lowest, var(--wy-surface-container-lowest-light, #ffffff));color:var(--wy-on-surface, var(--wy-on-surface-light, #181c20));border:var(--wy-input-border-width, var(--wy-border, 1px)) solid transparent;caret-color:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .cm-editor:focus{border-color:var(--wy-primary, var(--wy-primary-light, #2f628c))}[part~=wy-core-editor] .cm-editor .cm-content{font-family:var(--wy-input-font-family, var(--wy-font-family, inherit)),inherit;font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));padding:var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) var(--wy-input-padding-x, var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-core-editor-tooltips]{width:0;height:0;position:fixed;z-index:1000;border:none;padding:0;overflow:visible}[part~=wy-core-editor-tooltips]:not([popover]){display:block}[part~=wy-core-post-editor] .cm-editor{min-height:4em;border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-core-post-editor] .cm-editor .cm-line{padding:0}[part~=wy-core-editor-message] .cm-editor{border-radius:var(--wy-input-filled-border-radius, var(--wy-border-radius-lg, var(--wy-border-radius, calc(1.25 * var(--wy-size, 1rem)))));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)))}[part~=wy-core-editor-message] .cm-editor.cm-focused{border-color:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}[part~=wy-core-editor-message] .cm-editor .cm-content{font-size:var(--wy-input-font-size, var(--wy-font-size, 1em));min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 - var(--wy-input-border-width, var(--wy-border, 1px)));line-height:calc(1.5 * var(--wy-size, 1rem))}[part~=wy-core-editor-comment] .cm-editor{border-radius:calc(1.25 * var(--wy-size, 1rem));margin:calc(-1 * var(--wy-input-border-width, var(--wy-border, 1px)))}`;
+var X3 = Object.defineProperty, J3 = Object.getOwnPropertyDescriptor, Cg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$f"), vn = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? t$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? J3(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && J3(t, e, r), r;
-}, "__decorateClass$N"), $g = /* @__PURE__ */ s((n, t, e) => t.has(n) || Cg("Cannot " + e), "__accessCheck$f"), sv = /* @__PURE__ */ s((n, t, e) => ($g(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$f"), av = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Cg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$f"), e$ = /* @__PURE__ */ s((n, t, e, i) => ($g(n, t, "write to private field"), t.set(n, e), e), "__privateSet$b"), Oh, sw, jo;
-let Vi = (jo = class extends qt {
+  return i && r && X3(t, e, r), r;
+}, "__decorateClass$N"), $g = /* @__PURE__ */ s((n, t, e) => t.has(n) || Cg("Cannot " + e), "__accessCheck$f"), sv = /* @__PURE__ */ s((n, t, e) => ($g(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$f"), av = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Cg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$f"), t$ = /* @__PURE__ */ s((n, t, e, i) => ($g(n, t, "write to private field"), t.set(n, e), e), "__privateSet$b"), Oh, sw, jo;
+let Hi = (jo = class extends qt {
   constructor() {
     super(), this.exportParts = new W(this), this.disabled = !1, this.placeholder = "", this.text = "", this.typing = !0, this.editorType = "posts", this.showTooltips = !1, av(this, Oh), av(this, sw, new Promise((t) => {
-      e$(this, Oh, t);
+      t$(this, Oh, t);
     })), this.editorRef = J(), this.editorInitialized = !1, this.tooltipsRef = J(), this.throttledTyping = Gw(
       () => {
         const t = new CustomEvent("typing", {
@@ -19558,7 +19535,7 @@ let Vi = (jo = class extends qt {
     return await sv(this, sw);
   }
   willUpdate(t) {
-    super.willUpdate(t), (t.has("weavy") || t.has("app") || t.has("user")) && (t.get("weavy") || t.get("app") || t.get("user")) && this.weavy && this.app && this.user && this.clear(), t.has("text") && this.editor && this.editor.state.doc.toString() !== this.text && this.editor.dispatch({ changes: { from: 0, to: this.editor.state.doc.length, insert: this.text } });
+    super.willUpdate(t), !t.has("text") && (t.has("weavy") && t.get("weavy") !== this.weavy || t.has("app") && t.get("app")?.id !== this.app?.id || t.has("user") && t.get("user")?.id !== this.user?.id) && this.weavy && this.app && this.user && this.clear(), t.has("text") && this.editor && this.editor.state.doc.toString() !== this.text && this.editor.dispatch({ changes: { from: 0, to: this.editor.state.doc.length, insert: this.text } });
   }
   updated(t) {
     if ((t.has("weavy") || t.has("user")) && this.weavy && this.user && this.editorRef.value && this.tooltipsRef.value && this.weavy.whenUrl().then(() => {
@@ -19586,7 +19563,7 @@ let Vi = (jo = class extends qt {
           EditorState: S,
           Compartment: T
         }) => {
-          var V;
+          var H;
           this.editorInitialized || (this.editorInitialized = !0, this.editorEditable = new T(), this.editorPlaceholder = new T(), this.editorKeymap = new T(), this.EditorView = E, this.placeholderExtension = u, this.keymapFacet = b, this.keymaps = {
             weavyModifierEnterSendKeymap: [{ key: "Mod-Enter", run: /* @__PURE__ */ s(() => this.submit(), "run") }],
             weavyEnterSendKeymap: [{ key: "Enter", run: /* @__PURE__ */ s(() => this.submit(), "run") }],
@@ -19608,7 +19585,7 @@ let Vi = (jo = class extends qt {
             }),
             c({
               parent: this.tooltipsRef.value,
-              position: Hs() ? "fixed" : "absolute",
+              position: Vs() ? "fixed" : "absolute",
               tooltipSpace: /* @__PURE__ */ s((O) => {
                 this.showTooltips = !0;
                 try {
@@ -19681,7 +19658,7 @@ let Vi = (jo = class extends qt {
               extensions: this.editorExtensions
             }),
             parent: this.editorRef.value
-          }), (V = sv(this, Oh)) == null || V.call(this, this.editor)));
+          }), (H = sv(this, Oh)) == null || H.call(this, this.editor)));
         }
       );
     }), t.has("disabled") && this.editor && this.editorEditable && this.EditorView && this.editor.dispatch({
@@ -19731,7 +19708,7 @@ let Vi = (jo = class extends qt {
       return [];
     const { weavyKeymap: t, defaultKeymap: e, historyKeymap: i, weavyEnterSendKeymap: r, weavyModifierEnterSendKeymap: a } = this.keymaps;
     let o = this.settings?.enterToSend === "never" ? [] : [...a];
-    return ((!this.settings?.enterToSend || this.settings?.enterToSend === "auto") && this.editorType === "messages" && p3 || this.settings?.enterToSend === "always") && (o = [...r, ...o]), [...o, ...t, ...e, ...i];
+    return ((!this.settings?.enterToSend || this.settings?.enterToSend === "auto") && this.editorType === "messages" && G3 || this.settings?.enterToSend === "always") && (o = [...r, ...o]), [...o, ...t, ...e, ...i];
   }
   /**
    * Autocomplete handler for mentions. Returns completion results or null.
@@ -19847,8 +19824,8 @@ let Vi = (jo = class extends qt {
         <div
           ${Q(this.tooltipsRef)}
           part="wy-core-editor-tooltips"
-          ?hidden=${Hs() && !this.showTooltips}
-          popover=${ct(Hs() ? void 0 : "auto")}
+          ?hidden=${Vs() && !this.showTooltips}
+          popover=${ct(Vs() ? void 0 : "auto")}
         ></div>
       </div>
     `;
@@ -19856,37 +19833,37 @@ let Vi = (jo = class extends qt {
 }, s(jo, "WyEditorCore"), jo);
 Oh = /* @__PURE__ */ new WeakMap();
 sw = /* @__PURE__ */ new WeakMap();
-Vi.styles = [Lt, Y3, X3, Y];
+Hi.styles = [Lt, Z3, Y3, Y];
 vn([
-  p({ type: Boolean })
-], Vi.prototype, "disabled", 2);
+  y({ type: Boolean })
+], Hi.prototype, "disabled", 2);
 vn([
-  p()
-], Vi.prototype, "placeholder", 2);
+  y()
+], Hi.prototype, "placeholder", 2);
 vn([
-  p()
-], Vi.prototype, "text", 2);
+  y()
+], Hi.prototype, "text", 2);
 vn([
-  p({ type: Boolean })
-], Vi.prototype, "typing", 2);
+  y({ type: Boolean })
+], Hi.prototype, "typing", 2);
 vn([
-  p()
-], Vi.prototype, "editorType", 2);
+  y()
+], Hi.prototype, "editorType", 2);
 vn([
-  H()
-], Vi.prototype, "showTooltips", 2);
+  V()
+], Hi.prototype, "showTooltips", 2);
 vn([
-  H()
-], Vi.prototype, "editor", 2);
-Vi = vn([
+  V()
+], Hi.prototype, "editor", 2);
+Hi = vn([
   U("wy-editor-core")
-], Vi);
-var i$ = Object.defineProperty, r$ = Object.getOwnPropertyDescriptor, kg = /* @__PURE__ */ s((n) => {
+], Hi);
+var e$ = Object.defineProperty, i$ = Object.getOwnPropertyDescriptor, kg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$e"), ye = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? r$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? i$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && i$(t, e, r), r;
+  return i && r && e$(t, e, r), r;
 }, "__decorateClass$M"), _g = /* @__PURE__ */ s((n, t, e) => t.has(n) || kg("Cannot " + e), "__accessCheck$e"), ty = /* @__PURE__ */ s((n, t, e) => (_g(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$e"), ey = /* @__PURE__ */ s((n, t, e) => t.has(n) ? kg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$e"), ov = /* @__PURE__ */ s((n, t, e, i) => (_g(n, t, "write to private field"), t.set(n, e), e), "__privateSet$a"), zh, Fh, aw, Ko;
 let Tt = (Ko = class extends qt {
   constructor() {
@@ -19902,7 +19879,7 @@ let Tt = (Ko = class extends qt {
       { leading: !0, trailing: !0 }
     ), this.createMeeting = async (t) => {
       if (this.weavy && t.source === this.authWindow && this.weavy.url.origin === t.origin && t.data && t.data.name && t.data.name.endsWith("-authorized")) {
-        const e = t.data.name.slice(0, -11), r = await iv(this.weavy, e).mutate();
+        const e = t.data.name.slice(0, -11), r = await ev(this.weavy, e).mutate();
         r.auth_url || (this.meeting = r);
       }
     }, this.addEventListener("drop-files", (t) => this.handleDropFiles(t)), this.addEventListener("keydown", Xl), this.addEventListener("keyup", dr);
@@ -19946,10 +19923,10 @@ let Tt = (Ko = class extends qt {
    * @internal
    */
   async handleTyping() {
-    this.weavy && this.app && !ru.has(this.app.type) && await z3(this.weavy, this.app.id).mutate();
+    this.weavy && this.app && !ru.has(this.app.type) && await T3(this.weavy, this.app.id).mutate();
   }
   willUpdate(t) {
-    if (super.willUpdate(t), t.has("app") && (this.mutationAppId = void 0), (t.has("weavy") || t.has("app") || t.has("user") || t.has("parentId")) && this.weavy && this.app && this.user) {
+    if (super.willUpdate(t), t.has("app") && t.get("app")?.id !== this.app?.id && (this.mutationAppId = void 0), (t.has("weavy") && t.get("weavy") !== this.weavy || t.has("app") && t.get("app")?.id !== this.app?.id || t.has("user") && t.get("user")?.id !== this.user?.id || t.has("parentId")) && this.weavy && this.app && this.user) {
       if (this.mutationAppId = this.mutationAppId ?? this.app?.id ?? Date.now() * -1, this.draftKey = `draft-${this.editorType}-${this.parentId || this.mutationAppId}`, this.uploadBlobMutation.trackMutation(
         Ew(
           this.weavy,
@@ -19970,20 +19947,20 @@ let Tt = (Ko = class extends qt {
           }
         },
         this.weavy.queryClient
-      ), this.externalBlobMutation = gg(
+      ), this.externalBlobMutation = vg(
         this.weavy,
         this.user,
         this.mutationAppId,
         `${this.editorLocation}-${this.parentId || this.mutationAppId}`
-      ), this.draft && this.storage && (!this.hasChanged() || t.get("weavy") || t.get("app") || t.get("user") || t.get("parentId"))) {
+      ), console.log("chack draft", !this.hasChanged(), t), this.draft && this.storage && (!this.hasChanged() || t.get("weavy") || t.get("app") || t.get("user") || t.get("parentId"))) {
         const e = this.storage.getItem(this.draftKey);
         if (e) {
           const i = JSON.parse(e);
-          this.text = i.text ?? "", this.embeds = i.embeds, this.meeting = i.meeting, i.pollOptions?.length > 0 && (this.pollOptions = i.pollOptions), rv(this.embeds.map((r) => r.url).filter((r) => typeof r == "string"));
+          this.text = i.text ?? "", this.embeds = i.embeds, this.meeting = i.meeting, i.pollOptions?.length > 0 && (this.pollOptions = i.pollOptions), iv(this.embeds.map((r) => r.url).filter((r) => typeof r == "string"));
         } else
           this.clearEditor();
       }
-      this.embed && (this.embeds = [this.embed], rv(this.embeds.map((e) => e.url).filter((e) => typeof e == "string")));
+      this.embed && (this.embeds = [this.embed], iv(this.embeds.map((e) => e.url).filter((e) => typeof e == "string")));
     }
   }
   updated(t) {
@@ -20109,7 +20086,7 @@ let Tt = (Ko = class extends qt {
    */
   submit() {
     const t = this.mutatingFiles.result, e = t?.some((b) => b.status === "pending"), i = this.text.trim() ?? "", r = this.meeting?.id, a = t?.map((b) => b.data?.id).filter(ls), o = this.attachments?.map((b) => b.id) || [], c = this.pollOptions.filter((b) => b.text.trim() !== "");
-    if (V3() || e || !this.contextDataBlobs || !i && !r && a?.length == 0 && c.length == 0 && o.length == 0 && this.embeds.length == 0)
+    if (I3() || e || !this.contextDataBlobs || !i && !r && a?.length == 0 && c.length == 0 && o.length == 0 && this.embeds.length == 0)
       return;
     const l = this.contextDataBlobs.length ? this.contextDataBlobs : void 0, u = new CustomEvent("submit", {
       detail: { text: i, meetingId: r, blobs: a, attachments: o, pollOptions: c, embedId: this.embeds[0]?.id, contextData: l },
@@ -20146,7 +20123,7 @@ let Tt = (Ko = class extends qt {
    * @internal
    */
   clearEditor() {
-    this.text = "", this.meeting = void 0, this.pollOptions = [], this.embeds = [], this.metadata = {}, B3();
+    this.text = "", this.meeting = void 0, this.pollOptions = [], this.embeds = [], this.metadata = {}, V3();
   }
   /**
    * Checks if the editor has a dirty internal state (text, embeds, attachments, metadata).
@@ -20167,7 +20144,7 @@ let Tt = (Ko = class extends qt {
   async handleMeetingClick(t) {
     if (!this.weavy || !this.user)
       return;
-    const i = await iv(this.weavy, t).mutate();
+    const i = await ev(this.weavy, t).mutate();
     i.auth_url ? this.authWindow = window.open(i.auth_url, "oauthwin", "height=640,width=480") : this.meeting = i;
   }
   /**
@@ -20186,7 +20163,7 @@ let Tt = (Ko = class extends qt {
    * @param content - Text content to scan for embed links.
    */
   handleEmbeds(t) {
-    this.weavy && N3(t, this.setEmbeds.bind(this), this.weavy);
+    this.weavy && H3(t, this.setEmbeds.bind(this), this.weavy);
   }
   /**
    * Remove an embed by id from the editor embeds list and persist draft.
@@ -20496,67 +20473,67 @@ let Tt = (Ko = class extends qt {
 zh = /* @__PURE__ */ new WeakMap();
 Fh = /* @__PURE__ */ new WeakMap();
 aw = /* @__PURE__ */ new WeakMap();
-Tt.styles = [Lt, q3, jw, bg, mn];
+Tt.styles = [Lt, U3, jw, gg, mn];
 ye([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Tt.prototype, "disabled", 2);
 ye([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Tt.prototype, "parentId", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "placeholder", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "text", 2);
 ye([
-  p({ type: Object })
+  y({ type: Object })
 ], Tt.prototype, "metadata", 2);
 ye([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Tt.prototype, "embed", 2);
 ye([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Tt.prototype, "pollOptions", 2);
 ye([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Tt.prototype, "attachments", 2);
 ye([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Tt.prototype, "meeting", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "buttonText", 2);
 ye([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Tt.prototype, "typing", 2);
 ye([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Tt.prototype, "draft", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "editorType", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "editorClass", 2);
 ye([
-  p()
+  y()
 ], Tt.prototype, "editorLocation", 2);
 ye([
-  H()
+  V()
 ], Tt.prototype, "embeds", 1);
 ye([
-  H()
+  V()
 ], Tt.prototype, "draftKey", 2);
 ye([
-  H()
+  V()
 ], Tt.prototype, "mutationAppId", 2);
 Tt = ye([
   U("wy-editor-msg"),
   ut()
 ], Tt);
-var n$ = Object.getOwnPropertyDescriptor, s$ = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? n$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var r$ = Object.getOwnPropertyDescriptor, n$ = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? r$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = o(r) || r);
   return r;
 }, "__decorateClass$L"), Qo;
@@ -20662,17 +20639,17 @@ let yu = (Qo = class extends Tt {
     return [this.renderLists()];
   }
 }, s(Qo, "WyEditorComment"), Qo);
-yu.styles = [...Tt.styles, T3];
-yu = s$([
+yu.styles = [...Tt.styles, E3];
+yu = n$([
   U("wy-editor-comment"),
   ut()
 ], yu);
-var a$ = Object.defineProperty, o$ = Object.getOwnPropertyDescriptor, Pg = /* @__PURE__ */ s((n) => {
+var s$ = Object.defineProperty, a$ = Object.getOwnPropertyDescriptor, Pg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$d"), Cl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? o$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? a$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && a$(t, e, r), r;
+  return i && r && s$(t, e, r), r;
 }, "__decorateClass$K"), Sg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Pg("Cannot " + e), "__accessCheck$d"), Ph = /* @__PURE__ */ s((n, t, e) => (Sg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$d"), iy = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Pg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$d"), ry = /* @__PURE__ */ s((n, t, e, i) => (Sg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$9"), Ih, ow, Ss, Go;
 let yr = (Go = class extends qt {
   constructor() {
@@ -20681,14 +20658,14 @@ let yr = (Go = class extends qt {
     })), this.commentsQuery = new or(this), this.addCommentMutation = new Be(this), this.infiniteScroll = new cr(this), this.pagerRef = J(), iy(this, Ss), this.handleRealtimeCommentCreated = () => {
       this.weavy?.queryClient.invalidateQueries({ queryKey: [this.location, "comments", this.parentId] });
     }, this.handleRealtimeReactionAdded = (t) => {
-      !this.weavy || t.entity.type !== Dt.Comment || Ae(
+      !this.weavy || t.entity.type !== It.Comment || Ae(
         this.weavy.queryClient,
         [this.location, "comments", this.parentId],
         t.entity.id,
         (e) => rl(e, t.reaction, t.actor)
       );
     }, this.handleRealtimeReactionDeleted = (t) => {
-      !this.weavy || t.entity.type !== Dt.Comment || Ae(
+      !this.weavy || t.entity.type !== It.Comment || Ae(
         this.weavy.queryClient,
         [this.location, "comments", this.parentId],
         t.entity.id,
@@ -20706,7 +20683,7 @@ let yr = (Go = class extends qt {
   }
   async willUpdate(t) {
     var e, i;
-    if (super.willUpdate(t), t.has("parentId") && this.parentId && ((e = Ph(this, Ih)) == null || e.call(this, this.parentId)), (t.has("parentId") || t.has("weavy") || t.has("componentFeatures")) && this.parentId && this.weavy && (await this.commentsQuery.trackInfiniteQuery(C3(this.weavy, this.location, this.parentId)), await this.addCommentMutation.trackMutation(k3(this.weavy)), this.removeCommentMutation = P3(this.weavy, this.location, this.parentId), this.restoreCommentMutation = M3(this.weavy, this.location, this.parentId)), (t.has("weavy") || t.has("app") || t.has("componentFeatures") || t.has("parentId")) && this.weavy && this.app && this.parentId) {
+    if (super.willUpdate(t), t.has("parentId") && this.parentId && ((e = Ph(this, Ih)) == null || e.call(this, this.parentId)), (t.has("parentId") || t.has("weavy") || t.has("componentFeatures")) && this.parentId && this.weavy && (await this.commentsQuery.trackInfiniteQuery(g3(this.weavy, this.location, this.parentId)), await this.addCommentMutation.trackMutation(x3(this.weavy)), this.removeCommentMutation = $3(this.weavy, this.location, this.parentId), this.restoreCommentMutation = _3(this.weavy, this.location, this.parentId)), (t.has("weavy") || t.has("app") || t.has("componentFeatures") || t.has("parentId")) && this.weavy && this.app && this.parentId) {
       this.pollMutation = Ow(this.weavy, this.app.id, [this.location, "comments", this.parentId]), (i = Ph(this, Ss)) == null || i.call(this);
       const r = `a${this.app.id}`;
       this.weavy.subscribe(r, "comment_created", this.handleRealtimeCommentCreated), this.componentFeatures?.allowsFeature(k.Reactions) && (this.weavy.subscribe(r, "reaction_added", this.handleRealtimeReactionAdded), this.weavy.subscribe(r, "reaction_removed", this.handleRealtimeReactionDeleted)), ry(this, Ss, () => {
@@ -20798,7 +20775,7 @@ let yr = (Go = class extends qt {
               .parentId=${this.parentId}
               .typing=${!1}
               .draft=${!0}
-              ?disabled=${!Wn([de.Create, de.Admin], this.app?.permissions)}
+              ?disabled=${!Wn([le.Create, le.Admin], this.app?.permissions)}
               placeholder=${this.placeholder ?? x("Create a comment...")}
               buttonText=${x("Comment", { desc: "Button action to comment" })}
               @submit=${(a) => this.handleSubmit(a)}
@@ -20816,19 +20793,19 @@ ow = /* @__PURE__ */ new WeakMap();
 Ss = /* @__PURE__ */ new WeakMap();
 yr.styles = [Qw, Pr];
 Cl([
-  p({ type: Number })
+  y({ type: Number })
 ], yr.prototype, "parentId", 2);
 Cl([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], yr.prototype, "location", 2);
 Cl([
-  p()
+  y()
 ], yr.prototype, "placeholder", 2);
 Cl([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], yr.prototype, "reveal", 2);
 Cl([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], yr.prototype, "padded", 2);
 yr = Cl([
   U("wy-comment-list"),
@@ -20838,7 +20815,7 @@ function Zw(n, t) {
   return ["apps", n.id, "file", t.id, "versions"];
 }
 s(Zw, "getFileVersionsKey");
-function c$(n, t, e) {
+function o$(n, t, e) {
   const i = n.queryClient, r = ["apps", t.id, "files"], a = Zw(t, e), o = {
     mutationKey: r,
     mutationFn: /* @__PURE__ */ s(async ({ versionFile: c }) => {
@@ -20882,12 +20859,12 @@ function c$(n, t, e) {
   };
   return o;
 }
-s(c$, "getFileVersionRestoreMutationOptions");
-function l$(n, t, e) {
-  return new St(n.queryClient, c$(n, t, e));
+s(o$, "getFileVersionRestoreMutationOptions");
+function c$(n, t, e) {
+  return new St(n.queryClient, o$(n, t, e));
 }
-s(l$, "getFileVersionRestoreMutation");
-function d$(n, t, e) {
+s(c$, "getFileVersionRestoreMutation");
+function l$(n, t, e) {
   const i = n.queryClient, r = Zw(t, e);
   return {
     mutationKey: r,
@@ -20929,15 +20906,15 @@ function d$(n, t, e) {
     }, "onError")
   };
 }
-s(d$, "getFileVersionDeleteMutationOptions");
-function h$(n, t, e) {
-  return new St(n.queryClient, d$(n, t, e));
+s(l$, "getFileVersionDeleteMutationOptions");
+function d$(n, t, e) {
+  return new St(n.queryClient, l$(n, t, e));
 }
-s(h$, "getFileVersionDeleteMutation");
-var u$ = Object.defineProperty, p$ = Object.getOwnPropertyDescriptor, Yw = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? p$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+s(d$, "getFileVersionDeleteMutation");
+var h$ = Object.defineProperty, u$ = Object.getOwnPropertyDescriptor, Yw = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? u$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && u$(t, e, r), r;
+  return i && r && h$(t, e, r), r;
 }, "__decorateClass$J"), Zo;
 let wd = (Zo = class extends qt {
   constructor() {
@@ -20998,7 +20975,7 @@ let wd = (Zo = class extends qt {
         Zw(this.app, this.file),
         `/api/files/${this.file.id}/versions`
       )
-    ), this.fileVersionRestoreMutation = l$(this.weavy, this.app, this.file), this.fileVersionDeleteMutation = h$(this.weavy, this.app, this.file));
+    ), this.fileVersionRestoreMutation = c$(this.weavy, this.app, this.file), this.fileVersionDeleteMutation = d$(this.weavy, this.app, this.file));
   }
   render() {
     const { data: t, isPending: e } = this.fileVersionsQuery.result ?? { isPending: !0 };
@@ -21068,16 +21045,16 @@ let wd = (Zo = class extends qt {
   }
 }, s(Zo, "WyFileVersions"), Zo);
 Yw([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], wd.prototype, "file", 2);
 Yw([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], wd.prototype, "activeVersion", 2);
 wd = Yw([
   U("wy-file-versions"),
   ut()
 ], wd);
-function y$(n, t) {
+function p$(n, t) {
   const e = n.queryClient;
   return {
     mutationKey: ["users", t, "follow"],
@@ -21106,16 +21083,16 @@ function y$(n, t) {
     }, "onError")
   };
 }
-s(y$, "getUserFollowMutationOptions");
-function w$(n) {
+s(p$, "getUserFollowMutationOptions");
+function y$(n) {
   return n instanceof CustomEvent && typeof n.detail.action == "string";
 }
-s(w$, "isActionEvent");
-const f$ = j`:host{--_track-height: 4px;--_track-shape: 2px;--_active-indicator-height: 2px;--_active-indicator-color: var(--wy-primary, var(--wy-primary-light, #2f628c));--_warning-color: var(--wy-warning, var(--wy-warning-light, #adb140));--_error-color: var(--wy-error, var(--wy-error-light, #ba1821));--_track-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));display:contents;position:relative}[part~=wy-progress-linear]{border-radius:var(--_track-shape);position:relative;min-width:80px;height:var(--_track-height);content-visibility:auto;contain:strict;flex:1 0 auto;direction:ltr;inset:0;border-radius:inherit;overflow:hidden;display:flex;align-items:center}[part~=wy-progress-linear][part~=wy-progress-padded]{margin:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-inactive-track],[part~=wy-bar],[part~=wy-bar-inner]{position:absolute}[part~=wy-bar]{animation:none;width:100%;height:var(--_active-indicator-height);transform-origin:left center;transition:transform .25s cubic-bezier(.4,0,.6,1)}[part~=wy-secondary-bar]{display:none}[part~=wy-bar-inner]{inset:0;animation:none;background:var(--_active-indicator-color)}[part~=wy-inactive-track]{background:var(--_track-color);inset:0;transition:transform .25s cubic-bezier(.4,0,.6,1);transform-origin:left center}[part~=wy-progress-indeterminate] [part~=wy-bar]{transition:none}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]{inset-inline-start:-145.167%}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]{inset-inline-start:-54.8889%;display:block}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]{animation:linear infinite 2s;animation-name:primary-indeterminate-translate}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]>[part~=wy-bar-inner]{animation:linear infinite 2s primary-indeterminate-scale}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]{animation:linear infinite 2s;animation-name:secondary-indeterminate-translate}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]>[part~=wy-bar-inner]{animation:linear infinite 2s secondary-indeterminate-scale}@keyframes primary-indeterminate-scale{0%{transform:scaleX(.08)}36.65%{animation-timing-function:cubic-bezier(.334731,.12482,.785844,1);transform:scaleX(.08)}69.15%{animation-timing-function:cubic-bezier(.06,.11,.6,1);transform:scaleX(.661479)}to{transform:scaleX(.08)}}@keyframes secondary-indeterminate-scale{0%{animation-timing-function:cubic-bezier(.205028,.057051,.57661,.453971);transform:scaleX(.08)}19.15%{animation-timing-function:cubic-bezier(.152313,.196432,.648374,1.00432);transform:scaleX(.457104)}44.15%{animation-timing-function:cubic-bezier(.257759,-.003163,.211762,1.38179);transform:scaleX(.72796)}to{transform:scaleX(.08)}}@keyframes primary-indeterminate-translate{0%{transform:translate(0)}20%{animation-timing-function:cubic-bezier(.5,0,.701732,.495819);transform:translate(0)}59.15%{animation-timing-function:cubic-bezier(.302435,.381352,.55,.956352);transform:translate(83.6714%)}to{transform:translate(200.611%)}}@keyframes secondary-indeterminate-translate{0%{animation-timing-function:cubic-bezier(.15,0,.515058,.409685);transform:translate(0)}25%{animation-timing-function:cubic-bezier(.31033,.284058,.8,.733712);transform:translate(37.6519%)}48.35%{animation-timing-function:cubic-bezier(.4,.627035,.6,.902026);transform:translate(84.3862%)}to{transform:translate(160.278%)}}[part~=wy-progress-warning] [part~=wy-primary-bar],[part~=wy-progress-warning] [part~=wy-secondary-bar],[part~=wy-progress-warning] [part~=wy-bar-inner],[part~=wy-progress-error] [part~=wy-primary-bar],[part~=wy-progress-error] [part~=wy-secondary-bar],[part~=wy-progress-error] [part~=wy-bar-inner]{animation:none!important}[part~=wy-progress-warning] [part~=wy-secondary-bar],[part~=wy-progress-error] [part~=wy-secondary-bar]{display:none!important}[part~=wy-progress-warning] [part~=wy-primary-bar],[part~=wy-progress-error] [part~=wy-primary-bar]{transform:scaleX(1)!important}[part~=wy-progress-warning] [part~=wy-bar-inner]{background:var(--_warning-color)}[part~=wy-progress-error] [part~=wy-bar-inner]{background:var(--_error-color)}`;
-var m$ = Object.defineProperty, v$ = Object.getOwnPropertyDescriptor, Er = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? v$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+s(y$, "isActionEvent");
+const w$ = j`:host{--_track-height: 4px;--_track-shape: 2px;--_active-indicator-height: 2px;--_active-indicator-color: var(--wy-primary, var(--wy-primary-light, #2f628c));--_warning-color: var(--wy-warning, var(--wy-warning-light, #adb140));--_error-color: var(--wy-error, var(--wy-error-light, #ba1821));--_track-color: var(--wy-surface-variant, var(--wy-surface-variant-light, #dee3eb));display:contents;position:relative}[part~=wy-progress-linear]{border-radius:var(--_track-shape);position:relative;min-width:80px;height:var(--_track-height);content-visibility:auto;contain:strict;flex:1 0 auto;direction:ltr;inset:0;border-radius:inherit;overflow:hidden;display:flex;align-items:center}[part~=wy-progress-linear][part~=wy-progress-padded]{margin:calc(1 * var(--wy-size, 1rem)) calc(2 * var(--wy-size, 1rem))}[part~=wy-inactive-track],[part~=wy-bar],[part~=wy-bar-inner]{position:absolute}[part~=wy-bar]{animation:none;width:100%;height:var(--_active-indicator-height);transform-origin:left center;transition:transform .25s cubic-bezier(.4,0,.6,1)}[part~=wy-secondary-bar]{display:none}[part~=wy-bar-inner]{inset:0;animation:none;background:var(--_active-indicator-color)}[part~=wy-inactive-track]{background:var(--_track-color);inset:0;transition:transform .25s cubic-bezier(.4,0,.6,1);transform-origin:left center}[part~=wy-progress-indeterminate] [part~=wy-bar]{transition:none}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]{inset-inline-start:-145.167%}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]{inset-inline-start:-54.8889%;display:block}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]{animation:linear infinite 2s;animation-name:primary-indeterminate-translate}[part~=wy-progress-indeterminate] [part~=wy-primary-bar]>[part~=wy-bar-inner]{animation:linear infinite 2s primary-indeterminate-scale}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]{animation:linear infinite 2s;animation-name:secondary-indeterminate-translate}[part~=wy-progress-indeterminate] [part~=wy-secondary-bar]>[part~=wy-bar-inner]{animation:linear infinite 2s secondary-indeterminate-scale}@keyframes primary-indeterminate-scale{0%{transform:scaleX(.08)}36.65%{animation-timing-function:cubic-bezier(.334731,.12482,.785844,1);transform:scaleX(.08)}69.15%{animation-timing-function:cubic-bezier(.06,.11,.6,1);transform:scaleX(.661479)}to{transform:scaleX(.08)}}@keyframes secondary-indeterminate-scale{0%{animation-timing-function:cubic-bezier(.205028,.057051,.57661,.453971);transform:scaleX(.08)}19.15%{animation-timing-function:cubic-bezier(.152313,.196432,.648374,1.00432);transform:scaleX(.457104)}44.15%{animation-timing-function:cubic-bezier(.257759,-.003163,.211762,1.38179);transform:scaleX(.72796)}to{transform:scaleX(.08)}}@keyframes primary-indeterminate-translate{0%{transform:translate(0)}20%{animation-timing-function:cubic-bezier(.5,0,.701732,.495819);transform:translate(0)}59.15%{animation-timing-function:cubic-bezier(.302435,.381352,.55,.956352);transform:translate(83.6714%)}to{transform:translate(200.611%)}}@keyframes secondary-indeterminate-translate{0%{animation-timing-function:cubic-bezier(.15,0,.515058,.409685);transform:translate(0)}25%{animation-timing-function:cubic-bezier(.31033,.284058,.8,.733712);transform:translate(37.6519%)}48.35%{animation-timing-function:cubic-bezier(.4,.627035,.6,.902026);transform:translate(84.3862%)}to{transform:translate(160.278%)}}[part~=wy-progress-warning] [part~=wy-primary-bar],[part~=wy-progress-warning] [part~=wy-secondary-bar],[part~=wy-progress-warning] [part~=wy-bar-inner],[part~=wy-progress-error] [part~=wy-primary-bar],[part~=wy-progress-error] [part~=wy-secondary-bar],[part~=wy-progress-error] [part~=wy-bar-inner]{animation:none!important}[part~=wy-progress-warning] [part~=wy-secondary-bar],[part~=wy-progress-error] [part~=wy-secondary-bar]{display:none!important}[part~=wy-progress-warning] [part~=wy-primary-bar],[part~=wy-progress-error] [part~=wy-primary-bar]{transform:scaleX(1)!important}[part~=wy-progress-warning] [part~=wy-bar-inner]{background:var(--_warning-color)}[part~=wy-progress-error] [part~=wy-bar-inner]{background:var(--_error-color)}`;
+var f$ = Object.defineProperty, m$ = Object.getOwnPropertyDescriptor, Er = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? m$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && m$(t, e, r), r;
+  return i && r && f$(t, e, r), r;
 }, "__decorateClass$I"), Yo;
 let oi = (Yo = class extends st {
   constructor() {
@@ -21160,45 +21137,45 @@ let oi = (Yo = class extends st {
     `;
   }
 }, s(Yo, "WyProgressLinear"), Yo);
-oi.styles = [Lt, I1, f$];
+oi.styles = [Lt, I1, w$];
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "padded", 2);
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "overlay", 2);
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "reveal", 2);
 Er([
-  p({ type: Number })
+  y({ type: Number })
 ], oi.prototype, "value", 2);
 Er([
-  p({ type: Number })
+  y({ type: Number })
 ], oi.prototype, "max", 2);
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "indeterminate", 2);
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "warning", 2);
 Er([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], oi.prototype, "error", 2);
 oi = Er([
   U("wy-progress-linear")
 ], oi);
-var g$ = Object.defineProperty, b$ = Object.getOwnPropertyDescriptor, Mg = /* @__PURE__ */ s((n) => {
+var v$ = Object.defineProperty, g$ = Object.getOwnPropertyDescriptor, Mg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$c"), ch = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? b$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? g$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && g$(t, e, r), r;
-}, "__decorateClass$H"), x$ = /* @__PURE__ */ s((n, t, e) => t.has(n) || Mg("Cannot " + e), "__accessCheck$c"), Sh = /* @__PURE__ */ s((n, t, e) => (x$(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$c"), cv = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Mg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$c"), Dh, Hh, Xo;
+  return i && r && v$(t, e, r), r;
+}, "__decorateClass$H"), b$ = /* @__PURE__ */ s((n, t, e) => t.has(n) || Mg("Cannot " + e), "__accessCheck$c"), Sh = /* @__PURE__ */ s((n, t, e) => (b$(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$c"), cv = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Mg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$c"), Dh, Vh, Xo;
 let nn = (Xo = class extends lr {
   constructor() {
-    super(...arguments), this.exportParts = new W(this), cv(this, Dh, new Be(this)), cv(this, Hh, new ge(this)), this.show = !1, this.handleUserAction = (t) => {
-      w$(t) && !t.defaultPrevented && t.detail.user && t.detail.action === ve.Preview && (t.preventDefault(), this.uid = t.detail.user.id, this.profile = t.detail.user, this.show = !0);
+    super(...arguments), this.exportParts = new W(this), cv(this, Dh, new Be(this)), cv(this, Vh, new ge(this)), this.show = !1, this.handleUserAction = (t) => {
+      y$(t) && !t.defaultPrevented && t.detail.user && t.detail.action === ve.Preview && (t.preventDefault(), this.uid = t.detail.user.id, this.profile = t.detail.user, this.show = !0);
     };
   }
   /**
@@ -21216,14 +21193,14 @@ let nn = (Xo = class extends lr {
       }
       this.listenTo.addEventListener("wy-action", this.handleUserAction);
     }
-    t.has("profile") && this.profile && (this.uid ??= this.profile.id), (t.has("weavy") || t.has("uid") || t.has("show")) && this.weavy && this.uid && this.show && await Sh(this, Hh).trackQuery(
+    t.has("profile") && this.profile && (this.uid ??= this.profile.id), (t.has("weavy") || t.has("uid") || t.has("show")) && this.weavy && this.uid && this.show && await Sh(this, Vh).trackQuery(
       ar(this.weavy, ["users", this.uid], void 0, {
         initialData: this.profile
       })
-    ), (t.has("weavy") || t.has("uid")) && this.weavy && this.uid && await Sh(this, Dh).trackMutation(y$(this.weavy, this.uid));
+    ), (t.has("weavy") || t.has("uid")) && this.weavy && this.uid && await Sh(this, Dh).trackMutation(p$(this.weavy, this.uid));
   }
   render() {
-    const { data: t, isPending: e } = Sh(this, Hh).result;
+    const { data: t, isPending: e } = Sh(this, Vh).result;
     return h`
       <slot
         name="toggle"
@@ -21282,32 +21259,32 @@ let nn = (Xo = class extends lr {
   }
 }, s(Xo, "WyUserCard"), Xo);
 Dh = /* @__PURE__ */ new WeakMap();
-Hh = /* @__PURE__ */ new WeakMap();
+Vh = /* @__PURE__ */ new WeakMap();
 nn.styles = [Y];
 ch([
-  p({
+  y({
     converter: Pu
   })
 ], nn.prototype, "uid", 2);
 ch([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], nn.prototype, "profile", 2);
 ch([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], nn.prototype, "show", 2);
 ch([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], nn.prototype, "listenTo", 2);
 nn = ch([
   U("wy-user-card"),
   ut()
 ], nn);
-var C$ = Object.defineProperty, $$ = Object.getOwnPropertyDescriptor, we = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? $$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var x$ = Object.defineProperty, C$ = Object.getOwnPropertyDescriptor, we = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? C$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && C$(t, e, r), r;
+  return i && r && x$(t, e, r), r;
 }, "__decorateClass$G"), Jo;
-let Kt = (Jo = class extends qt {
+let jt = (Jo = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.currentId = NaN, this.isAttachment = !1, this.filled = !1, this.showOverlay = !1, this.commentsOpen = !1, this.versionsOpen = !1, this.sidePanelMaximized = !1, this.persistState = new Nn(this), this.swipeScroller = new Ky(this), this.previewFileRef = J(), this.nextRef = J(), this.prevRef = J(), this.loadingQueue = [], this.disableSwipeScroll = !1, this.resizeObserver = new ResizeObserver(() => {
       this.blockSwipeScroll();
@@ -21685,71 +21662,71 @@ let Kt = (Jo = class extends qt {
     t.has("swipeScrollElement") && t.get("swipeScrollElement") !== this.swipeScrollElement && this.registerSwipeScroller(), !this.disableSwipeScroll && this.swipeScroller.swipeElement === this.swipeScrollElement ? this.swipeScroller.observe(this.prevRef.value, this.nextRef.value) : this.swipeScroller.clearObserver();
   }
 }, s(Jo, "WyPreview"), Jo);
-Kt.styles = [jC, KC, hs, us, wl, Qt];
+jt.styles = [jC, KC, hs, us, wl, Kt];
 we([
-  p({ attribute: !1 })
-], Kt.prototype, "files", 2);
+  y({ attribute: !1 })
+], jt.prototype, "files", 2);
 we([
-  p({ attribute: !1 })
-], Kt.prototype, "queryResult", 2);
+  y({ attribute: !1 })
+], jt.prototype, "queryResult", 2);
 we([
-  p({ attribute: !1 })
-], Kt.prototype, "infiniteQueryResult", 2);
+  y({ attribute: !1 })
+], jt.prototype, "infiniteQueryResult", 2);
 we([
-  p({ type: Object })
-], Kt.prototype, "user", 2);
+  y({ type: Object })
+], jt.prototype, "user", 2);
 we([
-  p({ type: Number })
-], Kt.prototype, "currentId", 2);
+  y({ type: Number })
+], jt.prototype, "currentId", 2);
 we([
-  p({ type: Boolean })
-], Kt.prototype, "isAttachment", 2);
+  y({ type: Boolean })
+], jt.prototype, "isAttachment", 2);
 we([
-  p({ type: Boolean })
-], Kt.prototype, "filled", 2);
+  y({ type: Boolean })
+], jt.prototype, "filled", 2);
 we([
-  H()
-], Kt.prototype, "currentFile", 2);
+  V()
+], jt.prototype, "currentFile", 2);
 we([
-  H()
-], Kt.prototype, "currentVersionFile", 2);
+  V()
+], jt.prototype, "currentVersionFile", 2);
 we([
-  H()
-], Kt.prototype, "previousFile", 2);
+  V()
+], jt.prototype, "previousFile", 2);
 we([
-  H()
-], Kt.prototype, "nextFile", 2);
+  V()
+], jt.prototype, "nextFile", 2);
 we([
-  H()
-], Kt.prototype, "showOverlay", 2);
+  V()
+], jt.prototype, "showOverlay", 2);
 we([
-  H()
-], Kt.prototype, "commentsOpen", 2);
+  V()
+], jt.prototype, "commentsOpen", 2);
 we([
-  H()
-], Kt.prototype, "versionsOpen", 2);
+  V()
+], jt.prototype, "versionsOpen", 2);
 we([
-  H()
-], Kt.prototype, "sidePanelMaximized", 2);
+  V()
+], jt.prototype, "sidePanelMaximized", 2);
 we([
-  H()
-], Kt.prototype, "swipeScrollElement", 2);
+  V()
+], jt.prototype, "swipeScrollElement", 2);
 we([
-  H()
-], Kt.prototype, "loadingQueue", 2);
+  V()
+], jt.prototype, "loadingQueue", 2);
 we([
-  H()
-], Kt.prototype, "disableSwipeScroll", 2);
-Kt = we([
+  V()
+], jt.prototype, "disableSwipeScroll", 2);
+jt = we([
   U("wy-preview"),
   ut()
-], Kt);
-var k$ = Object.defineProperty, _$ = Object.getOwnPropertyDescriptor, Le = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? _$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+], jt);
+var $$ = Object.defineProperty, k$ = Object.getOwnPropertyDescriptor, Le = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? k$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && k$(t, e, r), r;
+  return i && r && $$(t, e, r), r;
 }, "__decorateClass$F"), tc;
-let pe = (tc = class extends qt {
+let ue = (tc = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.isPrivateChat = !1, this.createdAt = "", this.html = "", this.text = "", this.annotations = [], this.attachments = [], this.pollOptions = [], this.reactions = [], this.seenBy = [], this.highlight = !1, this.previewAnnotationsRef = J(), this.previewAttachmentsRef = J(), this.highlightRef = J(), this.dispatchUserAction = qw.bind(this);
   }
@@ -21773,7 +21750,7 @@ let pe = (tc = class extends qt {
     return this.dispatchEvent(e);
   }
   willUpdate(t) {
-    super.willUpdate(t), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, Dt.Message, { id: this.messageId })));
+    super.willUpdate(t), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, It.Message, { id: this.messageId })));
   }
   render() {
     const t = this.attachments?.filter((o) => o.kind === "image" && o.thumbnail_url) || [], e = this.attachments?.filter((o) => o.kind !== "image" || !o.thumbnail_url) || [], i = this.createdAt ? new Intl.DateTimeFormat(this.weavy?.locale, { dateStyle: "full", timeStyle: "short" }).format(
@@ -21924,63 +21901,63 @@ let pe = (tc = class extends qt {
     t.has("highlight") && this.highlight && this.highlightRef.value?.scrollIntoView({ block: "nearest" });
   }
 }, s(tc, "WyMessage"), tc);
-pe.styles = [Lt, Ru, Ww, Y];
+ue.styles = [Lt, Ru, Ww, Y];
 Le([
-  p({ attribute: !1, type: Object })
-], pe.prototype, "conversation", 2);
+  y({ attribute: !1, type: Object })
+], ue.prototype, "conversation", 2);
 Le([
-  p({ type: Number })
-], pe.prototype, "messageId", 2);
+  y({ type: Number })
+], ue.prototype, "messageId", 2);
 Le([
-  p({ type: Object })
-], pe.prototype, "author", 2);
+  y({ type: Object })
+], ue.prototype, "author", 2);
 Le([
-  p({ type: Boolean })
-], pe.prototype, "isPrivateChat", 2);
+  y({ type: Boolean })
+], ue.prototype, "isPrivateChat", 2);
 Le([
-  p()
-], pe.prototype, "createdAt", 2);
+  y()
+], ue.prototype, "createdAt", 2);
 Le([
-  p()
-], pe.prototype, "html", 2);
+  y()
+], ue.prototype, "html", 2);
 Le([
-  p()
-], pe.prototype, "text", 2);
+  y()
+], ue.prototype, "text", 2);
 Le([
-  p({ type: Array })
-], pe.prototype, "annotations", 2);
+  y({ type: Array })
+], ue.prototype, "annotations", 2);
 Le([
-  p({ type: Array })
-], pe.prototype, "attachments", 2);
+  y({ type: Array })
+], ue.prototype, "attachments", 2);
 Le([
-  p({ attribute: !1 })
-], pe.prototype, "meeting", 2);
+  y({ attribute: !1 })
+], ue.prototype, "meeting", 2);
 Le([
-  p({ type: Array })
-], pe.prototype, "pollOptions", 2);
+  y({ type: Array })
+], ue.prototype, "pollOptions", 2);
 Le([
-  p({ attribute: !1 })
-], pe.prototype, "embed", 2);
+  y({ attribute: !1 })
+], ue.prototype, "embed", 2);
 Le([
-  p({ type: Array })
-], pe.prototype, "reactions", 2);
+  y({ type: Array })
+], ue.prototype, "reactions", 2);
 Le([
-  p({ type: Array })
-], pe.prototype, "seenBy", 2);
+  y({ type: Array })
+], ue.prototype, "seenBy", 2);
 Le([
-  p({ type: Boolean })
-], pe.prototype, "highlight", 2);
-pe = Le([
+  y({ type: Boolean })
+], ue.prototype, "highlight", 2);
+ue = Le([
   U("wy-message"),
   ut()
-], pe);
-var P$ = Object.defineProperty, S$ = Object.getOwnPropertyDescriptor, Eg = /* @__PURE__ */ s((n) => {
+], ue);
+var _$ = Object.defineProperty, P$ = Object.getOwnPropertyDescriptor, Eg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$b"), li = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? S$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? P$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && P$(t, e, r), r;
-}, "__decorateClass$E"), Ag = /* @__PURE__ */ s((n, t, e) => t.has(n) || Eg("Cannot " + e), "__accessCheck$b"), lv = /* @__PURE__ */ s((n, t, e) => (Ag(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$b"), M$ = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Eg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$b"), dv = /* @__PURE__ */ s((n, t, e, i) => (Ag(n, t, "write to private field"), t.set(n, e), e), "__privateSet$8"), Ms, ec;
+  return i && r && _$(t, e, r), r;
+}, "__decorateClass$E"), Ag = /* @__PURE__ */ s((n, t, e) => t.has(n) || Eg("Cannot " + e), "__accessCheck$b"), lv = /* @__PURE__ */ s((n, t, e) => (Ag(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$b"), S$ = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Eg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$b"), dv = /* @__PURE__ */ s((n, t, e, i) => (Ag(n, t, "write to private field"), t.set(n, e), e), "__privateSet$8"), Ms, ec;
 let ze = (ec = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.header = !1, this.lastReadMessagePosition = "below", this.showNewMessages = !1, this.isCreatingConversation = !1, this.showReadReceipts = !1, this.messagesQuery = new or(this), this.membersQuery = new ge(this), this.addMessageMutation = new Be(this), this.infiniteScroll = new Wy(this), this.pagerRef = J(), this.bottomRef = J(), this.editorRef = J(), this.shouldBeAtBottom = !0, this.isTyping = !1, this.handleRealtimeMessage = async (t) => {
@@ -22033,7 +22010,7 @@ let ze = (ec = class extends qt {
       );
     }, this.markAsReadHandler = () => {
       !document.hidden && this.isAtBottom && this.markAsRead();
-    }, M$(this, Ms);
+    }, S$(this, Ms);
   }
   isPrivateChat(t) {
     return (t ?? this.conversation)?.type === rt.PrivateChat;
@@ -22350,7 +22327,7 @@ let ze = (ec = class extends qt {
           ${Q(this.editorRef)}
           .draft=${!0}
           placeholder=${this.placeholder ?? x("Type a message...")}
-          ?disabled=${this.conversation && !Wn([de.Create, de.Admin], this.conversation?.permissions)}
+          ?disabled=${this.conversation && !Wn([le.Create, le.Admin], this.conversation?.permissions)}
           @submit=${(t) => this.handleSubmit(t)}
           @edit-last=${(t) => {
     }}
@@ -22394,55 +22371,55 @@ ze.styles = [
 ];
 li([
   Bi({ context: Jd }),
-  p({ attribute: !1, type: Object })
+  y({ attribute: !1, type: Object })
 ], ze.prototype, "conversation", 2);
 li([
-  p({ type: Number })
+  y({ type: Number })
 ], ze.prototype, "conversationId", 2);
 li([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], ze.prototype, "editMessage", 2);
 li([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ze.prototype, "header", 2);
 li([
-  p()
+  y()
 ], ze.prototype, "agentInstructions", 2);
 li([
-  p()
+  y()
 ], ze.prototype, "placeholder", 2);
 li([
-  H()
+  V()
 ], ze.prototype, "lastReadMessagePosition", 2);
 li([
-  H()
+  V()
 ], ze.prototype, "lastReadMessageId", 2);
 li([
-  H()
+  V()
 ], ze.prototype, "showNewMessages", 2);
 li([
-  H()
+  V()
 ], ze.prototype, "isCreatingConversation", 2);
 li([
-  H()
+  V()
 ], ze.prototype, "showReadReceipts", 2);
 ze = li([
   U("wy-conversation"),
   ut()
 ], ze);
-var E$ = Object.getOwnPropertyDescriptor, Rg = /* @__PURE__ */ s((n) => {
+var M$ = Object.getOwnPropertyDescriptor, Rg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
-}, "__typeError$a"), A$ = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? E$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+}, "__typeError$a"), E$ = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? M$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = o(r) || r);
   return r;
-}, "__decorateClass$D"), R$ = /* @__PURE__ */ s((n, t, e) => t.has(n) || Rg("Cannot " + e), "__accessCheck$a"), hv = /* @__PURE__ */ s((n, t, e) => (R$(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$a"), T$ = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Rg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$a"), Vh, ic;
+}, "__decorateClass$D"), A$ = /* @__PURE__ */ s((n, t, e) => t.has(n) || Rg("Cannot " + e), "__accessCheck$a"), hv = /* @__PURE__ */ s((n, t, e) => (A$(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$a"), R$ = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Rg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$a"), Hh, ic;
 let wu = (ic = class extends qt {
   constructor() {
-    super(...arguments), this.exportParts = new W(this), T$(this, Vh, new Wc(this));
+    super(...arguments), this.exportParts = new W(this), R$(this, Hh, new Wc(this));
   }
   async willUpdate(t) {
-    super.willUpdate(t), (t.has("weavy") || t.has("contextId") || t.has("componentFeatures")) && this.weavy && this.contextId && this.componentFeatures?.allowsFeature(k.ContextData) && await hv(this, Vh).trackMutationState(
+    super.willUpdate(t), (t.has("weavy") || t.has("contextId") || t.has("componentFeatures")) && this.weavy && this.contextId && this.componentFeatures?.allowsFeature(k.ContextData) && await hv(this, Hh).trackMutationState(
       {
         filters: {
           mutationKey: ["apps", this.contextId, "data"],
@@ -22453,7 +22430,7 @@ let wu = (ic = class extends qt {
     );
   }
   render() {
-    const { result: t, isMutating: e } = hv(this, Vh), i = t?.filter((o) => o.variables?.file), r = p1(i), a = Vy(i);
+    const { result: t, isMutating: e } = hv(this, Hh), i = t?.filter((o) => o.variables?.file), r = p1(i), a = Hy(i);
     return this.componentFeatures?.allowsFeature(k.ContextData) && t && t.length ? h`
           ${e || r.percent !== null && r.percent < 100 ? h`
                 <wy-progress-linear
@@ -22468,19 +22445,19 @@ let wu = (ic = class extends qt {
         ` : g;
   }
 }, s(ic, "WyContextDataProgress"), ic);
-Vh = /* @__PURE__ */ new WeakMap();
+Hh = /* @__PURE__ */ new WeakMap();
 wu.styles = [Y];
-wu = A$([
+wu = E$([
   U("wy-context-data-progress")
 ], wu);
-var L$ = Object.defineProperty, O$ = Object.getOwnPropertyDescriptor, Xw = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? O$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var T$ = Object.defineProperty, L$ = Object.getOwnPropertyDescriptor, Xw = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? L$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && L$(t, e, r), r;
+  return i && r && T$(t, e, r), r;
 }, "__decorateClass$C"), rc;
 let sl = (rc = class extends ae {
   constructor() {
-    super(...arguments), this.appType = rt.Chat, this.componentFeatures = new Yt({
+    super(...arguments), this.appType = rt.Chat, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.ContextData]: !0,
@@ -22497,7 +22474,7 @@ let sl = (rc = class extends ae {
       [k.Receipts]: !1,
       [k.Typing]: !1,
       [k.ZoomMeetings]: !0
-    }), this.theme = new he(this, sl.styles);
+    }), this.theme = new de(this, sl.styles);
   }
   render() {
     return h`
@@ -22514,25 +22491,25 @@ let sl = (rc = class extends ae {
     `;
   }
 }, s(rc, "WyChat"), rc);
-sl.styles = [Ci, kr, _r, pn, Qt, Se];
+sl.styles = [Ci, kr, _r, pn, Kt, Se];
 Xw([
-  p()
+  y()
 ], sl.prototype, "instructions", 2);
 Xw([
-  p()
+  y()
 ], sl.prototype, "placeholder", 2);
 sl = Xw([
   U("wy-chat"),
   ut()
 ], sl);
-var z$ = Object.defineProperty, F$ = Object.getOwnPropertyDescriptor, Tg = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? F$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var O$ = Object.defineProperty, z$ = Object.getOwnPropertyDescriptor, Tg = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? z$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && z$(t, e, r), r;
+  return i && r && O$(t, e, r), r;
 }, "__decorateClass$B"), nc;
 let fd = (nc = class extends ae {
   constructor() {
-    super(...arguments), this.appType = rt.Comments, this.componentFeatures = new Yt({
+    super(...arguments), this.appType = rt.Comments, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.CloudFiles]: !0,
@@ -22550,7 +22527,7 @@ let fd = (nc = class extends ae {
       [k.Typing]: !1,
       // Has no effect currently
       [k.ZoomMeetings]: !1
-    }), this.theme = new he(this, fd.styles);
+    }), this.theme = new de(this, fd.styles);
   }
   render() {
     return h`
@@ -22561,15 +22538,15 @@ let fd = (nc = class extends ae {
     `;
   }
 }, s(nc, "WyComments"), nc);
-fd.styles = [Ci, kr, _r, pn, Qt, Se, Qw];
+fd.styles = [Ci, kr, _r, pn, Kt, Se, Qw];
 Tg([
-  p()
+  y()
 ], fd.prototype, "placeholder", 2);
 fd = Tg([
   U("wy-comments"),
   ut()
 ], fd);
-function I$(n) {
+function F$(n) {
   if (!this.weavy || !this.app)
     return;
   const t = {
@@ -22585,15 +22562,15 @@ function I$(n) {
   });
   this.dispatchEvent(e);
 }
-s(I$, "triggerMessageEvent");
-var D$ = Object.defineProperty, H$ = Object.getOwnPropertyDescriptor, Jw = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? H$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+s(F$, "triggerMessageEvent");
+var I$ = Object.defineProperty, D$ = Object.getOwnPropertyDescriptor, Jw = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? D$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && D$(t, e, r), r;
+  return i && r && I$(t, e, r), r;
 }, "__decorateClass$A"), sc;
 let al = (sc = class extends ae {
   constructor() {
-    super(...arguments), this.appType = rt.AgentChat, this.componentFeatures = new Yt({
+    super(...arguments), this.appType = rt.AgentChat, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !1,
       [k.ContextData]: !0,
@@ -22602,7 +22579,7 @@ let al = (sc = class extends ae {
       [k.Previews]: !0,
       [k.Reactions]: !1,
       [k.Typing]: !0
-    }), this.theme = new he(this, al.styles), this.conversationRef = J(), this.handleRealtimeMessage = I$.bind(this);
+    }), this.theme = new de(this, al.styles), this.conversationRef = J(), this.handleRealtimeMessage = F$.bind(this);
   }
   /**
    * Sets the editor input to a suggested text. This replaces the text content of the editor. This can be used to create any custom suggestions.
@@ -22683,21 +22660,21 @@ let al = (sc = class extends ae {
         `;
   }
 }, s(sc, "WyCopilot"), sc);
-al.styles = [Ci, kr, _r, pn, Qt, Se];
+al.styles = [Ci, kr, _r, pn, Kt, Se];
 Jw([
-  p()
+  y()
 ], al.prototype, "instructions", 2);
 Jw([
-  p()
+  y()
 ], al.prototype, "placeholder", 2);
 al = Jw([
   U("wy-copilot"),
   ut()
 ], al);
-var V$ = Object.defineProperty, U$ = Object.getOwnPropertyDescriptor, Lg = /* @__PURE__ */ s((n) => {
+var V$ = Object.defineProperty, H$ = Object.getOwnPropertyDescriptor, Lg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$9"), lh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? U$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? H$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
   return i && r && V$(t, e, r), r;
 }, "__decorateClass$z"), Og = /* @__PURE__ */ s((n, t, e) => t.has(n) || Lg("Cannot " + e), "__accessCheck$9"), zl = /* @__PURE__ */ s((n, t, e) => (Og(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$9"), uv = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Lg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$9"), ny = /* @__PURE__ */ s((n, t, e, i) => (Og(n, t, "write to private field"), t.set(n, e), e), "__privateSet$7"), Uh, Tr, ac;
@@ -22784,22 +22761,22 @@ Uh = /* @__PURE__ */ new WeakMap();
 Tr = /* @__PURE__ */ new WeakMap();
 sn.styles = [mn, Y];
 lh([
-  p()
+  y()
 ], sn.prototype, "placeholder", 2);
 lh([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], sn.prototype, "compact", 2);
 lh([
-  p()
+  y()
 ], sn.prototype, "tags", 1);
 lh([
-  p()
+  y()
 ], sn.prototype, "query", 1);
 sn = lh([
   U("wy-search"),
   ut()
 ], sn);
-function B$(n, t) {
+function U$(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["posts", t === "feed" ? "feed" : t.id],
     mutationFn: /* @__PURE__ */ s(async ({ id: a }) => {
@@ -22825,12 +22802,12 @@ function B$(n, t) {
   };
   return r;
 }
-s(B$, "getTrashPostMutationOptions");
-function N$(n, t) {
-  return new St(n.queryClient, B$(n, t));
+s(U$, "getTrashPostMutationOptions");
+function B$(n, t) {
+  return new St(n.queryClient, U$(n, t));
 }
-s(N$, "getTrashPostMutation");
-function q$(n, t) {
+s(B$, "getTrashPostMutation");
+function N$(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["posts", t === "feed" ? "feed" : t.id],
     mutationFn: /* @__PURE__ */ s(async ({ id: a }) => {
@@ -22859,12 +22836,12 @@ function q$(n, t) {
   };
   return r;
 }
-s(q$, "getRestorePostMutationOptions");
-function W$(n, t) {
-  return new St(n.queryClient, q$(n, t));
+s(N$, "getRestorePostMutationOptions");
+function q$(n, t) {
+  return new St(n.queryClient, N$(n, t));
 }
-s(W$, "getRestorePostMutation");
-function j$(n, t) {
+s(q$, "getRestorePostMutation");
+function W$(n, t) {
   const e = n.queryClient, i = ["posts", t === "feed" ? "feed" : t.id];
   return {
     mutationKey: i,
@@ -22890,12 +22867,12 @@ function j$(n, t) {
     }, "onError")
   };
 }
-s(j$, "getSubscribePostMutationOptions");
-function K$(n, t) {
-  return new St(n.queryClient, j$(n, t));
+s(W$, "getSubscribePostMutationOptions");
+function j$(n, t) {
+  return new St(n.queryClient, W$(n, t));
 }
-s(K$, "getSubscribePostMutation");
-function Q$(n, t, e = {
+s(j$, "getSubscribePostMutation");
+function K$(n, t, e = {
   app: void 0,
   q: "",
   tag: "",
@@ -22919,8 +22896,8 @@ function Q$(n, t, e = {
     }, "getNextPageParam")
   };
 }
-s(Q$, "getPostsOptions");
-function G$(n, t) {
+s(K$, "getPostsOptions");
+function Q$(n, t) {
   const e = n.queryClient;
   return {
     mutationFn: /* @__PURE__ */ s(async (r) => await (await n.fetch("/api/posts/" + r.id, {
@@ -22966,8 +22943,8 @@ function G$(n, t) {
     }, "onError")
   };
 }
-s(G$, "getUpdatePostMutationOptions");
-function Z$(n, t) {
+s(Q$, "getUpdatePostMutationOptions");
+function G$(n, t) {
   const e = n.queryClient;
   return {
     mutationFn: /* @__PURE__ */ s(async (r) => await (await n.fetch("/api/apps/" + r.app_id + "/posts", {
@@ -23025,13 +23002,13 @@ function Z$(n, t) {
     }, "onError")
   };
 }
-s(Z$, "getAddPostMutationOptions");
+s(G$, "getAddPostMutationOptions");
 function Mh(n) {
   const t = n.queryKey.at(-1);
   return !(g1(t) && (t.q || t.tag || t.trashed));
 }
 s(Mh, "permitsOptimisticPost");
-function Y$(n, t, e, i = {
+function Z$(n, t, e, i = {
   app: void 0,
   q: "",
   tag: "",
@@ -23042,7 +23019,7 @@ function Y$(n, t, e, i = {
   const a = Yd({ ...i, count_only: !0, after: e }), o = ["posts", t === "feed" ? "feed" : t.id, "count", a], c = new URLSearchParams(ww(a)), l = t === "feed" ? `/api/posts?${c.toString()}` : `/api/apps/${t.id}/posts?${c.toString()}`;
   return ar(n, o, l, r);
 }
-s(Y$, "getPostsCountOptions");
+s(Z$, "getPostsCountOptions");
 function zg(n, t, e, i, r) {
   const a = `a${e.id}`, o = r ? "feed" : e.id;
   return [
@@ -23050,7 +23027,7 @@ function zg(n, t, e, i, r) {
       group: a,
       event: "comment_created",
       onMessage: /* @__PURE__ */ s((c) => {
-        c.actor.id === i.id || c.comment.parent?.type !== Dt.Post || r && r.id !== c.comment.parent.id || (ht(
+        c.actor.id === i.id || c.comment.parent?.type !== It.Post || r && r.id !== c.comment.parent.id || (ht(
           n.queryClient,
           [{ queryKey: ["posts", o], exact: !1 }],
           c.comment.parent.id,
@@ -23064,7 +23041,7 @@ function zg(n, t, e, i, r) {
       group: a,
       event: "reaction_added",
       onMessage: /* @__PURE__ */ s((c) => {
-        c.entity.type === Dt.Post && ht(
+        c.entity.type === It.Post && ht(
           n.queryClient,
           [{ queryKey: ["posts", o], exact: !1 }],
           c.entity.id,
@@ -23076,7 +23053,7 @@ function zg(n, t, e, i, r) {
       group: a,
       event: "reaction_removed",
       onMessage: /* @__PURE__ */ s((c) => {
-        c.entity.type === Dt.Post && ht(
+        c.entity.type === It.Post && ht(
           n.queryClient,
           [{ queryKey: ["posts", o], exact: !1 }],
           c.entity.id,
@@ -23098,7 +23075,7 @@ const Jf = class Jf {
    * Initiates context consumers
    */
   async setContexts() {
-    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   /**
    * Register realtime handlers.
@@ -23148,10 +23125,10 @@ const Jf = class Jf {
 };
 s(Jf, "RealtimeController");
 let md = Jf;
-var Hn, oc, Kr;
+var Vn, oc, Kr;
 const tm = class tm {
   constructor(t) {
-    R(this, Hn);
+    R(this, Vn);
     R(this, oc);
     R(this, Kr);
     P(this, oc, 0), this.filter = {
@@ -23168,7 +23145,7 @@ const tm = class tm {
    * The number of unread items for the current scope
    */
   get unread() {
-    return y(this, oc);
+    return p(this, oc);
   }
   /**
    * Is the unread count pending?
@@ -23189,7 +23166,7 @@ const tm = class tm {
    * Initiates context consumers
    */
   async setContexts() {
-    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Jt, subscribe: !0 });
+    await xi(this.host), this.weavyContext = new Ue(this.host, { context: Xt, subscribe: !0 });
   }
   /**
    * Dispatch a `wy-unread` event on the host.
@@ -23207,7 +23184,7 @@ const tm = class tm {
   async track(t, e, i) {
     this.filter = i;
     const r = await this.whenWeavyContext, a = 10080 * 60 * 1e3;
-    P(this, Hn, void 0), await this.currentQuery.trackQuery(Y$(r, t, e, this.filter, { staleTime: a }), !1), t !== "feed" && await this.postsRealtime.track([
+    P(this, Vn, void 0), await this.currentQuery.trackQuery(Z$(r, t, e, this.filter, { staleTime: a }), !1), t !== "feed" && await this.postsRealtime.track([
       {
         group: `a${t.id}`,
         event: "post_created",
@@ -23218,30 +23195,30 @@ const tm = class tm {
     ]);
   }
   hostConnected() {
-    y(this, Kr) && window.clearInterval(y(this, Kr)), P(this, Kr, window.setInterval(this.refresh, this.updateInterval));
+    p(this, Kr) && window.clearInterval(p(this, Kr)), P(this, Kr, window.setInterval(this.refresh, this.updateInterval));
   }
   hostDisconnected() {
-    y(this, Kr) && window.clearInterval(y(this, Kr));
+    p(this, Kr) && window.clearInterval(p(this, Kr));
   }
   hostUpdate() {
     this.weavyContext?.value && this.resolveWeavyContext?.(this.weavyContext?.value);
     let t = 0;
     if (this.currentQuery.result.isPending || this.currentQuery.result.isStale)
-      P(this, Hn, void 0);
+      P(this, Vn, void 0);
     else {
       const e = this.currentQuery.result.data?.count ?? 0;
-      y(this, Hn) ?? P(this, Hn, e), t = e - y(this, Hn);
+      p(this, Vn) ?? P(this, Vn, e), t = e - p(this, Vn);
     }
     t !== this.unread && (P(this, oc, t), this.dispatchUnreadEvent(), this.host.requestUpdate());
   }
 };
-Hn = new WeakMap(), oc = new WeakMap(), Kr = new WeakMap(), s(tm, "UnreadPostsController");
+Vn = new WeakMap(), oc = new WeakMap(), Kr = new WeakMap(), s(tm, "UnreadPostsController");
 let cw = tm;
 const dh = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}[part~=wy-posts-header]{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));color:var(--wy-component-color);display:flex;flex-direction:column;position:relative;--wy-component-border-radius: var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));border-radius:var(--wy-border-radius-outer, var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))))}[part~=wy-post]{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-background, var(--wy-background-light, #f7f9ff));color:var(--wy-component-color);display:flex;flex-direction:column;position:relative;clip-path:border-box;--wy-component-border-radius: var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));border-radius:var(--wy-component-border-radius)}[part~=wy-post][part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-post-images]{display:flex;flex-direction:column;margin-top:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-post-header]{display:flex;flex-direction:column;padding:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))) var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) 0;gap:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-post-body]{display:flex;flex-direction:column;padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) 0;gap:var(--wy-gap-xl, calc(2 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-post-footer]{display:flex;align-items:center;justify-content:space-between;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-post-content]{padding:0 var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-post-comments]{background-color:var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));interpolate-size:allow-keywords;padding:0 var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));height:0;visibility:hidden;transition:height var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))),padding var(--wy-transition-fast, var(--wy-transition-duration-fast, .1s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1)));overflow:hidden}[part~=wy-post-comments][part~=wy-show]{height:auto;visibility:visible;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-post-trashed]{padding-bottom:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}::part(wy-trashed){text-decoration:line-through;color:var(--wy-outline, var(--wy-outline-light, #72777f))}`;
-var X$ = Object.defineProperty, J$ = Object.getOwnPropertyDescriptor, Fg = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? J$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var Y$ = Object.defineProperty, X$ = Object.getOwnPropertyDescriptor, Fg = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? X$(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && X$(t, e, r), r;
+  return i && r && Y$(t, e, r), r;
 }, "__decorateClass$y"), cc;
 let vd = (cc = class extends st {
   constructor() {
@@ -23278,16 +23255,16 @@ let vd = (cc = class extends st {
 }, s(cc, "WyPostTrashed"), cc);
 vd.styles = [dh, Y];
 Fg([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], vd.prototype, "post", 2);
 vd = Fg([
   U("wy-post-trashed"),
   ut()
 ], vd);
-var t9 = Object.defineProperty, e9 = Object.getOwnPropertyDescriptor, $l = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? e9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var J$ = Object.defineProperty, t9 = Object.getOwnPropertyDescriptor, $l = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? t9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && t9(t, e, r), r;
+  return i && r && J$(t, e, r), r;
 }, "__decorateClass$x"), lc;
 let wr = (lc = class extends qt {
   constructor() {
@@ -23348,7 +23325,7 @@ let wr = (lc = class extends qt {
     t.preventDefault(), this.showComments = !this.showComments, this.loadComments = !0;
   }
   willUpdate(t) {
-    super.willUpdate(t), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, Dt.Post, { id: this.post.id })), this.isCommentLinked = !!(this.link && cg(this.link, Dt.Post, { id: this.post.id }, Dt.Comment))), t.has("isCommentLinked") && this.isCommentLinked && (this.loadComments = !0, this.showComments = !0);
+    super.willUpdate(t), t.has("link") && (this.highlight = !!(this.link && Bu(this.link, It.Post, { id: this.post.id })), this.isCommentLinked = !!(this.link && cg(this.link, It.Post, { id: this.post.id }, It.Comment))), t.has("isCommentLinked") && this.isCommentLinked && (this.loadComments = !0, this.showComments = !0);
   }
   render() {
     const t = this.post.attachments?.data?.filter((O) => O.kind === "image" && O.thumbnail_url) ?? [], e = this.post.attachments?.data?.filter((O) => O.kind !== "image" || !O.thumbnail_url) ?? [], i = this.post.annotations?.data, r = this.post.options?.data, a = this.post.comments?.count || 0, o = this.post.reactions?.data, { embed: c, meeting: l } = this.post, u = new Intl.DateTimeFormat(this.weavy?.locale, {
@@ -23356,7 +23333,7 @@ let wr = (lc = class extends qt {
       timeStyle: "short"
     }).format(new Date(this.post.created_at)), b = xl(this.weavy?.locale, new Date(this.post.created_at)), C = this.post.updated_at && this.weavy ? new Intl.DateTimeFormat(this.weavy.locale, { dateStyle: "full", timeStyle: "short" }).format(
       new Date(this.post.updated_at)
-    ) : "", v = t && !!t.length, m = this.post.html && !!this.post.html, f = i && !!i.length, $ = r && !!r.length, E = c && this.componentFeatures?.allowsFeature(k.Embeds), S = e && !!e.length, T = l && !!l, V = m || f || $ || E || S || T;
+    ) : "", v = t && !!t.length, m = this.post.html && !!this.post.html, f = i && !!i.length, $ = r && !!r.length, E = c && this.componentFeatures?.allowsFeature(k.Embeds), S = e && !!e.length, T = l && !!l, H = m || f || $ || E || S || T;
     return this.post.id < 0 ? h`
           <div part="wy-post">
             <wy-item slot="button" part="wy-post-header" align="top" size="md" noPadding>
@@ -23412,7 +23389,7 @@ let wr = (lc = class extends qt {
                         <wy-icon name="pencil"></wy-icon>
                         ${x("Edit")}
                       </wy-dropdown-item>` : g}
-                ${this.user && this.user.id === this.post.created_by.id || Yl(de.Admin, this.app?.permissions) ? h`<wy-dropdown-item @click=${() => this.dispatchTrash()}>
+                ${this.user && this.user.id === this.post.created_by.id || Yl(le.Admin, this.app?.permissions) ? h`<wy-dropdown-item @click=${() => this.dispatchTrash()}>
                         <wy-icon name="trashcan"></wy-icon>
                         ${x("Trash")}
                       </wy-dropdown-item>` : g}
@@ -23429,7 +23406,7 @@ let wr = (lc = class extends qt {
     }}
                   ></wy-image-grid>` : ""}
 
-            ${V ? h`
+            ${H ? h`
                     <div part="wy-post-body">
                       <!-- text content -->
                       ${m ? h`<div
@@ -23538,7 +23515,7 @@ let wr = (lc = class extends qt {
 wr.styles = [
   Lt,
   dh,
-  vg,
+  mg,
   Ww,
   rg,
   Ru,
@@ -23546,28 +23523,28 @@ wr.styles = [
   Y
 ];
 $l([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], wr.prototype, "post", 2);
 $l([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], wr.prototype, "highlight", 2);
 $l([
-  H()
+  V()
 ], wr.prototype, "showComments", 2);
 $l([
-  H()
+  V()
 ], wr.prototype, "loadComments", 2);
 $l([
-  H()
+  V()
 ], wr.prototype, "isCommentLinked", 2);
 wr = $l([
   U("wy-post-view"),
   ut()
 ], wr);
-var i9 = Object.defineProperty, r9 = Object.getOwnPropertyDescriptor, Ig = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? r9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var e9 = Object.defineProperty, i9 = Object.getOwnPropertyDescriptor, Ig = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? i9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && i9(t, e, r), r;
+  return i && r && e9(t, e, r), r;
 }, "__decorateClass$w"), dc;
 let gd = (dc = class extends qt {
   constructor() {
@@ -23603,7 +23580,7 @@ let gd = (dc = class extends qt {
     }), this.dispatchEdit(!1);
   }
   async willUpdate(t) {
-    super.willUpdate(t), (t.has("weavy") || t.has("app")) && this.weavy && this.app && await this.updatePostMutation.trackMutation(G$(this.weavy, ["posts", this.app.id]));
+    super.willUpdate(t), (t.has("weavy") || t.has("app")) && this.weavy && this.app && await this.updatePostMutation.trackMutation(Q$(this.weavy, ["posts", this.app.id]));
   }
   render() {
     const t = xl(this.weavy?.locale, new Date(this.post.created_at));
@@ -23643,19 +23620,19 @@ let gd = (dc = class extends qt {
 }, s(dc, "WyPostEdit"), dc);
 gd.styles = [dh, wl, Y];
 Ig([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], gd.prototype, "post", 2);
 gd = Ig([
   U("wy-post-edit"),
   ut()
 ], gd);
-var n9 = Object.defineProperty, s9 = Object.getOwnPropertyDescriptor, Dg = /* @__PURE__ */ s((n) => {
+var r9 = Object.defineProperty, n9 = Object.getOwnPropertyDescriptor, Dg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$8"), hh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? s9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? n9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && n9(t, e, r), r;
-}, "__decorateClass$v"), Hg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Dg("Cannot " + e), "__accessCheck$8"), ks = /* @__PURE__ */ s((n, t, e) => (Hg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$8"), sy = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Dg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$8"), ay = /* @__PURE__ */ s((n, t, e, i) => (Hg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$6"), Dl, Bh, Es, hc;
+  return i && r && r9(t, e, r), r;
+}, "__decorateClass$v"), Vg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Dg("Cannot " + e), "__accessCheck$8"), ks = /* @__PURE__ */ s((n, t, e) => (Vg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$8"), sy = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Dg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$8"), ay = /* @__PURE__ */ s((n, t, e, i) => (Vg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$6"), Dl, Bh, Es, hc;
 let an = (hc = class extends lr {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.postRealtime = new md(this), sy(this, Dl), sy(this, Bh, new Promise((t) => {
@@ -23767,25 +23744,25 @@ Bh = /* @__PURE__ */ new WeakMap();
 Es = /* @__PURE__ */ new WeakMap();
 an.styles = [Lt];
 hh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], an.prototype, "post", 2);
 hh([
   Bi({ context: Jd }),
-  H()
+  V()
 ], an.prototype, "app", 2);
 hh([
-  p({ converter: Pu })
+  y({ converter: Pu })
 ], an.prototype, "uid", 2);
 hh([
-  H()
+  V()
 ], an.prototype, "editing", 2);
 an = hh([
   U("wy-post")
 ], an);
-var a9 = Object.defineProperty, o9 = Object.getOwnPropertyDescriptor, Gu = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? o9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var s9 = Object.defineProperty, a9 = Object.getOwnPropertyDescriptor, Gu = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? a9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && a9(t, e, r), r;
+  return i && r && s9(t, e, r), r;
 }, "__decorateClass$u"), uc;
 let is = (uc = class extends qt {
   constructor() {
@@ -23805,7 +23782,7 @@ let is = (uc = class extends qt {
   async willUpdate(t) {
     if (super.willUpdate(t), (t.has("weavy") || t.has("app") || t.has("feed") || t.has("filter")) && this.weavy && (this.app || this.feed) && this.filter) {
       const e = this.app && !this.feed ? this.app.id : "feed";
-      await this.postsQuery.trackInfiniteQuery(Q$(this.weavy, e, this.filter));
+      await this.postsQuery.trackInfiniteQuery(K$(this.weavy, e, this.filter));
     }
     if (this.postsQuery.result.data) {
       let e = this.lastPostId;
@@ -23815,7 +23792,7 @@ let is = (uc = class extends qt {
     }
     if ((t.has("weavy") || t.has("app") || t.has("feed")) && this.weavy && (this.feed || this.app)) {
       const e = !this.feed && this.app ? this.app : "feed", i = !this.feed && this.app?.id || "feed";
-      this.subscribePostMutation = K$(this.weavy, e), this.removePostMutation = N$(this.weavy, e), this.restorePostMutation = W$(this.weavy, e), this.pollMutation = Ow(this.weavy, i, ["posts", i]);
+      this.subscribePostMutation = j$(this.weavy, e), this.removePostMutation = B$(this.weavy, e), this.restorePostMutation = q$(this.weavy, e), this.pollMutation = Ow(this.weavy, i, ["posts", i]);
     }
     if ((t.has("filter") || t.has("lastPostId") || t.has("app") || t.has("feed")) && (this.feed || this.app)) {
       const e = this.app && !this.feed ? this.app : "feed";
@@ -23881,13 +23858,13 @@ let is = (uc = class extends qt {
 }, s(uc, "WyPostList"), uc);
 is.styles = [dh, Wu, Pr, Y, z1];
 Gu([
-  H()
+  V()
 ], is.prototype, "lastPostId", 2);
 Gu([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], is.prototype, "feed", 2);
 Gu([
-  p({
+  y({
     type: Object,
     hasChanged: /* @__PURE__ */ s((n, t) => Xe(n) && Xe(t) && JSON.stringify(n) !== JSON.stringify(t), "hasChanged")
   })
@@ -23896,10 +23873,10 @@ is = Gu([
   U("wy-post-list"),
   ut()
 ], is);
-var c9 = Object.defineProperty, l9 = Object.getOwnPropertyDescriptor, Vg = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? l9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var o9 = Object.defineProperty, c9 = Object.getOwnPropertyDescriptor, Hg = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? c9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && c9(t, e, r), r;
+  return i && r && o9(t, e, r), r;
 }, "__decorateClass$t"), pc;
 let bd = (pc = class extends qt {
   constructor() {
@@ -23924,14 +23901,14 @@ let bd = (pc = class extends qt {
     });
   }
   async willUpdate(t) {
-    super.willUpdate(t), (t.has("weavy") || t.has("app") || t.has("componentFeatures")) && this.weavy && this.app && this.app?.id !== t.get("app")?.id && await this.addPostMutation.trackMutation(Z$(this.weavy, ["posts", this.app.id]));
+    super.willUpdate(t), (t.has("weavy") || t.has("app") || t.has("componentFeatures")) && this.weavy && this.app && this.app?.id !== t.get("app")?.id && await this.addPostMutation.trackMutation(G$(this.weavy, ["posts", this.app.id]));
   }
   render() {
     return h`
       <div part="wy-posts-header">
         <wy-editor-msg
           editorLocation="apps"
-          ?disabled=${!Wn([de.Create, de.Admin], this.app?.permissions)}
+          ?disabled=${!Wn([le.Create, le.Admin], this.app?.permissions)}
           .typing=${!1}
           .draft=${!0}
           placeholder=${this.placeholder ?? x("Create a post...")}
@@ -23964,23 +23941,23 @@ let bd = (pc = class extends qt {
   }
 }, s(pc, "WyPostForm"), pc);
 bd.styles = [dh, Wu, Pr, Y];
-Vg([
-  p()
+Hg([
+  y()
 ], bd.prototype, "placeholder", 2);
-bd = Vg([
+bd = Hg([
   U("wy-post-form"),
   ut()
 ], bd);
-var d9 = Object.defineProperty, h9 = Object.getOwnPropertyDescriptor, Ug = /* @__PURE__ */ s((n) => {
+var l9 = Object.defineProperty, d9 = Object.getOwnPropertyDescriptor, Ug = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$7"), kl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? h9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? d9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && d9(t, e, r), r;
-}, "__decorateClass$s"), u9 = /* @__PURE__ */ s((n, t, e) => t.has(n) || Ug("Cannot " + e), "__accessCheck$7"), pv = /* @__PURE__ */ s((n, t, e) => (u9(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$7"), p9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Ug("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$7"), Nh, lw, yc;
+  return i && r && l9(t, e, r), r;
+}, "__decorateClass$s"), h9 = /* @__PURE__ */ s((n, t, e) => t.has(n) || Ug("Cannot " + e), "__accessCheck$7"), pv = /* @__PURE__ */ s((n, t, e) => (h9(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$7"), u9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Ug("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$7"), Nh, lw, yc;
 let fr = (yc = class extends ae {
   constructor() {
-    super(...arguments), p9(this, Nh), this.appType = rt.Posts, this.componentFeatures = new Yt({
+    super(...arguments), u9(this, Nh), this.appType = rt.Posts, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.CloudFiles]: !0,
@@ -23999,7 +23976,7 @@ let fr = (yc = class extends ae {
       [k.Typing]: !1,
       // Has no effect currently
       [k.ZoomMeetings]: !1
-    }), this.theme = new he(this, fr.styles), this.postListRef = J(), this.search = !1, this.following = !1;
+    }), this.theme = new de(this, fr.styles), this.postListRef = J(), this.search = !1, this.following = !1;
   }
   /**
    * Matches apps and checks if the cache has the post.
@@ -24017,7 +23994,7 @@ let fr = (yc = class extends ae {
     if (e)
       return !0;
     if (this.weavy && i) {
-      const r = t.type === Dt.Post ? t.id : t.type === Dt.Comment && t.parent?.type === Dt.Post ? t.parent.id : void 0, a = Yd({ ...pv(this, Nh, lw) });
+      const r = t.type === It.Post ? t.id : t.type === It.Comment && t.parent?.type === It.Post ? t.parent.id : void 0, a = Yd({ ...pv(this, Nh, lw) });
       return !!(r && eh(this.weavy.queryClient, ["posts", "feed", a], r));
     }
     return !1;
@@ -24064,36 +24041,36 @@ lw = /* @__PURE__ */ s(function() {
     order_by: "id desc"
   };
 }, "filter_get$1");
-fr.styles = [Qt, Ci, kr, _r, pn, Se];
+fr.styles = [Kt, Ci, kr, _r, pn, Se];
 kl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], fr.prototype, "search", 2);
 kl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], fr.prototype, "following", 2);
 kl([
-  p()
+  y()
 ], fr.prototype, "query", 2);
 kl([
-  p()
+  y()
 ], fr.prototype, "tag", 2);
 kl([
-  p()
+  y()
 ], fr.prototype, "placeholder", 2);
 fr = kl([
   U("wy-feed"),
   ut()
 ], fr);
-var y9 = Object.defineProperty, w9 = Object.getOwnPropertyDescriptor, Bg = /* @__PURE__ */ s((n) => {
+var p9 = Object.defineProperty, y9 = Object.getOwnPropertyDescriptor, Bg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$6"), _l = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? w9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? y9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && y9(t, e, r), r;
-}, "__decorateClass$r"), f9 = /* @__PURE__ */ s((n, t, e) => t.has(n) || Bg("Cannot " + e), "__accessCheck$6"), yv = /* @__PURE__ */ s((n, t, e) => (f9(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$6"), m9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Bg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$6"), qh, dw, wc;
+  return i && r && p9(t, e, r), r;
+}, "__decorateClass$r"), w9 = /* @__PURE__ */ s((n, t, e) => t.has(n) || Bg("Cannot " + e), "__accessCheck$6"), yv = /* @__PURE__ */ s((n, t, e) => (w9(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$6"), f9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Bg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$6"), qh, dw, wc;
 let mr = (wc = class extends ae {
   constructor() {
-    super(...arguments), m9(this, qh), this.appType = rt.Posts, this.componentFeatures = new Yt({
+    super(...arguments), f9(this, qh), this.appType = rt.Posts, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.CloudFiles]: !0,
@@ -24112,7 +24089,7 @@ let mr = (wc = class extends ae {
       [k.Typing]: !1,
       // Has no effect currently
       [k.ZoomMeetings]: !1
-    }), this.theme = new he(this, mr.styles), this.postListRef = J(), this.search = !1, this.following = !1;
+    }), this.theme = new de(this, mr.styles), this.postListRef = J(), this.search = !1, this.following = !1;
   }
   /**
    * Matches apps and checks if the cache has the post.
@@ -24130,7 +24107,7 @@ let mr = (wc = class extends ae {
     if (e)
       return !0;
     if (this.weavy && i) {
-      const r = t.type === Dt.Post ? t.id : t.type === Dt.Comment && t.parent?.type === Dt.Post ? t.parent.id : void 0, a = Yd({ ...yv(this, qh, dw) });
+      const r = t.type === It.Post ? t.id : t.type === It.Comment && t.parent?.type === It.Post ? t.parent.id : void 0, a = Yd({ ...yv(this, qh, dw) });
       return !!(r && eh(this.weavy.queryClient, ["posts", "feed", a], r));
     }
     return !1;
@@ -24174,33 +24151,33 @@ dw = /* @__PURE__ */ s(function() {
     order_by: "id desc"
   };
 }, "filter_get");
-mr.styles = [Qt, kr, Ci, _r, pn, Se];
+mr.styles = [Kt, kr, Ci, _r, pn, Se];
 _l([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], mr.prototype, "search", 2);
 _l([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], mr.prototype, "following", 2);
 _l([
-  p()
+  y()
 ], mr.prototype, "query", 2);
 _l([
-  p()
+  y()
 ], mr.prototype, "tag", 2);
 _l([
-  p()
+  y()
 ], mr.prototype, "placeholder", 2);
 mr = _l([
   U("wy-posts")
 ], mr);
-var v9 = Object.defineProperty, g9 = Object.getOwnPropertyDescriptor, Ng = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? g9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var m9 = Object.defineProperty, v9 = Object.getOwnPropertyDescriptor, Ng = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? v9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && v9(t, e, r), r;
+  return i && r && m9(t, e, r), r;
 }, "__decorateClass$q"), fc;
 let xd = (fc = class extends ae {
   constructor() {
-    super(...arguments), this.appType = rt.Posts, this.componentFeatures = new Yt({
+    super(...arguments), this.appType = rt.Posts, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.CloudFiles]: !0,
@@ -24212,7 +24189,7 @@ let xd = (fc = class extends ae {
       [k.MicrosoftTeams]: !1,
       [k.Polls]: !0,
       [k.ZoomMeetings]: !1
-    }), this.theme = new he(this, xd.styles);
+    }), this.theme = new de(this, xd.styles);
   }
   /**
    * Disabled link matching/consuming.
@@ -24229,17 +24206,17 @@ let xd = (fc = class extends ae {
     `;
   }
 }, s(fc, "WyPostEditor"), fc);
-xd.styles = [Qt, Ci, _r, Se];
+xd.styles = [Kt, Ci, _r, Se];
 Ng([
-  p()
+  y()
 ], xd.prototype, "placeholder", 2);
 xd = Ng([
   U("wy-post-editor")
 ], xd);
-var b9 = Object.defineProperty, x9 = Object.getOwnPropertyDescriptor, uh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? x9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var g9 = Object.defineProperty, b9 = Object.getOwnPropertyDescriptor, uh = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? b9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && b9(t, e, r), r;
+  return i && r && g9(t, e, r), r;
 }, "__decorateClass$p"), mc;
 let on = (mc = class extends qt {
   constructor() {
@@ -24285,7 +24262,7 @@ let on = (mc = class extends qt {
    * @returns Whether the event was not canceled.
    */
   dispatchUploadFiles(t) {
-    this.weavy && this.app && (y2(this.weavy, this.app), Vy(this.mutatingFiles.result) === "ok" && Uy(this.weavy, this.app));
+    this.weavy && this.app && (y2(this.weavy, this.app), Hy(this.mutatingFiles.result) === "ok" && Uy(this.weavy, this.app));
     const e = new CustomEvent("upload-files", {
       detail: { files: t }
     });
@@ -24423,12 +24400,12 @@ let on = (mc = class extends qt {
     return g;
   }
   render() {
-    const t = this.mutatingFiles.result, e = _m(t), i = km(t), r = p1(t), a = Vy(t);
+    const t = this.mutatingFiles.result, e = _m(t), i = km(t), r = p1(t), a = Hy(t);
     return h`
       <header part="wy-files-header wy-header wy-header-outer">
         <nav part="wy-files-header-toolbar wy-toolbar">
           <div part="wy-toolbar-buttons">
-            ${Wn([de.Create, de.Admin], this.app?.permissions) ? h`
+            ${Wn([le.Create, le.Admin], this.app?.permissions) ? h`
                   <wy-dropdown title=${x("Add files")}>
                     <wy-icon slot="button-content" name="plus" first></wy-icon>
                     <span slot="button-content">${x("Add files")}</span>
@@ -24602,24 +24579,24 @@ let on = (mc = class extends qt {
     }, 1500), this.previousFailedFileMutations = e ?? [];
   }
 }, s(mc, "WyFilesHeader"), mc);
-on.styles = [Wu, mg, Y];
+on.styles = [Wu, fg, Y];
 uh([
-  p({ type: Object })
+  y({ type: Object })
 ], on.prototype, "order", 2);
 uh([
-  p()
+  y()
 ], on.prototype, "view", 2);
 uh([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], on.prototype, "showTrashed", 2);
 uh([
-  H()
+  V()
 ], on.prototype, "showUploadSheet", 2);
 on = uh([
   U("wy-files-header"),
   ut()
 ], on);
-function C9(n, t, e = {}, i = {}) {
+function x9(n, t, e = {}, i = {}) {
   if (!n)
     throw new Error("useFileList must be used within a WeavyContext");
   return {
@@ -24634,8 +24611,8 @@ function C9(n, t, e = {}, i = {}) {
     getNextPageParam: /* @__PURE__ */ s((a) => a.end && a.end < a.count ? a.end : null, "getNextPageParam")
   };
 }
-s(C9, "getInfiniteFileListOptions");
-function $9(n, t) {
+s(x9, "getInfiniteFileListOptions");
+function C9(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["apps", t.id, "files"],
     mutationFn: /* @__PURE__ */ s(async ({ file: a }) => {
@@ -24674,12 +24651,12 @@ function $9(n, t) {
   };
   return r;
 }
-s($9, "getTrashFileMutationOptions");
-function k9(n, t) {
-  return new St(n.queryClient, $9(n, t));
+s(C9, "getTrashFileMutationOptions");
+function $9(n, t) {
+  return new St(n.queryClient, C9(n, t));
 }
-s(k9, "getTrashFileMutation");
-function _9(n, t) {
+s($9, "getTrashFileMutation");
+function k9(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["apps", t.id, "files"],
     mutationFn: /* @__PURE__ */ s(async ({ file: a }) => {
@@ -24723,12 +24700,12 @@ function _9(n, t) {
   };
   return r;
 }
-s(_9, "getRestoreFileMutationOptions");
-function P9(n, t) {
-  return new St(n.queryClient, _9(n, t));
+s(k9, "getRestoreFileMutationOptions");
+function _9(n, t) {
+  return new St(n.queryClient, k9(n, t));
 }
-s(P9, "getRestoreFileMutation");
-function S9(n, t) {
+s(_9, "getRestoreFileMutation");
+function P9(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["apps", t.id, "files"],
     mutationFn: /* @__PURE__ */ s(async ({ file: a }) => {
@@ -24750,7 +24727,7 @@ function S9(n, t) {
       (o) => Object.assign(o, { status: "pending" })
     ), { type: "delete-forever", file: a.file, status: { state: "pending" } }), "onMutate"),
     onSuccess: /* @__PURE__ */ s((a, o) => {
-      H2(e, { queryKey: r.mutationKey, exact: !1 }, o.file.id), Bt(e, r.mutationKey, o, (c) => {
+      V2(e, { queryKey: r.mutationKey, exact: !1 }, o.file.id), Bt(e, r.mutationKey, o, (c) => {
         c.status.state = "ok";
       });
     }, "onSuccess"),
@@ -24767,12 +24744,12 @@ function S9(n, t) {
   };
   return r;
 }
-s(S9, "getDeleteForeverFileMutationOptions");
-function M9(n, t) {
-  return new St(n.queryClient, S9(n, t));
+s(P9, "getDeleteForeverFileMutationOptions");
+function S9(n, t) {
+  return new St(n.queryClient, P9(n, t));
 }
-s(M9, "getDeleteForeverFileMutation");
-function E9(n, t) {
+s(S9, "getDeleteForeverFileMutation");
+function M9(n, t) {
   const e = n.queryClient, i = ["apps", t.id, "files"];
   return {
     mutationKey: i,
@@ -24820,12 +24797,12 @@ function E9(n, t) {
     }, "onError")
   };
 }
-s(E9, "getSubscribeFileMutationOptions");
-function A9(n, t) {
-  return new St(n.queryClient, E9(n, t));
+s(M9, "getSubscribeFileMutationOptions");
+function E9(n, t) {
+  return new St(n.queryClient, M9(n, t));
 }
-s(A9, "getSubscribeFileMutation");
-function R9(n, t) {
+s(E9, "getSubscribeFileMutation");
+function A9(n, t) {
   const e = n.queryClient, r = {
     mutationKey: ["apps", t.id, "files"],
     mutationFn: /* @__PURE__ */ s(async ({ file: a, name: o }) => {
@@ -24873,16 +24850,16 @@ function R9(n, t) {
   };
   return r;
 }
-s(R9, "getRenameFileMutationOptions");
-function T9(n, t) {
-  return new St(n.queryClient, R9(n, t));
+s(A9, "getRenameFileMutationOptions");
+function R9(n, t) {
+  return new St(n.queryClient, A9(n, t));
 }
-s(T9, "getRenameFileMutation");
-const L9 = j`[part~=wy-grid]{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(auto-fill,minmax(calc(10 * var(--wy-size, 1rem)),1fr));grid-gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) 0}`, O9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}[part~=wy-card]{--wy-component-background-color: var(--wy-surface-layer-high, var(--wy-surface-layer-high-light, rgba(0, 0, 0, .0745098039)));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));--wy-component-border-radius: var(--wy-border-radius-sm, calc(var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))) - .25 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));background-color:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-clip:border-box;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-card][part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-card-primary]{--wy-component-background-color: var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));--wy-component-color: var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73))}[part~=wy-trashed]{text-decoration:line-through;opacity:var(--wy-opacity-disabled, 38%)}[part~=wy-card-hover]{cursor:pointer;-webkit-user-select:none;user-select:none}[part~=wy-card-hover]:before{content:\"\";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-card-hover]:hover:before{opacity:var(--wy-opacity-state-hover, 8%)}[part~=wy-card-hover]:focus:before{opacity:var(--wy-opacity-state-focus, 12%)}[part~=wy-card-hover]:active:before,[part~=wy-card-hover][part~=wy-active]:before{opacity:var(--wy-opacity-state-active, 12%)}[part~=wy-card-actions]{position:absolute;top:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));right:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));align-items:center;display:flex}[part~=wy-card-icon]{--wy-component-icon-width: calc(6 * var(--wy-size, 1rem));--wy-component-icon-height: calc(6 * var(--wy-size, 1rem));display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;margin:auto}[part~=wy-card-image]{width:auto;height:auto;aspect-ratio:auto;border-radius:var(--wy-component-border-radius);object-fit:cover;object-position:center;flex:1 1 100%;max-height:calc(10 * var(--wy-size, 1rem))}[part~=wy-card-image][part~=wy-loading]{transition:opacity .15s ease-out;opacity:0}[part~=wy-card-image][part~=wy-loading][part~=wy-loaded]{opacity:1;transition:opacity .15s ease-out}[part~=wy-card-image-top]{object-position:top center}[part~=wy-card-title]{padding:0 var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));display:flex;align-items:center;justify-content:space-between;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));height:2.25rem;box-sizing:border-box}[part~=wy-input]{height:2.25rem;box-sizing:border-box;flex:0 1 auto}[part~=wy-card-text]{line-height:var(--wy-line-height, 1.5);flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}[part~=wy-card-action]{flex:0 0 auto;white-space:nowrap}`, z9 = j`[part~=wy-badge]{display:inline-block;text-align:center;vertical-align:middle;align-self:center;font-weight:var(--wy-font-weight-bold, 600);font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)));line-height:1.333333;color:var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73));border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));background-color:var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));padding:.333333em;min-width:1lh}[part~=wy-badge]:empty{display:none!important}[part~=wy-badge-positioned]{margin:calc(-.5 * (var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .333333em * 2));position:absolute}[part~=wy-badge-positioned]:not(:empty){display:block}[part~=wy-badge-top-right]{top:0;right:0}[part~=wy-badge-bottom-right]{bottom:0;right:0}[part~=wy-badge-bottom-left]{bottom:0;left:0}[part~=wy-badge-top-left]{top:0;left:0}[part~=wy-badge-compact]{padding:.25em;max-width:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) * 3 + .25em);height:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em);line-height:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em)}[part~=wy-badge-compact]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-badge-compact][part~=wy-badge-positioned]{margin:calc(-.5 * (var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em * 2))}[part~=wy-badge-dot]{content-visibility:hidden;line-height:0;min-width:0;height:0;width:0;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-badge-dot][part~=wy-badge-positioned]{margin:calc(-1 * var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-badge-reveal]{opacity:1;transition:opacity var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))) calc(var(--wy-transition-duration, .2s) + var(--wy-transition-reveal-delay, 1s))}@starting-style{[part~=wy-badge-reveal]{opacity:0}}`;
-var F9 = Object.defineProperty, I9 = Object.getOwnPropertyDescriptor, Pl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? I9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+s(R9, "getRenameFileMutation");
+const T9 = j`[part~=wy-grid]{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(auto-fill,minmax(calc(10 * var(--wy-size, 1rem)),1fr));grid-gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) 0}`, L9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}[part~=wy-card]{--wy-component-background-color: var(--wy-surface-layer-high, var(--wy-surface-layer-high-light, rgba(0, 0, 0, .0745098039)));--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));--wy-component-border-radius: var(--wy-border-radius-sm, calc(var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem))) - .25 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));background-color:var(--wy-component-background-color);color:var(--wy-component-color);border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-clip:border-box;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-card][part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-card-primary]{--wy-component-background-color: var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));--wy-component-color: var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73))}[part~=wy-trashed]{text-decoration:line-through;opacity:var(--wy-opacity-disabled, 38%)}[part~=wy-card-hover]{cursor:pointer;-webkit-user-select:none;user-select:none}[part~=wy-card-hover]:before{content:\"\";position:absolute;top:0;left:0;width:100%;height:100%;border-radius:inherit;background:var(--wy-component-color);opacity:0%}[part~=wy-card-hover]:hover:before{opacity:var(--wy-opacity-state-hover, 8%)}[part~=wy-card-hover]:focus:before{opacity:var(--wy-opacity-state-focus, 12%)}[part~=wy-card-hover]:active:before,[part~=wy-card-hover][part~=wy-active]:before{opacity:var(--wy-opacity-state-active, 12%)}[part~=wy-card-actions]{position:absolute;top:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));right:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));align-items:center;display:flex}[part~=wy-card-icon]{--wy-component-icon-width: calc(6 * var(--wy-size, 1rem));--wy-component-icon-height: calc(6 * var(--wy-size, 1rem));display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;margin:auto}[part~=wy-card-image]{width:auto;height:auto;aspect-ratio:auto;border-radius:var(--wy-component-border-radius);object-fit:cover;object-position:center;flex:1 1 100%;max-height:calc(10 * var(--wy-size, 1rem))}[part~=wy-card-image][part~=wy-loading]{transition:opacity .15s ease-out;opacity:0}[part~=wy-card-image][part~=wy-loading][part~=wy-loaded]{opacity:1;transition:opacity .15s ease-out}[part~=wy-card-image-top]{object-position:top center}[part~=wy-card-title]{padding:0 var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));display:flex;align-items:center;justify-content:space-between;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));height:2.25rem;box-sizing:border-box}[part~=wy-input]{height:2.25rem;box-sizing:border-box;flex:0 1 auto}[part~=wy-card-text]{line-height:var(--wy-line-height, 1.5);flex:0 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}[part~=wy-card-action]{flex:0 0 auto;white-space:nowrap}`, O9 = j`[part~=wy-badge]{display:inline-block;text-align:center;vertical-align:middle;align-self:center;font-weight:var(--wy-font-weight-bold, 600);font-size:var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em)));line-height:1.333333;color:var(--wy-on-primary-container, var(--wy-on-primary-container-light, #0d4a73));border-radius:var(--wy-border-radius-pill, var(--wy-border-radius, calc(2.5 * var(--wy-size, 1rem))));background-color:var(--wy-primary-container, var(--wy-primary-container-light, #cee5ff));padding:.333333em;min-width:1lh}[part~=wy-badge]:empty{display:none!important}[part~=wy-badge-positioned]{margin:calc(-.5 * (var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .333333em * 2));position:absolute}[part~=wy-badge-positioned]:not(:empty){display:block}[part~=wy-badge-top-right]{top:0;right:0}[part~=wy-badge-bottom-right]{bottom:0;right:0}[part~=wy-badge-bottom-left]{bottom:0;left:0}[part~=wy-badge-top-left]{top:0;left:0}[part~=wy-badge-compact]{padding:.25em;max-width:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) * 3 + .25em);height:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em);line-height:calc(var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em)}[part~=wy-badge-compact]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-badge-compact][part~=wy-badge-positioned]{margin:calc(-.5 * (var(--wy-font-size-xs, calc(.75 * var(--wy-font-size, 1em))) + .25em * 2))}[part~=wy-badge-dot]{content-visibility:hidden;line-height:0;min-width:0;height:0;width:0;padding:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-badge-dot][part~=wy-badge-positioned]{margin:calc(-1 * var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-badge-reveal]{opacity:1;transition:opacity var(--wy-transition, var(--wy-transition-duration, .2s) var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))) calc(var(--wy-transition-duration, .2s) + var(--wy-transition-reveal-delay, 1s))}@starting-style{[part~=wy-badge-reveal]{opacity:0}}`;
+var z9 = Object.defineProperty, F9 = Object.getOwnPropertyDescriptor, Pl = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? F9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && F9(t, e, r), r;
+  return i && r && z9(t, e, r), r;
 }, "__decorateClass$o"), vc;
 let vr = (vc = class extends st {
   constructor() {
@@ -24900,29 +24877,29 @@ let vr = (vc = class extends st {
     return this.appearance !== "none" && t ? h`<span part=${tt(i)} title=${this.count}>${t}</span>` : g;
   }
 }, s(vc, "WyBadge"), vc);
-vr.styles = [z9, Y];
+vr.styles = [O9, Y];
 Pl([
-  p({ type: String })
+  y({ type: String })
 ], vr.prototype, "appearance", 2);
 Pl([
-  p({ type: String })
+  y({ type: String })
 ], vr.prototype, "position", 2);
 Pl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], vr.prototype, "reveal", 2);
 Pl([
-  p({ type: Number })
+  y({ type: Number })
 ], vr.prototype, "count", 2);
 Pl([
-  p({ type: Number })
+  y({ type: Number })
 ], vr.prototype, "limit", 2);
 vr = Pl([
   U("wy-badge")
 ], vr);
-var D9 = Object.defineProperty, H9 = Object.getOwnPropertyDescriptor, Zu = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? H9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var I9 = Object.defineProperty, D9 = Object.getOwnPropertyDescriptor, Zu = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? D9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && D9(t, e, r), r;
+  return i && r && I9(t, e, r), r;
 }, "__decorateClass$n"), gc;
 let rs = (gc = class extends Re {
   constructor() {
@@ -25124,25 +25101,25 @@ let rs = (gc = class extends Re {
     t.has("highlightId") && this.highlightId && this.highlightRef.value?.scrollIntoView({ block: "nearest" });
   }
 }, s(gc, "WyFileGrid"), gc);
-rs.styles = [mn, L9, O9, Y];
+rs.styles = [mn, T9, L9, Y];
 Zu([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], rs.prototype, "files", 2);
 Zu([
-  H()
+  V()
 ], rs.prototype, "isRenamingId", 2);
 Zu([
-  H()
+  V()
 ], rs.prototype, "highlightId", 2);
 rs = Zu([
   o1("wy-file-grid"),
   ut()
 ], rs);
-const V9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}[part~=wy-table]{table-layout:fixed;width:100%;vertical-align:top;border-collapse:collapse}[part~=wy-table] tr[part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-table] th{text-align:inherit;text-align:match-parent;text-align:-webkit-match-parent;font-weight:var(--wy-headings-font-weight, var(--wy-font-weight-bold, 600))}[part~=wy-table] th,[part~=wy-table] td{background-color:var(--wy-component-background-color);padding:var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem))))));box-shadow:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf)) 0 -1px 0 0 inset;line-height:1;vertical-align:middle;height:calc(calc(2 * var(--wy-size, 1rem)) + var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * 2)}[part~=wy-table]>tbody{vertical-align:inherit}[part~=wy-table]>thead{vertical-align:bottom}[part~=wy-table][part~=wy-table-interactive]>tbody>tr:hover>*{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-surface-layer, var(--wy-surface-layer-light, rgba(0, 0, 0, .0509803922)));color:var(--wy-component-color);cursor:pointer}[part~=wy-col-icon]{vertical-align:middle;text-align:center;padding:calc(var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * .5) calc(var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * .5);width:calc(calc(2 * var(--wy-size, 1rem)) + var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * 2);font-size:var(--wy-font-size, var(--wy-size, 1em));font-weight:var(--wy-font-weight, unset);text-transform:none;letter-spacing:normal}[part~=wy-col-icon-content]{display:flex;justify-content:center;align-items:center}[part~=wy-trashed]{text-decoration:line-through}[part~=wy-sort-link]{display:inline-flex;align-items:center;color:var(--wy-primary, var(--wy-primary-light, #2f628c));cursor:pointer}`, U9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}table thead{text-align:start;display:none}@container (inline-size >= 576px){table thead{display:table-header-group}}[part~=wy-col-name]{width:100%}[part~=wy-col-name]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-name] [part~=wy-input]{width:100%;box-sizing:border-box}[part~=wy-col-time]{width:calc(8 * var(--wy-size, 1rem));display:none}@container (inline-size >= 768px){[part~=wy-col-time]{display:table-cell}}[part~=wy-col-time]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-kind]{width:calc(8 * var(--wy-size, 1rem));display:none}@container (inline-size >= 768px){[part~=wy-col-kind]{display:table-cell}}[part~=wy-col-kind]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-size]{width:calc(6 * var(--wy-size, 1rem))}[part~=wy-col-size],[part~=wy-col-size]:is(th){text-align:end}[part~=wy-col-size]{display:none}@container (inline-size >= 576px){[part~=wy-col-size]{display:table-cell}}[part~=wy-col-size]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}`;
-var B9 = Object.defineProperty, N9 = Object.getOwnPropertyDescriptor, ph = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? N9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+const V9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}[part~=wy-table]{table-layout:fixed;width:100%;vertical-align:top;border-collapse:collapse}[part~=wy-table] tr[part~=wy-highlight]{animation:wy-highlight 3s 1.5s ease-in-out both}[part~=wy-table] th{text-align:inherit;text-align:match-parent;text-align:-webkit-match-parent;font-weight:var(--wy-headings-font-weight, var(--wy-font-weight-bold, 600))}[part~=wy-table] th,[part~=wy-table] td{background-color:var(--wy-component-background-color);padding:var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem))))));box-shadow:var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf)) 0 -1px 0 0 inset;line-height:1;vertical-align:middle;height:calc(calc(2 * var(--wy-size, 1rem)) + var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * 2)}[part~=wy-table]>tbody{vertical-align:inherit}[part~=wy-table]>thead{vertical-align:bottom}[part~=wy-table][part~=wy-table-interactive]>tbody>tr:hover>*{--wy-component-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background-color:var(--wy-surface-layer, var(--wy-surface-layer-light, rgba(0, 0, 0, .0509803922)));color:var(--wy-component-color);cursor:pointer}[part~=wy-col-icon]{vertical-align:middle;text-align:center;padding:calc(var(--wy-table-cell-padding-y, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * .5) calc(var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * .5);width:calc(calc(2 * var(--wy-size, 1rem)) + var(--wy-table-cell-padding-x, var(--wy-gap-sm, calc(.5 * var(--wy-gap, calc(.5 * var(--wy-size, 1rem)))))) * 2);font-size:var(--wy-font-size, var(--wy-size, 1em));font-weight:var(--wy-font-weight, unset);text-transform:none;letter-spacing:normal}[part~=wy-col-icon-content]{display:flex;justify-content:center;align-items:center}[part~=wy-trashed]{text-decoration:line-through}[part~=wy-sort-link]{display:inline-flex;align-items:center;color:var(--wy-primary, var(--wy-primary-light, #2f628c));cursor:pointer}`, H9 = j`@keyframes wy-highlight{0%{--wy-component-background-color: var(--wy-highlight, var(--wy-highlight-light, #e8f2ff));--wy-component-color: var(--wy-on-highlight, var(--wy-on-highlight-light, #001d32))}}table thead{text-align:start;display:none}@container (inline-size >= 576px){table thead{display:table-header-group}}[part~=wy-col-name]{width:100%}[part~=wy-col-name]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-name] [part~=wy-input]{width:100%;box-sizing:border-box}[part~=wy-col-time]{width:calc(8 * var(--wy-size, 1rem));display:none}@container (inline-size >= 768px){[part~=wy-col-time]{display:table-cell}}[part~=wy-col-time]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-kind]{width:calc(8 * var(--wy-size, 1rem));display:none}@container (inline-size >= 768px){[part~=wy-col-kind]{display:table-cell}}[part~=wy-col-kind]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}[part~=wy-col-size]{width:calc(6 * var(--wy-size, 1rem))}[part~=wy-col-size],[part~=wy-col-size]:is(th){text-align:end}[part~=wy-col-size]{display:none}@container (inline-size >= 576px){[part~=wy-col-size]{display:table-cell}}[part~=wy-col-size]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}`;
+var U9 = Object.defineProperty, B9 = Object.getOwnPropertyDescriptor, ph = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? B9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && B9(t, e, r), r;
+  return i && r && U9(t, e, r), r;
 }, "__decorateClass$m"), bc;
 let cn = (bc = class extends Re {
   constructor() {
@@ -25397,30 +25374,30 @@ let cn = (bc = class extends Re {
     t.has("highlightId") && this.highlightId && this.highlightRef.value?.scrollIntoView({ block: "nearest" });
   }
 }, s(bc, "WyFileTable"), bc);
-cn.styles = [mn, V9, U9, Y];
+cn.styles = [mn, V9, H9, Y];
 ph([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], cn.prototype, "files", 2);
 ph([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], cn.prototype, "order", 2);
 ph([
-  H()
+  V()
 ], cn.prototype, "isRenamingId", 2);
 ph([
-  H()
+  V()
 ], cn.prototype, "highlightId", 2);
 cn = ph([
   o1("wy-file-table"),
   ut()
 ], cn);
-var q9 = Object.defineProperty, W9 = Object.getOwnPropertyDescriptor, qg = /* @__PURE__ */ s((n) => {
+var N9 = Object.defineProperty, q9 = Object.getOwnPropertyDescriptor, qg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$5"), Sl = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? W9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? q9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && q9(t, e, r), r;
-}, "__decorateClass$l"), Wg = /* @__PURE__ */ s((n, t, e) => t.has(n) || qg("Cannot " + e), "__accessCheck$5"), wv = /* @__PURE__ */ s((n, t, e) => (Wg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$5"), j9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? qg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$5"), fv = /* @__PURE__ */ s((n, t, e, i) => (Wg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$5"), As, xc;
+  return i && r && N9(t, e, r), r;
+}, "__decorateClass$l"), Wg = /* @__PURE__ */ s((n, t, e) => t.has(n) || qg("Cannot " + e), "__accessCheck$5"), wv = /* @__PURE__ */ s((n, t, e) => (Wg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$5"), W9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? qg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$5"), fv = /* @__PURE__ */ s((n, t, e, i) => (Wg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$5"), As, xc;
 let gr = (xc = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.order = { by: "name", descending: !1 }, this.view = "list", this.showTrashed = !1, this.highlightId = NaN, this.highlightComment = !1, this.filesQuery = new or(this), this.previewRef = J(), this.infiniteScroll = new cr(this), this.pagerRef = J(), this.handleRealtimeFileCreated = (t) => {
@@ -25435,7 +25412,7 @@ let gr = (xc = class extends qt {
       !this.weavy || !this.app || this.weavy.queryClient.invalidateQueries({ queryKey: this.getFilesQueryKey(this.app) });
     }, this.handleRealtimeCommentCreated = () => {
       !this.weavy || !this.app || this.weavy.queryClient.invalidateQueries({ queryKey: this.getFilesQueryKey(this.app) });
-    }, j9(this, As);
+    }, W9(this, As);
   }
   /**
    * Resolve the query key used for the app file listing.
@@ -25469,13 +25446,13 @@ let gr = (xc = class extends qt {
   }
   async willUpdate(t) {
     var e;
-    if (super.willUpdate(t), t.has("link") && (this.highlightId = this.link && og(this.link, Dt.File)?.id, this.highlightComment = this.link && this.highlightId ? cg(this.link, Dt.File, { id: this.highlightId }, Dt.Comment) : !1), t.has("highlightComment") && this.highlightComment && this.highlightId && this.dispatchFileOpen(this.highlightId, "comments"), (t.has("weavy") || t.has("app") || t.has("order") || t.has("showTrashed")) && this.weavy && this.app && await this.filesQuery.trackInfiniteQuery(
-      C9(this.weavy, this.app.id, {
+    if (super.willUpdate(t), t.has("link") && (this.highlightId = this.link && og(this.link, It.File)?.id, this.highlightComment = this.link && this.highlightId ? cg(this.link, It.File, { id: this.highlightId }, It.Comment) : !1), t.has("highlightComment") && this.highlightComment && this.highlightId && this.dispatchFileOpen(this.highlightId, "comments"), (t.has("weavy") || t.has("app") || t.has("order") || t.has("showTrashed")) && this.weavy && this.app && await this.filesQuery.trackInfiniteQuery(
+      x9(this.weavy, this.app.id, {
         order: this.order,
         trashed: this.showTrashed
       })
     ), (t.has("weavy") || t.has("app") || t.has("user")) && this.weavy && this.app && this.user) {
-      this.renameFileMutation = T9(this.weavy, this.app), this.subscribeFileMutation = A9(this.weavy, this.app), this.trashFileMutation = k9(this.weavy, this.app), this.restoreFileMutation = P9(this.weavy, this.app), this.deleteForeverFileMutation = M9(this.weavy, this.app), (e = wv(this, As)) == null || e.call(this);
+      this.renameFileMutation = R9(this.weavy, this.app), this.subscribeFileMutation = E9(this.weavy, this.app), this.trashFileMutation = $9(this.weavy, this.app), this.restoreFileMutation = _9(this.weavy, this.app), this.deleteForeverFileMutation = S9(this.weavy, this.app), (e = wv(this, As)) == null || e.call(this);
       const i = `a${this.app.id}`;
       this.weavy.subscribe(i, "file_created", this.handleRealtimeFileCreated), this.weavy.subscribe(i, "file_updated", this.handleRealtimeFileUpdated), this.weavy.subscribe(i, "file_trashed", this.handleRealtimeFileTrashed), this.weavy.subscribe(i, "file_restored", this.handleRealtimeFileRestored), this.weavy.subscribe(i, "file_deleted", this.handleRealtimeFileDeleted), this.weavy.subscribe(i, "comment_created", this.handleRealtimeCommentCreated), fv(this, As, () => {
         this.weavy?.unsubscribe(i, "file_created", this.handleRealtimeFileCreated), this.weavy?.unsubscribe(i, "file_updated", this.handleRealtimeFileUpdated), this.weavy?.unsubscribe(i, "file_trashed", this.handleRealtimeFileTrashed), this.weavy?.unsubscribe(i, "file_restored", this.handleRealtimeFileRestored), this.weavy?.unsubscribe(i, "file_deleted", this.handleRealtimeFileDeleted), this.weavy?.unsubscribe(i, "comment_created", this.handleRealtimeCommentCreated), fv(this, As, void 0);
@@ -25563,32 +25540,32 @@ let gr = (xc = class extends qt {
 As = /* @__PURE__ */ new WeakMap();
 gr.styles = [Pr];
 Sl([
-  p({ type: Object })
+  y({ type: Object })
 ], gr.prototype, "order", 2);
 Sl([
-  p()
+  y()
 ], gr.prototype, "view", 2);
 Sl([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], gr.prototype, "showTrashed", 2);
 Sl([
-  H()
+  V()
 ], gr.prototype, "highlightId", 2);
 Sl([
-  H()
+  V()
 ], gr.prototype, "highlightComment", 2);
 gr = Sl([
   U("wy-files-list"),
   ut()
 ], gr);
-var K9 = Object.defineProperty, Q9 = Object.getOwnPropertyDescriptor, Yu = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Q9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var j9 = Object.defineProperty, K9 = Object.getOwnPropertyDescriptor, Yu = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? K9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && K9(t, e, r), r;
+  return i && r && j9(t, e, r), r;
 }, "__decorateClass$k"), Cc;
 let ns = (Cc = class extends ae {
   constructor() {
-    super(), this.appType = rt.Files, this.componentFeatures = new Yt({
+    super(), this.appType = rt.Files, this.componentFeatures = new Gt({
       // All available features as enabled/disabled by default
       [k.Attachments]: !0,
       [k.CloudFiles]: !0,
@@ -25609,11 +25586,11 @@ let ns = (Cc = class extends ae {
       [k.Versions]: !0,
       [k.WebDAV]: !0,
       [k.ZoomMeetings]: !1
-    }), this.theme = new he(this, ns.styles), this.view = "list", this.order = { by: "name", descending: !1 }, this.showTrashed = !1, this.persistState = new Nn(this), this.dropZone = new nu(this), this.uploadBlobMutation = new Be(this), this.createFileMutation = new Be(this), this.addEventListener("drop-files", (t) => this.handleBlobUpload(t));
+    }), this.theme = new de(this, ns.styles), this.view = "list", this.order = { by: "name", descending: !1 }, this.showTrashed = !1, this.persistState = new Nn(this), this.dropZone = new nu(this), this.uploadBlobMutation = new Be(this), this.createFileMutation = new Be(this), this.addEventListener("drop-files", (t) => this.handleBlobUpload(t));
   }
   /** @internal */
   handleBlobUpload(t) {
-    if (Wn([de.Create, de.Admin], this.app?.permissions) && t.detail.files)
+    if (Wn([le.Create, le.Admin], this.app?.permissions) && t.detail.files)
       for (let e = 0; e < t.detail.files.length; e++) {
         const r = { file: t.detail.files[e] };
         this.uploadBlobMutation.mutate(r).then((a) => this.handleCreateFile(a));
@@ -25621,7 +25598,7 @@ let ns = (Cc = class extends ae {
   }
   /** @internal */
   handleExternalBlobs(t) {
-    if (Wn([de.Create, de.Admin], this.app?.permissions) && t.detail.externalBlobs)
+    if (Wn([le.Create, le.Admin], this.app?.permissions) && t.detail.externalBlobs)
       for (let e = 0; e < t.detail.externalBlobs.length; e++) {
         const i = t.detail.externalBlobs[e];
         this.externalBlobMutation?.mutate({ externalBlob: i }).then((r) => this.handleCreateFile(r));
@@ -25640,7 +25617,7 @@ let ns = (Cc = class extends ae {
       ],
       this.uid.toString(),
       `u${this.user.id}`
-    ), (t.has("weavy") || t.has("app") || t.has("user")) && this.weavy && this.app && this.user && (await this.uploadBlobMutation.trackMutation(Ew(this.weavy, this.user, this.app.id)), await this.createFileMutation.trackMutation(w2(this.weavy, this.user, this.app)), this.externalBlobMutation = gg(this.weavy, this.user, this.app.id));
+    ), (t.has("weavy") || t.has("app") || t.has("user")) && this.weavy && this.app && this.user && (await this.uploadBlobMutation.trackMutation(Ew(this.weavy, this.user, this.app.id)), await this.createFileMutation.trackMutation(w2(this.weavy, this.user, this.app)), this.externalBlobMutation = vg(this.weavy, this.user, this.app.id));
   }
   render() {
     const t = this.dropZone.isDragActive;
@@ -25682,8 +25659,8 @@ let ns = (Cc = class extends ae {
   }
 }, s(Cc, "WyFiles"), Cc);
 ns.styles = [
-  bg,
-  Qt,
+  gg,
+  Kt,
   Ci,
   kr,
   _r,
@@ -25691,23 +25668,23 @@ ns.styles = [
   pn
 ];
 Yu([
-  p()
+  y()
 ], ns.prototype, "view", 2);
 Yu([
-  p({ type: Object })
+  y({ type: Object })
 ], ns.prototype, "order", 2);
 Yu([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ns.prototype, "showTrashed", 2);
 ns = Yu([
   U("wy-files"),
   ut()
 ], ns);
-const G9 = j`[part~=wy-notification] strong{font-weight:var(--wy-font-weight-bold, 600)}[part~=wy-notification] p{display:inline}[part~=wy-notification-text]{color:var(--wy-component-color)}[part~=wy-notification-text]{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}[part~=wy-notification-text]{white-space:normal}`;
-var Z9 = Object.defineProperty, Y9 = Object.getOwnPropertyDescriptor, yh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Y9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+const Q9 = j`[part~=wy-notification] strong{font-weight:var(--wy-font-weight-bold, 600)}[part~=wy-notification] p{display:inline}[part~=wy-notification-text]{color:var(--wy-component-color)}[part~=wy-notification-text]{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}[part~=wy-notification-text]{white-space:normal}`;
+var G9 = Object.defineProperty, Z9 = Object.getOwnPropertyDescriptor, yh = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? Z9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && Z9(t, e, r), r;
+  return i && r && G9(t, e, r), r;
 }, "__decorateClass$j"), $c;
 let ln = ($c = class extends Re {
   constructor() {
@@ -25843,35 +25820,35 @@ let ln = ($c = class extends Re {
     `;
   }
 }, s($c, "WyNotificationListItem"), $c);
-ln.styles = [Lt, wl, G9, Y];
+ln.styles = [Lt, wl, Q9, Y];
 yh([
-  p({ type: Number })
+  y({ type: Number })
 ], ln.prototype, "notificationId", 2);
 yh([
-  p({ type: Boolean, reflect: !0 })
+  y({ type: Boolean, reflect: !0 })
 ], ln.prototype, "selected", 2);
 yh([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], ln.prototype, "standalone", 2);
 yh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], ln.prototype, "notification", 2);
 ln = yh([
   U("wy-notification-list-item"),
   ut()
 ], ln);
-var X9 = Object.defineProperty, J9 = Object.getOwnPropertyDescriptor, jg = /* @__PURE__ */ s((n) => {
+var Y9 = Object.defineProperty, X9 = Object.getOwnPropertyDescriptor, jg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$4"), fs = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? J9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? X9(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && X9(t, e, r), r;
-}, "__decorateClass$i"), Kg = /* @__PURE__ */ s((n, t, e) => t.has(n) || jg("Cannot " + e), "__accessCheck$4"), mv = /* @__PURE__ */ s((n, t, e) => (Kg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$4"), tk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? jg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$4"), vv = /* @__PURE__ */ s((n, t, e, i) => (Kg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$4"), Rs, kc;
+  return i && r && Y9(t, e, r), r;
+}, "__decorateClass$i"), Kg = /* @__PURE__ */ s((n, t, e) => t.has(n) || jg("Cannot " + e), "__accessCheck$4"), mv = /* @__PURE__ */ s((n, t, e) => (Kg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$4"), J9 = /* @__PURE__ */ s((n, t, e) => t.has(n) ? jg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$4"), vv = /* @__PURE__ */ s((n, t, e, i) => (Kg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$4"), Rs, kc;
 let ol = (kc = class extends qt {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.typeFilter = _t.All, this.notificationsQuery = new or(this), this.infiniteScroll = new cr(this), this.pagerRef = J(), this.handleRefresh = (t) => {
       this.notificationsQuery.result.refetch();
-    }, tk(this, Rs);
+    }, J9(this, Rs);
   }
   /**
    * Mark or unmark a notification as read.
@@ -25910,7 +25887,7 @@ let ol = (kc = class extends qt {
   async willUpdate(t) {
     var e;
     super.willUpdate(t), (t.has("weavy") || t.has("typeFilter") || t.has("app")) && this.weavy && await this.notificationsQuery.trackInfiniteQuery(
-      V2(this.weavy, this.typeFilter, this.app?.id)
+      H2(this.weavy, this.typeFilter, this.app?.id)
     ), t.has("weavy") && this.weavy && (this.markNotificationMutation = k1(this.weavy), (e = mv(this, Rs)) == null || e.call(this), this.weavy.subscribe(null, "notification_created", this.handleRefresh), this.weavy.subscribe(null, "notification_updated", this.handleRefresh), this.weavy.subscribe(null, "notifications_marked", this.handleRefresh), vv(this, Rs, () => {
       this.weavy?.unsubscribe(null, "notification_created", this.handleRefresh), this.weavy?.unsubscribe(null, "notification_updated", this.handleRefresh), this.weavy?.unsubscribe(null, "notifications_marked", this.handleRefresh), vv(this, Rs, void 0);
     }));
@@ -25979,10 +25956,10 @@ ol.styles = [
     `
 ];
 fs([
-  p({ type: Number })
+  y({ type: Number })
 ], ol.prototype, "notificationId", 2);
 fs([
-  p()
+  y()
 ], ol.prototype, "typeFilter", 2);
 ol = fs([
   U("wy-notification-list"),
@@ -26070,10 +26047,10 @@ ss.styles = [
     `
 ];
 fs([
-  p()
+  y()
 ], ss.prototype, "typeFilter", 2);
 fs([
-  H()
+  V()
 ], ss.prototype, "activeFilter", 2);
 fs([
   pl({ flatten: !0, selector: ":not(slot)" })
@@ -26082,14 +26059,14 @@ ss = fs([
   U("wy-notification-header"),
   ut()
 ], ss);
-var ek = Object.defineProperty, ik = Object.getOwnPropertyDescriptor, tf = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? ik(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var tk = Object.defineProperty, ek = Object.getOwnPropertyDescriptor, tf = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? ek(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && ek(t, e, r), r;
+  return i && r && tk(t, e, r), r;
 }, "__decorateClass$h"), Pc;
 let cl = (Pc = class extends qn {
   constructor() {
-    super(...arguments), this.unreadNotifications = new Zl(this), this.theme = new he(this, cl.styles), this.currentTypeFilter = _t.All, this.typeFilter = _t.All;
+    super(...arguments), this.unreadNotifications = new Zl(this), this.theme = new de(this, cl.styles), this.currentTypeFilter = _t.All, this.typeFilter = _t.All;
   }
   /** 
    * Disabled link matching/consuming.
@@ -26133,26 +26110,26 @@ let cl = (Pc = class extends qn {
     `;
   }
 }, s(Pc, "WyNotifications"), Pc);
-cl.styles = [Qt, Ci, kr, _r, pn, Se];
+cl.styles = [Kt, Ci, kr, _r, pn, Se];
 tf([
-  H()
+  V()
 ], cl.prototype, "currentTypeFilter", 2);
 tf([
-  p()
+  y()
 ], cl.prototype, "typeFilter", 2);
 cl = tf([
   U("wy-notifications"),
   ut()
 ], cl);
 const Qg = j`:host{display:inline-flex}`;
-var rk = Object.defineProperty, nk = Object.getOwnPropertyDescriptor, Xu = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? nk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var ik = Object.defineProperty, rk = Object.getOwnPropertyDescriptor, Xu = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? rk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && rk(t, e, r), r;
+  return i && r && ik(t, e, r), r;
 }, "__decorateClass$g"), Sc;
 let as = (Sc = class extends qn {
   constructor() {
-    super(...arguments), this.theme = new he(this, as.styles), this.unreadNotifications = new Zl(this), this.badge = "count", this.badgePosition = "inline", this.typeFilter = _t.All;
+    super(...arguments), this.theme = new de(this, as.styles), this.unreadNotifications = new Zl(this), this.badge = "count", this.badgePosition = "inline", this.typeFilter = _t.All;
   }
   /** 
    * Disabled link matching/consuming.
@@ -26182,27 +26159,27 @@ let as = (Sc = class extends qn {
         ` : g;
   }
 }, s(Sc, "WyNotificationBadge"), Sc);
-as.styles = [Qg, Qt, Se];
+as.styles = [Qg, Kt, Se];
 Xu([
-  p({ type: String })
+  y({ type: String })
 ], as.prototype, "badge", 2);
 Xu([
-  p({ type: String })
+  y({ type: String })
 ], as.prototype, "badgePosition", 2);
 Xu([
-  p()
+  y()
 ], as.prototype, "typeFilter", 2);
 as = Xu([
   U("wy-notification-badge")
 ], as);
-var sk = Object.defineProperty, ak = Object.getOwnPropertyDescriptor, gn = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? ak(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var nk = Object.defineProperty, sk = Object.getOwnPropertyDescriptor, gn = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? sk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && sk(t, e, r), r;
+  return i && r && nk(t, e, r), r;
 }, "__decorateClass$f"), Mc;
 let gi = (Mc = class extends qn {
   constructor() {
-    super(...arguments), this.theme = new he(this, gi.styles), this.unreadNotifications = new Zl(this), this.overlay = "sheet", this.badge = "compact", this.badgePosition = "top-right", this.typeFilter = _t.All, this.currentTypeFilter = _t.All, this.showNotificationList = !1;
+    super(...arguments), this.theme = new de(this, gi.styles), this.unreadNotifications = new Zl(this), this.overlay = "sheet", this.badge = "compact", this.badgePosition = "top-right", this.typeFilter = _t.All, this.currentTypeFilter = _t.All, this.showNotificationList = !1;
   }
   /** 
    * Disabled link matching/consuming.
@@ -26298,37 +26275,37 @@ let gi = (Mc = class extends qn {
     `;
   }
 }, s(Mc, "WyNotificationButton"), Mc);
-gi.styles = [Y, Qt, Se];
+gi.styles = [Y, Kt, Se];
 gn([
-  p({ type: String })
+  y({ type: String })
 ], gi.prototype, "overlay", 2);
 gn([
-  p({ type: String })
+  y({ type: String })
 ], gi.prototype, "list", 1);
 gn([
-  p({ type: String })
+  y({ type: String })
 ], gi.prototype, "badge", 2);
 gn([
-  p({ type: String })
+  y({ type: String })
 ], gi.prototype, "badgePosition", 2);
 gn([
-  p()
+  y()
 ], gi.prototype, "typeFilter", 2);
 gn([
-  H()
+  V()
 ], gi.prototype, "currentTypeFilter", 2);
 gn([
-  H()
+  V()
 ], gi.prototype, "showNotificationList", 2);
 gi = gn([
   U("wy-notification-button"),
   ut()
 ], gi);
 const Gg = j`[part~=wy-toasts]{background:none;border:none;padding:var(--wy-padding-lg, calc(1.5 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));margin:0;box-sizing:border-box;width:100%;height:100%;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-end;align-items:flex-end;justify-content:flex-end;pointer-events:none}[part~=wy-toasts][popover]{position:fixed;inset:0;z-index:1070}[part~=wy-toasts]>::slotted(*){pointer-events:auto}[part~=wy-toast]{--wy-component-background-color: var(--wy-surface-container-low, var(--wy-surface-container-low-light, #f1f3f9));--wy-color: var(--wy-on-surface, var(--wy-on-surface-light, #181c20));background:var(--wy-component-background-color);color:var(--wy-component-color);gap:var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))));margin-top:0;margin-bottom:var(--wy-gap-lg, calc(1.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))));display:flex;cursor:pointer;border-radius:var(--wy-border-radius, calc(.5 * var(--wy-size, 1rem)));padding:0;-webkit-user-select:none;user-select:none;box-shadow:var(--wy-shadow-level2, 0 calc(.25 * var(--wy-size, 1rem)) calc(.3125 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .14), 0 calc(.0625 * var(--wy-size, 1rem)) calc(.625 * var(--wy-size, 1rem)) 0 rgba(0, 0, 0, .12), 0 calc(.125 * var(--wy-size, 1rem)) calc(.25 * var(--wy-size, 1rem)) calc(-.0625 * var(--wy-size, 1rem)) rgba(0, 0, 0, .2));position:relative;overflow:hidden;min-height:calc(3 * var(--wy-size, 1rem));max-width:calc(32 * var(--wy-size, 1rem))}[part~=wy-toast][part~=wy-fade]{transition-property:opacity,min-height,padding-top,padding-bottom,margin-top,margin-bottom,height;transition-duration:var(--wy-transition-duration, .2s);transition-timing-function:var(--wy-transition-curve, cubic-bezier(.4, 0, .2, 1))}[part~=wy-toast][part~=wy-fade]:not([part~=wy-show]){opacity:0;min-height:0;height:0;padding-top:0;padding-bottom:0;margin-top:0;margin-bottom:0;pointer-events:none}`;
-var ok = Object.defineProperty, ck = Object.getOwnPropertyDescriptor, wh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? ck(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var ak = Object.defineProperty, ok = Object.getOwnPropertyDescriptor, wh = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? ok(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && ok(t, e, r), r;
+  return i && r && ak(t, e, r), r;
 }, "__decorateClass$e"), Ec;
 let Cd = (Ec = class extends st {
   constructor() {
@@ -26384,7 +26361,7 @@ Cd.styles = [
   Y
 ];
 wh([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], Cd.prototype, "show", 2);
 Cd = wh([
   U("wy-toasts")
@@ -26444,24 +26421,24 @@ br.styles = [
 ];
 br.defaultDuration = 5e3;
 wh([
-  H()
+  V()
 ], br.prototype, "show", 2);
 wh([
-  p({ type: Number })
+  y({ type: Number })
 ], br.prototype, "duration", 2);
 br = wh([
   U("wy-toast")
 ], br);
-var lk = Object.defineProperty, dk = Object.getOwnPropertyDescriptor, Zg = /* @__PURE__ */ s((n) => {
+var ck = Object.defineProperty, lk = Object.getOwnPropertyDescriptor, Zg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$3"), Ml = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? dk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? lk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && lk(t, e, r), r;
-}, "__decorateClass$d"), Yg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Zg("Cannot " + e), "__accessCheck$3"), gv = /* @__PURE__ */ s((n, t, e) => (Yg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$3"), hk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Zg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$3"), bv = /* @__PURE__ */ s((n, t, e, i) => (Yg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$3"), Ts, Rc;
+  return i && r && ck(t, e, r), r;
+}, "__decorateClass$d"), Yg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Zg("Cannot " + e), "__accessCheck$3"), gv = /* @__PURE__ */ s((n, t, e) => (Yg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$3"), dk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Zg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$3"), bv = /* @__PURE__ */ s((n, t, e, i) => (Yg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$3"), Ts, Rc;
 let xr = (Rc = class extends qn {
   constructor() {
-    super(...arguments), this.theme = new he(this, xr.styles), this.typeFilter = _t.All, this.appearance = "internal", this.requestUserPermission = !1, this.duration = br.defaultDuration, this._notifications = [], this._nativeNotifications = [], this.handleEvent = async (t) => {
+    super(...arguments), this.theme = new de(this, xr.styles), this.typeFilter = _t.All, this.appearance = "internal", this.requestUserPermission = !1, this.duration = br.defaultDuration, this._notifications = [], this._nativeNotifications = [], this.handleEvent = async (t) => {
       if (this.typeFilter === _t.All || this.typeFilter === t.notification.type)
         if (t.action === "notification_deleted")
           this.removeNotification(t.notification.id), this.closeNativeNotification(t.notification.id);
@@ -26479,7 +26456,7 @@ let xr = (Rc = class extends qn {
           });
           (!this.requestUserPermission && this.appearance !== "native" || await this.hasUserPermission() ? this.dispatchEvent(a) : !1) && (t.action === "notification_created" && t.notification.is_unread ? await this.addOrUpdateNotification(t.notification) : await this.updateNotification(t.notification), await this.addOrUpdateNativeNotification(r));
         }
-    }, hk(this, Ts);
+    }, dk(this, Ts);
   }
   /** 
    * Disabled link matching/consuming.
@@ -26602,34 +26579,34 @@ let xr = (Rc = class extends qn {
   }
 }, s(Rc, "WyNotificationToasts"), Rc);
 Ts = /* @__PURE__ */ new WeakMap();
-xr.styles = [Qt, Y, Se];
+xr.styles = [Kt, Y, Se];
 Ml([
-  p()
+  y()
 ], xr.prototype, "typeFilter", 2);
 Ml([
-  p()
+  y()
 ], xr.prototype, "appearance", 2);
 Ml([
-  p({ type: Boolean })
+  y({ type: Boolean })
 ], xr.prototype, "requestUserPermission", 2);
 Ml([
-  p({ type: Number })
+  y({ type: Number })
 ], xr.prototype, "duration", 2);
 Ml([
-  H()
+  V()
 ], xr.prototype, "_notifications", 2);
 xr = Ml([
   U("wy-notification-toasts"),
   ut()
 ], xr);
-const jk = new Map(
+const Wk = new Map(
   Object.entries({
     [pi.ChatRoom]: rt.ChatRoom,
     [pi.PrivateChat]: rt.PrivateChat,
     [rt.ChatRoom]: pi.ChatRoom,
     [rt.PrivateChat]: pi.PrivateChat
   })
-), Kk = new Map(
+), jk = new Map(
   Object.entries({
     [pi.AgentChat]: rt.AgentChat,
     [rt.AgentChat]: pi.AgentChat
@@ -26661,10 +26638,10 @@ const jk = new Map(
   [k.Receipts]: !0,
   [k.Typing]: !0
 }, rf = j`[part~=wy-messenger-layout]{display:flex;flex:1;align-items:stretch;position:relative;container-type:inline-size;align-self:stretch;min-height:0;min-width:0;box-sizing:border-box}[part~=wy-messenger-overlay-container]{--wy-padding-outer: var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));--wy-component-offset-top: calc(var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) + var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem))))))}[part~=wy-messenger-conversation-list]{flex:0 1 100%;min-width:0;max-width:none;display:flex;flex-direction:column;padding:var(--wy-padding-outer, 0);gap:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-messenger-conversation]{display:flex;flex-direction:column;overflow-anchor:none;height:100%;width:100%;flex:0 1 100%;box-sizing:border-box;padding:var(--wy-padding-outer, 0);--wy-component-offset-top: var(--wy-titlebar-height, calc(max(1lh, var(--wy-button-size, calc(2.5 * var(--wy-size, 1rem)))) + 2 * var(--wy-padding-sm, calc(.25 * var(--wy-size, 1rem)))))}[part~=wy-close-conversation]{display:contents}@container (inline-size < 768px){[part~=wy-messenger-conversation-list]:not([data-conversation-id=\"\"]){display:none}[part~=wy-messenger-conversation][data-conversation-id=\"\"]{display:none}}@container (inline-size >= 768px){[part~=wy-messenger-conversation-list]{flex:0 1 50%;max-width:calc(24 * var(--wy-size, 1rem));padding-right:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));border-right:var(--wy-border, 1px) solid var(--wy-outline-variant, var(--wy-outline-variant-light, #c2c7cf))}[part~=wy-messenger-conversation]{min-width:max(50%,calc(16 * var(--wy-size, 1rem)));padding-left:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))}[part~=wy-close-conversation]{display:none}}`;
-var uk = Object.defineProperty, pk = Object.getOwnPropertyDescriptor, nf = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? pk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var hk = Object.defineProperty, uk = Object.getOwnPropertyDescriptor, nf = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? uk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && uk(t, e, r), r;
+  return i && r && hk(t, e, r), r;
 }, "__decorateClass$c"), Tc;
 let dl = (Tc = class extends Re {
   constructor() {
@@ -26728,18 +26705,18 @@ dl.styles = [
     `
 ];
 nf([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], dl.prototype, "label", 2);
 nf([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], dl.prototype, "accept", 2);
 dl = nf([
   U("wy-upload")
 ], dl);
-var yk = Object.defineProperty, wk = Object.getOwnPropertyDescriptor, bn = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? wk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var pk = Object.defineProperty, yk = Object.getOwnPropertyDescriptor, bn = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? yk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && yk(t, e, r), r;
+  return i && r && pk(t, e, r), r;
 }, "__decorateClass$b"), Lc;
 let bi = (Lc = class extends st {
   constructor() {
@@ -26896,38 +26873,38 @@ let bi = (Lc = class extends st {
 }, s(Lc, "WyUsersSearch"), Lc);
 bi.styles = [us, O1, mn, Pr, Y, hs];
 bn([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], bi.prototype, "weavy", 2);
 bn([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], bi.prototype, "appId", 2);
 bn([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], bi.prototype, "buttonTitle", 2);
 bn([
-  H()
+  V()
 ], bi.prototype, "agentFilter", 2);
 bn([
-  H()
+  V()
 ], bi.prototype, "selected", 2);
 bn([
-  H()
+  V()
 ], bi.prototype, "select", 2);
 bn([
-  H()
+  V()
 ], bi.prototype, "text", 2);
 bi = bn([
   U("wy-users-search"),
   ut()
 ], bi);
-var fk = Object.defineProperty, mk = Object.getOwnPropertyDescriptor, Xg = /* @__PURE__ */ s((n) => {
+var wk = Object.defineProperty, fk = Object.getOwnPropertyDescriptor, Xg = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$2"), ms = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? mk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? fk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && fk(t, e, r), r;
-}, "__decorateClass$a"), Jg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Xg("Cannot " + e), "__accessCheck$2"), xv = /* @__PURE__ */ s((n, t, e) => (Jg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$2"), vk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Xg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$2"), Cv = /* @__PURE__ */ s((n, t, e, i) => (Jg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$2"), Ls, Oc;
+  return i && r && wk(t, e, r), r;
+}, "__decorateClass$a"), Jg = /* @__PURE__ */ s((n, t, e) => t.has(n) || Xg("Cannot " + e), "__accessCheck$2"), xv = /* @__PURE__ */ s((n, t, e) => (Jg(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$2"), mk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? Xg("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$2"), Cv = /* @__PURE__ */ s((n, t, e, i) => (Jg(n, t, "write to private field"), t.set(n, e), e), "__privateSet$2"), Ls, Oc;
 let Ui = (Oc = class extends Re {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.showDetails = !1, this.showAddMembers = !1, this.conversationTitle = "", this.conversationTitleInput = "", this.membersQuery = new ge(this), this.handleRealtimeAppUpdated = (t) => {
@@ -26940,7 +26917,7 @@ let Ui = (Oc = class extends Re {
         r.presence = t.indexOf(r.id) != -1 ? "active" : "away";
       }), i), "updateMembersInApps");
       this.weavy.queryClient.setQueryData(["apps", this.conversationId], (i) => (i.members.data = e(i.members.data), i)), this.weavy.queryClient.setQueryData(["members", this.conversationId], (i) => e(i));
-    }, vk(this, Ls);
+    }, mk(this, Ls);
   }
   /** Checks whether the current or provided conversation is an agent chat. */
   isAgentChat(t) {
@@ -27172,14 +27149,14 @@ let Ui = (Oc = class extends Re {
                                                         title=${x("Admin")}
                                                       ></wy-icon>` : g}
                                                 </span>
-                                                ${this.user && this.user.id === r.id && !Yl(de.Admin, this.conversation?.permissions) ? h` <wy-button
+                                                ${this.user && this.user.id === r.id && !Yl(le.Admin, this.conversation?.permissions) ? h` <wy-button
                                                       slot="actions"
                                                       @click=${() => this.leaveConversation(r.id)}
                                                       title=${x("Leave conversation")}
                                                       kind="icon"
                                                     >
                                                       <wy-icon name="close"></wy-icon>
-                                                    </wy-button>` : Yl(de.Admin, this.conversation?.permissions) ? h`<wy-dropdown slot="actions">
+                                                    </wy-button>` : Yl(le.Admin, this.conversation?.permissions) ? h`<wy-dropdown slot="actions">
                                                       <wy-dropdown-item
                                                         @click=${() => this.leaveConversation(r.id)}
                                                       >
@@ -27263,41 +27240,41 @@ let Ui = (Oc = class extends Re {
 Ls = /* @__PURE__ */ new WeakMap();
 Ui.styles = [mn, hs, us, Y];
 ms([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Ui.prototype, "conversationId", 2);
 ms([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Ui.prototype, "conversation", 2);
 ms([
-  H()
+  V()
 ], Ui.prototype, "showDetails", 2);
 ms([
-  H()
+  V()
 ], Ui.prototype, "showAddMembers", 2);
 ms([
-  H()
+  V()
 ], Ui.prototype, "conversationTitle", 2);
 ms([
-  H()
+  V()
 ], Ui.prototype, "conversationTitleInput", 2);
 Ui = ms([
   U("wy-conversation-header"),
   ut()
 ], Ui);
-var gk = Object.defineProperty, bk = Object.getOwnPropertyDescriptor, El = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? bk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var vk = Object.defineProperty, gk = Object.getOwnPropertyDescriptor, El = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? gk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && gk(t, e, r), r;
+  return i && r && vk(t, e, r), r;
 }, "__decorateClass$9"), zc;
 let Cr = (zc = class extends Nt {
   constructor() {
-    super(...arguments), this.componentFeatures = new Yt(ll), this.theme = new he(this, Cr.styles), this.unreadConversationsController = new Qc(this), this.createConversationController = new Kc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.conversationListRef = J(), this.conversationNewRef = J();
+    super(...arguments), this.componentFeatures = new Gt(ll), this.theme = new de(this, Cr.styles), this.unreadConversationsController = new Qc(this), this.createConversationController = new Kc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.conversationListRef = J(), this.conversationNewRef = J();
   }
   set agent(t) {
-    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Yt(
+    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Gt(
       ef,
       this.componentFeatures.allowedFeatures()
-    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Yt(
+    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Gt(
       ll,
       this.componentFeatures.allowedFeatures()
     )), this.conversationId = null;
@@ -27420,44 +27397,44 @@ let Cr = (zc = class extends Nt {
     `;
   }
 }, s(zc, "WyMessenger"), zc);
-Cr.styles = [Qt, us, rf, Ci, kr, Se];
+Cr.styles = [Kt, us, rf, Ci, kr, Se];
 El([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Cr.prototype, "componentTypes", 2);
 El([
-  p({ type: String })
+  y({ type: String })
 ], Cr.prototype, "agent", 1);
 El([
-  p()
+  y()
 ], Cr.prototype, "instructions", 2);
 El([
-  p()
+  y()
 ], Cr.prototype, "placeholder", 2);
 El([
-  p({ type: Number })
+  y({ type: Number })
 ], Cr.prototype, "conversationId", 2);
 Cr = El([
   U("wy-messenger"),
   ut()
 ], Cr);
-var xk = Object.defineProperty, Ck = Object.getOwnPropertyDescriptor, $i = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Ck(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var bk = Object.defineProperty, xk = Object.getOwnPropertyDescriptor, $i = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? xk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && xk(t, e, r), r;
+  return i && r && bk(t, e, r), r;
 }, "__decorateClass$8"), Fc;
 let qe = (Fc = class extends Nt {
   constructor() {
-    super(...arguments), this.componentFeatures = new Yt(ll), this.theme = new he(this, qe.styles), this.unreadConversationsController = new Qc(this), this.createConversationController = new Kc(this), this.overlay = "drawer", this.badge = "compact", this.badgePosition = "top-right", this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.show = !1, this.maximized = !1, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.messengerRef = J(), this.conversationListRef = J(), this.conversationNewRef = J();
+    super(...arguments), this.componentFeatures = new Gt(ll), this.theme = new de(this, qe.styles), this.unreadConversationsController = new Qc(this), this.createConversationController = new Kc(this), this.overlay = "drawer", this.badge = "compact", this.badgePosition = "top-right", this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.show = !1, this.maximized = !1, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.messengerRef = J(), this.conversationListRef = J(), this.conversationNewRef = J();
   }
   /** Check visibility on the Messenger */
   get visibilityElement() {
     return this.messengerRef.value;
   }
   set agent(t) {
-    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Yt(
+    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Gt(
       ef,
       this.componentFeatures.allowedFeatures()
-    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Yt(
+    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Gt(
       ll,
       this.componentFeatures.allowedFeatures()
     )), this.conversationId = null;
@@ -27608,49 +27585,49 @@ let qe = (Fc = class extends Nt {
     `;
   }
 }, s(Fc, "WyMessengerButton"), Fc);
-qe.styles = [Y, Qt, Se, us, rf];
+qe.styles = [Y, Kt, Se, us, rf];
 $i([
-  p({ type: String })
+  y({ type: String })
 ], qe.prototype, "overlay", 2);
 $i([
-  p({ type: String })
+  y({ type: String })
 ], qe.prototype, "badge", 2);
 $i([
-  p({ type: String })
+  y({ type: String })
 ], qe.prototype, "badgePosition", 2);
 $i([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], qe.prototype, "componentTypes", 2);
 $i([
-  p({ type: String })
+  y({ type: String })
 ], qe.prototype, "agent", 1);
 $i([
-  p()
+  y()
 ], qe.prototype, "instructions", 2);
 $i([
-  p()
+  y()
 ], qe.prototype, "placeholder", 2);
 $i([
-  p({ type: Number })
+  y({ type: Number })
 ], qe.prototype, "conversationId", 2);
 $i([
-  H()
+  V()
 ], qe.prototype, "show", 2);
 $i([
-  H()
+  V()
 ], qe.prototype, "maximized", 2);
 qe = $i([
   U("wy-messenger-button"),
   ut()
 ], qe);
-var $k = Object.getOwnPropertyDescriptor, kk = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? $k(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var Ck = Object.getOwnPropertyDescriptor, $k = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? Ck(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = o(r) || r);
   return r;
 }, "__decorateClass$7"), Ic;
 let fu = (Ic = class extends Nt {
   constructor() {
-    super(...arguments), this.theme = new he(this, fu.styles), this.createConversationController = new Kc(this), this.conversationNewRef = J();
+    super(...arguments), this.theme = new de(this, fu.styles), this.createConversationController = new Kc(this), this.conversationNewRef = J();
   }
   /** 
    * Disabled link matching/consuming.
@@ -27692,18 +27669,18 @@ let fu = (Ic = class extends Nt {
     `;
   }
 }, s(Ic, "WyMessengerNew"), Ic);
-fu.styles = [Qt, us, rf, Ci, Se];
-fu = kk([
+fu.styles = [Kt, us, rf, Ci, Se];
+fu = $k([
   U("wy-messenger-new")
 ], fu);
-var _k = Object.defineProperty, Pk = Object.getOwnPropertyDescriptor, fh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Pk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var kk = Object.defineProperty, _k = Object.getOwnPropertyDescriptor, fh = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? _k(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && _k(t, e, r), r;
+  return i && r && kk(t, e, r), r;
 }, "__decorateClass$6"), Dc;
 let dn = (Dc = class extends Nt {
   constructor() {
-    super(...arguments), this.theme = new he(this, dn.styles), this.unreadConversations = new Qc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.badge = "count", this.badgePosition = "inline";
+    super(...arguments), this.theme = new de(this, dn.styles), this.unreadConversations = new Qc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.badge = "count", this.badgePosition = "inline";
   }
   /** 
    * Disabled link matching/consuming.
@@ -27737,29 +27714,29 @@ let dn = (Dc = class extends Nt {
         ` : g;
   }
 }, s(Dc, "WyMessengerBadge"), Dc);
-dn.styles = [Qg, Qt, Se];
+dn.styles = [Qg, Kt, Se];
 fh([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], dn.prototype, "componentTypes", 2);
 fh([
-  p({ type: String })
+  y({ type: String })
 ], dn.prototype, "badge", 2);
 fh([
-  p({ type: String })
+  y({ type: String })
 ], dn.prototype, "badgePosition", 2);
 fh([
-  p({ type: String })
+  y({ type: String })
 ], dn.prototype, "agent", 1);
 dn = fh([
   U("wy-messenger-badge")
 ], dn);
 const t0 = j`[part~=wy-conversations]{position:relative;display:flex;flex-direction:column;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}[part~=wy-conversation-list]{display:flex;flex-direction:column;gap:var(--wy-gap-sm, calc(.5 * var(--wy-gap, var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))))}`;
-var Sk = Object.defineProperty, Mk = Object.getOwnPropertyDescriptor, Ju = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Mk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var Pk = Object.defineProperty, Sk = Object.getOwnPropertyDescriptor, Ju = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? Sk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && Sk(t, e, r), r;
-}, "__decorateClass$5"), Hc;
-let hl = (Hc = class extends st {
+  return i && r && Pk(t, e, r), r;
+}, "__decorateClass$5"), Vc;
+let hl = (Vc = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.typing = new su(this);
   }
@@ -27782,29 +27759,29 @@ let hl = (Hc = class extends st {
     }
     return i ? h`<span>${i}</span>` : h`<slot></slot>`;
   }
-}, s(Hc, "WyTyping"), Hc);
+}, s(Vc, "WyTyping"), Vc);
 Ju([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], hl.prototype, "weavy", 2);
 Ju([
-  p({ attribute: !0, type: Number })
+  y({ attribute: !0, type: Number })
 ], hl.prototype, "appId", 2);
 Ju([
-  p({ attribute: !0, type: Number })
+  y({ attribute: !0, type: Number })
 ], hl.prototype, "userId", 2);
 hl = Ju([
   U("wy-typing"),
   ut()
 ], hl);
-var Ek = Object.defineProperty, Ak = Object.getOwnPropertyDescriptor, e0 = /* @__PURE__ */ s((n) => {
+var Mk = Object.defineProperty, Ek = Object.getOwnPropertyDescriptor, e0 = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError$1"), Ke = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Ak(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? Ek(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && Ek(t, e, r), r;
-}, "__decorateClass$4"), i0 = /* @__PURE__ */ s((n, t, e) => t.has(n) || e0("Cannot " + e), "__accessCheck$1"), $v = /* @__PURE__ */ s((n, t, e) => (i0(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$1"), Rk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? e0("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$1"), kv = /* @__PURE__ */ s((n, t, e, i) => (i0(n, t, "write to private field"), t.set(n, e), e), "__privateSet$1"), Os, Vc;
-let Pe = (Vc = class extends st {
+  return i && r && Mk(t, e, r), r;
+}, "__decorateClass$4"), i0 = /* @__PURE__ */ s((n, t, e) => t.has(n) || e0("Cannot " + e), "__accessCheck$1"), $v = /* @__PURE__ */ s((n, t, e) => (i0(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet$1"), Ak = /* @__PURE__ */ s((n, t, e) => t.has(n) ? e0("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd$1"), kv = /* @__PURE__ */ s((n, t, e, i) => (i0(n, t, "write to private field"), t.set(n, e), e), "__privateSet$1"), Os, Hc;
+let Pe = (Hc = class extends st {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.unread = !1, this.avatarUrl = "", this.hideAvatar = !1, this.name = "", this.type = rt.PrivateChat, this.selected = !1, this.starred = !1, this.pinned = !1, this.handleMessageCreated = (t) => {
       !this.user || !this.weavy || (Ae(this.weavy.queryClient, ["apps", t.message.app.id], void 0, (e) => ({
@@ -27825,7 +27802,7 @@ let Pe = (Vc = class extends st {
       this.weavy?.queryClient.invalidateQueries({ queryKey: ["apps"], exact: !1 });
     }, this.handleConversationMarked = (t) => {
       this.user && t.actor.id === this.user.id && this.weavy?.queryClient.invalidateQueries({ queryKey: ["apps"], exact: !1 });
-    }, Rk(this, Os);
+    }, Ak(this, Os);
   }
   /**
    * Trigger `selected` event.
@@ -28058,61 +28035,61 @@ let Pe = (Vc = class extends st {
     var t;
     (t = $v(this, Os)) == null || t.call(this), super.disconnectedCallback();
   }
-}, s(Vc, "WyConversationItem"), Vc);
+}, s(Hc, "WyConversationItem"), Hc);
 Os = /* @__PURE__ */ new WeakMap();
 Pe.styles = [t0];
 Ke([
-  oe({ context: Jt, subscribe: !0 }),
-  H()
+  oe({ context: Xt, subscribe: !0 }),
+  V()
 ], Pe.prototype, "weavy", 2);
 Ke([
   oe({ context: _u, subscribe: !0 }),
-  H()
+  V()
 ], Pe.prototype, "user", 2);
 Ke([
-  p({ attribute: !0, type: Number })
+  y({ attribute: !0, type: Number })
 ], Pe.prototype, "conversationId", 2);
 Ke([
-  p({ attribute: !0, type: Boolean, reflect: !0 })
+  y({ attribute: !0, type: Boolean, reflect: !0 })
 ], Pe.prototype, "unread", 2);
 Ke([
-  p({ attribute: !0 })
+  y({ attribute: !0 })
 ], Pe.prototype, "avatarUrl", 2);
 Ke([
-  p({ attribute: !0, type: Boolean, reflect: !0 })
+  y({ attribute: !0, type: Boolean, reflect: !0 })
 ], Pe.prototype, "hideAvatar", 2);
 Ke([
-  p({ attribute: !0 })
+  y({ attribute: !0 })
 ], Pe.prototype, "name", 2);
 Ke([
-  p({ attribute: !0, type: String })
+  y({ attribute: !0, type: String })
 ], Pe.prototype, "type", 2);
 Ke([
-  p({ attribute: !0, type: Boolean, reflect: !0 })
+  y({ attribute: !0, type: Boolean, reflect: !0 })
 ], Pe.prototype, "selected", 2);
 Ke([
-  p({ attribute: !0, type: Boolean, reflect: !0 })
+  y({ attribute: !0, type: Boolean, reflect: !0 })
 ], Pe.prototype, "starred", 2);
 Ke([
-  p({ attribute: !0, type: Boolean, reflect: !0 })
+  y({ attribute: !0, type: Boolean, reflect: !0 })
 ], Pe.prototype, "pinned", 2);
 Ke([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Pe.prototype, "members", 2);
 Ke([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], Pe.prototype, "lastMessage", 2);
 Pe = Ke([
   U("wy-conversation-item"),
   ut()
 ], Pe);
-var Tk = Object.defineProperty, Lk = Object.getOwnPropertyDescriptor, r0 = /* @__PURE__ */ s((n) => {
+var Rk = Object.defineProperty, Tk = Object.getOwnPropertyDescriptor, r0 = /* @__PURE__ */ s((n) => {
   throw TypeError(n);
 }, "__typeError"), mh = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Lk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+  for (var r = i > 1 ? void 0 : i ? Tk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && Tk(t, e, r), r;
-}, "__decorateClass$3"), n0 = /* @__PURE__ */ s((n, t, e) => t.has(n) || r0("Cannot " + e), "__accessCheck"), _v = /* @__PURE__ */ s((n, t, e) => (n0(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet"), Ok = /* @__PURE__ */ s((n, t, e) => t.has(n) ? r0("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd"), Pv = /* @__PURE__ */ s((n, t, e, i) => (n0(n, t, "write to private field"), t.set(n, e), e), "__privateSet"), zs, Uc;
+  return i && r && Rk(t, e, r), r;
+}, "__decorateClass$3"), n0 = /* @__PURE__ */ s((n, t, e) => t.has(n) || r0("Cannot " + e), "__accessCheck"), _v = /* @__PURE__ */ s((n, t, e) => (n0(n, t, "read from private field"), e ? e.call(n) : t.get(n)), "__privateGet"), Lk = /* @__PURE__ */ s((n, t, e) => t.has(n) ? r0("Cannot add the same private member more than once") : t instanceof WeakSet ? t.add(n) : t.set(n, e), "__privateAdd"), Pv = /* @__PURE__ */ s((n, t, e, i) => (n0(n, t, "write to private field"), t.set(n, e), e), "__privateSet"), zs, Uc;
 let hn = (Uc = class extends Re {
   constructor() {
     super(...arguments), this.exportParts = new W(this), this.conversationTypes = [rt.ChatRoom, rt.PrivateChat], this.searchText = "", this.conversationsQuery = new or(this), this.infiniteScroll = new cr(this), this.pagerRef = J(), this.handleRefresh = () => {
@@ -28133,7 +28110,7 @@ let hn = (Uc = class extends Re {
         void 0,
         e
       );
-    }, Ok(this, zs);
+    }, Lk(this, zs);
   }
   /**
    * Selects a conversation and triggers an action event.
@@ -28301,35 +28278,35 @@ let hn = (Uc = class extends Re {
 zs = /* @__PURE__ */ new WeakMap();
 hn.styles = [t0, hs, Y, Pr];
 mh([
-  p({ type: Number })
+  y({ type: Number })
 ], hn.prototype, "conversationId", 2);
 mh([
-  p({ type: Array })
+  y({ type: Array })
 ], hn.prototype, "conversationTypes", 2);
 mh([
-  p()
+  y()
 ], hn.prototype, "agent", 2);
 mh([
-  H()
+  V()
 ], hn.prototype, "searchText", 2);
 hn = mh([
   U("wy-conversation-list"),
   ut()
 ], hn);
-var zk = Object.defineProperty, Fk = Object.getOwnPropertyDescriptor, tp = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Fk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var Ok = Object.defineProperty, zk = Object.getOwnPropertyDescriptor, tp = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? zk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && zk(t, e, r), r;
+  return i && r && Ok(t, e, r), r;
 }, "__decorateClass$2"), Bc;
 let os = (Bc = class extends Nt {
   constructor() {
-    super(...arguments), this.componentFeatures = new Yt(ll), this.theme = new he(this, os.styles), this.unreadConversations = new Qc(this), this.createConversationController = new Kc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.conversationNewRef = J();
+    super(...arguments), this.componentFeatures = new Gt(ll), this.theme = new de(this, os.styles), this.unreadConversations = new Qc(this), this.createConversationController = new Kc(this), this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.conversationId = null, this.conversationQuery = new ge(this), this.persistState = new Nn(this), this.conversationNewRef = J();
   }
   set agent(t) {
-    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Yt(
+    super.agent = t, this._agentUid ? (this.componentTypes = [rt.AgentChat], this.componentFeatures = new Gt(
       ef,
       this.componentFeatures.allowedFeatures()
-    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Yt(
+    )) : (this.componentTypes = [rt.ChatRoom, rt.PrivateChat], this.componentFeatures = new Gt(
       ll,
       this.componentFeatures.allowedFeatures()
     )), this.conversationId = null;
@@ -28404,24 +28381,24 @@ let os = (Bc = class extends Nt {
     `;
   }
 }, s(Bc, "WyMessengerConversations"), Bc);
-os.styles = [Qt, Ci, kr, Se, _r, pn];
+os.styles = [Kt, Ci, kr, Se, _r, pn];
 tp([
-  p({ attribute: !1 })
+  y({ attribute: !1 })
 ], os.prototype, "componentTypes", 2);
 tp([
-  p({ type: String })
+  y({ type: String })
 ], os.prototype, "agent", 1);
 tp([
-  p({ type: Number })
+  y({ type: Number })
 ], os.prototype, "conversationId", 2);
 os = tp([
   U("wy-messenger-conversations"),
   ut()
 ], os);
-var Ik = Object.defineProperty, Dk = Object.getOwnPropertyDescriptor, ep = /* @__PURE__ */ s((n, t, e, i) => {
-  for (var r = i > 1 ? void 0 : i ? Dk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
+var Fk = Object.defineProperty, Ik = Object.getOwnPropertyDescriptor, ep = /* @__PURE__ */ s((n, t, e, i) => {
+  for (var r = i > 1 ? void 0 : i ? Ik(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = (i ? o(t, e, r) : o(r)) || r);
-  return i && r && Ik(t, e, r), r;
+  return i && r && Fk(t, e, r), r;
 }, "__decorateClass$1"), Nc;
 let cs = (Nc = class extends Re {
   constructor() {
@@ -28520,10 +28497,10 @@ let cs = (Nc = class extends Re {
 }, s(Nc, "WyConversationNew"), Nc);
 cs.styles = [Y];
 ep([
-  p()
+  y()
 ], cs.prototype, "agent", 2);
 ep([
-  H()
+  V()
 ], cs.prototype, "show", 2);
 ep([
   pl({ flatten: !0, selector: ":not(slot)" })
@@ -28532,8 +28509,8 @@ cs = ep([
   U("wy-conversation-new"),
   ut()
 ], cs);
-const Hk = j`[part~=wy-editor-message-inputs]{display:flex;flex-direction:row;align-items:flex-end;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 + var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) * 2)}[part~=wy-editor-message-text]{flex:1 1 100%;display:flex;flex-direction:column;margin-inline:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-editor-parts]{padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));min-height:0}`;
-var Vk = Object.getOwnPropertyDescriptor, Uk = /* @__PURE__ */ s((n, t, e, i) => {
+const Dk = j`[part~=wy-editor-message-inputs]{display:flex;flex-direction:row;align-items:flex-end;padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem))) var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))));min-height:calc(var(--wy-input-font-size, var(--wy-font-size, 1em)) * 1.5 * var(--wy-size, 1rem) + var(--wy-input-padding-y, var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))) * 2 + var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem))))) * 2)}[part~=wy-editor-message-text]{flex:1 1 100%;display:flex;flex-direction:column;margin-inline:var(--wy-padding-sm, calc(.75 * var(--wy-padding, calc(.5 * var(--wy-size, 1rem)))))}[part~=wy-editor-parts]{padding:var(--wy-padding, calc(.5 * var(--wy-size, 1rem)));min-height:0}`;
+var Vk = Object.getOwnPropertyDescriptor, Hk = /* @__PURE__ */ s((n, t, e, i) => {
   for (var r = i > 1 ? void 0 : i ? Vk(t, e) : t, a = n.length - 1, o; a >= 0; a--)
     (o = n[a]) && (r = o(r) || r);
   return r;
@@ -28649,12 +28626,12 @@ let mu = (qc = class extends Tt {
     return g;
   }
 }, s(qc, "WyEditorMessage"), qc);
-mu.styles = [...Tt.styles, Hk];
-mu = Uk([
+mu.styles = [...Tt.styles, Dk];
+mu = Hk([
   U("wy-editor-message"),
   ut()
 ], mu);
-const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const Kk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   get WyAnnotation() {
     return od;
@@ -28750,7 +28727,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return rs;
   },
   get WyFileItem() {
-    return Hi;
+    return Vi;
   },
   get WyFileMenu() {
     return rn;
@@ -28768,7 +28745,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return gr;
   },
   get WyIcon() {
-    return jt;
+    return Wt;
   },
   get WyIconDisplay() {
     return td;
@@ -28780,7 +28757,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return Yn;
   },
   get WyItem() {
-    return ue;
+    return he;
   },
   get WyItemList() {
     return Xr;
@@ -28789,7 +28766,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return dd;
   },
   get WyMessage() {
-    return pe;
+    return ue;
   },
   get WyMessageTyping() {
     return ai;
@@ -28837,7 +28814,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return Zc;
   },
   get WyPreview() {
-    return Kt;
+    return jt;
   },
   get WyPreviewEmbed() {
     return en;
@@ -28867,7 +28844,7 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
     return pd;
   },
   get WyReactions() {
-    return Xt;
+    return Yt;
   },
   get WySearch() {
     return sn;
@@ -28902,12 +28879,12 @@ const Qk = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
 }, Symbol.toStringTag, { value: "Module" }));
 export {
   ru as AgentAppTypeGuids,
-  Wk as AgentAppTypeStrings,
+  qk as AgentAppTypeStrings,
   Jd as AppContext,
   x2 as AppTypeGuids,
   C2 as AppTypeStrings,
   Yv as AppsContext,
-  Yt as ComponentFeatures,
+  Gt as ComponentFeatures,
   Cm as ContextController,
   Xv as ContextIdContext,
   Kc as CreateConversationController,
@@ -28921,8 +28898,8 @@ export {
   or as InfiniteQueryController,
   cr as InfiniteScrollController,
   e1 as LinkContext,
-  Kk as MessengerAgentTypes,
-  jk as MessengerTypes,
+  jk as MessengerAgentTypes,
+  Wk as MessengerTypes,
   Be as MutationController,
   Wc as MutationStateController,
   Nn as PersistStateController,
@@ -28931,20 +28908,20 @@ export {
   Wy as ReverseInfiniteScrollController,
   W as ShadowPartsController,
   Ky as SwipeScrollController,
-  he as ThemeController,
+  de as ThemeController,
   su as TypingController,
   Oi as UnknownApp,
   Qc as UnreadConversationsController,
   Zl as UnreadNotificationsController,
   _u as UserContext,
-  It as Weavy,
+  Vt as Weavy,
   ae as WeavyAppComponent,
-  Zt as WeavyClient,
+  Qt as WeavyClient,
   jc as WeavyComponent,
   iu as WeavyComponentSettings,
   i1 as WeavyComponentSettingsContext,
-  Qk as WeavyComponents,
-  Jt as WeavyContext,
+  Kk as WeavyComponents,
+  Xt as WeavyContext,
   qn as WeavyOptionalAppComponent,
   qt as WeavySubAppComponent,
   Re as WeavySubComponent,
@@ -28952,7 +28929,7 @@ export {
   sl as WyChat,
   fd as WyComments,
   Gc as WyComponent,
-  Wt as WyContext,
+  Zt as WyContext,
   al as WyCopilot,
   fr as WyFeed,
   ns as WyFiles,

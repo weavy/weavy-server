@@ -1,5 +1,14 @@
 # Changelog for Weavy
 
+## v31.2.0
+
+<time>2026-04-09</time>
+
+* Fixed some issues with cleared text and drafts in the editor.
+* Fixed toolbar alignment while loading a document.
+* Updated pdfjs to v5.6.205.
+* Removed the pdfHWA configuration from UI kit, since it was removed from pdfjs.
+
 ## v31.1.1
 
 <time>2026-03-25</time>
