@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v31.3.0
+
+<time>2026-05-22</time>
+
+* Added `wy-poll-option-active` CSS part for the poll option that the user has voted for.
+* Icons are now exported in `iconMapping`, which allows overriding icons with custom SVG paths or SVG content.
+* Fixed some issues with highlighting in posts and comments.
+
 ## v31.2.0
 
 <time>2026-04-09</time>
