@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v31.4.0
+
+<time>2026-05-25</time>
+
+* Icons in `iconMapping` support customized viewBox.
+
 ## v31.3.0
 
 <time>2026-05-22</time>
