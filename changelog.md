@@ -1,5 +1,11 @@
 # Changelog for Weavy
 
+## v31.5.0
+
+<time>2026-05-25</time>
+
+* Native Icons in `iconMapping` support customized color.
+
 ## v31.4.0
 
 <time>2026-05-25</time>
