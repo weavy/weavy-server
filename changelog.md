@@ -1,5 +1,15 @@
 # Changelog for Weavy
 
+## v31.6.0
+
+<time>2026-06-10</time>
+
+* Added `placeholder` attribute to `<wy-files>` component.
+* Added `commentsPlaceholder` attribute to `<wy-feed>` component.
+* Added `setLink(link)` method to the Weavy client instance, for triggering notification/link highlights in components.
+* Fixed broken placeholders for editor.
+* Fixed some issues when disabling the `comments` feature.
+
 ## v31.5.0
 
 <time>2026-05-25</time>
