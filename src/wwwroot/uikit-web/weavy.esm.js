@@ -10968,7 +10968,7 @@ const ee = class ee {
     P(this, Ha, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Hd = new WeakMap(), Bd = new WeakMap(), nr = new WeakMap(), Ha = new WeakMap(), s(ee, "WeavyClient"), ee.version = "31.6.0", ee.sourceName = "@weavy/uikit-web", ee.sourceFormat = s0 ?? "typescript", ee.defaults = {
+Hd = new WeakMap(), Bd = new WeakMap(), nr = new WeakMap(), Ha = new WeakMap(), s(ee, "WeavyClient"), ee.version = "31.6.1", ee.sourceName = "@weavy/uikit-web", ee.sourceFormat = s0 ?? "typescript", ee.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -18120,7 +18120,7 @@ function v3(n, t) {
     })).json(), "mutationFn"),
     mutationKey: t,
     onSuccess: /* @__PURE__ */ s((i, r) => {
-      r.id && Ae(n.queryClient, [r.type, r.parent_id, "comments"], r.id, () => i);
+      r.id && Ae(n.queryClient, [r.type, "comments", r.parent_id], r.id, () => i);
     }, "onSuccess")
   };
 }
@@ -18173,7 +18173,7 @@ function g3(n) {
 s(g3, "getAddCommentMutationOptions");
 function b3(n, t, e) {
   const i = n.queryClient, a = {
-    mutationKey: [t, e, "comments"],
+    mutationKey: [t, "comments", e],
     mutationFn: /* @__PURE__ */ s(async ({ id: o }) => {
       if (!(await n.fetch("/api/comments/" + o + "/trash", { method: "POST" })).ok)
         throw new Error();
@@ -18199,7 +18199,7 @@ function x3(n, t, e) {
 s(x3, "getTrashCommentMutation");
 function C3(n, t, e) {
   const i = n.queryClient, a = {
-    mutationKey: [t, e, "comments"],
+    mutationKey: [t, "comments", e],
     mutationFn: /* @__PURE__ */ s(async ({ id: o }) => {
       const c = await n.fetch("/api/comments/" + o + "/restore", { method: "POST" });
       if (!c.ok) {

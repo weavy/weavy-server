@@ -11641,7 +11641,7 @@ const Ii = class Ii {
     Qi(this, Kd, !0), console.info(this.weavyId, "was destroyed");
   }
 };
-Fp = new WeakMap(), Gp = new WeakMap(), eo = new WeakMap(), Kd = new WeakMap(), Ii.version = "31.6.0", Ii.sourceName = "@weavy/uikit-web", Ii.sourceFormat = X9 ?? "typescript", Ii.defaults = {
+Fp = new WeakMap(), Gp = new WeakMap(), eo = new WeakMap(), Kd = new WeakMap(), Ii.version = "31.6.1", Ii.sourceName = "@weavy/uikit-web", Ii.sourceFormat = X9 ?? "typescript", Ii.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -18539,7 +18539,7 @@ function MG(i, e) {
     })).json(),
     mutationKey: e,
     onSuccess: (n, r) => {
-      r.id && Cn(i.queryClient, [r.type, r.parent_id, "comments"], r.id, () => n);
+      r.id && Cn(i.queryClient, [r.type, "comments", r.parent_id], r.id, () => n);
     }
   };
 }
@@ -18590,7 +18590,7 @@ function DG(i) {
 }
 function jG(i, e, t) {
   const n = i.queryClient, s = {
-    mutationKey: [e, t, "comments"],
+    mutationKey: [e, "comments", t],
     mutationFn: async ({ id: a }) => {
       if (!(await i.fetch("/api/comments/" + a + "/trash", { method: "POST" })).ok)
         throw new Error();
@@ -18614,7 +18614,7 @@ function NG(i, e, t) {
 }
 function FG(i, e, t) {
   const n = i.queryClient, s = {
-    mutationKey: [e, t, "comments"],
+    mutationKey: [e, "comments", t],
     mutationFn: async ({ id: a }) => {
       const o = await i.fetch("/api/comments/" + a + "/restore", { method: "POST" });
       if (!o.ok) {

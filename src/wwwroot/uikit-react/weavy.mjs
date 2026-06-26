@@ -33927,7 +33927,7 @@ const Oh = (De = class {
     R(this, Iw, !0), console.info(this.weavyId, "was destroyed");
   }
 }, h(De, "ee"), De);
-e0 = /* @__PURE__ */ new WeakMap(), i0 = /* @__PURE__ */ new WeakMap(), Bn = /* @__PURE__ */ new WeakMap(), Iw = /* @__PURE__ */ new WeakMap(), c(Oh, "WeavyClient"), Oh.version = "31.6.0", Oh.sourceName = "@weavy/uikit-web", Oh.sourceFormat = cH, Oh.defaults = {
+e0 = /* @__PURE__ */ new WeakMap(), i0 = /* @__PURE__ */ new WeakMap(), Bn = /* @__PURE__ */ new WeakMap(), Iw = /* @__PURE__ */ new WeakMap(), c(Oh, "WeavyClient"), Oh.version = "31.6.1", Oh.sourceName = "@weavy/uikit-web", Oh.sourceFormat = cH, Oh.defaults = {
   // StrictWeavyOptions
   cloudFilePickerUrl: "https://filebrowser.weavy.io/v14/",
   configurationTimeout: 5e3,
@@ -41219,7 +41219,7 @@ function BF(s, t) {
     })).json(), "mutationFn"),
     mutationKey: t,
     onSuccess: /* @__PURE__ */ c((e, i) => {
-      i.id && Oi(s.queryClient, [i.type, i.parent_id, "comments"], i.id, () => e);
+      i.id && Oi(s.queryClient, [i.type, "comments", i.parent_id], i.id, () => e);
     }, "onSuccess")
   };
 }
@@ -41274,7 +41274,7 @@ h(ZF, "g3");
 c(ZF, "getAddCommentMutationOptions");
 function NF(s, t, e) {
   const i = s.queryClient, r = {
-    mutationKey: [t, e, "comments"],
+    mutationKey: [t, "comments", e],
     mutationFn: /* @__PURE__ */ c(async ({ id: n }) => {
       if (!(await s.fetch("/api/comments/" + n + "/trash", { method: "POST" })).ok)
         throw new Error();
@@ -41302,7 +41302,7 @@ h(XF, "x3");
 c(XF, "getTrashCommentMutation");
 function UF(s, t, e) {
   const i = s.queryClient, r = {
-    mutationKey: [t, e, "comments"],
+    mutationKey: [t, "comments", e],
     mutationFn: /* @__PURE__ */ c(async ({ id: n }) => {
       const a = await s.fetch("/api/comments/" + n + "/restore", { method: "POST" });
       if (!a.ok) {

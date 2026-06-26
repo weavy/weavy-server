@@ -1,5 +1,12 @@
 # Changelog for Weavy
 
+## v31.6.1
+
+<time>2026-06-26</time>
+
+* Fixed issue with trash/delete comment not updating the UI.
+* Fixed issue with edit comment not updating the UI.
+
 ## v31.6.0
 
 <time>2026-06-10</time>
