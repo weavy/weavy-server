@@ -1,5 +1,13 @@
 # Changelog for Weavy
 
+## v31.6.2
+
+<time>2026-06-29</time>
+
+* Added missing `comments` feature in `<wy-comments>`.
+* Fixed admin trash rights for comments.
+* Fixed undefined `.provideStorageLink()` on components.
+
 ## v31.6.1
 
 <time>2026-06-26</time>
