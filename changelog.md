@@ -1,5 +1,19 @@
 # Changelog for Weavy
 
+## v32.0.0
+
+<time>2026-07-01</time>
+
+* Users can now belong to more than one directory.
+* Agents can now authenticate with access tokens.
+* Fixed a bug that broke the app reset function.
+* Added PostgreSQL support (in addition to SQL Server). 
+* The Weavy backend is now containerized for easier deployment when self-hosting.
+
+###### Breaking changes
+
+  * The `directory` property in the Users API has been deprecated and is now an array of `directories`.
+
 ## v31.6.2
 
 <time>2026-06-29</time>

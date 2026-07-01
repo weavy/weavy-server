@@ -7,25 +7,38 @@ An ASP.NET Core application for hosting Weavy backend services.
 The following is required to build and run the application.
 
 * [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
-* [SQL Server 2017](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (or later)
-
-We also recommend installing [Visual Studio](https://visualstudio.microsoft.com/vs) and [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
+* [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or [PostgreSQL](https://www.postgresql.org/)
 
 ## Getting started
 
 * Install the prerequisites mentioned above. 
-* Create a new database on your SQL Server (we suggest you call it `weavy`).
-* Create a file named `appsettings.json` in the `src` folder. Add settings for database connection string and license as described below:
+* Create a new database on your database server (we suggest you call it `weavy`).
+* Create a file named `appsettings.json` in the `src`. Add settings for database connection string and license:
 
+*Example appsettings.json for connecting to a SQL Server database.*
 ```
 {
   "ConnectionStrings": {
-    "Weavy": "server=localhost;database=weavy;trusted_connection=true;trustservercertificate=true;"
+    "Weavy": "server=localhost;database=weavy;trusted_connection=true;"
   },
   "Weavy": {
     "License": "YOUR-LICENSE-KEY"
   }
 }
+
+```
+
+*Example appsettings.json for connecting to a PostgreSQL database.*
+```
+{
+  "ConnectionStrings": {
+    "Weavy": "host=localhost;database=weavy;username=postgres;password=postgres;"
+  },
+  "Weavy": {
+    "License": "YOUR-LICENSE-KEY"
+  }
+}
+
 ```
 
 ## Build and run
@@ -33,8 +46,6 @@ We also recommend installing [Visual Studio](https://visualstudio.microsoft.com/
 Open a terminal window in the `src` folder and run the following command:
 
 `dotnet run`
-
-Alternatively, if you have Visual Studio installed, you can also open the `weavy-server.slnx` file and select "Debug > Start Without Debugging" from the menu (or press `Ctrl+F5`) to build and run the application.
 
 That should be it. Open a browser and navigate to the endpoint displayed in the console window. If everything worked out you should see the Weavy logo on your screen.
 
